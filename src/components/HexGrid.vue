@@ -10,13 +10,18 @@ interface HexProps {
 const props = withDefaults(defineProps<HexProps>(), {
   width: 800,
   height: 600,
-  hexSize: 30,
+  hexSize: 60,
 });
 
 // Hex logic (Flat-topped)
-const HEX_WIDTH = Math.sqrt(3) * props.hexSize;
-const VERT_DIST = 3/2 * props.hexSize;
-const HORIZ_DIST = Math.sqrt(3) * props.hexSize;
+// Width = 2 * size
+// Height = sqrt(3) * size
+// Horiz spacing = 3/2 * size
+// Vert spacing = sqrt(3) * size
+const HEX_WIDTH = 2 * props.hexSize;
+const HEX_HEIGHT = Math.sqrt(3) * props.hexSize;
+const HORIZ_DIST = 3/2 * props.hexSize;
+const VERT_DIST = Math.sqrt(3) * props.hexSize;
 
 interface Hex {
   q: number;
@@ -34,91 +39,119 @@ const playerPos = ref<{q: number, r: number} | null>(null);
 // Initialize Grid
 const initGrid = () => {
   const hexes: Hex[] = [];
-  const cols = Math.floor(2000 / HORIZ_DIST);
-  const rows = Math.floor(2000 / VERT_DIST);
+  const cols = 6;
+  const rows = 25; // "Tall" map
 
   for (let r = 0; r < rows; r++) {
     for (let c = 0; c < cols; c++) {
-      const xOffset = (r % 2 === 1) ? HEX_WIDTH / 2 : 0;
-      const x = c * HORIZ_DIST + xOffset + props.hexSize;
-      const y = r * VERT_DIST + props.hexSize;
+      // Offset for odd columns in "Pointy" or odd rows in "Flat"?
+      // Flat-Topped usually uses "Q-offset" (columns).
+      // Let's use standard Odd-Q vertical layout.
+      // x = c * HORIZ_DIST
+      // y = r * VERT_DIST + (c%2)*VERT_DIST/2
+      
+      const x = c * HORIZ_DIST + props.hexSize;
+      const yOffset = (c % 2 === 1) ? HEX_HEIGHT / 2 : 0;
+      const y = r * VERT_DIST + yOffset + props.hexSize;
       
       hexes.push({ 
-        q: c - Math.floor(r/2), 
-        r, 
+        q: c, 
+        r: r - (c - (c&1)) / 2, // axial conversion can be complex, sticking to grid coords for 'north' check might be easier?
+        // Let's store grid coords too for easy "North" logic
         x, 
         y, 
         id: `${c},${r}`,
-        visibility: 'visible' 
+        visibility: 'hidden' // Default hidden
       });
     }
   }
   grid.value = hexes;
   
-  // Start at center by index to guarantee validity
+  // Start at Bottom Center
   if (grid.value.length > 0) {
-    const centerIndex = Math.floor(grid.value.length / 2);
-    // Adjust slightly to ensure we aren't on an edge case if needed, but center index is fine
-    const startHex = grid.value[centerIndex];
-    
-    playerPos.value = { q: startHex.q, r: startHex.r };
-    updateVisibility(startHex);
-    
-    // Center view on start
-    viewBox.value.x = startHex.x - props.width/2;
-    viewBox.value.y = startHex.y - props.height/2;
+    // Filter for bottom-most row
+    // Just pick roughly middle column of last row
+    const startHex = grid.value.find(h => h.id === `2,${rows-1}`) || grid.value[grid.value.length - 1];
+
+    if (startHex) {
+      playerPos.value = { q: startHex.q, r: startHex.r }; // storing axial, though we might rely on ID/obj lookup
+      revealFrom(startHex);
+      
+      // Center view on start
+      viewBox.value.x = startHex.x - props.width/2;
+      viewBox.value.y = startHex.y - props.height/2;
+    }
   }
 };
 
-const getHexAt = (q: number, r: number) => {
-  // Simple search, optimization: use map
-  return grid.value.find(h => h.q === q && h.r === r);
+const revealFrom = (center: Hex) => {
+   // Mark center as visited (or 'current')
+   // But user wants "Choose room", so maybe current is "Visited"
+   center.visibility = 'visited';
+   
+   // Logic: Reveal 3 rooms to the "North".
+   // "North" in this layout (Top-left 0,0) is LOWER 'y'.
+   // Neighbors in Odd-Q specific layout?
+   
+   // Let's strictly use geometry: Find neighbors with y < center.y
+   // Standard neighbor distance is roughly HEX_HEIGHT
+   
+   // Find all hexes within neighbor distance
+   const neighbors = grid.value.filter(h => {
+     const dx = h.x - center.x;
+     const dy = h.y - center.y;
+     const dist = Math.sqrt(dx*dx + dy*dy);
+     return dist > 1 && dist < HEX_WIDTH * 1.2; // approx check
+   });
+   
+   // Filter for "North" (Lower Y)
+   // We want exactly the 3 "above"
+   const northNeighbors = neighbors.filter(h => h.y < center.y - 1); // -1 for float safety
+   
+   northNeighbors.forEach(h => {
+      // If NOT visited, make visible (choice)
+      if (h.visibility === 'hidden') {
+        h.visibility = 'visible';
+      }
+   });
 };
 
-const getNeighbors = (hex: Hex) => {
-  const directions = [
-    {q: 1, r: 0}, {q: 1, r: -1}, {q: 0, r: -1},
-    {q: -1, r: 0}, {q: -1, r: 1}, {q: 0, r: 1}
-  ];
-  return directions.map(d => getHexAt(hex.q + d.q, hex.r + d.r)).filter(h => h !== undefined) as Hex[];
-};
-
-const updateVisibility = (center: Hex) => {
-  // Mark all currently visible as visited
-  grid.value.forEach(h => {
-    if (h.visibility === 'visible') h.visibility = 'visited';
-  });
-
-  // Reveal center
-  center.visibility = 'visible';
-
-  // Reveal neighbors
-  const neighbors = getNeighbors(center);
-  neighbors.forEach(h => {
-    if (h.visibility !== 'visible') h.visibility = 'visible'; // Or 'revealed' if distinct from player loc
-  });
-};
-
-
-
-// Hexagon SVG path points
+// Hexagon SVG path points (Flat Topped)
 const points = computed(() => {
   const size = props.hexSize - 2; 
-  return [
-    `${-size * Math.sqrt(3)/2},${-size/2}`,
-    `0,${-size}`,
-    `${size * Math.sqrt(3)/2},${-size/2}`,
-    `${size * Math.sqrt(3)/2},${size/2}`,
-    `0,${size}`,
-    `${-size * Math.sqrt(3)/2},${size/2}`,
-  ].join(' ');
+  // Flat topped: Points at 0, 60, 120... offset by 0? 
+  // Angles: 0, 60, 120, 180, 240, 300
+  // 0 deg is RIGHT. 
+  // Point 1: (size, 0)
+  // Point 2: (size/2, sqrt(3)/2 * size) -> Bottom Right? No, y goes down in SVG usually?
+  // Let's generate standard flat top
+  const corners = [];
+  for (let i = 0; i < 6; i++) {
+    const angle_deg = 60 * i;
+    const angle_rad = Math.PI / 180 * angle_deg;
+    corners.push(`${size * Math.cos(angle_rad)},${size * Math.sin(angle_rad)}`);
+  }
+  return corners.join(' ');
 });
 
 const handleClick = (hex: Hex) => {
-  // Movement logic: simple teleport for now
-  
+  // Only allow move to visible (candidate) hexes
+  // Or visited? No, usually cannot backtrack in this style?
+  // Let's assume strict forward progression for now.
+  if (hex.visibility !== 'visible') return;
+
   playerPos.value = { q: hex.q, r: hex.r };
-  updateVisibility(hex);
+  
+  // Previous choices might disappear? 
+  // User said "Selecting a hexagon to choose room...". 
+  // Implicitly, we commit to that room.
+  
+  // Mark old options as hidden? Or just leave them?
+  // "Fog of War" usually implies visited stays visible.
+  // But unchosen paths? Let's leave them visible but non-interactive?
+  // For now: Just reveal new stuff.
+  
+  revealFrom(hex);
 };
 
 // Zoom and Pan State
@@ -179,17 +212,25 @@ const handleMouseLeave = () => {
 
 const getHexClass = (hex: Hex) => {
   const base = "transition-colors duration-300 stroke-slate-600 cursor-pointer ";
+  
+  // Player Position override
   if (playerPos.value?.q === hex.q && playerPos.value?.r === hex.r) {
-    return base + "fill-amber-500 stroke-amber-300"; // Player
+     // Even if visited, if player is there, show Player Highlight
+     return base + "fill-blue-500 stroke-blue-300"; 
   }
+
   if (hex.visibility === 'visible') {
-    return base + "fill-slate-700 hover:fill-slate-600 hover:stroke-emerald-400";
+    // These are the "Choices"
+    return base + "fill-slate-700 hover:fill-amber-900 hover:stroke-amber-500";
   }
+  
   if (hex.visibility === 'visited') {
-    return base + "fill-slate-800/80 stroke-slate-700";
+    // Path traveled
+    return base + "fill-slate-800/50 stroke-slate-700";
   }
-  // Hidden but slightly visible for debugging/context
-  return base + "fill-slate-900 stroke-slate-800"; 
+  
+  // Hidden
+  return base + "fill-slate-950 stroke-slate-900 opacity-20 pointer-events-none"; 
 };
 initGrid();
 </script>
