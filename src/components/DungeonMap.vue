@@ -443,9 +443,10 @@ const handleMouseUp = () => {
     <!-- Restart Confirmation Modal (Full Screen Overlay) -->
     <div 
         v-if="showRestartConfirm" 
-        class="fixed inset-0 bg-black/80 flex items-center justify-center z-50"
+        class="fixed top-0 left-0 w-screen h-screen flex items-center justify-center"
+        style="z-index: 9999; background-color: rgba(0, 0, 0, 0.5);"
     >
-        <div class="bg-slate-800 border border-slate-700 rounded-lg p-6 max-w-sm text-center shadow-2xl">
+        <div style="background-color: #1e293b;" class="border border-slate-700 rounded-lg p-6 max-w-sm text-center shadow-2xl">
             <h3 class="text-xl font-bold text-slate-100 mb-3">Restart Map?</h3>
             <p class="text-slate-400 text-sm mb-6">All progress will be lost.</p>
             <div class="flex gap-4">
