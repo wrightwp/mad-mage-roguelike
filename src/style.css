@@ -1,12 +1,23 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+/* Fantasy-themed Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;900&family=Philosopher:wght@400;700&display=swap');
+
+/* D&D Themed Color Palette */
 
 /* Global styles */
 :root {
-    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    font-family: 'Philosopher', Inter, system-ui, sans-serif;
     line-height: 1.5;
     font-weight: 400;
+
+    /* D&D Color Palette */
+    --color-arcane-purple: #8b5cf6;
+    --color-arcane-blue: #3b82f6;
+    --color-mystical-glow: rgba(139, 92, 246, 0.6);
+    --color-dungeon-shadow: rgba(0, 0, 0, 0.8);
+    --color-parchment: #f4e4c1;
+    --color-rune-gold: #fbbf24;
 
     color-scheme: light dark;
     color: rgba(255, 255, 255, 0.87);
@@ -24,4 +35,23 @@ body {
     place-items: center;
     min-width: 320px;
     min-height: 100vh;
+}
+
+/* Mystical Glow Effect */
+.mystical-glow {
+    text-shadow: 0 0 10px var(--color-mystical-glow),
+        0 0 20px var(--color-mystical-glow),
+        0 0 30px var(--color-arcane-purple);
+}
+
+/* Parchment Texture Effect */
+.parchment-bg {
+    background-color: rgba(244, 228, 193, 0.05);
+    border: 1px solid rgba(251, 191, 36, 0.2);
+}
+
+/* Fantasy Header Font */
+.fantasy-header {
+    font-family: 'Cinzel', serif;
+    font-weight: 700;
 }

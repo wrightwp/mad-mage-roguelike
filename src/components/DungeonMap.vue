@@ -1,7 +1,12 @@
 <script setup lang="ts">
-import { ref, onMounted, computed, watch } from 'vue';
+import { ref, onMounted, computed } from 'vue';
 import { generateDungeon } from '../logic/dungeonGen';
 import type { DungeonMapData, DungeonNode } from '../types';
+
+// Import background images
+import outerBg from '../assets/outer_bg.png';
+import dungeonMapBg from '../assets/dungeon_map_bg.png';
+import headerDecoration from '../assets/header_decoration.png';
 
 const MAP_WIDTH = 800;
 const MAP_HEIGHT = 2000;
@@ -265,13 +270,14 @@ const handleMouseUp = () => {
 </script>
 
 <template>
-  <div class="dungeon-map-container bg-slate-950 h-screen w-full flex overflow-hidden font-sans">
+  <div class="dungeon-map-container h-screen w-full flex overflow-hidden font-sans" :style="{ backgroundImage: `url(${outerBg})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed' }">
     
     <!-- Sidebar / HUD -->
     <div class="w-64 flex-shrink-0 flex flex-col border-r border-slate-800 bg-slate-900/90 text-slate-300 shadow-2xl z-20 backdrop-blur-md">
-       <div class="p-6 border-b border-slate-700 bg-slate-900">
-           <h1 class="text-xl font-bold text-slate-100 tracking-wider">DUNGEON MAP</h1>
-           <div class="text-xs text-slate-500 mt-1 uppercase tracking-widest">Floor 1 - The Depths</div>
+       <div class="p-6 border-b border-slate-700 bg-slate-900 relative overflow-hidden" :style="{ backgroundImage: `url(${headerDecoration})`, backgroundSize: 'cover', backgroundPosition: 'center' }">
+           <div class="absolute inset-0 bg-slate-900/80"></div>
+           <h1 class="text-2xl font-bold text-amber-400 tracking-wider fantasy-header mystical-glow relative z-10">DUNGEON MAP</h1>
+           <div class="text-xs text-purple-300 mt-1 uppercase tracking-widest relative z-10" style="font-family: 'Cinzel', serif;">Undermountain - Halaster's Domain</div>
        </div>
        
        <div class="p-6 flex-1 overflow-y-auto">
@@ -335,7 +341,8 @@ const handleMouseUp = () => {
         @mouseleave="handleMouseUp"
     >
         <!-- Atmospheric Background Layers -->
-        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-slate-900 via-slate-950 to-black opacity-80 pointer-events-none"></div>
+        <div class="absolute inset-0 pointer-events-none" :style="{ backgroundImage: `url(${dungeonMapBg})`, backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.15 }"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-purple-900/30 via-slate-950/80 to-black opacity-90 pointer-events-none"></div>
         <div class="absolute bottom-0 w-full h-32 bg-gradient-to-t from-black to-transparent pointer-events-none z-10"></div>
         
         <div class="relative h-full aspect-[800/800] max-w-5xl shadow-2xl backdrop-blur-sm transition-opacity duration-1000 pointer-events-none">
