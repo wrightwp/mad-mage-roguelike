@@ -8,6 +8,7 @@ export interface DungeonNode {
     parents: string[]; // IDs of nodes in the PREVIOUS layer (for backtracking/validation)
     status: 'locked' | 'available' | 'visited' | 'current';
     description?: string;
+    revealed?: boolean;
 }
 
 export interface DungeonMapData {

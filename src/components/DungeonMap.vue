@@ -5,7 +5,7 @@ import type { DungeonMapData, DungeonNode } from '../types';
 
 // Import background images
 import outerBg from '../assets/clean_dungeon_bg.png';
-import dungeonMapBg from '../assets/dungeon_map_bg.png';
+import dungeonMapBg from '../assets/dungeon_map_bg_v3.png';
 import headerDecoration from '../assets/header_decoration.png';
 
 const MAP_WIDTH = 800;
@@ -149,7 +149,9 @@ const hexPath = computed(() => {
 const handleNodeClick = (node: DungeonNode) => {
    // Always set selection
    selectedNodeId.value = node.id;
+};
 
+const enterEncounter = (node: DungeonNode) => {
    if (node.status !== 'available') return;
    
    // Find the parent node we came from (must be visited and connected to this node)
@@ -164,26 +166,36 @@ const handleNodeClick = (node: DungeonNode) => {
        }
    }
    
-   // Mark this node as 'visited'
-   node.status = 'visited';
+   // Mark this node as 'current'
+   node.status = 'current';
    
-   // Mark connected NEXT nodes as 'available'
+   // Lock sibling 'available' nodes in THIS layer
    if (mapData.value) {
-       node.connections.forEach(targetId => {
-          const target = mapData.value!.nodes.find(n => n.id === targetId);
-          if (target && target.status === 'locked') {
-             target.status = 'available';
-          }
-       });
-       
-       // Lock sibling 'available' nodes in THIS layer
        mapData.value.nodes.filter(n => n.layer === node.layer && n.id !== node.id && n.status === 'available').forEach(n => {
-          n.status = 'locked'; 
+           n.status = 'locked'; 
        });
    }
    
    // Scroll Camera
    scrollToNode(node);
+};
+
+const completeEncounter = (node: DungeonNode) => {
+   if (node.status !== 'current') return;
+
+   // Mark this node as 'visited'
+   node.status = 'visited';
+   
+   // Mark connected NEXT nodes as 'available' and reveal them
+   if (mapData.value) {
+       node.connections.forEach(targetId => {
+          const target = mapData.value!.nodes.find(n => n.id === targetId);
+          if (target && target.status === 'locked') {
+             target.status = 'available';
+             target.revealed = true; // REVEAL next options
+          }
+       });
+   }
 };
 
 const TYPE_COLORS: Record<string, string> = {
@@ -218,6 +230,7 @@ const getNodeClass = (node: DungeonNode) => {
    
    if (node.status === 'visited') return base + "fill-slate-800 stroke-slate-600 opacity-50"; // Dim visited
    if (node.status === 'locked') return base + "fill-slate-900 stroke-slate-800 opacity-20 pointer-events-none";
+   if (node.status === 'current') return base + "mystical-glow ring-2 ring-amber-400"; // Highlight current
    
    // Available: Glowing and Colored
    return base; // Color handled by style/fill binding
@@ -453,7 +466,7 @@ const handleMouseUp = () => {
         @mouseup="handleMouseUp"
         @mouseleave="handleMouseUp"
     >
-        <div class="absolute inset-0 pointer-events-none" :style="{ backgroundImage: `url(${dungeonMapBg})`, backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.15 }"></div>
+        <div class="absolute inset-0 pointer-events-none" :style="{ backgroundImage: `url(${dungeonMapBg})`, backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.25 }"></div>
         <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-purple-900/10 via-slate-950/80 to-black opacity-90 pointer-events-none"></div>
         
         <div class="relative h-full aspect-[800/2000] w-full shadow-2xl backdrop-blur-[2px] pointer-events-none">
@@ -539,17 +552,17 @@ const handleMouseUp = () => {
                  />
                  
                  <!-- Main Hex Shape -->
-                 <polygon 
-                   :points="hexPath" 
-                   :class="getNodeClass(node)"
-                   :fill="node.status === 'available' ? getNodeColor(node.type) : (selectedNodeId === node.id ? '#1e293b' : undefined)"
-                   class="transition-all duration-200 group-hover:brightness-125 group-active:scale-90"
-                   :stroke="selectedNodeId === node.id ? '#fbbf24' : (node.status === 'available' ? '#ffffff' : '#475569')"
-                   :stroke-width="selectedNodeId === node.id ? 3 : 1.5"
-                 />
-                 
-                 <text 
-                   v-if="(revealAll || node.status === 'available' || node.status === 'visited') && node.type !== 'rest'"
+                  <polygon 
+                    :points="hexPath" 
+                    :class="getNodeClass(node)"
+                    :fill="(revealAll || node.revealed || node.status === 'visited' || node.status === 'current') ? getNodeColor(node.type) : (selectedNodeId === node.id ? '#1e293b' : undefined)"
+                    class="transition-all duration-200 group-hover:brightness-125 group-active:scale-90"
+                    :stroke="selectedNodeId === node.id ? '#fbbf24' : (node.status === 'available' ? '#ffffff' : '#475569')"
+                    :stroke-width="selectedNodeId === node.id ? 3 : 1.5"
+                  />
+                  
+                  <text 
+                    v-if="(revealAll || node.revealed || node.status === 'visited' || node.status === 'current') && node.type !== 'rest'"
                    y="10" 
                    text-anchor="middle" 
                    class="text-[24px] pointer-events-none select-none font-bold filter drop-shadow-md transition-transform duration-200 group-hover:-translate-y-1 fill-white"
@@ -557,8 +570,8 @@ const handleMouseUp = () => {
                     {{ getNodeIcon(node.type) }}
                  </text>
 
-                 <!-- Custom Campfire Icon for Rest -->
-                 <g v-else-if="revealAll || node.status === 'available' || node.status === 'visited'" transform="translate(0, 0)" class="pointer-events-none">
+                  <!-- Custom Campfire Icon for Rest -->
+                  <g v-else-if="revealAll || node.revealed || node.status === 'visited' || node.status === 'current'" transform="translate(0, 0)" class="pointer-events-none">
                     <!-- Logs -->
                     <rect x="-18" y="8" width="36" height="6" rx="2" fill="#5d4037" transform="rotate(-15)" />
                     <rect x="-18" y="8" width="36" height="6" rx="2" fill="#4e342e" transform="rotate(15)" />
@@ -601,24 +614,27 @@ const handleMouseUp = () => {
         <div class="p-6 border-b border-slate-700 bg-slate-950/50">
             <h3 class="font-bold text-amber-500 mb-1 text-xs uppercase tracking-[0.2em]">Encounter Details</h3>
             <h2 class="text-xl font-bold text-slate-100 tracking-tight">
-                {{ selectedNode ? (selectedNode.type === 'start' ? 'Dungeon Entrance' : selectedNode.type === 'boss' ? 'Boss Chamber' : selectedNode.type.charAt(0).toUpperCase() + selectedNode.type.slice(1)) : 'No Selection' }}
+                {{ selectedNode ? ((selectedNode.revealed || revealAll || selectedNode.status === 'visited' || selectedNode.status === 'current') ? (selectedNode.type === 'start' ? 'Dungeon Entrance' : selectedNode.type === 'boss' ? 'Boss Chamber' : selectedNode.type.charAt(0).toUpperCase() + selectedNode.type.slice(1)) : 'Unknown Room') : 'No Selection' }}
             </h2>
         </div>
 
         <div v-if="selectedNode" class="p-6 flex-1 overflow-y-auto custom-scrollbar space-y-6">
             <!-- Icon Display -->
             <div class="flex justify-center py-4">
-                <div class="w-24 h-24 rounded-2xl flex items-center justify-center text-5xl shadow-2xl border-2 border-white/10 relative overflow-hidden" :style="{ backgroundColor: getNodeColor(selectedNode.type) }">
+                <div class="w-24 h-24 rounded-2xl flex items-center justify-center text-5xl shadow-2xl border-2 border-white/10 relative overflow-hidden" :style="{ backgroundColor: (selectedNode.revealed || revealAll || selectedNode.status === 'visited' || selectedNode.status === 'current') ? getNodeColor(selectedNode.type) : '#1e293b' }">
                     <div class="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent"></div>
-                    <span v-if="selectedNode.type !== 'rest'" class="relative z-10 filter drop-shadow-lg">{{ getNodeIcon(selectedNode.type) }}</span>
-                    <!-- Larger Campfire for Panel -->
-                    <svg v-else viewBox="-30 -40 60 60" class="w-20 h-20 relative z-10 drop-shadow-xl">
-                        <rect x="-24" y="8" width="48" height="8" rx="2" fill="#5d4037" transform="rotate(-15)" />
-                        <rect x="-24" y="8" width="48" height="8" rx="2" fill="#4e342e" transform="rotate(15)" />
-                        <rect x="-20" y="4" width="40" height="8" rx="2" fill="#3e2723" />
-                        <path d="M -15 4 Q -20 -15 0 -35 Q 20 -15 15 4 Z" fill="#ef4444" />
-                        <path d="M -10 4 Q -15 -10 0 -25 Q 15 -10 10 4 Z" fill="#f59e0b" />
-                    </svg>
+                    <template v-if="selectedNode.revealed || revealAll || selectedNode.status === 'visited' || selectedNode.status === 'current'">
+                        <span v-if="selectedNode.type !== 'rest'" class="relative z-10 filter drop-shadow-lg">{{ getNodeIcon(selectedNode.type) }}</span>
+                        <!-- Larger Campfire for Panel -->
+                        <svg v-else viewBox="-30 -40 60 60" class="w-20 h-20 relative z-10 drop-shadow-xl">
+                            <rect x="-24" y="8" width="48" height="8" rx="2" fill="#5d4037" transform="rotate(-15)" />
+                            <rect x="-24" y="8" width="48" height="8" rx="2" fill="#4e342e" transform="rotate(15)" />
+                            <rect x="-20" y="4" width="40" height="8" rx="2" fill="#3e2723" />
+                            <path d="M -15 4 Q -20 -15 0 -35 Q 20 -15 15 4 Z" fill="#ef4444" />
+                            <path d="M -10 4 Q -15 -10 0 -25 Q 15 -10 10 4 Z" fill="#f59e0b" />
+                        </svg>
+                    </template>
+                    <span v-else class="text-slate-600 text-6xl">?</span>
                 </div>
             </div>
 
@@ -627,7 +643,7 @@ const handleMouseUp = () => {
                 <div class="bg-slate-800/40 rounded-xl p-4 border border-slate-700/50">
                     <div class="text-[10px] text-slate-500 uppercase tracking-widest mb-2">Description</div>
                     <p class="text-sm text-slate-200 leading-relaxed font-serif italic">
-                        {{ selectedNode.description || 'A mysterious chamber hidden deep within the Undermountain.' }}
+                        {{ (selectedNode.revealed || revealAll || selectedNode.status === 'visited' || selectedNode.status === 'current') ? (selectedNode.description || 'A mysterious chamber hidden deep within the Undermountain.') : 'The mysteries of this chamber are yet to be revealed...' }}
                     </p>
                 </div>
 
@@ -666,11 +682,19 @@ const handleMouseUp = () => {
         <div class="p-4 bg-slate-950/80 border-t border-slate-800">
             <button 
                 v-if="selectedNode && selectedNode.status === 'available'"
-                @click="handleNodeClick(selectedNode)"
+                @click="enterEncounter(selectedNode)"
                 class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 rounded-xl transition-all shadow-lg shadow-emerald-900/20 active:scale-95 flex items-center justify-center gap-2"
             >
                 <span>Enter Encounter</span>
                 <span class="text-xl">➔</span>
+            </button>
+            <button 
+                v-else-if="selectedNode && selectedNode.status === 'current'"
+                @click="completeEncounter(selectedNode)"
+                class="w-full bg-amber-600 hover:bg-amber-500 text-white font-bold py-3 rounded-xl transition-all shadow-lg shadow-amber-900/20 active:scale-95 flex items-center justify-center gap-2"
+            >
+                <span>Encounter Completed</span>
+                <span class="text-xl">✓</span>
             </button>
             <div v-else class="text-center py-3 text-xs text-slate-600 uppercase tracking-widest font-bold">
                 {{ selectedNode ? (selectedNode.status === 'visited' ? 'Already Visited' : 'Path Blocked') : 'Waiting for Input' }}

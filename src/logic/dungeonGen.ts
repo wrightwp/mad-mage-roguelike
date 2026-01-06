@@ -33,7 +33,8 @@ export const generateDungeon = (
                 connections: [],
                 parents: [],
                 status: 'locked',
-                description: 'The final confrontation with Halaster Blackcloak.'
+                description: 'The final confrontation with Halaster Blackcloak.',
+                revealed: false
             });
         }
         else if (l === 0) {
@@ -47,7 +48,8 @@ export const generateDungeon = (
                 connections: [],
                 parents: [],
                 status: 'available',
-                description: 'You stand at the entrance of the Undermountain.'
+                description: 'You stand at the entrance of the Undermountain.',
+                revealed: true
             });
         }
         else {
@@ -69,7 +71,8 @@ export const generateDungeon = (
                     type: 'monster', // Default, will override below
                     connections: [],
                     parents: [],
-                    status: 'locked'
+                    status: 'locked',
+                    revealed: false
                 });
             }
         }
