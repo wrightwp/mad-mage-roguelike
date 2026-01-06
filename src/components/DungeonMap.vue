@@ -4,7 +4,7 @@ import { generateDungeon } from '../logic/dungeonGen';
 import type { DungeonMapData, DungeonNode } from '../types';
 
 // Import background images
-import outerBg from '../assets/outer_bg.png';
+import outerBg from '../assets/clean_dungeon_bg.png';
 import dungeonMapBg from '../assets/dungeon_map_bg.png';
 import headerDecoration from '../assets/header_decoration.png';
 
@@ -145,7 +145,7 @@ const TYPE_COLORS: Record<string, string> = {
     monster: '#ef4444', // Red-500
     elite: '#b91c1c',   // Red-700
     event: '#3b82f6',   // Blue-500
-    rest: '#f97316',    // Orange-500
+    rest: '#3e2723',    // Deep Brown / Sienna for contrast
     shop: '#a855f7',    // Purple-500
     treasure: '#eab308', // Yellow-500
     puzzle: '#06b6d4',  // Cyan-500
@@ -291,10 +291,19 @@ const handleMouseUp = () => {
 </script>
 
 <template>
-  <div class="dungeon-map-container h-screen w-full flex overflow-hidden font-sans" :style="{ backgroundImage: `url(${outerBg})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed' }">
-    
+  <div class="dungeon-map-container h-screen w-full flex overflow-hidden font-sans relative">
+    <div 
+        class="fixed inset-0 z-0 bg-no-repeat pointer-events-none" 
+        :style="{ 
+            backgroundImage: `url(${outerBg})`,
+            backgroundAttachment: 'fixed',
+            backgroundSize: '2560px auto',
+            backgroundPosition: 'center top'
+        }"
+    ></div>
+
     <!-- Left Sidebar: Map Controls & Legend -->
-    <div class="w-72 flex-shrink-0 flex flex-col border-r border-slate-800 bg-slate-900/90 text-slate-300 shadow-2xl z-20 backdrop-blur-md">
+    <div class="basis-72 grow min-w-[320px] flex-shrink-0 flex flex-col border-r border-slate-800 bg-slate-900/90 text-slate-300 shadow-2xl z-20 backdrop-blur-md relative transform-gpu">
        <div class="p-6 border-b border-slate-700 bg-slate-900 relative overflow-hidden" :style="{ backgroundImage: `url(${headerDecoration})`, backgroundSize: 'cover', backgroundPosition: 'center' }">
            <div class="absolute inset-0 bg-slate-900/80"></div>
            <h1 class="text-2xl font-bold text-amber-400 tracking-wider fantasy-header mystical-glow relative z-10">DUNGEON MAP</h1>
@@ -308,7 +317,15 @@ const handleMouseUp = () => {
                    <div v-if="type !== 'boss' && type !== 'start'" class="space-y-2">
                        <div class="flex items-center gap-3">
                            <div class="w-10 h-10 rounded-lg flex items-center justify-center text-2xl shadow-lg border border-white/10" :style="{ backgroundColor: color, color: '#fff' }">
-                               <span class="filter drop-shadow-md">{{ getNodeIcon(type as string) }}</span>
+                               <span v-if="type !== 'rest'" class="filter drop-shadow-md">{{ getNodeIcon(type as string) }}</span>
+                               <!-- Small Campfire for Legend -->
+                               <svg v-else viewBox="-30 -30 60 60" class="w-7 h-7 filter drop-shadow-md">
+                                    <rect x="-24" y="8" width="48" height="8" rx="2" fill="#5d4037" transform="rotate(-15)" />
+                                    <rect x="-24" y="8" width="48" height="8" rx="2" fill="#4e342e" transform="rotate(15)" />
+                                    <rect x="-20" y="4" width="40" height="8" rx="2" fill="#3e2723" />
+                                    <path d="M -15 4 Q -20 -15 0 -35 Q 20 -15 15 4 Z" fill="#ef4444" />
+                                    <path d="M -10 4 Q -15 -10 0 -25 Q 15 -10 10 4 Z" fill="#f59e0b" />
+                               </svg>
                            </div>
                            <div class="flex-1">
                                <div class="capitalize text-xs font-bold text-slate-400 uppercase tracking-tighter">{{ type }}</div>
@@ -373,7 +390,7 @@ const handleMouseUp = () => {
 
     <!-- Map Viewport -->
     <div 
-        class="flex-1 relative flex justify-center bg-black overflow-hidden cursor-grab active:cursor-grabbing"
+        class="flex-[10] relative flex justify-center bg-black overflow-hidden cursor-grab active:cursor-grabbing z-10"
         @wheel="handleWheel"
         @mousedown="handleMouseDown"
         @mousemove="handleMouseMove"
@@ -383,7 +400,7 @@ const handleMouseUp = () => {
         <div class="absolute inset-0 pointer-events-none" :style="{ backgroundImage: `url(${dungeonMapBg})`, backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.15 }"></div>
         <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-purple-900/10 via-slate-950/80 to-black opacity-90 pointer-events-none"></div>
         
-        <div class="relative h-full aspect-[800/800] max-w-5xl shadow-2xl backdrop-blur-[2px] pointer-events-none">
+        <div class="relative h-full aspect-[800/2000] w-full shadow-2xl backdrop-blur-[2px] pointer-events-none">
             <svg 
                v-if="mapData"
                :viewBox="`${viewBox.x} ${viewBox.y} ${viewBox.w} ${viewBox.h}`"
@@ -476,13 +493,28 @@ const handleMouseUp = () => {
                  />
                  
                  <text 
-                   v-if="revealAll || node.status === 'available' || node.status === 'visited'"
+                   v-if="(revealAll || node.status === 'available' || node.status === 'visited') && node.type !== 'rest'"
                    y="10" 
                    text-anchor="middle" 
                    class="text-[24px] pointer-events-none select-none font-bold filter drop-shadow-md transition-transform duration-200 group-hover:-translate-y-1 fill-white"
                  >
                     {{ getNodeIcon(node.type) }}
                  </text>
+
+                 <!-- Custom Campfire Icon for Rest -->
+                 <g v-else-if="revealAll || node.status === 'available' || node.status === 'visited'" transform="translate(0, 0)" class="pointer-events-none">
+                    <!-- Logs -->
+                    <rect x="-18" y="8" width="36" height="6" rx="2" fill="#5d4037" transform="rotate(-15)" />
+                    <rect x="-18" y="8" width="36" height="6" rx="2" fill="#4e342e" transform="rotate(15)" />
+                    <rect x="-15" y="4" width="30" height="6" rx="2" fill="#3e2723" />
+                    <!-- Flames -->
+                    <path d="M -10 4 Q -15 -10 0 -25 Q 15 -10 10 4 Z" fill="#ef4444">
+                        <animate attributeName="d" values="M -10 4 Q -15 -10 0 -25 Q 15 -10 10 4 Z; M -10 4 Q -12 -15 0 -28 Q 12 -15 10 4 Z; M -10 4 Q -15 -10 0 -25 Q 15 -10 10 4 Z" dur="0.8s" repeatCount="indefinite" />
+                    </path>
+                    <path d="M -6 4 Q -10 -5 0 -15 Q 10 -5 6 4 Z" fill="#f59e0b">
+                        <animate attributeName="d" values="M -6 4 Q -10 -5 0 -15 Q 10 -5 6 4 Z; M -6 4 Q -8 -8 0 -18 Q 8 -8 6 4 Z; M -6 4 Q -10 -5 0 -15 Q 10 -5 6 4 Z" dur="0.6s" repeatCount="indefinite" />
+                    </path>
+                 </g>
                  
                  <text 
                    v-else
@@ -498,7 +530,7 @@ const handleMouseUp = () => {
     </div>
 
     <!-- Right Sidebar: Encounter Info -->
-    <div class="w-80 flex-shrink-0 flex flex-col border-l border-slate-800 bg-slate-900/95 text-slate-300 shadow-2xl z-20 backdrop-blur-md">
+    <div class="basis-96 grow-[2] min-w-[420px] flex-shrink-0 flex flex-col border-l border-slate-800 bg-slate-900/95 text-slate-300 shadow-2xl z-20 backdrop-blur-md relative transform-gpu">
         <div class="p-6 border-b border-slate-700 bg-slate-950/50">
             <h3 class="font-bold text-amber-500 mb-1 text-xs uppercase tracking-[0.2em]">Encounter Details</h3>
             <h2 class="text-xl font-bold text-slate-100 tracking-tight">
@@ -511,7 +543,15 @@ const handleMouseUp = () => {
             <div class="flex justify-center py-4">
                 <div class="w-24 h-24 rounded-2xl flex items-center justify-center text-5xl shadow-2xl border-2 border-white/10 relative overflow-hidden" :style="{ backgroundColor: getNodeColor(selectedNode.type) }">
                     <div class="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent"></div>
-                    <span class="relative z-10 filter drop-shadow-lg">{{ getNodeIcon(selectedNode.type) }}</span>
+                    <span v-if="selectedNode.type !== 'rest'" class="relative z-10 filter drop-shadow-lg">{{ getNodeIcon(selectedNode.type) }}</span>
+                    <!-- Larger Campfire for Panel -->
+                    <svg v-else viewBox="-30 -40 60 60" class="w-20 h-20 relative z-10 drop-shadow-xl">
+                        <rect x="-24" y="8" width="48" height="8" rx="2" fill="#5d4037" transform="rotate(-15)" />
+                        <rect x="-24" y="8" width="48" height="8" rx="2" fill="#4e342e" transform="rotate(15)" />
+                        <rect x="-20" y="4" width="40" height="8" rx="2" fill="#3e2723" />
+                        <path d="M -15 4 Q -20 -15 0 -35 Q 20 -15 15 4 Z" fill="#ef4444" />
+                        <path d="M -10 4 Q -15 -10 0 -25 Q 15 -10 10 4 Z" fill="#f59e0b" />
+                    </svg>
                 </div>
             </div>
 

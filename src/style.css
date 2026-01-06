@@ -29,12 +29,18 @@
     -moz-osx-font-smoothing: grayscale;
 }
 
-body {
+html,
+body,
+#app {
+    width: 100%;
+    height: 100%;
     margin: 0;
-    display: flex;
-    place-items: center;
+    padding: 0;
+    overflow: hidden;
+}
+
+body {
     min-width: 320px;
-    min-height: 100vh;
 }
 
 /* Mystical Glow Effect */
