@@ -228,8 +228,8 @@ const getNodeIcon = (type: string) => TYPE_ICONS[type] || '';
 const getNodeClass = (node: DungeonNode) => {
    const base = "transition-all duration-300 stroke-2 cursor-pointer ";
    
-   if (node.status === 'visited') return base + "fill-slate-800 stroke-slate-600 opacity-50"; // Dim visited
-   if (node.status === 'locked') return base + "fill-slate-900 stroke-slate-800 opacity-20 pointer-events-none";
+   if (node.status === 'visited') return base + "fill-slate-700 stroke-slate-500 opacity-70"; // Brighter visited
+   if (node.status === 'locked') return base + "fill-slate-800 stroke-slate-700 opacity-40 pointer-events-none"; // Brighter locked
    if (node.status === 'current') return base + "mystical-glow ring-2 ring-amber-400"; // Highlight current
    
    // Available: Glowing and Colored
@@ -492,7 +492,7 @@ const handleMouseUp = () => {
                 v-for="(edge, i) in mapData.edges" 
                 :key="`bg-edge-${i}`"
                 :d="getEdgePath(edge, 0)" 
-                class="stroke-slate-800 stroke-[2] opacity-30 fill-none"
+                class="stroke-slate-700 stroke-[2] opacity-50 fill-none"
                 stroke-linecap="round"
               />
 
