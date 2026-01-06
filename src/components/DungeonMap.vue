@@ -38,8 +38,8 @@ const nodeTypeCounts = ref<Record<string, number>>({
 });
 
 // Resizable Panels State
-const leftPanelWidth = ref(320);
-const rightPanelWidth = ref(550);
+const leftPanelWidth = ref(220);
+const rightPanelWidth = ref(450);
 const isResizingLeft = ref(false);
 const isResizingRight = ref(false);
 
@@ -55,18 +55,18 @@ const startResizingRight = (e: MouseEvent) => {
 
 const handleGlobalMouseMove = (e: MouseEvent) => {
     if (isResizingLeft.value) {
-        // Enforce min 320, and ensure map stays at least 800
+        // Enforce min 220, and ensure map stays at least 700
         // Map space = windowWidth - leftPanelWidth - rightPanelWidth
-        // leftPanelWidth < windowWidth - rightPanelWidth - 800
-        const maxWidth = window.innerWidth - rightPanelWidth.value - 800;
-        leftPanelWidth.value = Math.max(320, Math.min(e.clientX, maxWidth));
+        // leftPanelWidth < windowWidth - rightPanelWidth - 700
+        const maxWidth = window.innerWidth - rightPanelWidth.value - 700;
+        leftPanelWidth.value = Math.max(220, Math.min(e.clientX, maxWidth));
     } else if (isResizingRight.value) {
-        // Enforce min 420, and ensure map stays at least 800
+        // Enforce min 450, and ensure map stays at least 700
         // rightPanelWidth = windowWidth - e.clientX
-        // rightPanelWidth < windowWidth - leftPanelWidth - 800
-        const maxWidth = window.innerWidth - leftPanelWidth.value - 800;
+        // rightPanelWidth < windowWidth - leftPanelWidth - 700
+        const maxWidth = window.innerWidth - leftPanelWidth.value - 700;
         const targetWidth = window.innerWidth - e.clientX;
-        rightPanelWidth.value = Math.max(550, Math.min(targetWidth, maxWidth));
+        rightPanelWidth.value = Math.max(450, Math.min(targetWidth, maxWidth));
     }
 };
 
@@ -459,7 +459,7 @@ const handleMouseUp = () => {
 
     <!-- Map Viewport -->
     <div 
-        class="flex-1 min-w-[800px] relative flex justify-center bg-black overflow-hidden cursor-grab active:cursor-grabbing z-10"
+        class="flex-1 min-w-[700px] relative flex justify-center bg-black overflow-hidden cursor-grab active:cursor-grabbing z-10"
         @wheel="handleWheel"
         @mousedown="handleMouseDown"
         @mousemove="handleMouseMove"
