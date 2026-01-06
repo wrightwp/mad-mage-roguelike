@@ -15,10 +15,27 @@ const HEX_SIZE = 40;
 const mapData = ref<DungeonMapData | null>(null);
 const viewBox = ref({ x: 0, y: 0, w: MAP_WIDTH, h: 800 }); // Partial view
 
+// Selection
+const selectedNodeId = ref<string | null>(null);
+const selectedNode = computed(() => {
+    if (!mapData.value || !selectedNodeId.value) return null;
+    return mapData.value.nodes.find(n => n.id === selectedNodeId.value) || null;
+});
+
 // Settings
 const floorCount = ref(15);
 const showRestartConfirm = ref(false);
 const revealAll = ref(false);
+
+const nodeTypeCounts = ref<Record<string, number>>({
+    monster: 30,
+    elite: 10,
+    event: 8,
+    rest: 6,
+    treasure: 5,
+    shop: 4,
+    puzzle: 4
+});
 
 // Init
 onMounted(() => {
@@ -26,8 +43,9 @@ onMounted(() => {
 });
 
 const initMap = () => {
-  mapData.value = generateDungeon(floorCount.value, MAP_WIDTH, MAP_HEIGHT);
+  mapData.value = generateDungeon(floorCount.value, MAP_WIDTH, MAP_HEIGHT, nodeTypeCounts.value);
   visitedPath.value = [];
+  selectedNodeId.value = null;
   scrollToBottom();
 };
 
@@ -84,6 +102,9 @@ const hexPath = computed(() => {
 });
 
 const handleNodeClick = (node: DungeonNode) => {
+   // Always set selection
+   selectedNodeId.value = node.id;
+
    if (node.status !== 'available') return;
    
    // Find the parent node we came from (must be visited and connected to this node)
@@ -272,33 +293,52 @@ const handleMouseUp = () => {
 <template>
   <div class="dungeon-map-container h-screen w-full flex overflow-hidden font-sans" :style="{ backgroundImage: `url(${outerBg})`, backgroundSize: 'cover', backgroundPosition: 'center', backgroundAttachment: 'fixed' }">
     
-    <!-- Sidebar / HUD -->
-    <div class="w-64 flex-shrink-0 flex flex-col border-r border-slate-800 bg-slate-900/90 text-slate-300 shadow-2xl z-20 backdrop-blur-md">
+    <!-- Left Sidebar: Map Controls & Legend -->
+    <div class="w-72 flex-shrink-0 flex flex-col border-r border-slate-800 bg-slate-900/90 text-slate-300 shadow-2xl z-20 backdrop-blur-md">
        <div class="p-6 border-b border-slate-700 bg-slate-900 relative overflow-hidden" :style="{ backgroundImage: `url(${headerDecoration})`, backgroundSize: 'cover', backgroundPosition: 'center' }">
            <div class="absolute inset-0 bg-slate-900/80"></div>
            <h1 class="text-2xl font-bold text-amber-400 tracking-wider fantasy-header mystical-glow relative z-10">DUNGEON MAP</h1>
            <div class="text-xs text-purple-300 mt-1 uppercase tracking-widest relative z-10" style="font-family: 'Cinzel', serif;">Undermountain - Halaster's Domain</div>
        </div>
        
-       <div class="p-6 flex-1 overflow-y-auto">
-           <h3 class="font-bold text-slate-100 mb-4 text-sm uppercase tracking-wider border-b border-slate-700/50 pb-2">Legend</h3>
-           <div class="space-y-3">
-               <div v-for="(color, type) in TYPE_COLORS" :key="type" class="flex items-center gap-3 bg-slate-800/50 p-2 rounded-md border border-slate-700/50">
-                   <div class="w-8 h-8 rounded-lg flex items-center justify-center text-lg shadow-sm" :style="{ backgroundColor: color, color: '#fff' }">
-                       <span class="filter drop-shadow-md">{{ getNodeIcon(type as string) }}</span>
+       <div class="p-6 flex-1 overflow-y-auto custom-scrollbar">
+           <h3 class="font-bold text-slate-100 mb-4 text-sm uppercase tracking-wider border-b border-slate-700/50 pb-2">Legend & Config</h3>
+           <div class="space-y-4">
+               <div v-for="(color, type) in TYPE_COLORS" :key="type">
+                   <div v-if="type !== 'boss' && type !== 'start'" class="space-y-2">
+                       <div class="flex items-center gap-3">
+                           <div class="w-10 h-10 rounded-lg flex items-center justify-center text-2xl shadow-lg border border-white/10" :style="{ backgroundColor: color, color: '#fff' }">
+                               <span class="filter drop-shadow-md">{{ getNodeIcon(type as string) }}</span>
+                           </div>
+                           <div class="flex-1">
+                               <div class="capitalize text-xs font-bold text-slate-400 uppercase tracking-tighter">{{ type }}</div>
+                               <input 
+                                   type="number" 
+                                   v-model.number="nodeTypeCounts[type]" 
+                                   min="0" 
+                                   max="50"
+                                   class="w-full bg-slate-800/50 border border-slate-700/50 rounded px-2 py-1 text-slate-200 text-sm focus:outline-none focus:border-amber-500/50 mt-1"
+                               />
+                           </div>
+                       </div>
                    </div>
-                   <span class="capitalize text-sm font-medium text-slate-200">{{ type }}</span>
+                   <div v-else class="flex items-center gap-3 opacity-60">
+                       <div class="w-10 h-10 rounded-lg flex items-center justify-center text-2xl shadow-lg border border-white/10" :style="{ backgroundColor: color, color: '#fff' }">
+                           <span class="filter drop-shadow-md">{{ getNodeIcon(type as string) }}</span>
+                       </div>
+                       <span class="capitalize text-sm font-medium text-slate-200">{{ type }}</span>
+                   </div>
                </div>
            </div>
        </div>
 
        <!-- Map Settings -->
        <div class="p-4 border-t border-slate-700 bg-slate-900/50">
-           <h3 class="font-bold text-slate-100 mb-3 text-sm uppercase tracking-wider">Settings</h3>
+           <h3 class="font-bold text-slate-100 mb-3 text-sm uppercase tracking-wider">World Settings</h3>
            
            <div class="space-y-3">
                <div>
-                   <label class="block text-xs text-slate-400 mb-1">Number of Floors</label>
+                   <label class="block text-xs text-slate-400 mb-1 tracking-widest uppercase">Floor Depth</label>
                    <input 
                        type="number" 
                        v-model.number="floorCount" 
@@ -310,42 +350,40 @@ const handleMouseUp = () => {
                
                 <button 
                     @click="showRestartConfirm = true"
-                    class="w-full bg-amber-600 hover:bg-amber-500 text-white font-bold py-2 px-4 rounded transition-colors text-sm"
+                    class="w-full bg-amber-600 hover:bg-amber-500 text-white font-bold py-2.5 px-4 rounded transition-all transform active:scale-95 text-sm shadow-lg shadow-amber-900/20"
                 >
-                    🔄 Restart Map
+                    🔄 Regenerate Map
                 </button>
                 
                 <button 
                     @click="revealAll = !revealAll"
                     :class="revealAll ? 'bg-emerald-600 hover:bg-emerald-500' : 'bg-slate-700 hover:bg-slate-600'"
-                    class="w-full text-white font-bold py-2 px-4 rounded transition-colors text-sm"
+                    class="w-full text-white font-bold py-2.5 px-4 rounded transition-all text-sm"
                 >
                     {{ revealAll ? '👁️ Hide All' : '👁️ Reveal All' }}
                 </button>
             </div>
        </div>
 
-       <!-- Status / Footer -->
-       <div class="p-4 bg-slate-950 text-xs text-slate-600 border-t border-slate-800">
-           Mad Mage Roguelike Dev Build
+       <div class="p-4 bg-slate-950 text-[10px] text-slate-600 border-t border-slate-800 flex justify-between uppercase tracking-widest">
+           <span>v0.2.0</span>
+           <span>Preview Build</span>
        </div>
     </div>
 
     <!-- Map Viewport -->
     <div 
-        class="flex-1 relative flex justify-center bg-black overflow-hidden relative cursor-grab active:cursor-grabbing"
+        class="flex-1 relative flex justify-center bg-black overflow-hidden cursor-grab active:cursor-grabbing"
         @wheel="handleWheel"
         @mousedown="handleMouseDown"
         @mousemove="handleMouseMove"
         @mouseup="handleMouseUp"
         @mouseleave="handleMouseUp"
     >
-        <!-- Atmospheric Background Layers -->
         <div class="absolute inset-0 pointer-events-none" :style="{ backgroundImage: `url(${dungeonMapBg})`, backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.15 }"></div>
-        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-purple-900/30 via-slate-950/80 to-black opacity-90 pointer-events-none"></div>
-        <div class="absolute bottom-0 w-full h-32 bg-gradient-to-t from-black to-transparent pointer-events-none z-10"></div>
+        <div class="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-purple-900/10 via-slate-950/80 to-black opacity-90 pointer-events-none"></div>
         
-        <div class="relative h-full aspect-[800/800] max-w-5xl shadow-2xl backdrop-blur-sm transition-opacity duration-1000 pointer-events-none">
+        <div class="relative h-full aspect-[800/800] max-w-5xl shadow-2xl backdrop-blur-[2px] pointer-events-none">
             <svg 
                v-if="mapData"
                :viewBox="`${viewBox.x} ${viewBox.y} ${viewBox.w} ${viewBox.h}`"
@@ -353,23 +391,25 @@ const handleMouseUp = () => {
                preserveAspectRatio="xMidYMid meet" 
             >
               <defs>
-                <!-- Generic Glow -->
                 <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
                    <feGaussianBlur stdDeviation="3" result="blur" />
                    <feComposite in="SourceGraphic" in2="blur" operator="over" />
                 </filter>
+                <filter id="strong-glow" x="-50%" y="-50%" width="200%" height="200%">
+                   <feGaussianBlur stdDeviation="6" result="blur" />
+                   <feComposite in="SourceGraphic" in2="blur" operator="over" />
+                </filter>
               </defs>
               
-              <!-- Edges (Background Faint) -->
+              <!-- Edges -->
               <path 
                 v-for="(edge, i) in mapData.edges" 
                 :key="`bg-edge-${i}`"
                 :d="getEdgePath(edge, 0)" 
-                class="stroke-slate-700 stroke-[2] opacity-20 fill-none"
+                class="stroke-slate-800 stroke-[2] opacity-30 fill-none"
                 stroke-linecap="round"
               />
 
-              <!-- Active/Wandering Paths (White Dashed - Path Taken) -->
               <path 
                 v-for="(edge, i) in activeEdges" 
                 :key="`active-edge-${i}`"
@@ -382,7 +422,6 @@ const handleMouseUp = () => {
                 style="filter: drop-shadow(0 0 8px rgba(255,255,255,0.7));"
               />
               
-              <!-- Available Choice Paths (Amber/Gold - Current Choices) -->
               <path 
                 v-for="(edge, i) in availableEdges" 
                 :key="`choice-edge-${i}`"
@@ -393,7 +432,7 @@ const handleMouseUp = () => {
                 stroke-linecap="round"
                 style="filter: drop-shadow(0 0 10px rgba(245, 158, 11, 0.8));"
               >
-                <animate attributeName="opacity" values="0.6;1;0.6" dur="1.5s" repeatCount="indefinite" />
+                <animate attributeName="opacity" values="0.4;0.9;0.4" dur="2s" repeatCount="indefinite" />
               </path>
               
               <!-- Nodes -->
@@ -404,11 +443,24 @@ const handleMouseUp = () => {
                 class="group cursor-pointer"
                 @click="handleNodeClick(node)"
               >
-                 <!-- Glow Ring (On Hover or Available) -->
+                 <!-- Selection Highlight -->
+                 <circle 
+                    v-if="selectedNodeId === node.id"
+                    r="38" 
+                    fill="none"
+                    stroke="#fbbf24"
+                    stroke-width="3"
+                    stroke-dasharray="4 4"
+                    filter="url(#strong-glow)"
+                 >
+                    <animateTransform attributeName="transform" type="rotate" from="0" to="360" dur="10s" repeatCount="indefinite" />
+                 </circle>
+
+                 <!-- Glow Ring -->
                  <circle 
                     v-if="node.status === 'available'"
-                    r="28" 
-                    class="transition-opacity duration-300 opacity-30 group-hover:opacity-100"
+                    r="32" 
+                    class="transition-opacity duration-300 opacity-40 group-hover:opacity-100"
                     :fill="getNodeColor(node.type)"
                     filter="url(#glow)"
                  />
@@ -417,28 +469,26 @@ const handleMouseUp = () => {
                  <polygon 
                    :points="hexPath" 
                    :class="getNodeClass(node)"
-                   :fill="node.status === 'available' ? getNodeColor(node.type) : undefined"
-                   class="transition-all duration-200 group-hover:brightness-110 group-active:scale-95"
-                   :stroke="node.status === 'available' ? '#ffffff' : undefined"
-                   stroke-width="1.5"
+                   :fill="node.status === 'available' ? getNodeColor(node.type) : (selectedNodeId === node.id ? '#1e293b' : undefined)"
+                   class="transition-all duration-200 group-hover:brightness-125 group-active:scale-90"
+                   :stroke="selectedNodeId === node.id ? '#fbbf24' : (node.status === 'available' ? '#ffffff' : '#475569')"
+                   :stroke-width="selectedNodeId === node.id ? 3 : 1.5"
                  />
                  
-                 <!-- Icon (Only show for available/visited nodes OR when revealAll is on) -->
                  <text 
                    v-if="revealAll || node.status === 'available' || node.status === 'visited'"
-                   y="8" 
+                   y="10" 
                    text-anchor="middle" 
-                   class="text-[18px] pointer-events-none select-none font-bold filter drop-shadow-md transition-transform duration-200 group-hover:-translate-y-1 fill-white"
+                   class="text-[24px] pointer-events-none select-none font-bold filter drop-shadow-md transition-transform duration-200 group-hover:-translate-y-1 fill-white"
                  >
                     {{ getNodeIcon(node.type) }}
                  </text>
                  
-                 <!-- Mystery icon for locked nodes (only when revealAll is off) -->
                  <text 
                    v-else
-                   y="8" 
+                   y="10" 
                    text-anchor="middle" 
-                   class="text-[18px] pointer-events-none select-none fill-slate-700"
+                   class="text-[24px] pointer-events-none select-none fill-slate-700 font-bold"
                  >
                     ?
                  </text>
@@ -446,28 +496,102 @@ const handleMouseUp = () => {
             </svg>
         </div>
     </div>
+
+    <!-- Right Sidebar: Encounter Info -->
+    <div class="w-80 flex-shrink-0 flex flex-col border-l border-slate-800 bg-slate-900/95 text-slate-300 shadow-2xl z-20 backdrop-blur-md">
+        <div class="p-6 border-b border-slate-700 bg-slate-950/50">
+            <h3 class="font-bold text-amber-500 mb-1 text-xs uppercase tracking-[0.2em]">Encounter Details</h3>
+            <h2 class="text-xl font-bold text-slate-100 tracking-tight">
+                {{ selectedNode ? (selectedNode.type === 'start' ? 'Dungeon Entrance' : selectedNode.type === 'boss' ? 'Boss Chamber' : selectedNode.type.charAt(0).toUpperCase() + selectedNode.type.slice(1)) : 'No Selection' }}
+            </h2>
+        </div>
+
+        <div v-if="selectedNode" class="p-6 flex-1 overflow-y-auto custom-scrollbar space-y-6">
+            <!-- Icon Display -->
+            <div class="flex justify-center py-4">
+                <div class="w-24 h-24 rounded-2xl flex items-center justify-center text-5xl shadow-2xl border-2 border-white/10 relative overflow-hidden" :style="{ backgroundColor: getNodeColor(selectedNode.type) }">
+                    <div class="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent"></div>
+                    <span class="relative z-10 filter drop-shadow-lg">{{ getNodeIcon(selectedNode.type) }}</span>
+                </div>
+            </div>
+
+            <!-- Stats/Info -->
+            <div class="space-y-4">
+                <div class="bg-slate-800/40 rounded-xl p-4 border border-slate-700/50">
+                    <div class="text-[10px] text-slate-500 uppercase tracking-widest mb-2">Description</div>
+                    <p class="text-sm text-slate-200 leading-relaxed font-serif italic">
+                        {{ selectedNode.description || 'A mysterious chamber hidden deep within the Undermountain.' }}
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-2 gap-3">
+                    <div class="bg-slate-800/40 rounded-xl p-3 border border-slate-700/50">
+                        <div class="text-[10px] text-slate-500 uppercase tracking-widest mb-1">Exits</div>
+                        <div class="text-lg font-bold text-amber-400">{{ selectedNode.connections.length }}</div>
+                    </div>
+                    <div class="bg-slate-800/40 rounded-xl p-3 border border-slate-700/50">
+                        <div class="text-[10px] text-slate-500 uppercase tracking-widest mb-1">Status</div>
+                        <div class="text-sm font-bold capitalize" :class="{
+                            'text-emerald-400': selectedNode.status === 'visited',
+                            'text-amber-400': selectedNode.status === 'available',
+                            'text-slate-500': selectedNode.status === 'locked'
+                        }">{{ selectedNode.status }}</div>
+                    </div>
+                </div>
+
+                <div v-if="selectedNode.type === 'monster' || selectedNode.type === 'elite'" class="bg-red-900/10 rounded-xl p-4 border border-red-900/30">
+                    <div class="text-[10px] text-red-400 uppercase tracking-widest mb-2 font-bold">Threat Assessment</div>
+                    <div class="flex items-center gap-2">
+                        <span v-for="i in (selectedNode.type === 'elite' ? 3 : 1)" :key="i">💀</span>
+                        <span class="text-xs text-red-200/70 font-medium ml-2">
+                            {{ selectedNode.type === 'elite' ? 'High Danger' : 'Standard Encounter' }}
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div v-else class="p-6 flex-1 flex flex-col items-center justify-center text-center space-y-4 opacity-30">
+            <div class="text-4xl">🗺️</div>
+            <p class="text-sm uppercase tracking-widest px-8">Select a node on the map to view detailed encounter information</p>
+        </div>
+
+        <div class="p-4 bg-slate-950/80 border-t border-slate-800">
+            <button 
+                v-if="selectedNode && selectedNode.status === 'available'"
+                @click="handleNodeClick(selectedNode)"
+                class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 rounded-xl transition-all shadow-lg shadow-emerald-900/20 active:scale-95 flex items-center justify-center gap-2"
+            >
+                <span>Enter Encounter</span>
+                <span class="text-xl">➔</span>
+            </button>
+            <div v-else class="text-center py-3 text-xs text-slate-600 uppercase tracking-widest font-bold">
+                {{ selectedNode ? (selectedNode.status === 'visited' ? 'Already Visited' : 'Path Blocked') : 'Waiting for Input' }}
+            </div>
+        </div>
+    </div>
     
-    <!-- Restart Confirmation Modal (Full Screen Overlay) -->
+    <!-- Restart Confirmation Modal -->
     <div 
         v-if="showRestartConfirm" 
-        class="fixed top-0 left-0 w-screen h-screen flex items-center justify-center"
-        style="z-index: 9999; background-color: rgba(0, 0, 0, 0.5);"
+        class="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm"
     >
-        <div style="background-color: #1e293b;" class="border border-slate-700 rounded-lg p-6 max-w-sm text-center shadow-2xl">
-            <h3 class="text-xl font-bold text-slate-100 mb-3">Restart Map?</h3>
-            <p class="text-slate-400 text-sm mb-6">All progress will be lost.</p>
+        <div class="bg-slate-900 border border-slate-700 rounded-2xl p-8 max-w-sm w-full text-center shadow-2xl transform transition-all scale-100">
+            <div class="w-16 h-16 bg-red-900/30 text-red-500 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl">⚠️</div>
+            <h3 class="text-2xl font-bold text-slate-100 mb-2">Reset Journey?</h3>
+            <p class="text-slate-400 text-sm mb-8 leading-relaxed">All progress in this descent will be lost. The Undermountain will shift and reshape itself.</p>
             <div class="flex gap-4">
                 <button 
                     @click="showRestartConfirm = false"
-                    class="flex-1 bg-slate-700 hover:bg-slate-600 text-slate-200 font-bold py-3 px-4 rounded-lg transition-colors"
+                    class="flex-1 bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold py-3 px-4 rounded-xl transition-colors border border-slate-700"
                 >
-                    Cancel
+                    Stay
                 </button>
                 <button 
                     @click="restartMap"
-                    class="flex-1 bg-red-600 hover:bg-red-500 text-white font-bold py-3 px-4 rounded-lg transition-colors"
+                    class="flex-1 bg-red-600 hover:bg-red-500 text-white font-bold py-3 px-4 rounded-xl transition-colors shadow-lg shadow-red-900/40"
                 >
-                    Restart
+                    Reset
                 </button>
             </div>
         </div>
@@ -476,5 +600,17 @@ const handleMouseUp = () => {
 </template>
 
 <style scoped>
-/* Scoped styles if needed, mostly using Tailwind */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 10px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
 </style>

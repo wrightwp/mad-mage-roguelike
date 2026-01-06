@@ -7,6 +7,7 @@ export interface DungeonNode {
     connections: string[]; // IDs of connected nodes in the NEXT layer
     parents: string[]; // IDs of nodes in the PREVIOUS layer (for backtracking/validation)
     status: 'locked' | 'available' | 'visited' | 'current';
+    description?: string;
 }
 
 export interface DungeonMapData {
