@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted, computed } from 'vue';
+import { ref, onMounted, onUnmounted, computed } from 'vue';
 import { generateDungeon } from '../logic/dungeonGen';
 import type { DungeonMapData, DungeonNode } from '../types';
 
@@ -37,9 +37,54 @@ const nodeTypeCounts = ref<Record<string, number>>({
     puzzle: 4
 });
 
+// Resizable Panels State
+const leftPanelWidth = ref(320);
+const rightPanelWidth = ref(420);
+const isResizingLeft = ref(false);
+const isResizingRight = ref(false);
+
+const startResizingLeft = (e: MouseEvent) => {
+    isResizingLeft.value = true;
+    e.preventDefault();
+};
+
+const startResizingRight = (e: MouseEvent) => {
+    isResizingRight.value = true;
+    e.preventDefault();
+};
+
+const handleGlobalMouseMove = (e: MouseEvent) => {
+    if (isResizingLeft.value) {
+        // Enforce min 320, and ensure map stays at least 800
+        // Map space = windowWidth - leftPanelWidth - rightPanelWidth
+        // leftPanelWidth < windowWidth - rightPanelWidth - 800
+        const maxWidth = window.innerWidth - rightPanelWidth.value - 800;
+        leftPanelWidth.value = Math.max(320, Math.min(e.clientX, maxWidth));
+    } else if (isResizingRight.value) {
+        // Enforce min 420, and ensure map stays at least 800
+        // rightPanelWidth = windowWidth - e.clientX
+        // rightPanelWidth < windowWidth - leftPanelWidth - 800
+        const maxWidth = window.innerWidth - leftPanelWidth.value - 800;
+        const targetWidth = window.innerWidth - e.clientX;
+        rightPanelWidth.value = Math.max(420, Math.min(targetWidth, maxWidth));
+    }
+};
+
+const stopResizing = () => {
+    isResizingLeft.value = false;
+    isResizingRight.value = false;
+};
+
 // Init
 onMounted(() => {
   initMap();
+  window.addEventListener('mousemove', handleGlobalMouseMove);
+  window.addEventListener('mouseup', stopResizing);
+});
+
+onUnmounted(() => {
+  window.removeEventListener('mousemove', handleGlobalMouseMove);
+  window.removeEventListener('mouseup', stopResizing);
 });
 
 const initMap = () => {
@@ -291,7 +336,7 @@ const handleMouseUp = () => {
 </script>
 
 <template>
-  <div class="dungeon-map-container h-screen w-full flex overflow-hidden font-sans relative">
+  <div class="dungeon-map-container h-screen w-full flex overflow-x-auto overflow-y-hidden font-sans relative">
     <div 
         class="fixed inset-0 z-0 bg-no-repeat pointer-events-none" 
         :style="{ 
@@ -303,7 +348,10 @@ const handleMouseUp = () => {
     ></div>
 
     <!-- Left Sidebar: Map Controls & Legend -->
-    <div class="basis-72 grow min-w-[320px] flex-shrink-0 flex flex-col border-r border-slate-800 bg-slate-900/90 text-slate-300 shadow-2xl z-20 backdrop-blur-md relative transform-gpu">
+    <div 
+        class="flex-shrink-0 flex flex-col border-r border-slate-800 bg-slate-900/90 text-slate-300 shadow-2xl z-20 backdrop-blur-md relative transform-gpu overflow-hidden"
+        :style="{ width: leftPanelWidth + 'px' }"
+    >
        <div class="p-6 border-b border-slate-700 bg-slate-900 relative overflow-hidden" :style="{ backgroundImage: `url(${headerDecoration})`, backgroundSize: 'cover', backgroundPosition: 'center' }">
            <div class="absolute inset-0 bg-slate-900/80"></div>
            <h1 class="text-2xl font-bold text-amber-400 tracking-wider fantasy-header mystical-glow relative z-10">DUNGEON MAP</h1>
@@ -388,9 +436,17 @@ const handleMouseUp = () => {
        </div>
     </div>
 
+    <!-- Left Resizer -->
+    <div 
+       class="w-1.5 h-full cursor-col-resize z-30 hover:bg-amber-500/30 transition-colors flex items-center justify-center group active:bg-amber-500/50"
+       @mousedown="startResizingLeft"
+    >
+       <div class="w-px h-12 bg-slate-700 group-hover:bg-amber-500/50"></div>
+    </div>
+
     <!-- Map Viewport -->
     <div 
-        class="flex-[10] relative flex justify-center bg-black overflow-hidden cursor-grab active:cursor-grabbing z-10"
+        class="flex-1 min-w-[800px] relative flex justify-center bg-black overflow-hidden cursor-grab active:cursor-grabbing z-10"
         @wheel="handleWheel"
         @mousedown="handleMouseDown"
         @mousemove="handleMouseMove"
@@ -529,8 +585,19 @@ const handleMouseUp = () => {
         </div>
     </div>
 
+    <!-- Right Resizer -->
+    <div 
+        class="w-1.5 h-full cursor-col-resize z-30 hover:bg-amber-500/30 transition-colors flex items-center justify-center group active:bg-amber-500/50"
+        @mousedown="startResizingRight"
+     >
+        <div class="w-px h-12 bg-slate-700 group-hover:bg-amber-500/50"></div>
+     </div>
+
     <!-- Right Sidebar: Encounter Info -->
-    <div class="basis-96 grow-[2] min-w-[420px] flex-shrink-0 flex flex-col border-l border-slate-800 bg-slate-900/95 text-slate-300 shadow-2xl z-20 backdrop-blur-md relative transform-gpu">
+    <div 
+        class="flex-shrink-0 flex flex-col border-l border-slate-800 bg-slate-900/95 text-slate-300 shadow-2xl z-20 backdrop-blur-md relative transform-gpu overflow-hidden"
+        :style="{ width: rightPanelWidth + 'px' }"
+    >
         <div class="p-6 border-b border-slate-700 bg-slate-950/50">
             <h3 class="font-bold text-amber-500 mb-1 text-xs uppercase tracking-[0.2em]">Encounter Details</h3>
             <h2 class="text-xl font-bold text-slate-100 tracking-tight">
