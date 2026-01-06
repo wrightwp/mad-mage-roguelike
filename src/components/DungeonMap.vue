@@ -39,7 +39,7 @@ const nodeTypeCounts = ref<Record<string, number>>({
 
 // Resizable Panels State
 const leftPanelWidth = ref(320);
-const rightPanelWidth = ref(420);
+const rightPanelWidth = ref(550);
 const isResizingLeft = ref(false);
 const isResizingRight = ref(false);
 
@@ -66,7 +66,7 @@ const handleGlobalMouseMove = (e: MouseEvent) => {
         // rightPanelWidth < windowWidth - leftPanelWidth - 800
         const maxWidth = window.innerWidth - leftPanelWidth.value - 800;
         const targetWidth = window.innerWidth - e.clientX;
-        rightPanelWidth.value = Math.max(420, Math.min(targetWidth, maxWidth));
+        rightPanelWidth.value = Math.max(550, Math.min(targetWidth, maxWidth));
     }
 };
 
