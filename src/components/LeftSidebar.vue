@@ -1,0 +1,134 @@
+<script setup lang="ts">
+import { TYPE_COLORS, getNodeIcon } from '../utils/nodeStyles';
+import headerDecoration from '../assets/header_decoration.png';
+
+interface Props {
+  width: number;
+  nodeTypeCounts: Record<string, number>;
+  floorCount: number;
+  revealAll: boolean;
+}
+
+interface Emits {
+  (e: 'update:nodeTypeCounts', value: Record<string, number>): void;
+  (e: 'update:floorCount', value: number): void;
+  (e: 'update:revealAll', value: boolean): void;
+  (e: 'regenerate'): void;
+}
+
+const props = defineProps<Props>();
+const emit = defineEmits<Emits>();
+
+const updateNodeTypeCount = (type: string, value: number) => {
+  const updated = { ...props.nodeTypeCounts, [type]: value };
+  emit('update:nodeTypeCounts', updated);
+};
+</script>
+
+<template>
+  <div 
+    class="flex-shrink-0 flex flex-col border-r border-slate-800 bg-slate-900/90 text-slate-300 shadow-2xl z-20 backdrop-blur-md relative transform-gpu overflow-hidden"
+    :style="{ width: width + 'px' }"
+  >
+    <div class="p-6 border-b border-slate-700 bg-slate-900 relative overflow-hidden" :style="{ backgroundImage: `url(${headerDecoration})`, backgroundSize: 'cover', backgroundPosition: 'center' }">
+      <div class="absolute inset-0 bg-slate-900/80"></div>
+      <h1 class="text-2xl font-bold text-amber-400 tracking-wider fantasy-header mystical-glow relative z-10">DUNGEON MAP</h1>
+      <div class="text-xs text-purple-300 mt-1 uppercase tracking-widest relative z-10" style="font-family: 'Cinzel', serif;">Undermountain - Halaster's Domain</div>
+    </div>
+    
+    <div class="p-6 flex-1 overflow-y-auto custom-scrollbar">
+      <h3 class="font-bold text-slate-100 mb-4 text-sm uppercase tracking-wider border-b border-slate-700/50 pb-2">Legend & Config</h3>
+      <div class="space-y-4">
+        <div v-for="(color, type) in TYPE_COLORS" :key="type">
+          <div v-if="type !== 'boss' && type !== 'start'" class="space-y-2">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-lg flex items-center justify-center text-2xl shadow-lg border border-white/10" :style="{ backgroundColor: color, color: '#fff' }">
+                <span v-if="type !== 'rest'" class="filter drop-shadow-md">{{ getNodeIcon(type as string) }}</span>
+                <!-- Small Campfire for Legend -->
+                <svg v-else viewBox="-30 -30 60 60" class="w-7 h-7 filter drop-shadow-md">
+                  <rect x="-24" y="8" width="48" height="8" rx="2" fill="#5d4037" transform="rotate(-15)" />
+                  <rect x="-24" y="8" width="48" height="8" rx="2" fill="#4e342e" transform="rotate(15)" />
+                  <rect x="-20" y="4" width="40" height="8" rx="2" fill="#3e2723" />
+                  <path d="M -15 4 Q -20 -15 0 -35 Q 20 -15 15 4 Z" fill="#ef4444" />
+                  <path d="M -10 4 Q -15 -10 0 -25 Q 15 -10 10 4 Z" fill="#f59e0b" />
+                </svg>
+              </div>
+              <div class="flex-1">
+                <div class="capitalize text-xs font-bold text-slate-400 uppercase tracking-tighter">{{ type }}</div>
+                <input 
+                  type="number" 
+                  :value="nodeTypeCounts[type]"
+                  @input="updateNodeTypeCount(type, Number(($event.target as HTMLInputElement).value))"
+                  min="0" 
+                  max="50"
+                  class="w-full bg-slate-800/50 border border-slate-700/50 rounded px-2 py-1 text-slate-200 text-sm focus:outline-none focus:border-amber-500/50 mt-1"
+                />
+              </div>
+            </div>
+          </div>
+          <div v-else class="flex items-center gap-3 opacity-60">
+            <div class="w-10 h-10 rounded-lg flex items-center justify-center text-2xl shadow-lg border border-white/10" :style="{ backgroundColor: color, color: '#fff' }">
+              <span class="filter drop-shadow-md">{{ getNodeIcon(type as string) }}</span>
+            </div>
+            <span class="capitalize text-sm font-medium text-slate-200">{{ type }}</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Map Settings -->
+    <div class="p-4 border-t border-slate-700 bg-slate-900/50">
+      <h3 class="font-bold text-slate-100 mb-3 text-sm uppercase tracking-wider">World Settings</h3>
+      
+      <div class="space-y-3">
+        <div>
+          <label class="block text-xs text-slate-400 mb-1 tracking-widest uppercase">Floor Depth</label>
+          <input 
+            type="number" 
+            :value="floorCount"
+            @input="emit('update:floorCount', Number(($event.target as HTMLInputElement).value))"
+            min="5" 
+            max="30"
+            class="w-full bg-slate-800 border border-slate-700 rounded px-3 py-2 text-slate-200 text-sm focus:outline-none focus:border-amber-500"
+          />
+        </div>
+        
+        <button 
+          @click="emit('regenerate')"
+          class="w-full bg-amber-600 hover:bg-amber-500 text-white font-bold py-2.5 px-4 rounded transition-all transform active:scale-95 text-sm shadow-lg shadow-amber-900/20"
+        >
+          🔄 Regenerate Map
+        </button>
+        
+        <button 
+          @click="emit('update:revealAll', !revealAll)"
+          :class="revealAll ? 'bg-emerald-600 hover:bg-emerald-500' : 'bg-slate-700 hover:bg-slate-600'"
+          class="w-full text-white font-bold py-2.5 px-4 rounded transition-all text-sm"
+        >
+          {{ revealAll ? '👁️ Hide All' : '👁️ Reveal All' }}
+        </button>
+      </div>
+    </div>
+
+    <div class="p-4 bg-slate-950 text-[10px] text-slate-600 border-t border-slate-800 flex justify-between uppercase tracking-widest">
+      <span>v0.2.0</span>
+      <span>Preview Build</span>
+    </div>
+  </div>
+</template>
+
+<style scoped>
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 10px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}
+</style>
