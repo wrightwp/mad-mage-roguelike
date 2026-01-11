@@ -1,4 +1,5 @@
 import { DungeonNode, DungeonMapData } from '../types';
+import { encounterLibrary } from '../data/encounterLibrary';
 
 export const generateDungeon = (
     floors: number = 15,
@@ -99,10 +100,17 @@ export const generateDungeon = (
         [typePool[i], typePool[j]] = [typePool[j], typePool[i]];
     }
 
-    // 3. Assign Types and Descriptions
-    const MONSTER_ENCOUNTERS = ['Goblins', 'Bugbears', 'Skeletons', 'Zombies', 'Orcs', 'Hobgoblins', 'Giant Spiders'];
-    const ELITE_ENCOUNTERS = ['Beholder Zombie', 'Mind Flayer', 'Ogre Chieftain', 'Wraith', 'Flesh Golem'];
-    const EVENT_ENCOUNTERS = ['A mysterious fountain', 'A riddle engraved on a wall', 'A dying explorer', 'A localized magical storm'];
+    // 3. Assign Types and Encounter Data
+    // Map node types to encounter types
+    const encounterTypeMap: Record<string, 'combat' | 'exploration' | 'social' | 'puzzle'> = {
+        'monster': 'combat',
+        'elite': 'combat',
+        'event': 'exploration',
+        'puzzle': 'puzzle',
+        'shop': 'social',
+        'treasure': 'exploration',
+        'rest': 'exploration'
+    };
 
     standardNodes.forEach((node, idx) => {
         if (idx < typePool.length) {
@@ -111,29 +119,43 @@ export const generateDungeon = (
             node.type = 'monster'; // Default filler
         }
 
-        // Add Descriptions
-        switch (node.type) {
-            case 'monster':
-                node.description = `A group of ${MONSTER_ENCOUNTERS[Math.floor(Math.random() * MONSTER_ENCOUNTERS.length)]} blocks your path.`;
-                break;
-            case 'elite':
-                node.description = `A dangerous ${ELITE_ENCOUNTERS[Math.floor(Math.random() * ELITE_ENCOUNTERS.length)]} lurks here.`;
-                break;
-            case 'event':
-                node.description = EVENT_ENCOUNTERS[Math.floor(Math.random() * EVENT_ENCOUNTERS.length)];
-                break;
-            case 'rest':
-                node.description = 'A relatively safe spot to catch your breath and mend your wounds.';
-                break;
-            case 'treasure':
-                node.description = 'A glimmering chest lies half-buried in the shadows.';
-                break;
-            case 'shop':
-                node.description = 'A strange merchant has set up a small stall here.';
-                break;
-            case 'puzzle':
-                node.description = 'An intricate mechanism or riddle prevents further progress.';
-                break;
+        // Get encounter type for this node
+        const encounterType = encounterTypeMap[node.type] || 'combat';
+
+        // Get appropriate encounter for this level
+        const encounter = encounterLibrary.getRandomEncounter(
+            encounterType,
+            node.layer // Use layer as level
+        );
+
+        if (encounter) {
+            node.encounter = encounter;
+            node.description = encounter.description;
+        } else {
+            // Fallback descriptions if no encounter found
+            switch (node.type) {
+                case 'monster':
+                    node.description = 'A group of monsters blocks your path.';
+                    break;
+                case 'elite':
+                    node.description = 'A dangerous elite creature lurks here.';
+                    break;
+                case 'event':
+                    node.description = 'A mysterious event awaits.';
+                    break;
+                case 'rest':
+                    node.description = 'A relatively safe spot to catch your breath and mend your wounds.';
+                    break;
+                case 'treasure':
+                    node.description = 'A glimmering chest lies half-buried in the shadows.';
+                    break;
+                case 'shop':
+                    node.description = 'A strange merchant has set up a small stall here.';
+                    break;
+                case 'puzzle':
+                    node.description = 'An intricate mechanism or riddle prevents further progress.';
+                    break;
+            }
         }
     });
 

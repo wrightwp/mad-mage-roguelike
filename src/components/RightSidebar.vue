@@ -58,6 +58,45 @@ const emit = defineEmits<Emits>();
           </p>
         </div>
 
+        <!-- Encounter Header (if encounter data exists) -->
+        <div v-if="selectedNode.encounter && (selectedNode.revealed || revealAll || selectedNode.status === 'visited' || selectedNode.status === 'current')" class="bg-slate-800/50 rounded-xl p-4 border border-slate-700">
+          <h2 class="text-lg font-bold text-amber-400">{{ selectedNode.encounter.name }}</h2>
+          <div class="flex gap-2 mt-2 text-xs">
+            <span class="px-2 py-1 bg-slate-700 rounded">Level {{ selectedNode.encounter.level }}</span>
+            <span class="px-2 py-1 bg-slate-700 rounded capitalize">{{ selectedNode.encounter.type }}</span>
+            <span class="px-2 py-1 bg-slate-700 rounded capitalize">{{ selectedNode.encounter.difficulty }}</span>
+          </div>
+        </div>
+
+        <!-- Combat Details -->
+        <div v-if="selectedNode.encounter && selectedNode.encounter.type === 'combat' && (selectedNode.revealed || revealAll || selectedNode.status === 'visited' || selectedNode.status === 'current')" class="bg-red-900/10 rounded-xl p-4 border border-red-900/30">
+          <div class="text-[10px] text-red-400 uppercase tracking-widest mb-2 font-bold">Combat Encounter</div>
+          <div v-if="selectedNode.encounter.creatures" class="text-sm text-slate-300 mb-2">
+            <strong class="text-red-300">Enemies:</strong> {{ selectedNode.encounter.creatures }}
+          </div>
+          <div v-if="selectedNode.encounter.xpBudget" class="text-xs text-slate-400 mb-1">
+            XP Budget: {{ selectedNode.encounter.xpBudget }}
+          </div>
+          <div v-if="selectedNode.encounter.attitude" class="text-xs text-slate-400 mb-1">
+            <strong>Attitude:</strong> <span class="capitalize">{{ selectedNode.encounter.attitude }}</span>
+          </div>
+          <div v-if="selectedNode.encounter.personality" class="text-xs text-slate-400">
+            <strong>Personality:</strong> <span class="capitalize">{{ selectedNode.encounter.personality }}</span>
+          </div>
+        </div>
+
+        <!-- Win Conditions & Rewards -->
+        <div v-if="selectedNode.encounter?.winConditionA && (selectedNode.revealed || revealAll || selectedNode.status === 'visited' || selectedNode.status === 'current')" class="space-y-2">
+          <div class="bg-emerald-900/10 rounded-xl p-3 border border-emerald-900/30">
+            <div class="text-xs font-bold text-emerald-400 mb-1">{{ selectedNode.encounter.winConditionA }}</div>
+            <div class="text-[10px] text-slate-400">Reward: {{ selectedNode.encounter.rewardA }}</div>
+          </div>
+          <div v-if="selectedNode.encounter.winConditionB" class="bg-amber-900/10 rounded-xl p-3 border border-amber-900/30">
+            <div class="text-xs font-bold text-amber-400 mb-1">{{ selectedNode.encounter.winConditionB }}</div>
+            <div class="text-[10px] text-slate-400">Reward: {{ selectedNode.encounter.rewardB }}</div>
+          </div>
+        </div>
+
         <div class="grid grid-cols-2 gap-3">
           <div class="bg-slate-800/40 rounded-xl p-3 border border-slate-700/50">
             <div class="text-[10px] text-slate-500 uppercase tracking-widest mb-1">Exits</div>
