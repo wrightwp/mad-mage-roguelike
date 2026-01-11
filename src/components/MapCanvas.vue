@@ -24,7 +24,7 @@ interface Emits {
   (e: 'enterEncounter', nodeId: string): void;
 }
 
-const props = defineProps<Props>();
+defineProps<Props>();
 const emit = defineEmits<Emits>();
 
 const handleNodeClick = (nodeId: string) => {
