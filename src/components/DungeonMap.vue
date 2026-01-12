@@ -147,6 +147,7 @@ const handleEnterEncounter = (node: any) => {
       :width="rightPanelWidth"
       :selected-node="selectedNode"
       :reveal-all="revealAll"
+      :map-data="mapData"
       @enter-encounter="handleEnterEncounter"
       @complete-encounter="completeEncounter"
     />
