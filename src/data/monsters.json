@@ -1281,347 +1281,1250 @@
         "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-y#YuantiInfiltrator"
     },
     {
+        "name": "Allosaurus",
+        "cr": 2,
+        "exp": 450,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#Allosaurus"
+    },
+    {
+        "name": "Animated Rug of Smothering",
+        "cr": 2,
+        "exp": 450,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-a#AnimatedRugofSmothering"
+    },
+    {
+        "name": "Ankheg",
+        "cr": 2,
+        "exp": 450,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-a#Ankheg"
+    },
+    {
+        "name": "Awakened Tree",
+        "cr": 2,
+        "exp": 450,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-a#AwakenedTree"
+    },
+    {
+        "name": "Azer Sentinel",
+        "cr": 2,
+        "exp": 450,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-a#AzerSentinel"
+    },
+    {
         "name": "Bandit Captain",
         "cr": 2,
         "exp": 450,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/16799-bandit-captain"
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-b#BanditCaptain"
+    },
+    {
+        "name": "Berserker",
+        "cr": 2,
+        "exp": 450,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-b#Berserker"
     },
     {
         "name": "Black Dragon Wyrmling",
         "cr": 2,
         "exp": 450,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/16809-black-dragon-wyrmling"
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-b#BlackDragonWyrmling"
+    },
+    {
+        "name": "Bronze Dragon Wyrmling",
+        "cr": 2,
+        "exp": 450,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-b#BronzeDragonWyrmling"
+    },
+    {
+        "name": "Carrion Crawler",
+        "cr": 2,
+        "exp": 450,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-c#CarrionCrawler"
     },
     {
         "name": "Cult Fanatic",
         "cr": 2,
         "exp": 450,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/16834-cult-fanatic"
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-c#CultFanatic"
+    },
+    {
+        "name": "Ettercap",
+        "cr": 2,
+        "exp": 450,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-e#Ettercap"
     },
     {
         "name": "Gargoyle",
         "cr": 2,
         "exp": 450,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/16868-gargoyle"
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#Gargoyle"
     },
     {
         "name": "Gelatinous Cube",
         "cr": 2,
         "exp": 450,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/16869-gelatinous-cube"
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#GelatinousCube"
     },
     {
         "name": "Ghast",
         "cr": 2,
         "exp": 450,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/16871-ghast"
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#Ghast"
+    },
+    {
+        "name": "Giant Constrictor Snake",
+        "cr": 2,
+        "exp": 450,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#GiantConstrictorSnake"
+    },
+    {
+        "name": "Gibbering Mouther",
+        "cr": 2,
+        "exp": 450,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#GibberingMouther"
+    },
+    {
+        "name": "Githzerai Traveler",
+        "cr": 2,
+        "exp": 450,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#GithzeraiTraveler"
+    },
+    {
+        "name": "Gnoll Flesh Gnawer",
+        "cr": 2,
+        "exp": 450,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#GnollFleshGnawer"
     },
     {
         "name": "Green Dragon Wyrmling",
         "cr": 2,
         "exp": 450,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/16914-green-dragon-wyrmling"
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#GreenDragonWyrmling"
+    },
+    {
+        "name": "Grick",
+        "cr": 2,
+        "exp": 450,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#Grick"
+    },
+    {
+        "name": "Griffon",
+        "cr": 2,
+        "exp": 450,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#Griffon"
+    },
+    {
+        "name": "Hunter Shark",
+        "cr": 2,
+        "exp": 450,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#HunterShark"
+    },
+    {
+        "name": "Intellect Devourer",
+        "cr": 2,
+        "exp": 450,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-i#IntellectDevourer"
+    },
+    {
+        "name": "Merrow",
+        "cr": 2,
+        "exp": 450,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-m#Merrow"
     },
     {
         "name": "Mimic",
         "cr": 2,
         "exp": 450,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/16952-mimic"
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-m#Mimic"
+    },
+    {
+        "name": "Minotaur Skeleton",
+        "cr": 2,
+        "exp": 450,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-s#MinotaurSkeleton"
+    },
+    {
+        "name": "Nothic",
+        "cr": 2,
+        "exp": 450,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-n#Nothic"
     },
     {
         "name": "Ochre Jelly",
         "cr": 2,
         "exp": 450,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/16966-ochre-jelly"
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-o#OchreJelly"
     },
     {
         "name": "Ogre",
         "cr": 2,
         "exp": 450,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/16967-ogre"
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-o#Ogre"
+    },
+    {
+        "name": "Ogre Zombie",
+        "cr": 2,
+        "exp": 450,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-z#OgreZombie"
     },
     {
         "name": "Orc Eye of Gruumsh",
         "cr": 2,
         "exp": 450,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/16973-orc-eye-of-gruumsh"
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-o#OrcEyeofGruumsh"
+    },
+    {
+        "name": "Pegasus",
+        "cr": 2,
+        "exp": 450,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-p#Pegasus"
+    },
+    {
+        "name": "Plesiosaurus",
+        "cr": 2,
+        "exp": 450,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#Plesiosaurus"
+    },
+    {
+        "name": "Polar Bear",
+        "cr": 2,
+        "exp": 450,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#PolarBear"
     },
     {
         "name": "Priest",
         "cr": 2,
         "exp": 450,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/16985-priest"
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-p#Priest"
+    },
+    {
+        "name": "Rhinoceros",
+        "cr": 2,
+        "exp": 450,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#Rhinoceros"
     },
     {
         "name": "Rug of Smothering",
         "cr": 2,
         "exp": 450,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/17003-rug-of-smothering"
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-r#RugofSmothering"
+    },
+    {
+        "name": "Saber-Toothed Tiger",
+        "cr": 2,
+        "exp": 450,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#SaberToothedTiger"
+    },
+    {
+        "name": "Sea Hag",
+        "cr": 2,
+        "exp": 450,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-h#SeaHag"
+    },
+    {
+        "name": "Silver Dragon Wyrmling",
+        "cr": 2,
+        "exp": 450,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-s#SilverDragonWyrmling"
+    },
+    {
+        "name": "Swarm of Poisonous Snakes",
+        "cr": 2,
+        "exp": 450,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#SwarmofPoisonousSnakes"
     },
     {
         "name": "White Dragon Wyrmling",
         "cr": 2,
         "exp": 450,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/17062-white-dragon-wyrmling"
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-w#WhiteDragonWyrmling"
+    },
+    {
+        "name": "Will-o'-Wisp",
+        "cr": 2,
+        "exp": 450,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-w#WilloWisp"
+    },
+    {
+        "name": "Ankylosaurus",
+        "cr": 3,
+        "exp": 700,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#Ankylosaurus"
+    },
+    {
+        "name": "Archer",
+        "cr": 3,
+        "exp": 700,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-a#Archer"
     },
     {
         "name": "Basilisk",
         "cr": 3,
         "exp": 700,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/16803-basilisk"
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-b#Basilisk"
+    },
+    {
+        "name": "Bearded Devil",
+        "cr": 3,
+        "exp": 700,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-d#BeardedDevil"
     },
     {
         "name": "Blue Dragon Wyrmling",
         "cr": 3,
         "exp": 700,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/16813-blue-dragon-wyrmling"
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-b#BlueDragonWyrmling"
+    },
+    {
+        "name": "Bugbear Chief",
+        "cr": 3,
+        "exp": 700,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-b#BugbearChief"
+    },
+    {
+        "name": "Doppelganger",
+        "cr": 3,
+        "exp": 700,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-d#Doppelganger"
+    },
+    {
+        "name": "Giant Scorpion",
+        "cr": 3,
+        "exp": 700,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#GiantScorpion"
+    },
+    {
+        "name": "Gold Dragon Wyrmling",
+        "cr": 3,
+        "exp": 700,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#GoldDragonWyrmling"
+    },
+    {
+        "name": "Green Hag",
+        "cr": 3,
+        "exp": 700,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-h#GreenHag"
+    },
+    {
+        "name": "Hell Hound",
+        "cr": 3,
+        "exp": 700,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-h#HellHound"
+    },
+    {
+        "name": "Hobgoblin Captain",
+        "cr": 3,
+        "exp": 700,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-h#HobgoblinCaptain"
+    },
+    {
+        "name": "Hook Horror",
+        "cr": 3,
+        "exp": 700,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-h#HookHorror"
+    },
+    {
+        "name": "Killer Whale",
+        "cr": 3,
+        "exp": 700,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#KillerWhale"
     },
     {
         "name": "Knight",
         "cr": 3,
         "exp": 700,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/16940-knight"
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-k#Knight"
+    },
+    {
+        "name": "Kuo-toa Monitor",
+        "cr": 3,
+        "exp": 700,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-k#KuotoaMonitor"
+    },
+    {
+        "name": "Manticore",
+        "cr": 3,
+        "exp": 700,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-m#Manticore"
     },
     {
         "name": "Minotaur",
         "cr": 3,
         "exp": 700,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/16954-minotaur"
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-m#Minotaur"
     },
     {
         "name": "Mummy",
         "cr": 3,
         "exp": 700,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/16958-mummy"
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-m#Mummy"
+    },
+    {
+        "name": "Night Hag",
+        "cr": 3,
+        "exp": 700,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-h#NightHag"
     },
     {
         "name": "Owlbear",
         "cr": 3,
         "exp": 700,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/16976-owlbear"
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-o#Owlbear"
+    },
+    {
+        "name": "Phase Spider",
+        "cr": 3,
+        "exp": 700,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-p#PhaseSpider"
+    },
+    {
+        "name": "Spectator",
+        "cr": 3,
+        "exp": 700,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-s#Spectator"
     },
     {
         "name": "Veteran",
         "cr": 3,
         "exp": 700,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/17045-veteran"
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-v#Veteran"
     },
     {
         "name": "Wight",
         "cr": 3,
         "exp": 700,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/17059-wight"
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-w#Wight"
+    },
+    {
+        "name": "Winter Wolf",
+        "cr": 3,
+        "exp": 700,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-w#WinterWolf"
+    },
+    {
+        "name": "Yeti",
+        "cr": 3,
+        "exp": 700,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-y#Yeti"
     },
     {
         "name": "Black Pudding",
         "cr": 4,
         "exp": 1100,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/16810-black-pudding"
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-b#BlackPudding"
+    },
+    {
+        "name": "Chuul",
+        "cr": 4,
+        "exp": 1100,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-c#Chuul"
+    },
+    {
+        "name": "Couatl",
+        "cr": 4,
+        "exp": 1100,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-c#Couatl"
+    },
+    {
+        "name": "Elephant",
+        "cr": 4,
+        "exp": 1100,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#Elephant"
+    },
+    {
+        "name": "Ettin",
+        "cr": 4,
+        "exp": 1100,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-e#Ettin"
+    },
+    {
+        "name": "Flameskull",
+        "cr": 4,
+        "exp": 1100,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-f#Flameskull"
+    },
+    {
+        "name": "Ghost",
+        "cr": 4,
+        "exp": 1100,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#Ghost"
+    },
+    {
+        "name": "Githyanki Warrior",
+        "cr": 4,
+        "exp": 1100,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#GithyankiWarrior"
+    },
+    {
+        "name": "Gnoll Hunter",
+        "cr": 4,
+        "exp": 1100,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#GnollHunter"
+    },
+    {
+        "name": "Helmed Horror",
+        "cr": 4,
+        "exp": 1100,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-h#HelmedHorror"
+    },
+    {
+        "name": "Incubus",
+        "cr": 4,
+        "exp": 1100,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-i#Incubus"
+    },
+    {
+        "name": "Lamia",
+        "cr": 4,
+        "exp": 1100,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-l#Lamia"
+    },
+    {
+        "name": "Lizardfolk Shaman",
+        "cr": 4,
+        "exp": 1100,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-l#LizardfolkShaman"
+    },
+    {
+        "name": "Orc Blade of Ilneval",
+        "cr": 4,
+        "exp": 1100,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-o#OrcBladeofIlneval"
     },
     {
         "name": "Orc War Chief",
         "cr": 4,
         "exp": 1100,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/16974-orc-war-chief"
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-o#OrcWarChief"
     },
     {
         "name": "Red Dragon Wyrmling",
         "cr": 4,
         "exp": 1100,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/16997-red-dragon-wyrmling"
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-r#RedDragonWyrmling"
+    },
+    {
+        "name": "Succubus",
+        "cr": 4,
+        "exp": 1100,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-s#Succubus"
+    },
+    {
+        "name": "Wereboar",
+        "cr": 4,
+        "exp": 1100,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-w#Wereboar"
+    },
+    {
+        "name": "Weretiger",
+        "cr": 4,
+        "exp": 1100,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-w#Weretiger"
+    },
+    {
+        "name": "Air Elemental",
+        "cr": 5,
+        "exp": 1800,
+        "pb": 3,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-e#AirElemental"
+    },
+    {
+        "name": "Barbed Devil",
+        "cr": 5,
+        "exp": 1800,
+        "pb": 3,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-d#BarbedDevil"
+    },
+    {
+        "name": "Beholder Zombie",
+        "cr": 5,
+        "exp": 1800,
+        "pb": 3,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-b#BeholderZombie"
+    },
+    {
+        "name": "Bulette",
+        "cr": 5,
+        "exp": 1800,
+        "pb": 3,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-b#Bulette"
+    },
+    {
+        "name": "Cambion",
+        "cr": 5,
+        "exp": 1800,
+        "pb": 3,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-c#Cambion"
     },
     {
         "name": "Drow Elite Warrior",
         "cr": 5,
         "exp": 1800,
         "pb": 3,
-        "mmLink": "https://www.dndbeyond.com/monsters/16837-drow-elite-warrior"
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-d#DrowEliteWarrior"
+    },
+    {
+        "name": "Earth Elemental",
+        "cr": 5,
+        "exp": 1800,
+        "pb": 3,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-e#EarthElemental"
+    },
+    {
+        "name": "Fire Elemental",
+        "cr": 5,
+        "exp": 1800,
+        "pb": 3,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-e#FireElemental"
+    },
+    {
+        "name": "Flesh Golem",
+        "cr": 5,
+        "exp": 1800,
+        "pb": 3,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#FleshGolem"
+    },
+    {
+        "name": "Giant Crocodile",
+        "cr": 5,
+        "exp": 1800,
+        "pb": 3,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#GiantCrocodile"
+    },
+    {
+        "name": "Giant Shark",
+        "cr": 5,
+        "exp": 1800,
+        "pb": 3,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#GiantShark"
+    },
+    {
+        "name": "Githzerai Monk",
+        "cr": 5,
+        "exp": 1800,
+        "pb": 3,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#GithzeraiMonk"
     },
     {
         "name": "Gladiator",
         "cr": 5,
         "exp": 1800,
         "pb": 3,
-        "mmLink": "https://www.dndbeyond.com/monsters/16873-gladiator"
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#Gladiator"
     },
     {
         "name": "Gorgon",
         "cr": 5,
         "exp": 1800,
         "pb": 3,
-        "mmLink": "https://www.dndbeyond.com/monsters/16910-gorgon"
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#Gorgon"
+    },
+    {
+        "name": "Half-Red Dragon Veteran",
+        "cr": 5,
+        "exp": 1800,
+        "pb": 3,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-h#HalfRedDragonVeteran"
     },
     {
         "name": "Hill Giant",
         "cr": 5,
         "exp": 1800,
         "pb": 3,
-        "mmLink": "https://www.dndbeyond.com/monsters/16924-hill-giant"
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#HillGiant"
+    },
+    {
+        "name": "Mezzoloth",
+        "cr": 5,
+        "exp": 1800,
+        "pb": 3,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-m#Mezzoloth"
+    },
+    {
+        "name": "Otyugh",
+        "cr": 5,
+        "exp": 1800,
+        "pb": 3,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-o#Otyugh"
+    },
+    {
+        "name": "Red Slaad",
+        "cr": 5,
+        "exp": 1800,
+        "pb": 3,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-s#RedSlaad"
+    },
+    {
+        "name": "Roper",
+        "cr": 5,
+        "exp": 1800,
+        "pb": 3,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-r#Roper"
+    },
+    {
+        "name": "Salamander",
+        "cr": 5,
+        "exp": 1800,
+        "pb": 3,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-s#Salamander"
+    },
+    {
+        "name": "Shambling Mound",
+        "cr": 5,
+        "exp": 1800,
+        "pb": 3,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-s#ShamblingMound"
+    },
+    {
+        "name": "Triceratops",
+        "cr": 5,
+        "exp": 1800,
+        "pb": 3,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#Triceratops"
     },
     {
         "name": "Troll",
         "cr": 5,
         "exp": 1800,
         "pb": 3,
-        "mmLink": "https://www.dndbeyond.com/monsters/17035-troll"
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-t#Troll"
+    },
+    {
+        "name": "Umber Hulk",
+        "cr": 5,
+        "exp": 1800,
+        "pb": 3,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-u#UmberHulk"
+    },
+    {
+        "name": "Unicorn",
+        "cr": 5,
+        "exp": 1800,
+        "pb": 3,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-u#Unicorn"
     },
     {
         "name": "Vampire Spawn",
         "cr": 5,
         "exp": 1800,
         "pb": 3,
-        "mmLink": "https://www.dndbeyond.com/monsters/17044-vampire-spawn"
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-v#VampireSpawn"
+    },
+    {
+        "name": "Water Elemental",
+        "cr": 5,
+        "exp": 1800,
+        "pb": 3,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-e#WaterElemental"
+    },
+    {
+        "name": "Werebear",
+        "cr": 5,
+        "exp": 1800,
+        "pb": 3,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-w#Werebear"
     },
     {
         "name": "Wraith",
         "cr": 5,
         "exp": 1800,
         "pb": 3,
-        "mmLink": "https://www.dndbeyond.com/monsters/17064-wraith"
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-w#Wraith"
+    },
+    {
+        "name": "Xorn",
+        "cr": 5,
+        "exp": 1800,
+        "pb": 3,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-x#Xorn"
+    },
+    {
+        "name": "Annis Hag",
+        "cr": 6,
+        "exp": 2300,
+        "pb": 3,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-h#AnnisHag"
+    },
+    {
+        "name": "Chimera",
+        "cr": 6,
+        "exp": 2300,
+        "pb": 3,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-c#Chimera"
+    },
+    {
+        "name": "Cyclops",
+        "cr": 6,
+        "exp": 2300,
+        "pb": 3,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-c#Cyclops"
     },
     {
         "name": "Drider",
         "cr": 6,
         "exp": 2300,
         "pb": 3,
-        "mmLink": "https://www.dndbeyond.com/monsters/16835-drider"
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-d#Drider"
+    },
+    {
+        "name": "Galeb Duhr",
+        "cr": 6,
+        "exp": 2300,
+        "pb": 3,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#GalebDuhr"
+    },
+    {
+        "name": "Githyanki Kith'rak",
+        "cr": 6,
+        "exp": 2300,
+        "pb": 3,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#GithyankiKithrak"
+    },
+    {
+        "name": "Githzerai Futurist",
+        "cr": 6,
+        "exp": 2300,
+        "pb": 3,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#GithzeraiFuturist"
+    },
+    {
+        "name": "Hobgoblin Warlord",
+        "cr": 6,
+        "exp": 2300,
+        "pb": 3,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-h#HobgoblinWarlord"
+    },
+    {
+        "name": "Invisible Stalker",
+        "cr": 6,
+        "exp": 2300,
+        "pb": 3,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-i#InvisibleStalker"
+    },
+    {
+        "name": "Kuo-toa Archpriest",
+        "cr": 6,
+        "exp": 2300,
+        "pb": 3,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-k#KuotoaArchpriest"
     },
     {
         "name": "Mage",
         "cr": 6,
         "exp": 2300,
         "pb": 3,
-        "mmLink": "https://www.dndbeyond.com/monsters/16947-mage"
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-m#Mage"
+    },
+    {
+        "name": "Mammoth",
+        "cr": 6,
+        "exp": 2300,
+        "pb": 3,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#Mammoth"
     },
     {
         "name": "Medusa",
         "cr": 6,
         "exp": 2300,
         "pb": 3,
-        "mmLink": "https://www.dndbeyond.com/monsters/16950-medusa"
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-m#Medusa"
+    },
+    {
+        "name": "Vrock",
+        "cr": 6,
+        "exp": 2300,
+        "pb": 3,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-v#Vrock"
+    },
+    {
+        "name": "Wyvern",
+        "cr": 6,
+        "exp": 2300,
+        "pb": 3,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-w#Wyvern"
     },
     {
         "name": "Young White Dragon",
         "cr": 6,
         "exp": 2300,
         "pb": 3,
-        "mmLink": "https://www.dndbeyond.com/monsters/17061-young-white-dragon"
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-w#YoungWhiteDragon"
+    },
+    {
+        "name": "Blue Slaad",
+        "cr": 7,
+        "exp": 2900,
+        "pb": 3,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-s#BlueSlaad"
     },
     {
         "name": "Drow Mage",
         "cr": 7,
         "exp": 2900,
         "pb": 3,
-        "mmLink": "https://www.dndbeyond.com/monsters/16838-drow-mage"
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-d#DrowMage"
+    },
+    {
+        "name": "Giant Ape",
+        "cr": 7,
+        "exp": 2900,
+        "pb": 3,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#GiantApe"
+    },
+    {
+        "name": "Grick Alpha",
+        "cr": 7,
+        "exp": 2900,
+        "pb": 3,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#GrickAlpha"
     },
     {
         "name": "Mind Flayer",
         "cr": 7,
         "exp": 2900,
         "pb": 3,
-        "mmLink": "https://www.dndbeyond.com/monsters/16953-mind-flayer"
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-m#MindFlayer"
+    },
+    {
+        "name": "Oni",
+        "cr": 7,
+        "exp": 2900,
+        "pb": 3,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-o#Oni"
+    },
+    {
+        "name": "Shield Guardian",
+        "cr": 7,
+        "exp": 2900,
+        "pb": 3,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-s#ShieldGuardian"
     },
     {
         "name": "Stone Giant",
         "cr": 7,
         "exp": 2900,
         "pb": 3,
-        "mmLink": "https://www.dndbeyond.com/monsters/17024-stone-giant"
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#StoneGiant"
     },
     {
         "name": "Young Black Dragon",
         "cr": 7,
         "exp": 2900,
         "pb": 3,
-        "mmLink": "https://www.dndbeyond.com/monsters/16808-young-black-dragon"
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-b#YoungBlackDragon"
+    },
+    {
+        "name": "Yuan-ti Abomination",
+        "cr": 7,
+        "exp": 2900,
+        "pb": 3,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-y#YuantiAbomination"
     },
     {
         "name": "Assassin",
         "cr": 8,
         "exp": 3900,
         "pb": 3,
-        "mmLink": "https://www.dndbeyond.com/monsters/16791-assassin"
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-a#Assassin"
+    },
+    {
+        "name": "Chain Devil",
+        "cr": 8,
+        "exp": 3900,
+        "pb": 3,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-d#ChainDevil"
+    },
+    {
+        "name": "Cloaker",
+        "cr": 8,
+        "exp": 3900,
+        "pb": 3,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-c#Cloaker"
     },
     {
         "name": "Drow Priestess of Lolth",
         "cr": 8,
         "exp": 3900,
         "pb": 3,
-        "mmLink": "https://www.dndbeyond.com/monsters/16839-drow-priestess-of-lolth"
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-d#DrowPriestessofLolth"
+    },
+    {
+        "name": "Fomorian",
+        "cr": 8,
+        "exp": 3900,
+        "pb": 3,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-f#Fomorian"
     },
     {
         "name": "Frost Giant",
         "cr": 8,
         "exp": 3900,
         "pb": 3,
-        "mmLink": "https://www.dndbeyond.com/monsters/16865-frost-giant"
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#FrostGiant"
+    },
+    {
+        "name": "Hezrou",
+        "cr": 8,
+        "exp": 3900,
+        "pb": 3,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-h#Hezrou"
+    },
+    {
+        "name": "Hydra",
+        "cr": 8,
+        "exp": 3900,
+        "pb": 3,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-h#Hydra"
+    },
+    {
+        "name": "Spirit Naga",
+        "cr": 8,
+        "exp": 3900,
+        "pb": 3,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-n#SpiritNaga"
+    },
+    {
+        "name": "Tyrannosaurus Rex",
+        "cr": 8,
+        "exp": 3900,
+        "pb": 3,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#TyrannosaurusRex"
+    },
+    {
+        "name": "Young Bronze Dragon",
+        "cr": 8,
+        "exp": 3900,
+        "pb": 3,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-b#YoungBronzeDragon"
     },
     {
         "name": "Young Green Dragon",
         "cr": 8,
         "exp": 3900,
         "pb": 3,
-        "mmLink": "https://www.dndbeyond.com/monsters/16913-young-green-dragon"
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#YoungGreenDragon"
+    },
+    {
+        "name": "Abominable Yeti",
+        "cr": 9,
+        "exp": 5000,
+        "pb": 4,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-y#AbominableYeti"
+    },
+    {
+        "name": "Bone Devil",
+        "cr": 9,
+        "exp": 5000,
+        "pb": 4,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-d#BoneDevil"
+    },
+    {
+        "name": "Clay Golem",
+        "cr": 9,
+        "exp": 5000,
+        "pb": 4,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#ClayGolem"
     },
     {
         "name": "Cloud Giant",
         "cr": 9,
         "exp": 5000,
         "pb": 4,
-        "mmLink": "https://www.dndbeyond.com/monsters/16826-cloud-giant"
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#CloudGiant"
     },
     {
         "name": "Fire Giant",
         "cr": 9,
         "exp": 5000,
         "pb": 4,
-        "mmLink": "https://www.dndbeyond.com/monsters/16859-fire-giant"
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#FireGiant"
+    },
+    {
+        "name": "Glabrezu",
+        "cr": 9,
+        "exp": 5000,
+        "pb": 4,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#Glabrezu"
+    },
+    {
+        "name": "Gray Slaad",
+        "cr": 9,
+        "exp": 5000,
+        "pb": 4,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-s#GraySlaad"
+    },
+    {
+        "name": "Nycaloth",
+        "cr": 9,
+        "exp": 5000,
+        "pb": 4,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-n#Nycaloth"
+    },
+    {
+        "name": "Treant",
+        "cr": 9,
+        "exp": 5000,
+        "pb": 4,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-t#Treant"
     },
     {
         "name": "Young Blue Dragon",
         "cr": 9,
         "exp": 5000,
         "pb": 4,
-        "mmLink": "https://www.dndbeyond.com/monsters/16812-young-blue-dragon"
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-b#YoungBlueDragon"
+    },
+    {
+        "name": "Young Silver Dragon",
+        "cr": 9,
+        "exp": 5000,
+        "pb": 4,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-s#YoungSilverDragon"
     },
     {
         "name": "Aboleth",
         "cr": 10,
         "exp": 5900,
         "pb": 4,
-        "mmLink": "https://www.dndbeyond.com/monsters/16768-aboleth"
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-a#Aboleth"
+    },
+    {
+        "name": "Death Slaad",
+        "cr": 10,
+        "exp": 5900,
+        "pb": 4,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-s#DeathSlaad"
+    },
+    {
+        "name": "Deva",
+        "cr": 10,
+        "exp": 5900,
+        "pb": 4,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-d#Deva"
+    },
+    {
+        "name": "Guardian Naga",
+        "cr": 10,
+        "exp": 5900,
+        "pb": 4,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-n#GuardianNaga"
+    },
+    {
+        "name": "Stone Golem",
+        "cr": 10,
+        "exp": 5900,
+        "pb": 4,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#StoneGolem"
+    },
+    {
+        "name": "Yochlol",
+        "cr": 10,
+        "exp": 5900,
+        "pb": 4,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-y#Yochlol"
+    },
+    {
+        "name": "Young Gold Dragon",
+        "cr": 10,
+        "exp": 5900,
+        "pb": 4,
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#YoungGoldDragon"
     },
     {
         "name": "Young Red Dragon",
         "cr": 10,
         "exp": 5900,
         "pb": 4,
-        "mmLink": "https://www.dndbeyond.com/monsters/16996-young-red-dragon"
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-r#YoungRedDragon"
     },
     {
         "name": "Archmage",
