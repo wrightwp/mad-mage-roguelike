@@ -1,0 +1,667 @@
+[
+    {
+        "name": "Goblin",
+        "cr": 0.25,
+        "exp": 50,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/monsters/16907-goblin"
+    },
+    {
+        "name": "Goblin Boss",
+        "cr": 1,
+        "exp": 200,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/monsters/16908-goblin-boss"
+    },
+    {
+        "name": "Hobgoblin",
+        "cr": 0.5,
+        "exp": 100,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/monsters/16925-hobgoblin"
+    },
+    {
+        "name": "Bugbear",
+        "cr": 1,
+        "exp": 200,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/monsters/16817-bugbear"
+    },
+    {
+        "name": "Kobold",
+        "cr": 0.125,
+        "exp": 25,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/monsters/16939-kobold"
+    },
+    {
+        "name": "Winged Kobold",
+        "cr": 0.25,
+        "exp": 50,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/monsters/17046-winged-kobold"
+    },
+    {
+        "name": "Orc",
+        "cr": 0.5,
+        "exp": 100,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/monsters/16972-orc"
+    },
+    {
+        "name": "Orc War Chief",
+        "cr": 4,
+        "exp": 1100,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/monsters/16974-orc-war-chief"
+    },
+    {
+        "name": "Orc Eye of Gruumsh",
+        "cr": 2,
+        "exp": 450,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/monsters/16973-orc-eye-of-gruumsh"
+    },
+    {
+        "name": "Skeleton",
+        "cr": 0.25,
+        "exp": 50,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/monsters/17015-skeleton"
+    },
+    {
+        "name": "Zombie",
+        "cr": 0.25,
+        "exp": 50,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/monsters/17077-zombie"
+    },
+    {
+        "name": "Ghoul",
+        "cr": 1,
+        "exp": 200,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/monsters/16872-ghoul"
+    },
+    {
+        "name": "Ghast",
+        "cr": 2,
+        "exp": 450,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/monsters/16871-ghast"
+    },
+    {
+        "name": "Shadow",
+        "cr": 0.5,
+        "exp": 100,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/monsters/17007-shadow"
+    },
+    {
+        "name": "Specter",
+        "cr": 1,
+        "exp": 200,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/monsters/17016-specter"
+    },
+    {
+        "name": "Wight",
+        "cr": 3,
+        "exp": 700,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/monsters/17059-wight"
+    },
+    {
+        "name": "Wraith",
+        "cr": 5,
+        "exp": 1800,
+        "pb": 3,
+        "mmLink": "https://www.dndbeyond.com/monsters/17064-wraith"
+    },
+    {
+        "name": "Mummy",
+        "cr": 3,
+        "exp": 700,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/monsters/16958-mummy"
+    },
+    {
+        "name": "Vampire Spawn",
+        "cr": 5,
+        "exp": 1800,
+        "pb": 3,
+        "mmLink": "https://www.dndbeyond.com/monsters/17044-vampire-spawn"
+    },
+    {
+        "name": "Vampire",
+        "cr": 13,
+        "exp": 10000,
+        "pb": 5,
+        "mmLink": "https://www.dndbeyond.com/monsters/17043-vampire"
+    },
+    {
+        "name": "Lich",
+        "cr": 21,
+        "exp": 33000,
+        "pb": 7,
+        "mmLink": "https://www.dndbeyond.com/monsters/16945-lich"
+    },
+    {
+        "name": "Ogre",
+        "cr": 2,
+        "exp": 450,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/monsters/16967-ogre"
+    },
+    {
+        "name": "Troll",
+        "cr": 5,
+        "exp": 1800,
+        "pb": 3,
+        "mmLink": "https://www.dndbeyond.com/monsters/17035-troll"
+    },
+    {
+        "name": "Hill Giant",
+        "cr": 5,
+        "exp": 1800,
+        "pb": 3,
+        "mmLink": "https://www.dndbeyond.com/monsters/16924-hill-giant"
+    },
+    {
+        "name": "Stone Giant",
+        "cr": 7,
+        "exp": 2900,
+        "pb": 3,
+        "mmLink": "https://www.dndbeyond.com/monsters/17024-stone-giant"
+    },
+    {
+        "name": "Frost Giant",
+        "cr": 8,
+        "exp": 3900,
+        "pb": 3,
+        "mmLink": "https://www.dndbeyond.com/monsters/16865-frost-giant"
+    },
+    {
+        "name": "Fire Giant",
+        "cr": 9,
+        "exp": 5000,
+        "pb": 4,
+        "mmLink": "https://www.dndbeyond.com/monsters/16859-fire-giant"
+    },
+    {
+        "name": "Cloud Giant",
+        "cr": 9,
+        "exp": 5000,
+        "pb": 4,
+        "mmLink": "https://www.dndbeyond.com/monsters/16826-cloud-giant"
+    },
+    {
+        "name": "Storm Giant",
+        "cr": 13,
+        "exp": 10000,
+        "pb": 5,
+        "mmLink": "https://www.dndbeyond.com/monsters/17027-storm-giant"
+    },
+    {
+        "name": "Minotaur",
+        "cr": 3,
+        "exp": 700,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/monsters/16954-minotaur"
+    },
+    {
+        "name": "Owlbear",
+        "cr": 3,
+        "exp": 700,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/monsters/16976-owlbear"
+    },
+    {
+        "name": "Rust Monster",
+        "cr": 0.5,
+        "exp": 100,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/monsters/17004-rust-monster"
+    },
+    {
+        "name": "Gelatinous Cube",
+        "cr": 2,
+        "exp": 450,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/monsters/16869-gelatinous-cube"
+    },
+    {
+        "name": "Black Pudding",
+        "cr": 4,
+        "exp": 1100,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/monsters/16810-black-pudding"
+    },
+    {
+        "name": "Ochre Jelly",
+        "cr": 2,
+        "exp": 450,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/monsters/16966-ochre-jelly"
+    },
+    {
+        "name": "Gray Ooze",
+        "cr": 0.5,
+        "exp": 100,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/monsters/16912-gray-ooze"
+    },
+    {
+        "name": "Beholder",
+        "cr": 13,
+        "exp": 10000,
+        "pb": 5,
+        "mmLink": "https://www.dndbeyond.com/monsters/16806-beholder"
+    },
+    {
+        "name": "Mind Flayer",
+        "cr": 7,
+        "exp": 2900,
+        "pb": 3,
+        "mmLink": "https://www.dndbeyond.com/monsters/16953-mind-flayer"
+    },
+    {
+        "name": "Aboleth",
+        "cr": 10,
+        "exp": 5900,
+        "pb": 4,
+        "mmLink": "https://www.dndbeyond.com/monsters/16768-aboleth"
+    },
+    {
+        "name": "Drow",
+        "cr": 0.25,
+        "exp": 50,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/monsters/16836-drow"
+    },
+    {
+        "name": "Drow Elite Warrior",
+        "cr": 5,
+        "exp": 1800,
+        "pb": 3,
+        "mmLink": "https://www.dndbeyond.com/monsters/16837-drow-elite-warrior"
+    },
+    {
+        "name": "Drow Mage",
+        "cr": 7,
+        "exp": 2900,
+        "pb": 3,
+        "mmLink": "https://www.dndbeyond.com/monsters/16838-drow-mage"
+    },
+    {
+        "name": "Drow Priestess of Lolth",
+        "cr": 8,
+        "exp": 3900,
+        "pb": 3,
+        "mmLink": "https://www.dndbeyond.com/monsters/16839-drow-priestess-of-lolth"
+    },
+    {
+        "name": "Drider",
+        "cr": 6,
+        "exp": 2300,
+        "pb": 3,
+        "mmLink": "https://www.dndbeyond.com/monsters/16835-drider"
+    },
+    {
+        "name": "White Dragon Wyrmling",
+        "cr": 2,
+        "exp": 450,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/monsters/17062-white-dragon-wyrmling"
+    },
+    {
+        "name": "Black Dragon Wyrmling",
+        "cr": 2,
+        "exp": 450,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/monsters/16809-black-dragon-wyrmling"
+    },
+    {
+        "name": "Green Dragon Wyrmling",
+        "cr": 2,
+        "exp": 450,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/monsters/16914-green-dragon-wyrmling"
+    },
+    {
+        "name": "Blue Dragon Wyrmling",
+        "cr": 3,
+        "exp": 700,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/monsters/16813-blue-dragon-wyrmling"
+    },
+    {
+        "name": "Red Dragon Wyrmling",
+        "cr": 4,
+        "exp": 1100,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/monsters/16997-red-dragon-wyrmling"
+    },
+    {
+        "name": "Young White Dragon",
+        "cr": 6,
+        "exp": 2300,
+        "pb": 3,
+        "mmLink": "https://www.dndbeyond.com/monsters/17061-young-white-dragon"
+    },
+    {
+        "name": "Young Black Dragon",
+        "cr": 7,
+        "exp": 2900,
+        "pb": 3,
+        "mmLink": "https://www.dndbeyond.com/monsters/16808-young-black-dragon"
+    },
+    {
+        "name": "Young Green Dragon",
+        "cr": 8,
+        "exp": 3900,
+        "pb": 3,
+        "mmLink": "https://www.dndbeyond.com/monsters/16913-young-green-dragon"
+    },
+    {
+        "name": "Young Blue Dragon",
+        "cr": 9,
+        "exp": 5000,
+        "pb": 4,
+        "mmLink": "https://www.dndbeyond.com/monsters/16812-young-blue-dragon"
+    },
+    {
+        "name": "Young Red Dragon",
+        "cr": 10,
+        "exp": 5900,
+        "pb": 4,
+        "mmLink": "https://www.dndbeyond.com/monsters/16996-young-red-dragon"
+    },
+    {
+        "name": "Adult White Dragon",
+        "cr": 13,
+        "exp": 10000,
+        "pb": 5,
+        "mmLink": "https://www.dndbeyond.com/monsters/16760-adult-white-dragon"
+    },
+    {
+        "name": "Adult Black Dragon",
+        "cr": 14,
+        "exp": 11500,
+        "pb": 5,
+        "mmLink": "https://www.dndbeyond.com/monsters/16770-adult-black-dragon"
+    },
+    {
+        "name": "Adult Green Dragon",
+        "cr": 15,
+        "exp": 13000,
+        "pb": 5,
+        "mmLink": "https://www.dndbeyond.com/monsters/16787-adult-green-dragon"
+    },
+    {
+        "name": "Adult Blue Dragon",
+        "cr": 16,
+        "exp": 15000,
+        "pb": 5,
+        "mmLink": "https://www.dndbeyond.com/monsters/16775-adult-blue-dragon"
+    },
+    {
+        "name": "Adult Red Dragon",
+        "cr": 17,
+        "exp": 18000,
+        "pb": 6,
+        "mmLink": "https://www.dndbeyond.com/monsters/16794-adult-red-dragon"
+    },
+    {
+        "name": "Ancient White Dragon",
+        "cr": 20,
+        "exp": 25000,
+        "pb": 6,
+        "mmLink": "https://www.dndbeyond.com/monsters/16764-ancient-white-dragon"
+    },
+    {
+        "name": "Ancient Black Dragon",
+        "cr": 21,
+        "exp": 33000,
+        "pb": 7,
+        "mmLink": "https://www.dndbeyond.com/monsters/16771-ancient-black-dragon"
+    },
+    {
+        "name": "Ancient Green Dragon",
+        "cr": 22,
+        "exp": 41000,
+        "pb": 7,
+        "mmLink": "https://www.dndbeyond.com/monsters/16788-ancient-green-dragon"
+    },
+    {
+        "name": "Ancient Blue Dragon",
+        "cr": 23,
+        "exp": 50000,
+        "pb": 7,
+        "mmLink": "https://www.dndbeyond.com/monsters/16776-ancient-blue-dragon"
+    },
+    {
+        "name": "Ancient Red Dragon",
+        "cr": 24,
+        "exp": 62000,
+        "pb": 7,
+        "mmLink": "https://www.dndbeyond.com/monsters/16795-ancient-red-dragon"
+    },
+    {
+        "name": "Cultist",
+        "cr": 0.125,
+        "exp": 25,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/monsters/16835-cultist"
+    },
+    {
+        "name": "Cult Fanatic",
+        "cr": 2,
+        "exp": 450,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/monsters/16834-cult-fanatic"
+    },
+    {
+        "name": "Bandit",
+        "cr": 0.125,
+        "exp": 25,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/monsters/16798-bandit"
+    },
+    {
+        "name": "Bandit Captain",
+        "cr": 2,
+        "exp": 450,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/monsters/16799-bandit-captain"
+    },
+    {
+        "name": "Guard",
+        "cr": 0.125,
+        "exp": 25,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/monsters/16915-guard"
+    },
+    {
+        "name": "Knight",
+        "cr": 3,
+        "exp": 700,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/monsters/16940-knight"
+    },
+    {
+        "name": "Veteran",
+        "cr": 3,
+        "exp": 700,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/monsters/17045-veteran"
+    },
+    {
+        "name": "Gladiator",
+        "cr": 5,
+        "exp": 1800,
+        "pb": 3,
+        "mmLink": "https://www.dndbeyond.com/monsters/16873-gladiator"
+    },
+    {
+        "name": "Assassin",
+        "cr": 8,
+        "exp": 3900,
+        "pb": 3,
+        "mmLink": "https://www.dndbeyond.com/monsters/16791-assassin"
+    },
+    {
+        "name": "Mage",
+        "cr": 6,
+        "exp": 2300,
+        "pb": 3,
+        "mmLink": "https://www.dndbeyond.com/monsters/16947-mage"
+    },
+    {
+        "name": "Archmage",
+        "cr": 12,
+        "exp": 8400,
+        "pb": 4,
+        "mmLink": "https://www.dndbeyond.com/monsters/16789-archmage"
+    },
+    {
+        "name": "Priest",
+        "cr": 2,
+        "exp": 450,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/monsters/16985-priest"
+    },
+    {
+        "name": "Acolyte",
+        "cr": 0.25,
+        "exp": 50,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/monsters/16769-acolyte"
+    },
+    {
+        "name": "Commoner",
+        "cr": 0,
+        "exp": 10,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/monsters/16829-commoner"
+    },
+    {
+        "name": "Noble",
+        "cr": 0.125,
+        "exp": 25,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/monsters/16965-noble"
+    },
+    {
+        "name": "Tiger",
+        "cr": 1,
+        "exp": 200,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/monsters/17033-tiger"
+    },
+    {
+        "name": "Wolf",
+        "cr": 0.25,
+        "exp": 50,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/monsters/17062-wolf"
+    },
+    {
+        "name": "Dire Wolf",
+        "cr": 1,
+        "exp": 200,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/monsters/16832-dire-wolf"
+    },
+    {
+        "name": "Giant Spider",
+        "cr": 1,
+        "exp": 200,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/monsters/16895-giant-spider"
+    },
+    {
+        "name": "Giant Rat",
+        "cr": 0.125,
+        "exp": 25,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/monsters/16891-giant-rat"
+    },
+    {
+        "name": "Swarm of Rats",
+        "cr": 0.25,
+        "exp": 50,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/monsters/17031-swarm-of-rats"
+    },
+    {
+        "name": "Swarm of Insects",
+        "cr": 0.5,
+        "exp": 100,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/monsters/17029-swarm-of-insects"
+    },
+    {
+        "name": "Animated Armor",
+        "cr": 1,
+        "exp": 200,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/monsters/16790-animated-armor"
+    },
+    {
+        "name": "Flying Sword",
+        "cr": 0.25,
+        "exp": 50,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/monsters/16863-flying-sword"
+    },
+    {
+        "name": "Rug of Smothering",
+        "cr": 2,
+        "exp": 450,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/monsters/17003-rug-of-smothering"
+    },
+    {
+        "name": "Mimic",
+        "cr": 2,
+        "exp": 450,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/monsters/16952-mimic"
+    },
+    {
+        "name": "Gargoyle",
+        "cr": 2,
+        "exp": 450,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/monsters/16868-gargoyle"
+    },
+    {
+        "name": "Basilisk",
+        "cr": 3,
+        "exp": 700,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/monsters/16803-basilisk"
+    },
+    {
+        "name": "Cockatrice",
+        "cr": 0.5,
+        "exp": 100,
+        "pb": 2,
+        "mmLink": "https://www.dndbeyond.com/monsters/16828-cockatrice"
+    },
+    {
+        "name": "Gorgon",
+        "cr": 5,
+        "exp": 1800,
+        "pb": 3,
+        "mmLink": "https://www.dndbeyond.com/monsters/16910-gorgon"
+    },
+    {
+        "name": "Medusa",
+        "cr": 6,
+        "exp": 2300,
+        "pb": 3,
+        "mmLink": "https://www.dndbeyond.com/monsters/16950-medusa"
+    }
+]
