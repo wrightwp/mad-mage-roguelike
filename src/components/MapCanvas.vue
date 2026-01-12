@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { computed } from 'vue';
 import type { DungeonMapData } from '../types';
 import type { ViewBox } from '../composables/useMapViewport';
 import { getEdgePath } from '../utils/edgeUtils';
@@ -24,8 +25,37 @@ interface Emits {
   (e: 'enterEncounter', nodeId: string): void;
 }
 
-defineProps<Props>();
+const props = defineProps<Props>();
 const emit = defineEmits<Emits>();
+
+// Filter out edges that have been traversed
+const untraversedEdges = computed(() => {
+  if (!props.mapData) return [];
+  
+  return props.mapData.edges.filter(edge => {
+    // Check if this edge is in the active (traversed) path
+    const isTraversed = props.activeEdges.some(
+      activeEdge => activeEdge.from === edge.from && activeEdge.to === edge.to
+    );
+    return !isTraversed;
+  });
+});
+
+// Check if an edge is available for selection
+const isEdgeAvailable = (edge: { from: string; to: string }) => {
+  return props.availableEdges.some(
+    availableEdge => availableEdge.from === edge.from && availableEdge.to === edge.to
+  );
+};
+
+// Categorize untraversed edges into available and unavailable
+const unavailableEdges = computed(() => {
+  return untraversedEdges.value.filter(edge => !isEdgeAvailable(edge));
+});
+
+const availableUntraversedEdges = computed(() => {
+  return untraversedEdges.value.filter(edge => isEdgeAvailable(edge));
+});
 
 const handleNodeClick = (nodeId: string) => {
   emit('nodeClick', nodeId);
@@ -66,14 +96,28 @@ const handleEnterEncounter = (nodeId: string) => {
           </filter>
         </defs>
         
-        <!-- Edges -->
+        <!-- Unavailable grey edges -->
         <path 
-          v-for="(edge, i) in mapData.edges" 
-          :key="`bg-edge-${i}`"
+          v-for="(edge, i) in unavailableEdges" 
+          :key="`grey-edge-${i}`"
           :d="getEdgePath(edge, mapData, 0)" 
           class="stroke-slate-700 stroke-[2] opacity-50 fill-none"
           stroke-linecap="round"
         />
+
+        <!-- Available gold pulsing edges -->
+        <path 
+          v-for="(edge, i) in availableUntraversedEdges" 
+          :key="`available-edge-${i}`"
+          :d="getEdgePath(edge, mapData, 10 + i % 20)" 
+          stroke="#f59e0b"
+          stroke-width="3"
+          fill="none"
+          stroke-linecap="round"
+          style="filter: drop-shadow(0 0 10px rgba(245, 158, 11, 0.8));"
+        >
+          <animate attributeName="opacity" values="0.4;0.9;0.4" dur="2s" repeatCount="indefinite" />
+        </path>
 
         <path 
           v-for="(edge, i) in activeEdges" 
@@ -86,19 +130,7 @@ const handleEnterEncounter = (nodeId: string) => {
           stroke-linecap="round"
           style="filter: drop-shadow(0 0 8px rgba(255,255,255,0.7));"
         />
-        
-        <path 
-          v-for="(edge, i) in availableEdges" 
-          :key="`choice-edge-${i}`"
-          :d="getEdgePath(edge, mapData, 10 + i % 20)" 
-          stroke="#f59e0b"
-          stroke-width="3"
-          fill="none"
-          stroke-linecap="round"
-          style="filter: drop-shadow(0 0 10px rgba(245, 158, 11, 0.8));"
-        >
-          <animate attributeName="opacity" values="0.4;0.9;0.4" dur="2s" repeatCount="indefinite" />
-        </path>
+
         
         <!-- Nodes -->
         <HexNode
