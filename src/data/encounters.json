@@ -8,12 +8,19 @@
         "creatures": "Goblin Minion, Goblin Warrior, Goblin Boss, Goblin Hexer",
         "attitude": "hostile",
         "personality": "cowardly",
-        "description": "A small band of goblins lie in wait to ambush intruders entering Undermountain.",
+        "roomDescription": "A small band of goblins lie in wait to ambush intruders entering Undermountain.",
+        "dmDescription": "The goblins are cowardly and will flee if their boss is killed first. They have set up crude traps near the entrance.",
         "size": 1,
-        "winConditionA": "Kill all enemies",
-        "rewardA": "Full XP",
-        "winConditionB": "Flee",
-        "rewardB": "Nothing",
+        "winConditions": [
+            {
+                "condition": "Kill all enemies",
+                "reward": "Full XP"
+            },
+            {
+                "condition": "Flee",
+                "reward": "Nothing"
+            }
+        ],
         "aiRoomPrompt": "A small basement room, underneath a typical home in Waterdeep that has been turned into a goblin den. The floor is wooden but covered in debris, including a small area in the southeast corner of the room that has been barricaded off with crates, barrels and broken furniture. A few torches on the walls provide dim light.",
         "lair": false
     },
@@ -25,7 +32,8 @@
         "xpBudget": 300,
         "creatures": "Tiger",
         "attitude": "hostile",
-        "description": "A Waterdavian noble's exotic pet Tiger has gotten loose and is roaming the dungeon. Kill it to ensure it doesn't hurt anyone or capture and return it for a reward!",
+        "roomDescription": "A Waterdavian noble's exotic pet Tiger has gotten loose and is roaming the dungeon. Kill it to ensure it doesn't hurt anyone or capture and return it for a reward!",
+        "dmDescription": "The tiger is hungry and aggressive. A DC 15 Animal Handling check can calm it enough to capture it alive.",
         "size": 1,
         "lair": false
     },
@@ -38,7 +46,8 @@
         "creatures": "Bugbear Warrior",
         "attitude": "hostile",
         "personality": "orderly",
-        "description": "A pair of Bugbears hunt adventurers to abduct and bring back to their lair.",
+        "roomDescription": "A pair of Bugbears hunt adventurers to abduct and bring back to their lair.",
+        "dmDescription": "These bugbears work for a larger organization. They will attempt to knock players unconscious rather than kill them.",
         "size": 2,
         "lair": false
     },
@@ -48,7 +57,8 @@
         "type": "exploration",
         "difficulty": "low",
         "xpBudget": false,
-        "description": "A broken bridge over a bottomless pit tests the parties jumping ability. I hope they brought a rope... 2 doors across the chasm for better rewards, 1 door on your side for a hard fight.",
+        "roomDescription": "A broken bridge over a bottomless pit tests the parties jumping ability. I hope they brought a rope... 2 doors across the chasm for better rewards, 1 door on your side for a hard fight.",
+        "dmDescription": "DC 12 Athletics check to jump across (with running start). DC 15 without. Rope and grappling hook makes it automatic. The pit is 30 feet deep, not bottomless.",
         "size": 1,
         "lair": false
     },
@@ -61,7 +71,8 @@
         "creatures": "Troll",
         "attitude": "indifferent",
         "personality": "greedy",
-        "description": "A bored Troll charges a toll of 10gp to cross his bridge, but will gladly smash anyone who won't pay.",
+        "roomDescription": "A bored Troll charges a toll of 10gp to cross his bridge, but will gladly smash anyone who won't pay.",
+        "dmDescription": "The troll can be persuaded to lower the toll with a DC 13 Persuasion check. He's lonely and will chat for a reduced toll.",
         "size": 2,
         "lair": false
     },
@@ -71,7 +82,8 @@
         "type": "puzzle",
         "difficulty": "low",
         "xpBudget": false,
-        "description": "The classic parlor puzzle from the Blue Prince: https://blue-prince.fandom.com/wiki/Parlor_Puzzle",
+        "roomDescription": "The classic parlor puzzle from the Blue Prince: https://blue-prince.fandom.com/wiki/Parlor_Puzzle",
+        "dmDescription": "Three boxes with inscriptions. Only one contains the key to proceed. The inscriptions are riddles that hint at the correct box.",
         "size": 1,
         "lair": false
     },
@@ -84,12 +96,19 @@
         "creatures": "Goblin Minion, Goblin Warrior, Goblin Boss, Goblin Hexer",
         "attitude": "hostile",
         "personality": "greedy",
-        "description": "A goblin warband lies in wait to ambush intruders develing deeper into Undermountain.",
+        "roomDescription": "A goblin warband lies in wait to ambush intruders develing deeper into Undermountain.",
+        "dmDescription": "This larger warband is more organized and greedy. They will negotiate if offered enough gold (50gp+).",
         "size": 2,
-        "winConditionA": "Kill all enemies",
-        "rewardA": "Full XP",
-        "winConditionB": "Flee",
-        "rewardB": "Nothing",
+        "winConditions": [
+            {
+                "condition": "Kill all enemies",
+                "reward": "Full XP"
+            },
+            {
+                "condition": "Flee",
+                "reward": "Nothing"
+            }
+        ],
         "lair": false
     },
     {
@@ -101,7 +120,8 @@
         "creatures": "Goblin Minion, Goblin Warrior, Goblin Boss, Goblin Hexer",
         "attitude": "hostile",
         "personality": "boastful",
-        "description": "An elite goblin strike force defends its territory deep within Undermountain",
+        "roomDescription": "An elite goblin strike force defends its territory deep within Undermountain",
+        "dmDescription": "This is a well-trained goblin elite unit. They use tactics and will not flee. The boss has a magic item.",
         "size": 3,
         "lair": false
     },
@@ -114,7 +134,8 @@
         "creatures": "[dragon type] Dragon Wyrmling, Kobold, Winged Kobold",
         "attitude": "hostile",
         "personality": "fanatical",
-        "description": "A dragon wyrmling has gathered a band of kobolds to help it amass a hoard.",
+        "roomDescription": "A dragon wyrmling has gathered a band of kobolds to help it amass a hoard.",
+        "dmDescription": "The kobolds worship the wyrmling and will fight to the death. The wyrmling is young and arrogant. Small hoard worth 200gp.",
         "size": 2,
         "lair": false
     },
@@ -127,7 +148,8 @@
         "creatures": "Adult [dragon type] Dragon",
         "attitude": "indifferent",
         "personality": "boastful",
-        "description": "An ancient dragon rests in its lair, surrounded by centuries of accumulated treasure.",
+        "roomDescription": "An ancient dragon rests in its lair, surrounded by centuries of accumulated treasure.",
+        "dmDescription": "The dragon is ancient and cunning. It may negotiate, trade information, or attack depending on the party's approach. Massive hoard worth 50,000gp+.",
         "size": 4,
         "lair": true
     }

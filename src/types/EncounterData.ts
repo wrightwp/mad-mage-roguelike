@@ -7,12 +7,13 @@ export interface EncounterData {
     creatures?: string; // Comma-separated list
     attitude?: 'hostile' | 'indifferent' | 'friendly';
     personality?: string; // cowardly, greedy, boastful, etc.
-    description: string;
+    roomDescription: string; // Description visible to players
+    dmDescription: string; // Additional details for the DM
     size: number; // Number of rooms/areas
-    winConditionA?: string;
-    rewardA?: string;
-    winConditionB?: string;
-    rewardB?: string;
+    winConditions?: Array<{
+        condition: string;
+        reward: string;
+    }>;
     aiRoomPrompt?: string; // For battle map generation
     lair: boolean; // Is this a lair encounter?
 }

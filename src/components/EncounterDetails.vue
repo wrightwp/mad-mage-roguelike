@@ -124,15 +124,15 @@ const getConnectedNodeType = (connectionId: string): string => {
         </div>
 
         <!-- Win Conditions & Rewards -->
-        <div v-if="selectedNode.encounter?.winConditionA && (selectedNode.revealed || revealAll || selectedNode.status === 'visited' || selectedNode.status === 'current')" 
+        <div v-if="selectedNode.encounter?.winConditions?.length && (selectedNode.revealed || revealAll || selectedNode.status === 'visited' || selectedNode.status === 'current')" 
           class="space-y-2">
-          <div class="bg-emerald-900/10 rounded-xl p-3 border border-emerald-900/30">
-            <div class="text-xs font-bold text-emerald-400 mb-1">{{ selectedNode.encounter.winConditionA }}</div>
-            <div class="text-[10px] text-slate-400">Reward: {{ selectedNode.encounter.rewardA }}</div>
-          </div>
-          <div v-if="selectedNode.encounter.winConditionB" class="bg-amber-900/10 rounded-xl p-3 border border-amber-900/30">
-            <div class="text-xs font-bold text-amber-400 mb-1">{{ selectedNode.encounter.winConditionB }}</div>
-            <div class="text-[10px] text-slate-400">Reward: {{ selectedNode.encounter.rewardB }}</div>
+          <div 
+            v-for="(winCondition, index) in selectedNode.encounter.winConditions" 
+            :key="index"
+            class="rounded-xl p-3 border"
+            :class="index === 0 ? 'bg-emerald-900/10 border-emerald-900/30' : 'bg-amber-900/10 border-amber-900/30'">
+            <div class="text-xs font-bold mb-1" :class="index === 0 ? 'text-emerald-400' : 'text-amber-400'">{{ winCondition.condition }}</div>
+            <div class="text-[10px] text-slate-400">Reward: {{ winCondition.reward }}</div>
           </div>
         </div>
 

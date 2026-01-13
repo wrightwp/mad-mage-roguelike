@@ -130,7 +130,7 @@ export const generateDungeon = (
 
         if (encounter) {
             node.encounter = encounter;
-            node.description = encounter.description;
+            node.description = encounter.roomDescription;
         } else {
             // Fallback descriptions if no encounter found
             switch (node.type) {
