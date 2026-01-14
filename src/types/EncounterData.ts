@@ -1,19 +1,22 @@
+import type { MonsterData } from './MonsterData';
+import type { WinCondition } from './WinCondition';
+import { EncounterType } from './EncounterType';
+import { EncounterDifficulty } from './EncounterDifficulty';
+import { EncounterAttitude } from './EncounterAttitude';
+
 export interface EncounterData {
     name: string;
     level: number;
-    type: 'combat' | 'exploration' | 'social' | 'puzzle';
-    difficulty: 'low' | 'moderate' | 'high';
+    type: EncounterType;
+    difficulty: EncounterDifficulty;
     xpBudget: number | false; // FALSE for non-combat encounters
-    creatures?: string; // Comma-separated list
-    attitude?: 'hostile' | 'indifferent' | 'friendly';
+    monsters?: MonsterData[]; // Array of monster objects
+    attitude?: EncounterAttitude;
     personality?: string; // cowardly, greedy, boastful, etc.
     roomDescription: string; // Description visible to players
     dmDescription: string; // Additional details for the DM
     size: number; // Number of rooms/areas
-    winConditions?: Array<{
-        condition: string;
-        reward: string;
-    }>;
+    winConditions?: WinCondition[];
     aiRoomPrompt?: string; // For battle map generation
     lair: boolean; // Is this a lair encounter?
 }

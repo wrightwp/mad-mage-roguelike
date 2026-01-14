@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, watch } from 'vue';
 import type { DungeonNode, DungeonMapData } from '../types';
+import { EncounterType } from '../types';
 import { getNodeColor, getNodeIcon } from '../utils/nodeStyles';
 
 interface Props {
@@ -106,11 +107,11 @@ const getConnectedNodeType = (connectionId: string): string => {
         </div>
 
         <!-- Combat Details -->
-        <div v-if="selectedNode.encounter && selectedNode.encounter.type === 'combat' && (selectedNode.revealed || revealAll || selectedNode.status === 'visited' || selectedNode.status === 'current')" 
+        <div v-if="selectedNode.encounter && selectedNode.encounter.type === EncounterType.Combat && (selectedNode.revealed || revealAll || selectedNode.status === 'visited' || selectedNode.status === 'current')" 
           class="bg-red-900/10 rounded-xl p-4 border border-red-900/30">
           <div class="text-[10px] text-red-400 uppercase tracking-widest mb-2 font-bold">Combat Encounter</div>
-          <div v-if="selectedNode.encounter.creatures" class="text-sm text-slate-300 mb-2">
-            <strong class="text-red-300">Enemies:</strong> {{ selectedNode.encounter.creatures }}
+          <div v-if="selectedNode.encounter.monsters?.length" class="text-sm text-slate-300 mb-2">
+            <strong class="text-red-300">Enemies:</strong> {{ selectedNode.encounter.monsters.map(m => m.name).join(', ') }}
           </div>
           <div v-if="selectedNode.encounter.xpBudget" class="text-xs text-slate-400 mb-1">
             XP Budget: {{ selectedNode.encounter.xpBudget }}

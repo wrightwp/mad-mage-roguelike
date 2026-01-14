@@ -1,4 +1,4 @@
-import { DungeonNode, DungeonMapData } from '../types';
+import { DungeonNode, DungeonMapData, EncounterType } from '../types';
 import { encounterLibrary } from '../data/encounterLibrary';
 
 export const generateDungeon = (
@@ -102,14 +102,14 @@ export const generateDungeon = (
 
     // 3. Assign Types and Encounter Data
     // Map node types to encounter types
-    const encounterTypeMap: Record<string, 'combat' | 'exploration' | 'social' | 'puzzle'> = {
-        'monster': 'combat',
-        'elite': 'combat',
-        'event': 'exploration',
-        'puzzle': 'puzzle',
-        'shop': 'social',
-        'treasure': 'exploration',
-        'rest': 'exploration'
+    const encounterTypeMap: Record<string, EncounterType> = {
+        'monster': EncounterType.Combat,
+        'elite': EncounterType.Combat,
+        'event': EncounterType.Exploration,
+        'puzzle': EncounterType.Puzzle,
+        'shop': EncounterType.Social,
+        'treasure': EncounterType.Exploration,
+        'rest': EncounterType.Exploration
     };
 
     standardNodes.forEach((node, idx) => {
@@ -120,7 +120,7 @@ export const generateDungeon = (
         }
 
         // Get encounter type for this node
-        const encounterType = encounterTypeMap[node.type] || 'combat';
+        const encounterType = encounterTypeMap[node.type] || EncounterType.Combat;
 
         // Get appropriate encounter for this level
         const encounter = encounterLibrary.getRandomEncounter(

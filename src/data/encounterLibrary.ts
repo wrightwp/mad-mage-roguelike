@@ -1,4 +1,5 @@
 import type { EncounterData } from '../types';
+import { EncounterType, EncounterDifficulty } from '../types';
 import encountersData from './encounters.json';
 
 export class EncounterLibrary {
@@ -11,9 +12,9 @@ export class EncounterLibrary {
      * @param options - Additional filtering options
      */
     getRandomEncounter(
-        type: EncounterData['type'],
+        type: EncounterType,
         level: number,
-        options?: { difficulty?: EncounterData['difficulty'] }
+        options?: { difficulty?: EncounterDifficulty }
     ): EncounterData | null {
         let matching = this.encounters.filter(e =>
             e.type === type &&
@@ -46,7 +47,7 @@ export class EncounterLibrary {
     /**
      * Get all encounters of a specific type
      */
-    getEncountersByType(type: EncounterData['type']): EncounterData[] {
+    getEncountersByType(type: EncounterType): EncounterData[] {
         return this.encounters.filter(e => e.type === type);
     }
 

@@ -6,47 +6,19 @@
 import { encounterLibrary } from './encounterLibrary';
 import { monsterLibrary } from './monsterLibrary';
 import type { EncounterData, MonsterData } from '../types';
+import { EncounterType, EncounterDifficulty } from '../types';
+
+
 
 /**
- * Enhanced encounter with full monster details
- */
-export interface EnhancedEncounter extends EncounterData {
-    monsterDetails?: MonsterData[];
-    totalXP?: number;
-}
-
-/**
- * Get an encounter with full monster details
+ * Get a random encounter (monsters are already embedded in EncounterData)
  */
 export function getEnhancedEncounter(
-    type: EncounterData['type'],
+    type: EncounterType,
     level: number,
-    options?: { difficulty?: EncounterData['difficulty'] }
-): EnhancedEncounter | null {
-    const encounter = encounterLibrary.getRandomEncounter(type, level, options);
-
-    if (!encounter) return null;
-
-    // If it's a combat encounter with creatures, get monster details
-    if (encounter.creatures) {
-        const creatureNames = encounter.creatures
-            .split(',')
-            .map(c => c.trim());
-
-        const monsterDetails = creatureNames
-            .map(name => monsterLibrary.getMonsterByName(name))
-            .filter((m): m is MonsterData => m !== null);
-
-        const totalXP = monsterLibrary.calculateTotalXP(creatureNames);
-
-        return {
-            ...encounter,
-            monsterDetails,
-            totalXP
-        };
-    }
-
-    return encounter;
+    options?: { difficulty?: EncounterDifficulty }
+): EncounterData | null {
+    return encounterLibrary.getRandomEncounter(type, level, options);
 }
 
 /**
@@ -54,22 +26,22 @@ export function getEnhancedEncounter(
  */
 export function buildCustomEncounter(
     monsterNames: string[],
-    encounterType: EncounterData['type'] = 'combat',
+    encounterType: EncounterType = EncounterType.Combat,
     level: number = 1
-): EnhancedEncounter | null {
-    const monsterDetails = monsterNames
+): EncounterData | null {
+    const monsters = monsterNames
         .map(name => monsterLibrary.getMonsterByName(name))
         .filter((m): m is MonsterData => m !== null);
 
-    if (monsterDetails.length === 0) return null;
+    if (monsters.length === 0) return null;
 
-    const totalXP = monsterLibrary.calculateTotalXP(monsterNames);
+    const totalXP = monsters.reduce((sum, m) => sum + m.exp, 0);
 
     // Determine difficulty based on XP
-    let difficulty: EncounterData['difficulty'] = 'low';
+    let difficulty: EncounterDifficulty = EncounterDifficulty.Low;
     const xpPerLevel = totalXP / level;
-    if (xpPerLevel > 400) difficulty = 'high';
-    else if (xpPerLevel > 200) difficulty = 'moderate';
+    if (xpPerLevel > 400) difficulty = EncounterDifficulty.High;
+    else if (xpPerLevel > 200) difficulty = EncounterDifficulty.Moderate;
 
     return {
         name: `Custom: ${monsterNames.join(', ')}`,
@@ -77,13 +49,11 @@ export function buildCustomEncounter(
         type: encounterType,
         difficulty,
         xpBudget: totalXP,
-        creatures: monsterNames.join(', '),
+        monsters,
         roomDescription: `A custom encounter featuring ${monsterNames.join(', ')}`,
-        dmDescription: `Custom encounter with ${monsterDetails.length} monster type(s). Total XP: ${totalXP}`,
+        dmDescription: `Custom encounter with ${monsters.length} monster type(s). Total XP: ${totalXP}`,
         size: 1,
-        lair: false,
-        monsterDetails,
-        totalXP
+        lair: false
     };
 }
 
@@ -92,8 +62,8 @@ export function buildCustomEncounter(
  */
 export function generateRandomEncounterForLevel(
     partyLevel: number,
-    encounterType: EncounterData['type'] = 'combat'
-): EnhancedEncounter | null {
+    encounterType: EncounterType = EncounterType.Combat
+): EncounterData | null {
     // Get monsters appropriate for this level
     const suitableMonsters = monsterLibrary.getMonstersForPartyLevel(partyLevel);
 
@@ -118,12 +88,13 @@ export function exampleUsage() {
     console.log('=== Monster Library Examples ===\n');
 
     // Example 1: Get enhanced encounter
-    const encounter = getEnhancedEncounter('combat', 1, { difficulty: 'low' });
+    const encounter = getEnhancedEncounter(EncounterType.Combat, 1, { difficulty: EncounterDifficulty.Low });
     if (encounter) {
         console.log('Enhanced Encounter:', encounter.name);
-        console.log('Total XP:', encounter.totalXP);
-        if (encounter.monsterDetails) {
-            encounter.monsterDetails.forEach(monster => {
+        const totalXP = encounter.monsters?.reduce((sum, m) => sum + m.exp, 0) || 0;
+        console.log('Total XP:', totalXP);
+        if (encounter.monsters) {
+            encounter.monsters.forEach(monster => {
                 console.log(`  - ${monster.name} (CR ${monster.cr}, ${monster.exp} XP)`);
                 console.log(`    ${monster.mmLink}`);
             });
@@ -133,11 +104,12 @@ export function exampleUsage() {
     console.log('\n=== Custom Encounter ===\n');
 
     // Example 2: Build custom encounter
-    const customEncounter = buildCustomEncounter(['Goblin', 'Goblin', 'Goblin Boss'], 'combat', 2);
+    const customEncounter = buildCustomEncounter(['Goblin', 'Goblin', 'Goblin Boss'], EncounterType.Combat, 2);
     if (customEncounter) {
         console.log('Custom Encounter:', customEncounter.name);
         console.log('Difficulty:', customEncounter.difficulty);
-        console.log('Total XP:', customEncounter.totalXP);
+        const totalXP = customEncounter.monsters?.reduce((sum, m) => sum + m.exp, 0) || 0;
+        console.log('Total XP:', totalXP);
     }
 
     console.log('\n=== Random Generated Encounter ===\n');
@@ -146,8 +118,9 @@ export function exampleUsage() {
     const randomEncounter = generateRandomEncounterForLevel(5);
     if (randomEncounter) {
         console.log('Random Encounter for Level 5 Party:');
-        console.log('Creatures:', randomEncounter.creatures);
-        console.log('Total XP:', randomEncounter.totalXP);
+        console.log('Monsters:', randomEncounter.monsters?.map(m => m.name).join(', '));
+        const totalXP = randomEncounter.monsters?.reduce((sum, m) => sum + m.exp, 0) || 0;
+        console.log('Total XP:', totalXP);
     }
 
     console.log('\n=== Monster Search ===\n');
