@@ -112,6 +112,9 @@ export const generateDungeon = (
         'rest': EncounterType.Exploration
     };
 
+    // Track used encounter names to prevent duplicates on the same map
+    const usedEncounterNames: string[] = [];
+
     standardNodes.forEach((node, idx) => {
         if (idx < typePool.length) {
             node.type = typePool[idx];
@@ -122,15 +125,18 @@ export const generateDungeon = (
         // Get encounter type for this node
         const encounterType = encounterTypeMap[node.type] || EncounterType.Combat;
 
-        // Get appropriate encounter for this level
+        // Get appropriate encounter for this level, excluding already-used encounters
         const encounter = encounterLibrary.getRandomEncounter(
             encounterType,
-            node.layer // Use layer as level
+            node.layer, // Use layer as level
+            { excludeNames: usedEncounterNames }
         );
 
         if (encounter) {
             node.encounter = encounter;
             node.description = encounter.roomDescription;
+            // Track this encounter name to prevent duplicates
+            usedEncounterNames.push(encounter.name);
         } else {
             // Fallback descriptions if no encounter found
             switch (node.type) {

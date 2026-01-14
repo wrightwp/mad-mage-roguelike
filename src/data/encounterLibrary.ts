@@ -14,7 +14,7 @@ export class EncounterLibrary {
     getRandomEncounter(
         type: EncounterType,
         level: number,
-        options?: { difficulty?: EncounterDifficulty }
+        options?: { difficulty?: EncounterDifficulty; excludeNames?: string[] }
     ): EncounterData | null {
         let matching = this.encounters.filter(e =>
             e.type === type &&
@@ -23,6 +23,11 @@ export class EncounterLibrary {
 
         if (options?.difficulty) {
             matching = matching.filter(e => e.difficulty === options.difficulty);
+        }
+
+        // Exclude already-used encounter names to prevent duplicates on the same map
+        if (options?.excludeNames && options.excludeNames.length > 0) {
+            matching = matching.filter(e => !options.excludeNames!.includes(e.name));
         }
 
         if (matching.length === 0) return null;
