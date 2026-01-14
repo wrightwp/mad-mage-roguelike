@@ -42,7 +42,7 @@
                 "reward": "No XP, but avoid resource expenditure"
             }
         ],
-        "aiRoomPrompt": "A 120ft x 100ft underground dungeon storage room with 5ft grid. Stone walls and floor with scattered debris. An overturned wooden wagon provides cover in the center. A 10ft high ledge runs along the left wall with a crude ladder. Dim torchlight. Several broken crates and moldy supply sacks throughout. One entrance at the south, one exit at the north.",
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 120ft x 100ft underground dungeon chamber with stone dungeon walls. Dim torchlight.   Several broken crates and moldy supply sacks throughout. Entry via stone staircase descending from above. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
         "lair": false
     },
     {
@@ -88,7 +88,7 @@
                 "reward": "Can bypass encounter, 50% XP"
             }
         ],
-        "aiRoomPrompt": "A 150ft x 120ft ancient stone crypt with 5ft grid. Stone sarcophagi line both long walls (6 total). A large ornate sarcophagus sits on a raised platform in the center. Dim green magical light emanates from cracks in the floor. Cobwebs in corners, scattered bones, and broken funeral urns. Two entrances on opposite ends.",
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 150ft x 120ft underground burial crypt with ancient carved stone walls. Magical glow. A large ornate sarcophagus sits on a raised platform in the center. Dim green magical light emanates from cracks in the floor. Cobwebs in corners, scattered bones, and broken funeral urns. Two entrances on opposite ends. Entry through arched doorway at south. Two exits on opposite walls. Clean lines, high contrast for virtual tabletop use.",
         "lair": false
     },
     {
@@ -134,7 +134,7 @@
                 "reward": "No XP, but can return later prepared"
             }
         ],
-        "aiRoomPrompt": "A 100ft x 100ft low-ceilinged sewer junction with 5ft grid. Refuse and debris piles scattered throughout. Multiple rat holes (2ft diameter) in the walls and one large hole (5ft) in the floor near center. Shallow water (difficult terrain) in the lower third of the room. Dim light from phosphorescent fungus. Three tunnel exits.",
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 100ft underground sewer junction with stone dungeon walls. Dim torchlight. Multiple rat holes (2ft diameter) in the walls and one large hole (5ft) in the floor near center. Shallow water (difficult terrain) in the lower third of the room. Dim light from phosphorescent fungus. Three tunnel exits. Entry via ladder from trapdoor above. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
         "lair": false
     },
     {
@@ -180,7 +180,7 @@
                 "reward": "50% XP, gain kobold guides"
             }
         ],
-        "aiRoomPrompt": "A 180ft x 150ft natural cavern with 5ft grid. A 20ft wide, 30ft deep crevasse runs through the middle. Two rope bridges cross the crevasse (5ft wide each). The far side is 10ft higher than the entrance. Glittering mineral deposits on walls. Stalactites hang from 40ft ceiling. Natural stone formations provide cover on both sides. One entrance, main exit on the elevated far side.",
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 180ft x 150ft underground mine tunnel with rough stone walls. Dim torchlight. Two rope bridges cross the crevasse (5ft wide each). The far side is 10ft higher than the entrance. Glittering mineral deposits on walls. Stalactites hang from 40ft ceiling. Natural stone formations provide cover on both sides. One entrance, main exit on the elevated far side. Entry through narrow tunnel. Two exits on opposite walls. Clean lines, high contrast for virtual tabletop use.",
         "lair": false
     },
     {
@@ -226,7 +226,7 @@
                 "reward": "100 XP, ritual fails, but survivors escape"
             }
         ],
-        "aiRoomPrompt": "A 150ft diameter circular ritual chamber with 5ft grid. A stone altar with glowing runes sits in the exact center on a raised platform (5ft high). Four pillars mark the cardinal directions (skeleton positions). Crimson candles arranged in arcane patterns. Dark tapestries depicting demonic entities on walls. Shadowy alcoves between pillars. Single grand entrance with heavy stone doors. Ominous red glow from the altar.",
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 100ft underground dungeon chamber with ice-covered stone walls. Dim torchlight. Four pillars mark the cardinal directions (skeleton positions). Crimson candles arranged in arcane patterns. Dark tapestries depicting demonic entities on walls. Shadowy alcoves between pillars. Single grand entrance with heavy stone doors. Ominous red glow from the altar. Entry via collapsed section in ceiling. Two exits on opposite walls. Clean lines, high contrast for virtual tabletop use.",
         "lair": false
     },
     {
@@ -272,7 +272,7 @@
                 "reward": "50% XP, nest destroyed but creatures may survive"
             }
         ],
-        "aiRoomPrompt": "A 140ft x 120ft natural cavern with 5ft grid. Dense spider webs covering 60% of floor (difficult terrain), all walls, and ceiling. Multiple cocoons hanging from ceiling and attached to walls (some humanoid-sized). Narrow clear paths wind between web masses. Dim bioluminescent fungi on unweb bed sections of floor. Two exits on opposite corners, one partially blocked by webs.",
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 140ft x 120ft underground mine tunnel with stone dungeon walls. Dim bioluminescent lighting. Multiple cocoons hanging from ceiling and attached to walls (some humanoid-sized). Narrow clear paths wind between web masses. Dim bioluminescent fungi on unweb bed sections of floor. Two exits on opposite corners, one partially blocked by webs. Entry through crumbling archway. Two exits on opposite walls. Clean lines, high contrast for virtual tabletop use.",
         "lair": false
     },
     {
@@ -310,7 +310,7 @@
                 "reward": "Full XP, stirges relocate permanently"
             }
         ],
-        "aiRoomPrompt": "A 100ft diameter domed chamber with 5ft grid. 30ft high domed ceiling covered with handholds and small ledges. Dried blood pools and old bones scattered on floor. Dim light from cracks in the dome. Rough uneven floor with some rubble piles. Two low tunnel entrances on opposite sides. Gore-stained central floor area.",
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 100ft underground dungeon chamber with stone dungeon walls. Dim torchlight. Dried blood pools and old bones scattered on floor. Dim light from cracks in the dome. Rough uneven floor with some rubble piles. Two low tunnel entrances on opposite sides. Gore-stained central floor area. Entry via spiral stairs in corner. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
         "lair": false
     },
     {
@@ -368,7 +368,7 @@
                 "reward": "Full XP + surprise round"
             }
         ],
-        "aiRoomPrompt": "A 130ft x 80ft underground corridor checkpoint with 5ft grid. A barricade of overturned carts and barrels (half cover, 20ft wide) blocks the center. Watchtower-like raised platform (10ft high) behind barricade for crossbow users. Two chain posts for dogs in front of barricade. Crates and supply stacks on both sides. Torches provide normal lighting. Main entrance at south, exit at north blocked by barricade. Hidden passage behind false wall on east side.",
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 130ft x 80ft underground dungeon chamber with rough stone walls. Dim torchlight. Watchtower-like raised platform (10ft high) behind barricade for crossbow users. Two chain posts for dogs in front of barricade. Crates and supply stacks on both sides. Torches provide normal lighting. Entry through ancient stone portal frame. exit at north blocked by barricade. Hidden passage behind false wall on east side. Entry through fissure in the rock. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
         "lair": false
     },
     {
@@ -410,7 +410,7 @@
                 "reward": "Full XP + easy victory"
             }
         ],
-        "aiRoomPrompt": "A 100ft x 80ft stone morgue with 5ft grid. Stone slabs with bodies line the walls. Dim candlelight. Scattered bones on floor.",
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 80ft underground dungeon chamber with stone dungeon walls. Flickering candlelight. Dim candlelight. Scattered bones on floor. Entry via stone staircase descending from above. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
         "lair": false
     },
     {
@@ -444,7 +444,7 @@
                 "reward": "Full XP + wolves become neutral"
             }
         ],
-        "aiRoomPrompt": "A 120ft x 100ft natural cave with 5ft grid. Rocky outcroppings provide cover. Bones and animal remains scattered about. Two exits.",
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 120ft x 100ft underground dungeon cavern with rough stone walls. Dim torchlight. Bones and animal remains scattered about. Two exits. Entry through arched doorway at south. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
         "lair": false
     },
     {
@@ -486,7 +486,7 @@
                 "reward": "No combat, avoid spores"
             }
         ],
-        "aiRoomPrompt": "A 100ft x 100ft mushroom cavern with 5ft grid. Giant glowing fungi throughout. Damp floor with puddles. Phosphorescent lighting.",
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 100ft underground dungeon cavern with rough stone walls. Dim torchlight. Damp floor with puddles. Phosphorescent lighting. Entry via ladder from trapdoor above. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
         "lair": false
     },
     {
@@ -520,7 +520,7 @@
                 "reward": "Full XP + advantage on attacks"
             }
         ],
-        "aiRoomPrompt": "A 110ft x 90ft dark underground tunnel junction with 5ft grid. No light sources. Rough stone walls. Three tunnel exits.",
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 110ft x 90ft underground dungeon chamber with stone dungeon walls. No light sources (darkness). Rough stone walls. Three tunnel exits. Entry through narrow tunnel. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
         "lair": false
     },
     {
@@ -554,7 +554,7 @@
                 "reward": "50 XP + 50 gp value"
             }
         ],
-        "aiRoomPrompt": "A 130ft x 100ft fetid cave with 5ft grid. Nest materials and bones in corners. Shallow stagnant pools. Terrible odor indication marks.",
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 130ft x 100ft underground dungeon cavern with stone dungeon walls. Dim torchlight. Shallow stagnant pools. Terrible odor indication marks. Entry via collapsed section in ceiling. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
         "lair": true
     },
     {
@@ -588,7 +588,7 @@
                 "reward": "No XP, avoid damage"
             }
         ],
-        "aiRoomPrompt": "A 100ft x 80ft cave with 5ft grid. High 40ft ceiling covered with bats. Guano-covered floor (difficult terrain). Two exits.",
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 80ft underground dungeon cavern with rough stone walls. Dim torchlight. Guano-covered floor (difficult terrain). Two exits. Entry through crumbling archway. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
         "lair": false
     },
     {
@@ -622,7 +622,7 @@
                 "reward": "Can bypass with caution"
             }
         ],
-        "aiRoomPrompt": "A 100ft x 100ft stalactite cavern with 5ft grid. Many stalactites on 30ft ceiling. Rocky floor with debris. Dim natural light from cracks.",
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 100ft underground dungeon cavern with rough stone walls. Dim torchlight. Rocky floor with debris. Dim natural light from cracks. Entry via spiral stairs in corner. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
         "lair": false
     },
     {
@@ -656,7 +656,7 @@
                 "reward": "300 gp, no XP"
             }
         ],
-        "aiRoomPrompt": "A 140ft x 120ft cave with 5ft grid. Stone 'statues' of adventurers scattered about. Nest with eggs in corner. Feathers and debris everywhere.",
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 140ft x 120ft underground dungeon cavern with ice-covered stone walls. Dim torchlight. Nest with eggs in corner. Feathers and debris everywhere. Entry through fissure in the rock. Two exits on opposite walls. Clean lines, high contrast for virtual tabletop use.",
         "lair": true
     },
     {
@@ -690,7 +690,7 @@
                 "reward": "Full XP + shadows banished instantly"
             }
         ],
-        "aiRoomPrompt": "A 100ft x 100ft dark shrine with 5ft grid. Desecrated altar in center. Broken holy symbols. Unnaturally dark corners. Dim flickering torchlight.",
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 100ft underground shrine chamber with stone dungeon walls. Dim torchlight. Broken holy symbols. Unnaturally dark corners. Dim flickering torchlight. Entry via stone staircase descending from above. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
         "lair": true
     },
     {
@@ -724,7 +724,7 @@
                 "reward": "No XP, preserve equipment"
             }
         ],
-        "aiRoomPrompt": "A 100ft x 80ft mine tunnel with 5ft grid. Rusted mining equipment. Corroded metal debris. Orange-stained walls. Two exits.",
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 80ft underground mine tunnel with stone dungeon walls. Dim torchlight. Corroded metal debris. Orange-stained walls. Two exits. Entry through arched doorway at south. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
         "lair": false
     },
     {
@@ -758,7 +758,7 @@
                 "reward": "200 XP + map reveals quest hook"
             }
         ],
-        "aiRoomPrompt": "A 120ft x 100ft underground camp with 5ft grid. Small campfire in center. Bedrolls and supplies. Crude bone decorations. One main entrance, one escape tunnel.",
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 120ft x 100ft underground dungeon chamber with stone dungeon walls. Dim torchlight. Bedrolls and supplies. Crude bone decorations. One main entrance, one escape tunnel. Entry via ladder from trapdoor above. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
         "lair": false
     },
     {
@@ -792,7 +792,7 @@
                 "reward": "Full XP + intelligence on hobgoblin forces"
             }
         ],
-        "aiRoomPrompt": "A 100ft x 80ft stone guardpost with 5ft grid. Firing positions behind low walls. Weapon racks. Military banners. Two entrances.",
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 80ft underground dungeon chamber with rough stone walls. Dim torchlight. Weapon racks. Military banners. Two entrances. Entry through narrow tunnel. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
         "lair": false
     },
     {
@@ -826,7 +826,7 @@
                 "reward": "Full XP + easier fight"
             }
         ],
-        "aiRoomPrompt": "A 100ft x 100ft volcanic cave with 5ft grid. Lava vents and cracks. Orange glow lighting. Obsidian formations. Heat shimmer effect.",
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 100ft underground dungeon cavern with stone dungeon walls. Orange glow from below. Orange glow lighting. Obsidian formations. Heat shimmer effect. Entry via collapsed section in ceiling. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
         "lair": false
     },
     {
@@ -860,7 +860,7 @@
                 "reward": "Full XP + quick victory"
             }
         ],
-        "aiRoomPrompt": "A 100ft x 80ft frozen cavern with 5ft grid. Ice-covered surfaces. Icicles hanging from ceiling. Frozen pool in center. Blue-white lighting.",
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 80ft underground dungeon cavern with rough stone walls. Cold blue-white lighting. Icicles hanging from ceiling. Frozen pool in center. Blue-white lighting. Entry through crumbling archway. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
         "lair": false
     },
     {
@@ -894,7 +894,7 @@
                 "reward": "No XP, avoid equipment damage"
             }
         ],
-        "aiRoomPrompt": "A 80ft x 80ft wet stone chamber with 5ft grid. Puddles and damp floor. Reflective surfaces. Corroded metal debris. Two exits.",
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 80ft x 80ft underground dungeon chamber with stone dungeon walls. Dim torchlight. Reflective surfaces. Corroded metal debris. Two exits. Entry via spiral stairs in corner. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
         "lair": false
     },
     {
@@ -936,7 +936,7 @@
                 "reward": "Full XP + goblin prisoners"
             }
         ],
-        "aiRoomPrompt": "A 150ft x 100ft wide tunnel with 5ft grid. Open space for mounted combat. Columns for cover. Two wide exits.",
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 150ft x 100ft underground dungeon chamber with stone dungeon walls. Dim torchlight. Columns for cover. Two wide exits. Entry through fissure in the rock. Two exits on opposite walls. Clean lines, high contrast for virtual tabletop use.",
         "lair": false
     },
     {
@@ -970,7 +970,7 @@
                 "reward": "No XP, no damage taken"
             }
         ],
-        "aiRoomPrompt": "A 100ft x 100ft stalactite cave with 5ft grid. Dense stalactites on 40ft ceiling. Rocky floor with debris. Narrow paths between formations.",
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 100ft underground dungeon cavern with rough stone walls. Dim torchlight. Rocky floor with debris. Narrow paths between formations. Entry via stone staircase descending from above. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
         "lair": false
     },
     {
@@ -1012,7 +1012,7 @@
                 "reward": "Full XP but harder fight"
             }
         ],
-        "aiRoomPrompt": "A 140ft x 100ft cavern with 5ft grid. Large papery wasp nest on one wall. Tunnel holes for centipedes. Organic debris on floor.",
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 140ft x 100ft underground dungeon cavern with rough stone walls. Dim torchlight. Tunnel holes for centipedes. Organic debris on floor. Entry through arched doorway at south. Two exits on opposite walls. Clean lines, high contrast for virtual tabletop use.",
         "lair": true
     },
     {
@@ -1046,7 +1046,7 @@
                 "reward": "N/A"
             }
         ],
-        "aiRoomPrompt": "A 110ft x 90ft bloody feeding area with 5ft grid. Remains and bones scattered about. Crude camp. Torchlight. Two exits.",
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 110ft x 90ft underground dungeon chamber with stone dungeon walls. Dim torchlight. Crude camp. Torchlight. Two exits. Entry via ladder from trapdoor above. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
         "lair": false
     },
     {
@@ -1080,7 +1080,7 @@
                 "reward": "Full XP + fast victory"
             }
         ],
-        "aiRoomPrompt": "A 100ft x 80ft underground garden with 5ft grid. Dead vegetation throughout. Broken planters and rotten trellises. Dim light from luminescent moss.",
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 80ft underground mine tunnel with rough stone walls. Dim torchlight. Broken planters and rotten trellises. Dim light from luminescent moss. Entry through narrow tunnel. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
         "lair": false
     },
     {
@@ -1114,7 +1114,7 @@
                 "reward": "Full XP + avoid ranged damage"
             }
         ],
-        "aiRoomPrompt": "A 120ft x 100ft dead forest chamber with 5ft grid. Dead trees and brush. Needle-covered floor. Limited cover. Natural lighting from above.",
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 120ft x 100ft underground dungeon chamber with stone dungeon walls. Dim torchlight. Needle-covered floor. Limited cover. Natural lighting from above. Entry via collapsed section in ceiling. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
         "lair": false
     },
     {
@@ -1148,7 +1148,7 @@
                 "reward": "Full XP + destroy vines for future parties"
             }
         ],
-        "aiRoomPrompt": "A 100ft x 100ft vine-covered chamber with 5ft grid. Dense vegetation everywhere. Vine curtains block visibility. Damp and humid.",
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 100ft underground dungeon chamber with stone dungeon walls. Dim torchlight. Vine curtains block visibility. Damp and humid. Entry through crumbling archway. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
         "lair": false
     },
     {
@@ -1182,7 +1182,7 @@
                 "reward": "100 XP + they leave most loot"
             }
         ],
-        "aiRoomPrompt": "A 100ft x 90ft cluttered hideout with 5ft grid. Piles of stolen goods. Makeshift perches on walls. Multiple shadowy corners. Two exits.",
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 90ft underground dungeon chamber with ice-covered stone walls. Dim torchlight. Makeshift perches on walls. Multiple shadowy corners. Two exits. Entry via spiral stairs in corner. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
         "lair": true
     },
     {
@@ -1216,7 +1216,7 @@
                 "reward": "Full XP + armor deactivated"
             }
         ],
-        "aiRoomPrompt": "A 100ft x 80ft grand hall with 5ft grid. Ornate doorway at far end. Two armor display alcoves flanking it. Tapestries on walls. Polished stone floor.",
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 80ft underground dungeon chamber with stone dungeon walls. Dim torchlight. Two armor display alcoves flanking it. Tapestries on walls. Polished stone floor. Entry through fissure in the rock. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
         "lair": false
     },
     {
@@ -1258,7 +1258,7 @@
                 "reward": "Full XP + room stays clear"
             }
         ],
-        "aiRoomPrompt": "A 90ft x 90ft infested room with 5ft grid. Walls covered with insects (visual effect). Debris and refuse piles. Dim lighting. Multiple small exits.",
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 90ft x 90ft underground dungeon chamber with stone dungeon walls. Dim torchlight. Debris and refuse piles. Dim lighting. Multiple small exits. Entry via stone staircase descending from above. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
         "lair": false
     },
     {
@@ -1292,7 +1292,7 @@
                 "reward": "Full XP + safe passage"
             }
         ],
-        "aiRoomPrompt": "A 110ft x 100ft flooded shrine with 5ft grid. Shallow water (difficult terrain) throughout. Crude idol on raised platform. Torches in wet sconces.",
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 110ft x 100ft underground shrine chamber with ornate stone walls with carvings. Dim torchlight. Crude idol on raised platform. Torches in wet sconces. Entry through arched doorway at south. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
         "lair": true
     },
     {
@@ -1326,7 +1326,7 @@
                 "reward": "Full XP + swords become loot"
             }
         ],
-        "aiRoomPrompt": "A 100ft x 70ft armory with 5ft grid. Weapon racks on all walls. Display cases. Stone floor. Single entrance with heavy doors.",
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 70ft underground dungeon chamber with stone dungeon walls. Dim torchlight. Display cases. Stone floor. Entry via ladder from trapdoor above. with heavy doors. Entry via ladder from trapdoor above. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
         "lair": false
     },
     {
@@ -1360,7 +1360,7 @@
                 "reward": "50% XP, spiders scattered"
             }
         ],
-        "aiRoomPrompt": "A 160ft x 140ft web-filled cavern with 5ft grid. Dense webs (difficult terrain) everywhere. Cocooned shapes. High ceiling with web strands.",
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 160ft x 140ft underground dungeon cavern with rough stone walls. Dim torchlight. Cocooned shapes. High ceiling with web strands. Entry through narrow tunnel. Two exits on opposite walls. Clean lines, high contrast for virtual tabletop use.",
         "lair": true
     },
     {
@@ -1394,7 +1394,7 @@
                 "reward": "Full XP + faster victory"
             }
         ],
-        "aiRoomPrompt": "A 150ft x 120ft crypt with 5ft grid. Broken coffins and open graves. Narrow doorways for chokepoints. Dim green glow.",
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 150ft x 120ft underground burial crypt with stone dungeon walls. Magical glow. Narrow doorways for chokepoints. Dim green glow. Entry via collapsed section in ceiling. Two exits on opposite walls. Clean lines, high contrast for virtual tabletop use.",
         "lair": false
     },
     {
@@ -1428,7 +1428,7 @@
                 "reward": "Full XP + avoid ranged damage"
             }
         ],
-        "aiRoomPrompt": "A 120ft diameter circular room with 5ft grid. Four 10ft raised platforms with ladders. Low walls for cover in center. Arrow slits in platforms.",
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 100ft underground dungeon chamber with stone dungeon walls. Dim torchlight. Low walls for cover in center. Arrow slits in platforms. Entry through crumbling archway. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
         "lair": false
     },
     {
@@ -1470,7 +1470,7 @@
                 "reward": "Full XP + survivors flee"
             }
         ],
-        "aiRoomPrompt": "A 140ft x 100ft goblin barracks with 5ft grid. Crude bunks and weapon racks. War table with crude map. Two exits.",
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 140ft x 100ft underground dungeon chamber with stone dungeon walls. Dim torchlight. War table with crude map. Two exits. Entry via spiral stairs in corner. Two exits on opposite walls. Clean lines, high contrast for virtual tabletop use.",
         "lair": true
     },
     {
@@ -1512,7 +1512,7 @@
                 "reward": "Full XP + instant victory"
             }
         ],
-        "aiRoomPrompt": "A 130ft x 100ft knight's tomb with 5ft grid. Central sarcophagus with effigy. Armor displays on walls. Unnaturally dark corners.",
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 130ft x 100ft underground dungeon chamber with ancient carved stone walls. Dim torchlight. Armor displays on walls. Unnaturally dark corners. Entry through fissure in the rock. Two exits on opposite walls. Clean lines, high contrast for virtual tabletop use.",
         "lair": true
     },
     {
@@ -1554,7 +1554,7 @@
                 "reward": "No XP, information about dungeon"
             }
         ],
-        "aiRoomPrompt": "A 110ft x 90ft natural cave den with 5ft grid. Bones and remains scattered. Central sleeping area. One main entrance, one small escape exit.",
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 110ft x 90ft underground dungeon cavern with rough stone walls. Dim torchlight. Central sleeping area. One main entrance, one small escape exit. Entry via stone staircase descending from above. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
         "lair": true
     },
     {
@@ -1600,7 +1600,7 @@
                 "reward": "No combat"
             }
         ],
-        "aiRoomPrompt": "A 100ft x 100ft geometric chamber with 5ft grid. Perfect right angles everywhere. Mechanical aesthetic. Clean and orderly.",
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 100ft underground dungeon chamber with stone dungeon walls. Dim torchlight. Mechanical aesthetic. Clean and orderly. Entry through arched doorway at south. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
         "lair": false
     },
     {
@@ -1621,7 +1621,7 @@
         ],
         "attitude": "hostile",
         "personality": "deceptive",
-        "roomDescription": "Two travelers wave for help at the edge of the chamber, claiming to be lost. Something about their smiles seems... wrong. Their forms blur as they reveal jackals standing on hind legs.",
+        "roomDescription": "Two travelers wave for help at the edge of the chamber, claiming to be lost. Something about their smiles seems.. wrong. Their forms blur as they reveal jackals standing on hind legs.",
         "dmDescription": "Jackalweres use Sleep Gaze (DC 10 Wis or fall asleep). They're resistant to nonmagical weapons. They posed as travelers to lure victims. Their 'belongings' are stolen: 40 gp, traveler's outfit, fake identification.",
         "size": 1,
         "winConditions": [
@@ -1634,7 +1634,7 @@
                 "reward": "Full XP + bypass resistance"
             }
         ],
-        "aiRoomPrompt": "A 100ft x 80ft crossroads chamber with 5ft grid. Multiple exits. Fake campsite setup. Dim torchlight.",
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 80ft underground dungeon chamber with stone dungeon walls. Dim torchlight.  Entry via ladder from trapdoor above. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
         "lair": false
     },
     {
@@ -1672,7 +1672,7 @@
                 "reward": "Safe passage"
             }
         ],
-        "aiRoomPrompt": "A 120ft x 100ft underground grotto with 5ft grid. Overgrown with vines and moss. Natural spring. Fey aesthetic.",
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 120ft x 100ft underground dungeon chamber with stone dungeon walls. Dim torchlight. Natural spring. Fey aesthetic. Entry through narrow tunnel. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
         "lair": false
     },
     {
@@ -1706,7 +1706,7 @@
                 "reward": "Full XP + positional advantage"
             }
         ],
-        "aiRoomPrompt": "A 100ft x 100ft flooded chamber with 5ft grid. Large central pool (5ft deep water). Narrow dry ledges around edges. Lily pads.",
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 100ft underground dungeon chamber with stone dungeon walls. Dim torchlight. Narrow dry ledges around edges. Lily pads. Entry via collapsed section in ceiling. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
         "lair": false
     },
     {
@@ -1740,7 +1740,7 @@
                 "reward": "Full XP + easier fight"
             }
         ],
-        "aiRoomPrompt": "A 120ft x 80ft flooded tunnel with 5ft grid. Central water channel (10ft deep). Raised walkways on sides. Submerged logs.",
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 120ft x 80ft underground dungeon chamber with rough stone walls. Dim torchlight. Raised walkways on sides. Submerged logs. Entry through crumbling archway. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
         "lair": false
     },
     {
@@ -1774,7 +1774,7 @@
                 "reward": "No XP, avoid combat"
             }
         ],
-        "aiRoomPrompt": "A 60ft x 40ft storage closet with 5ft grid. Shelves with cleaning supplies. Mops and buckets. Cramped space.",
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 60ft x 40ft underground dungeon chamber with rough-hewn rock walls with wooden supports. Dim torchlight. Mops and buckets. Cramped space. Entry via spiral stairs in corner. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
         "lair": false
     },
     {
@@ -1808,7 +1808,7 @@
                 "reward": "Full XP + easier fight"
             }
         ],
-        "aiRoomPrompt": "A 120ft x 100ft ancient ruin with 5ft grid. Dust-covered everywhere. Broken pillars and walls. Collapsed ceiling section.",
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 120ft x 100ft underground dungeon chamber with ice-covered stone walls. Dim torchlight. Broken pillars and walls. Collapsed ceiling section. Entry through fissure in the rock. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
         "lair": false
     },
     {
@@ -1842,7 +1842,7 @@
                 "reward": "Full XP + avoid infection risk"
             }
         ],
-        "aiRoomPrompt": "A 100ft x 80ft quarantine chamber with 5ft grid. Warning signs in Undercommon. Sealed doors. Dead adventurer's remains in corner.",
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 80ft underground dungeon chamber with ice-covered stone walls. Dim torchlight. Sealed doors. Dead adventurer's remains in corner. Entry via stone staircase descending from above. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
         "lair": false
     },
     {
@@ -1876,7 +1876,7 @@
                 "reward": "Full XP + intelligence notes"
             }
         ],
-        "aiRoomPrompt": "A 90ft x 70ft waystation with 5ft grid. Makeshift camp. Surveillance equipment. Multiple exits for escape.",
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 90ft x 70ft underground dungeon chamber with stone dungeon walls. Dim torchlight. Surveillance equipment. Multiple exits for escape. Entry through arched doorway at south. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
         "lair": false
     },
     {
@@ -1910,7 +1910,7 @@
                 "reward": "Safe passage + gang info"
             }
         ],
-        "aiRoomPrompt": "A 80ft x 60ft gang territory with 5ft grid. Crude furniture. Graffiti on walls. Makeshift weapons. One main entrance.",
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 80ft x 60ft underground dungeon chamber with stone dungeon walls. Dim torchlight. Graffiti on walls. Makeshift weapons. One main entrance. Entry via ladder from trapdoor above. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
         "lair": false
     },
     {
@@ -1948,7 +1948,7 @@
                 "reward": "No XP, lose 2d6 gp to pickpocket"
             }
         ],
-        "aiRoomPrompt": "A 100ft x 80ft underground tavern with 5ft grid. Small stage area. Tables and chairs. Atmospheric lighting.",
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 80ft underground dungeon chamber with stone dungeon walls. Dim torchlight. Tables and chairs. Atmospheric lighting. Entry through narrow tunnel. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
         "lair": false
     },
     {
@@ -1982,7 +1982,7 @@
                 "reward": "50 XP + healing spores (1d8+2)"
             }
         ],
-        "aiRoomPrompt": "A 120ft x 100ft fungal garden with 5ft grid. Various mushrooms from small to huge. Spore-filled air. Bioluminescent lighting.",
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 120ft x 100ft underground mine tunnel with stone dungeon walls. Dim bioluminescent lighting. Spore-filled air. Bioluminescent lighting. Entry via collapsed section in ceiling. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
         "lair": true
     },
     {
@@ -2016,7 +2016,7 @@
                 "reward": "Full XP + safe passage"
             }
         ],
-        "aiRoomPrompt": "A 100ft x 80ft natural cave den with 5ft grid. Nest materials. Honeycomb in corner. Bear cubs (non-combatants). Two exits.",
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 80ft underground dungeon cavern with rough stone walls. Dim torchlight. Honeycomb in corner. Bear cubs (non-combatants). Two exits. Entry through crumbling archway. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
         "lair": true
     },
     {
@@ -2058,7 +2058,7 @@
                 "reward": "Full XP + undead collapse"
             }
         ],
-        "aiRoomPrompt": "A 100ft x 100ft ossuary with 5ft grid. Bone piles throughout. Carved skull on wall. Dim candlelight. Macabre decorations.",
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 100ft underground dungeon chamber with stone dungeon walls. Flickering candlelight. Carved skull on wall. Dim candlelight. Macabre decorations. Entry via spiral stairs in corner. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
         "lair": false
     }
 ]

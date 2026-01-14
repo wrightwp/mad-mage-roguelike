@@ -1,6 +1,6 @@
 import type { EncounterData } from '../types';
 import { EncounterType, EncounterDifficulty } from '../types';
-import encountersData from './encounters.json';
+import encountersData from './encounters-level-01.json';
 
 export class EncounterLibrary {
     private encounters: EncounterData[] = encountersData as EncounterData[];
