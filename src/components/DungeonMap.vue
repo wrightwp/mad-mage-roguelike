@@ -151,6 +151,7 @@ const handleEnterEncounter = (node: any) => {
       :map-data="mapData"
       @enter-encounter="handleEnterEncounter"
       @complete-encounter="completeEncounter"
+      @select-node="handleNodeClickEvent"
     />
     
     <!-- Restart Confirmation Modal -->
