@@ -25,10 +25,7 @@ const emit = defineEmits<Emits>();
   >
     <!-- Header -->
     <div class="p-6 border-b border-slate-700 bg-slate-950/50">
-      <h3 class="font-bold text-amber-500 mb-1 text-xs uppercase tracking-[0.2em]">Encounter Details</h3>
-      <h2 class="text-xl font-bold text-slate-100 tracking-tight">
-        {{ selectedNode ? ((selectedNode.revealed || revealAll || selectedNode.status === 'visited' || selectedNode.status === 'current') ? (selectedNode.type === 'start' ? 'Dungeon Entrance' : selectedNode.type === 'boss' ? 'Boss Chamber' : selectedNode.type.charAt(0).toUpperCase() + selectedNode.type.slice(1)) : 'Unknown Room') : 'No Selection' }}
-      </h2>
+      <h2 class="text-xl font-bold text-amber-500 tracking-tight">Encounter Details</h2>
     </div>
 
     <!-- Encounter Details Component -->

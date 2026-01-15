@@ -55,6 +55,7 @@ const {
 // Initialize map on mount
 onMounted(() => {
   initMap();
+  resetInteraction();
   scrollToBottom();
 });
 

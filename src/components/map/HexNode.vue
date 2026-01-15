@@ -100,20 +100,6 @@ const hexPath = computed(() => {
       ?
     </text>
 
-    <!-- Floating Enter Button for Available Nodes (radial menu style) -->
-    <g v-if="node.status === 'available' && isSelected" class="transition-opacity duration-200" style="pointer-events: all;">
-      <foreignObject x="-20" y="-88" width="40" height="40" style="pointer-events: all;">
-        <div xmlns="http://www.w3.org/1999/xhtml" class="flex justify-center" style="pointer-events: all;">
-          <button
-            @click="emit('enterEncounter', node)"
-            title="Enter Encounter"
-            class="w-9 h-9 bg-emerald-600 hover:bg-emerald-500 text-white text-lg font-bold rounded-full shadow-lg transition-all active:scale-95 flex items-center justify-center"
-            style="pointer-events: all;"
-          >
-            🚪
-          </button>
-        </div>
-      </foreignObject>
-    </g>
+  
   </g>
 </template>

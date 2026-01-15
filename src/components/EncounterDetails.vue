@@ -1,8 +1,7 @@
 <script setup lang="ts">
-import { ref, watch } from 'vue';
+import { ref, watch, computed } from 'vue';
 import type { DungeonNode, DungeonMapData } from '../types';
 import { EncounterType } from '../types';
-import { getNodeColor, getNodeIcon } from '../utils/nodeStyles';
 
 interface Props {
   selectedNode: DungeonNode | null;
@@ -26,11 +25,15 @@ watch(() => props.selectedNode, () => {
   showDMInfo.value = false;
 });
 
+// Helper to get connected node
+const getConnectedNode = (connectionId: string): DungeonNode | null => {
+  if (!props.mapData) return null;
+  return props.mapData.nodes.find(n => n.id === connectionId) || null;
+};
+
 // Helper to get connected node type
 const getConnectedNodeType = (connectionId: string): string => {
-  if (!props.mapData) return 'Unknown Room';
-  
-  const connectedNode = props.mapData.nodes.find(n => n.id === connectionId);
+  const connectedNode = getConnectedNode(connectionId);
   if (!connectedNode) return 'Unknown Room';
   
   // Format the node type nicely
@@ -38,6 +41,27 @@ const getConnectedNodeType = (connectionId: string): string => {
   if (connectedNode.type === 'boss') return 'Boss Chamber';
   return connectedNode.type.charAt(0).toUpperCase() + connectedNode.type.slice(1);
 };
+
+// Copy to clipboard functionality
+const copyToClipboard = async (text: string) => {
+  try {
+    await navigator.clipboard.writeText(text);
+    alert('Copied to clipboard!');
+  } catch (err) {
+    console.error('Failed to copy:', err);
+  }
+};
+
+// Get monsters with their counts and links from encounter data
+const groupedMonsters = computed(() => {
+  if (!props.selectedNode?.encounter?.monsters) return [];
+  
+  return props.selectedNode.encounter.monsters.map(monster => ({
+    name: monster.name,
+    count: monster.count || 1,
+    mmLink: monster.mmLink || 'https://www.dndbeyond.com/monsters'
+  }));
+});
 </script>
 
 <template>
@@ -45,32 +69,20 @@ const getConnectedNodeType = (connectionId: string): string => {
     <!-- ============ PLAYER SECTION ============ -->
     <div class="p-6 space-y-4 border-b-2 border-emerald-900/30 bg-gradient-to-b from-slate-900/50 to-transparent">
 
-      <!-- Icon Display -->
-      <div class="flex justify-center py-2">
-        <div class="w-20 h-20 rounded-xl flex items-center justify-center text-4xl shadow-xl border-2 border-white/10 relative overflow-hidden" 
-          :style="{ backgroundColor: (selectedNode.revealed || revealAll || selectedNode.status === 'visited' || selectedNode.status === 'current') ? getNodeColor(selectedNode.type) : '#1e293b' }">
-          <div class="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent"></div>
-          <template v-if="selectedNode.revealed || revealAll || selectedNode.status === 'visited' || selectedNode.status === 'current'">
-            <span v-if="selectedNode.type !== 'rest'" class="relative z-10 filter drop-shadow-lg">{{ getNodeIcon(selectedNode.type) }}</span>
-            <!-- Campfire SVG for rest nodes -->
-            <svg v-else viewBox="-30 -40 60 60" class="w-16 h-16 relative z-10 drop-shadow-xl">
-              <rect x="-24" y="8" width="48" height="8" rx="2" fill="#5d4037" transform="rotate(-15)" />
-              <rect x="-24" y="8" width="48" height="8" rx="2" fill="#4e342e" transform="rotate(15)" />
-              <rect x="-20" y="4" width="40" height="8" rx="2" fill="#3e2723" />
-              <path d="M -15 4 Q -20 -15 0 -35 Q 20 -15 15 4 Z" fill="#ef4444" />
-              <path d="M -10 4 Q -15 -10 0 -25 Q 15 -10 10 4 Z" fill="#f59e0b" />
-            </svg>
-          </template>
-          <span v-else class="text-slate-600 text-5xl">?</span>
-        </div>
-      </div>
-
       <!-- Room Description -->
       <div class="bg-slate-800/40 rounded-xl p-4 border border-slate-700/50">
         <div class="text-[10px] text-slate-500 uppercase tracking-widest mb-2">Room Description</div>
         <p class="text-sm text-slate-200 leading-relaxed font-serif italic">
           {{ (selectedNode.revealed || revealAll || selectedNode.status === 'visited' || selectedNode.status === 'current') ? (selectedNode.description || 'A mysterious chamber hidden deep within the Undermountain.') : 'The mysteries of this chamber are yet to be revealed...' }}
         </p>
+      </div>
+
+      <!-- Exits Info -->
+      <div class="bg-slate-800/40 rounded-xl p-4 border border-slate-700/50">
+        <div class="flex items-center gap-3">
+          <div class="text-2xl font-bold text-amber-400">{{ selectedNode.connections.length }}</div>
+          <div class="text-sm text-slate-400">visible passages leading from this room</div>
+        </div>
       </div>
 
     </div>
@@ -98,10 +110,15 @@ const getConnectedNodeType = (connectionId: string): string => {
         <!-- Encounter Header -->
         <div v-if="selectedNode.encounter && (selectedNode.revealed || revealAll || selectedNode.status === 'visited' || selectedNode.status === 'current')" 
           class="bg-slate-800/50 rounded-xl p-4 border border-slate-700">
-          <h2 class="text-lg font-bold text-amber-400">{{ selectedNode.encounter.name }}</h2>
-          <div class="flex gap-2 mt-2 text-xs flex-wrap">
+          <h2 class="text-lg font-bold text-amber-400 mb-3">{{ selectedNode.encounter.name }}</h2>
+          
+          <!-- DM Description -->
+          <div v-if="selectedNode.encounter.dmDescription" class="mb-3 pb-3 border-b border-slate-700/50">
+            <p class="text-sm text-slate-300 leading-relaxed italic">{{ selectedNode.encounter.dmDescription }}</p>
+          </div>
+          
+          <div class="flex gap-2 text-xs flex-wrap">
             <span class="px-2 py-1 bg-slate-700 rounded">Level {{ selectedNode.encounter.level }}</span>
-            <span class="px-2 py-1 bg-slate-700 rounded capitalize">{{ selectedNode.encounter.type }}</span>
             <span class="px-2 py-1 bg-slate-700 rounded capitalize">{{ selectedNode.encounter.difficulty }}</span>
           </div>
         </div>
@@ -109,10 +126,26 @@ const getConnectedNodeType = (connectionId: string): string => {
         <!-- Combat Details -->
         <div v-if="selectedNode.encounter && selectedNode.encounter.type === EncounterType.Combat && (selectedNode.revealed || revealAll || selectedNode.status === 'visited' || selectedNode.status === 'current')" 
           class="bg-red-900/10 rounded-xl p-4 border border-red-900/30">
-          <div class="text-[10px] text-red-400 uppercase tracking-widest mb-2 font-bold">Combat Encounter</div>
-          <div v-if="selectedNode.encounter.monsters?.length" class="text-sm text-slate-300 mb-2">
-            <strong class="text-red-300">Enemies:</strong> {{ selectedNode.encounter.monsters.map(m => m.name).join(', ') }}
+          <div class="text-[10px] text-red-400 uppercase tracking-widest mb-3 font-bold">Combat Encounter</div>
+          
+          <div v-if="groupedMonsters.length" class="mb-3">
+            <strong class="text-red-300 text-sm block mb-2">Enemies:</strong>
+            <div class="space-y-2">
+              <div v-for="monster in groupedMonsters" :key="monster.name" 
+                class="flex items-center justify-between bg-slate-900/40 rounded-lg p-2 border border-slate-700/30">
+                <span class="text-sm text-slate-300">
+                  <span class="text-red-300 font-bold pr-4 select-none">{{ monster.count }}</span><span>{{ monster.name }}</span>
+                </span>
+                <a :href="monster.mmLink" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  class="px-2 py-1 bg-amber-600 hover:bg-amber-500 text-white text-xs font-bold rounded transition-colors">
+                  📖 
+                </a>
+              </div>
+            </div>
           </div>
+          
           <div v-if="selectedNode.encounter.xpBudget" class="text-xs text-slate-400 mb-1">
             XP Budget: {{ selectedNode.encounter.xpBudget }}
           </div>
@@ -126,47 +159,63 @@ const getConnectedNodeType = (connectionId: string): string => {
 
         <!-- Win Conditions & Rewards -->
         <div v-if="selectedNode.encounter?.winConditions?.length && (selectedNode.revealed || revealAll || selectedNode.status === 'visited' || selectedNode.status === 'current')" 
-          class="space-y-2">
-          <div 
-            v-for="(winCondition, index) in selectedNode.encounter.winConditions" 
-            :key="index"
-            class="rounded-xl p-3 border"
-            :class="index === 0 ? 'bg-emerald-900/10 border-emerald-900/30' : 'bg-amber-900/10 border-amber-900/30'">
-            <div class="text-xs font-bold mb-1" :class="index === 0 ? 'text-emerald-400' : 'text-amber-400'">{{ winCondition.condition }}</div>
-            <div class="text-[10px] text-slate-400">Reward: {{ winCondition.reward }}</div>
+          class="bg-gradient-to-br from-slate-800/50 to-slate-800/30 rounded-xl p-4 border border-slate-700">
+          <div class="text-[10px] text-slate-400 uppercase tracking-widest mb-3 font-bold">
+            Win Conditions
+          </div>
+          <div class="space-y-3">
+            <div 
+              v-for="(winCondition, index) in selectedNode.encounter.winConditions" 
+              :key="index"
+              class="rounded-lg p-3 border-l-4 bg-slate-900/40"
+              :class="index === 0 ? 'border-emerald-500 bg-emerald-900/5' : 'border-amber-500 bg-amber-900/5'">
+              <div class="mb-2">
+                <div class="text-sm font-semibold mb-1" :class="index === 0 ? 'text-emerald-300' : 'text-amber-300'">
+                  {{ winCondition.condition }}
+                </div>
+                <div class="text-xs text-slate-400 flex items-center gap-1.5">
+                  <span class="font-semibold">Reward:</span>
+                  <span class="text-slate-300">{{ winCondition.reward }}</span>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
-        <!-- Threat Assessment -->
-        <div v-if="selectedNode.type === 'monster' || selectedNode.type === 'elite'" 
-          class="bg-red-900/10 rounded-xl p-4 border border-red-900/30">
-          <div class="text-[10px] text-red-400 uppercase tracking-widest mb-2 font-bold">Threat Assessment</div>
-          <div class="flex items-center gap-2">
-            <span v-for="i in (selectedNode.type === 'elite' ? 3 : 1)" :key="i">💀</span>
-            <span class="text-xs text-red-200/70 font-medium ml-2">
-              {{ selectedNode.type === 'elite' ? 'High Danger' : 'Standard Encounter' }}
-            </span>
+
+
+        <!-- AI Room Prompt -->
+        <div v-if="selectedNode.encounter?.aiRoomPrompt && (selectedNode.revealed || revealAll || selectedNode.status === 'visited' || selectedNode.status === 'current')" 
+          class="bg-purple-900/10 rounded-xl p-4 border border-purple-900/30">
+          <div class="text-[10px] text-purple-400 uppercase tracking-widest mb-3 font-bold flex items-center justify-between">
+            <span>🤖 AI Room Prompt</span>
+            <button
+              @click="copyToClipboard(selectedNode.encounter.aiRoomPrompt)"
+              class="px-2 py-1 bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold rounded transition-colors">
+              📋 Copy
+            </button>
+          </div>
+          <div class="text-xs text-slate-300 bg-slate-900/40 rounded-lg p-3 border border-slate-700/30 font-mono leading-relaxed">
+            {{ selectedNode.encounter.aiRoomPrompt }}
           </div>
         </div>
 
-        <!-- Exits with Room Types -->
-        <div class="bg-slate-800/40 rounded-xl p-4 border border-slate-700/50">
-          <div class="text-[10px] text-slate-500 uppercase tracking-widest mb-2">Visible Exits</div>
-          <div class="text-2xl font-bold text-amber-400 mb-2">{{ selectedNode.connections.length }}</div>
-          <div class="text-xs text-slate-400 mb-3">
-            {{ selectedNode.connections.length === 1 ? 'passage' : 'passages' }} leading from this chamber
-          </div>
-          
-          <!-- List of connected room types (if revealed) -->
-          <div v-if="(selectedNode.revealed || revealAll || selectedNode.status === 'visited' || selectedNode.status === 'current') && selectedNode.connections.length > 0" 
-            class="space-y-1.5 mt-3 pt-3 border-t border-slate-700/50">
-            <div class="text-[10px] text-slate-500 uppercase tracking-widest mb-2">Paths Lead To:</div>
+        <!-- Connected Encounters -->
+        <div v-if="(selectedNode.revealed || revealAll || selectedNode.status === 'visited' || selectedNode.status === 'current') && selectedNode.connections.length > 0" 
+          class="bg-slate-800/40 rounded-xl p-4 border border-slate-700/50">
+          <div class="text-[10px] text-slate-500 uppercase tracking-widest mb-3">Paths Lead To:</div>
+          <div class="space-y-2">
             <div v-for="connectionId in selectedNode.connections" :key="connectionId" 
-              class="flex items-center gap-2 text-xs">
-              <span class="text-amber-400">→</span>
-              <span class="capitalize text-slate-300">
-                {{ getConnectedNodeType(connectionId) }}
-              </span>
+              class="flex items-start gap-2 text-xs bg-slate-900/40 rounded-lg p-2.5 border border-slate-700/30 hover:border-amber-500/30 transition-colors">
+              <span class="text-amber-400 mt-0.5">→</span>
+              <div class="flex-1">
+                <div class="capitalize text-slate-300 font-medium mb-0.5">
+                  {{ getConnectedNodeType(connectionId) }}
+                </div>
+                <div v-if="getConnectedNode(connectionId)?.encounter" class="text-[10px] text-slate-400">
+                  {{ getConnectedNode(connectionId)?.encounter?.name }}
+                </div>
+              </div>
             </div>
           </div>
         </div>

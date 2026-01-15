@@ -76,6 +76,14 @@ export const useMapInteraction = (mapData: Ref<DungeonMapData | null>) => {
     const resetInteraction = () => {
         visitedPath.value = [];
         selectedNodeId.value = null;
+
+        // Auto-select the start node
+        if (mapData.value) {
+            const startNode = mapData.value.nodes.find(n => n.type === 'start');
+            if (startNode) {
+                selectedNodeId.value = startNode.id;
+            }
+        }
     };
 
     return {

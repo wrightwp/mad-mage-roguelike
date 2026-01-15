@@ -10,6 +10,7 @@
     font-family: 'Philosopher', Inter, system-ui, sans-serif;
     line-height: 1.5;
     font-weight: 400;
+    font-size: 18px;
 
     /* D&D Color Palette */
     --color-arcane-purple: #8b5cf6;
@@ -20,7 +21,7 @@
     --color-rune-gold: #fbbf24;
 
     color-scheme: light dark;
-    color: rgba(255, 255, 255, 0.87);
+    color: rgba(255, 255, 255, 0.95);
     background-color: #242424;
 
     font-synthesis: none;

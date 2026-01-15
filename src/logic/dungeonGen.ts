@@ -48,7 +48,7 @@ export const generateDungeon = (
                 type: 'start',
                 connections: [],
                 parents: [],
-                status: 'available',
+                status: 'current',
                 description: 'You stand at the entrance of the Undermountain.',
                 revealed: true
             });
