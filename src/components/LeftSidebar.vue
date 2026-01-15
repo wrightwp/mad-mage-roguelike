@@ -68,7 +68,27 @@ const updateNodeTypeCount = (type: string, value: number) => {
           </div>
           <div v-else class="flex items-center gap-3 opacity-60">
             <div class="w-10 h-10 rounded-lg flex items-center justify-center text-2xl shadow-lg border border-white/10" :style="{ backgroundColor: color, color: '#fff' }">
-              <span class="filter drop-shadow-md">{{ getNodeIcon(type as string) }}</span>
+              <!-- Custom Well Icon for Start in Legend -->
+              <svg v-if="type === 'start'" viewBox="-30 -30 60 60" class="w-7 h-7 filter drop-shadow-md">
+                <defs>
+                  <radialGradient id="wellGradientLegend" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" style="stop-color:#1e293b;stop-opacity:0.3" />
+                    <stop offset="100%" style="stop-color:#020617;stop-opacity:0.9" />
+                  </radialGradient>
+                </defs>
+                <circle cx="0" cy="0" r="28" fill="#6b7280" stroke="#374151" stroke-width="3" />
+                <circle cx="0" cy="0" r="20" fill="#0f172a" />
+                <circle cx="0" cy="0" r="20" fill="url(#wellGradientLegend)" />
+                <path d="M -22 -10 Q 0 -8 22 -10" stroke="#4b5563" stroke-width="2" fill="none" />
+                <path d="M -22 0 Q 0 2 22 0" stroke="#4b5563" stroke-width="2" fill="none" />
+                <path d="M -22 10 Q 0 12 22 10" stroke="#4b5563" stroke-width="2" fill="none" />
+                <line x1="-5" y1="-20" x2="-5" y2="20" stroke="#8b4513" stroke-width="2" opacity="0.7" />
+                <line x1="5" y1="-20" x2="5" y2="20" stroke="#8b4513" stroke-width="2" opacity="0.7" />
+                <line x1="-5" y1="-10" x2="5" y2="-10" stroke="#8b4513" stroke-width="2" opacity="0.7" />
+                <line x1="-5" y1="0" x2="5" y2="0" stroke="#8b4513" stroke-width="2" opacity="0.7" />
+                <line x1="-5" y1="10" x2="5" y2="10" stroke="#8b4513" stroke-width="2" opacity="0.7" />
+              </svg>
+              <span v-else class="filter drop-shadow-md">{{ getNodeIcon(type as string) }}</span>
             </div>
             <span class="capitalize text-sm font-medium text-slate-200">{{ type }}</span>
           </div>

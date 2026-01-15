@@ -94,6 +94,11 @@ const handleEnterEncounter = (nodeId: string) => {
             <feGaussianBlur stdDeviation="6" result="blur" />
             <feComposite in="SourceGraphic" in2="blur" operator="over" />
           </filter>
+          <!-- Gradient for well depth effect -->
+          <radialGradient id="wellGradient" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" style="stop-color:#1e293b;stop-opacity:0.3" />
+            <stop offset="100%" style="stop-color:#020617;stop-opacity:0.9" />
+          </radialGradient>
         </defs>
         
         <!-- Unavailable grey edges -->

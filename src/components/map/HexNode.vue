@@ -68,7 +68,7 @@ const hexPath = computed(() => {
     />
     
     <text 
-      v-if="(revealAll || node.revealed || node.status === 'visited' || node.status === 'current') && node.type !== 'rest'"
+      v-if="(revealAll || node.revealed || node.status === 'visited' || node.status === 'current') && node.type !== 'rest' && node.type !== 'start'"
       y="10" 
       text-anchor="middle" 
       class="text-[24px] pointer-events-none select-none font-bold filter drop-shadow-md transition-transform duration-200 group-hover:-translate-y-1 fill-white"
@@ -77,7 +77,7 @@ const hexPath = computed(() => {
     </text>
 
     <!-- Custom Campfire Icon for Rest -->
-    <g v-else-if="revealAll || node.revealed || node.status === 'visited' || node.status === 'current'" transform="translate(0, 0)" class="pointer-events-none">
+    <g v-else-if="(revealAll || node.revealed || node.status === 'visited' || node.status === 'current') && node.type === 'rest'" transform="translate(0, 0)" class="pointer-events-none">
       <!-- Logs -->
       <rect x="-18" y="8" width="36" height="6" rx="2" fill="#5d4037" transform="rotate(-15)" />
       <rect x="-18" y="8" width="36" height="6" rx="2" fill="#4e342e" transform="rotate(15)" />
@@ -89,6 +89,27 @@ const hexPath = computed(() => {
       <path d="M -6 4 Q -10 -5 0 -15 Q 10 -5 6 4 Z" fill="#f59e0b">
         <animate attributeName="d" values="M -6 4 Q -10 -5 0 -15 Q 10 -5 6 4 Z; M -6 4 Q -8 -8 0 -18 Q 8 -8 6 4 Z; M -6 4 Q -10 -5 0 -15 Q 10 -5 6 4 Z" dur="0.6s" repeatCount="indefinite" />
       </path>
+    </g>
+
+    <!-- Custom Well Icon for Start (Yawning Portal) -->
+    <g v-else-if="(revealAll || node.revealed || node.status === 'visited' || node.status === 'current') && node.type === 'start'" transform="translate(0, 0)" class="pointer-events-none">
+      <!-- Stone well rim (outer circle) -->
+      <circle cx="0" cy="0" r="22" fill="#6b7280" stroke="#374151" stroke-width="2" />
+      <!-- Inner well opening (dark) -->
+      <circle cx="0" cy="0" r="16" fill="#0f172a" />
+      <!-- Depth gradient effect -->
+      <circle cx="0" cy="0" r="16" fill="url(#wellGradient)" />
+      <!-- Stone texture lines -->
+      <path d="M -18 -8 Q 0 -6 18 -8" stroke="#4b5563" stroke-width="1.5" fill="none" />
+      <path d="M -18 0 Q 0 2 18 0" stroke="#4b5563" stroke-width="1.5" fill="none" />
+      <path d="M -18 8 Q 0 10 18 8" stroke="#4b5563" stroke-width="1.5" fill="none" />
+      <!-- Rope ladder hint -->
+      <line x1="-4" y1="-16" x2="-4" y2="16" stroke="#8b4513" stroke-width="1.5" opacity="0.7" />
+      <line x1="4" y1="-16" x2="4" y2="16" stroke="#8b4513" stroke-width="1.5" opacity="0.7" />
+      <!-- Ladder rungs -->
+      <line x1="-4" y1="-8" x2="4" y2="-8" stroke="#8b4513" stroke-width="1.5" opacity="0.7" />
+      <line x1="-4" y1="0" x2="4" y2="0" stroke="#8b4513" stroke-width="1.5" opacity="0.7" />
+      <line x1="-4" y1="8" x2="4" y2="8" stroke="#8b4513" stroke-width="1.5" opacity="0.7" />
     </g>
     
     <text 

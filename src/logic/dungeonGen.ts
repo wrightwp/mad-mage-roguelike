@@ -39,7 +39,7 @@ export const generateDungeon = (
             });
         }
         else if (l === 0) {
-            // Start Layer
+            // Start Layer - The Yawning Portal
             layerNodes.push({
                 id: getId(l, 0),
                 x: width / 2,
@@ -49,7 +49,7 @@ export const generateDungeon = (
                 connections: [],
                 parents: [],
                 status: 'current',
-                description: 'You stand at the entrance of the Undermountain.',
+                description: 'The Yawning Portal tavern bustles with adventurers and locals alike. At the center of the common room, a 40-foot-wide well plunges into darkness—the infamous entrance to Undermountain. Durnan, the proprietor, watches from behind the bar as you approach the edge. The rope ladder descends into the black depths below, and the sounds of the tavern fade as you begin your descent into the legendary dungeon of the Mad Mage.',
                 revealed: true
             });
         }
