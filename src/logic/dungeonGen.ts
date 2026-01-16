@@ -117,19 +117,19 @@ export const generateDungeon = (
     const usedEncounterNames: string[] = [];
 
     // Pre-calculate which LAYERS should have Rest encounters
-    // based on spacing constraint (every 3-5 layers) and configured count limit
+    // based on spacing constraint (every 3-4 layers) and configured count limit
     const restLayers = new Set<number>();
     const maxRestCount = maxCounts.rest || 0;
 
     // Calculate which layers should have Rest nodes
     const availableLayers = layersPerFloor - 2; // Exclude start and boss layers
-    let currentLayer = Math.floor(Math.random() * 2) + 2; // First rest at layer 2-3
+    let currentLayer = Math.floor(Math.random() * 2) + 3; // First rest at layer 3-4
     let placedRestCount = 0;
 
     while (currentLayer <= availableLayers && placedRestCount < maxRestCount) {
         restLayers.add(currentLayer);
         placedRestCount++;
-        currentLayer += Math.floor(Math.random() * 3) + 2; // Next rest 2-4 layers later
+        currentLayer += Math.floor(Math.random() * 2) + 3; // Next rest 3-4 layers later
     }
 
     // Pre-select which specific node in each rest layer should be the rest node
@@ -142,54 +142,83 @@ export const generateDungeon = (
         }
     });
 
-    // Helper to pick a weighted type that hasn't reached its max
-    const getWeightedType = (): NodeType => {
+    // Determine nodes that are NOT designated as the layer's Rest node
+    const restNodes: DungeonNode[] = [];
+    const otherNodes: DungeonNode[] = [];
+
+    standardNodes.forEach((node) => {
+        if (restLayers.has(node.layer)) {
+            const layerNodes = standardNodes.filter(n => n.layer === node.layer);
+            const nodeIndexInLayer = layerNodes.indexOf(node);
+            const selectedRestIndex = restNodeIndices.get(node.layer);
+
+            if (nodeIndexInLayer === selectedRestIndex) {
+                restNodes.push(node);
+                return;
+            }
+        }
+        otherNodes.push(node);
+    });
+
+    // Populate the type pool for the 'otherNodes' with weighting and max checks
+    const otherTypesPool: NodeType[] = [];
+    const poolUsedCounts = { ...usedCounts };
+    // Rests used in restNodes already count towards the total
+    poolUsedCounts.rest = restNodes.length;
+
+    while (otherTypesPool.length < otherNodes.length) {
         const candidates: { type: NodeType; weight: number }[] = [];
 
         Object.entries(maxCounts).forEach(([type, max]) => {
-            if (type !== 'boss' && type !== 'start') {
-                const current = usedCounts[type] || 0;
+            if (type !== 'boss' && type !== 'start' && type !== NodeType.Rest) {
+                const current = poolUsedCounts[type] || 0;
                 if (current < max) {
-                    // Non-combat encounters get 2x weight
                     const weight = (type === NodeType.Combat) ? 1 : 2;
                     candidates.push({ type: type as NodeType, weight });
                 }
             }
         });
 
-        if (candidates.length === 0) return NodeType.Combat;
-
-        const totalWeight = candidates.reduce((sum, c) => sum + c.weight, 0);
-        let random = Math.random() * totalWeight;
-
-        for (const candidate of candidates) {
-            random -= candidate.weight;
-            if (random <= 0) return candidate.type;
-        }
-
-        return NodeType.Combat;
-    };
-
-    standardNodes.forEach((node) => {
-        // Special Handling: Check if this node's layer was pre-selected for a Rest encounter
-        if (restLayers.has(node.layer)) {
-            const layerNodes = standardNodes.filter(n => n.layer === node.layer);
-            const nodeIndexInLayer = layerNodes.indexOf(node);
-            const selectedRestIndex = restNodeIndices.get(node.layer);
-
-            if (nodeIndexInLayer === selectedRestIndex && usedCounts.rest < (maxCounts.rest || 0)) {
-                node.type = NodeType.Rest;
-            } else {
-                node.type = getWeightedType();
-            }
+        if (candidates.length === 0) {
+            otherTypesPool.push(NodeType.Combat);
+            poolUsedCounts.combat++;
         } else {
-            // Standard assignment with weighting and max checks
-            node.type = getWeightedType();
+            const totalWeight = candidates.reduce((sum, c) => sum + c.weight, 0);
+            let random = Math.random() * totalWeight;
+            let selectedType = NodeType.Combat;
+
+            for (const candidate of candidates) {
+                random -= candidate.weight;
+                if (random <= 0) {
+                    selectedType = candidate.type;
+                    break;
+                }
+            }
+            otherTypesPool.push(selectedType);
+            poolUsedCounts[selectedType]++;
         }
+    }
 
-        // Increment used count
-        usedCounts[node.type] = (usedCounts[node.type] || 0) + 1;
+    // Shuffle otherTypesPool to ensure dispersion
+    for (let i = otherTypesPool.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [otherTypesPool[i], otherTypesPool[j]] = [otherTypesPool[j], otherTypesPool[i]];
+    }
 
+    // Assign Rest types
+    restNodes.forEach(node => {
+        node.type = NodeType.Rest;
+        usedCounts.rest++;
+    });
+
+    // Assign shuffled other types
+    otherNodes.forEach((node, idx) => {
+        node.type = otherTypesPool[idx];
+        usedCounts[node.type]++;
+    });
+
+    // Final pass for encounter data assignment
+    standardNodes.forEach((node) => {
         // Get encounter type for this node
         const encounterType = encounterTypeMap[node.type] || EncounterType.Combat;
 
