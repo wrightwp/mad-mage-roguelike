@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { computed } from 'vue';
 import { TYPE_COLORS, getNodeIcon } from '../utils/nodeStyles';
 import headerDecoration from '../assets/header_decoration.png';
 
@@ -26,6 +27,22 @@ const updateNodeTypeCount = (type: string, value: number) => {
   const updated = { ...props.nodeTypeCounts, [type]: value };
   emit('update:nodeTypeCounts', updated);
 };
+
+// Calculate actual node counts from the generated map
+const actualNodeCounts = computed(() => {
+  if (!props.mapData?.nodes) {
+    return {};
+  }
+  
+  const counts: Record<string, number> = {};
+  props.mapData.nodes.forEach((node: any) => {
+    if (node.type !== 'boss' && node.type !== 'start') {
+      counts[node.type] = (counts[node.type] || 0) + 1;
+    }
+  });
+  
+  return counts;
+});
 </script>
 
 <template>
@@ -40,9 +57,10 @@ const updateNodeTypeCount = (type: string, value: number) => {
     </div>
     
     <div class="p-6 flex-1 overflow-y-auto custom-scrollbar">
-      <h3 class="font-bold text-slate-100 mb-4 text-sm uppercase tracking-wider border-b border-slate-700/50 pb-2">Legend & Config</h3>
-      <div class="space-y-4">
-        <div v-for="(color, type) in TYPE_COLORS" :key="type">
+      <!-- Legend Section - Shows Actual Generated Counts -->
+      <h3 class="font-bold text-slate-100 mb-4 text-sm uppercase tracking-wider border-b border-slate-700/50 pb-2">Legend</h3>
+      <div class="space-y-4 mb-6">
+        <div v-for="(color, type) in TYPE_COLORS" :key="'legend-' + type">
           <div v-if="type !== 'boss' && type !== 'start'" class="space-y-2">
             <div class="flex items-center gap-3">
               <div class="w-10 h-10 rounded-lg flex items-center justify-center text-2xl shadow-lg border border-white/10" :style="{ backgroundColor: color, color: '#fff' }">
@@ -58,14 +76,9 @@ const updateNodeTypeCount = (type: string, value: number) => {
               </div>
               <div class="flex-1">
                 <div class="capitalize text-xs font-bold text-slate-400 uppercase tracking-tighter">{{ type }}</div>
-                <input 
-                  type="number" 
-                  :value="nodeTypeCounts[type]"
-                  @input="updateNodeTypeCount(type, Number(($event.target as HTMLInputElement).value))"
-                  min="0" 
-                  max="50"
-                  class="w-full bg-slate-800/50 border border-slate-700/50 rounded px-2 py-1 text-slate-200 text-sm focus:outline-none focus:border-amber-500/50 mt-1"
-                />
+                <div class="text-sm text-emerald-400 font-semibold mt-1">
+                  {{ actualNodeCounts[type] || 0 }} generated
+                </div>
               </div>
             </div>
           </div>
@@ -94,6 +107,39 @@ const updateNodeTypeCount = (type: string, value: number) => {
               <span v-else class="filter drop-shadow-md">{{ getNodeIcon(type as string) }}</span>
             </div>
             <span class="capitalize text-sm font-medium text-slate-200">{{ type }}</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Config Section - Shows Desired Counts (Editable) -->
+      <h3 class="font-bold text-slate-100 mb-4 text-sm uppercase tracking-wider border-b border-slate-700/50 pb-2">Config (Next Generation)</h3>
+      <div class="space-y-4">
+        <div v-for="(color, type) in TYPE_COLORS" :key="'config-' + type">
+          <div v-if="type !== 'boss' && type !== 'start'" class="space-y-2">
+            <div class="flex items-center gap-3">
+              <div class="w-10 h-10 rounded-lg flex items-center justify-center text-2xl shadow-lg border border-white/10" :style="{ backgroundColor: color, color: '#fff' }">
+                <span v-if="type !== 'rest'" class="filter drop-shadow-md">{{ getNodeIcon(type as string) }}</span>
+                <!-- Small Campfire for Config -->
+                <svg v-else viewBox="-30 -30 60 60" class="w-7 h-7 filter drop-shadow-md">
+                  <rect x="-24" y="8" width="48" height="8" rx="2" fill="#5d4037" transform="rotate(-15)" />
+                  <rect x="-24" y="8" width="48" height="8" rx="2" fill="#4e342e" transform="rotate(15)" />
+                  <rect x="-20" y="4" width="40" height="8" rx="2" fill="#3e2723" />
+                  <path d="M -15 4 Q -20 -15 0 -35 Q 20 -15 15 4 Z" fill="#ef4444" />
+                  <path d="M -10 4 Q -15 -10 0 -25 Q 15 -10 10 4 Z" fill="#f59e0b" />
+                </svg>
+              </div>
+              <div class="flex-1">
+                <div class="capitalize text-xs font-bold text-slate-400 uppercase tracking-tighter">{{ type }}</div>
+                <input 
+                  type="number" 
+                  :value="nodeTypeCounts[type]"
+                  @input="updateNodeTypeCount(type, Number(($event.target as HTMLInputElement).value))"
+                  min="0" 
+                  max="50"
+                  class="w-full bg-slate-800/50 border border-slate-700/50 rounded px-2 py-1 text-slate-200 text-sm focus:outline-none focus:border-amber-500/50 mt-1"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </div>
