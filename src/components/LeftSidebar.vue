@@ -107,14 +107,14 @@ const actualNodeCounts = computed(() => {
 
     <!-- Map Settings -->
     <div class="p-4 border-t border-slate-700 bg-slate-900/50">
-      <h3 class="font-bold text-slate-100 mb-3 text-sm uppercase tracking-wider">World Settings</h3>
+      <h3 class="font-bold text-slate-100 mb-3 text-sm uppercase tracking-wider">Dungeon Settings</h3>
       
       <div class="space-y-3">
         <!-- Current Floor Display -->
         <div v-if="mapData" class="bg-slate-800/50 rounded p-3 border border-amber-500/30">
           <div class="text-xs text-slate-400 uppercase tracking-widest mb-1">Current Floor</div>
           <div class="text-2xl font-bold text-amber-400">
-            Floor {{ mapData.currentFloor }} / {{ mapData.totalFloors }}
+            Floor {{ mapData.currentFloor }}
           </div>
           <div class="text-xs text-purple-300 mt-1">CR {{ mapData.currentFloor }}</div>
           <div class="text-xs text-slate-400 mt-2">
