@@ -6,6 +6,7 @@ export type { DungeonMapData } from './DungeonMapData';
 export type { WinCondition } from './WinCondition';
 
 // Export enums
+export { NodeType } from './NodeType';
 export { EncounterType } from './EncounterType';
 export { EncounterDifficulty } from './EncounterDifficulty';
 export { EncounterAttitude } from './EncounterAttitude';

@@ -17,6 +17,7 @@ const MAP_HEIGHT = 2000;
 const {
   mapData,
   floorCount,
+  currentFloor,
   nodeTypeCounts,
   revealAll,
   showRestartConfirm,
@@ -103,9 +104,12 @@ const handleEnterEncounter = (node: any) => {
       :width="leftPanelWidth"
       :node-type-counts="nodeTypeCounts"
       :floor-count="floorCount"
+      :current-floor="currentFloor"
       :reveal-all="revealAll"
+      :map-data="mapData"
       @update:node-type-counts="nodeTypeCounts = $event"
       @update:floor-count="floorCount = $event"
+      @update:current-floor="currentFloor = $event"
       @update:reveal-all="revealAll = $event"
       @regenerate="handleRegenerate"
     />

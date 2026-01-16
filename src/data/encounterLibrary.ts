@@ -1,25 +1,34 @@
 import type { EncounterData } from '../types';
 import { EncounterType, EncounterDifficulty } from '../types';
-import encountersData from './encounters-level-01.json';
+import encountersFloor01 from './encounters-floor-01.json';
 
 export class EncounterLibrary {
-    private encounters: EncounterData[] = encountersData as EncounterData[];
+    private encountersByFloor: Map<number, EncounterData[]> = new Map();
+
+    constructor() {
+        // Load encounters by floor
+        this.encountersByFloor.set(1, encountersFloor01 as EncounterData[]);
+        // TODO: Load floors 2-21 when encounter files are created
+    }
 
     /**
-     * Get random encounter matching type and level
+     * Get random encounter for a specific floor and type
+     * @param floor - The floor number (CR level) to get encounters from
      * @param type - The encounter type to filter by
-     * @param level - Maximum level (will select encounters at or below this level)
      * @param options - Additional filtering options
      */
     getRandomEncounter(
+        floor: number,
         type: EncounterType,
-        level: number,
         options?: { difficulty?: EncounterDifficulty; excludeNames?: string[] }
     ): EncounterData | null {
-        let matching = this.encounters.filter(e =>
-            e.type === type &&
-            e.level <= level // Can use encounters at or below current level
-        );
+        const floorEncounters = this.encountersByFloor.get(floor);
+        if (!floorEncounters) {
+            console.warn(`No encounters found for floor ${floor}`);
+            return null;
+        }
+
+        let matching = floorEncounters.filter(e => e.type === type);
 
         if (options?.difficulty) {
             matching = matching.filter(e => e.difficulty === options.difficulty);
@@ -30,37 +39,52 @@ export class EncounterLibrary {
             matching = matching.filter(e => !options.excludeNames!.includes(e.name));
         }
 
-        if (matching.length === 0) return null;
+        if (matching.length === 0) {
+            console.warn(`No matching encounters found for floor ${floor}, type ${type}`);
+            return null;
+        }
 
         return matching[Math.floor(Math.random() * matching.length)];
     }
 
     /**
-     * Get all encounters for a specific level
+     * Get all encounters for a specific floor
      */
-    getEncountersByLevel(level: number): EncounterData[] {
-        return this.encounters.filter(e => e.level === level);
+    getEncountersByFloor(floor: number): EncounterData[] {
+        return this.encountersByFloor.get(floor) || [];
     }
 
     /**
      * Get encounter by name
      */
     getEncounterByName(name: string): EncounterData | null {
-        return this.encounters.find(e => e.name === name) || null;
+        for (const encounters of this.encountersByFloor.values()) {
+            const found = encounters.find(e => e.name === name);
+            if (found) return found;
+        }
+        return null;
     }
 
     /**
-     * Get all encounters of a specific type
+     * Get all encounters of a specific type across all floors
      */
     getEncountersByType(type: EncounterType): EncounterData[] {
-        return this.encounters.filter(e => e.type === type);
+        const results: EncounterData[] = [];
+        for (const encounters of this.encountersByFloor.values()) {
+            results.push(...encounters.filter(e => e.type === type));
+        }
+        return results;
     }
 
     /**
-     * Get total number of encounters loaded
+     * Get total number of encounters loaded across all floors
      */
     getEncounterCount(): number {
-        return this.encounters.length;
+        let count = 0;
+        for (const encounters of this.encountersByFloor.values()) {
+            count += encounters.length;
+        }
+        return count;
     }
 }
 

@@ -9,6 +9,7 @@ export const useMapSettings = (
 ) => {
     const mapData = ref<DungeonMapData | null>(null);
     const floorCount = ref(15);
+    const currentFloor = ref(1); // Start at Floor 1
     const showRestartConfirm = ref(false);
     const revealAll = ref(false);
 
@@ -24,6 +25,7 @@ export const useMapSettings = (
     const initMap = () => {
         mapData.value = generateDungeon(
             floorCount.value,
+            currentFloor.value, // Pass current floor
             mapWidth,
             mapHeight,
             nodeTypeCounts.value
@@ -42,6 +44,7 @@ export const useMapSettings = (
     return {
         mapData,
         floorCount,
+        currentFloor,
         nodeTypeCounts,
         revealAll,
         showRestartConfirm,

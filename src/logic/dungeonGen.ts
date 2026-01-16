@@ -1,18 +1,20 @@
-import { DungeonNode, DungeonMapData, EncounterType } from '../types';
+import { DungeonNode, DungeonMapData, EncounterType, NodeType } from '../types';
 import { encounterLibrary } from '../data/encounterLibrary';
 
 export const generateDungeon = (
-    floors: number = 15,
+    layersPerFloor: number = 15,
+    currentFloor: number = 1,
     width: number = 800,
     height: number = 2000,
     nodeTypeCounts?: Record<string, number>
 ): DungeonMapData => {
+    const TOTAL_FLOORS = 21;
     const edges: { from: string; to: string }[] = [];
 
     // Config
     const NODES_PER_LAYER_MIN = 3;
     const NODES_PER_LAYER_MAX = 5;
-    const LAYER_HEIGHT = (height - 200) / (floors - 1); // 100px padding top/bottom
+    const LAYER_HEIGHT = (height - 200) / (layersPerFloor - 1); // 100px padding top/bottom
 
     // Helper to generate IDs
     const getId = (layer: number, index: number) => `l${layer}-n${index}`;
@@ -20,17 +22,17 @@ export const generateDungeon = (
     const layers: DungeonNode[][] = [];
 
     // 1. Generate empty nodes in layers first
-    for (let l = 0; l < floors; l++) {
+    for (let l = 0; l < layersPerFloor; l++) {
         const layerNodes: DungeonNode[] = [];
 
-        if (l === floors - 1) {
+        if (l === layersPerFloor - 1) {
             // Boss Layer
             layerNodes.push({
                 id: getId(l, 0),
                 x: width / 2,
                 y: 100,
                 layer: l,
-                type: 'boss',
+                type: NodeType.Boss,
                 connections: [],
                 parents: [],
                 status: 'locked',
@@ -45,7 +47,7 @@ export const generateDungeon = (
                 x: width / 2,
                 y: height - 100,
                 layer: l,
-                type: 'start',
+                type: NodeType.Start,
                 connections: [],
                 parents: [],
                 status: 'current',
@@ -69,7 +71,7 @@ export const generateDungeon = (
                     x,
                     y,
                     layer: l,
-                    type: 'combat', // Default, will override below
+                    type: NodeType.Combat, // Default, will override below
                     connections: [],
                     parents: [],
                     status: 'locked',
@@ -81,7 +83,7 @@ export const generateDungeon = (
     }
 
     // 2. Prepare Type Pool
-    const standardNodes = layers.slice(1, floors - 1).flat();
+    const standardNodes = layers.slice(1, layersPerFloor - 1).flat();
     const typePool: DungeonNode['type'][] = [];
 
     if (nodeTypeCounts) {
@@ -103,27 +105,27 @@ export const generateDungeon = (
     // 3. Assign Types and Encounter Data
     // Map node types to encounter types
     const encounterTypeMap: Record<string, EncounterType> = {
-        'combat': EncounterType.Combat,
-        'puzzle': EncounterType.Puzzle,
-        'rest': EncounterType.Rest,
-        'treasure': EncounterType.Exploration,
-        'social': EncounterType.Social,
-        'exploration': EncounterType.Exploration
+        [NodeType.Combat]: EncounterType.Combat,
+        [NodeType.Puzzle]: EncounterType.Puzzle,
+        [NodeType.Rest]: EncounterType.Rest,
+        [NodeType.Treasure]: EncounterType.Exploration,
+        [NodeType.Social]: EncounterType.Social,
+        [NodeType.Exploration]: EncounterType.Exploration
     };
 
     // Track used encounter names to prevent duplicates on the same map
     const usedEncounterNames: string[] = [];
 
     // Pre-calculate which LAYERS should have Rest encounters
-    // based on spacing constraint (every 3-5 floors) and configured count limit
+    // based on spacing constraint (every 3-5 layers) and configured count limit
     const restLayers = new Set<number>();
 
     // Count how many Rest encounters are in the type pool
-    const maxRestCount = typePool.filter(t => t === 'rest').length;
+    const maxRestCount = typePool.filter(t => t === NodeType.Rest).length;
 
     // Calculate which layers should have Rest nodes
     // Layers are 1-indexed, and we skip layer 0 (start) and last layer (boss)
-    const availableLayers = floors - 2; // Exclude start and boss layers
+    const availableLayers = layersPerFloor - 2; // Exclude start and boss layers
     let currentLayer = Math.floor(Math.random() * 2) + 2; // First rest at layer 2-3
     let restCount = 0;
 
@@ -152,35 +154,35 @@ export const generateDungeon = (
             const selectedRestIndex = restNodeIndices.get(node.layer);
 
             if (nodeIndexInLayer === selectedRestIndex) {
-                node.type = 'rest';
+                node.type = NodeType.Rest;
             } else if (idx < typePool.length) {
                 // This layer has a Rest, but this isn't the selected node
                 let poolType = typePool[idx];
-                if (poolType === 'rest') {
-                    poolType = 'combat'; // Replace rest with combat
+                if (poolType === NodeType.Rest) {
+                    poolType = NodeType.Combat; // Replace rest with combat
                 }
                 node.type = poolType;
             } else {
-                node.type = 'combat';
+                node.type = NodeType.Combat;
             }
         } else if (idx < typePool.length) {
             // Assign from pool, but skip any 'rest' types
             let poolType = typePool[idx];
-            if (poolType === 'rest') {
-                poolType = 'combat'; // Replace rest with combat
+            if (poolType === NodeType.Rest) {
+                poolType = NodeType.Combat; // Replace rest with combat
             }
             node.type = poolType;
         } else {
-            node.type = 'combat'; // Default filler
+            node.type = NodeType.Combat; // Default filler
         }
 
         // Get encounter type for this node
         const encounterType = encounterTypeMap[node.type] || EncounterType.Combat;
 
-        // Get appropriate encounter for this level, excluding already-used encounters
+        // Get appropriate encounter for this floor, excluding already-used encounters
         const encounter = encounterLibrary.getRandomEncounter(
+            currentFloor, // Use current floor for CR-appropriate encounters
             encounterType,
-            node.layer, // Use layer as level
             { excludeNames: usedEncounterNames }
         );
 
@@ -215,7 +217,7 @@ export const generateDungeon = (
     });
 
     // 4. Connect Layers
-    for (let l = 0; l < floors - 1; l++) {
+    for (let l = 0; l < layersPerFloor - 1; l++) {
         const currentLayer = layers[l];
         const nextLayer = layers[l + 1];
 
@@ -253,6 +255,9 @@ export const generateDungeon = (
     return {
         nodes: layers.flat(),
         edges,
-        bossNodeId: layers[floors - 1][0].id
+        bossNodeId: layers[layersPerFloor - 1][0].id,
+        currentFloor,
+        totalFloors: TOTAL_FLOORS,
+        layersPerFloor
     };
 };

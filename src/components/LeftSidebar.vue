@@ -6,12 +6,15 @@ interface Props {
   width: number;
   nodeTypeCounts: Record<string, number>;
   floorCount: number;
+  currentFloor: number;
   revealAll: boolean;
+  mapData: any; // DungeonMapData
 }
 
 interface Emits {
   (e: 'update:nodeTypeCounts', value: Record<string, number>): void;
   (e: 'update:floorCount', value: number): void;
+  (e: 'update:currentFloor', value: number): void;
   (e: 'update:revealAll', value: boolean): void;
   (e: 'regenerate'): void;
 }
@@ -101,14 +104,37 @@ const updateNodeTypeCount = (type: string, value: number) => {
       <h3 class="font-bold text-slate-100 mb-3 text-sm uppercase tracking-wider">World Settings</h3>
       
       <div class="space-y-3">
+        <!-- Current Floor Display -->
+        <div v-if="mapData" class="bg-slate-800/50 rounded p-3 border border-amber-500/30">
+          <div class="text-xs text-slate-400 uppercase tracking-widest mb-1">Current Floor</div>
+          <div class="text-2xl font-bold text-amber-400">
+            Floor {{ mapData.currentFloor }} / {{ mapData.totalFloors }}
+          </div>
+          <div class="text-xs text-purple-300 mt-1">CR {{ mapData.currentFloor }}</div>
+        </div>
+
+        <!-- Floor Depth Setting -->
         <div>
-          <label class="block text-xs text-slate-400 mb-1 tracking-widest uppercase">Floor Depth</label>
+          <label class="block text-xs text-slate-400 mb-1 tracking-widest uppercase">Floor Depth (Layers)</label>
           <input 
             type="number" 
             :value="floorCount"
             @input="emit('update:floorCount', Number(($event.target as HTMLInputElement).value))"
             min="5" 
             max="30"
+            class="w-full bg-slate-800 border border-slate-700 rounded px-3 py-2 text-slate-200 text-sm focus:outline-none focus:border-amber-500"
+          />
+        </div>
+        
+        <!-- Floor Selection -->
+        <div>
+          <label class="block text-xs text-slate-400 mb-1 tracking-widest uppercase">Select Floor</label>
+          <input 
+            type="number" 
+            :value="currentFloor"
+            @input="emit('update:currentFloor', Number(($event.target as HTMLInputElement).value))"
+            min="1" 
+            max="21"
             class="w-full bg-slate-800 border border-slate-700 rounded px-3 py-2 text-slate-200 text-sm focus:outline-none focus:border-amber-500"
           />
         </div>
