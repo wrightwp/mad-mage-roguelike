@@ -18,7 +18,7 @@ export function getEnhancedEncounter(
     level: number,
     options?: { difficulty?: EncounterDifficulty }
 ): EncounterData | null {
-    return encounterLibrary.getRandomEncounter(type, level, options);
+    return encounterLibrary.getRandomEncounter(level, type, options);
 }
 
 /**
