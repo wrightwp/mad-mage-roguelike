@@ -82,15 +82,24 @@ export const generateDungeon = (
         layers.push(layerNodes);
     }
 
-    // 2. Prepare Type Pool
+    // 2. Prepare Type Pool with weighting towards non-combat encounters
     const standardNodes = layers.slice(1, layersPerFloor - 1).flat();
     const typePool: DungeonNode['type'][] = [];
 
     if (nodeTypeCounts) {
         Object.entries(nodeTypeCounts).forEach(([type, count]) => {
             if (type !== 'boss' && type !== 'start') {
+                // Add the base count
                 for (let i = 0; i < count; i++) {
                     typePool.push(type as DungeonNode['type']);
+                }
+
+                // Weight non-combat encounters by adding duplicates (2x weighting)
+                // This makes them more likely to be selected without guaranteeing them
+                if (type !== NodeType.Combat) {
+                    for (let i = 0; i < count; i++) {
+                        typePool.push(type as DungeonNode['type']);
+                    }
                 }
             }
         });
