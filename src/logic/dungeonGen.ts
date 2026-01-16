@@ -86,11 +86,11 @@ export const generateDungeon = (
     const standardNodes = layers.slice(1, layersPerFloor - 1).flat();
     const maxCounts = nodeTypeCounts || {
         combat: 30,
-        rest: 6,
-        treasure: 5,
-        puzzle: 4,
-        social: 6,
-        exploration: 8
+        rest: 3,
+        treasure: 4,
+        puzzle: 6,
+        social: 3,
+        exploration: 4
     };
 
     const usedCounts: Record<string, number> = {

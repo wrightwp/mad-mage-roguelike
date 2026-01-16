@@ -25,11 +25,11 @@ const props = withDefaults(defineProps<Props>(), {
   initialFloorDepth: 15,
   initialNodeCounts: () => ({
     combat: 30,
-    rest: 6,
-    treasure: 5,
-    puzzle: 4,
-    social: 6,
-    exploration: 8
+    rest: 3,
+    treasure: 4,
+    puzzle: 6,
+    social: 3,
+    exploration: 4
   })
 });
 
@@ -60,11 +60,11 @@ const resetToDefaults = () => {
   floorDepth.value = 15;
   nodeCounts.value = {
     combat: 30,
-    rest: 6,
-    treasure: 5,
-    puzzle: 4,
-    social: 6,
-    exploration: 8
+    rest: 3,
+    treasure: 4,
+    puzzle: 6,
+    social: 3,
+    exploration: 4
   };
 };
 
