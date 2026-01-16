@@ -156,9 +156,19 @@ const handleCancel = () => {
 
         <!-- Encounter Distribution -->
         <div class="bg-slate-800/50 rounded-xl p-6 border border-slate-700">
-          <h3 class="text-lg font-bold text-slate-100 mb-4 uppercase tracking-wider flex items-center gap-2">
-            <span>⚔️</span> Encounter Distribution
-          </h3>
+          <div class="flex justify-between items-center mb-4">
+            <h3 class="text-lg font-bold text-slate-100 uppercase tracking-wider flex items-center gap-2">
+              <span>⚔️</span> Encounter Distribution
+            </h3>
+            <div class="text-[10px] text-amber-500/80 uppercase tracking-widest bg-amber-900/20 px-2 py-1 rounded border border-amber-600/20">
+              Values represent maximums
+            </div>
+          </div>
+          
+          <p class="text-[11px] text-slate-400 mb-4 italic">
+            Non-combat encounters are weighted to appear more frequently, up to their specified maximum count.
+          </p>
+
           <div class="grid grid-cols-2 gap-4">
             <div v-for="(color, type) in TYPE_COLORS" :key="type">
               <div v-if="type !== 'boss' && type !== 'start'" class="flex items-center gap-3 bg-slate-900/50 rounded-lg p-3 border border-slate-700/50">

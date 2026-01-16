@@ -82,34 +82,25 @@ export const generateDungeon = (
         layers.push(layerNodes);
     }
 
-    // 2. Prepare Type Pool with weighting towards non-combat encounters
+    // 2. Prepare Counts and Configuration
     const standardNodes = layers.slice(1, layersPerFloor - 1).flat();
-    const typePool: DungeonNode['type'][] = [];
+    const maxCounts = nodeTypeCounts || {
+        combat: 30,
+        rest: 6,
+        treasure: 5,
+        puzzle: 4,
+        social: 6,
+        exploration: 8
+    };
 
-    if (nodeTypeCounts) {
-        Object.entries(nodeTypeCounts).forEach(([type, count]) => {
-            if (type !== 'boss' && type !== 'start') {
-                // Add the base count
-                for (let i = 0; i < count; i++) {
-                    typePool.push(type as DungeonNode['type']);
-                }
-
-                // Weight non-combat encounters by adding duplicates (2x weighting)
-                // This makes them more likely to be selected without guaranteeing them
-                if (type !== NodeType.Combat) {
-                    for (let i = 0; i < count; i++) {
-                        typePool.push(type as DungeonNode['type']);
-                    }
-                }
-            }
-        });
-    }
-
-    // Shuffle Pool
-    for (let i = typePool.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [typePool[i], typePool[j]] = [typePool[j], typePool[i]];
-    }
+    const usedCounts: Record<string, number> = {
+        combat: 0,
+        rest: 0,
+        treasure: 0,
+        puzzle: 0,
+        social: 0,
+        exploration: 0
+    };
 
     // 3. Assign Types and Encounter Data
     // Map node types to encounter types
@@ -128,19 +119,16 @@ export const generateDungeon = (
     // Pre-calculate which LAYERS should have Rest encounters
     // based on spacing constraint (every 3-5 layers) and configured count limit
     const restLayers = new Set<number>();
-
-    // Count how many Rest encounters are in the type pool
-    const maxRestCount = typePool.filter(t => t === NodeType.Rest).length;
+    const maxRestCount = maxCounts.rest || 0;
 
     // Calculate which layers should have Rest nodes
-    // Layers are 1-indexed, and we skip layer 0 (start) and last layer (boss)
     const availableLayers = layersPerFloor - 2; // Exclude start and boss layers
     let currentLayer = Math.floor(Math.random() * 2) + 2; // First rest at layer 2-3
-    let restCount = 0;
+    let placedRestCount = 0;
 
-    while (currentLayer <= availableLayers && restCount < maxRestCount) {
+    while (currentLayer <= availableLayers && placedRestCount < maxRestCount) {
         restLayers.add(currentLayer);
-        restCount++;
+        placedRestCount++;
         currentLayer += Math.floor(Math.random() * 3) + 2; // Next rest 2-4 layers later
     }
 
@@ -154,43 +142,60 @@ export const generateDungeon = (
         }
     });
 
-    standardNodes.forEach((node, idx) => {
-        // Check if this node's layer should have a Rest encounter
+    // Helper to pick a weighted type that hasn't reached its max
+    const getWeightedType = (): NodeType => {
+        const candidates: { type: NodeType; weight: number }[] = [];
+
+        Object.entries(maxCounts).forEach(([type, max]) => {
+            if (type !== 'boss' && type !== 'start') {
+                const current = usedCounts[type] || 0;
+                if (current < max) {
+                    // Non-combat encounters get 2x weight
+                    const weight = (type === NodeType.Combat) ? 1 : 2;
+                    candidates.push({ type: type as NodeType, weight });
+                }
+            }
+        });
+
+        if (candidates.length === 0) return NodeType.Combat;
+
+        const totalWeight = candidates.reduce((sum, c) => sum + c.weight, 0);
+        let random = Math.random() * totalWeight;
+
+        for (const candidate of candidates) {
+            random -= candidate.weight;
+            if (random <= 0) return candidate.type;
+        }
+
+        return NodeType.Combat;
+    };
+
+    standardNodes.forEach((node) => {
+        // Special Handling: Check if this node's layer was pre-selected for a Rest encounter
         if (restLayers.has(node.layer)) {
-            // Check if this is the randomly selected node for rest in this layer
             const layerNodes = standardNodes.filter(n => n.layer === node.layer);
             const nodeIndexInLayer = layerNodes.indexOf(node);
             const selectedRestIndex = restNodeIndices.get(node.layer);
 
-            if (nodeIndexInLayer === selectedRestIndex) {
+            if (nodeIndexInLayer === selectedRestIndex && usedCounts.rest < (maxCounts.rest || 0)) {
                 node.type = NodeType.Rest;
-            } else if (idx < typePool.length) {
-                // This layer has a Rest, but this isn't the selected node
-                let poolType = typePool[idx];
-                if (poolType === NodeType.Rest) {
-                    poolType = NodeType.Combat; // Replace rest with combat
-                }
-                node.type = poolType;
             } else {
-                node.type = NodeType.Combat;
+                node.type = getWeightedType();
             }
-        } else if (idx < typePool.length) {
-            // Assign from pool, but skip any 'rest' types
-            let poolType = typePool[idx];
-            if (poolType === NodeType.Rest) {
-                poolType = NodeType.Combat; // Replace rest with combat
-            }
-            node.type = poolType;
         } else {
-            node.type = NodeType.Combat; // Default filler
+            // Standard assignment with weighting and max checks
+            node.type = getWeightedType();
         }
+
+        // Increment used count
+        usedCounts[node.type] = (usedCounts[node.type] || 0) + 1;
 
         // Get encounter type for this node
         const encounterType = encounterTypeMap[node.type] || EncounterType.Combat;
 
         // Get appropriate encounter for this floor, excluding already-used encounters
         const encounter = encounterLibrary.getRandomEncounter(
-            currentFloor, // Use current floor for CR-appropriate encounters
+            currentFloor,
             encounterType,
             { excludeNames: usedEncounterNames }
         );
@@ -198,29 +203,16 @@ export const generateDungeon = (
         if (encounter) {
             node.encounter = encounter;
             node.description = encounter.roomDescription;
-            // Track this encounter name to prevent duplicates
             usedEncounterNames.push(encounter.name);
         } else {
             // Fallback descriptions if no encounter found
             switch (node.type) {
-                case 'combat':
-                    node.description = 'A group of monsters blocks your path.';
-                    break;
-                case 'rest':
-                    node.description = 'A relatively safe spot to catch your breath and mend your wounds.';
-                    break;
-                case 'treasure':
-                    node.description = 'A glimmering chest lies half-buried in the shadows.';
-                    break;
-                case 'puzzle':
-                    node.description = 'An intricate mechanism or riddle prevents further progress.';
-                    break;
-                case 'social':
-                    node.description = 'You encounter someone who may be friend or foe.';
-                    break;
-                case 'exploration':
-                    node.description = 'An area of interest beckons for exploration.';
-                    break;
+                case 'combat': node.description = 'A group of monsters blocks your path.'; break;
+                case 'rest': node.description = 'A relatively safe spot to catch your breath and mend your wounds.'; break;
+                case 'treasure': node.description = 'A glimmering chest lies half-buried in the shadows.'; break;
+                case 'puzzle': node.description = 'An intricate mechanism or riddle prevents further progress.'; break;
+                case 'social': node.description = 'You encounter someone who may be friend or foe.'; break;
+                case 'exploration': node.description = 'An area of interest beckons for exploration.'; break;
             }
         }
     });
