@@ -5,7 +5,6 @@ import headerDecoration from '../assets/header_decoration.png';
 
 interface Props {
   width: number;
-  nodeTypeCounts: Record<string, number>;
   floorCount: number;
   currentFloor: number;
   revealAll: boolean;
@@ -13,7 +12,6 @@ interface Props {
 }
 
 interface Emits {
-  (e: 'update:nodeTypeCounts', value: Record<string, number>): void;
   (e: 'update:floorCount', value: number): void;
   (e: 'update:currentFloor', value: number): void;
   (e: 'update:revealAll', value: boolean): void;
@@ -22,11 +20,6 @@ interface Emits {
 
 const props = defineProps<Props>();
 const emit = defineEmits<Emits>();
-
-const updateNodeTypeCount = (type: string, value: number) => {
-  const updated = { ...props.nodeTypeCounts, [type]: value };
-  emit('update:nodeTypeCounts', updated);
-};
 
 // Calculate actual node counts from the generated map
 const actualNodeCounts = computed(() => {
@@ -110,39 +103,6 @@ const actualNodeCounts = computed(() => {
           </div>
         </div>
       </div>
-
-      <!-- Config Section - Shows Desired Counts (Editable) -->
-      <h3 class="font-bold text-slate-100 mb-4 text-sm uppercase tracking-wider border-b border-slate-700/50 pb-2">Config (Next Generation)</h3>
-      <div class="space-y-4">
-        <div v-for="(color, type) in TYPE_COLORS" :key="'config-' + type">
-          <div v-if="type !== 'boss' && type !== 'start'" class="space-y-2">
-            <div class="flex items-center gap-3">
-              <div class="w-10 h-10 rounded-lg flex items-center justify-center text-2xl shadow-lg border border-white/10" :style="{ backgroundColor: color, color: '#fff' }">
-                <span v-if="type !== 'rest'" class="filter drop-shadow-md">{{ getNodeIcon(type as string) }}</span>
-                <!-- Small Campfire for Config -->
-                <svg v-else viewBox="-30 -30 60 60" class="w-7 h-7 filter drop-shadow-md">
-                  <rect x="-24" y="8" width="48" height="8" rx="2" fill="#5d4037" transform="rotate(-15)" />
-                  <rect x="-24" y="8" width="48" height="8" rx="2" fill="#4e342e" transform="rotate(15)" />
-                  <rect x="-20" y="4" width="40" height="8" rx="2" fill="#3e2723" />
-                  <path d="M -15 4 Q -20 -15 0 -35 Q 20 -15 15 4 Z" fill="#ef4444" />
-                  <path d="M -10 4 Q -15 -10 0 -25 Q 15 -10 10 4 Z" fill="#f59e0b" />
-                </svg>
-              </div>
-              <div class="flex-1">
-                <div class="capitalize text-xs font-bold text-slate-400 uppercase tracking-tighter">{{ type }}</div>
-                <input 
-                  type="number" 
-                  :value="nodeTypeCounts[type]"
-                  @input="updateNodeTypeCount(type, Number(($event.target as HTMLInputElement).value))"
-                  min="0" 
-                  max="50"
-                  class="w-full bg-slate-800/50 border border-slate-700/50 rounded px-2 py-1 text-slate-200 text-sm focus:outline-none focus:border-amber-500/50 mt-1"
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </div>
 
     <!-- Map Settings -->
@@ -157,39 +117,16 @@ const actualNodeCounts = computed(() => {
             Floor {{ mapData.currentFloor }} / {{ mapData.totalFloors }}
           </div>
           <div class="text-xs text-purple-300 mt-1">CR {{ mapData.currentFloor }}</div>
-        </div>
-
-        <!-- Floor Depth Setting -->
-        <div>
-          <label class="block text-xs text-slate-400 mb-1 tracking-widest uppercase">Floor Depth (Layers)</label>
-          <input 
-            type="number" 
-            :value="floorCount"
-            @input="emit('update:floorCount', Number(($event.target as HTMLInputElement).value))"
-            min="5" 
-            max="30"
-            class="w-full bg-slate-800 border border-slate-700 rounded px-3 py-2 text-slate-200 text-sm focus:outline-none focus:border-amber-500"
-          />
-        </div>
-        
-        <!-- Floor Selection -->
-        <div>
-          <label class="block text-xs text-slate-400 mb-1 tracking-widest uppercase">Select Floor</label>
-          <input 
-            type="number" 
-            :value="currentFloor"
-            @input="emit('update:currentFloor', Number(($event.target as HTMLInputElement).value))"
-            min="1" 
-            max="21"
-            class="w-full bg-slate-800 border border-slate-700 rounded px-3 py-2 text-slate-200 text-sm focus:outline-none focus:border-amber-500"
-          />
+          <div class="text-xs text-slate-400 mt-2">
+            {{ mapData.layersPerFloor }} layers deep
+          </div>
         </div>
         
         <button 
           @click="emit('regenerate')"
           class="w-full bg-amber-600 hover:bg-amber-500 text-white font-bold py-2.5 px-4 rounded transition-all transform active:scale-95 text-sm shadow-lg shadow-amber-900/20"
         >
-          🔄 Regenerate Map
+          🔄 Configure New Floor
         </button>
         
         <button 

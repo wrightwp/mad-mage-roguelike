@@ -11,6 +11,7 @@ export const useMapSettings = (
     const floorCount = ref(15);
     const currentFloor = ref(1); // Start at Floor 1
     const showRestartConfirm = ref(false);
+    const showConfigModal = ref(true); // Show config modal on first load
     const revealAll = ref(false);
 
     const nodeTypeCounts = ref<Record<string, number>>({
@@ -36,9 +37,30 @@ export const useMapSettings = (
         }
     };
 
+    const generateWithConfig = (config: {
+        floor: number;
+        floorDepth: number;
+        nodeCounts: Record<string, number>;
+    }) => {
+        // Update settings from config
+        currentFloor.value = config.floor;
+        floorCount.value = config.floorDepth;
+        nodeTypeCounts.value = { ...config.nodeCounts };
+
+        // Generate the map
+        initMap();
+
+        // Close the modal
+        showConfigModal.value = false;
+    };
+
+    const openConfigModal = () => {
+        showConfigModal.value = true;
+    };
+
     const restartMap = () => {
         showRestartConfirm.value = false;
-        initMap();
+        openConfigModal(); // Open config modal instead of directly regenerating
     };
 
     return {
@@ -48,7 +70,10 @@ export const useMapSettings = (
         nodeTypeCounts,
         revealAll,
         showRestartConfirm,
+        showConfigModal,
         initMap,
-        restartMap
+        restartMap,
+        generateWithConfig,
+        openConfigModal
     };
 };

@@ -8,6 +8,8 @@ import LeftSidebar from './LeftSidebar.vue';
 import RightSidebar from './RightSidebar.vue';
 import MapCanvas from './MapCanvas.vue';
 import RestartModal from './RestartModal.vue';
+import FloorConfigModal from './FloorConfigModal.vue';
+import type { FloorConfig } from './FloorConfigModal.vue';
 import outerBg from '../assets/clean_dungeon_bg.png';
 
 const MAP_WIDTH = 800;
@@ -21,8 +23,10 @@ const {
   nodeTypeCounts,
   revealAll,
   showRestartConfirm,
-  initMap,
-  restartMap
+  showConfigModal,
+  restartMap,
+  generateWithConfig,
+  openConfigModal
 } = useMapSettings(MAP_WIDTH, MAP_HEIGHT);
 
 const {
@@ -53,11 +57,12 @@ const {
   startResizingRight
 } = useResizablePanel();
 
-// Initialize map on mount
+// Don't initialize map on mount - wait for config modal
 onMounted(() => {
-  initMap();
-  resetInteraction();
-  scrollToBottom();
+  // Only scroll if map already exists
+  if (mapData.value) {
+    scrollToBottom();
+  }
 });
 
 // Handlers
@@ -67,12 +72,24 @@ const handleInitMap = () => {
 };
 
 const handleRegenerate = () => {
-  showRestartConfirm.value = true;
+  openConfigModal(); // Open config modal instead of restart confirm
 };
 
 const handleRestartConfirm = () => {
   restartMap();
   handleInitMap();
+};
+
+const handleConfigGenerate = (config: FloorConfig) => {
+  generateWithConfig(config);
+  handleInitMap();
+};
+
+const handleConfigCancel = () => {
+  // Only allow cancel if a map already exists
+  if (mapData.value) {
+    showConfigModal.value = false;
+  }
 };
 
 const handleNodeClickEvent = (nodeId: string) => {
@@ -102,12 +119,10 @@ const handleEnterEncounter = (node: any) => {
     <!-- Left Sidebar -->
     <LeftSidebar
       :width="leftPanelWidth"
-      :node-type-counts="nodeTypeCounts"
       :floor-count="floorCount"
       :current-floor="currentFloor"
       :reveal-all="revealAll"
       :map-data="mapData"
-      @update:node-type-counts="nodeTypeCounts = $event"
       @update:floor-count="floorCount = $event"
       @update:current-floor="currentFloor = $event"
       @update:reveal-all="revealAll = $event"
@@ -163,6 +178,16 @@ const handleEnterEncounter = (node: any) => {
       :show="showRestartConfirm"
       @confirm="handleRestartConfirm"
       @cancel="showRestartConfirm = false"
+    />
+
+    <!-- Floor Configuration Modal -->
+    <FloorConfigModal
+      :show="showConfigModal"
+      :initial-floor="currentFloor"
+      :initial-floor-depth="floorCount"
+      :initial-node-counts="nodeTypeCounts"
+      @generate="handleConfigGenerate"
+      @cancel="handleConfigCancel"
     />
   </div>
 </template>
