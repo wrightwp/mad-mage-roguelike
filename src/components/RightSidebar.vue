@@ -37,9 +37,6 @@ const handleSelectEncounter = (node: DungeonNode) => {
   >
     <!-- Header with Tabs -->
     <div class="border-b border-slate-700 bg-slate-950/50">
-      <div class="p-6 pb-0">
-        <h2 class="text-xl font-bold text-amber-500 tracking-tight mb-4">Encounter Info</h2>
-      </div>
       
       <!-- Tab Navigation -->
       <div class="flex border-b border-slate-800">
@@ -50,7 +47,7 @@ const handleSelectEncounter = (node: DungeonNode) => {
             ? 'text-amber-400 bg-slate-900/50' 
             : 'text-slate-500 hover:text-slate-300 hover:bg-slate-800/30'"
         >
-          <span class="relative z-10">📋 Details</span>
+          <span class="relative z-10">Current Encounter</span>
           <div 
             v-if="activeView === 'details'"
             class="absolute bottom-0 left-0 right-0 h-0.5 bg-amber-400"
@@ -63,7 +60,7 @@ const handleSelectEncounter = (node: DungeonNode) => {
             ? 'text-amber-400 bg-slate-900/50' 
             : 'text-slate-500 hover:text-slate-300 hover:bg-slate-800/30'"
         >
-          <span class="relative z-10">🗂️ Encounter Library</span>
+          <span class="relative z-10">Encounter Library</span>
           <div 
             v-if="activeView === 'grid'"
             class="absolute bottom-0 left-0 right-0 h-0.5 bg-amber-400"

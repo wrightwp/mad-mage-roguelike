@@ -5,7 +5,7 @@ export interface DungeonNode {
     x: number;
     y: number;
     layer: number; // Floor number (0 = bottom, N = top)
-    type: 'monster' | 'elite' | 'event' | 'rest' | 'boss' | 'start' | 'treasure' | 'puzzle' | 'shop';
+    type: 'combat' | 'rest' | 'boss' | 'start' | 'treasure' | 'puzzle' | 'social' | 'exploration';
     connections: string[]; // IDs of connected nodes in the NEXT layer
     parents: string[]; // IDs of nodes in the PREVIOUS layer (for backtracking/validation)
     status: 'locked' | 'available' | 'visited' | 'current';

@@ -2,5 +2,6 @@ export enum EncounterType {
     Combat = 'combat',
     Exploration = 'exploration',
     Social = 'social',
-    Puzzle = 'puzzle'
+    Puzzle = 'puzzle',
+    Rest = 'rest'
 }

@@ -113,6 +113,7 @@ const getTypeColor = (type: EncounterType): string => {
     case EncounterType.Exploration: return 'bg-blue-600';
     case EncounterType.Social: return 'bg-purple-600';
     case EncounterType.Puzzle: return 'bg-cyan-600';
+    case EncounterType.Rest: return 'bg-amber-800';
     default: return 'bg-slate-600';
   }
 };

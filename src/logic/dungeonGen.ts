@@ -10,8 +10,8 @@ export const generateDungeon = (
     const edges: { from: string; to: string }[] = [];
 
     // Config
-    const NODES_PER_LAYER_MIN = 4;
-    const NODES_PER_LAYER_MAX = 6;
+    const NODES_PER_LAYER_MIN = 3;
+    const NODES_PER_LAYER_MAX = 5;
     const LAYER_HEIGHT = (height - 200) / (floors - 1); // 100px padding top/bottom
 
     // Helper to generate IDs
@@ -69,7 +69,7 @@ export const generateDungeon = (
                     x,
                     y,
                     layer: l,
-                    type: 'monster', // Default, will override below
+                    type: 'combat', // Default, will override below
                     connections: [],
                     parents: [],
                     status: 'locked',
@@ -103,23 +103,75 @@ export const generateDungeon = (
     // 3. Assign Types and Encounter Data
     // Map node types to encounter types
     const encounterTypeMap: Record<string, EncounterType> = {
-        'monster': EncounterType.Combat,
-        'elite': EncounterType.Combat,
-        'event': EncounterType.Exploration,
+        'combat': EncounterType.Combat,
         'puzzle': EncounterType.Puzzle,
-        'shop': EncounterType.Social,
+        'rest': EncounterType.Rest,
         'treasure': EncounterType.Exploration,
-        'rest': EncounterType.Exploration
+        'social': EncounterType.Social,
+        'exploration': EncounterType.Exploration
     };
 
     // Track used encounter names to prevent duplicates on the same map
     const usedEncounterNames: string[] = [];
 
+    // Pre-calculate which LAYERS should have Rest encounters
+    // based on spacing constraint (every 3-5 floors) and configured count limit
+    const restLayers = new Set<number>();
+
+    // Count how many Rest encounters are in the type pool
+    const maxRestCount = typePool.filter(t => t === 'rest').length;
+
+    // Calculate which layers should have Rest nodes
+    // Layers are 1-indexed, and we skip layer 0 (start) and last layer (boss)
+    const availableLayers = floors - 2; // Exclude start and boss layers
+    let currentLayer = Math.floor(Math.random() * 2) + 2; // First rest at layer 2-3
+    let restCount = 0;
+
+    while (currentLayer <= availableLayers && restCount < maxRestCount) {
+        restLayers.add(currentLayer);
+        restCount++;
+        currentLayer += Math.floor(Math.random() * 3) + 2; // Next rest 2-4 layers later
+    }
+
+    // Pre-select which specific node in each rest layer should be the rest node
+    const restNodeIndices = new Map<number, number>();
+    restLayers.forEach(layer => {
+        const layerNodes = standardNodes.filter(n => n.layer === layer);
+        if (layerNodes.length > 0) {
+            const randomIndex = Math.floor(Math.random() * layerNodes.length);
+            restNodeIndices.set(layer, randomIndex);
+        }
+    });
+
     standardNodes.forEach((node, idx) => {
-        if (idx < typePool.length) {
-            node.type = typePool[idx];
+        // Check if this node's layer should have a Rest encounter
+        if (restLayers.has(node.layer)) {
+            // Check if this is the randomly selected node for rest in this layer
+            const layerNodes = standardNodes.filter(n => n.layer === node.layer);
+            const nodeIndexInLayer = layerNodes.indexOf(node);
+            const selectedRestIndex = restNodeIndices.get(node.layer);
+
+            if (nodeIndexInLayer === selectedRestIndex) {
+                node.type = 'rest';
+            } else if (idx < typePool.length) {
+                // This layer has a Rest, but this isn't the selected node
+                let poolType = typePool[idx];
+                if (poolType === 'rest') {
+                    poolType = 'combat'; // Replace rest with combat
+                }
+                node.type = poolType;
+            } else {
+                node.type = 'combat';
+            }
+        } else if (idx < typePool.length) {
+            // Assign from pool, but skip any 'rest' types
+            let poolType = typePool[idx];
+            if (poolType === 'rest') {
+                poolType = 'combat'; // Replace rest with combat
+            }
+            node.type = poolType;
         } else {
-            node.type = 'monster'; // Default filler
+            node.type = 'combat'; // Default filler
         }
 
         // Get encounter type for this node
@@ -140,14 +192,8 @@ export const generateDungeon = (
         } else {
             // Fallback descriptions if no encounter found
             switch (node.type) {
-                case 'monster':
+                case 'combat':
                     node.description = 'A group of monsters blocks your path.';
-                    break;
-                case 'elite':
-                    node.description = 'A dangerous elite creature lurks here.';
-                    break;
-                case 'event':
-                    node.description = 'A mysterious event awaits.';
                     break;
                 case 'rest':
                     node.description = 'A relatively safe spot to catch your breath and mend your wounds.';
@@ -155,11 +201,14 @@ export const generateDungeon = (
                 case 'treasure':
                     node.description = 'A glimmering chest lies half-buried in the shadows.';
                     break;
-                case 'shop':
-                    node.description = 'A strange merchant has set up a small stall here.';
-                    break;
                 case 'puzzle':
                     node.description = 'An intricate mechanism or riddle prevents further progress.';
+                    break;
+                case 'social':
+                    node.description = 'You encounter someone who may be friend or foe.';
+                    break;
+                case 'exploration':
+                    node.description = 'An area of interest beckons for exploration.';
                     break;
             }
         }

@@ -13,13 +13,12 @@ export const useMapSettings = (
     const revealAll = ref(false);
 
     const nodeTypeCounts = ref<Record<string, number>>({
-        monster: 30,
-        elite: 10,
-        event: 8,
+        combat: 30,
         rest: 6,
         treasure: 5,
-        shop: 4,
-        puzzle: 4
+        puzzle: 4,
+        social: 6,
+        exploration: 8
     });
 
     const initMap = () => {
