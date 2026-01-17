@@ -63,4 +63,20 @@ export type EncounterData =
     | SocialEncounterData
     | PuzzleEncounterData
     | ExplorationEncounterData
-    | RestEncounterData;
+    | RestEncounterData
+    | BossEncounterData;
+
+export interface BossEncounterData extends BaseEncounterData {
+    type: EncounterType.Boss;
+    xpBudget: number;
+    monsters: MonsterData[];
+    attitude: EncounterAttitude;
+    personality?: string;
+    legendaryActions?: string[];
+    lairActions?: string[];
+    phases?: {
+        name: string;
+        trigger: string; // e.g., "At 50% HP"
+        description: string;
+    }[];
+}

@@ -3,5 +3,6 @@ export enum EncounterType {
     Exploration = 'exploration',
     Social = 'social',
     Puzzle = 'puzzle',
-    Rest = 'rest'
+    Rest = 'rest',
+    Boss = 'boss'
 }
