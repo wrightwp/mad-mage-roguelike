@@ -59,6 +59,17 @@ const toggleSort = (column: SortColumn) => {
   }
 };
 
+// Helper to get XP safely
+const getXP = (encounter: EncounterData): number => {
+  if (encounter.type === EncounterType.Combat || 
+      encounter.type === EncounterType.Puzzle || 
+      encounter.type === EncounterType.Social ||
+      encounter.type === EncounterType.Exploration) {
+    return encounter.xpBudget || 0;
+  }
+  return 0;
+};
+
 // Sorted encounters
 const sortedEncounters = computed(() => {
   const sorted = [...allEncounters.value].sort((a, b) => {
@@ -81,7 +92,7 @@ const sortedEncounters = computed(() => {
         comparison = a.level - b.level;
         break;
       case 'xp':
-        comparison = (a.xpBudget || 0) - (b.xpBudget || 0);
+        comparison = getXP(a) - getXP(b);
         break;
     }
     
@@ -130,8 +141,10 @@ const getDifficultyColor = (difficulty: string): string => {
 
 // Calculate total monster count
 const getTotalMonsters = (encounter: EncounterData): number => {
-  if (!encounter.monsters) return 0;
-  return encounter.monsters.reduce((sum, m) => sum + (m.count || 1), 0);
+  if (encounter.type === EncounterType.Combat || encounter.type === EncounterType.Social) {
+    return encounter.monsters.reduce((sum, m) => sum + (m.count || 1), 0);
+  }
+  return 0;
 };
 </script>
 
@@ -236,7 +249,7 @@ const getTotalMonsters = (encounter: EncounterData): number => {
           
           <!-- XP -->
           <div class="text-xs text-slate-500 flex-shrink-0 w-16 text-right">
-            {{ encounter.xpBudget }} XP
+            {{ getXP(encounter) }} XP
           </div>
         </div>
 
@@ -253,8 +266,8 @@ const getTotalMonsters = (encounter: EncounterData): number => {
             </p>
           </div>
 
-          <!-- Monsters (for combat encounters) -->
-          <div v-if="encounter.monsters && encounter.monsters.length > 0" class="bg-red-900/10 rounded-lg p-3 border border-red-900/30">
+          <!-- Monsters (for combat/social encounters) -->
+          <div v-if="(encounter.type === EncounterType.Combat || encounter.type === EncounterType.Social) && encounter.monsters && encounter.monsters.length > 0" class="bg-red-900/10 rounded-lg p-3 border border-red-900/30">
             <div class="text-[10px] text-red-400 uppercase tracking-widest mb-2 font-bold">Enemies ({{ getTotalMonsters(encounter) }} total)</div>
             <div class="space-y-1.5">
               <div
@@ -282,10 +295,10 @@ const getTotalMonsters = (encounter: EncounterData): number => {
 
           <!-- Additional Stats -->
           <div class="flex items-center gap-4 text-xs text-slate-400 flex-wrap">
-            <div v-if="encounter.attitude">
+            <div v-if="(encounter.type === EncounterType.Combat || encounter.type === EncounterType.Social) && encounter.attitude">
               <span class="text-slate-500">Attitude:</span> <span class="capitalize">{{ encounter.attitude }}</span>
             </div>
-            <div v-if="encounter.personality">
+            <div v-if="(encounter.type === EncounterType.Combat || encounter.type === EncounterType.Social) && encounter.personality">
               <span class="text-slate-500">Personality:</span> <span class="capitalize">{{ encounter.personality }}</span>
             </div>
             <div v-if="encounter.lair !== undefined">

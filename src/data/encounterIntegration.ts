@@ -5,10 +5,8 @@
 
 import { encounterLibrary } from './encounterLibrary';
 import { monsterLibrary } from './monsterLibrary';
-import type { EncounterData, MonsterData } from '../types';
-import { EncounterType, EncounterDifficulty } from '../types';
-
-
+import type { EncounterData, CombatEncounterData, MonsterData } from '../types';
+import { EncounterType, EncounterDifficulty, EncounterAttitude } from '../types';
 
 /**
  * Get a random encounter (monsters are already embedded in EncounterData)
@@ -23,12 +21,12 @@ export function getEnhancedEncounter(
 
 /**
  * Build a custom encounter from monster names
+ * Forces type to CombatEncounterData since it involves monsters
  */
 export function buildCustomEncounter(
     monsterNames: string[],
-    encounterType: EncounterType = EncounterType.Combat,
     level: number = 1
-): EncounterData | null {
+): CombatEncounterData | null {
     const monsters = monsterNames
         .map(name => monsterLibrary.getMonsterByName(name))
         .filter((m): m is MonsterData => m !== null);
@@ -46,10 +44,11 @@ export function buildCustomEncounter(
     return {
         name: `Custom: ${monsterNames.join(', ')}`,
         level,
-        type: encounterType,
+        type: EncounterType.Combat,
         difficulty,
         xpBudget: totalXP,
         monsters,
+        attitude: EncounterAttitude.Hostile, // Default for combat
         roomDescription: `A custom encounter featuring ${monsterNames.join(', ')}`,
         dmDescription: `Custom encounter with ${monsters.length} monster type(s). Total XP: ${totalXP}`,
         size: 1,
@@ -61,9 +60,8 @@ export function buildCustomEncounter(
  * Generate a random encounter for a party level with appropriate monsters
  */
 export function generateRandomEncounterForLevel(
-    partyLevel: number,
-    encounterType: EncounterType = EncounterType.Combat
-): EncounterData | null {
+    partyLevel: number
+): CombatEncounterData | null {
     // Get monsters appropriate for this level
     const suitableMonsters = monsterLibrary.getMonstersForPartyLevel(partyLevel);
 
@@ -78,7 +76,7 @@ export function generateRandomEncounterForLevel(
         selectedMonsters.push(monster.name);
     }
 
-    return buildCustomEncounter(selectedMonsters, encounterType, partyLevel);
+    return buildCustomEncounter(selectedMonsters, partyLevel);
 }
 
 /**
@@ -91,24 +89,27 @@ export function exampleUsage() {
     const encounter = getEnhancedEncounter(EncounterType.Combat, 1, { difficulty: EncounterDifficulty.Low });
     if (encounter) {
         console.log('Enhanced Encounter:', encounter.name);
-        const totalXP = encounter.monsters?.reduce((sum, m) => sum + m.exp, 0) || 0;
-        console.log('Total XP:', totalXP);
-        if (encounter.monsters) {
-            encounter.monsters.forEach(monster => {
-                console.log(`  - ${monster.name} (CR ${monster.cr}, ${monster.exp} XP)`);
-                console.log(`    ${monster.mmLink}`);
-            });
+
+        if (encounter.type === EncounterType.Combat || encounter.type === EncounterType.Social) {
+            const totalXP = encounter.monsters?.reduce((sum, m) => sum + m.exp, 0) || 0;
+            console.log('Total XP:', totalXP);
+            if (encounter.monsters) {
+                encounter.monsters.forEach(monster => {
+                    console.log(`  - ${monster.name} (CR ${monster.cr}, ${monster.exp} XP)`);
+                    console.log(`    ${monster.mmLink}`);
+                });
+            }
         }
     }
 
     console.log('\n=== Custom Encounter ===\n');
 
     // Example 2: Build custom encounter
-    const customEncounter = buildCustomEncounter(['Goblin', 'Goblin', 'Goblin Boss'], EncounterType.Combat, 2);
+    const customEncounter = buildCustomEncounter(['Goblin', 'Goblin', 'Goblin Boss'], 2);
     if (customEncounter) {
         console.log('Custom Encounter:', customEncounter.name);
         console.log('Difficulty:', customEncounter.difficulty);
-        const totalXP = customEncounter.monsters?.reduce((sum, m) => sum + m.exp, 0) || 0;
+        const totalXP = customEncounter.monsters.reduce((sum, m) => sum + m.exp, 0) || 0;
         console.log('Total XP:', totalXP);
     }
 
@@ -118,8 +119,8 @@ export function exampleUsage() {
     const randomEncounter = generateRandomEncounterForLevel(5);
     if (randomEncounter) {
         console.log('Random Encounter for Level 5 Party:');
-        console.log('Monsters:', randomEncounter.monsters?.map(m => m.name).join(', '));
-        const totalXP = randomEncounter.monsters?.reduce((sum, m) => sum + m.exp, 0) || 0;
+        console.log('Monsters:', randomEncounter.monsters.map(m => m.name).join(', '));
+        const totalXP = randomEncounter.monsters.reduce((sum, m) => sum + m.exp, 0) || 0;
         console.log('Total XP:', totalXP);
     }
 

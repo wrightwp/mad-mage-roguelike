@@ -1,7 +1,14 @@
 <script setup lang="ts">
-import { ref, watch, computed } from 'vue';
+import { ref, watch } from 'vue';
 import type { DungeonNode, DungeonMapData } from '../types';
 import { EncounterType } from '../types';
+
+import CombatEncounter from './encounters/CombatEncounter.vue';
+import SocialEncounter from './encounters/SocialEncounter.vue';
+import PuzzleEncounter from './encounters/PuzzleEncounter.vue';
+import ExplorationEncounter from './encounters/ExplorationEncounter.vue';
+import RestEncounter from './encounters/RestEncounter.vue';
+
 
 interface Props {
   selectedNode: DungeonNode | null;
@@ -52,16 +59,7 @@ const copyToClipboard = async (text: string) => {
   }
 };
 
-// Get monsters with their counts and links from encounter data
-const groupedMonsters = computed(() => {
-  if (!props.selectedNode?.encounter?.monsters) return [];
-  
-  return props.selectedNode.encounter.monsters.map(monster => ({
-    name: monster.name,
-    count: monster.count || 1,
-    mmLink: monster.mmLink || 'https://www.dndbeyond.com/monsters'
-  }));
-});
+
 </script>
 
 <template>
@@ -123,39 +121,30 @@ const groupedMonsters = computed(() => {
           </div>
         </div>
 
-        <!-- Combat Details -->
-        <div v-if="selectedNode.encounter && selectedNode.encounter.type === EncounterType.Combat && (selectedNode.revealed || revealAll || selectedNode.status === 'visited' || selectedNode.status === 'current')" 
-          class="bg-red-900/10 rounded-xl p-4 border border-red-900/30">
-          <div class="text-[10px] text-red-400 uppercase tracking-widest mb-3 font-bold">Combat Encounter</div>
-          
-          <div v-if="groupedMonsters.length" class="mb-3">
-            <strong class="text-red-300 text-sm block mb-2">Enemies:</strong>
-            <div class="space-y-2">
-              <div v-for="monster in groupedMonsters" :key="monster.name" 
-                class="flex items-center justify-between bg-slate-900/40 rounded-lg p-2 border border-slate-700/30">
-                <span class="text-sm text-slate-300">
-                  <span class="text-red-300 font-bold pr-4 select-none">{{ monster.count }}</span><span>{{ monster.name }}</span>
-                </span>
-                <a :href="monster.mmLink" 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  class="px-2 py-1 bg-amber-600 hover:bg-amber-500 text-white text-xs font-bold rounded transition-colors">
-                  📖 
-                </a>
-              </div>
-            </div>
-          </div>
-          
-          <div v-if="selectedNode.encounter.xpBudget" class="text-xs text-slate-400 mb-1">
-            XP Budget: {{ selectedNode.encounter.xpBudget }}
-          </div>
-          <div v-if="selectedNode.encounter.attitude" class="text-xs text-slate-400 mb-1">
-            <strong>Attitude:</strong> <span class="capitalize">{{ selectedNode.encounter.attitude }}</span>
-          </div>
-          <div v-if="selectedNode.encounter.personality" class="text-xs text-slate-400">
-            <strong>Personality:</strong> <span class="capitalize">{{ selectedNode.encounter.personality }}</span>
-          </div>
+        <!-- Dynamic Encounter Details -->
+        <div v-if="selectedNode.encounter && (selectedNode.revealed || revealAll || selectedNode.status === 'visited' || selectedNode.status === 'current')">
+          <CombatEncounter 
+            v-if="selectedNode.encounter.type === EncounterType.Combat" 
+            :encounter="selectedNode.encounter" 
+          />
+          <SocialEncounter 
+            v-else-if="selectedNode.encounter.type === EncounterType.Social" 
+            :encounter="selectedNode.encounter" 
+          />
+          <PuzzleEncounter 
+            v-else-if="selectedNode.encounter.type === EncounterType.Puzzle" 
+            :encounter="selectedNode.encounter" 
+          />
+          <ExplorationEncounter 
+            v-else-if="selectedNode.encounter.type === EncounterType.Exploration" 
+            :encounter="selectedNode.encounter" 
+          />
+          <RestEncounter 
+            v-else-if="selectedNode.encounter.type === EncounterType.Rest" 
+            :encounter="selectedNode.encounter" 
+          />
         </div>
+
 
         <!-- Win Conditions & Rewards -->
         <div v-if="selectedNode.encounter?.winConditions?.length && (selectedNode.revealed || revealAll || selectedNode.status === 'visited' || selectedNode.status === 'current')" 
