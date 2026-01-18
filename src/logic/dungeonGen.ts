@@ -108,7 +108,7 @@ export const generateDungeon = (
         [NodeType.Combat]: EncounterType.Combat,
         [NodeType.Puzzle]: EncounterType.Puzzle,
         [NodeType.Rest]: EncounterType.Rest,
-        [NodeType.Treasure]: EncounterType.Exploration,
+        [NodeType.Treasure]: EncounterType.Treasure,
         [NodeType.Social]: EncounterType.Social,
         [NodeType.Exploration]: EncounterType.Exploration
     };

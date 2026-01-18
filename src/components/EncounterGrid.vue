@@ -64,7 +64,8 @@ const getXP = (encounter: EncounterData): number => {
   if (encounter.type === EncounterType.Combat || 
       encounter.type === EncounterType.Puzzle || 
       encounter.type === EncounterType.Social ||
-      encounter.type === EncounterType.Exploration) {
+      encounter.type === EncounterType.Exploration ||
+      encounter.type === EncounterType.Treasure) {
     return encounter.xpBudget || 0;
   }
   return 0;
@@ -125,6 +126,7 @@ const getTypeColor = (type: EncounterType): string => {
     case EncounterType.Social: return 'bg-purple-600';
     case EncounterType.Puzzle: return 'bg-cyan-600';
     case EncounterType.Rest: return 'bg-amber-800';
+    case EncounterType.Treasure: return 'bg-amber-500';
     default: return 'bg-slate-600';
   }
 };

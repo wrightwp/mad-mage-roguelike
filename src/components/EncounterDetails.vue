@@ -8,6 +8,7 @@ import SocialEncounter from './encounters/SocialEncounter.vue';
 import PuzzleEncounter from './encounters/PuzzleEncounter.vue';
 import ExplorationEncounter from './encounters/ExplorationEncounter.vue';
 import RestEncounter from './encounters/RestEncounter.vue';
+import TreasureEncounter from './encounters/TreasureEncounter.vue';
 
 
 interface Props {
@@ -141,6 +142,10 @@ const copyToClipboard = async (text: string) => {
           />
           <RestEncounter 
             v-else-if="selectedNode.encounter.type === EncounterType.Rest" 
+            :encounter="selectedNode.encounter" 
+          />
+          <TreasureEncounter 
+            v-else-if="selectedNode.encounter.type === EncounterType.Treasure" 
             :encounter="selectedNode.encounter" 
           />
         </div>

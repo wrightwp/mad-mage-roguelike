@@ -64,7 +64,21 @@ export type EncounterData =
     | PuzzleEncounterData
     | ExplorationEncounterData
     | RestEncounterData
-    | BossEncounterData;
+    | RestEncounterData
+    | BossEncounterData
+    | TreasureEncounterData;
+
+export interface TreasureEncounterData extends BaseEncounterData {
+    type: EncounterType.Treasure;
+    xpBudget: number;
+    items: string[];
+    goldValue: number;
+    hasTrap: boolean;
+    trapDescription?: string;
+    isLocked: boolean;
+    lockDC?: number;
+    isMimic: boolean;
+}
 
 export interface BossEncounterData extends BaseEncounterData {
     type: EncounterType.Boss;
