@@ -1,4 +1,4 @@
-import { DungeonNode, DungeonMapData, EncounterType, NodeType } from '../types';
+import { DungeonNode, DungeonMapData, EncounterType, NodeType, EncounterDifficulty } from '../types';
 import { encounterLibrary } from '../data/encounterLibrary';
 
 export const generateDungeon = (
@@ -245,6 +245,29 @@ export const generateDungeon = (
             }
         }
     });
+
+    // Special handling for Boss Node
+    const bossNode = layers[layersPerFloor - 1][0];
+    if (bossNode && bossNode.type === NodeType.Boss) {
+        let bossEncounter = encounterLibrary.getRandomEncounter(currentFloor, EncounterType.Boss);
+
+        // Fallback to High Difficulty Combat if no Boss encounter found
+        if (!bossEncounter) {
+            console.warn('No Boss encounter found, falling back to High Difficulty Combat');
+            bossEncounter = encounterLibrary.getRandomEncounter(
+                currentFloor,
+                EncounterType.Combat,
+                { difficulty: EncounterDifficulty.High }
+            ) as any; // Cast as any because we're assigning a Combat encounter to a slot meant for Boss type logically, though the field is generic EncounterData
+
+            // If even that fails, we can't do much, but the system handles null encounter.
+        }
+
+        if (bossEncounter) {
+            bossNode.encounter = bossEncounter;
+            bossNode.description = bossEncounter.roomDescription;
+        }
+    }
 
     // 4. Connect Layers
     for (let l = 0; l < layersPerFloor - 1; l++) {

@@ -1,5 +1,5 @@
 import type { EncounterData } from '../types';
-import { EncounterType, EncounterDifficulty } from '../types';
+import { EncounterType, EncounterDifficulty, EncounterAttitude } from '../types';
 import encountersFloor01 from './encounters-floor-01.json';
 
 export class EncounterLibrary {
@@ -22,6 +22,68 @@ export class EncounterLibrary {
         type: EncounterType,
         options?: { difficulty?: EncounterDifficulty; excludeNames?: string[] }
     ): EncounterData | null {
+        // Hardcoded Default Encounters to ensure availability
+        const DEFAULT_ENCOUNTERS: Partial<Record<EncounterType, EncounterData>> = {
+            [EncounterType.Social]: {
+                name: "Default Social",
+                level: 0,
+                type: EncounterType.Social,
+                difficulty: EncounterDifficulty.Moderate,
+                roomDescription: "You encounter a weary traveler resting near a small campfire.",
+                dmDescription: "Generic social encounter. The traveler shares rumors.",
+                size: 1,
+                monsters: [],
+                attitude: EncounterAttitude.Indifferent,
+                personality: "weary"
+            },
+            [EncounterType.Puzzle]: {
+                name: "Default Puzzle",
+                level: 0,
+                type: EncounterType.Puzzle,
+                difficulty: EncounterDifficulty.Moderate,
+                roomDescription: "A sealed door blocks your path with strange markings on its surface.",
+                dmDescription: "Generic puzzle. DC 12 Intelligence check to decipher.",
+                size: 1,
+                puzzleDescription: "Symbols need alignment.",
+                xpBudget: 100
+            },
+            [EncounterType.Exploration]: {
+                name: "Default Exploration",
+                level: 0,
+                type: EncounterType.Exploration,
+                difficulty: EncounterDifficulty.Moderate,
+                roomDescription: "This room contains interesting architectural features and dusty corners to investigate.",
+                dmDescription: "Generic exploration. DC 12 Investigation for small loot.",
+                size: 1,
+                items: ["Torch", "Rope"]
+            },
+            [EncounterType.Rest]: {
+                name: "Default Rest",
+                level: 0,
+                type: EncounterType.Rest,
+                difficulty: EncounterDifficulty.Low,
+                roomDescription: "A quiet, dry alcove that seems safe enough for a short respite.",
+                dmDescription: "Generic rest area. Safe for short rest.",
+                size: 1,
+                shelterQuality: "poor"
+            },
+            [EncounterType.Treasure]: {
+                name: "Default Treasure",
+                level: 0,
+                type: EncounterType.Treasure,
+                difficulty: EncounterDifficulty.Moderate,
+                roomDescription: "A small wooden chest sits in the corner, covered in dust.",
+                dmDescription: "Generic small treasure: 25gp.",
+                size: 1,
+                items: [],
+                goldValue: 25,
+                hasTrap: false,
+                isLocked: false,
+                isMimic: false,
+                xpBudget: 50
+            }
+        };
+
         const floorEncounters = this.encountersByFloor.get(floor);
         if (!floorEncounters) {
             console.warn(`No encounters found for floor ${floor}`);
@@ -40,6 +102,14 @@ export class EncounterLibrary {
         }
 
         if (matching.length === 0) {
+            // Fallback: Check for generic/default encounters of this type
+            const defaultEncounter = DEFAULT_ENCOUNTERS[type];
+
+            if (defaultEncounter) {
+                console.log(`Using hardcoded default encounter for type ${type}`);
+                return defaultEncounter;
+            }
+
             console.warn(`No matching encounters found for floor ${floor}, type ${type}`);
             return null;
         }
