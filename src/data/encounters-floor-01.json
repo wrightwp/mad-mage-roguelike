@@ -2180,5 +2180,420 @@
         "xpBudget": 300,
         "penalty": "Setting the clock to the wrong time causes it to chime loudly, alerting nearby monsters (random encounter check) and aging the character who touched it by 1d4 years (cosmetic only, reversible with Greater Restoration).",
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 80ft x 100ft rectangular chamber. Ornate grandfather clock against wall. Table with four hourglasses of different sizes. Inscription carved in stone. Dim candlelight. Entry via wooden door. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "Abandoned Supply Cache",
+        "level": 1,
+        "type": "treasure",
+        "difficulty": "low",
+        "roomDescription": "A dusty storage room contains several wooden crates marked with faded merchant guild symbols. Most have been pried open and looted, but one remains sealed.",
+        "dmDescription": "Simple treasure with no complications. The sealed crate contains basic adventuring supplies that were overlooked by previous looters. DC 10 Investigation to find the intact crate among the debris.",
+        "size": 1,
+        "items": [
+            "50 feet of Hempen Rope",
+            "Tinderbox",
+            "2 Torches",
+            "Waterskin"
+        ],
+        "goldValue": 15,
+        "hasTrap": false,
+        "isLocked": false,
+        "isMimic": false,
+        "xpBudget": 50,
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 80ft x 80ft storage room. Broken wooden crates scattered throughout. One intact sealed crate. Dusty stone floor. Dim lighting. Entry via corridor. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "The Offering Altar",
+        "level": 1,
+        "type": "treasure",
+        "difficulty": "low",
+        "roomDescription": "A small shrine to a forgotten deity stands in an alcove. Tarnished silver coins and small trinkets are scattered across the altar's surface, left as offerings by long-dead worshippers.",
+        "dmDescription": "Unguarded treasure with a moral choice. Taking the offerings is not trapped, but a DC 12 Religion check reveals this was a shrine to a god of fortune. Characters who leave an offering of their own (any coin) receive a blessing: advantage on their next ability check within 24 hours.",
+        "size": 1,
+        "items": [
+            "Silver Holy Symbol (worth 25 gp)"
+        ],
+        "goldValue": 35,
+        "hasTrap": false,
+        "isLocked": false,
+        "isMimic": false,
+        "xpBudget": 75,
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 60ft x 60ft alcove chamber. Stone altar in center with religious carvings. Scattered coins and trinkets. Faded murals on walls. Soft divine lighting. Entry via arched doorway. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "Smuggler's Stash",
+        "level": 1,
+        "type": "treasure",
+        "difficulty": "moderate",
+        "roomDescription": "Behind a loose stone in the wall, you discover a hidden compartment. Inside is a leather satchel containing coins and a sealed letter.",
+        "dmDescription": "Hidden treasure requiring discovery. DC 14 Investigation to find the loose stone. The letter is written in Thieves' Cant and contains information about a larger smuggling operation (potential plot hook). The coins are a mix of legitimate currency and some counterfeit pieces (DC 13 Investigation to notice).",
+        "size": 1,
+        "items": [
+            "Sealed Letter (plot hook)",
+            "Thieves' Tools"
+        ],
+        "goldValue": 45,
+        "hasTrap": false,
+        "isLocked": false,
+        "isMimic": false,
+        "xpBudget": 100,
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 70ft x 70ft stone corridor section. Loose stone in wall (hidden compartment). Rough hewn walls. Dim torchlight. Entry and exit via corridors. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "The Locked Coffer",
+        "level": 1,
+        "type": "treasure",
+        "difficulty": "moderate",
+        "roomDescription": "An iron-bound wooden chest sits on a stone pedestal. A sturdy lock secures the lid, and the wood shows signs of age but remains solid.",
+        "dmDescription": "Locked treasure with no trap. DC 15 to pick the lock with thieves' tools, or DC 17 Strength check to break it open (alerts nearby creatures on a roll of 15+). The chest contains a small fortune in mixed coins and a minor magic item.",
+        "size": 1,
+        "items": [
+            "Potion of Healing",
+            "Dagger +1"
+        ],
+        "goldValue": 60,
+        "hasTrap": false,
+        "isLocked": true,
+        "lockDC": 15,
+        "isMimic": false,
+        "xpBudget": 125,
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 80ft x 80ft square chamber. Stone pedestal in center with iron-bound chest. Empty weapon racks on walls. Torchlight. Entry via double doors. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "The Poisoned Prize",
+        "level": 1,
+        "type": "treasure",
+        "difficulty": "moderate",
+        "roomDescription": "A ornate jewelry box rests on a velvet cushion atop a marble stand. The box is slightly ajar, revealing a glint of gold within.",
+        "dmDescription": "Trapped treasure. The box lid is coated with contact poison (DC 13 Investigation to notice discoloration, DC 14 Perception to smell faint almond scent). Opening without precautions: DC 13 Constitution save or take 2d4 poison damage and become poisoned for 1 hour. The poison can be neutralized with water or carefully wiped off.",
+        "size": 1,
+        "items": [
+            "Gold Necklace (worth 75 gp)",
+            "3 Gemstones (10 gp each)"
+        ],
+        "goldValue": 25,
+        "hasTrap": true,
+        "trapDescription": "Contact poison on the box lid (DC 13 Con save or 2d4 poison damage + poisoned condition for 1 hour)",
+        "isLocked": false,
+        "isMimic": false,
+        "xpBudget": 150,
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 70ft x 70ft octagonal chamber. Marble stand in center with velvet cushion. Ornate jewelry box. Decorative pillars. Soft lighting. Entry via corridor. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "The Wizard's Lockbox",
+        "level": 1,
+        "type": "treasure",
+        "difficulty": "moderate",
+        "roomDescription": "A small metal box covered in arcane runes sits on a desk scattered with burned parchments and broken quills. The box hums with faint magical energy.",
+        "dmDescription": "Magically locked treasure. The box requires either a successful DC 14 Arcana check to decipher the opening sequence, or a Knock spell. Attempting to force it open triggers a magical alarm (audible within 300 feet). Contains a spellbook with 1st level spells and a scroll.",
+        "size": 1,
+        "items": [
+            "Spellbook (contains Detect Magic, Mage Armor, Shield)",
+            "Spell Scroll of Identify"
+        ],
+        "goldValue": 30,
+        "hasTrap": false,
+        "isLocked": true,
+        "lockDC": 14,
+        "isMimic": false,
+        "xpBudget": 175,
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 90ft x 80ft study chamber. Desk covered in burned parchments. Bookshelves (mostly empty). Metal lockbox with glowing runes. Magical lighting. Entry via wooden door. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "The Collapsing Alcove",
+        "level": 1,
+        "type": "treasure",
+        "difficulty": "high",
+        "roomDescription": "A gilded chest sits in a deep alcove. The ceiling above shows cracks, and small pebbles occasionally fall. The chest gleams invitingly in the torchlight.",
+        "dmDescription": "Trapped treasure with structural hazard. The alcove ceiling is unstable. Taking the chest without proper support triggers a collapse. DC 15 Investigation to notice the danger, DC 14 Perception to hear creaking. Solution: use pitons/rope to brace the ceiling, or carefully remove treasure piece by piece (takes 10 minutes). Triggering collapse: DC 15 Dex save or take 3d6 bludgeoning damage, chest takes damage and may break open.",
+        "size": 1,
+        "items": [
+            "Chainmail Armor",
+            "Longsword",
+            "Shield with noble heraldry"
+        ],
+        "goldValue": 85,
+        "hasTrap": true,
+        "trapDescription": "Unstable ceiling collapses when chest is moved (DC 15 Dex save or 3d6 bludgeoning damage)",
+        "isLocked": false,
+        "isMimic": false,
+        "xpBudget": 200,
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 80ft chamber with deep alcove. Gilded chest in alcove. Cracked ceiling with fallen debris. Unstable stonework. Dim lighting. Entry via corridor. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "The Needle Trap Chest",
+        "level": 1,
+        "type": "treasure",
+        "difficulty": "high",
+        "roomDescription": "An elegant wooden chest with brass fittings sits against the wall. The lock mechanism appears complex and well-maintained despite the dungeon's age.",
+        "dmDescription": "Locked and trapped treasure. DC 15 Investigation to spot tiny holes around the lock. DC 16 to pick the lock safely, or DC 14 to disarm the trap first. Failure triggers poisoned needles: DC 14 Dex save or take 1d4 piercing + 2d6 poison damage. The chest contains valuable trade goods and coins.",
+        "size": 1,
+        "items": [
+            "Silk Cloth (worth 50 gp)",
+            "Spice Pouch (worth 25 gp)",
+            "Silver Mirror (worth 30 gp)"
+        ],
+        "goldValue": 95,
+        "hasTrap": true,
+        "trapDescription": "Poisoned needles in lock mechanism (DC 14 Dex save or 1d4 piercing + 2d6 poison damage)",
+        "isLocked": true,
+        "lockDC": 16,
+        "isMimic": false,
+        "xpBudget": 225,
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 80ft x 80ft square chamber. Elegant wooden chest against wall. Brass fittings. Stone floor. Torch sconces. Entry via corridor. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "The Cursed Hoard",
+        "level": 1,
+        "type": "treasure",
+        "difficulty": "high",
+        "roomDescription": "Gold coins, gems, and jewelry are piled carelessly in the corner of the room, glittering in the dim light. It seems too good to be true—and it is.",
+        "dmDescription": "Cursed treasure. DC 15 Arcana or Religion to sense the curse. The treasure is genuine but cursed by a vengeful spirit. Anyone who takes treasure without performing a cleansing ritual (DC 13 Religion to know, requires holy water or Remove Curse) suffers disadvantage on saving throws for 24 hours. The curse can be identified with Detect Magic.",
+        "size": 1,
+        "items": [
+            "Cursed Gold Ring (worth 40 gp, curse removable)",
+            "5 Gemstones (20 gp each)"
+        ],
+        "goldValue": 120,
+        "hasTrap": false,
+        "isLocked": false,
+        "isMimic": false,
+        "xpBudget": 250,
+        "winConditions": [
+            {
+                "condition": "Take treasure after cleansing the curse",
+                "reward": "Full treasure value + 250 XP"
+            },
+            {
+                "condition": "Take treasure without cleansing",
+                "reward": "Full treasure but suffer curse (disadvantage on saves for 24 hours)"
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 90ft x 90ft chamber. Pile of gold and gems in corner. Faint ghostly aura (visible with detect magic). Dark atmosphere. Entry via archway. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "The Decoy Vault",
+        "level": 1,
+        "type": "treasure",
+        "difficulty": "high",
+        "roomDescription": "A reinforced iron vault door stands ajar, revealing a small chamber beyond. Inside, a single ornate chest sits on a raised platform, illuminated by a beam of light from above.",
+        "dmDescription": "Elaborate trap disguised as treasure. The chest is a decoy—opening it triggers a poison gas trap (DC 15 Con save or take 3d6 poison damage and become poisoned for 1 hour). The REAL treasure is hidden beneath the platform (DC 17 Investigation to find the hidden compartment). The decoy chest contains only copper pieces painted gold.",
+        "size": 1,
+        "items": [
+            "Bag of Holding (hidden)",
+            "Potion of Greater Healing (hidden)",
+            "Masterwork Thieves' Tools (hidden)"
+        ],
+        "goldValue": 75,
+        "hasTrap": true,
+        "trapDescription": "Poison gas trap on decoy chest (DC 15 Con save or 3d6 poison damage + poisoned for 1 hour). Real treasure is hidden beneath platform.",
+        "isLocked": false,
+        "isMimic": false,
+        "xpBudget": 275,
+        "winConditions": [
+            {
+                "condition": "Find the hidden compartment without triggering the trap",
+                "reward": "Full XP + all treasure"
+            },
+            {
+                "condition": "Trigger the trap but survive and find the real treasure",
+                "reward": "Half XP + all treasure"
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 100ft vault chamber. Iron vault door. Raised platform with ornate chest. Beam of light from above. Hidden compartment beneath platform. Entry via reinforced corridor. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "The Pressure Plate Gallery",
+        "level": 1,
+        "type": "exploration",
+        "difficulty": "low",
+        "roomDescription": "A long corridor stretches ahead, its stone floor covered in dust and debris. Faded murals depicting ancient battles line the walls.",
+        "dmDescription": "Simple trap room with hidden door. Three pressure plates are concealed beneath the dust (DC 12 Perception to spot, DC 10 Investigation to identify as traps). Stepping on a plate triggers a dart trap (DC 12 Dex save or 1d4 piercing damage). A hidden door in the east wall (DC 13 Investigation) leads to a shortcut. The murals contain clues: warriors stepping carefully between marked stones.",
+        "size": 1,
+        "items": [
+            "Shortcut passage (saves time)",
+            "Ancient coin (5 gp) near hidden door"
+        ],
+        "traps": [
+            "3 pressure plates with dart traps (DC 12 Dex save or 1d4 piercing damage each)"
+        ],
+        "secretDoors": true,
+        "xpBudget": 75,
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 120ft x 40ft corridor. Dusty stone floor with three hidden pressure plates. Faded battle murals on walls. Hidden door in east wall. Dim lighting. Entry and exit via corridors. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "The Flooded Passage",
+        "level": 1,
+        "type": "exploration",
+        "difficulty": "low",
+        "roomDescription": "Water seeps through cracks in the ceiling, creating a shallow pool that covers the floor. The sound of dripping echoes throughout the chamber.",
+        "dmDescription": "Environmental hazard with hidden cache. The water is only 6 inches deep but obscures a spiked pit trap in the center (DC 13 Perception to notice the water is deeper there, DC 14 Investigation to spot the false floor). Falling in: DC 13 Dex save or 2d6 piercing damage. A waterproof chest is hidden beneath a loose stone in the north wall (DC 15 Investigation), containing minor treasure.",
+        "size": 1,
+        "items": [
+            "Waterproof Pouch with 25 gp",
+            "Potion of Water Breathing"
+        ],
+        "traps": [
+            "Spiked pit trap concealed by water (DC 13 Dex save or 2d6 piercing damage)"
+        ],
+        "secretDoors": false,
+        "xpBudget": 100,
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 80ft x 80ft chamber. Shallow water covering floor. Dripping water from ceiling. Hidden spiked pit in center. Loose stone in north wall. Damp atmosphere. Entry via corridor. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "The Statue Chamber",
+        "level": 1,
+        "type": "exploration",
+        "difficulty": "moderate",
+        "roomDescription": "Four stone statues of armored warriors stand in the corners of the room, their stone eyes seeming to follow your movement. A large ornate door dominates the far wall.",
+        "dmDescription": "Trap room with multiple secrets. The statues are pressure-sensitive—touching one triggers a poison gas vent (DC 14 Con save or 2d4 poison damage + poisoned for 10 minutes). DC 14 Investigation reveals the statues can be rotated. Rotating all four to face the center disables the trap AND reveals a hidden compartment in the floor (contains treasure). A secret door behind the northeast statue (DC 16 Investigation) leads to a side passage.",
+        "size": 1,
+        "items": [
+            "Silver Dagger (worth 30 gp)",
+            "Map fragment showing part of the dungeon"
+        ],
+        "traps": [
+            "Poison gas vents triggered by touching statues (DC 14 Con save or 2d4 poison damage + poisoned)"
+        ],
+        "secretDoors": true,
+        "xpBudget": 150,
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 100ft square chamber. Four stone warrior statues in corners. Ornate door on far wall. Hidden floor compartment in center. Secret door behind northeast statue. Torch lighting. Entry via corridor. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "The Crumbling Bridge",
+        "level": 1,
+        "type": "exploration",
+        "difficulty": "moderate",
+        "roomDescription": "A stone bridge spans a dark chasm. Several sections of the bridge show cracks and missing stones. The sound of rushing water echoes from far below.",
+        "dmDescription": "Navigation hazard with hidden path. The bridge has three weak sections (DC 13 Perception to identify). Walking on weak sections: DC 14 Dex save or fall through (catch yourself on edge, DC 12 Athletics to climb back up, or fall 30 feet into water below—3d6 bludgeoning damage, DC 13 Athletics to swim). A hidden ledge path along the left wall (DC 15 Investigation) allows safe passage. The ledge also contains a skeleton with a pouch of gems.",
+        "size": 1,
+        "items": [
+            "3 Gemstones (15 gp each) on hidden ledge",
+            "Climbing Kit from skeleton"
+        ],
+        "traps": [
+            "Weak bridge sections (DC 14 Dex save or fall 30 feet for 3d6 damage)"
+        ],
+        "secretDoors": false,
+        "xpBudget": 175,
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 120ft x 60ft chasm chamber. Stone bridge crossing center with cracked sections. Dark chasm below. Hidden ledge path along left wall. Skeleton on ledge. Rushing water sound. Entry and exit via corridors. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "The Mirror Hall",
+        "level": 1,
+        "type": "exploration",
+        "difficulty": "moderate",
+        "roomDescription": "The walls are lined with tall mirrors in ornate frames. Your reflections seem slightly off, moving a fraction of a second after you do.",
+        "dmDescription": "Illusion-based trap room. One mirror is actually a secret door (DC 16 Investigation to find—it doesn't show a reflection). Three mirrors are trapped with magical symbols (DC 14 Arcana to identify). Looking directly at a trapped mirror: DC 14 Wisdom save or become frightened for 1 minute. Breaking a trapped mirror summons a hostile shadow (50 XP). The secret mirror-door leads to a treasure room.",
+        "size": 1,
+        "items": [
+            "Treasure room beyond secret door: 75 gp, Spell Scroll of Mirror Image"
+        ],
+        "traps": [
+            "3 mirrors with fear symbols (DC 14 Wis save or frightened for 1 minute)",
+            "Breaking trapped mirrors summons shadows"
+        ],
+        "secretDoors": true,
+        "xpBudget": 200,
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 90ft x 90ft rectangular chamber. Tall mirrors in ornate frames along walls. One mirror is actually a secret door. Magical symbols on some mirrors. Eerie lighting. Entry via corridor. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "The Trapped Library",
+        "level": 1,
+        "type": "exploration",
+        "difficulty": "high",
+        "roomDescription": "Rows of ancient bookshelves fill this dusty chamber. Most books have crumbled to dust, but a few intact tomes remain. A reading desk sits in the corner.",
+        "dmDescription": "Complex trap room with valuable rewards. Five books are trapped with explosive runes (DC 15 Investigation to spot faint glowing marks, DC 16 Arcana to identify). Opening a trapped book: DC 15 Dex save or 3d6 fire damage. Two books are safe and valuable (History and Arcana tomes worth 50 gp each). A hidden compartment in the desk (DC 17 Investigation) contains a spellbook. The north bookshelf is actually a secret rotating door (DC 18 Investigation).",
+        "size": 1,
+        "items": [
+            "2 valuable tomes (50 gp each)",
+            "Spellbook with 3 first-level spells",
+            "Scroll of Comprehend Languages"
+        ],
+        "traps": [
+            "5 books with explosive runes (DC 15 Dex save or 3d6 fire damage each)"
+        ],
+        "secretDoors": true,
+        "xpBudget": 250,
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 100ft library chamber. Rows of ancient bookshelves. Reading desk in corner with hidden compartment. North bookshelf is secret rotating door. Dusty atmosphere. Dim magical lighting. Entry via wooden door. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "The Blade Corridor",
+        "level": 1,
+        "type": "exploration",
+        "difficulty": "high",
+        "roomDescription": "Narrow slits line both walls of this corridor. The floor is stained with old, dark marks. At the far end, you can see what appears to be a valuable gem on a pedestal.",
+        "dmDescription": "Classic blade trap with hidden bypass. Walking down the corridor triggers swinging blade traps from the wall slits (DC 15 Perception to spot the trigger mechanism, DC 16 Dex save or 2d8 slashing damage). The gem is fake (DC 14 Investigation to realize). The REAL treasure is in a hidden alcove behind a loose brick (DC 18 Investigation) halfway down the corridor. A secret passage in the ceiling (DC 17 Investigation, requires climbing) bypasses the entire trap.",
+        "size": 1,
+        "items": [
+            "Bag of 100 gp in hidden alcove",
+            "Ring of Feather Falling"
+        ],
+        "traps": [
+            "Swinging blade traps (DC 16 Dex save or 2d8 slashing damage)",
+            "Fake gem is a distraction"
+        ],
+        "secretDoors": true,
+        "xpBudget": 275,
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 30ft narrow corridor. Slits in both walls for blade traps. Pedestal with fake gem at far end. Hidden alcove with loose brick. Secret ceiling passage. Dark stains on floor. Entry and exit via corridors. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "The Shifting Tiles",
+        "level": 1,
+        "type": "exploration",
+        "difficulty": "high",
+        "roomDescription": "The floor is a mosaic of colored tiles—red, blue, green, and white—arranged in a complex pattern. The far wall has a sealed door with four colored gems above it.",
+        "dmDescription": "Pattern-based trap puzzle. Stepping on the wrong colored tiles triggers different traps: Red = fire jet (2d6 fire damage, DC 15 Dex save), Blue = ice spray (2d6 cold damage, DC 15 Con save), Green = poison gas (2d6 poison damage, DC 15 Con save). White tiles are safe. The pattern to cross safely is hidden in the gem arrangement above the door (DC 16 Investigation to decipher). A hidden panel in the west wall (DC 18 Investigation) contains a map showing the safe path.",
+        "size": 1,
+        "items": [
+            "Map of safe path",
+            "Boots of Safe Passage (advantage on saves vs. traps for 24 hours, one use)"
+        ],
+        "traps": [
+            "Colored tile traps: fire, ice, and poison (DC 15 saves or 2d6 damage of respective type)"
+        ],
+        "secretDoors": true,
+        "xpBudget": 300,
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 120ft x 100ft chamber. Floor covered in colored mosaic tiles (red, blue, green, white pattern). Sealed door with four colored gems on far wall. Hidden panel in west wall. Magical lighting. Entry via corridor. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "The Collapsed Tunnel",
+        "level": 1,
+        "type": "exploration",
+        "difficulty": "high",
+        "roomDescription": "A cave-in has partially blocked this passage. Rubble and broken timbers are piled high, leaving only a narrow gap near the ceiling. The debris looks unstable.",
+        "dmDescription": "Environmental hazard with multiple solutions. Climbing over the rubble: DC 15 Athletics, but risks triggering a collapse (DC 16 Dex save or 3d6 bludgeoning damage from falling rocks). A hidden side passage (DC 17 Investigation) goes around the collapse. Alternatively, carefully clearing the rubble takes 1 hour but reveals a skeleton with treasure. Behind the rubble is a secret room (DC 18 Investigation to find the hidden door in the debris).",
+        "size": 1,
+        "items": [
+            "Skeleton has Potion of Greater Healing and 50 gp",
+            "Secret room contains a +1 Shield and map fragment"
+        ],
+        "traps": [
+            "Unstable rubble (DC 16 Dex save or 3d6 bludgeoning damage if collapse is triggered)"
+        ],
+        "secretDoors": true,
+        "xpBudget": 275,
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 80ft collapsed tunnel. Large pile of rubble and broken timbers. Narrow gap near ceiling. Hidden side passage around collapse. Secret door in debris. Skeleton buried in rubble. Dusty atmosphere. Entry and exit via tunnels. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "The Arcane Laboratory",
+        "level": 1,
+        "type": "exploration",
+        "difficulty": "high",
+        "roomDescription": "This chamber was once a wizard's workshop. Broken alchemical equipment litters the tables, and strange symbols are chalked on the floor. A faint magical hum fills the air.",
+        "dmDescription": "Magical trap room with research rewards. Three magic circles on the floor are still active (DC 16 Arcana to identify). Stepping in a circle triggers a random effect: teleport to another circle, 2d6 force damage, or temporary blindness (DC 15 Con save). A hidden safe behind a loose brick (DC 18 Investigation) contains valuable spell components and scrolls. The wizard's journal (DC 15 Investigation to find under debris) reveals the safe circles and contains research notes worth 100 gp to the right buyer.",
+        "size": 1,
+        "items": [
+            "Spell components worth 75 gp",
+            "2 Spell Scrolls (1st level)",
+            "Wizard's research journal (100 gp value)",
+            "Wand of Magic Detection (10 charges)"
+        ],
+        "traps": [
+            "3 active magic circles with random effects (teleport, 2d6 force damage, or blindness)"
+        ],
+        "secretDoors": true,
+        "xpBudget": 300,
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 110ft x 110ft laboratory chamber. Tables with broken alchemical equipment. Three glowing magic circles on floor. Chalk symbols throughout. Hidden safe in wall. Scattered debris and papers. Magical lighting. Entry via reinforced door. Clean lines, high contrast for virtual tabletop use."
     }
 ]
