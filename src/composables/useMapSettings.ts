@@ -23,13 +23,18 @@ export const useMapSettings = (
         exploration: 4
     });
 
+    const partySize = ref(4);
+    const averagePartyLevel = ref(1);
+
     const initMap = () => {
         mapData.value = generateDungeon(
             floorCount.value,
             currentFloor.value, // Pass current floor
             mapWidth,
             mapHeight,
-            nodeTypeCounts.value
+            nodeTypeCounts.value,
+            partySize.value,
+            averagePartyLevel.value
         );
 
         if (onInit) {
@@ -41,11 +46,15 @@ export const useMapSettings = (
         floor: number;
         floorDepth: number;
         nodeCounts: Record<string, number>;
+        partySize: number;
+        averagePartyLevel: number;
     }) => {
         // Update settings from config
         currentFloor.value = config.floor;
         floorCount.value = config.floorDepth;
         nodeTypeCounts.value = { ...config.nodeCounts };
+        partySize.value = config.partySize;
+        averagePartyLevel.value = config.averagePartyLevel;
 
         // Generate the map
         initMap();
@@ -71,6 +80,8 @@ export const useMapSettings = (
         revealAll,
         showRestartConfirm,
         showConfigModal,
+        partySize,
+        averagePartyLevel,
         initMap,
         restartMap,
         generateWithConfig,

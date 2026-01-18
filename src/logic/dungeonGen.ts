@@ -1,12 +1,15 @@
 import { DungeonNode, DungeonMapData, EncounterType, NodeType, EncounterDifficulty } from '../types';
 import { encounterLibrary } from '../data/encounterLibrary';
+import { scaleEncounter } from '../utils/encounterScaling';
 
 export const generateDungeon = (
     layersPerFloor: number = 15,
     currentFloor: number = 1,
     width: number = 800,
     height: number = 2000,
-    nodeTypeCounts?: Record<string, number>
+    nodeTypeCounts?: Record<string, number>,
+    partySize: number = 4,
+    averagePartyLevel: number = 1
 ): DungeonMapData => {
     const TOTAL_FLOORS = 21;
     const edges: { from: string; to: string }[] = [];
@@ -223,13 +226,19 @@ export const generateDungeon = (
         const encounterType = encounterTypeMap[node.type] || EncounterType.Combat;
 
         // Get appropriate encounter for this floor, excluding already-used encounters
-        const encounter = encounterLibrary.getRandomEncounter(
+        let encounter = encounterLibrary.getRandomEncounter(
             currentFloor,
             encounterType,
             { excludeNames: usedEncounterNames }
         );
 
         if (encounter) {
+            // Store the original unscaled encounter
+            node.originalEncounter = encounter;
+
+            // Apply scaling for combat encounters
+            encounter = scaleEncounter(encounter, { size: partySize, averageLevel: averagePartyLevel });
+
             node.encounter = encounter;
             node.description = encounter.roomDescription;
             usedEncounterNames.push(encounter.name);
@@ -264,6 +273,12 @@ export const generateDungeon = (
         }
 
         if (bossEncounter) {
+            // Store the original unscaled encounter
+            bossNode.originalEncounter = bossEncounter;
+
+            // Apply scaling for boss encounters
+            bossEncounter = scaleEncounter(bossEncounter, { size: partySize, averageLevel: averagePartyLevel });
+
             bossNode.encounter = bossEncounter;
             bossNode.description = bossEncounter.roomDescription;
         }

@@ -9,12 +9,16 @@ interface Props {
   currentFloor: number;
   revealAll: boolean;
   mapData: any; // DungeonMapData
+  partySize: number;
+  averagePartyLevel: number;
 }
 
 interface Emits {
   (e: 'update:floorCount', value: number): void;
   (e: 'update:currentFloor', value: number): void;
   (e: 'update:revealAll', value: boolean): void;
+  (e: 'update:partySize', value: number): void;
+  (e: 'update:averagePartyLevel', value: number): void;
   (e: 'regenerate'): void;
 }
 
@@ -122,11 +126,74 @@ const actualNodeCounts = computed(() => {
           </div>
         </div>
         
+        <!-- Party Configuration Display -->
+        <div v-if="mapData" class="bg-slate-800/50 rounded p-3 border border-blue-500/30">
+          <div class="text-xs text-slate-400 uppercase tracking-widest mb-3">👥 Party Configuration</div>
+          <div class="space-y-3">
+            <!-- Party Size -->
+            <div>
+              <div class="text-[10px] text-slate-500 uppercase tracking-wider mb-1">Party Size</div>
+              <div class="flex items-center gap-2">
+                <button
+                  @click="emit('update:partySize', Math.max(1, partySize - 1))"
+                  class="w-8 h-8 bg-slate-700 hover:bg-slate-600 text-white rounded flex items-center justify-center font-bold transition-colors"
+                  :disabled="partySize <= 1"
+                  :class="partySize <= 1 ? 'opacity-50 cursor-not-allowed' : ''"
+                >
+                  −
+                </button>
+                <div class="flex-1 text-center">
+                  <div class="text-2xl font-bold text-blue-400">{{ partySize }}</div>
+                  <div class="text-[9px] text-slate-500">characters</div>
+                </div>
+                <button
+                  @click="emit('update:partySize', Math.min(8, partySize + 1))"
+                  class="w-8 h-8 bg-slate-700 hover:bg-slate-600 text-white rounded flex items-center justify-center font-bold transition-colors"
+                  :disabled="partySize >= 8"
+                  :class="partySize >= 8 ? 'opacity-50 cursor-not-allowed' : ''"
+                >
+                  +
+                </button>
+              </div>
+            </div>
+            
+            <!-- Average Party Level -->
+            <div>
+              <div class="text-[10px] text-slate-500 uppercase tracking-wider mb-1">Average Level</div>
+              <div class="flex items-center gap-2">
+                <button
+                  @click="emit('update:averagePartyLevel', Math.max(1, averagePartyLevel - 1))"
+                  class="w-8 h-8 bg-slate-700 hover:bg-slate-600 text-white rounded flex items-center justify-center font-bold transition-colors"
+                  :disabled="averagePartyLevel <= 1"
+                  :class="averagePartyLevel <= 1 ? 'opacity-50 cursor-not-allowed' : ''"
+                >
+                  −
+                </button>
+                <div class="flex-1 text-center">
+                  <div class="text-2xl font-bold text-blue-400">{{ averagePartyLevel }}</div>
+                  <div class="text-[9px] text-slate-500">level</div>
+                </div>
+                <button
+                  @click="emit('update:averagePartyLevel', Math.min(20, averagePartyLevel + 1))"
+                  class="w-8 h-8 bg-slate-700 hover:bg-slate-600 text-white rounded flex items-center justify-center font-bold transition-colors"
+                  :disabled="averagePartyLevel >= 20"
+                  :class="averagePartyLevel >= 20 ? 'opacity-50 cursor-not-allowed' : ''"
+                >
+                  +
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="mt-3 text-[9px] text-blue-300/60 italic text-center">
+            Changes apply when entering encounters
+          </div>
+        </div>
+        
         <button 
           @click="emit('regenerate')"
           class="w-full bg-amber-600 hover:bg-amber-500 text-white font-bold py-2.5 px-4 rounded transition-all transform active:scale-95 text-sm shadow-lg shadow-amber-900/20"
         >
-          🔄 Configure New Floor
+          🔄 Reconfigure Floor
         </button>
         
         <button 

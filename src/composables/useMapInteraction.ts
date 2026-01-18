@@ -1,7 +1,12 @@
 import { ref, computed, type Ref } from 'vue';
 import type { DungeonMapData, DungeonNode } from '../types';
+import { scaleEncounter } from '../utils/encounterScaling';
 
-export const useMapInteraction = (mapData: Ref<DungeonMapData | null>) => {
+export const useMapInteraction = (
+    mapData: Ref<DungeonMapData | null>,
+    partySize: Ref<number>,
+    averagePartyLevel: Ref<number>
+) => {
     const selectedNodeId = ref<string | null>(null);
     const visitedPath = ref<Array<{ from: string; to: string }>>([]);
 
@@ -27,6 +32,15 @@ export const useMapInteraction = (mapData: Ref<DungeonMapData | null>) => {
 
     const enterEncounter = (node: DungeonNode, scrollToNode: (node: DungeonNode) => void) => {
         if (node.status !== 'available') return;
+
+        // Apply runtime scaling to the encounter if it exists
+        // Always scale from the original unscaled encounter to ensure correct scaling
+        if (node.originalEncounter) {
+            node.encounter = scaleEncounter(node.originalEncounter, {
+                size: partySize.value,
+                averageLevel: averagePartyLevel.value
+            });
+        }
 
         // Find the parent node we came from
         if (mapData.value) {

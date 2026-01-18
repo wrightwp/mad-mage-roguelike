@@ -24,6 +24,8 @@ const {
   revealAll,
   showRestartConfirm,
   showConfigModal,
+  partySize,
+  averagePartyLevel,
   restartMap,
   generateWithConfig,
   openConfigModal
@@ -48,7 +50,7 @@ const {
   enterEncounter,
   completeEncounter,
   resetInteraction
-} = useMapInteraction(mapData);
+} = useMapInteraction(mapData, partySize, averagePartyLevel);
 
 const {
   leftPanelWidth,
@@ -123,9 +125,13 @@ const handleEnterEncounter = (node: any) => {
       :current-floor="currentFloor"
       :reveal-all="revealAll"
       :map-data="mapData"
+      :party-size="partySize"
+      :average-party-level="averagePartyLevel"
       @update:floor-count="floorCount = $event"
       @update:current-floor="currentFloor = $event"
       @update:reveal-all="revealAll = $event"
+      @update:party-size="partySize = $event"
+      @update:average-party-level="averagePartyLevel = $event"
       @regenerate="handleRegenerate"
     />
 

@@ -18,6 +18,8 @@ export interface FloorConfig {
   floor: number;
   floorDepth: number;
   nodeCounts: Record<string, number>;
+  partySize: number;
+  averagePartyLevel: number;
 }
 
 const props = withDefaults(defineProps<Props>(), {
@@ -39,6 +41,8 @@ const emit = defineEmits<Emits>();
 const selectedFloor = ref(props.initialFloor);
 const floorDepth = ref(props.initialFloorDepth);
 const nodeCounts = ref({ ...props.initialNodeCounts });
+const partySize = ref(4);
+const averagePartyLevel = ref(1);
 
 // Computed values
 const totalNodes = computed(() => {
@@ -66,6 +70,8 @@ const resetToDefaults = () => {
     social: 3,
     exploration: 4
   };
+  partySize.value = 4;
+  averagePartyLevel.value = 1;
 };
 
 // Generate floor
@@ -73,7 +79,9 @@ const handleGenerate = () => {
   emit('generate', {
     floor: selectedFloor.value,
     floorDepth: floorDepth.value,
-    nodeCounts: { ...nodeCounts.value }
+    nodeCounts: { ...nodeCounts.value },
+    partySize: partySize.value,
+    averagePartyLevel: averagePartyLevel.value
   });
 };
 
@@ -150,6 +158,46 @@ const handleCancel = () => {
             <div class="flex justify-between text-xs text-slate-500 mt-1">
               <span>5 (Short)</span>
               <span>30 (Epic)</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Party Configuration -->
+        <div class="bg-slate-800/50 rounded-xl p-6 border border-slate-700">
+          <h3 class="text-lg font-bold text-slate-100 mb-4 uppercase tracking-wider flex items-center gap-2">
+            <span>👥</span> Party Configuration
+          </h3>
+          <div class="grid grid-cols-2 gap-4">
+            <div>
+              <label class="block text-xs text-slate-400 mb-2 tracking-widest uppercase">Party Size</label>
+              <input 
+                type="number" 
+                v-model.number="partySize"
+                min="1" 
+                max="8"
+                class="w-full bg-slate-900 border border-slate-600 rounded-lg px-4 py-3 text-slate-200 text-lg font-bold focus:outline-none focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20"
+              />
+              <div class="text-[10px] text-slate-500 mt-1">Number of player characters (1-8)</div>
+            </div>
+            <div>
+              <label class="block text-xs text-slate-400 mb-2 tracking-widest uppercase">Average Party Level</label>
+              <input 
+                type="number" 
+                v-model.number="averagePartyLevel"
+                min="1" 
+                max="20"
+                class="w-full bg-slate-900 border border-slate-600 rounded-lg px-4 py-3 text-slate-200 text-lg font-bold focus:outline-none focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20"
+              />
+              <div class="text-[10px] text-slate-500 mt-1">Average level of the party (1-20)</div>
+            </div>
+          </div>
+          <div class="mt-4 p-3 bg-blue-900/20 border border-blue-700/30 rounded-lg">
+            <div class="text-xs text-blue-300 flex items-start gap-2">
+              <span class="text-base">ℹ️</span>
+              <div>
+                <div class="font-bold mb-1">Dynamic Scaling</div>
+                <div class="text-blue-200/80">Combat encounters will scale based on party size (monster count) and party level (difficulty tier). Scaling applies during generation and when entering encounters.</div>
+              </div>
             </div>
           </div>
         </div>

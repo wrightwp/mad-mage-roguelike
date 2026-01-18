@@ -12,5 +12,6 @@ export interface DungeonNode {
     status: 'locked' | 'available' | 'visited' | 'current';
     description?: string;
     revealed?: boolean;
-    encounter?: EncounterData; // Full encounter data
+    encounter?: EncounterData; // Full encounter data (may be scaled)
+    originalEncounter?: EncounterData; // Original unscaled encounter data
 }
