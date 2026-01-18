@@ -2595,5 +2595,763 @@
         "secretDoors": true,
         "xpBudget": 300,
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 110ft x 110ft laboratory chamber. Tables with broken alchemical equipment. Three glowing magic circles on floor. Chalk symbols throughout. Hidden safe in wall. Scattered debris and papers. Magical lighting. Entry via reinforced door. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "The Abandoned Guard Post",
+        "level": 1,
+        "type": "rest",
+        "difficulty": "low",
+        "roomDescription": "A small stone chamber with arrow slits in the walls. Broken furniture and rusted weapons suggest this was once a guard station. The room is drafty but defensible.",
+        "dmDescription": "Poor shelter quality due to drafts and lack of comfort. The arrow slits provide good visibility of approaching threats (advantage on Perception checks while resting here). The door can be barricaded (DC 10 Athletics) to provide warning if opened. No healing bonus.",
+        "size": 1,
+        "shelterQuality": "poor",
+        "healingBonus": false,
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 60ft x 60ft square guard post. Arrow slits in walls. Broken furniture and rusted weapons. Stone floor. Single reinforceable door. Dim lighting. Entry via corridor. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "The Hidden Alcove",
+        "level": 1,
+        "type": "rest",
+        "difficulty": "low",
+        "roomDescription": "A narrow alcove concealed behind a fallen tapestry. The space is cramped but dry, with enough room for a few people to rest uncomfortably.",
+        "dmDescription": "Poor shelter due to cramped conditions. However, the hidden nature provides security—enemies passing by have disadvantage on Perception checks to notice the party. DC 12 Investigation to find this alcove initially. No healing bonus but safe from random encounters.",
+        "size": 1,
+        "shelterQuality": "poor",
+        "healingBonus": false,
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 40ft x 30ft narrow alcove. Fallen tapestry concealing entrance. Cramped space. Dry stone walls. Very dim lighting. Hidden from main corridor. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "The Old Barracks",
+        "level": 1,
+        "type": "rest",
+        "difficulty": "moderate",
+        "roomDescription": "A former sleeping quarters with several intact stone bunks. Moth-eaten blankets and straw mattresses remain, surprisingly dry despite the dungeon's dampness. A small fireplace sits cold in the corner.",
+        "dmDescription": "Good shelter quality. The fireplace can be lit safely (no smoke escapes to alert enemies). Intact bunks provide reasonable comfort. The door is sturdy and can be locked from inside (DC 15 to break down). Characters gain advantage on Constitution saves during short rests here. No healing bonus but comfortable rest.",
+        "size": 1,
+        "shelterQuality": "good",
+        "healingBonus": false,
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 80ft barracks chamber. Multiple stone bunks along walls. Fireplace in corner. Moth-eaten blankets. Straw mattresses. Lockable door. Warm lighting from fireplace. Entry via reinforced door. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "The Sacred Spring",
+        "level": 1,
+        "type": "rest",
+        "difficulty": "moderate",
+        "roomDescription": "A natural spring bubbles up from the floor, filling a small pool with crystal-clear water. Ancient carvings on the walls depict healing rituals. The air feels fresh and pure, a stark contrast to the stale dungeon atmosphere.",
+        "dmDescription": "Good shelter with healing bonus. The spring water has minor restorative properties—drinking it grants advantage on one Hit Die rolled during a short rest. DC 13 Religion check reveals this was a shrine to a healing deity. The room has a peaceful aura that discourages violence (hostile creatures must succeed on DC 12 Wisdom save to attack here). Provides healing bonus.",
+        "size": 1,
+        "shelterQuality": "good",
+        "healingBonus": true,
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 80ft x 80ft natural cavern. Crystal-clear spring pool in center. Ancient healing carvings on walls. Fresh atmosphere. Soft blue-green lighting from water. Peaceful aura. Entry via natural passage. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "The Sealed Sanctuary",
+        "level": 1,
+        "type": "rest",
+        "difficulty": "high",
+        "roomDescription": "A reinforced chamber with thick stone walls and a heavy iron door. Magical wards glow faintly around the entrance. Inside, the room is furnished with preserved bedding, a small table, and emergency supplies. This was clearly designed as a safe haven.",
+        "dmDescription": "Secure shelter with healing bonus. The magical wards alert the party if anything approaches within 60 feet (no surprise attacks possible). The door can be sealed from inside and is nearly impregnable (DC 20 to break, immune to lockpicking from outside). Emergency supplies include 2 days of rations and a Potion of Healing. The wards provide a calming effect—characters regain maximum Hit Dice during short rests and can benefit from a long rest in half the normal time (4 hours). Provides significant healing bonus.",
+        "size": 1,
+        "shelterQuality": "secure",
+        "healingBonus": true,
+        "xpBudget": 100,
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 90ft x 90ft reinforced sanctuary. Thick stone walls. Heavy iron door with glowing magical wards. Preserved bedding and furniture. Small table with emergency supplies. Soft magical lighting. Peaceful atmosphere. Entry via warded doorway. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "The Lost Merchant",
+        "level": 1,
+        "type": "social",
+        "difficulty": "low",
+        "roomDescription": "A portly halfling sits dejectedly on a broken crate, surrounded by scattered trade goods. He looks up hopefully as you approach.",
+        "dmDescription": "Friendly merchant named Wimble Tosscoin who got separated from his caravan. He's willing to trade his remaining goods at a discount (20% off normal prices) in exchange for an escort to the surface or information about safe routes. He has: 2 Potions of Healing (40 gp each), Rope (50 ft), Rations (5 days). If helped, he'll give the party a token good for a future discount at his shop in Waterdeep.",
+        "size": 1,
+        "monsters": [
+            {
+                "name": "Wimble Tosscoin (Halfling Merchant)",
+                "count": 1,
+                "cr": 0,
+                "exp": 0,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/sources/dnd/dmg-2024/dms-toolbox#Commoner"
+            }
+        ],
+        "attitude": "friendly",
+        "personality": "nervous but hopeful",
+        "tradeGoods": [
+            "2 Potions of Healing (40 gp each)",
+            "Rope (50 ft, 1 gp)",
+            "Rations (5 days, 2 gp)"
+        ],
+        "questHook": "Escort to surface or provide map/directions. Reward: 50 gp + future shop discount token",
+        "xpBudget": 50,
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 70ft x 70ft chamber. Broken crates and scattered trade goods. Halfling merchant sitting dejectedly. Dim lighting. Entry via corridor. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "The Suspicious Scouts",
+        "level": 1,
+        "type": "social",
+        "difficulty": "low",
+        "roomDescription": "Two human scouts in worn leather armor eye you warily from across the room. Their hands rest near their weapons, but they haven't drawn them yet.",
+        "dmDescription": "Indifferent scouts (Theron and Mira) from a rival adventuring party. They're mapping the dungeon and see the party as competition. DC 12 Persuasion to convince them to share information (they know about a nearby trap). DC 14 Intimidation to make them leave. If attacked, they flee after taking any damage. They might become allies if treated well (future encounter potential).",
+        "size": 1,
+        "monsters": [
+            {
+                "name": "Human Scout",
+                "count": 2,
+                "cr": 0.5,
+                "exp": 100,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/monsters/17007-scout"
+            }
+        ],
+        "attitude": "indifferent",
+        "personality": "cautious and competitive",
+        "xpBudget": 100,
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 80ft x 80ft chamber. Two scouts in defensive positions. Mapping equipment visible. Tense atmosphere. Entry via corridor. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "The Goblin Deserter",
+        "level": 1,
+        "type": "social",
+        "difficulty": "moderate",
+        "roomDescription": "A lone goblin huddles in the corner, clutching a crude map. Unlike most goblins, this one doesn't immediately attack. Instead, it raises its hands in a gesture of peace.",
+        "dmDescription": "Friendly goblin named Skrix who deserted from a larger goblin warband. He's terrified of his former boss and willing to trade information for protection or safe passage. DC 11 Persuasion to gain his trust. He knows: location of goblin lair (3 rooms ahead), number of goblins (8 total), and the boss's weakness (afraid of fire). He'll offer his crude map showing shortcuts through this level. If treated kindly, he might join as a temporary guide.",
+        "size": 1,
+        "monsters": [
+            {
+                "name": "Skrix (Goblin Deserter)",
+                "count": 1,
+                "cr": 0.25,
+                "exp": 50,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/monsters/16907-goblin"
+            }
+        ],
+        "attitude": "friendly",
+        "personality": "fearful but helpful",
+        "questHook": "Wants protection from goblin warband. Offers intelligence and map in exchange for safe passage or help defeating his former boss.",
+        "xpBudget": 125,
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 60ft x 60ft corner chamber. Goblin huddled in corner with crude map. Non-threatening posture. Dim lighting. Entry via corridor. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "The Dwarven Prospector",
+        "level": 1,
+        "type": "social",
+        "difficulty": "moderate",
+        "roomDescription": "A grizzled dwarf with a pickaxe examines the walls intently, muttering about 'promising veins.' He barely acknowledges your presence.",
+        "dmDescription": "Indifferent dwarf prospector named Thorin Ironseam. He's searching for valuable ore deposits and views the party as a distraction. DC 13 Persuasion to get him talking. He knows about secret passages (DC 15 Persuasion to share) and has found some gemstones he might trade (3 gems worth 25 gp each, will sell for 20 gp each or trade for mining equipment). If given ale or mining tools, becomes friendly and shares more information.",
+        "size": 1,
+        "monsters": [
+            {
+                "name": "Thorin Ironseam (Dwarf Prospector)",
+                "count": 1,
+                "cr": 0.5,
+                "exp": 100,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/sources/dnd/dmg-2024/dms-toolbox#Commoner"
+            }
+        ],
+        "attitude": "indifferent",
+        "personality": "gruff and focused",
+        "tradeGoods": [
+            "3 Gemstones (20 gp each)",
+            "Information about secret passages"
+        ],
+        "xpBudget": 150,
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 90ft x 80ft chamber. Dwarf examining walls with pickaxe. Mining equipment scattered. Rock samples. Torchlight. Entry via corridor. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "The Trapped Wizard",
+        "level": 1,
+        "type": "social",
+        "difficulty": "moderate",
+        "roomDescription": "An elderly human wizard stands within a glowing magical circle on the floor, unable to step outside its bounds. He calls out for assistance.",
+        "dmDescription": "Friendly wizard named Aldric Moonwhisper trapped by his own failed teleportation spell. DC 13 Arcana to understand the circle, DC 14 to safely dispel it. If freed, he's grateful and offers: choice of 1 spell scroll (1st level), knowledge about upcoming encounters, or a one-time Sending spell to contact someone. He warns about a dangerous trap two rooms ahead. If attacked while trapped, he casts defensive spells but can't leave the circle.",
+        "size": 1,
+        "monsters": [
+            {
+                "name": "Aldric Moonwhisper (Wizard)",
+                "count": 1,
+                "cr": 1,
+                "exp": 200,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-m#Mage"
+            }
+        ],
+        "attitude": "friendly",
+        "personality": "embarrassed but grateful",
+        "questHook": "Free him from magical circle. Reward: spell scroll, information, or Sending spell service",
+        "xpBudget": 175,
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 80ft x 80ft chamber. Glowing magical circle on floor with wizard trapped inside. Arcane symbols. Magical lighting. Scattered spell components. Entry via corridor. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "The Bandit Negotiation",
+        "level": 1,
+        "type": "social",
+        "difficulty": "high",
+        "roomDescription": "Three rough-looking humans block the passage ahead. Their leader, a scarred woman with a crossbow, steps forward. 'This is our territory. Pay the toll or turn back.'",
+        "dmDescription": "Hostile bandits demanding 50 gp toll. Leader is Kara Blackknife (Bandit Captain stats but CR 1). DC 15 Intimidation to make them back down. DC 16 Persuasion to negotiate lower toll (25 gp). DC 14 Deception to convince them you're allies of their boss. If combat starts, they fight but surrender at half HP, offering information about a treasure cache (worth 100 gp, 2 rooms away) in exchange for their lives. They know the password to bypass a trap ahead.",
+        "size": 1,
+        "monsters": [
+            {
+                "name": "Kara Blackknife (Bandit Leader)",
+                "count": 1,
+                "cr": 1,
+                "exp": 200,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/monsters/16798-bandit"
+            },
+            {
+                "name": "Bandit",
+                "count": 2,
+                "cr": 0.125,
+                "exp": 25,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/monsters/16798-bandit"
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "greedy and opportunistic",
+        "questHook": "If spared, they reveal treasure location and trap password. Might become informants for future floors.",
+        "xpBudget": 250,
+        "winConditions": [
+            {
+                "condition": "Pay the toll (50 gp) or negotiate (25 gp)",
+                "reward": "Safe passage, no combat"
+            },
+            {
+                "condition": "Intimidate or deceive successfully",
+                "reward": "Free passage + possible information"
+            },
+            {
+                "condition": "Defeat in combat but spare them",
+                "reward": "Treasure location + trap password + 250 XP"
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 60ft corridor. Three bandits blocking passage. Leader in front with crossbow. Defensive positions. Tense atmosphere. Entry and exit via corridors. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "The Cursed Knight",
+        "level": 1,
+        "type": "social",
+        "difficulty": "high",
+        "roomDescription": "A spectral knight in tarnished armor kneels before a broken altar. As you approach, he rises slowly, his hollow voice echoing: 'Have you come to end my torment?'",
+        "dmDescription": "Indifferent undead knight bound by a curse to guard this chamber. He's not inherently hostile but will attack if threatened. DC 15 Religion to understand the curse, DC 16 Persuasion to learn his story. He was a paladin who failed his oath and seeks redemption. Options: 1) Destroy him in combat (he fights honorably), 2) Complete his unfinished quest (retrieve a holy symbol from 3 rooms away, DC 14 Investigation to find), 3) Perform a burial rite (DC 13 Religion). If freed from curse, he grants his blessing (+1 to AC for 24 hours to one character) and reveals a hidden cache.",
+        "size": 1,
+        "monsters": [
+            {
+                "name": "Sir Aldren the Cursed (Spectral Knight)",
+                "count": 1,
+                "cr": 1,
+                "exp": 200,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/monsters/17014-skeleton"
+            }
+        ],
+        "attitude": "indifferent",
+        "personality": "mournful and honorable",
+        "questHook": "Free him from curse by retrieving holy symbol or performing burial rite. Reward: blessing (+1 AC for 24 hours) + hidden cache (Potion of Heroism, 50 gp)",
+        "xpBudget": 275,
+        "winConditions": [
+            {
+                "condition": "Defeat him in honorable combat",
+                "reward": "200 XP + his tarnished armor (can be restored for 100 gp value)"
+            },
+            {
+                "condition": "Complete his quest and free him from curse",
+                "reward": "275 XP + blessing + hidden cache"
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 90ft x 90ft chamber. Broken altar in center. Spectral knight kneeling. Ghostly blue lighting. Solemn atmosphere. Hidden cache location. Entry via stone archway. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "The Myconid Circle",
+        "level": 1,
+        "type": "social",
+        "difficulty": "high",
+        "roomDescription": "A cluster of mushroom-like creatures stands in a circle, releasing gentle pulses of colored spores. They turn toward you, their movements slow and deliberate.",
+        "dmDescription": "Indifferent myconids (fungus folk) communicating through spores. They don't speak Common but can share emotions and simple concepts via rapport spores (DC 12 Constitution save to accept, harmless). They're concerned about 'the rot' spreading from below and seek help. DC 14 Nature to understand their distress. They offer: mushroom-based healing (equivalent to Potion of Healing), safe passage through their territory, and knowledge of shortcuts. They'll become hostile only if attacked. If helped, they provide spore servants as temporary allies.",
+        "size": 1,
+        "monsters": [
+            {
+                "name": "Myconid Adult",
+                "count": 3,
+                "cr": 0.5,
+                "exp": 100,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/monsters/16967-myconid-adult"
+            }
+        ],
+        "attitude": "indifferent",
+        "personality": "peaceful and communal",
+        "questHook": "Investigate 'the rot' spreading from lower levels. They provide healing mushrooms and shortcuts in exchange for help.",
+        "tradeGoods": [
+            "Healing Mushrooms (3, function as Potions of Healing)",
+            "Safe passage through fungal areas"
+        ],
+        "xpBudget": 300,
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 100ft cavern. Circle of myconids releasing colored spores. Bioluminescent mushrooms throughout. Soft multicolored lighting. Peaceful atmosphere. Entry via natural passage. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "The Rival Adventurer",
+        "level": 1,
+        "type": "social",
+        "difficulty": "high",
+        "roomDescription": "A well-equipped elf ranger sits casually on a stone ledge, cleaning her bow. She looks up with a competitive smirk. 'So, you made it this far. Impressive.'",
+        "dmDescription": "Indifferent rival adventurer named Sylvara Swiftarrow. She's competing for the same bounty/treasure and sees the party as competition. DC 15 Persuasion to convince her to team up temporarily (she'll help with one encounter then leave). DC 16 Intimidation to make her back off. DC 14 Insight reveals she's actually testing the party to see if they're worthy allies. If impressed (party shares information or offers fair deal), she becomes friendly and offers: trade (has 2 Potions of Greater Healing, 100 gp each), information about boss encounter ahead, or temporary alliance. Future recurring NPC potential.",
+        "size": 1,
+        "monsters": [
+            {
+                "name": "Sylvara Swiftarrow (Elf Ranger)",
+                "count": 1,
+                "cr": 1,
+                "exp": 200,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/monsters/17007-scout"
+            }
+        ],
+        "attitude": "indifferent",
+        "personality": "competitive but fair",
+        "tradeGoods": [
+            "2 Potions of Greater Healing (100 gp each)",
+            "Information about boss encounter"
+        ],
+        "questHook": "Potential temporary alliance or future recurring ally. She's tracking the same objectives.",
+        "xpBudget": 275,
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 80ft x 80ft chamber. Stone ledge with elf ranger. Well-maintained equipment visible. Confident atmosphere. Entry via corridor. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "The Desperate Cultist",
+        "level": 1,
+        "type": "social",
+        "difficulty": "high",
+        "roomDescription": "A robed figure kneels before a dark altar, chanting in an unknown language. As you enter, they spin around, eyes wild with fanaticism. 'The ritual must be completed!'",
+        "dmDescription": "Hostile cultist attempting to summon a minor demon. He's desperate and dangerous. DC 16 Persuasion to talk him down (he's having second thoughts). DC 15 Intimidation to make him flee. DC 14 Arcana to disrupt the ritual safely. If ritual completes (3 rounds), summons a minor demon (CR 1). If talked down, he reveals cult information: hideout location (potential future quest), cult leader's name, and ritual components worth 75 gp. If ritual is disrupted, he attacks but surrenders at half HP. Sparing him provides intelligence on cult activities.",
+        "size": 1,
+        "monsters": [
+            {
+                "name": "Desperate Cultist",
+                "count": 1,
+                "cr": 0.5,
+                "exp": 100,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/monsters/16836-cultist"
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "fanatical but wavering",
+        "questHook": "Disrupt ritual and spare cultist for intelligence on cult hideout and activities. Potential future quest line.",
+        "xpBudget": 300,
+        "winConditions": [
+            {
+                "condition": "Talk him down from completing ritual",
+                "reward": "300 XP + cult intelligence + ritual components (75 gp value)"
+            },
+            {
+                "condition": "Disrupt ritual and defeat cultist",
+                "reward": "200 XP + ritual components"
+            },
+            {
+                "condition": "Let ritual complete",
+                "reward": "Must fight cultist + summoned demon (additional 200 XP)"
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 90ft x 90ft ritual chamber. Dark altar in center. Arcane circle on floor. Robed cultist. Ominous lighting. Ritual components scattered. Entry via corridor. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "Gorthak the Goblin King",
+        "level": 1,
+        "type": "boss",
+        "difficulty": "high",
+        "roomDescription": "A crude throne room carved from stone. Tattered banners hang from the walls, and a makeshift throne of scavenged armor sits atop a raised platform. A large goblin wearing a crown of bones lounges on the throne, surrounded by his elite guards.",
+        "dmDescription": "Goblin Boss with 2 Goblin Warriors as bodyguards. Gorthak fights tactically, using his guards as shields and throwing alchemist's fire. At half HP, he drinks a Potion of Growth (becomes Large, +1d4 damage). He has a horn that summons 2 more goblin minions (once per fight). Treasure: 150 gp, Potion of Healing, +1 Shortsword, Bone Crown (worth 75 gp).",
+        "size": 2,
+        "monsters": [
+            {
+                "name": "Gorthak the Goblin King",
+                "count": 1,
+                "cr": 1,
+                "exp": 200,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/monsters/16907-goblin-boss"
+            },
+            {
+                "name": "Goblin Warrior",
+                "count": 2,
+                "cr": 0.25,
+                "exp": 50,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#GoblinWarrior"
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "cunning and cowardly",
+        "xpBudget": 300,
+        "lair": true,
+        "winConditions": [
+            {
+                "condition": "Defeat Gorthak and his guards",
+                "reward": "300 XP + treasure + access to next floor"
+            },
+            {
+                "condition": "Convince Gorthak to surrender (DC 18 Intimidation after killing guards)",
+                "reward": "250 XP + treasure + Gorthak reveals secret treasure cache (additional 100 gp)"
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 150ft x 120ft throne room. Raised platform with crude throne made of scavenged armor. Tattered banners on walls. Goblin guards positioned defensively. Bone crown visible. Dim torchlight. Entry via large double doors. Stairs to next level behind throne. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "The Skeletal Champion",
+        "level": 1,
+        "type": "boss",
+        "difficulty": "high",
+        "roomDescription": "An ancient armory filled with rusted weapons and broken shields. At the center stands a skeletal warrior in pristine plate armor, wielding a greatsword that glows with necromantic energy.",
+        "dmDescription": "Undead warrior with enhanced stats. Immune to poison, resistant to slashing/piercing. At half HP, animates 4 skeleton minions from nearby armor. Has Parry reaction (+2 AC against one attack). Uses Action Surge once per fight. Treasure: +1 Plate Armor, Greatsword of Warning, 200 gp, Scroll of Speak with Dead.",
+        "size": 2,
+        "monsters": [
+            {
+                "name": "Skeletal Champion",
+                "count": 1,
+                "cr": 2,
+                "exp": 450,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/monsters/17014-skeleton"
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "silent and relentless",
+        "xpBudget": 450,
+        "lair": true,
+        "winConditions": [
+            {
+                "condition": "Destroy the Skeletal Champion",
+                "reward": "450 XP + treasure + access to next floor"
+            },
+            {
+                "condition": "Use Turn Undead or similar ability to make it flee",
+                "reward": "300 XP + partial treasure (it drops greatsword)"
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 140ft x 140ft ancient armory. Rusted weapons and broken shields scattered throughout. Skeletal champion in center with glowing greatsword. Suits of armor that can animate. Dark atmosphere with necromantic green lighting. Entry via stone archway. Exit stairs visible. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "Venomfang the Young Green Dragon",
+        "level": 1,
+        "type": "boss",
+        "difficulty": "high",
+        "roomDescription": "A vast cavern with a high ceiling. The air is thick with poisonous fumes. A young green dragon perches on a pile of treasure, its emerald scales gleaming in the dim light.",
+        "dmDescription": "CR 2 Young Green Dragon (scaled down). Breath Weapon: 30ft cone, DC 12 Con save or 3d6 poison damage (recharge 5-6). Flies to ceiling when bloodied. Lair Actions: poison gas cloud (DC 11 Con save or poisoned), difficult terrain from vines. Treasure hoard: 500 gp, 3 gems (50 gp each), Potion of Poison Resistance, Ring of Swimming.",
+        "size": 3,
+        "monsters": [
+            {
+                "name": "Venomfang (Young Green Dragon)",
+                "count": 1,
+                "cr": 2,
+                "exp": 450,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/monsters/16902-young-green-dragon"
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "arrogant and cruel",
+        "xpBudget": 500,
+        "lair": true,
+        "winConditions": [
+            {
+                "condition": "Slay the dragon",
+                "reward": "500 XP + full treasure hoard + dragon scales (crafting material)"
+            },
+            {
+                "condition": "Negotiate with the dragon (DC 18 Persuasion, must offer tribute worth 200+ gp)",
+                "reward": "300 XP + safe passage + dragon allows one item from hoard"
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 200ft x 180ft massive cavern. High ceiling (40ft). Treasure pile in center with green dragon perched on top. Poisonous fumes visible. Vines and vegetation. Dim green-tinted lighting. Entry via tunnel. Exit passage behind treasure. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "The Corrupted Treant",
+        "level": 1,
+        "type": "boss",
+        "difficulty": "high",
+        "roomDescription": "An underground grove where twisted roots break through stone. A massive tree-like creature, its bark blackened and oozing dark sap, stands at the center. Smaller twig blights scurry around its roots.",
+        "dmDescription": "Corrupted Treant (CR 2) with 4 Twig Blights. Treant has vulnerability to fire but resistance to bludgeoning/piercing. Can animate roots to grapple (DC 13 Str save). At half HP, goes into rage (+2 damage, disadvantage on attacks against it). Twig blights regenerate 1 HP per round unless killed by fire. Treasure: Heart of the Treant (rare crafting component worth 200 gp), Bag of Seeds (can grow healing herbs), 100 gp.",
+        "size": 2,
+        "monsters": [
+            {
+                "name": "Corrupted Treant",
+                "count": 1,
+                "cr": 2,
+                "exp": 450,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/monsters/17035-treant"
+            },
+            {
+                "name": "Twig Blight",
+                "count": 4,
+                "cr": 0.125,
+                "exp": 25,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/monsters/17038-twig-blight"
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "corrupted and aggressive",
+        "xpBudget": 550,
+        "lair": true,
+        "winConditions": [
+            {
+                "condition": "Destroy the Corrupted Treant and all blights",
+                "reward": "550 XP + full treasure"
+            },
+            {
+                "condition": "Purify the treant with Remove Curse or similar magic (DC 15 Arcana)",
+                "reward": "600 XP + treant becomes grateful ally, grants blessing of the forest (+1d4 to Nature checks for 7 days)"
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 160ft x 160ft underground grove. Massive corrupted treant in center. Twisted roots breaking through stone floor. Twig blights scattered around. Dark sap oozing. Eerie green-black lighting. Entry via cavern. Exit passage visible. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "Malakar the Dark Sorcerer",
+        "level": 1,
+        "type": "boss",
+        "difficulty": "high",
+        "roomDescription": "A circular ritual chamber with arcane symbols etched into every surface. A robed figure stands within a glowing pentagram, dark energy crackling around his hands. Two animated suits of armor flank him.",
+        "dmDescription": "Evil Mage (CR 1) with 2 Animated Armor guardians. Malakar uses Shield spell (+5 AC as reaction), Counterspell, and offensive spells (Magic Missile, Burning Hands). At half HP, sacrifices one armor to heal 2d8+2 HP. Has Contingency: Misty Step when hit by melee attack. Treasure: Spellbook (6 first-level spells), Wand of Magic Missiles (7 charges), Robe of Useful Items, 250 gp.",
+        "size": 2,
+        "monsters": [
+            {
+                "name": "Malakar the Dark Sorcerer",
+                "count": 1,
+                "cr": 1,
+                "exp": 200,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-m#Mage"
+            },
+            {
+                "name": "Animated Armor",
+                "count": 2,
+                "cr": 1,
+                "exp": 200,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/monsters/16787-animated-armor"
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "arrogant and sadistic",
+        "xpBudget": 600,
+        "lair": true,
+        "winConditions": [
+            {
+                "condition": "Defeat Malakar and his guardians",
+                "reward": "600 XP + full treasure + access to next floor"
+            },
+            {
+                "condition": "Disrupt the ritual circle (DC 14 Arcana) before combat",
+                "reward": "Malakar loses access to lair actions and Contingency, easier fight"
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 130ft diameter circular ritual chamber. Glowing pentagram in center with sorcerer. Arcane symbols covering floor and walls. Two animated armor suits flanking. Dark energy crackling. Purple-black magical lighting. Entry via reinforced door. Exit stairs behind ritual circle. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "The Gelatinous Cube Overlord",
+        "level": 1,
+        "type": "boss",
+        "difficulty": "high",
+        "roomDescription": "A perfectly square chamber with smooth walls. A massive translucent cube fills most of the room, slowly pulsing. Skeletal remains and treasure are visible suspended within its body.",
+        "dmDescription": "Huge Gelatinous Cube (CR 2). Engulf attack: DC 13 Dex save or be engulfed (restrained, 2d6 acid damage per turn, DC 13 Str to escape). Transparent: DC 15 Perception to spot before it moves. Splits into 2 smaller cubes when reduced to half HP (each CR 1). Room has narrow ledges along walls (DC 12 Acrobatics to navigate). Treasure inside: 300 gp, +1 Shield, Potion of Greater Healing, various bones and armor.",
+        "size": 2,
+        "monsters": [
+            {
+                "name": "Gelatinous Cube Overlord",
+                "count": 1,
+                "cr": 2,
+                "exp": 450,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/monsters/16869-gelatinous-cube"
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "mindless and relentless",
+        "xpBudget": 450,
+        "lair": false,
+        "winConditions": [
+            {
+                "condition": "Destroy the cube and both splits",
+                "reward": "450 XP + treasure (must extract from cube remains)"
+            },
+            {
+                "condition": "Lure the cube into a pit trap in adjacent room",
+                "reward": "300 XP + treasure accessible without fight"
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 120ft x 120ft perfectly square chamber. Massive translucent gelatinous cube in center. Narrow ledges along walls. Skeletal remains and treasure visible inside cube. Smooth stone walls. Dim lighting. Entry via corridor. Exit opposite. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "Grimjaw the Bugbear Chieftain",
+        "level": 1,
+        "type": "boss",
+        "difficulty": "high",
+        "roomDescription": "A war room with crude maps and battle plans scattered across tables. A massive bugbear covered in scars stands at the center, flanked by his goblin advisors and a trained dire wolf.",
+        "dmDescription": "Bugbear Chief (CR 2) with 2 Goblin Bosses and 1 Wolf. Grimjaw has Brute feature (+1d8 damage). Uses tactical positioning and sends minions first. At half HP, enters frenzy (advantage on attacks, reckless). Wolf has Pack Tactics. Goblins use Nimble Escape. Treasure: +1 Morningstar, Chieftain's Pelt (armor, AC 13 + Dex), War Horn (summons allies), 175 gp, Battle Plans (map of next 2 floors).",
+        "size": 2,
+        "monsters": [
+            {
+                "name": "Grimjaw the Bugbear Chieftain",
+                "count": 1,
+                "cr": 2,
+                "exp": 450,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/monsters/4775844-bugbear"
+            },
+            {
+                "name": "Goblin Boss",
+                "count": 2,
+                "cr": 1,
+                "exp": 200,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/monsters/16907-goblin-boss"
+            },
+            {
+                "name": "Wolf",
+                "count": 1,
+                "cr": 0.25,
+                "exp": 50,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/monsters/17062-wolf"
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "brutal and tactical",
+        "xpBudget": 700,
+        "lair": true,
+        "winConditions": [
+            {
+                "condition": "Defeat Grimjaw and all allies",
+                "reward": "700 XP + full treasure + battle plans"
+            },
+            {
+                "condition": "Challenge Grimjaw to single combat (DC 15 Intimidation)",
+                "reward": "He accepts, minions stand down. Win: 500 XP + treasure + remaining minions flee"
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 150ft x 130ft war room. Tables with crude maps and battle plans. Massive bugbear chieftain in center. Two goblin advisors. Dire wolf companion. Weapon racks on walls. Torchlight. Entry via reinforced door. Exit passage behind. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "The Spectral Warden",
+        "level": 1,
+        "type": "boss",
+        "difficulty": "high",
+        "roomDescription": "An ancient prison with rusted cells lining the walls. A ghostly figure in tattered guard uniform floats in the center, chains rattling around it. Whispers of the imprisoned dead echo through the chamber.",
+        "dmDescription": "Wraith-like entity (CR 2) bound to guard this prison. Incorporeal (resistant to non-magical damage). Life Drain attack: +4 to hit, 3d6 necrotic damage, target's max HP reduced. Can phase through walls. Summons 2 Shadows at half HP. Weakness: destroying the warden's chains (AC 15, 20 HP) banishes it instantly. Treasure: Warden's Keys (unlock all doors on this floor), Spectral Chains (magic item), 200 gp, 2 Soul Gems (50 gp each).",
+        "size": 2,
+        "monsters": [
+            {
+                "name": "The Spectral Warden",
+                "count": 1,
+                "cr": 2,
+                "exp": 450,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/monsters/17064-wraith"
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "mournful and duty-bound",
+        "xpBudget": 450,
+        "lair": true,
+        "winConditions": [
+            {
+                "condition": "Destroy the Spectral Warden in combat",
+                "reward": "450 XP + treasure"
+            },
+            {
+                "condition": "Destroy the warden's chains",
+                "reward": "500 XP + treasure + warden's grateful spirit provides blessing (resistance to necrotic damage for 24 hours)"
+            },
+            {
+                "condition": "Free the imprisoned souls (DC 15 Religion ritual)",
+                "reward": "600 XP + warden is released from duty peacefully + enhanced treasure (additional magic item)"
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 140ft x 140ft ancient prison. Rusted cells lining walls. Ghostly spectral warden in center with ethereal chains. Shadowy atmosphere. Whispers visible as mist. Eerie blue-white lighting. Entry via iron door. Exit stairs visible. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "Sszarak the Yuan-ti Malison",
+        "level": 1,
+        "type": "boss",
+        "difficulty": "high",
+        "roomDescription": "A temple dedicated to a serpent god. Stone snake statues coil around pillars. A snake-human hybrid priest performs a dark ritual at an altar, surrounded by giant constrictor snakes.",
+        "dmDescription": "Yuan-ti Malison (CR 2) with 2 Giant Constrictor Snakes. Malison has Magic Resistance and Suggestion spell (DC 13 Wis save). Uses poisoned weapons (DC 12 Con save or 2d6 poison damage). Snakes use Constrict (grapple + damage). At half HP, drinks Potion of Invisibility. Lair action: statue snakes animate (DC 12 Dex save or restrained). Treasure: Serpent Staff (magic quarterstaff), Poison Vials (3), Ritual Dagger (+1), 225 gp, Serpent God Idol (worth 150 gp).",
+        "size": 2,
+        "monsters": [
+            {
+                "name": "Sszarak (Yuan-ti Malison)",
+                "count": 1,
+                "cr": 2,
+                "exp": 450,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/monsters/17121-yuan-ti-malison-type-1"
+            },
+            {
+                "name": "Giant Constrictor Snake",
+                "count": 2,
+                "cr": 2,
+                "exp": 450,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/monsters/16871-giant-constrictor-snake"
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "cold and calculating",
+        "xpBudget": 1350,
+        "lair": true,
+        "winConditions": [
+            {
+                "condition": "Defeat Sszarak and the constrictor snakes",
+                "reward": "1350 XP + full treasure"
+            },
+            {
+                "condition": "Disrupt the ritual before combat (DC 14 Arcana or Religion)",
+                "reward": "Sszarak loses lair actions and one snake doesn't fight"
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 160ft x 140ft serpent temple. Stone snake statues coiling around pillars. Dark altar in center with yuan-ti priest. Two giant constrictor snakes. Serpentine decorations throughout. Green-tinted torchlight. Entry via temple doors. Exit passage behind altar. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "The Flesh Golem Experiment",
+        "level": 1,
+        "type": "boss",
+        "difficulty": "high",
+        "roomDescription": "A mad scientist's laboratory filled with bubbling alchemical vats and surgical tables. A massive, stitched-together creature breaks free from its restraints as you enter, electricity crackling across its body.",
+        "dmDescription": "Flesh Golem (CR 2) in unstable state. Immune to lightning (heals instead), resistant to non-magical weapons. Berserk: when damaged by fire, must make DC 10 Wis save or attack nearest creature. Lightning Absorption: heals 1d6 per lightning damage taken. Aversion to Fire: takes extra 1d6 fire damage. Lab hazards: alchemical vats can explode (DC 13 Dex save, 2d6 acid damage). Treasure: Alchemist's Supplies (masterwork), Formula Notes (worth 200 gp to right buyer), 2 Potions of Greater Healing, Amulet of Health (+1 Con saves).",
+        "size": 2,
+        "monsters": [
+            {
+                "name": "Flesh Golem Experiment",
+                "count": 1,
+                "cr": 2,
+                "exp": 450,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/monsters/16865-flesh-golem"
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "confused and violent",
+        "xpBudget": 450,
+        "lair": true,
+        "winConditions": [
+            {
+                "condition": "Destroy the Flesh Golem",
+                "reward": "450 XP + treasure"
+            },
+            {
+                "condition": "Use lightning to heal it, then calm it with DC 16 Persuasion or Animal Handling",
+                "reward": "500 XP + golem becomes docile, can be commanded for one task + treasure"
+            },
+            {
+                "condition": "Lure it into alchemical vats (DC 14 Deception or Athletics)",
+                "reward": "400 XP + easier fight (golem takes 4d6 acid damage) + some treasure destroyed"
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 150ft x 150ft mad scientist laboratory. Bubbling alchemical vats throughout. Surgical tables with restraints. Massive flesh golem breaking free. Electricity crackling. Scientific equipment scattered. Eerie green-blue lighting. Entry via reinforced door. Exit stairs visible. Clean lines, high contrast for virtual tabletop use."
     }
 ]
