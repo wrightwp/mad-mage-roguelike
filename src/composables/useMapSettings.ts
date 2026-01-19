@@ -1,4 +1,4 @@
-import { ref, computed } from 'vue';
+import { ref, computed, watch } from 'vue';
 import { useGameStore } from '../stores/useGameStore';
 
 export const useMapSettings = (
@@ -56,6 +56,21 @@ export const useMapSettings = (
         partySize.value = gameStore.currentRun.partyConfig.size;
         averagePartyLevel.value = gameStore.currentRun.partyConfig.level;
     }
+
+    // Watch for store changes (e.g. loading a save)
+    watch(() => gameStore.currentRun?.partyConfig, (newConfig) => {
+        if (newConfig) {
+            partySize.value = newConfig.size;
+            averagePartyLevel.value = newConfig.level;
+        }
+    }, { deep: true });
+
+    // Watch for local changes to persist to store
+    watch([partySize, averagePartyLevel], ([newSize, newLevel]) => {
+        if (gameStore.hasActiveRun) {
+            gameStore.updatePartyConfig(newSize, newLevel);
+        }
+    });
 
     const generateWithConfig = (config: {
         floor: number;

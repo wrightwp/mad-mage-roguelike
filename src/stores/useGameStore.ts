@@ -143,6 +143,19 @@ export const useGameStore = defineStore('game', () => {
         campaignStore.saveToLocalStorage();
     }
 
+    function updatePartyConfig(size: number, level: number) {
+        if (!currentRun.value) return;
+
+        // Initialize if missing (for legacy saves)
+        if (!currentRun.value.partyConfig) {
+            currentRun.value.partyConfig = { size, level };
+        } else {
+            currentRun.value.partyConfig.size = size;
+            currentRun.value.partyConfig.level = level;
+        }
+        campaignStore.saveToLocalStorage();
+    }
+
     return {
         currentRun,
         hasActiveRun,
@@ -152,6 +165,7 @@ export const useGameStore = defineStore('game', () => {
         setFloorData,
         visitNode,
         addReward,
-        failRun
+        failRun,
+        updatePartyConfig
     };
 });
