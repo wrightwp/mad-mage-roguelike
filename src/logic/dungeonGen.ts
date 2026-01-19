@@ -1,17 +1,23 @@
-import { DungeonNode, DungeonMapData } from '../types';
+import { DungeonNode, DungeonMapData, EncounterType, NodeType, EncounterDifficulty } from '../types';
+import { encounterLibrary } from '../data/encounterLibrary';
+import { scaleEncounter } from '../utils/encounterScaling';
 
 export const generateDungeon = (
-    floors: number = 15,
+    layersPerFloor: number = 15,
+    currentFloor: number = 1,
     width: number = 800,
     height: number = 2000,
-    nodeTypeCounts?: Record<string, number>
+    nodeTypeCounts?: Record<string, number>,
+    partySize: number = 4,
+    averagePartyLevel: number = 1
 ): DungeonMapData => {
+    const TOTAL_FLOORS = 21;
     const edges: { from: string; to: string }[] = [];
 
     // Config
-    const NODES_PER_LAYER_MIN = 4;
-    const NODES_PER_LAYER_MAX = 6;
-    const LAYER_HEIGHT = (height - 200) / (floors - 1); // 100px padding top/bottom
+    const NODES_PER_LAYER_MIN = 3;
+    const NODES_PER_LAYER_MAX = 5;
+    const LAYER_HEIGHT = (height - 200) / (layersPerFloor - 1); // 100px padding top/bottom
 
     // Helper to generate IDs
     const getId = (layer: number, index: number) => `l${layer}-n${index}`;
@@ -19,17 +25,17 @@ export const generateDungeon = (
     const layers: DungeonNode[][] = [];
 
     // 1. Generate empty nodes in layers first
-    for (let l = 0; l < floors; l++) {
+    for (let l = 0; l < layersPerFloor; l++) {
         const layerNodes: DungeonNode[] = [];
 
-        if (l === floors - 1) {
+        if (l === layersPerFloor - 1) {
             // Boss Layer
             layerNodes.push({
                 id: getId(l, 0),
                 x: width / 2,
                 y: 100,
                 layer: l,
-                type: 'boss',
+                type: NodeType.Boss,
                 connections: [],
                 parents: [],
                 status: 'locked',
@@ -38,17 +44,17 @@ export const generateDungeon = (
             });
         }
         else if (l === 0) {
-            // Start Layer
+            // Start Layer - The Yawning Portal
             layerNodes.push({
                 id: getId(l, 0),
                 x: width / 2,
                 y: height - 100,
                 layer: l,
-                type: 'start',
+                type: NodeType.Start,
                 connections: [],
                 parents: [],
-                status: 'available',
-                description: 'You stand at the entrance of the Undermountain.',
+                status: 'current',
+                description: 'The Yawning Portal tavern bustles with adventurers and locals alike. At the center of the common room, a 40-foot-wide well plunges into darkness—the infamous entrance to Undermountain. Durnan, the proprietor, watches from behind the bar as you approach the edge. The rope ladder descends into the black depths below, and the sounds of the tavern fade as you begin your descent into the legendary dungeon of the Mad Mage.',
                 revealed: true
             });
         }
@@ -68,7 +74,7 @@ export const generateDungeon = (
                     x,
                     y,
                     layer: l,
-                    type: 'monster', // Default, will override below
+                    type: NodeType.Combat, // Default, will override below
                     connections: [],
                     parents: [],
                     status: 'locked',
@@ -79,66 +85,207 @@ export const generateDungeon = (
         layers.push(layerNodes);
     }
 
-    // 2. Prepare Type Pool
-    const standardNodes = layers.slice(1, floors - 1).flat();
-    const typePool: DungeonNode['type'][] = [];
+    // 2. Prepare Counts and Configuration
+    const standardNodes = layers.slice(1, layersPerFloor - 1).flat();
+    const maxCounts = nodeTypeCounts || {
+        combat: 30,
+        rest: 3,
+        treasure: 4,
+        puzzle: 6,
+        social: 3,
+        exploration: 4
+    };
 
-    if (nodeTypeCounts) {
-        Object.entries(nodeTypeCounts).forEach(([type, count]) => {
-            if (type !== 'boss' && type !== 'start') {
-                for (let i = 0; i < count; i++) {
-                    typePool.push(type as DungeonNode['type']);
-                }
-            }
-        });
+    const usedCounts: Record<string, number> = {
+        combat: 0,
+        rest: 0,
+        treasure: 0,
+        puzzle: 0,
+        social: 0,
+        exploration: 0
+    };
+
+    // 3. Assign Types and Encounter Data
+    // Map node types to encounter types
+    const encounterTypeMap: Record<string, EncounterType> = {
+        [NodeType.Combat]: EncounterType.Combat,
+        [NodeType.Puzzle]: EncounterType.Puzzle,
+        [NodeType.Rest]: EncounterType.Rest,
+        [NodeType.Treasure]: EncounterType.Treasure,
+        [NodeType.Social]: EncounterType.Social,
+        [NodeType.Exploration]: EncounterType.Exploration
+    };
+
+    // Track used encounter names to prevent duplicates on the same map
+    const usedEncounterNames: string[] = [];
+
+    // Pre-calculate which LAYERS should have Rest encounters
+    // based on spacing constraint (every 3-4 layers) and configured count limit
+    const restLayers = new Set<number>();
+    const maxRestCount = maxCounts.rest || 0;
+
+    // Calculate which layers should have Rest nodes
+    const availableLayers = layersPerFloor - 2; // Exclude start and boss layers
+    let currentLayer = Math.floor(Math.random() * 2) + 3; // First rest at layer 3-4
+    let placedRestCount = 0;
+
+    while (currentLayer <= availableLayers && placedRestCount < maxRestCount) {
+        restLayers.add(currentLayer);
+        placedRestCount++;
+        currentLayer += Math.floor(Math.random() * 2) + 3; // Next rest 3-4 layers later
     }
 
-    // Shuffle Pool
-    for (let i = typePool.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [typePool[i], typePool[j]] = [typePool[j], typePool[i]];
-    }
-
-    // 3. Assign Types and Descriptions
-    const MONSTER_ENCOUNTERS = ['Goblins', 'Bugbears', 'Skeletons', 'Zombies', 'Orcs', 'Hobgoblins', 'Giant Spiders'];
-    const ELITE_ENCOUNTERS = ['Beholder Zombie', 'Mind Flayer', 'Ogre Chieftain', 'Wraith', 'Flesh Golem'];
-    const EVENT_ENCOUNTERS = ['A mysterious fountain', 'A riddle engraved on a wall', 'A dying explorer', 'A localized magical storm'];
-
-    standardNodes.forEach((node, idx) => {
-        if (idx < typePool.length) {
-            node.type = typePool[idx];
-        } else {
-            node.type = 'monster'; // Default filler
-        }
-
-        // Add Descriptions
-        switch (node.type) {
-            case 'monster':
-                node.description = `A group of ${MONSTER_ENCOUNTERS[Math.floor(Math.random() * MONSTER_ENCOUNTERS.length)]} blocks your path.`;
-                break;
-            case 'elite':
-                node.description = `A dangerous ${ELITE_ENCOUNTERS[Math.floor(Math.random() * ELITE_ENCOUNTERS.length)]} lurks here.`;
-                break;
-            case 'event':
-                node.description = EVENT_ENCOUNTERS[Math.floor(Math.random() * EVENT_ENCOUNTERS.length)];
-                break;
-            case 'rest':
-                node.description = 'A relatively safe spot to catch your breath and mend your wounds.';
-                break;
-            case 'treasure':
-                node.description = 'A glimmering chest lies half-buried in the shadows.';
-                break;
-            case 'shop':
-                node.description = 'A strange merchant has set up a small stall here.';
-                break;
-            case 'puzzle':
-                node.description = 'An intricate mechanism or riddle prevents further progress.';
-                break;
+    // Pre-select which specific node in each rest layer should be the rest node
+    const restNodeIndices = new Map<number, number>();
+    restLayers.forEach(layer => {
+        const layerNodes = standardNodes.filter(n => n.layer === layer);
+        if (layerNodes.length > 0) {
+            const randomIndex = Math.floor(Math.random() * layerNodes.length);
+            restNodeIndices.set(layer, randomIndex);
         }
     });
 
+    // Determine nodes that are NOT designated as the layer's Rest node
+    const restNodes: DungeonNode[] = [];
+    const otherNodes: DungeonNode[] = [];
+
+    standardNodes.forEach((node) => {
+        if (restLayers.has(node.layer)) {
+            const layerNodes = standardNodes.filter(n => n.layer === node.layer);
+            const nodeIndexInLayer = layerNodes.indexOf(node);
+            const selectedRestIndex = restNodeIndices.get(node.layer);
+
+            if (nodeIndexInLayer === selectedRestIndex) {
+                restNodes.push(node);
+                return;
+            }
+        }
+        otherNodes.push(node);
+    });
+
+    // Populate the type pool for the 'otherNodes' with weighting and max checks
+    const otherTypesPool: NodeType[] = [];
+    const poolUsedCounts = { ...usedCounts };
+    // Rests used in restNodes already count towards the total
+    poolUsedCounts.rest = restNodes.length;
+
+    while (otherTypesPool.length < otherNodes.length) {
+        const candidates: { type: NodeType; weight: number }[] = [];
+
+        Object.entries(maxCounts).forEach(([type, max]) => {
+            if (type !== 'boss' && type !== 'start' && type !== NodeType.Rest) {
+                const current = poolUsedCounts[type] || 0;
+                if (current < max) {
+                    const weight = (type === NodeType.Combat) ? 1 : 2;
+                    candidates.push({ type: type as NodeType, weight });
+                }
+            }
+        });
+
+        if (candidates.length === 0) {
+            otherTypesPool.push(NodeType.Combat);
+            poolUsedCounts.combat++;
+        } else {
+            const totalWeight = candidates.reduce((sum, c) => sum + c.weight, 0);
+            let random = Math.random() * totalWeight;
+            let selectedType = NodeType.Combat;
+
+            for (const candidate of candidates) {
+                random -= candidate.weight;
+                if (random <= 0) {
+                    selectedType = candidate.type;
+                    break;
+                }
+            }
+            otherTypesPool.push(selectedType);
+            poolUsedCounts[selectedType]++;
+        }
+    }
+
+    // Shuffle otherTypesPool to ensure dispersion
+    for (let i = otherTypesPool.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [otherTypesPool[i], otherTypesPool[j]] = [otherTypesPool[j], otherTypesPool[i]];
+    }
+
+    // Assign Rest types
+    restNodes.forEach(node => {
+        node.type = NodeType.Rest;
+        usedCounts.rest++;
+    });
+
+    // Assign shuffled other types
+    otherNodes.forEach((node, idx) => {
+        node.type = otherTypesPool[idx];
+        usedCounts[node.type]++;
+    });
+
+    // Final pass for encounter data assignment
+    standardNodes.forEach((node) => {
+        // Get encounter type for this node
+        const encounterType = encounterTypeMap[node.type] || EncounterType.Combat;
+
+        // Get appropriate encounter for this floor, excluding already-used encounters
+        let encounter = encounterLibrary.getRandomEncounter(
+            currentFloor,
+            encounterType,
+            { excludeNames: usedEncounterNames }
+        );
+
+        if (encounter) {
+            // Store the original unscaled encounter
+            node.originalEncounter = encounter;
+
+            // Apply scaling for combat encounters
+            encounter = scaleEncounter(encounter, { size: partySize, averageLevel: averagePartyLevel });
+
+            node.encounter = encounter;
+            node.description = encounter.roomDescription;
+            usedEncounterNames.push(encounter.name);
+        } else {
+            // Fallback descriptions if no encounter found
+            switch (node.type) {
+                case 'combat': node.description = 'A group of monsters blocks your path.'; break;
+                case 'rest': node.description = 'A relatively safe spot to catch your breath and mend your wounds.'; break;
+                case 'treasure': node.description = 'A glimmering chest lies half-buried in the shadows.'; break;
+                case 'puzzle': node.description = 'An intricate mechanism or riddle prevents further progress.'; break;
+                case 'social': node.description = 'You encounter someone who may be friend or foe.'; break;
+                case 'exploration': node.description = 'An area of interest beckons for exploration.'; break;
+            }
+        }
+    });
+
+    // Special handling for Boss Node
+    const bossNode = layers[layersPerFloor - 1][0];
+    if (bossNode && bossNode.type === NodeType.Boss) {
+        let bossEncounter = encounterLibrary.getRandomEncounter(currentFloor, EncounterType.Boss);
+
+        // Fallback to High Difficulty Combat if no Boss encounter found
+        if (!bossEncounter) {
+            console.warn('No Boss encounter found, falling back to High Difficulty Combat');
+            bossEncounter = encounterLibrary.getRandomEncounter(
+                currentFloor,
+                EncounterType.Combat,
+                { difficulty: EncounterDifficulty.High }
+            ) as any; // Cast as any because we're assigning a Combat encounter to a slot meant for Boss type logically, though the field is generic EncounterData
+
+            // If even that fails, we can't do much, but the system handles null encounter.
+        }
+
+        if (bossEncounter) {
+            // Store the original unscaled encounter
+            bossNode.originalEncounter = bossEncounter;
+
+            // Apply scaling for boss encounters
+            bossEncounter = scaleEncounter(bossEncounter, { size: partySize, averageLevel: averagePartyLevel });
+
+            bossNode.encounter = bossEncounter;
+            bossNode.description = bossEncounter.roomDescription;
+        }
+    }
+
     // 4. Connect Layers
-    for (let l = 0; l < floors - 1; l++) {
+    for (let l = 0; l < layersPerFloor - 1; l++) {
         const currentLayer = layers[l];
         const nextLayer = layers[l + 1];
 
@@ -176,6 +323,9 @@ export const generateDungeon = (
     return {
         nodes: layers.flat(),
         edges,
-        bossNodeId: layers[floors - 1][0].id
+        bossNodeId: layers[layersPerFloor - 1][0].id,
+        currentFloor,
+        totalFloors: TOTAL_FLOORS,
+        layersPerFloor
     };
 };

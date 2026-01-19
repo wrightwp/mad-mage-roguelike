@@ -1,0 +1,3357 @@
+[
+    {
+        "name": "Goblin Ambush",
+        "level": 1,
+        "type": "combat",
+        "difficulty": "low",
+        "xpBudget": 175,
+        "monsters": [
+            {
+                "name": "Goblin Minion",
+                "cr": 0.125,
+                "exp": 25,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#GoblinMinion",
+                "count": 3
+            },
+            {
+                "name": "Goblin Warrior",
+                "cr": 0.25,
+                "exp": 50,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#GoblinWarrior",
+                "count": 2
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "cowardly",
+        "roomDescription": "The corridor opens into a cramped chamber littered with broken crates and moldy sacks. Crude torches flicker in rusted sconces, casting dancing shadows across the walls. A chorus of high-pitched cackles erupts from behind an overturned wagon as small green figures scramble for weapons.",
+        "dmDescription": "Five goblins have claimed this storage room as their lair. Two warriors hide behind the wagon (half cover) while three minions lurk on a 10ft ledge to the left (can be spotted with DC 12 Perception). The goblins will flee if reduced to 2 or fewer. A DC 13 Intimidation check after killing the warriors causes immediate surrender. Hidden under a loose stone (DC 14 Investigation): 15 gp and a Potion of Healing.",
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Defeat all enemies",
+                "reward": "Full XP (175)"
+            },
+            {
+                "condition": "Force surrender via Intimidation",
+                "reward": "75% XP, goblins reveal nearby trap location"
+            },
+            {
+                "condition": "Sneak past (DC 14 Stealth)",
+                "reward": "No XP, but avoid resource expenditure"
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 120ft x 100ft underground dungeon chamber with stone dungeon walls. Dim torchlight.   Several broken crates and moldy supply sacks throughout. Entry via stone staircase descending from above. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
+        "lair": false
+    },
+    {
+        "name": "Undead Crypt",
+        "level": 1,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 250,
+        "monsters": [
+            {
+                "name": "Skeleton",
+                "cr": 0.25,
+                "exp": 50,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-s#Skeleton",
+                "count": 3
+            },
+            {
+                "name": "Zombie",
+                "cr": 0.25,
+                "exp": 50,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-z#Zombie",
+                "count": 2
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "mindless",
+        "roomDescription": "Ancient stone sarcophagi line the walls of this burial chamber, their lids askew or shattered completely. The air is thick with the stench of decay and dust. As you step inside, bony fingers scrape against stone and rotting corpses lurch upright, empty eye sockets fixing upon you with unnatural hunger.",
+        "dmDescription": "Three skeletons rise from alcoves along the walls while two zombies shamble from behind the central sarcophagus. The undead are animated by a cursed gemstone hidden inside the large sarcophagus (DC 15 Investigation to find, DC 13 Religion to identify its nature). Destroying the gem (AC 13, 10 HP, vulnerable to radiant) causes all undead to collapse. A cleric's Turn Undead is especially effective here. The central sarcophagus contains: 25 gp, a silver holy symbol (15 gp), and a Scroll of Cure Wounds.",
+        "size": 2,
+        "winConditions": [
+            {
+                "condition": "Destroy all undead",
+                "reward": "Full XP (250)"
+            },
+            {
+                "condition": "Destroy the cursed gemstone",
+                "reward": "Full XP + 50 bonus XP for clever solution"
+            },
+            {
+                "condition": "Turn Undead successfully",
+                "reward": "Can bypass encounter, 50% XP"
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 150ft x 120ft underground burial crypt with ancient carved stone walls. Magical glow. A large ornate sarcophagus sits on a raised platform in the center. Dim green magical light emanates from cracks in the floor. Cobwebs in corners, scattered bones, and broken funeral urns. Two entrances on opposite ends. Entry through arched doorway at south. Two exits on opposite walls. Clean lines, high contrast for virtual tabletop use.",
+        "lair": false
+    },
+    {
+        "name": "Rat Warren",
+        "level": 1,
+        "type": "combat",
+        "difficulty": "low",
+        "xpBudget": 175,
+        "monsters": [
+            {
+                "name": "Giant Rat",
+                "cr": 0.125,
+                "exp": 25,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#GiantRat",
+                "count": 5
+            },
+            {
+                "name": "Swarm of Rats",
+                "cr": 0.25,
+                "exp": 50,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#SwarmofRats",
+                "count": 1
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "feral",
+        "roomDescription": "A foul stench assaults your nostrils as you enter this low-ceilinged chamber. The floor is carpeted with refuse and gnawed bones. Red eyes gleam from dozens of holes in the crumbling walls, and the sound of chittering fills the air. Massive rats the size of dogs emerge from the shadows, their yellowed teeth bared.",
+        "dmDescription": "The giant rats attack immediately, drawn by hunger. The swarm emerges from a large hole in the floor on round 2 unless players seal it first (can block with debris, DC 12 Athletics). The rats are protecting a nest in the southeast corner containing stolen goods: a merchant's lockbox (DC 15 Thieves' Tools to open) with 35 gp and a gemstone worth 50 gp. Fire and area effects work well here. Disease risk: any player bitten must make DC 10 Constitution save or contract Sewer Plague.",
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Kill all rats",
+                "reward": "Full XP (175)"
+            },
+            {
+                "condition": "Use fire to drive them off",
+                "reward": "75% XP, rats flee permanently"
+            },
+            {
+                "condition": "Block the nest hole and flee",
+                "reward": "No XP, but can return later prepared"
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 100ft underground sewer junction with stone dungeon walls. Dim torchlight. Multiple rat holes (2ft diameter) in the walls and one large hole (5ft) in the floor near center. Shallow water (difficult terrain) in the lower third of the room. Dim light from phosphorescent fungus. Three tunnel exits. Entry via ladder from trapdoor above. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
+        "lair": false
+    },
+    {
+        "name": "Kobold Trappers",
+        "level": 1,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 225,
+        "monsters": [
+            {
+                "name": "Kobold Warrior",
+                "cr": 0.125,
+                "exp": 25,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-k#KoboldWarrior",
+                "count": 5
+            },
+            {
+                "name": "Winged Kobold",
+                "cr": 0.25,
+                "exp": 50,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-k#WingedKobold",
+                "count": 2
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "cunning",
+        "roomDescription": "This natural cavern glitters with mineral deposits that catch your torchlight. Crude rope bridges span a 20-foot wide crevasse that splits the chamber. On the far side, small reptilian creatures chitter excitedly, their scales glinting orange and brown. Two of them have small leathery wings and hover near the ceiling, clutching rocks.",
+        "dmDescription": "The kobolds have prepared this ambush carefully. The rope bridges are trapped—cutting a rope (DC 12 to notice, AC 10, 5 HP) drops anyone on it into the 30ft crevasse (3d6 fall damage). Winged kobolds drop rocks from above (ranged attack, 1d6 damage) and stay out of melee range. The ground kobolds use Pack Tactics. DC 15 Persuasion with Draconic language: kobolds reveal they serve a 'great dragon' (actually just a pseudodragon they worship). Hidden cache behind a loose rock (DC 14 Investigation): 20 gp, 3 javelins, and a vial of alchemist's fire.",
+        "size": 2,
+        "winConditions": [
+            {
+                "condition": "Defeat all kobolds",
+                "reward": "Full XP (225)"
+            },
+            {
+                "condition": "Negotiate safe passage (DC 15 Persuasion + tribute)",
+                "reward": "No XP, but costs 10 gp tribute"
+            },
+            {
+                "condition": "Discover and offer tribute to their 'dragon'",
+                "reward": "50% XP, gain kobold guides"
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 180ft x 150ft underground mine tunnel with rough stone walls. Dim torchlight. Two rope bridges cross the crevasse (5ft wide each). The far side is 10ft higher than the entrance. Glittering mineral deposits on walls. Stalactites hang from 40ft ceiling. Natural stone formations provide cover on both sides. One entrance, main exit on the elevated far side. Entry through narrow tunnel. Two exits on opposite walls. Clean lines, high contrast for virtual tabletop use.",
+        "lair": false
+    },
+    {
+        "name": "Cultist Ritual",
+        "level": 1,
+        "type": "combat",
+        "difficulty": "high",
+        "xpBudget": 350,
+        "monsters": [
+            {
+                "name": "Cultist",
+                "cr": 0.125,
+                "exp": 25,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-c#Cultist",
+                "count": 6
+            },
+            {
+                "name": "Skeleton",
+                "cr": 0.25,
+                "exp": 50,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-s#Skeleton",
+                "count": 4
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "fanatical",
+        "roomDescription": "Crimson candles illuminate a profane altar at the center of this circular chamber. Robed figures chant in an unknown language, their voices rising and falling in unsettling harmony. Four skeletal warriors stand motionless at the cardinal points, empty eyes gleaming with unholy light. The lead cultist raises a bloodied dagger as you enter, screaming 'Intruders! The ritual must not be stopped!'",
+        "dmDescription": "The cultists are attempting to summon a shadow demon (will arrive in 5 rounds if not stopped). Disrupting the ritual: destroy the altar (AC 15, 25 HP), kill the lead cultist (robed in red, has 15 HP instead of normal), or scatter the ritual components (DC 14 Arcana or Sleight of Hand). The skeletons obey the lead cultist—if he dies, they become uncontrolled and attack the nearest creature. Two cultists will try to flee and warn others if the ritual fails. Treasure on altar: silver ritual dagger (25 gp), unholy symbol (can be sold to right buyer for 30 gp), and a Potion of Healing.",
+        "size": 2,
+        "winConditions": [
+            {
+                "condition": "Kill all enemies",
+                "reward": "Full XP (350)"
+            },
+            {
+                "condition": "Disrupt the ritual before completion",
+                "reward": "Full XP + prevent demon summoning"
+            },
+            {
+                "condition": "Kill lead cultist only and flee",
+                "reward": "100 XP, ritual fails, but survivors escape"
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 100ft underground dungeon chamber with ice-covered stone walls. Dim torchlight. Four pillars mark the cardinal directions (skeleton positions). Crimson candles arranged in arcane patterns. Dark tapestries depicting demonic entities on walls. Shadowy alcoves between pillars. Single grand entrance with heavy stone doors. Ominous red glow from the altar. Entry via collapsed section in ceiling. Two exits on opposite walls. Clean lines, high contrast for virtual tabletop use.",
+        "lair": false
+    },
+    {
+        "name": "Spider Nest",
+        "level": 1,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 300,
+        "monsters": [
+            {
+                "name": "Giant Wolf Spider",
+                "cr": 0.25,
+                "exp": 50,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#GiantWolfSpider",
+                "count": 4
+            },
+            {
+                "name": "Giant Centipede",
+                "cr": 0.25,
+                "exp": 50,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#GiantCentipede",
+                "count": 2
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "predatory",
+        "roomDescription": "Thick webs coat the walls and ceiling of this chamber, forming gossamer curtains that sway in an unfelt breeze. Desiccated husks hang in cocoons throughout the space—some disturbingly humanoid in shape. A chittering sound echoes from all directions as multiple pairs of gleaming eyes emerge from the webbing, and segmented legs unfold from the shadows.",
+        "dmDescription": "The spiders attack from ambush, dropping from ceiling webs (DC 13 Perception to notice before combat, surprised if failed). Webs throughout room count as difficult terrain and can restrain characters who enter (DC 11 Dexterity save or restrained, DC 12 Strength to escape). Fire destroys webs instantly but alerts all creatures. One cocoon contains a still-living adventurer (unconscious but stable at 0 HP)—rescuing them grants a contact and potential reward later. Treasure in a webbed corner: the adventurer's pack containing 40 gp, a healer's kit (half used), and a silvered dagger.",
+        "size": 2,
+        "winConditions": [
+            {
+                "condition": "Exterminate all creatures",
+                "reward": "Full XP (300)"
+            },
+            {
+                "condition": "Rescue the cocooned adventurer",
+                "reward": "Full XP + future ally"
+            },
+            {
+                "condition": "Burn the webs and flee",
+                "reward": "50% XP, nest destroyed but creatures may survive"
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 140ft x 120ft underground mine tunnel with stone dungeon walls. Dim bioluminescent lighting. Multiple cocoons hanging from ceiling and attached to walls (some humanoid-sized). Narrow clear paths wind between web masses. Dim bioluminescent fungi on unweb bed sections of floor. Two exits on opposite corners, one partially blocked by webs. Entry through crumbling archway. Two exits on opposite walls. Clean lines, high contrast for virtual tabletop use.",
+        "lair": false
+    },
+    {
+        "name": "Stirge Feeding Ground",
+        "level": 1,
+        "type": "combat",
+        "difficulty": "low",
+        "xpBudget": 200,
+        "monsters": [
+            {
+                "name": "Stirge",
+                "cr": 0.125,
+                "exp": 25,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-s#Stirge",
+                "count": 8
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "hungry",
+        "roomDescription": "The buzzing grows louder as you enter this domed chamber. Something wet drips from above—looking up reveals a nightmare. Dozens of bat-like creatures with long proboscises cling to the ceiling, their bloated bodies pulsing with recently consumed blood. Several of the smaller ones detach and dive toward you, their needle-like appendages extended.",
+        "dmDescription": "Eight stirges occupy this chamber, drawn by the warmth of adventurers. Only 4 attack initially; the remaining 4 are bloated and will only join combat if their territory is threatened (round 3 or if fire/loud noises used). Stirges that successfully attach deal automatic damage each round and must be killed or pulled off (DC 12 Strength). The bloated stirges are slower (20ft fly speed) but have already dealt their blood drain. Escape is easy—stirges won't pursue beyond this room. Dried blood pools mark previous victims; DC 13 Investigation reveals a skeleton with: 12 gp, a rusty shortsword, and a silver ring (10 gp).",
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Kill all stirges",
+                "reward": "Full XP (200)"
+            },
+            {
+                "condition": "Kill initial wave and flee",
+                "reward": "100 XP"
+            },
+            {
+                "condition": "Use fire/smoke to drive them away",
+                "reward": "Full XP, stirges relocate permanently"
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 100ft underground dungeon chamber with stone dungeon walls. Dim torchlight. Dried blood pools and old bones scattered on floor. Dim light from cracks in the dome. Rough uneven floor with some rubble piles. Two low tunnel entrances on opposite sides. Gore-stained central floor area. Entry via spiral stairs in corner. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
+        "lair": false
+    },
+    {
+        "name": "Bandit Checkpoint",
+        "level": 1,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 275,
+        "monsters": [
+            {
+                "name": "Bandit",
+                "cr": 0.125,
+                "exp": 25,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-b#Bandit",
+                "count": 5
+            },
+            {
+                "name": "Guard",
+                "cr": 0.125,
+                "exp": 25,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#Guard",
+                "count": 2
+            },
+            {
+                "name": "Mastiff",
+                "cr": 0.125,
+                "exp": 25,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#Mastiff",
+                "count": 2
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "greedy",
+        "roomDescription": "The tunnel widens into a fortified checkpoint. A crude barricade of overturned carts and barrels blocks the path forward, with armed men positioned behind it. Two large dogs strain at their chains, growling at your approach. A scarred woman steps forward, crossbow aimed at your chest. 'Toll's fifty gold per head. Can't pay? You can leave your gear and crawl back the way you came.'",
+        "dmDescription": "These bandits have claimed this chokepoint and extort travelers. The leader (female bandit with 15 HP, has a Potion of Healing) will negotiate—DC 15 Intimidation causes them to demand only 25 gp total, DC 18 makes them let the party pass free. The two guards are former soldiers and better equipped (chain shirt, AC 16). The mastiffs are released if combat starts. A hidden passage (DC 16 Perception) behind a false wall allows flanking. Treasure behind the barricade: lockbox with 80 gp, a crossbow with 20 bolts, and stolen goods worth 50 gp (could be returned for reward in town).",
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Defeat all enemies",
+                "reward": "Full XP (275)"
+            },
+            {
+                "condition": "Pay the toll (50 gp)",
+                "reward": "No XP, safe passage"
+            },
+            {
+                "condition": "Negotiate reduced toll (DC 15 Intimidation)",
+                "reward": "25 XP, costs only 25 gp"
+            },
+            {
+                "condition": "Use hidden passage to flank",
+                "reward": "Full XP + surprise round"
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 130ft x 80ft underground dungeon chamber with rough stone walls. Dim torchlight. Watchtower-like raised platform (10ft high) behind barricade for crossbow users. Two chain posts for dogs in front of barricade. Crates and supply stacks on both sides. Torches provide normal lighting. Entry through ancient stone portal frame. exit at north blocked by barricade. Hidden passage behind false wall on east side. Entry through fissure in the rock. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
+        "lair": false
+    },
+    {
+        "name": "Crawling Horror",
+        "level": 1,
+        "type": "combat",
+        "difficulty": "low",
+        "xpBudget": 160,
+        "monsters": [
+            {
+                "name": "Crawling Claw",
+                "cr": 0,
+                "exp": 10,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-c#CrawlingClaw",
+                "count": 6
+            },
+            {
+                "name": "Zombie",
+                "cr": 0.25,
+                "exp": 50,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-z#Zombie",
+                "count": 2
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "mindless",
+        "roomDescription": "Severed hands skitter across the floor like grotesque spiders, their fingers tapping against stone in an unsettling rhythm. Two shambling corpses stand motionless in the shadows, only lurching forward when you draw near.",
+        "dmDescription": "The crawling claws swarm the nearest target while zombies lumber toward whoever deals the most damage. Claws can be kicked away (shove action). Holy water affects all undead in a 5ft radius.",
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Destroy all undead",
+                "reward": "Full XP (160)"
+            },
+            {
+                "condition": "Use holy water or Turn Undead",
+                "reward": "Full XP + easy victory"
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 80ft underground dungeon chamber with stone dungeon walls. Flickering candlelight. Dim candlelight. Scattered bones on floor. Entry via stone staircase descending from above. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
+        "lair": false
+    },
+    {
+        "name": "Wolf Pack",
+        "level": 1,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 250,
+        "monsters": [
+            {
+                "name": "Wolf",
+                "cr": 0.25,
+                "exp": 50,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#Wolf",
+                "count": 5
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "pack hunters",
+        "roomDescription": "Low growls echo through this cavern. Yellow eyes gleam from the darkness as a pack of gaunt wolves emerges, circling your party with practiced coordination.",
+        "dmDescription": "Wolves use Pack Tactics for advantage. They target isolated characters and flee if reduced to 2 or fewer. DC 15 Animal Handling calms the alpha, stopping the attack.",
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Kill all wolves",
+                "reward": "Full XP (250)"
+            },
+            {
+                "condition": "Calm the alpha (DC 15 Animal Handling)",
+                "reward": "Full XP + wolves become neutral"
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 120ft x 100ft underground dungeon cavern with rough stone walls. Dim torchlight. Bones and animal remains scattered about. Two exits. Entry through arched doorway at south. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
+        "lair": false
+    },
+    {
+        "name": "Myconid Grove",
+        "level": 1,
+        "type": "combat",
+        "difficulty": "low",
+        "xpBudget": 140,
+        "monsters": [
+            {
+                "name": "Myconid Sprout",
+                "cr": 0,
+                "exp": 10,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-m#MyconidSprout",
+                "count": 4
+            },
+            {
+                "name": "Violet Fungus",
+                "cr": 0.25,
+                "exp": 50,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-f#VioletFungus",
+                "count": 2
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "territorial",
+        "roomDescription": "Phosphorescent fungi illuminate this damp cavern in shades of purple and blue. Mushrooms of unusual size cluster together, some swaying despite the still air. As you approach, smaller fungi scatter while larger ones extend writhing tendrils.",
+        "dmDescription": "The myconids release spores if threatened (DC 11 Con save or poisoned 1 min). Violet fungi are stationary but deadly. Fire is very effective here.",
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Destroy all fungi",
+                "reward": "Full XP (140)"
+            },
+            {
+                "condition": "Sneak through (DC 12 Stealth)",
+                "reward": "No combat, avoid spores"
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 100ft underground dungeon cavern with rough stone walls. Dim torchlight. Damp floor with puddles. Phosphorescent lighting. Entry via ladder from trapdoor above. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
+        "lair": false
+    },
+    {
+        "name": "Grimlock Patrol",
+        "level": 1,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 200,
+        "monsters": [
+            {
+                "name": "Grimlock",
+                "cr": 0.25,
+                "exp": 50,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#Grimlock",
+                "count": 4
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "savage",
+        "roomDescription": "Eyeless humanoids with gray, rubbery skin sniff the air and cock their heads, listening. Their stone axes scrape against the floor as they advance with unnerving accuracy despite their blindness.",
+        "dmDescription": "Grimlocks use blindsight 30ft. Light is useless against them. They communicate via clicks and rely on sound. Silence spell renders them blind. They carry 10 gp each.",
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Kill all grimlocks",
+                "reward": "Full XP (200)"
+            },
+            {
+                "condition": "Use Silence to disable their senses",
+                "reward": "Full XP + advantage on attacks"
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 110ft x 90ft underground dungeon chamber with stone dungeon walls. No light sources (darkness). Rough stone walls. Three tunnel exits. Entry through narrow tunnel. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
+        "lair": false
+    },
+    {
+        "name": "Troglodyte Lair",
+        "level": 1,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 250,
+        "monsters": [
+            {
+                "name": "Troglodyte",
+                "cr": 0.25,
+                "exp": 50,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-t#Troglodyte",
+                "count": 5
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "vicious",
+        "roomDescription": "An overwhelming stench hits you before you even see them. Reptilian creatures with mottled gray-green scales hiss and brandish crude weapons, their putrid odor making your eyes water.",
+        "dmDescription": "Troglodyte Stench: DC 12 Con save or poisoned until start of next turn. They fight to the death defending their nest. Eggs in the corner could be destroyed or sold (50 gp to the right buyer).",
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Defeat all troglodytes",
+                "reward": "Full XP (250)"
+            },
+            {
+                "condition": "Steal eggs and flee",
+                "reward": "50 XP + 50 gp value"
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 130ft x 100ft underground dungeon cavern with stone dungeon walls. Dim torchlight. Shallow stagnant pools. Terrible odor indication marks. Entry via collapsed section in ceiling. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
+        "lair": true
+    },
+    {
+        "name": "Bat Swarm Cave",
+        "level": 1,
+        "type": "combat",
+        "difficulty": "low",
+        "xpBudget": 150,
+        "monsters": [
+            {
+                "name": "Swarm of Bats",
+                "cr": 0.25,
+                "exp": 50,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#SwarmofBats",
+                "count": 3
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "panicked",
+        "roomDescription": "The ceiling writhes with fur and leathery wings. Thousands of bats hang overhead, disturbed by your torchlight. With a deafening screech, they explode into chaotic flight.",
+        "dmDescription": "Bats attack if startled (loud noise, bright light, approaching within 15ft). Extinguishing lights and moving slowly (DC 12 Stealth) avoids combat. Fire panics them more. Guano on floor is valuable fertilizer (10 gp worth).",
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Kill the swarms",
+                "reward": "Full XP (150)"
+            },
+            {
+                "condition": "Sneak through quietly",
+                "reward": "No XP, avoid damage"
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 80ft underground dungeon cavern with rough stone walls. Dim torchlight. Guano-covered floor (difficult terrain). Two exits. Entry through crumbling archway. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
+        "lair": false
+    },
+    {
+        "name": "Darkmantle Ambush",
+        "level": 1,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 200,
+        "monsters": [
+            {
+                "name": "Darkmantle",
+                "cr": 0.5,
+                "exp": 100,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-d#Darkmantle",
+                "count": 2
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "ambush predator",
+        "roomDescription": "Stalactites hang from the ceiling of this cavern like stone teeth. As you pass beneath them, two 'rocks' unfurl leathery wings and drop toward you, engulfing the area in magical darkness.",
+        "dmDescription": "Darkmantles create 15ft radius darkness. They grapple heads and blind targets. DC 13 Perception spots them before attack. Light spells counter their darkness. Prior victims' gear lies below: 25 gp, a dagger, rope.",
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Kill both darkmantles",
+                "reward": "Full XP (200)"
+            },
+            {
+                "condition": "Use Light to reveal and avoid",
+                "reward": "Can bypass with caution"
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 100ft underground dungeon cavern with rough stone walls. Dim torchlight. Rocky floor with debris. Dim natural light from cracks. Entry via spiral stairs in corner. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
+        "lair": false
+    },
+    {
+        "name": "Cockatrice Nest",
+        "level": 1,
+        "type": "combat",
+        "difficulty": "high",
+        "xpBudget": 300,
+        "monsters": [
+            {
+                "name": "Cockatrice",
+                "cr": 0.5,
+                "exp": 100,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-c#Cockatrice",
+                "count": 3
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "aggressive",
+        "roomDescription": "Bizarre creatures with the body of a rooster and the tail of a serpent strut around this chamber. Several stone statues of adventurers stand frozen in poses of terror. The cockatrices screech and charge.",
+        "dmDescription": "Petrification: DC 11 Con save or restrained, then petrified on failed repeat save. Greater Restoration or waiting 24 hours cures petrification. The 'statues' have gear worth 75 gp total. Eggs worth 100 gp each (3 in nest).",
+        "size": 2,
+        "winConditions": [
+            {
+                "condition": "Kill all cockatrices",
+                "reward": "Full XP (300)"
+            },
+            {
+                "condition": "Steal eggs without combat (DC 14 Stealth)",
+                "reward": "300 gp, no XP"
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 140ft x 120ft underground dungeon cavern with ice-covered stone walls. Dim torchlight. Nest with eggs in corner. Feathers and debris everywhere. Entry through fissure in the rock. Two exits on opposite walls. Clean lines, high contrast for virtual tabletop use.",
+        "lair": true
+    },
+    {
+        "name": "Shadow Haunt",
+        "level": 1,
+        "type": "combat",
+        "difficulty": "high",
+        "xpBudget": 300,
+        "monsters": [
+            {
+                "name": "Shadow",
+                "cr": 0.5,
+                "exp": 100,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-s#Shadow",
+                "count": 3
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "malevolent",
+        "roomDescription": "The darkness here feels alive. Your torchlight seems to shrink, swallowed by an unnatural blackness. Shapes move at the edge of your vision—humanoid silhouettes that glide silently closer.",
+        "dmDescription": "Shadows drain Strength (1d4 on hit). If Str reaches 0, target dies and rises as shadow. They hide in dim light and attack with advantage from darkness. Radiant damage is very effective. A desecrated altar powers them—destroying it (DC 13 Religion to identify, AC 12, 20 HP) banishes them.",
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Destroy all shadows",
+                "reward": "Full XP (300)"
+            },
+            {
+                "condition": "Destroy the desecrated altar",
+                "reward": "Full XP + shadows banished instantly"
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 100ft underground shrine chamber with stone dungeon walls. Dim torchlight. Broken holy symbols. Unnaturally dark corners. Dim flickering torchlight. Entry via stone staircase descending from above. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
+        "lair": true
+    },
+    {
+        "name": "Rust Monster Tunnel",
+        "level": 1,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 200,
+        "monsters": [
+            {
+                "name": "Rust Monster",
+                "cr": 0.5,
+                "exp": 100,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-r#RustMonster",
+                "count": 2
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "hungry",
+        "roomDescription": "Insect-like creatures with long antennae scuttle toward you, their feelers twitching eagerly at your weapons and armor. Corroded equipment and rust-flaked bones litter the floor.",
+        "dmDescription": "Rust monsters destroy nonmagical metal on contact. Smart parties remove metal armor first. They're not evil, just hungry—throwing metal objects distracts them (1 round per item). Wooden and leather gear is immune. Treasure: rusted coins (worth 15 gp if cleaned).",
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Kill rust monsters",
+                "reward": "Full XP (200)"
+            },
+            {
+                "condition": "Distract with metal scraps and flee",
+                "reward": "No XP, preserve equipment"
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 80ft underground mine tunnel with stone dungeon walls. Dim torchlight. Corroded metal debris. Orange-stained walls. Two exits. Entry through arched doorway at south. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
+        "lair": false
+    },
+    {
+        "name": "Orc Scouts",
+        "level": 1,
+        "type": "combat",
+        "difficulty": "high",
+        "xpBudget": 400,
+        "monsters": [
+            {
+                "name": "Orc",
+                "cr": 0.5,
+                "exp": 100,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/monsters/16972-orc",
+                "count": 4
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "brutal",
+        "roomDescription": "Muscular gray-skinned warriors crouch around a small fire, their brutal weapons close at hand. They spot you and rise with eager grins, clearly pleased at the prospect of violence.",
+        "dmDescription": "Orcs use Aggressive to close distance quickly. They fight recklessly but flee if leader falls. Their camp has supplies: rations for 10 days, 40 gp, a crude map showing nearby orc stronghold.",
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Kill all orcs",
+                "reward": "Full XP (400)"
+            },
+            {
+                "condition": "Kill the leader, others flee",
+                "reward": "200 XP + map reveals quest hook"
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 120ft x 100ft underground dungeon chamber with stone dungeon walls. Dim torchlight. Bedrolls and supplies. Crude bone decorations. One main entrance, one escape tunnel. Entry via ladder from trapdoor above. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
+        "lair": false
+    },
+    {
+        "name": "Hobgoblin Sentries",
+        "level": 1,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 300,
+        "monsters": [
+            {
+                "name": "Hobgoblin Warrior",
+                "cr": 0.5,
+                "exp": 100,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-h#HobgoblinWarrior",
+                "count": 3
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "disciplined",
+        "roomDescription": "Three armored goblinoids stand at rigid attention, their military bearing evident. They wear matching insignia and respond to your presence with coordinated precision, leveling crossbows in unison.",
+        "dmDescription": "Hobgoblins use Martial Advantage (+2d6 damage if ally adjacent). They fight tactically: one engages in melee while two provide crossbow support. If losing, they attempt organized retreat to warn others. Treasure: 20 gp each, military orders written in Goblin.",
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Defeat all hobgoblins",
+                "reward": "Full XP (300)"
+            },
+            {
+                "condition": "Capture one alive",
+                "reward": "Full XP + intelligence on hobgoblin forces"
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 80ft underground dungeon chamber with rough stone walls. Dim torchlight. Weapon racks. Military banners. Two entrances. Entry through narrow tunnel. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
+        "lair": false
+    },
+    {
+        "name": "Magma Mephit Vent",
+        "level": 1,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 200,
+        "monsters": [
+            {
+                "name": "Magma Mephit",
+                "cr": 0.5,
+                "exp": 100,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-m#MagmaMephit",
+                "count": 2
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "mischievous",
+        "roomDescription": "Heat radiates from cracks in the floor where molten rock glows orange. Small humanoid figures made of living magma cackle as they rise from the vents, hurling globs of fire.",
+        "dmDescription": "Mephits have Death Burst: explode for 2d6 fire in 5ft when killed. They fly and use ranged fire attacks. Water deals 1d6 cold damage to them. Obsidian chunks worth 25 gp can be harvested.",
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Destroy both mephits",
+                "reward": "Full XP (200)"
+            },
+            {
+                "condition": "Use water/cold to weaken them",
+                "reward": "Full XP + easier fight"
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 100ft underground dungeon cavern with stone dungeon walls. Orange glow from below. Orange glow lighting. Obsidian formations. Heat shimmer effect. Entry via collapsed section in ceiling. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
+        "lair": false
+    },
+    {
+        "name": "Ice Mephit Cavern",
+        "level": 1,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 200,
+        "monsters": [
+            {
+                "name": "Ice Mephit",
+                "cr": 0.5,
+                "exp": 100,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-m#IceMephit",
+                "count": 2
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "cruel",
+        "roomDescription": "Your breath mists in the sudden cold. Icicles hang from every surface, and frost creeps across the walls. Two small creatures of animate ice swoop down, cackling with malice as they exhale blasts of freezing air.",
+        "dmDescription": "Ice mephits use Frost Breath: 10ft cone, DC 10 Dex, 2d4 cold. Death Burst: 5ft radius ice shards. Fire damage is very effective. Frozen corpse of previous adventurer has: 30 gp, a Potion of Healing, frozen solid (1 hour to thaw).",
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Destroy both mephits",
+                "reward": "Full XP (200)"
+            },
+            {
+                "condition": "Use fire magic effectively",
+                "reward": "Full XP + quick victory"
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 80ft underground dungeon cavern with rough stone walls. Cold blue-white lighting. Icicles hanging from ceiling. Frozen pool in center. Blue-white lighting. Entry through crumbling archway. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
+        "lair": false
+    },
+    {
+        "name": "Gray Ooze Pool",
+        "level": 1,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 200,
+        "monsters": [
+            {
+                "name": "Gray Ooze",
+                "cr": 0.5,
+                "exp": 100,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#GrayOoze",
+                "count": 2
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "mindless",
+        "roomDescription": "The floor here looks strangely wet, reflecting your torchlight in oily ripples. As you step closer, sections of the 'floor' rise up—living puddles of translucent gray slime that flow toward you.",
+        "dmDescription": "Gray oozes dissolve metal armor and weapons (nonmagical). DC 12 Perception to notice before stepping on one. They're slow (10ft) but persistent. Fire and cold work normally. Remains contain partially dissolved coins: 20 gp worth.",
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Destroy both oozes",
+                "reward": "Full XP (200)"
+            },
+            {
+                "condition": "Lure them away and bypass",
+                "reward": "No XP, avoid equipment damage"
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 80ft x 80ft underground dungeon chamber with stone dungeon walls. Dim torchlight. Reflective surfaces. Corroded metal debris. Two exits. Entry via spiral stairs in corner. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
+        "lair": false
+    },
+    {
+        "name": "Worg Riders",
+        "level": 1,
+        "type": "combat",
+        "difficulty": "high",
+        "xpBudget": 350,
+        "monsters": [
+            {
+                "name": "Goblin Warrior",
+                "cr": 0.25,
+                "exp": 50,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#GoblinWarrior",
+                "count": 3
+            },
+            {
+                "name": "Worg",
+                "cr": 0.5,
+                "exp": 100,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-w#Worg",
+                "count": 2
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "aggressive",
+        "roomDescription": "The thunder of paws echoes through the corridor. Massive wolves the size of horses charge toward you, goblin riders on their backs whooping with savage glee as they level their spears.",
+        "dmDescription": "Worgs understand Goblin and can communicate. Killing a worg throws its rider (DC 10 Dex or prone). Goblins dismount if worg dies. Worgs flee if both riders die. Treasure: 30 gp, crude jewelry worth 15 gp.",
+        "size": 2,
+        "winConditions": [
+            {
+                "condition": "Kill all enemies",
+                "reward": "Full XP (350)"
+            },
+            {
+                "condition": "Kill worgs first, goblins surrender",
+                "reward": "Full XP + goblin prisoners"
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 150ft x 100ft underground dungeon chamber with stone dungeon walls. Dim torchlight. Columns for cover. Two wide exits. Entry through fissure in the rock. Two exits on opposite walls. Clean lines, high contrast for virtual tabletop use.",
+        "lair": false
+    },
+    {
+        "name": "Piercer Cave",
+        "level": 1,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 300,
+        "monsters": [
+            {
+                "name": "Piercer",
+                "cr": 0.5,
+                "exp": 100,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-p#Piercer",
+                "count": 3
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "ambush predator",
+        "roomDescription": "Sharp stalactites crowd the ceiling of this cave, some seeming to drip with moisture. As you walk beneath them, several detach and plummet toward you like living spears.",
+        "dmDescription": "Piercers drop for 3d6 piercing (DC 12 Dex halves). They get one attack then are helpless on the ground (AC 11, 22 HP). DC 15 Perception spots them as fake stalactites. Moving along walls avoids them. Treasure under debris: 35 gp, a gemstone (50 gp).",
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Destroy all piercers",
+                "reward": "Full XP (300)"
+            },
+            {
+                "condition": "Spot and avoid them entirely",
+                "reward": "No XP, no damage taken"
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 100ft underground dungeon cavern with rough stone walls. Dim torchlight. Rocky floor with debris. Narrow paths between formations. Entry via stone staircase descending from above. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
+        "lair": false
+    },
+    {
+        "name": "Giant Insect Hive",
+        "level": 1,
+        "type": "combat",
+        "difficulty": "high",
+        "xpBudget": 350,
+        "monsters": [
+            {
+                "name": "Giant Centipede",
+                "cr": 0.25,
+                "exp": 50,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#GiantCentipede",
+                "count": 3
+            },
+            {
+                "name": "Giant Wasp",
+                "cr": 0.5,
+                "exp": 100,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#GiantWasp",
+                "count": 2
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "aggressive",
+        "roomDescription": "A papery structure clings to the cavern walls, buzzing with activity. Giant wasps patrol while armored centipedes writhe along the floor. The insects turn toward you with predatory intent.",
+        "dmDescription": "Wasps dive-bomb casters while centipedes swarm melee fighters. Centipede poison: DC 11 Con or 10 poison damage + poisoned. Fire destroys the hive but enrages survivors. Honey in hive is valuable: 30 gp worth.",
+        "size": 2,
+        "winConditions": [
+            {
+                "condition": "Exterminate all insects",
+                "reward": "Full XP (350)"
+            },
+            {
+                "condition": "Burn the hive",
+                "reward": "Full XP but harder fight"
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 140ft x 100ft underground dungeon cavern with rough stone walls. Dim torchlight. Tunnel holes for centipedes. Organic debris on floor. Entry through arched doorway at south. Two exits on opposite walls. Clean lines, high contrast for virtual tabletop use.",
+        "lair": true
+    },
+    {
+        "name": "Gnoll Foragers",
+        "level": 1,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 300,
+        "monsters": [
+            {
+                "name": "Gnoll Warrior",
+                "cr": 0.5,
+                "exp": 100,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#GnollWarrior",
+                "count": 3
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "ravenous",
+        "roomDescription": "Hyena-like humanoids crouch over fresh kills, their muzzles stained with blood. They look up with hungry eyes, abandoning their meal for fresher prey—you.",
+        "dmDescription": "Gnolls have Rampage: bonus action bite after dropping a creature to 0 HP. They're always hungry and never negotiate. Their camp has disturbing remains and 45 gp in loot from victims.",
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Kill all gnolls",
+                "reward": "Full XP (300)"
+            },
+            {
+                "condition": "No alternative - gnolls never surrender",
+                "reward": "N/A"
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 110ft x 90ft underground dungeon chamber with stone dungeon walls. Dim torchlight. Crude camp. Torchlight. Two exits. Entry via ladder from trapdoor above. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
+        "lair": false
+    },
+    {
+        "name": "Twig Blight Ambush",
+        "level": 1,
+        "type": "combat",
+        "difficulty": "low",
+        "xpBudget": 150,
+        "monsters": [
+            {
+                "name": "Twig Blight",
+                "cr": 0.125,
+                "exp": 25,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-b#TwigBlight",
+                "count": 6
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "malevolent",
+        "roomDescription": "Dead vegetation chokes this abandoned underground garden. Skeletal bushes and withered vines fill the space. As you pass, the 'dead' plants twitch and rise, revealing themselves as shambling plant creatures.",
+        "dmDescription": "Twig blights are weak but numerous. They're vulnerable to fire (double damage). They serve a Gulthias Tree somewhere nearby (plot hook). DC 14 Nature reveals their origin. Druidic focus buried here: 25 gp value.",
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Destroy all blights",
+                "reward": "Full XP (150)"
+            },
+            {
+                "condition": "Use fire to quickly eliminate them",
+                "reward": "Full XP + fast victory"
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 80ft underground mine tunnel with rough stone walls. Dim torchlight. Broken planters and rotten trellises. Dim light from luminescent moss. Entry through narrow tunnel. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
+        "lair": false
+    },
+    {
+        "name": "Needle Blight Thicket",
+        "level": 1,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 250,
+        "monsters": [
+            {
+                "name": "Needle Blight",
+                "cr": 0.25,
+                "exp": 50,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-b#NeedleBlight",
+                "count": 5
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "aggressive",
+        "roomDescription": "Pine-like plant creatures stand motionless among dead trees. Their needle-covered bodies bristle as you approach, and they raise arm-like branches to unleash volleys of razor-sharp needles.",
+        "dmDescription": "Needle blights attack at range (30ft, 2d4 piercing). They're slow in melee. Vulnerable to fire. Cover is essential against their needle volleys. Resin from dead blights is alchemically useful: 15 gp worth.",
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Destroy all blights",
+                "reward": "Full XP (250)"
+            },
+            {
+                "condition": "Close to melee range quickly",
+                "reward": "Full XP + avoid ranged damage"
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 120ft x 100ft underground dungeon chamber with stone dungeon walls. Dim torchlight. Needle-covered floor. Limited cover. Natural lighting from above. Entry via collapsed section in ceiling. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
+        "lair": false
+    },
+    {
+        "name": "Vine Blight Grove",
+        "level": 1,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 200,
+        "monsters": [
+            {
+                "name": "Vine Blight",
+                "cr": 0.5,
+                "exp": 100,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-b#VineBlight",
+                "count": 2
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "patient",
+        "roomDescription": "Thick vines cover every surface of this underground chamber. As you move through, the vines stir and coil. Two masses of vegetation rise up, their tendrils reaching to entangle you.",
+        "dmDescription": "Vine blights can grapple and restrain (DC 12 Str to escape). They use Entangling Plants: 15ft radius difficult terrain. Fire is very effective. DC 15 Nature to identify before they attack. Rare herbs grow here: 40 gp worth.",
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Destroy both blights",
+                "reward": "Full XP (200)"
+            },
+            {
+                "condition": "Use fire to burn through quickly",
+                "reward": "Full XP + destroy vines for future parties"
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 100ft underground dungeon chamber with stone dungeon walls. Dim torchlight. Vine curtains block visibility. Damp and humid. Entry through crumbling archway. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
+        "lair": false
+    },
+    {
+        "name": "Kenku Thieves",
+        "level": 1,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 250,
+        "monsters": [
+            {
+                "name": "Kenku",
+                "cr": 0.25,
+                "exp": 50,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-k#Kenku",
+                "count": 5
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "cowardly thieves",
+        "roomDescription": "Ravenlike humanoids scatter as you enter, clutching stolen goods. They mimic the sound of your own voices, creating confusing echoes as they prepare to defend their hoard.",
+        "dmDescription": "Kenku use Mimicry to create distractions (DC 14 Insight to recognize). They prefer to flee with their loot rather than fight to the death. Stolen goods here: 60 gp, a silver necklace (25 gp), various trinkets.",
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Defeat all kenku",
+                "reward": "Full XP (250)"
+            },
+            {
+                "condition": "Intimidate them into fleeing (DC 13)",
+                "reward": "100 XP + they leave most loot"
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 90ft underground dungeon chamber with ice-covered stone walls. Dim torchlight. Makeshift perches on walls. Multiple shadowy corners. Two exits. Entry via spiral stairs in corner. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
+        "lair": true
+    },
+    {
+        "name": "Animated Armor Guardian",
+        "level": 1,
+        "type": "combat",
+        "difficulty": "high",
+        "xpBudget": 400,
+        "monsters": [
+            {
+                "name": "Animated Armor",
+                "cr": 1,
+                "exp": 200,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-a#AnimatedArmor",
+                "count": 2
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "programmed guardian",
+        "roomDescription": "Two suits of plate armor stand sentinel flanking an ornate doorway. As you approach, they animate with grinding metallic sounds, drawing swords and advancing with mechanical precision.",
+        "dmDescription": "Animated armor has Antimagic Susceptibility and is immune to many conditions. They guard the door and won't pursue beyond the room. Speaking the command word 'Korvan' (DC 18 Investigation to find hidden on door frame) deactivates them.",
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Destroy both armor",
+                "reward": "Full XP (400)"
+            },
+            {
+                "condition": "Find and speak the command word",
+                "reward": "Full XP + armor deactivated"
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 80ft underground dungeon chamber with stone dungeon walls. Dim torchlight. Two armor display alcoves flanking it. Tapestries on walls. Polished stone floor. Entry through fissure in the rock. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
+        "lair": false
+    },
+    {
+        "name": "Swarm Infestation",
+        "level": 1,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 250,
+        "monsters": [
+            {
+                "name": "Swarm of Insects",
+                "cr": 0.5,
+                "exp": 100,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#SwarmofInsects",
+                "count": 2
+            },
+            {
+                "name": "Swarm of Rats",
+                "cr": 0.25,
+                "exp": 50,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#SwarmofRats",
+                "count": 1
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "swarming",
+        "roomDescription": "The walls seem to move. Thousands of insects crawl across every surface, their chitinous bodies rustling. Rats scurry among them, all turning toward you as one seething mass.",
+        "dmDescription": "Swarms are resistant to physical damage but vulnerable to fire and area effects. They fill spaces and deal automatic damage. Sealing exits and using fire forces them away. Roach eggs in wall cracks could be valuable to alchemists: 15 gp.",
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Destroy all swarms",
+                "reward": "Full XP (250)"
+            },
+            {
+                "condition": "Use fire to clear the room",
+                "reward": "Full XP + room stays clear"
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 90ft x 90ft underground dungeon chamber with stone dungeon walls. Dim torchlight. Debris and refuse piles. Dim lighting. Multiple small exits. Entry via stone staircase descending from above. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
+        "lair": false
+    },
+    {
+        "name": "Kuo-toa Shrine",
+        "level": 1,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 250,
+        "monsters": [
+            {
+                "name": "Kuo-toa",
+                "cr": 0.25,
+                "exp": 50,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-k#Kuotoa",
+                "count": 5
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "mad worshippers",
+        "roomDescription": "Fish-like humanoids prostrate before a grotesque idol made of debris and bones. Their bulging eyes fixate on you, and they shriek in an alien tongue, grabbing spears and nets.",
+        "dmDescription": "Kuo-toa have Slippery trait (advantage vs grapple) and use nets. Their 'god' idol is worthless but they believe in it utterly. DC 15 Deception to pose as servants of their god grants safe passage. The idol has offerings: 30 gp in shells and coins.",
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Kill all kuo-toa",
+                "reward": "Full XP (250)"
+            },
+            {
+                "condition": "Trick them with religious deception",
+                "reward": "Full XP + safe passage"
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 110ft x 100ft underground shrine chamber with ornate stone walls with carvings. Dim torchlight. Crude idol on raised platform. Torches in wet sconces. Entry through arched doorway at south. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
+        "lair": true
+    },
+    {
+        "name": "Flying Sword Gallery",
+        "level": 1,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 200,
+        "monsters": [
+            {
+                "name": "Animated Flying Sword",
+                "cr": 0.25,
+                "exp": 50,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-a#AnimatedFlyingSword",
+                "count": 4
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "programmed",
+        "roomDescription": "Swords hang on racks along the walls of this old armory. As you enter, four blades rise from their holders, hovering in the air before darting toward you with deadly speed.",
+        "dmDescription": "Flying swords are fragile (HP 17) but fast and hit hard. They have Antimagic Susceptibility. Dispel Magic deactivates them. The armory contains mundane weapons worth 50 gp total. A masterwork longsword (75 gp) is hidden in a locked case.",
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Destroy all swords",
+                "reward": "Full XP (200)"
+            },
+            {
+                "condition": "Use Dispel Magic",
+                "reward": "Full XP + swords become loot"
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 70ft underground dungeon chamber with stone dungeon walls. Dim torchlight. Display cases. Stone floor. Entry via ladder from trapdoor above. with heavy doors. Entry via ladder from trapdoor above. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
+        "lair": false
+    },
+    {
+        "name": "Giant Spider Lair",
+        "level": 1,
+        "type": "combat",
+        "difficulty": "high",
+        "xpBudget": 400,
+        "monsters": [
+            {
+                "name": "Giant Wolf Spider",
+                "cr": 0.25,
+                "exp": 50,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#GiantWolfSpider",
+                "count": 8
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "predatory",
+        "roomDescription": "Webs fill every corner of this massive cavern. Spiders of various sizes skitter across the silken strands, and eight large specimens drop from above, their fangs dripping venom.",
+        "dmDescription": "Spiders attack from webs (advantage if target in web). Spider Climb lets them attack from any angle. Poison: DC 11 Con or 2d6 poison + poisoned. Fire destroys webs quickly. Cocooned corpse has: 45 gp, a silver ring (20 gp), and a Potion of Healing.",
+        "size": 2,
+        "winConditions": [
+            {
+                "condition": "Kill all spiders",
+                "reward": "Full XP (400)"
+            },
+            {
+                "condition": "Burn the webs and escape",
+                "reward": "50% XP, spiders scattered"
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 160ft x 140ft underground dungeon cavern with rough stone walls. Dim torchlight. Cocooned shapes. High ceiling with web strands. Entry through narrow tunnel. Two exits on opposite walls. Clean lines, high contrast for virtual tabletop use.",
+        "lair": true
+    },
+    {
+        "name": "Zombie Horde",
+        "level": 1,
+        "type": "combat",
+        "difficulty": "high",
+        "xpBudget": 400,
+        "monsters": [
+            {
+                "name": "Zombie",
+                "cr": 0.25,
+                "exp": 50,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-z#Zombie",
+                "count": 8
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "mindless",
+        "roomDescription": "The stench of decay is overwhelming. Corpses in various states of rot shamble toward you, their dead eyes empty, their jaws snapping hungrily. There are so many of them.",
+        "dmDescription": "Zombies have Undead Fortitude (DC 5+damage Con save to stay at 1 HP instead of dropping). Radiant damage bypasses this. They're slow but numerous. Bottleneck doorways to fight fewer at once. Silver holy symbol among corpses: 25 gp.",
+        "size": 2,
+        "winConditions": [
+            {
+                "condition": "Destroy all zombies",
+                "reward": "Full XP (400)"
+            },
+            {
+                "condition": "Use radiant damage to ensure kills",
+                "reward": "Full XP + faster victory"
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 150ft x 120ft underground burial crypt with stone dungeon walls. Magical glow. Narrow doorways for chokepoints. Dim green glow. Entry via collapsed section in ceiling. Two exits on opposite walls. Clean lines, high contrast for virtual tabletop use.",
+        "lair": false
+    },
+    {
+        "name": "Skeleton Archers",
+        "level": 1,
+        "type": "combat",
+        "difficulty": "high",
+        "xpBudget": 350,
+        "monsters": [
+            {
+                "name": "Skeleton",
+                "cr": 0.25,
+                "exp": 50,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-s#Skeleton",
+                "count": 7
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "mindless",
+        "roomDescription": "Bony archers stand on elevated platforms around this circular room, their empty eye sockets fixed on you. Arrows nock simultaneously as they draw back in eerie unison.",
+        "dmDescription": "Skeletons on 10ft platforms provide high ground advantage. Vulnerability to bludgeoning damage. They can't climb down quickly. Destroying ladders on platforms isolates them. Quivers contain 40 arrows worth taking.",
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Destroy all skeletons",
+                "reward": "Full XP (350)"
+            },
+            {
+                "condition": "Rush to cover and flank",
+                "reward": "Full XP + avoid ranged damage"
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 100ft underground dungeon chamber with stone dungeon walls. Dim torchlight. Low walls for cover in center. Arrow slits in platforms. Entry through crumbling archway. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
+        "lair": false
+    },
+    {
+        "name": "Goblin Warband",
+        "level": 1,
+        "type": "combat",
+        "difficulty": "high",
+        "xpBudget": 375,
+        "monsters": [
+            {
+                "name": "Goblin Minion",
+                "cr": 0.125,
+                "exp": 25,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#GoblinMinion",
+                "count": 5
+            },
+            {
+                "name": "Goblin Warrior",
+                "cr": 0.25,
+                "exp": 50,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#GoblinWarrior",
+                "count": 5
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "aggressive mob",
+        "roomDescription": "A mob of goblins fills this chamber, armed to the teeth and spoiling for a fight. They surge forward in a green wave, their war cries deafening in the enclosed space.",
+        "dmDescription": "Overwhelming numbers but low individual HP. Minions go down easily, warriors are tougher. They lose morale if half are killed (DC 12 Intimidation forces retreat). War chest in back: 75 gp, goblin war banner (trophy or quest item).",
+        "size": 2,
+        "winConditions": [
+            {
+                "condition": "Kill all goblins",
+                "reward": "Full XP (375)"
+            },
+            {
+                "condition": "Break their morale at half strength",
+                "reward": "Full XP + survivors flee"
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 140ft x 100ft underground dungeon chamber with stone dungeon walls. Dim torchlight. War table with crude map. Two exits. Entry via spiral stairs in corner. Two exits on opposite walls. Clean lines, high contrast for virtual tabletop use.",
+        "lair": true
+    },
+    {
+        "name": "Specter Tomb",
+        "level": 1,
+        "type": "combat",
+        "difficulty": "high",
+        "xpBudget": 400,
+        "monsters": [
+            {
+                "name": "Shadow",
+                "cr": 0.5,
+                "exp": 100,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-s#Shadow",
+                "count": 2
+            },
+            {
+                "name": "Skeleton",
+                "cr": 0.25,
+                "exp": 50,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-s#Skeleton",
+                "count": 4
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "vengeful",
+        "roomDescription": "Darkness pools unnaturally in the corners of this tomb. Skeletons stand guard while darker shapes drift through the shadows, their touch promising cold death.",
+        "dmDescription": "Shadows drain Strength while skeletons distract. Focus on shadows first. Light magic is essential. The tomb belongs to an evil knight—destroying his corpse (in central sarcophagus) banishes the undead. Treasure: 50 gp, knight's signet ring (25 gp).",
+        "size": 2,
+        "winConditions": [
+            {
+                "condition": "Destroy all undead",
+                "reward": "Full XP (400)"
+            },
+            {
+                "condition": "Destroy the knight's corpse",
+                "reward": "Full XP + instant victory"
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 130ft x 100ft underground dungeon chamber with ancient carved stone walls. Dim torchlight. Armor displays on walls. Unnaturally dark corners. Entry through fissure in the rock. Two exits on opposite walls. Clean lines, high contrast for virtual tabletop use.",
+        "lair": true
+    },
+    {
+        "name": "Dire Wolf Den",
+        "level": 1,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 250,
+        "monsters": [
+            {
+                "name": "Wolf",
+                "cr": 0.25,
+                "exp": 50,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#Wolf",
+                "count": 3
+            },
+            {
+                "name": "Worg",
+                "cr": 0.5,
+                "exp": 100,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-w#Worg",
+                "count": 1
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "territorial",
+        "roomDescription": "Bones crunch underfoot as you enter this den. Wolves snarl from the shadows, but it's the massive black-furred beast in the center that commands your attention—a worg, intelligent and malevolent.",
+        "dmDescription": "The worg commands the wolves (understands Common/Goblin). It may parley if offered food (DC 14 Persuasion). If the worg dies, wolves flee. Den contains remains of previous victims: 35 gp, a damaged shield, a torn map.",
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Kill all canines",
+                "reward": "Full XP (250)"
+            },
+            {
+                "condition": "Negotiate with the worg",
+                "reward": "No XP, information about dungeon"
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 110ft x 90ft underground dungeon cavern with rough stone walls. Dim torchlight. Central sleeping area. One main entrance, one small escape exit. Entry via stone staircase descending from above. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
+        "lair": true
+    },
+    {
+        "name": "Modron Patrol",
+        "level": 1,
+        "type": "combat",
+        "difficulty": "low",
+        "xpBudget": 175,
+        "monsters": [
+            {
+                "name": "Modron Monodrone",
+                "cr": 0.125,
+                "exp": 25,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-m#ModronMonodrone",
+                "count": 3
+            },
+            {
+                "name": "Modron Duodrone",
+                "cr": 0.25,
+                "exp": 50,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-m#ModronDuodrone",
+                "count": 2
+            }
+        ],
+        "attitude": "indifferent",
+        "personality": "lawful to a fault",
+        "roomDescription": "Geometric creatures of clockwork precision march in perfect formation. Their mechanical bodies click and whir as they scan the area with emotionless efficiency.",
+        "dmDescription": "Modrons only attack if laws are broken in their presence or if you interfere with their mission. They're searching for 'Rogue Element 7' (a malfunctioning modron elsewhere). Helping them earns their neutrality. Cogs and gears worth 20 gp.",
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Destroy all modrons",
+                "reward": "Full XP (175)"
+            },
+            {
+                "condition": "Help with their mission",
+                "reward": "50 XP + modron neutrality"
+            },
+            {
+                "condition": "Let them pass peacefully",
+                "reward": "No combat"
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 100ft underground dungeon chamber with stone dungeon walls. Dim torchlight. Mechanical aesthetic. Clean and orderly. Entry through arched doorway at south. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
+        "lair": false
+    },
+    {
+        "name": "Jackalwere Ambush",
+        "level": 1,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 200,
+        "monsters": [
+            {
+                "name": "Jackalwere",
+                "cr": 0.5,
+                "exp": 100,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-j#Jackalwere",
+                "count": 2
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "deceptive",
+        "roomDescription": "Two travelers wave for help at the edge of the chamber, claiming to be lost. Something about their smiles seems.. wrong. Their forms blur as they reveal jackals standing on hind legs.",
+        "dmDescription": "Jackalweres use Sleep Gaze (DC 10 Wis or fall asleep). They're resistant to nonmagical weapons. They posed as travelers to lure victims. Their 'belongings' are stolen: 40 gp, traveler's outfit, fake identification.",
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Kill both jackalweres",
+                "reward": "Full XP (200)"
+            },
+            {
+                "condition": "Resist Sleep Gaze and attack with magic/silver",
+                "reward": "Full XP + bypass resistance"
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 80ft underground dungeon chamber with stone dungeon walls. Dim torchlight.  Entry via ladder from trapdoor above. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
+        "lair": false
+    },
+    {
+        "name": "Satyr Tricksters",
+        "level": 1,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 200,
+        "monsters": [
+            {
+                "name": "Satyr",
+                "cr": 0.5,
+                "exp": 100,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-s#Satyr",
+                "count": 2
+            }
+        ],
+        "attitude": "indifferent",
+        "personality": "mischievous",
+        "roomDescription": "Melodious music echoes through this overgrown grotto. Two goat-legged figures lounge on rocks, playing pipes and drinking wine. They eye you with amused curiosity rather than hostility.",
+        "dmDescription": "Satyrs aren't inherently hostile but enjoy pranks. They demand entertainment or tribute (DC 15 Performance or 25 gp wine) to pass. If insulted, they attack with magic. They know dungeon secrets and will share if entertained.",
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Kill both satyrs",
+                "reward": "Full XP (200)"
+            },
+            {
+                "condition": "Entertain them (DC 15 Performance)",
+                "reward": "50 XP + dungeon information"
+            },
+            {
+                "condition": "Pay wine tribute",
+                "reward": "Safe passage"
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 120ft x 100ft underground dungeon chamber with stone dungeon walls. Dim torchlight. Natural spring. Fey aesthetic. Entry through narrow tunnel. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
+        "lair": false
+    },
+    {
+        "name": "Giant Frog Pond",
+        "level": 1,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 250,
+        "monsters": [
+            {
+                "name": "Giant Frog",
+                "cr": 0.25,
+                "exp": 50,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#GiantFrog",
+                "count": 5
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "hungry",
+        "roomDescription": "A murky pool fills most of this chamber. As you approach, massive frogs surface, their bulbous eyes fixed on you. With disturbing speed, they launch themselves at you, tongues extended.",
+        "dmDescription": "Frogs can Swallow Small creatures (DC 11 Str to escape from inside). Water is 5ft deep (difficult terrain). Staying on dry land limits their approach. Frog legs are a delicacy: 5 gp per frog to right buyer.",
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Kill all frogs",
+                "reward": "Full XP (250)"
+            },
+            {
+                "condition": "Stay on dry land and fight defensively",
+                "reward": "Full XP + positional advantage"
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 100ft underground dungeon chamber with stone dungeon walls. Dim torchlight. Narrow dry ledges around edges. Lily pads. Entry via collapsed section in ceiling. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
+        "lair": false
+    },
+    {
+        "name": "Crocodile Lair",
+        "level": 1,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 200,
+        "monsters": [
+            {
+                "name": "Crocodile",
+                "cr": 0.5,
+                "exp": 100,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#Crocodile",
+                "count": 2
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "ambush predator",
+        "roomDescription": "What looks like logs floating in the water suddenly move. Armored reptiles glide toward you, their powerful jaws snapping as they surge from the shallows.",
+        "dmDescription": "Crocodiles grapple (DC 12 escape) and drag victims underwater (drowning rules apply). They have advantage on creatures in water. Fighting on land gives the party the advantage. Previous victim's gear in shallows: 30 gp, waterlogged pack.",
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Kill both crocodiles",
+                "reward": "Full XP (200)"
+            },
+            {
+                "condition": "Lure them onto land",
+                "reward": "Full XP + easier fight"
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 120ft x 80ft underground dungeon chamber with rough stone walls. Dim torchlight. Raised walkways on sides. Submerged logs. Entry through crumbling archway. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
+        "lair": false
+    },
+    {
+        "name": "Animated Broom Closet",
+        "level": 1,
+        "type": "combat",
+        "difficulty": "low",
+        "xpBudget": 150,
+        "monsters": [
+            {
+                "name": "Animated Broom",
+                "cr": 0.25,
+                "exp": 50,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-a#AnimatedBroom",
+                "count": 3
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "programmed",
+        "roomDescription": "You open a closet door and brooms fly out, sweeping at you with aggressive intent. The enchanted cleaning implements seem determined to sweep YOU out.",
+        "dmDescription": "Animated brooms are fragile (HP 10) comic relief. They're programmed to sweep intruders away and won't pursue beyond the room. The closet contains cleaning supplies worth 10 gp and a Ring of Water Walking hidden in a bucket.",
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Destroy all brooms",
+                "reward": "Full XP (150)"
+            },
+            {
+                "condition": "Simply close the door and leave",
+                "reward": "No XP, avoid combat"
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 60ft x 40ft underground dungeon chamber with rough-hewn rock walls with wooden supports. Dim torchlight. Mops and buckets. Cramped space. Entry via spiral stairs in corner. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
+        "lair": false
+    },
+    {
+        "name": "Dust Mephit Ruins",
+        "level": 1,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 300,
+        "monsters": [
+            {
+                "name": "Dust Mephit",
+                "cr": 0.5,
+                "exp": 100,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-m#DustMephit",
+                "count": 3
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "irritable",
+        "roomDescription": "Ancient ruins lie thick with dust. Clouds of particles swirl unnaturally, coalescing into small humanoid forms with dry, rasping voices that cough mockingly at your presence.",
+        "dmDescription": "Dust mephits use Blinding Breath (DC 10 Dex or blinded 1 min). Death Burst creates 5ft dust cloud (same effect). Water suppresses their abilities. Ancient treasures buried in dust: 45 gp, a corroded bronze crown (30 gp restored).",
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Destroy all mephits",
+                "reward": "Full XP (300)"
+            },
+            {
+                "condition": "Use water to weaken them",
+                "reward": "Full XP + easier fight"
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 120ft x 100ft underground dungeon chamber with ice-covered stone walls. Dim torchlight. Broken pillars and walls. Collapsed ceiling section. Entry through fissure in the rock. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
+        "lair": false
+    },
+    {
+        "name": "Gas Spore Quarantine",
+        "level": 1,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 200,
+        "monsters": [
+            {
+                "name": "Gas Spore Fungus",
+                "cr": 0.5,
+                "exp": 100,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-f#GasSporeFungus",
+                "count": 2
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "mimicry",
+        "roomDescription": "Two beholders float motionless ahead, their eye stalks drooping oddly. Something seems wrong—they're not attacking. Then you notice the fungal texture of their 'skin' and realize these are something far stranger.",
+        "dmDescription": "Gas spores look like beholders (DC 15 Nature to identify). When they die, they explode (DC 15 Con or 3d6 poison + infected). Infection: without treatment, creature dies in 1d12+Con hours and sprouts 2d4 new gas spores. Treasure in corner from panicked victim: 40 gp.",
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Destroy both spores",
+                "reward": "Full XP (200)"
+            },
+            {
+                "condition": "Identify and destroy from range",
+                "reward": "Full XP + avoid infection risk"
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 80ft underground dungeon chamber with ice-covered stone walls. Dim torchlight. Sealed doors. Dead adventurer's remains in corner. Entry via stone staircase descending from above. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
+        "lair": false
+    },
+    {
+        "name": "Scout Patrol",
+        "level": 1,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 200,
+        "monsters": [
+            {
+                "name": "Scout",
+                "cr": 0.5,
+                "exp": 100,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-s#Scout",
+                "count": 2
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "professional",
+        "roomDescription": "Two figures in leather armor freeze mid-conversation, hands going to weapons. They wear no insignia but their coordinated movement speaks of professional training.",
+        "dmDescription": "Scouts are working for a rival faction. They'll negotiate if outmatched (DC 13 Intimidation). They have reconnaissance notes about the dungeon that could be valuable. Equipment: shortbows, shortswords, 25 gp each.",
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Kill both scouts",
+                "reward": "Full XP (200)"
+            },
+            {
+                "condition": "Intimidate into surrender",
+                "reward": "Full XP + intelligence notes"
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 90ft x 70ft underground dungeon chamber with stone dungeon walls. Dim torchlight. Surveillance equipment. Multiple exits for escape. Entry through arched doorway at south. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
+        "lair": false
+    },
+    {
+        "name": "Tough Gang",
+        "level": 1,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 200,
+        "monsters": [
+            {
+                "name": "Tough",
+                "cr": 0.5,
+                "exp": 100,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-t#Tough",
+                "count": 2
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "brutal enforcers",
+        "roomDescription": "Two burly thugs crack their knuckles as you enter their territory. Scars and crude tattoos mark their exposed arms. 'Wrong turn, friends,' one growls.",
+        "dmDescription": "Toughs are enforcers for a local gang. They'll take a bribe (50 gp) to let you pass and share information. They fight dirty and try to grapple casters. Loot on bodies: 20 gp each, gang tokens (could be useful later).",
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Kill both toughs",
+                "reward": "Full XP (200)"
+            },
+            {
+                "condition": "Bribe them (50 gp)",
+                "reward": "Safe passage + gang info"
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 80ft x 60ft underground dungeon chamber with stone dungeon walls. Dim torchlight. Graffiti on walls. Makeshift weapons. One main entrance. Entry via ladder from trapdoor above. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
+        "lair": false
+    },
+    {
+        "name": "Performer Troupe",
+        "level": 1,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 200,
+        "monsters": [
+            {
+                "name": "Performer",
+                "cr": 0.5,
+                "exp": 100,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-p#Performer",
+                "count": 2
+            }
+        ],
+        "attitude": "indifferent",
+        "personality": "dramatic",
+        "roomDescription": "Music and laughter echo ahead. Two colorfully dressed performers bow dramatically as you enter, but their smiles don't reach their eyes. Something about this 'performance' feels like a trap.",
+        "dmDescription": "These performers are actually thieves using entertainment as a distraction. One performs while the other attempts to pick pockets (DC 14 Perception to notice). If caught, they fight. They have: 55 gp (some stolen), fake gems, and real lock picks.",
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Kill both performers",
+                "reward": "Full XP (200)"
+            },
+            {
+                "condition": "Catch the thief in action",
+                "reward": "Full XP + confession"
+            },
+            {
+                "condition": "Watch the show and leave",
+                "reward": "No XP, lose 2d6 gp to pickpocket"
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 80ft underground dungeon chamber with stone dungeon walls. Dim torchlight. Tables and chairs. Atmospheric lighting. Entry through narrow tunnel. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
+        "lair": false
+    },
+    {
+        "name": "Myconid Colony",
+        "level": 1,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 200,
+        "monsters": [
+            {
+                "name": "Myconid Adult",
+                "cr": 0.5,
+                "exp": 100,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-m#MyconidAdult",
+                "count": 2
+            }
+        ],
+        "attitude": "indifferent",
+        "personality": "communal",
+        "roomDescription": "Towering mushroom-people stand in silent communion, spores drifting between them in visible clouds. They turn toward you slowly, releasing puffs of spores that carry meaning you almost understand.",
+        "dmDescription": "Myconids aren't inherently hostile. They communicate via Rapport Spores (willing targets can telepathically communicate). They seek help against 'the rotting ones' (zombies in another room). Helping them earns safe passage and healing spores.",
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Kill both myconids",
+                "reward": "Full XP (200)"
+            },
+            {
+                "condition": "Communicate and ally with them",
+                "reward": "50 XP + healing spores (1d8+2)"
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 120ft x 100ft underground mine tunnel with stone dungeon walls. Dim bioluminescent lighting. Spore-filled air. Bioluminescent lighting. Entry via collapsed section in ceiling. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
+        "lair": true
+    },
+    {
+        "name": "Black Bear Den",
+        "level": 1,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 200,
+        "monsters": [
+            {
+                "name": "Black Bear",
+                "cr": 0.5,
+                "exp": 100,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#BlackBear",
+                "count": 2
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "protective",
+        "roomDescription": "A mother bear rises from her nest, cubs tumbling behind her. She roars a warning, her mate emerging from the shadows. They're just protecting their home, but they won't let you pass.",
+        "dmDescription": "Bears are territorial but not evil. DC 15 Animal Handling calms them if no hostile actions taken. They have Multiattack. If one dies, the other becomes Reckless. Honey in their den: 10 gp worth (if brave enough to take it).",
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Kill both bears",
+                "reward": "Full XP (200)"
+            },
+            {
+                "condition": "Calm them with Animal Handling",
+                "reward": "Full XP + safe passage"
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 80ft underground dungeon cavern with rough stone walls. Dim torchlight. Honeycomb in corner. Bear cubs (non-combatants). Two exits. Entry through crumbling archway. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
+        "lair": true
+    },
+    {
+        "name": "Bone Heap",
+        "level": 1,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 260,
+        "monsters": [
+            {
+                "name": "Skeleton",
+                "cr": 0.25,
+                "exp": 50,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-s#Skeleton",
+                "count": 4
+            },
+            {
+                "name": "Crawling Claw",
+                "cr": 0,
+                "exp": 10,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-c#CrawlingClaw",
+                "count": 6
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "mindless",
+        "roomDescription": "Bones are piled high in this ossuary—femurs, ribs, and skulls stacked with disturbing care. As you watch, the pile begins to shift. Skeletons assemble themselves while severed hands skitter free.",
+        "dmDescription": "The undead animate when the room is entered or when bones are disturbed. Turn Undead is very effective here. A necromancer's journal buried in the bones explains the curse (DC 14 Investigation to find). Breaking the carved skull on the wall (AC 10, 15 HP) ends the animation.",
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Destroy all undead",
+                "reward": "Full XP (260)"
+            },
+            {
+                "condition": "Destroy the carved skull",
+                "reward": "Full XP + undead collapse"
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 100ft underground dungeon chamber with stone dungeon walls. Flickering candlelight. Carved skull on wall. Dim candlelight. Macabre decorations. Entry via spiral stairs in corner. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
+        "lair": false
+    },
+    {
+        "name": "The Whispering Statues",
+        "level": 1,
+        "type": "puzzle",
+        "difficulty": "low",
+        "roomDescription": "Three stone statues stand in alcoves along the walls—a warrior, a wizard, and a rogue. Each holds a different colored gem: red, blue, and green. A locked door bears three matching gem-shaped indentations.",
+        "dmDescription": "Simple color-matching puzzle. The statues whisper clues when approached: Warrior says 'Strength is red', Wizard says 'Magic is blue', Rogue says 'Stealth is green'. Players must place gems in the correct order based on the door's inscription: 'First comes might, then cunning, last comes power.' Solution: Red (top), Green (middle), Blue (bottom).",
+        "size": 1,
+        "puzzleDescription": "The door inscription reads: 'First comes might, then cunning, last comes power.' Each statue whispers a clue about their gem's color when approached.",
+        "dc": 10,
+        "solution": "Place the red gem (warrior/might) in the top slot, green gem (rogue/cunning) in the middle, and blue gem (wizard/power) in the bottom slot.",
+        "xpBudget": 100,
+        "penalty": "Incorrect placement causes a harmless flash of light and resets the gems to the statues.",
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 80ft x 80ft square stone chamber. Three alcoves along walls, each containing a stone statue. Locked ornate door on far wall. Dim magical lighting. Entry via corridor. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "The Runic Sequence",
+        "level": 1,
+        "type": "puzzle",
+        "difficulty": "low",
+        "roomDescription": "A circular platform in the center of the room is surrounded by eight stone pillars, each carved with a glowing rune. The runes pulse in a specific sequence, then go dark.",
+        "dmDescription": "Memory puzzle. The runes light up in sequence: Fire, Water, Earth, Air. Players must touch the pillars in the same order within 30 seconds. DC 10 Intelligence (Arcana) reveals the elemental nature of the runes. DC 12 Wisdom (Perception) to memorize the sequence on first viewing.",
+        "size": 1,
+        "puzzleDescription": "Eight pillars with elemental runes pulse in a specific sequence. Players must replicate the pattern by touching the pillars in the correct order.",
+        "dc": 12,
+        "solution": "Touch the pillars in order: Fire (south), Water (west), Earth (north), Air (east). The sequence repeats three times before going dark.",
+        "xpBudget": 125,
+        "penalty": "Touching the wrong pillar causes 1d4 force damage and resets the sequence.",
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 100ft circular chamber. Eight stone pillars arranged in a circle around central platform. Glowing runes on each pillar. Entry via stone archway. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "The Scales of Balance",
+        "level": 1,
+        "type": "puzzle",
+        "difficulty": "moderate",
+        "roomDescription": "An enormous bronze scale dominates the room, its two platforms perfectly level. Nearby pedestals hold various objects: a skull, a book, a sword, a crown, and a feather. An inscription reads: 'Balance truth with lies, life with death.'",
+        "dmDescription": "Weight-based logic puzzle. The scale must be balanced with opposing concepts. Solution: Skull (death) + Book (truth) on one side equals Sword (lies/violence) + Feather (life/lightness) on the other. DC 13 Intelligence (Investigation) to deduce the symbolic meanings. DC 15 Wisdom (Insight) for a hint about opposing pairs.",
+        "size": 1,
+        "puzzleDescription": "A large bronze scale must be balanced using symbolic objects. The inscription provides cryptic guidance about pairing opposites.",
+        "dc": 13,
+        "solution": "Place the skull and book on the left platform, and the sword and feather on the right platform. The crown is a red herring.",
+        "xpBudget": 200,
+        "penalty": "Incorrect placement causes the scale to tip violently, dealing 2d6 bludgeoning damage to anyone within 10 feet (DC 13 Dex save for half).",
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 120ft x 100ft rectangular stone chamber. Massive bronze scale in center. Five pedestals arranged in semicircle. Ornate inscription on wall. Entry via double doors. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "The Mirror Maze",
+        "level": 1,
+        "type": "puzzle",
+        "difficulty": "moderate",
+        "roomDescription": "The chamber is filled with standing mirrors arranged in a complex pattern. Your reflections multiply endlessly. A glowing orb sits on a pedestal at the far end, visible through the maze of glass.",
+        "dmDescription": "Navigation puzzle with illusion elements. Only one path through the mirrors is real—the others are illusions that lead to dead ends. DC 14 Intelligence (Investigation) to notice subtle differences in real vs. illusory mirrors (real mirrors show slight imperfections). DC 12 Wisdom (Perception) to hear echoes differently when near real passages. Players can also break mirrors (AC 13, 1 HP each) but each broken mirror releases a harmless but disorienting flash.",
+        "size": 2,
+        "puzzleDescription": "Navigate through a maze of mirrors, some real and some illusory, to reach the glowing orb. The correct path must be deduced through careful observation.",
+        "dc": 14,
+        "solution": "Follow the path where mirrors show slight imperfections in the reflection. The correct route: forward, left, forward, right, forward, left.",
+        "xpBudget": 225,
+        "penalty": "Walking into an illusory mirror causes disorientation (disadvantage on next ability check). Breaking more than 3 mirrors summons a hostile shadow (50 XP) that must be defeated.",
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 150ft x 120ft rectangular chamber filled with standing mirrors in maze pattern. Glowing orb on pedestal at far end. Reflective surfaces throughout. Entry via narrow corridor. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "The Celestial Alignment",
+        "level": 1,
+        "type": "puzzle",
+        "difficulty": "moderate",
+        "roomDescription": "A domed ceiling displays a star map with constellations slowly rotating. Below, a circular floor is divided into twelve sections, each marked with a zodiac symbol. Three movable stone markers rest at the room's edge.",
+        "dmDescription": "Astronomy-based pattern puzzle. Players must place the three markers on the floor sections that align with specific constellations currently visible in the ceiling. DC 13 Intelligence (Nature or Arcana) to identify the constellations. The correct positions change every minute as the ceiling rotates. Current alignment: The Warrior (Aries), The Scales (Libra), and The Archer (Sagittarius).",
+        "size": 1,
+        "puzzleDescription": "Align three stone markers with the zodiac symbols that match the constellations currently visible in the rotating star map above.",
+        "dc": 13,
+        "solution": "Place markers on the floor symbols that correspond to the three brightest constellations in the ceiling. The alignment must be completed before the ceiling completes another rotation (1 minute).",
+        "xpBudget": 200,
+        "penalty": "If the ceiling completes a full rotation before solving, the room fills with harmless but obscuring mist for 10 minutes, and the puzzle resets with new constellations.",
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft diameter circular chamber with domed ceiling showing star map. Floor divided into twelve zodiac sections. Three stone markers at edge. Mystical lighting from above. Entry via arched doorway. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "The Chessboard Trap",
+        "level": 1,
+        "type": "puzzle",
+        "difficulty": "high",
+        "roomDescription": "The floor is a massive black and white chessboard. Stone chess pieces, sized for humans, stand frozen in mid-game. A plaque reads: 'Complete the game in three moves, or become part of it.'",
+        "dmDescription": "Chess puzzle requiring actual chess knowledge. The board shows a position where white can checkmate in 3 moves. DC 15 Intelligence check to solve, or DC 12 if proficient in gaming sets. Solution: 1. Queen to H7 (check), 2. King moves (forced), 3. Queen to G7 or G8 (checkmate depending on king's move). Players who step on the board incorrectly become paralyzed until the puzzle is solved (DC 14 Wis save to resist).",
+        "size": 2,
+        "puzzleDescription": "Solve a chess puzzle by moving the giant stone pieces to achieve checkmate in exactly three moves. The board is enchanted to enforce the rules of chess.",
+        "dc": 15,
+        "solution": "Move the white queen to H7 (check), wait for the black king's forced response, then deliver checkmate with queen to G7 or G8. Players must physically move the stone pieces.",
+        "xpBudget": 300,
+        "penalty": "Making an illegal chess move or failing to checkmate in 3 moves causes the player who moved the piece to become paralyzed (DC 14 Wisdom save to resist, lasts until puzzle is solved or 1 hour).",
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 160ft x 160ft chamber with giant black and white chessboard floor. Human-sized stone chess pieces positioned mid-game. Ornate plaque on wall. High ceiling. Entry via corridor at corner. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "The Singing Crystals",
+        "level": 1,
+        "type": "puzzle",
+        "difficulty": "high",
+        "roomDescription": "Seven crystalline pillars rise from the floor, each humming at a different pitch. A musical staff is carved into the wall with five empty note positions. When touched, each crystal produces a clear tone.",
+        "dmDescription": "Musical pattern puzzle. Players must identify and play a specific melody by touching the crystals in the correct sequence. DC 14 Intelligence (Performance or Arcana) to recognize the melody pattern from the wall carving. DC 16 Wisdom (Perception) to notice that the crystals' natural hum already contains the answer. The melody is a simple five-note sequence: C-E-G-E-C (do-mi-sol-mi-do). Each crystal is labeled with arcane symbols that correspond to musical notes.",
+        "size": 1,
+        "puzzleDescription": "Decipher the musical notation carved on the wall and play the correct melody by touching seven crystalline pillars in the proper sequence.",
+        "dc": 14,
+        "solution": "Touch the crystals in this order: C (first), E (third), G (fifth), E (third), C (first). The wall carving shows the notes, and the crystals are labeled with arcane symbols that translate to musical notes.",
+        "xpBudget": 275,
+        "penalty": "Playing an incorrect sequence causes a discordant blast that deals 2d6 thunder damage to all creatures in the room (DC 14 Constitution save for half) and resets the puzzle.",
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 90ft x 90ft octagonal chamber. Seven crystalline pillars arranged in a circle, each glowing with different colors. Musical staff carved into wall. Magical lighting from crystals. Entry via arched passage. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "The Timekeeper's Riddle",
+        "level": 1,
+        "type": "puzzle",
+        "difficulty": "high",
+        "roomDescription": "An ancient grandfather clock stands against the wall, its hands frozen at different times. Four hourglasses of varying sizes sit on a nearby table. An inscription reads: 'Set the clock to the hour when all sands have fallen, yet none have begun.'",
+        "dmDescription": "Logic riddle with time manipulation. The answer is midnight (12:00), representing the moment between one day ending and another beginning—when all of yesterday has 'fallen' but today hasn't 'begun'. DC 16 Intelligence (Investigation) to solve the riddle. The hourglasses are red herrings but can be used to measure time if players want to experiment. Players must physically move the clock hands to 12:00.",
+        "size": 1,
+        "puzzleDescription": "Solve the temporal riddle and set the grandfather clock to the correct time. The hourglasses may provide clues or may be distractions.",
+        "dc": 16,
+        "solution": "Set both clock hands to 12 (midnight). The riddle refers to the transition point between days—midnight is when the previous day has ended ('all sands have fallen') but the new day hasn't truly begun ('none have begun').",
+        "xpBudget": 300,
+        "penalty": "Setting the clock to the wrong time causes it to chime loudly, alerting nearby monsters (random encounter check) and aging the character who touched it by 1d4 years (cosmetic only, reversible with Greater Restoration).",
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 80ft x 100ft rectangular chamber. Ornate grandfather clock against wall. Table with four hourglasses of different sizes. Inscription carved in stone. Dim candlelight. Entry via wooden door. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "Abandoned Supply Cache",
+        "level": 1,
+        "type": "treasure",
+        "difficulty": "low",
+        "roomDescription": "A dusty storage room contains several wooden crates marked with faded merchant guild symbols. Most have been pried open and looted, but one remains sealed.",
+        "dmDescription": "Simple treasure with no complications. The sealed crate contains basic adventuring supplies that were overlooked by previous looters. DC 10 Investigation to find the intact crate among the debris.",
+        "size": 1,
+        "items": [
+            "50 feet of Hempen Rope",
+            "Tinderbox",
+            "2 Torches",
+            "Waterskin"
+        ],
+        "goldValue": 15,
+        "hasTrap": false,
+        "isLocked": false,
+        "isMimic": false,
+        "xpBudget": 50,
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 80ft x 80ft storage room. Broken wooden crates scattered throughout. One intact sealed crate. Dusty stone floor. Dim lighting. Entry via corridor. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "The Offering Altar",
+        "level": 1,
+        "type": "treasure",
+        "difficulty": "low",
+        "roomDescription": "A small shrine to a forgotten deity stands in an alcove. Tarnished silver coins and small trinkets are scattered across the altar's surface, left as offerings by long-dead worshippers.",
+        "dmDescription": "Unguarded treasure with a moral choice. Taking the offerings is not trapped, but a DC 12 Religion check reveals this was a shrine to a god of fortune. Characters who leave an offering of their own (any coin) receive a blessing: advantage on their next ability check within 24 hours.",
+        "size": 1,
+        "items": [
+            "Silver Holy Symbol (worth 25 gp)"
+        ],
+        "goldValue": 35,
+        "hasTrap": false,
+        "isLocked": false,
+        "isMimic": false,
+        "xpBudget": 75,
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 60ft x 60ft alcove chamber. Stone altar in center with religious carvings. Scattered coins and trinkets. Faded murals on walls. Soft divine lighting. Entry via arched doorway. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "Smuggler's Stash",
+        "level": 1,
+        "type": "treasure",
+        "difficulty": "moderate",
+        "roomDescription": "Behind a loose stone in the wall, you discover a hidden compartment. Inside is a leather satchel containing coins and a sealed letter.",
+        "dmDescription": "Hidden treasure requiring discovery. DC 14 Investigation to find the loose stone. The letter is written in Thieves' Cant and contains information about a larger smuggling operation (potential plot hook). The coins are a mix of legitimate currency and some counterfeit pieces (DC 13 Investigation to notice).",
+        "size": 1,
+        "items": [
+            "Sealed Letter (plot hook)",
+            "Thieves' Tools"
+        ],
+        "goldValue": 45,
+        "hasTrap": false,
+        "isLocked": false,
+        "isMimic": false,
+        "xpBudget": 100,
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 70ft x 70ft stone corridor section. Loose stone in wall (hidden compartment). Rough hewn walls. Dim torchlight. Entry and exit via corridors. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "The Locked Coffer",
+        "level": 1,
+        "type": "treasure",
+        "difficulty": "moderate",
+        "roomDescription": "An iron-bound wooden chest sits on a stone pedestal. A sturdy lock secures the lid, and the wood shows signs of age but remains solid.",
+        "dmDescription": "Locked treasure with no trap. DC 15 to pick the lock with thieves' tools, or DC 17 Strength check to break it open (alerts nearby creatures on a roll of 15+). The chest contains a small fortune in mixed coins and a minor magic item.",
+        "size": 1,
+        "items": [
+            "Potion of Healing",
+            "Dagger +1"
+        ],
+        "goldValue": 60,
+        "hasTrap": false,
+        "isLocked": true,
+        "lockDC": 15,
+        "isMimic": false,
+        "xpBudget": 125,
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 80ft x 80ft square chamber. Stone pedestal in center with iron-bound chest. Empty weapon racks on walls. Torchlight. Entry via double doors. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "The Poisoned Prize",
+        "level": 1,
+        "type": "treasure",
+        "difficulty": "moderate",
+        "roomDescription": "A ornate jewelry box rests on a velvet cushion atop a marble stand. The box is slightly ajar, revealing a glint of gold within.",
+        "dmDescription": "Trapped treasure. The box lid is coated with contact poison (DC 13 Investigation to notice discoloration, DC 14 Perception to smell faint almond scent). Opening without precautions: DC 13 Constitution save or take 2d4 poison damage and become poisoned for 1 hour. The poison can be neutralized with water or carefully wiped off.",
+        "size": 1,
+        "items": [
+            "Gold Necklace (worth 75 gp)",
+            "3 Gemstones (10 gp each)"
+        ],
+        "goldValue": 25,
+        "hasTrap": true,
+        "trapDescription": "Contact poison on the box lid (DC 13 Con save or 2d4 poison damage + poisoned condition for 1 hour)",
+        "isLocked": false,
+        "isMimic": false,
+        "xpBudget": 150,
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 70ft x 70ft octagonal chamber. Marble stand in center with velvet cushion. Ornate jewelry box. Decorative pillars. Soft lighting. Entry via corridor. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "The Wizard's Lockbox",
+        "level": 1,
+        "type": "treasure",
+        "difficulty": "moderate",
+        "roomDescription": "A small metal box covered in arcane runes sits on a desk scattered with burned parchments and broken quills. The box hums with faint magical energy.",
+        "dmDescription": "Magically locked treasure. The box requires either a successful DC 14 Arcana check to decipher the opening sequence, or a Knock spell. Attempting to force it open triggers a magical alarm (audible within 300 feet). Contains a spellbook with 1st level spells and a scroll.",
+        "size": 1,
+        "items": [
+            "Spellbook (contains Detect Magic, Mage Armor, Shield)",
+            "Spell Scroll of Identify"
+        ],
+        "goldValue": 30,
+        "hasTrap": false,
+        "isLocked": true,
+        "lockDC": 14,
+        "isMimic": false,
+        "xpBudget": 175,
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 90ft x 80ft study chamber. Desk covered in burned parchments. Bookshelves (mostly empty). Metal lockbox with glowing runes. Magical lighting. Entry via wooden door. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "The Collapsing Alcove",
+        "level": 1,
+        "type": "treasure",
+        "difficulty": "high",
+        "roomDescription": "A gilded chest sits in a deep alcove. The ceiling above shows cracks, and small pebbles occasionally fall. The chest gleams invitingly in the torchlight.",
+        "dmDescription": "Trapped treasure with structural hazard. The alcove ceiling is unstable. Taking the chest without proper support triggers a collapse. DC 15 Investigation to notice the danger, DC 14 Perception to hear creaking. Solution: use pitons/rope to brace the ceiling, or carefully remove treasure piece by piece (takes 10 minutes). Triggering collapse: DC 15 Dex save or take 3d6 bludgeoning damage, chest takes damage and may break open.",
+        "size": 1,
+        "items": [
+            "Chainmail Armor",
+            "Longsword",
+            "Shield with noble heraldry"
+        ],
+        "goldValue": 85,
+        "hasTrap": true,
+        "trapDescription": "Unstable ceiling collapses when chest is moved (DC 15 Dex save or 3d6 bludgeoning damage)",
+        "isLocked": false,
+        "isMimic": false,
+        "xpBudget": 200,
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 80ft chamber with deep alcove. Gilded chest in alcove. Cracked ceiling with fallen debris. Unstable stonework. Dim lighting. Entry via corridor. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "The Needle Trap Chest",
+        "level": 1,
+        "type": "treasure",
+        "difficulty": "high",
+        "roomDescription": "An elegant wooden chest with brass fittings sits against the wall. The lock mechanism appears complex and well-maintained despite the dungeon's age.",
+        "dmDescription": "Locked and trapped treasure. DC 15 Investigation to spot tiny holes around the lock. DC 16 to pick the lock safely, or DC 14 to disarm the trap first. Failure triggers poisoned needles: DC 14 Dex save or take 1d4 piercing + 2d6 poison damage. The chest contains valuable trade goods and coins.",
+        "size": 1,
+        "items": [
+            "Silk Cloth (worth 50 gp)",
+            "Spice Pouch (worth 25 gp)",
+            "Silver Mirror (worth 30 gp)"
+        ],
+        "goldValue": 95,
+        "hasTrap": true,
+        "trapDescription": "Poisoned needles in lock mechanism (DC 14 Dex save or 1d4 piercing + 2d6 poison damage)",
+        "isLocked": true,
+        "lockDC": 16,
+        "isMimic": false,
+        "xpBudget": 225,
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 80ft x 80ft square chamber. Elegant wooden chest against wall. Brass fittings. Stone floor. Torch sconces. Entry via corridor. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "The Cursed Hoard",
+        "level": 1,
+        "type": "treasure",
+        "difficulty": "high",
+        "roomDescription": "Gold coins, gems, and jewelry are piled carelessly in the corner of the room, glittering in the dim light. It seems too good to be true—and it is.",
+        "dmDescription": "Cursed treasure. DC 15 Arcana or Religion to sense the curse. The treasure is genuine but cursed by a vengeful spirit. Anyone who takes treasure without performing a cleansing ritual (DC 13 Religion to know, requires holy water or Remove Curse) suffers disadvantage on saving throws for 24 hours. The curse can be identified with Detect Magic.",
+        "size": 1,
+        "items": [
+            "Cursed Gold Ring (worth 40 gp, curse removable)",
+            "5 Gemstones (20 gp each)"
+        ],
+        "goldValue": 120,
+        "hasTrap": false,
+        "isLocked": false,
+        "isMimic": false,
+        "xpBudget": 250,
+        "winConditions": [
+            {
+                "condition": "Take treasure after cleansing the curse",
+                "reward": "Full treasure value + 250 XP"
+            },
+            {
+                "condition": "Take treasure without cleansing",
+                "reward": "Full treasure but suffer curse (disadvantage on saves for 24 hours)"
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 90ft x 90ft chamber. Pile of gold and gems in corner. Faint ghostly aura (visible with detect magic). Dark atmosphere. Entry via archway. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "The Decoy Vault",
+        "level": 1,
+        "type": "treasure",
+        "difficulty": "high",
+        "roomDescription": "A reinforced iron vault door stands ajar, revealing a small chamber beyond. Inside, a single ornate chest sits on a raised platform, illuminated by a beam of light from above.",
+        "dmDescription": "Elaborate trap disguised as treasure. The chest is a decoy—opening it triggers a poison gas trap (DC 15 Con save or take 3d6 poison damage and become poisoned for 1 hour). The REAL treasure is hidden beneath the platform (DC 17 Investigation to find the hidden compartment). The decoy chest contains only copper pieces painted gold.",
+        "size": 1,
+        "items": [
+            "Bag of Holding (hidden)",
+            "Potion of Greater Healing (hidden)",
+            "Masterwork Thieves' Tools (hidden)"
+        ],
+        "goldValue": 75,
+        "hasTrap": true,
+        "trapDescription": "Poison gas trap on decoy chest (DC 15 Con save or 3d6 poison damage + poisoned for 1 hour). Real treasure is hidden beneath platform.",
+        "isLocked": false,
+        "isMimic": false,
+        "xpBudget": 275,
+        "winConditions": [
+            {
+                "condition": "Find the hidden compartment without triggering the trap",
+                "reward": "Full XP + all treasure"
+            },
+            {
+                "condition": "Trigger the trap but survive and find the real treasure",
+                "reward": "Half XP + all treasure"
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 100ft vault chamber. Iron vault door. Raised platform with ornate chest. Beam of light from above. Hidden compartment beneath platform. Entry via reinforced corridor. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "The Pressure Plate Gallery",
+        "level": 1,
+        "type": "exploration",
+        "difficulty": "low",
+        "roomDescription": "A long corridor stretches ahead, its stone floor covered in dust and debris. Faded murals depicting ancient battles line the walls.",
+        "dmDescription": "Simple trap room with hidden door. Three pressure plates are concealed beneath the dust (DC 12 Perception to spot, DC 10 Investigation to identify as traps). Stepping on a plate triggers a dart trap (DC 12 Dex save or 1d4 piercing damage). A hidden door in the east wall (DC 13 Investigation) leads to a shortcut. The murals contain clues: warriors stepping carefully between marked stones.",
+        "size": 1,
+        "items": [
+            "Shortcut passage (saves time)",
+            "Ancient coin (5 gp) near hidden door"
+        ],
+        "traps": [
+            "3 pressure plates with dart traps (DC 12 Dex save or 1d4 piercing damage each)"
+        ],
+        "secretDoors": true,
+        "xpBudget": 75,
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 120ft x 40ft corridor. Dusty stone floor with three hidden pressure plates. Faded battle murals on walls. Hidden door in east wall. Dim lighting. Entry and exit via corridors. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "The Flooded Passage",
+        "level": 1,
+        "type": "exploration",
+        "difficulty": "low",
+        "roomDescription": "Water seeps through cracks in the ceiling, creating a shallow pool that covers the floor. The sound of dripping echoes throughout the chamber.",
+        "dmDescription": "Environmental hazard with hidden cache. The water is only 6 inches deep but obscures a spiked pit trap in the center (DC 13 Perception to notice the water is deeper there, DC 14 Investigation to spot the false floor). Falling in: DC 13 Dex save or 2d6 piercing damage. A waterproof chest is hidden beneath a loose stone in the north wall (DC 15 Investigation), containing minor treasure.",
+        "size": 1,
+        "items": [
+            "Waterproof Pouch with 25 gp",
+            "Potion of Water Breathing"
+        ],
+        "traps": [
+            "Spiked pit trap concealed by water (DC 13 Dex save or 2d6 piercing damage)"
+        ],
+        "secretDoors": false,
+        "xpBudget": 100,
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 80ft x 80ft chamber. Shallow water covering floor. Dripping water from ceiling. Hidden spiked pit in center. Loose stone in north wall. Damp atmosphere. Entry via corridor. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "The Statue Chamber",
+        "level": 1,
+        "type": "exploration",
+        "difficulty": "moderate",
+        "roomDescription": "Four stone statues of armored warriors stand in the corners of the room, their stone eyes seeming to follow your movement. A large ornate door dominates the far wall.",
+        "dmDescription": "Trap room with multiple secrets. The statues are pressure-sensitive—touching one triggers a poison gas vent (DC 14 Con save or 2d4 poison damage + poisoned for 10 minutes). DC 14 Investigation reveals the statues can be rotated. Rotating all four to face the center disables the trap AND reveals a hidden compartment in the floor (contains treasure). A secret door behind the northeast statue (DC 16 Investigation) leads to a side passage.",
+        "size": 1,
+        "items": [
+            "Silver Dagger (worth 30 gp)",
+            "Map fragment showing part of the dungeon"
+        ],
+        "traps": [
+            "Poison gas vents triggered by touching statues (DC 14 Con save or 2d4 poison damage + poisoned)"
+        ],
+        "secretDoors": true,
+        "xpBudget": 150,
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 100ft square chamber. Four stone warrior statues in corners. Ornate door on far wall. Hidden floor compartment in center. Secret door behind northeast statue. Torch lighting. Entry via corridor. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "The Crumbling Bridge",
+        "level": 1,
+        "type": "exploration",
+        "difficulty": "moderate",
+        "roomDescription": "A stone bridge spans a dark chasm. Several sections of the bridge show cracks and missing stones. The sound of rushing water echoes from far below.",
+        "dmDescription": "Navigation hazard with hidden path. The bridge has three weak sections (DC 13 Perception to identify). Walking on weak sections: DC 14 Dex save or fall through (catch yourself on edge, DC 12 Athletics to climb back up, or fall 30 feet into water below—3d6 bludgeoning damage, DC 13 Athletics to swim). A hidden ledge path along the left wall (DC 15 Investigation) allows safe passage. The ledge also contains a skeleton with a pouch of gems.",
+        "size": 1,
+        "items": [
+            "3 Gemstones (15 gp each) on hidden ledge",
+            "Climbing Kit from skeleton"
+        ],
+        "traps": [
+            "Weak bridge sections (DC 14 Dex save or fall 30 feet for 3d6 damage)"
+        ],
+        "secretDoors": false,
+        "xpBudget": 175,
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 120ft x 60ft chasm chamber. Stone bridge crossing center with cracked sections. Dark chasm below. Hidden ledge path along left wall. Skeleton on ledge. Rushing water sound. Entry and exit via corridors. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "The Mirror Hall",
+        "level": 1,
+        "type": "exploration",
+        "difficulty": "moderate",
+        "roomDescription": "The walls are lined with tall mirrors in ornate frames. Your reflections seem slightly off, moving a fraction of a second after you do.",
+        "dmDescription": "Illusion-based trap room. One mirror is actually a secret door (DC 16 Investigation to find—it doesn't show a reflection). Three mirrors are trapped with magical symbols (DC 14 Arcana to identify). Looking directly at a trapped mirror: DC 14 Wisdom save or become frightened for 1 minute. Breaking a trapped mirror summons a hostile shadow (50 XP). The secret mirror-door leads to a treasure room.",
+        "size": 1,
+        "items": [
+            "Treasure room beyond secret door: 75 gp, Spell Scroll of Mirror Image"
+        ],
+        "traps": [
+            "3 mirrors with fear symbols (DC 14 Wis save or frightened for 1 minute)",
+            "Breaking trapped mirrors summons shadows"
+        ],
+        "secretDoors": true,
+        "xpBudget": 200,
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 90ft x 90ft rectangular chamber. Tall mirrors in ornate frames along walls. One mirror is actually a secret door. Magical symbols on some mirrors. Eerie lighting. Entry via corridor. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "The Trapped Library",
+        "level": 1,
+        "type": "exploration",
+        "difficulty": "high",
+        "roomDescription": "Rows of ancient bookshelves fill this dusty chamber. Most books have crumbled to dust, but a few intact tomes remain. A reading desk sits in the corner.",
+        "dmDescription": "Complex trap room with valuable rewards. Five books are trapped with explosive runes (DC 15 Investigation to spot faint glowing marks, DC 16 Arcana to identify). Opening a trapped book: DC 15 Dex save or 3d6 fire damage. Two books are safe and valuable (History and Arcana tomes worth 50 gp each). A hidden compartment in the desk (DC 17 Investigation) contains a spellbook. The north bookshelf is actually a secret rotating door (DC 18 Investigation).",
+        "size": 1,
+        "items": [
+            "2 valuable tomes (50 gp each)",
+            "Spellbook with 3 first-level spells",
+            "Scroll of Comprehend Languages"
+        ],
+        "traps": [
+            "5 books with explosive runes (DC 15 Dex save or 3d6 fire damage each)"
+        ],
+        "secretDoors": true,
+        "xpBudget": 250,
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 100ft library chamber. Rows of ancient bookshelves. Reading desk in corner with hidden compartment. North bookshelf is secret rotating door. Dusty atmosphere. Dim magical lighting. Entry via wooden door. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "The Blade Corridor",
+        "level": 1,
+        "type": "exploration",
+        "difficulty": "high",
+        "roomDescription": "Narrow slits line both walls of this corridor. The floor is stained with old, dark marks. At the far end, you can see what appears to be a valuable gem on a pedestal.",
+        "dmDescription": "Classic blade trap with hidden bypass. Walking down the corridor triggers swinging blade traps from the wall slits (DC 15 Perception to spot the trigger mechanism, DC 16 Dex save or 2d8 slashing damage). The gem is fake (DC 14 Investigation to realize). The REAL treasure is in a hidden alcove behind a loose brick (DC 18 Investigation) halfway down the corridor. A secret passage in the ceiling (DC 17 Investigation, requires climbing) bypasses the entire trap.",
+        "size": 1,
+        "items": [
+            "Bag of 100 gp in hidden alcove",
+            "Ring of Feather Falling"
+        ],
+        "traps": [
+            "Swinging blade traps (DC 16 Dex save or 2d8 slashing damage)",
+            "Fake gem is a distraction"
+        ],
+        "secretDoors": true,
+        "xpBudget": 275,
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 30ft narrow corridor. Slits in both walls for blade traps. Pedestal with fake gem at far end. Hidden alcove with loose brick. Secret ceiling passage. Dark stains on floor. Entry and exit via corridors. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "The Shifting Tiles",
+        "level": 1,
+        "type": "exploration",
+        "difficulty": "high",
+        "roomDescription": "The floor is a mosaic of colored tiles—red, blue, green, and white—arranged in a complex pattern. The far wall has a sealed door with four colored gems above it.",
+        "dmDescription": "Pattern-based trap puzzle. Stepping on the wrong colored tiles triggers different traps: Red = fire jet (2d6 fire damage, DC 15 Dex save), Blue = ice spray (2d6 cold damage, DC 15 Con save), Green = poison gas (2d6 poison damage, DC 15 Con save). White tiles are safe. The pattern to cross safely is hidden in the gem arrangement above the door (DC 16 Investigation to decipher). A hidden panel in the west wall (DC 18 Investigation) contains a map showing the safe path.",
+        "size": 1,
+        "items": [
+            "Map of safe path",
+            "Boots of Safe Passage (advantage on saves vs. traps for 24 hours, one use)"
+        ],
+        "traps": [
+            "Colored tile traps: fire, ice, and poison (DC 15 saves or 2d6 damage of respective type)"
+        ],
+        "secretDoors": true,
+        "xpBudget": 300,
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 120ft x 100ft chamber. Floor covered in colored mosaic tiles (red, blue, green, white pattern). Sealed door with four colored gems on far wall. Hidden panel in west wall. Magical lighting. Entry via corridor. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "The Collapsed Tunnel",
+        "level": 1,
+        "type": "exploration",
+        "difficulty": "high",
+        "roomDescription": "A cave-in has partially blocked this passage. Rubble and broken timbers are piled high, leaving only a narrow gap near the ceiling. The debris looks unstable.",
+        "dmDescription": "Environmental hazard with multiple solutions. Climbing over the rubble: DC 15 Athletics, but risks triggering a collapse (DC 16 Dex save or 3d6 bludgeoning damage from falling rocks). A hidden side passage (DC 17 Investigation) goes around the collapse. Alternatively, carefully clearing the rubble takes 1 hour but reveals a skeleton with treasure. Behind the rubble is a secret room (DC 18 Investigation to find the hidden door in the debris).",
+        "size": 1,
+        "items": [
+            "Skeleton has Potion of Greater Healing and 50 gp",
+            "Secret room contains a +1 Shield and map fragment"
+        ],
+        "traps": [
+            "Unstable rubble (DC 16 Dex save or 3d6 bludgeoning damage if collapse is triggered)"
+        ],
+        "secretDoors": true,
+        "xpBudget": 275,
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 80ft collapsed tunnel. Large pile of rubble and broken timbers. Narrow gap near ceiling. Hidden side passage around collapse. Secret door in debris. Skeleton buried in rubble. Dusty atmosphere. Entry and exit via tunnels. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "The Arcane Laboratory",
+        "level": 1,
+        "type": "exploration",
+        "difficulty": "high",
+        "roomDescription": "This chamber was once a wizard's workshop. Broken alchemical equipment litters the tables, and strange symbols are chalked on the floor. A faint magical hum fills the air.",
+        "dmDescription": "Magical trap room with research rewards. Three magic circles on the floor are still active (DC 16 Arcana to identify). Stepping in a circle triggers a random effect: teleport to another circle, 2d6 force damage, or temporary blindness (DC 15 Con save). A hidden safe behind a loose brick (DC 18 Investigation) contains valuable spell components and scrolls. The wizard's journal (DC 15 Investigation to find under debris) reveals the safe circles and contains research notes worth 100 gp to the right buyer.",
+        "size": 1,
+        "items": [
+            "Spell components worth 75 gp",
+            "2 Spell Scrolls (1st level)",
+            "Wizard's research journal (100 gp value)",
+            "Wand of Magic Detection (10 charges)"
+        ],
+        "traps": [
+            "3 active magic circles with random effects (teleport, 2d6 force damage, or blindness)"
+        ],
+        "secretDoors": true,
+        "xpBudget": 300,
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 110ft x 110ft laboratory chamber. Tables with broken alchemical equipment. Three glowing magic circles on floor. Chalk symbols throughout. Hidden safe in wall. Scattered debris and papers. Magical lighting. Entry via reinforced door. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "The Abandoned Guard Post",
+        "level": 1,
+        "type": "rest",
+        "difficulty": "low",
+        "roomDescription": "A small stone chamber with arrow slits in the walls. Broken furniture and rusted weapons suggest this was once a guard station. The room is drafty but defensible.",
+        "dmDescription": "Poor shelter quality due to drafts and lack of comfort. The arrow slits provide good visibility of approaching threats (advantage on Perception checks while resting here). The door can be barricaded (DC 10 Athletics) to provide warning if opened. No healing bonus.",
+        "size": 1,
+        "shelterQuality": "poor",
+        "healingBonus": false,
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 60ft x 60ft square guard post. Arrow slits in walls. Broken furniture and rusted weapons. Stone floor. Single reinforceable door. Dim lighting. Entry via corridor. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "The Hidden Alcove",
+        "level": 1,
+        "type": "rest",
+        "difficulty": "low",
+        "roomDescription": "A narrow alcove concealed behind a fallen tapestry. The space is cramped but dry, with enough room for a few people to rest uncomfortably.",
+        "dmDescription": "Poor shelter due to cramped conditions. However, the hidden nature provides security—enemies passing by have disadvantage on Perception checks to notice the party. DC 12 Investigation to find this alcove initially. No healing bonus but safe from random encounters.",
+        "size": 1,
+        "shelterQuality": "poor",
+        "healingBonus": false,
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 40ft x 30ft narrow alcove. Fallen tapestry concealing entrance. Cramped space. Dry stone walls. Very dim lighting. Hidden from main corridor. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "The Old Barracks",
+        "level": 1,
+        "type": "rest",
+        "difficulty": "moderate",
+        "roomDescription": "A former sleeping quarters with several intact stone bunks. Moth-eaten blankets and straw mattresses remain, surprisingly dry despite the dungeon's dampness. A small fireplace sits cold in the corner.",
+        "dmDescription": "Good shelter quality. The fireplace can be lit safely (no smoke escapes to alert enemies). Intact bunks provide reasonable comfort. The door is sturdy and can be locked from inside (DC 15 to break down). Characters gain advantage on Constitution saves during short rests here. No healing bonus but comfortable rest.",
+        "size": 1,
+        "shelterQuality": "good",
+        "healingBonus": false,
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 80ft barracks chamber. Multiple stone bunks along walls. Fireplace in corner. Moth-eaten blankets. Straw mattresses. Lockable door. Warm lighting from fireplace. Entry via reinforced door. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "The Sacred Spring",
+        "level": 1,
+        "type": "rest",
+        "difficulty": "moderate",
+        "roomDescription": "A natural spring bubbles up from the floor, filling a small pool with crystal-clear water. Ancient carvings on the walls depict healing rituals. The air feels fresh and pure, a stark contrast to the stale dungeon atmosphere.",
+        "dmDescription": "Good shelter with healing bonus. The spring water has minor restorative properties—drinking it grants advantage on one Hit Die rolled during a short rest. DC 13 Religion check reveals this was a shrine to a healing deity. The room has a peaceful aura that discourages violence (hostile creatures must succeed on DC 12 Wisdom save to attack here). Provides healing bonus.",
+        "size": 1,
+        "shelterQuality": "good",
+        "healingBonus": true,
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 80ft x 80ft natural cavern. Crystal-clear spring pool in center. Ancient healing carvings on walls. Fresh atmosphere. Soft blue-green lighting from water. Peaceful aura. Entry via natural passage. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "The Sealed Sanctuary",
+        "level": 1,
+        "type": "rest",
+        "difficulty": "high",
+        "roomDescription": "A reinforced chamber with thick stone walls and a heavy iron door. Magical wards glow faintly around the entrance. Inside, the room is furnished with preserved bedding, a small table, and emergency supplies. This was clearly designed as a safe haven.",
+        "dmDescription": "Secure shelter with healing bonus. The magical wards alert the party if anything approaches within 60 feet (no surprise attacks possible). The door can be sealed from inside and is nearly impregnable (DC 20 to break, immune to lockpicking from outside). Emergency supplies include 2 days of rations and a Potion of Healing. The wards provide a calming effect—characters regain maximum Hit Dice during short rests and can benefit from a long rest in half the normal time (4 hours). Provides significant healing bonus.",
+        "size": 1,
+        "shelterQuality": "secure",
+        "healingBonus": true,
+        "xpBudget": 100,
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 90ft x 90ft reinforced sanctuary. Thick stone walls. Heavy iron door with glowing magical wards. Preserved bedding and furniture. Small table with emergency supplies. Soft magical lighting. Peaceful atmosphere. Entry via warded doorway. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "The Lost Merchant",
+        "level": 1,
+        "type": "social",
+        "difficulty": "low",
+        "roomDescription": "A portly halfling sits dejectedly on a broken crate, surrounded by scattered trade goods. He looks up hopefully as you approach.",
+        "dmDescription": "Friendly merchant named Wimble Tosscoin who got separated from his caravan. He's willing to trade his remaining goods at a discount (20% off normal prices) in exchange for an escort to the surface or information about safe routes. He has: 2 Potions of Healing (40 gp each), Rope (50 ft), Rations (5 days). If helped, he'll give the party a token good for a future discount at his shop in Waterdeep.",
+        "size": 1,
+        "monsters": [
+            {
+                "name": "Wimble Tosscoin (Halfling Merchant)",
+                "count": 1,
+                "cr": 0,
+                "exp": 0,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/sources/dnd/dmg-2024/dms-toolbox#Commoner"
+            }
+        ],
+        "attitude": "friendly",
+        "personality": "nervous but hopeful",
+        "tradeGoods": [
+            "2 Potions of Healing (40 gp each)",
+            "Rope (50 ft, 1 gp)",
+            "Rations (5 days, 2 gp)"
+        ],
+        "questHook": "Escort to surface or provide map/directions. Reward: 50 gp + future shop discount token",
+        "xpBudget": 50,
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 70ft x 70ft chamber. Broken crates and scattered trade goods. Halfling merchant sitting dejectedly. Dim lighting. Entry via corridor. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "The Suspicious Scouts",
+        "level": 1,
+        "type": "social",
+        "difficulty": "low",
+        "roomDescription": "Two human scouts in worn leather armor eye you warily from across the room. Their hands rest near their weapons, but they haven't drawn them yet.",
+        "dmDescription": "Indifferent scouts (Theron and Mira) from a rival adventuring party. They're mapping the dungeon and see the party as competition. DC 12 Persuasion to convince them to share information (they know about a nearby trap). DC 14 Intimidation to make them leave. If attacked, they flee after taking any damage. They might become allies if treated well (future encounter potential).",
+        "size": 1,
+        "monsters": [
+            {
+                "name": "Human Scout",
+                "count": 2,
+                "cr": 0.5,
+                "exp": 100,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/monsters/17007-scout"
+            }
+        ],
+        "attitude": "indifferent",
+        "personality": "cautious and competitive",
+        "xpBudget": 100,
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 80ft x 80ft chamber. Two scouts in defensive positions. Mapping equipment visible. Tense atmosphere. Entry via corridor. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "The Goblin Deserter",
+        "level": 1,
+        "type": "social",
+        "difficulty": "moderate",
+        "roomDescription": "A lone goblin huddles in the corner, clutching a crude map. Unlike most goblins, this one doesn't immediately attack. Instead, it raises its hands in a gesture of peace.",
+        "dmDescription": "Friendly goblin named Skrix who deserted from a larger goblin warband. He's terrified of his former boss and willing to trade information for protection or safe passage. DC 11 Persuasion to gain his trust. He knows: location of goblin lair (3 rooms ahead), number of goblins (8 total), and the boss's weakness (afraid of fire). He'll offer his crude map showing shortcuts through this level. If treated kindly, he might join as a temporary guide.",
+        "size": 1,
+        "monsters": [
+            {
+                "name": "Skrix (Goblin Deserter)",
+                "count": 1,
+                "cr": 0.25,
+                "exp": 50,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/monsters/16907-goblin"
+            }
+        ],
+        "attitude": "friendly",
+        "personality": "fearful but helpful",
+        "questHook": "Wants protection from goblin warband. Offers intelligence and map in exchange for safe passage or help defeating his former boss.",
+        "xpBudget": 125,
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 60ft x 60ft corner chamber. Goblin huddled in corner with crude map. Non-threatening posture. Dim lighting. Entry via corridor. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "The Dwarven Prospector",
+        "level": 1,
+        "type": "social",
+        "difficulty": "moderate",
+        "roomDescription": "A grizzled dwarf with a pickaxe examines the walls intently, muttering about 'promising veins.' He barely acknowledges your presence.",
+        "dmDescription": "Indifferent dwarf prospector named Thorin Ironseam. He's searching for valuable ore deposits and views the party as a distraction. DC 13 Persuasion to get him talking. He knows about secret passages (DC 15 Persuasion to share) and has found some gemstones he might trade (3 gems worth 25 gp each, will sell for 20 gp each or trade for mining equipment). If given ale or mining tools, becomes friendly and shares more information.",
+        "size": 1,
+        "monsters": [
+            {
+                "name": "Thorin Ironseam (Dwarf Prospector)",
+                "count": 1,
+                "cr": 0.5,
+                "exp": 100,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/sources/dnd/dmg-2024/dms-toolbox#Commoner"
+            }
+        ],
+        "attitude": "indifferent",
+        "personality": "gruff and focused",
+        "tradeGoods": [
+            "3 Gemstones (20 gp each)",
+            "Information about secret passages"
+        ],
+        "xpBudget": 150,
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 90ft x 80ft chamber. Dwarf examining walls with pickaxe. Mining equipment scattered. Rock samples. Torchlight. Entry via corridor. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "The Trapped Wizard",
+        "level": 1,
+        "type": "social",
+        "difficulty": "moderate",
+        "roomDescription": "An elderly human wizard stands within a glowing magical circle on the floor, unable to step outside its bounds. He calls out for assistance.",
+        "dmDescription": "Friendly wizard named Aldric Moonwhisper trapped by his own failed teleportation spell. DC 13 Arcana to understand the circle, DC 14 to safely dispel it. If freed, he's grateful and offers: choice of 1 spell scroll (1st level), knowledge about upcoming encounters, or a one-time Sending spell to contact someone. He warns about a dangerous trap two rooms ahead. If attacked while trapped, he casts defensive spells but can't leave the circle.",
+        "size": 1,
+        "monsters": [
+            {
+                "name": "Aldric Moonwhisper (Wizard)",
+                "count": 1,
+                "cr": 1,
+                "exp": 200,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-m#Mage"
+            }
+        ],
+        "attitude": "friendly",
+        "personality": "embarrassed but grateful",
+        "questHook": "Free him from magical circle. Reward: spell scroll, information, or Sending spell service",
+        "xpBudget": 175,
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 80ft x 80ft chamber. Glowing magical circle on floor with wizard trapped inside. Arcane symbols. Magical lighting. Scattered spell components. Entry via corridor. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "The Bandit Negotiation",
+        "level": 1,
+        "type": "social",
+        "difficulty": "high",
+        "roomDescription": "Three rough-looking humans block the passage ahead. Their leader, a scarred woman with a crossbow, steps forward. 'This is our territory. Pay the toll or turn back.'",
+        "dmDescription": "Hostile bandits demanding 50 gp toll. Leader is Kara Blackknife (Bandit Captain stats but CR 1). DC 15 Intimidation to make them back down. DC 16 Persuasion to negotiate lower toll (25 gp). DC 14 Deception to convince them you're allies of their boss. If combat starts, they fight but surrender at half HP, offering information about a treasure cache (worth 100 gp, 2 rooms away) in exchange for their lives. They know the password to bypass a trap ahead.",
+        "size": 1,
+        "monsters": [
+            {
+                "name": "Kara Blackknife (Bandit Leader)",
+                "count": 1,
+                "cr": 1,
+                "exp": 200,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/monsters/16798-bandit"
+            },
+            {
+                "name": "Bandit",
+                "count": 2,
+                "cr": 0.125,
+                "exp": 25,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/monsters/16798-bandit"
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "greedy and opportunistic",
+        "questHook": "If spared, they reveal treasure location and trap password. Might become informants for future floors.",
+        "xpBudget": 250,
+        "winConditions": [
+            {
+                "condition": "Pay the toll (50 gp) or negotiate (25 gp)",
+                "reward": "Safe passage, no combat"
+            },
+            {
+                "condition": "Intimidate or deceive successfully",
+                "reward": "Free passage + possible information"
+            },
+            {
+                "condition": "Defeat in combat but spare them",
+                "reward": "Treasure location + trap password + 250 XP"
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 60ft corridor. Three bandits blocking passage. Leader in front with crossbow. Defensive positions. Tense atmosphere. Entry and exit via corridors. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "The Cursed Knight",
+        "level": 1,
+        "type": "social",
+        "difficulty": "high",
+        "roomDescription": "A spectral knight in tarnished armor kneels before a broken altar. As you approach, he rises slowly, his hollow voice echoing: 'Have you come to end my torment?'",
+        "dmDescription": "Indifferent undead knight bound by a curse to guard this chamber. He's not inherently hostile but will attack if threatened. DC 15 Religion to understand the curse, DC 16 Persuasion to learn his story. He was a paladin who failed his oath and seeks redemption. Options: 1) Destroy him in combat (he fights honorably), 2) Complete his unfinished quest (retrieve a holy symbol from 3 rooms away, DC 14 Investigation to find), 3) Perform a burial rite (DC 13 Religion). If freed from curse, he grants his blessing (+1 to AC for 24 hours to one character) and reveals a hidden cache.",
+        "size": 1,
+        "monsters": [
+            {
+                "name": "Sir Aldren the Cursed (Spectral Knight)",
+                "count": 1,
+                "cr": 1,
+                "exp": 200,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/monsters/17014-skeleton"
+            }
+        ],
+        "attitude": "indifferent",
+        "personality": "mournful and honorable",
+        "questHook": "Free him from curse by retrieving holy symbol or performing burial rite. Reward: blessing (+1 AC for 24 hours) + hidden cache (Potion of Heroism, 50 gp)",
+        "xpBudget": 275,
+        "winConditions": [
+            {
+                "condition": "Defeat him in honorable combat",
+                "reward": "200 XP + his tarnished armor (can be restored for 100 gp value)"
+            },
+            {
+                "condition": "Complete his quest and free him from curse",
+                "reward": "275 XP + blessing + hidden cache"
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 90ft x 90ft chamber. Broken altar in center. Spectral knight kneeling. Ghostly blue lighting. Solemn atmosphere. Hidden cache location. Entry via stone archway. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "The Myconid Circle",
+        "level": 1,
+        "type": "social",
+        "difficulty": "high",
+        "roomDescription": "A cluster of mushroom-like creatures stands in a circle, releasing gentle pulses of colored spores. They turn toward you, their movements slow and deliberate.",
+        "dmDescription": "Indifferent myconids (fungus folk) communicating through spores. They don't speak Common but can share emotions and simple concepts via rapport spores (DC 12 Constitution save to accept, harmless). They're concerned about 'the rot' spreading from below and seek help. DC 14 Nature to understand their distress. They offer: mushroom-based healing (equivalent to Potion of Healing), safe passage through their territory, and knowledge of shortcuts. They'll become hostile only if attacked. If helped, they provide spore servants as temporary allies.",
+        "size": 1,
+        "monsters": [
+            {
+                "name": "Myconid Adult",
+                "count": 3,
+                "cr": 0.5,
+                "exp": 100,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/monsters/16967-myconid-adult"
+            }
+        ],
+        "attitude": "indifferent",
+        "personality": "peaceful and communal",
+        "questHook": "Investigate 'the rot' spreading from lower levels. They provide healing mushrooms and shortcuts in exchange for help.",
+        "tradeGoods": [
+            "Healing Mushrooms (3, function as Potions of Healing)",
+            "Safe passage through fungal areas"
+        ],
+        "xpBudget": 300,
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 100ft cavern. Circle of myconids releasing colored spores. Bioluminescent mushrooms throughout. Soft multicolored lighting. Peaceful atmosphere. Entry via natural passage. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "The Rival Adventurer",
+        "level": 1,
+        "type": "social",
+        "difficulty": "high",
+        "roomDescription": "A well-equipped elf ranger sits casually on a stone ledge, cleaning her bow. She looks up with a competitive smirk. 'So, you made it this far. Impressive.'",
+        "dmDescription": "Indifferent rival adventurer named Sylvara Swiftarrow. She's competing for the same bounty/treasure and sees the party as competition. DC 15 Persuasion to convince her to team up temporarily (she'll help with one encounter then leave). DC 16 Intimidation to make her back off. DC 14 Insight reveals she's actually testing the party to see if they're worthy allies. If impressed (party shares information or offers fair deal), she becomes friendly and offers: trade (has 2 Potions of Greater Healing, 100 gp each), information about boss encounter ahead, or temporary alliance. Future recurring NPC potential.",
+        "size": 1,
+        "monsters": [
+            {
+                "name": "Sylvara Swiftarrow (Elf Ranger)",
+                "count": 1,
+                "cr": 1,
+                "exp": 200,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/monsters/17007-scout"
+            }
+        ],
+        "attitude": "indifferent",
+        "personality": "competitive but fair",
+        "tradeGoods": [
+            "2 Potions of Greater Healing (100 gp each)",
+            "Information about boss encounter"
+        ],
+        "questHook": "Potential temporary alliance or future recurring ally. She's tracking the same objectives.",
+        "xpBudget": 275,
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 80ft x 80ft chamber. Stone ledge with elf ranger. Well-maintained equipment visible. Confident atmosphere. Entry via corridor. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "The Desperate Cultist",
+        "level": 1,
+        "type": "social",
+        "difficulty": "high",
+        "roomDescription": "A robed figure kneels before a dark altar, chanting in an unknown language. As you enter, they spin around, eyes wild with fanaticism. 'The ritual must be completed!'",
+        "dmDescription": "Hostile cultist attempting to summon a minor demon. He's desperate and dangerous. DC 16 Persuasion to talk him down (he's having second thoughts). DC 15 Intimidation to make him flee. DC 14 Arcana to disrupt the ritual safely. If ritual completes (3 rounds), summons a minor demon (CR 1). If talked down, he reveals cult information: hideout location (potential future quest), cult leader's name, and ritual components worth 75 gp. If ritual is disrupted, he attacks but surrenders at half HP. Sparing him provides intelligence on cult activities.",
+        "size": 1,
+        "monsters": [
+            {
+                "name": "Desperate Cultist",
+                "count": 1,
+                "cr": 0.5,
+                "exp": 100,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/monsters/16836-cultist"
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "fanatical but wavering",
+        "questHook": "Disrupt ritual and spare cultist for intelligence on cult hideout and activities. Potential future quest line.",
+        "xpBudget": 300,
+        "winConditions": [
+            {
+                "condition": "Talk him down from completing ritual",
+                "reward": "300 XP + cult intelligence + ritual components (75 gp value)"
+            },
+            {
+                "condition": "Disrupt ritual and defeat cultist",
+                "reward": "200 XP + ritual components"
+            },
+            {
+                "condition": "Let ritual complete",
+                "reward": "Must fight cultist + summoned demon (additional 200 XP)"
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 90ft x 90ft ritual chamber. Dark altar in center. Arcane circle on floor. Robed cultist. Ominous lighting. Ritual components scattered. Entry via corridor. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "Gorthak the Goblin King",
+        "level": 1,
+        "type": "boss",
+        "difficulty": "high",
+        "roomDescription": "A crude throne room carved from stone. Tattered banners hang from the walls, and a makeshift throne of scavenged armor sits atop a raised platform. A large goblin wearing a crown of bones lounges on the throne, surrounded by his elite guards.",
+        "dmDescription": "Goblin Boss with 2 Goblin Warriors as bodyguards. Gorthak fights tactically, using his guards as shields and throwing alchemist's fire. At half HP, he drinks a Potion of Growth (becomes Large, +1d4 damage). He has a horn that summons 2 more goblin minions (once per fight). Treasure: 150 gp, Potion of Healing, +1 Shortsword, Bone Crown (worth 75 gp).",
+        "size": 2,
+        "monsters": [
+            {
+                "name": "Gorthak the Goblin King",
+                "count": 1,
+                "cr": 1,
+                "exp": 200,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/monsters/16907-goblin-boss"
+            },
+            {
+                "name": "Goblin Warrior",
+                "count": 2,
+                "cr": 0.25,
+                "exp": 50,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#GoblinWarrior"
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "cunning and cowardly",
+        "xpBudget": 300,
+        "lair": true,
+        "winConditions": [
+            {
+                "condition": "Defeat Gorthak and his guards",
+                "reward": "300 XP + treasure + access to next floor"
+            },
+            {
+                "condition": "Convince Gorthak to surrender (DC 18 Intimidation after killing guards)",
+                "reward": "250 XP + treasure + Gorthak reveals secret treasure cache (additional 100 gp)"
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 150ft x 120ft throne room. Raised platform with crude throne made of scavenged armor. Tattered banners on walls. Goblin guards positioned defensively. Bone crown visible. Dim torchlight. Entry via large double doors. Stairs to next level behind throne. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "The Skeletal Champion",
+        "level": 1,
+        "type": "boss",
+        "difficulty": "high",
+        "roomDescription": "An ancient armory filled with rusted weapons and broken shields. At the center stands a skeletal warrior in pristine plate armor, wielding a greatsword that glows with necromantic energy.",
+        "dmDescription": "Undead warrior with enhanced stats. Immune to poison, resistant to slashing/piercing. At half HP, animates 4 skeleton minions from nearby armor. Has Parry reaction (+2 AC against one attack). Uses Action Surge once per fight. Treasure: +1 Plate Armor, Greatsword of Warning, 200 gp, Scroll of Speak with Dead.",
+        "size": 2,
+        "monsters": [
+            {
+                "name": "Skeletal Champion",
+                "count": 1,
+                "cr": 2,
+                "exp": 450,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/monsters/17014-skeleton"
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "silent and relentless",
+        "xpBudget": 450,
+        "lair": true,
+        "winConditions": [
+            {
+                "condition": "Destroy the Skeletal Champion",
+                "reward": "450 XP + treasure + access to next floor"
+            },
+            {
+                "condition": "Use Turn Undead or similar ability to make it flee",
+                "reward": "300 XP + partial treasure (it drops greatsword)"
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 140ft x 140ft ancient armory. Rusted weapons and broken shields scattered throughout. Skeletal champion in center with glowing greatsword. Suits of armor that can animate. Dark atmosphere with necromantic green lighting. Entry via stone archway. Exit stairs visible. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "Venomfang the Young Green Dragon",
+        "level": 1,
+        "type": "boss",
+        "difficulty": "high",
+        "roomDescription": "A vast cavern with a high ceiling. The air is thick with poisonous fumes. A young green dragon perches on a pile of treasure, its emerald scales gleaming in the dim light.",
+        "dmDescription": "CR 2 Young Green Dragon (scaled down). Breath Weapon: 30ft cone, DC 12 Con save or 3d6 poison damage (recharge 5-6). Flies to ceiling when bloodied. Lair Actions: poison gas cloud (DC 11 Con save or poisoned), difficult terrain from vines. Treasure hoard: 500 gp, 3 gems (50 gp each), Potion of Poison Resistance, Ring of Swimming.",
+        "size": 3,
+        "monsters": [
+            {
+                "name": "Venomfang (Young Green Dragon)",
+                "count": 1,
+                "cr": 2,
+                "exp": 450,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/monsters/16902-young-green-dragon"
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "arrogant and cruel",
+        "xpBudget": 500,
+        "lair": true,
+        "winConditions": [
+            {
+                "condition": "Slay the dragon",
+                "reward": "500 XP + full treasure hoard + dragon scales (crafting material)"
+            },
+            {
+                "condition": "Negotiate with the dragon (DC 18 Persuasion, must offer tribute worth 200+ gp)",
+                "reward": "300 XP + safe passage + dragon allows one item from hoard"
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 200ft x 180ft massive cavern. High ceiling (40ft). Treasure pile in center with green dragon perched on top. Poisonous fumes visible. Vines and vegetation. Dim green-tinted lighting. Entry via tunnel. Exit passage behind treasure. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "The Corrupted Treant",
+        "level": 1,
+        "type": "boss",
+        "difficulty": "high",
+        "roomDescription": "An underground grove where twisted roots break through stone. A massive tree-like creature, its bark blackened and oozing dark sap, stands at the center. Smaller twig blights scurry around its roots.",
+        "dmDescription": "Corrupted Treant (CR 2) with 4 Twig Blights. Treant has vulnerability to fire but resistance to bludgeoning/piercing. Can animate roots to grapple (DC 13 Str save). At half HP, goes into rage (+2 damage, disadvantage on attacks against it). Twig blights regenerate 1 HP per round unless killed by fire. Treasure: Heart of the Treant (rare crafting component worth 200 gp), Bag of Seeds (can grow healing herbs), 100 gp.",
+        "size": 2,
+        "monsters": [
+            {
+                "name": "Corrupted Treant",
+                "count": 1,
+                "cr": 2,
+                "exp": 450,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/monsters/17035-treant"
+            },
+            {
+                "name": "Twig Blight",
+                "count": 4,
+                "cr": 0.125,
+                "exp": 25,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/monsters/17038-twig-blight"
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "corrupted and aggressive",
+        "xpBudget": 550,
+        "lair": true,
+        "winConditions": [
+            {
+                "condition": "Destroy the Corrupted Treant and all blights",
+                "reward": "550 XP + full treasure"
+            },
+            {
+                "condition": "Purify the treant with Remove Curse or similar magic (DC 15 Arcana)",
+                "reward": "600 XP + treant becomes grateful ally, grants blessing of the forest (+1d4 to Nature checks for 7 days)"
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 160ft x 160ft underground grove. Massive corrupted treant in center. Twisted roots breaking through stone floor. Twig blights scattered around. Dark sap oozing. Eerie green-black lighting. Entry via cavern. Exit passage visible. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "Malakar the Dark Sorcerer",
+        "level": 1,
+        "type": "boss",
+        "difficulty": "high",
+        "roomDescription": "A circular ritual chamber with arcane symbols etched into every surface. A robed figure stands within a glowing pentagram, dark energy crackling around his hands. Two animated suits of armor flank him.",
+        "dmDescription": "Evil Mage (CR 1) with 2 Animated Armor guardians. Malakar uses Shield spell (+5 AC as reaction), Counterspell, and offensive spells (Magic Missile, Burning Hands). At half HP, sacrifices one armor to heal 2d8+2 HP. Has Contingency: Misty Step when hit by melee attack. Treasure: Spellbook (6 first-level spells), Wand of Magic Missiles (7 charges), Robe of Useful Items, 250 gp.",
+        "size": 2,
+        "monsters": [
+            {
+                "name": "Malakar the Dark Sorcerer",
+                "count": 1,
+                "cr": 1,
+                "exp": 200,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-m#Mage"
+            },
+            {
+                "name": "Animated Armor",
+                "count": 2,
+                "cr": 1,
+                "exp": 200,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/monsters/16787-animated-armor"
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "arrogant and sadistic",
+        "xpBudget": 600,
+        "lair": true,
+        "winConditions": [
+            {
+                "condition": "Defeat Malakar and his guardians",
+                "reward": "600 XP + full treasure + access to next floor"
+            },
+            {
+                "condition": "Disrupt the ritual circle (DC 14 Arcana) before combat",
+                "reward": "Malakar loses access to lair actions and Contingency, easier fight"
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 130ft diameter circular ritual chamber. Glowing pentagram in center with sorcerer. Arcane symbols covering floor and walls. Two animated armor suits flanking. Dark energy crackling. Purple-black magical lighting. Entry via reinforced door. Exit stairs behind ritual circle. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "The Gelatinous Cube Overlord",
+        "level": 1,
+        "type": "boss",
+        "difficulty": "high",
+        "roomDescription": "A perfectly square chamber with smooth walls. A massive translucent cube fills most of the room, slowly pulsing. Skeletal remains and treasure are visible suspended within its body.",
+        "dmDescription": "Huge Gelatinous Cube (CR 2). Engulf attack: DC 13 Dex save or be engulfed (restrained, 2d6 acid damage per turn, DC 13 Str to escape). Transparent: DC 15 Perception to spot before it moves. Splits into 2 smaller cubes when reduced to half HP (each CR 1). Room has narrow ledges along walls (DC 12 Acrobatics to navigate). Treasure inside: 300 gp, +1 Shield, Potion of Greater Healing, various bones and armor.",
+        "size": 2,
+        "monsters": [
+            {
+                "name": "Gelatinous Cube Overlord",
+                "count": 1,
+                "cr": 2,
+                "exp": 450,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/monsters/16869-gelatinous-cube"
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "mindless and relentless",
+        "xpBudget": 450,
+        "lair": false,
+        "winConditions": [
+            {
+                "condition": "Destroy the cube and both splits",
+                "reward": "450 XP + treasure (must extract from cube remains)"
+            },
+            {
+                "condition": "Lure the cube into a pit trap in adjacent room",
+                "reward": "300 XP + treasure accessible without fight"
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 120ft x 120ft perfectly square chamber. Massive translucent gelatinous cube in center. Narrow ledges along walls. Skeletal remains and treasure visible inside cube. Smooth stone walls. Dim lighting. Entry via corridor. Exit opposite. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "Grimjaw the Bugbear Chieftain",
+        "level": 1,
+        "type": "boss",
+        "difficulty": "high",
+        "roomDescription": "A war room with crude maps and battle plans scattered across tables. A massive bugbear covered in scars stands at the center, flanked by his goblin advisors and a trained dire wolf.",
+        "dmDescription": "Bugbear Chief (CR 2) with 2 Goblin Bosses and 1 Wolf. Grimjaw has Brute feature (+1d8 damage). Uses tactical positioning and sends minions first. At half HP, enters frenzy (advantage on attacks, reckless). Wolf has Pack Tactics. Goblins use Nimble Escape. Treasure: +1 Morningstar, Chieftain's Pelt (armor, AC 13 + Dex), War Horn (summons allies), 175 gp, Battle Plans (map of next 2 floors).",
+        "size": 2,
+        "monsters": [
+            {
+                "name": "Grimjaw the Bugbear Chieftain",
+                "count": 1,
+                "cr": 2,
+                "exp": 450,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/monsters/4775844-bugbear"
+            },
+            {
+                "name": "Goblin Boss",
+                "count": 2,
+                "cr": 1,
+                "exp": 200,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/monsters/16907-goblin-boss"
+            },
+            {
+                "name": "Wolf",
+                "count": 1,
+                "cr": 0.25,
+                "exp": 50,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/monsters/17062-wolf"
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "brutal and tactical",
+        "xpBudget": 700,
+        "lair": true,
+        "winConditions": [
+            {
+                "condition": "Defeat Grimjaw and all allies",
+                "reward": "700 XP + full treasure + battle plans"
+            },
+            {
+                "condition": "Challenge Grimjaw to single combat (DC 15 Intimidation)",
+                "reward": "He accepts, minions stand down. Win: 500 XP + treasure + remaining minions flee"
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 150ft x 130ft war room. Tables with crude maps and battle plans. Massive bugbear chieftain in center. Two goblin advisors. Dire wolf companion. Weapon racks on walls. Torchlight. Entry via reinforced door. Exit passage behind. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "The Spectral Warden",
+        "level": 1,
+        "type": "boss",
+        "difficulty": "high",
+        "roomDescription": "An ancient prison with rusted cells lining the walls. A ghostly figure in tattered guard uniform floats in the center, chains rattling around it. Whispers of the imprisoned dead echo through the chamber.",
+        "dmDescription": "Wraith-like entity (CR 2) bound to guard this prison. Incorporeal (resistant to non-magical damage). Life Drain attack: +4 to hit, 3d6 necrotic damage, target's max HP reduced. Can phase through walls. Summons 2 Shadows at half HP. Weakness: destroying the warden's chains (AC 15, 20 HP) banishes it instantly. Treasure: Warden's Keys (unlock all doors on this floor), Spectral Chains (magic item), 200 gp, 2 Soul Gems (50 gp each).",
+        "size": 2,
+        "monsters": [
+            {
+                "name": "The Spectral Warden",
+                "count": 1,
+                "cr": 2,
+                "exp": 450,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/monsters/17064-wraith"
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "mournful and duty-bound",
+        "xpBudget": 450,
+        "lair": true,
+        "winConditions": [
+            {
+                "condition": "Destroy the Spectral Warden in combat",
+                "reward": "450 XP + treasure"
+            },
+            {
+                "condition": "Destroy the warden's chains",
+                "reward": "500 XP + treasure + warden's grateful spirit provides blessing (resistance to necrotic damage for 24 hours)"
+            },
+            {
+                "condition": "Free the imprisoned souls (DC 15 Religion ritual)",
+                "reward": "600 XP + warden is released from duty peacefully + enhanced treasure (additional magic item)"
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 140ft x 140ft ancient prison. Rusted cells lining walls. Ghostly spectral warden in center with ethereal chains. Shadowy atmosphere. Whispers visible as mist. Eerie blue-white lighting. Entry via iron door. Exit stairs visible. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "Sszarak the Yuan-ti Malison",
+        "level": 1,
+        "type": "boss",
+        "difficulty": "high",
+        "roomDescription": "A temple dedicated to a serpent god. Stone snake statues coil around pillars. A snake-human hybrid priest performs a dark ritual at an altar, surrounded by giant constrictor snakes.",
+        "dmDescription": "Yuan-ti Malison (CR 2) with 2 Giant Constrictor Snakes. Malison has Magic Resistance and Suggestion spell (DC 13 Wis save). Uses poisoned weapons (DC 12 Con save or 2d6 poison damage). Snakes use Constrict (grapple + damage). At half HP, drinks Potion of Invisibility. Lair action: statue snakes animate (DC 12 Dex save or restrained). Treasure: Serpent Staff (magic quarterstaff), Poison Vials (3), Ritual Dagger (+1), 225 gp, Serpent God Idol (worth 150 gp).",
+        "size": 2,
+        "monsters": [
+            {
+                "name": "Sszarak (Yuan-ti Malison)",
+                "count": 1,
+                "cr": 2,
+                "exp": 450,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/monsters/17121-yuan-ti-malison-type-1"
+            },
+            {
+                "name": "Giant Constrictor Snake",
+                "count": 2,
+                "cr": 2,
+                "exp": 450,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/monsters/16871-giant-constrictor-snake"
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "cold and calculating",
+        "xpBudget": 1350,
+        "lair": true,
+        "winConditions": [
+            {
+                "condition": "Defeat Sszarak and the constrictor snakes",
+                "reward": "1350 XP + full treasure"
+            },
+            {
+                "condition": "Disrupt the ritual before combat (DC 14 Arcana or Religion)",
+                "reward": "Sszarak loses lair actions and one snake doesn't fight"
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 160ft x 140ft serpent temple. Stone snake statues coiling around pillars. Dark altar in center with yuan-ti priest. Two giant constrictor snakes. Serpentine decorations throughout. Green-tinted torchlight. Entry via temple doors. Exit passage behind altar. Clean lines, high contrast for virtual tabletop use."
+    },
+    {
+        "name": "The Flesh Golem Experiment",
+        "level": 1,
+        "type": "boss",
+        "difficulty": "high",
+        "roomDescription": "A mad scientist's laboratory filled with bubbling alchemical vats and surgical tables. A massive, stitched-together creature breaks free from its restraints as you enter, electricity crackling across its body.",
+        "dmDescription": "Flesh Golem (CR 2) in unstable state. Immune to lightning (heals instead), resistant to non-magical weapons. Berserk: when damaged by fire, must make DC 10 Wis save or attack nearest creature. Lightning Absorption: heals 1d6 per lightning damage taken. Aversion to Fire: takes extra 1d6 fire damage. Lab hazards: alchemical vats can explode (DC 13 Dex save, 2d6 acid damage). Treasure: Alchemist's Supplies (masterwork), Formula Notes (worth 200 gp to right buyer), 2 Potions of Greater Healing, Amulet of Health (+1 Con saves).",
+        "size": 2,
+        "monsters": [
+            {
+                "name": "Flesh Golem Experiment",
+                "count": 1,
+                "cr": 2,
+                "exp": 450,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/monsters/16865-flesh-golem"
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "confused and violent",
+        "xpBudget": 450,
+        "lair": true,
+        "winConditions": [
+            {
+                "condition": "Destroy the Flesh Golem",
+                "reward": "450 XP + treasure"
+            },
+            {
+                "condition": "Use lightning to heal it, then calm it with DC 16 Persuasion or Animal Handling",
+                "reward": "500 XP + golem becomes docile, can be commanded for one task + treasure"
+            },
+            {
+                "condition": "Lure it into alchemical vats (DC 14 Deception or Athletics)",
+                "reward": "400 XP + easier fight (golem takes 4d6 acid damage) + some treasure destroyed"
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 150ft x 150ft mad scientist laboratory. Bubbling alchemical vats throughout. Surgical tables with restraints. Massive flesh golem breaking free. Electricity crackling. Scientific equipment scattered. Eerie green-blue lighting. Entry via reinforced door. Exit stairs visible. Clean lines, high contrast for virtual tabletop use."
+    }
+]

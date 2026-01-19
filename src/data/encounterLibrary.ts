@@ -1,0 +1,161 @@
+import type { EncounterData } from '../types';
+import { EncounterType, EncounterDifficulty, EncounterAttitude } from '../types';
+import encountersFloor01 from './encounters-floor-01.json';
+
+export class EncounterLibrary {
+    private encountersByFloor: Map<number, EncounterData[]> = new Map();
+
+    constructor() {
+        // Load encounters by floor
+        this.encountersByFloor.set(1, encountersFloor01 as EncounterData[]);
+        // TODO: Load floors 2-21 when encounter files are created
+    }
+
+    /**
+     * Get random encounter for a specific floor and type
+     * @param floor - The floor number (CR level) to get encounters from
+     * @param type - The encounter type to filter by
+     * @param options - Additional filtering options
+     */
+    getRandomEncounter(
+        floor: number,
+        type: EncounterType,
+        options?: { difficulty?: EncounterDifficulty; excludeNames?: string[] }
+    ): EncounterData | null {
+        // Hardcoded Default Encounters to ensure availability
+        const DEFAULT_ENCOUNTERS: Partial<Record<EncounterType, EncounterData>> = {
+            [EncounterType.Social]: {
+                name: "Default Social",
+                level: 0,
+                type: EncounterType.Social,
+                difficulty: EncounterDifficulty.Moderate,
+                roomDescription: "You encounter a weary traveler resting near a small campfire.",
+                dmDescription: "Generic social encounter. The traveler shares rumors.",
+                size: 1,
+                monsters: [],
+                attitude: EncounterAttitude.Indifferent,
+                personality: "weary"
+            },
+            [EncounterType.Puzzle]: {
+                name: "Default Puzzle",
+                level: 0,
+                type: EncounterType.Puzzle,
+                difficulty: EncounterDifficulty.Moderate,
+                roomDescription: "A sealed door blocks your path with strange markings on its surface.",
+                dmDescription: "Generic puzzle. DC 12 Intelligence check to decipher.",
+                size: 1,
+                puzzleDescription: "Symbols need alignment.",
+                xpBudget: 100
+            },
+            [EncounterType.Exploration]: {
+                name: "Default Exploration",
+                level: 0,
+                type: EncounterType.Exploration,
+                difficulty: EncounterDifficulty.Moderate,
+                roomDescription: "This room contains interesting architectural features and dusty corners to investigate.",
+                dmDescription: "Generic exploration. DC 12 Investigation for small loot.",
+                size: 1,
+                items: ["Torch", "Rope"]
+            },
+            [EncounterType.Rest]: {
+                name: "Default Rest",
+                level: 0,
+                type: EncounterType.Rest,
+                difficulty: EncounterDifficulty.Low,
+                roomDescription: "A quiet, dry alcove that seems safe enough for a short respite.",
+                dmDescription: "Generic rest area. Safe for short rest.",
+                size: 1,
+                shelterQuality: "poor"
+            },
+            [EncounterType.Treasure]: {
+                name: "Default Treasure",
+                level: 0,
+                type: EncounterType.Treasure,
+                difficulty: EncounterDifficulty.Moderate,
+                roomDescription: "A small wooden chest sits in the corner, covered in dust.",
+                dmDescription: "Generic small treasure: 25gp.",
+                size: 1,
+                items: [],
+                goldValue: 25,
+                hasTrap: false,
+                isLocked: false,
+                isMimic: false,
+                xpBudget: 50
+            }
+        };
+
+        const floorEncounters = this.encountersByFloor.get(floor);
+        if (!floorEncounters) {
+            console.warn(`No encounters found for floor ${floor}`);
+            return null;
+        }
+
+        let matching = floorEncounters.filter(e => e.type === type);
+
+        if (options?.difficulty) {
+            matching = matching.filter(e => e.difficulty === options.difficulty);
+        }
+
+        // Exclude already-used encounter names to prevent duplicates on the same map
+        if (options?.excludeNames && options.excludeNames.length > 0) {
+            matching = matching.filter(e => !options.excludeNames!.includes(e.name));
+        }
+
+        if (matching.length === 0) {
+            // Fallback: Check for generic/default encounters of this type
+            const defaultEncounter = DEFAULT_ENCOUNTERS[type];
+
+            if (defaultEncounter) {
+                console.log(`Using hardcoded default encounter for type ${type}`);
+                return defaultEncounter;
+            }
+
+            console.warn(`No matching encounters found for floor ${floor}, type ${type}`);
+            return null;
+        }
+
+        return matching[Math.floor(Math.random() * matching.length)];
+    }
+
+    /**
+     * Get all encounters for a specific floor
+     */
+    getEncountersByFloor(floor: number): EncounterData[] {
+        return this.encountersByFloor.get(floor) || [];
+    }
+
+    /**
+     * Get encounter by name
+     */
+    getEncounterByName(name: string): EncounterData | null {
+        for (const encounters of this.encountersByFloor.values()) {
+            const found = encounters.find(e => e.name === name);
+            if (found) return found;
+        }
+        return null;
+    }
+
+    /**
+     * Get all encounters of a specific type across all floors
+     */
+    getEncountersByType(type: EncounterType): EncounterData[] {
+        const results: EncounterData[] = [];
+        for (const encounters of this.encountersByFloor.values()) {
+            results.push(...encounters.filter(e => e.type === type));
+        }
+        return results;
+    }
+
+    /**
+     * Get total number of encounters loaded across all floors
+     */
+    getEncounterCount(): number {
+        let count = 0;
+        for (const encounters of this.encountersByFloor.values()) {
+            count += encounters.length;
+        }
+        return count;
+    }
+}
+
+export const encounterLibrary = new EncounterLibrary();
