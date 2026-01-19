@@ -28,6 +28,10 @@ export interface RunState {
     currentFloorId: string;
     floors: Record<string, FloorData>; // Floor ID -> Floor Data
     partyState: PartyMemberState[];
+    partyConfig: {
+        size: number;
+        level: number;
+    };
 }
 
 export interface FloorData {

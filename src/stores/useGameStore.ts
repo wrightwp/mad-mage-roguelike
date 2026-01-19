@@ -52,7 +52,7 @@ export const useGameStore = defineStore('game', () => {
     });
 
     // Actions
-    function startRun(party: PartyMemberState[]) {
+    function startRun(party: PartyMemberState[], partyLevel: number = 1) {
         if (!campaignStore.activeCampaign) return;
 
         // Initialize first floor
@@ -67,14 +67,17 @@ export const useGameStore = defineStore('game', () => {
             2000, // Height
             undefined, // Default node counts
             party.length,
-            // Use existing party level if available, or default to 1
-            1
+            partyLevel
         );
 
         const newRun: RunState = {
             currentFloorId: floorId,
             floors: {},
-            partyState: party
+            partyState: party,
+            partyConfig: {
+                size: party.length,
+                level: partyLevel
+            }
         };
 
         const firstFloor: FloorData = {

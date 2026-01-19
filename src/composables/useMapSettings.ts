@@ -42,7 +42,7 @@ export const useMapSettings = (
             maxHp: 20
         });
 
-        gameStore.startRun(party);
+        gameStore.startRun(party, averagePartyLevel.value);
 
         // todo: sync settings to store if needed
 
@@ -50,6 +50,12 @@ export const useMapSettings = (
             onInit();
         }
     };
+
+    // Restore settings from active run if available
+    if (gameStore.hasActiveRun && gameStore.currentRun?.partyConfig) {
+        partySize.value = gameStore.currentRun.partyConfig.size;
+        averagePartyLevel.value = gameStore.currentRun.partyConfig.level;
+    }
 
     const generateWithConfig = (config: {
         floor: number;
