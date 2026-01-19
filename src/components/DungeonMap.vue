@@ -28,8 +28,16 @@ const {
   averagePartyLevel,
   restartMap,
   generateWithConfig,
-  openConfigModal
-} = useMapSettings(MAP_WIDTH, MAP_HEIGHT);
+  openConfigModal,
+  partyLocationId
+} = useMapSettings(
+  // onInit callback calls scrollToBottom
+  () => {
+    if (mapData.value) {
+       scrollToBottom();
+    }
+  }
+);
 
 const {
   viewBox,
@@ -150,6 +158,7 @@ const handleEnterEncounter = (node: any) => {
       :selected-node-id="selectedNodeId"
       :active-edges="activeEdges"
       :available-edges="availableEdges"
+      :party-location-id="partyLocationId"
       :reveal-all="revealAll"
       @wheel="handleWheel"
       @mousedown="handleMouseDown"

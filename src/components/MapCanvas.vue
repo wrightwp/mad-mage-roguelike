@@ -12,7 +12,10 @@ interface Props {
   selectedNodeId: string | null;
   activeEdges: Array<{ from: string; to: string }>;
   availableEdges: Array<{ from: string; to: string }>;
+
+
   revealAll: boolean;
+  partyLocationId: string | null;
 }
 
 interface Emits {
@@ -142,7 +145,9 @@ const handleEnterEncounter = (nodeId: string) => {
           v-for="node in mapData.nodes"
           :key="node.id"
           :node="node"
+
           :is-selected="selectedNodeId === node.id"
+          :is-party-location="partyLocationId === node.id"
           :reveal-all="revealAll"
           @click="handleNodeClick(node.id)"
           @enter-encounter="handleEnterEncounter(node.id)"

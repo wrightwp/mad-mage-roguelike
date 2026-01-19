@@ -3,12 +3,16 @@ import { computed } from 'vue';
 import type { DungeonNode } from '../../types';
 import { getNodeColor, getNodeIcon, getNodeClass } from '../../utils/nodeStyles';
 
+
+
 const HEX_SIZE = 40;
 
 interface Props {
   node: DungeonNode;
   isSelected: boolean;
+
   revealAll: boolean;
+  isPartyLocation: boolean;
 }
 
 defineProps<Props>();
@@ -122,5 +126,18 @@ const hexPath = computed(() => {
     </text>
 
   
+    <!-- Party Location Indicator -->
+    <g v-if="isPartyLocation" transform="translate(20, -20)" class="pointer-events-none filter drop-shadow-md z-50">
+      <animateTransform attributeName="transform" type="translate" values="20,-20; 20,-25; 20,-20" dur="2s" repeatCount="indefinite" />
+      <!-- Indicator Body -->
+      <path d="M0 0 L15 -15 L30 0 L15 30 Z" fill="#fbbf24" stroke="#b45309" stroke-width="2">
+      <!-- Shield Shape -->
+       <animate attributeName="fill" values="#fbbf24; #f59e0b; #fbbf24" dur="2s" repeatCount="indefinite" />
+      </path>
+      <!-- "You" Text / Icon -->
+      <circle cx="15" cy="5" r="14" fill="#fb40ed" stroke="#fbbf24" stroke-width="2" />
+      <text x="15" y="10" text-anchor="middle" class="text-[16px] select-none pointer-events-none filter drop-shadow-sm">👥</text>
+    </g>
+
   </g>
 </template>

@@ -1,7 +1,8 @@
 <script setup lang="ts">
-import { computed } from 'vue';
+import { computed, ref } from 'vue';
 import { TYPE_COLORS, getNodeIcon } from '../utils/nodeStyles';
 import headerDecoration from '../assets/header_decoration.png';
+import SaveManagerModal from './SaveManagerModal.vue';
 
 interface Props {
   width: number;
@@ -40,6 +41,9 @@ const actualNodeCounts = computed(() => {
   
   return counts;
 });
+
+
+const showSaveManager = ref(false);
 </script>
 
 <template>
@@ -206,10 +210,14 @@ const actualNodeCounts = computed(() => {
       </div>
     </div>
 
-    <div class="p-4 bg-slate-950 text-[10px] text-slate-600 border-t border-slate-800 flex justify-between uppercase tracking-widest">
+    <div class="p-4 bg-slate-950 text-[10px] text-slate-600 border-t border-slate-800 flex justify-between uppercase tracking-widest items-center">
       <span>v0.2.0</span>
-      <span>Preview Build</span>
+      <button @click="showSaveManager = true" class="hover:text-amber-500 transition-colors flex items-center gap-1">
+        <span>💾</span> Manage Saves
+      </button>
     </div>
+
+    <SaveManagerModal :show="showSaveManager" @close="showSaveManager = false" />
   </div>
 </template>
 

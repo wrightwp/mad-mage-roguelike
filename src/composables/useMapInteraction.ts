@@ -1,4 +1,5 @@
-import { ref, computed, type Ref } from 'vue';
+import { ref, computed, type Ref, watch } from 'vue';
+import { useGameStore } from '../stores/useGameStore';
 import type { DungeonMapData, DungeonNode } from '../types';
 import { scaleEncounter } from '../utils/encounterScaling';
 
@@ -7,6 +8,7 @@ export const useMapInteraction = (
     partySize: Ref<number>,
     averagePartyLevel: Ref<number>
 ) => {
+    const gameStore = useGameStore();
     const selectedNodeId = ref<string | null>(null);
     const visitedPath = ref<Array<{ from: string; to: string }>>([]);
 
@@ -54,6 +56,11 @@ export const useMapInteraction = (
         }
 
         // Mark this node as 'current'
+        // We call the store to persist this visit
+        gameStore.visitNode(node.id);
+
+        // Optimistic UI update (the store will also update it via reactivity if it shares the object, 
+        // but 'node' here is from the prop which comes from the store, so it IS the store object)
         node.status = 'current';
 
         // Lock sibling 'available' nodes in THIS layer
@@ -88,17 +95,55 @@ export const useMapInteraction = (
     };
 
     const resetInteraction = () => {
-        visitedPath.value = [];
+        // Don't just clear, rebuild from state if it exists
+        reconstructPaths();
         selectedNodeId.value = null;
 
-        // Auto-select the start node
+        // Auto-select the start node or current node
         if (mapData.value) {
-            const startNode = mapData.value.nodes.find(n => n.type === 'start');
-            if (startNode) {
-                selectedNodeId.value = startNode.id;
+            const currentNode = mapData.value.nodes.find(n => n.status === 'current');
+            if (currentNode) {
+                selectedNodeId.value = currentNode.id;
+            } else {
+                const startNode = mapData.value.nodes.find(n => n.type === 'start');
+                if (startNode) {
+                    selectedNodeId.value = startNode.id;
+                }
             }
         }
     };
+
+    const reconstructPaths = () => {
+        visitedPath.value = [];
+        if (!mapData.value) return;
+
+        // Iterate through all nodes to find visited connections
+        mapData.value.nodes.forEach(node => {
+            // If a node is visited or current, we should show the path TO it
+            if (node.status === 'visited' || node.status === 'current') {
+                // Find active parents
+                // A parent is active if it is 'visited' and connects to this node
+                node.parents.forEach(parentId => {
+                    const parent = mapData.value!.nodes.find(n => n.id === parentId);
+                    if (parent && parent.status === 'visited') {
+
+                        // Check if this edge is already added (avoid duplicates if any)
+                        const exists = visitedPath.value.some(e => e.from === parent.id && e.to === node.id);
+                        if (!exists) {
+                            visitedPath.value.push({ from: parent.id, to: node.id });
+                        }
+                    }
+                });
+            }
+        });
+    };
+
+    // Watch for map data changes (e.g. reload or new run) to rebuild paths
+    watch(() => mapData.value, (newData) => {
+        if (newData) {
+            reconstructPaths();
+        }
+    }, { immediate: true });
 
     return {
         selectedNodeId,

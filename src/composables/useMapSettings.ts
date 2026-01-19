@@ -1,17 +1,23 @@
-import { ref } from 'vue';
-import { generateDungeon } from '../logic/dungeonGen';
-import type { DungeonMapData } from '../types';
+import { ref, computed } from 'vue';
+import { useGameStore } from '../stores/useGameStore';
 
 export const useMapSettings = (
-    mapWidth: number,
-    mapHeight: number,
     onInit?: () => void
 ) => {
-    const mapData = ref<DungeonMapData | null>(null);
+    const gameStore = useGameStore();
+
+    // Map data from store
+    const mapData = computed(() => gameStore.mapData);
+    const partyLocationId = computed(() => {
+        const visited = gameStore.currentFloor?.visitedNodes;
+        return visited && visited.length > 0 ? visited[visited.length - 1] : null;
+    });
+
     const floorCount = ref(15);
     const currentFloor = ref(1); // Start at Floor 1
     const showRestartConfirm = ref(false);
-    const showConfigModal = ref(true); // Show config modal on first load
+    // Only show config modal if there is no active run
+    const showConfigModal = ref(!gameStore.hasActiveRun);
     const revealAll = ref(false);
 
     const nodeTypeCounts = ref<Record<string, number>>({
@@ -27,15 +33,18 @@ export const useMapSettings = (
     const averagePartyLevel = ref(1);
 
     const initMap = () => {
-        mapData.value = generateDungeon(
-            floorCount.value,
-            currentFloor.value, // Pass current floor
-            mapWidth,
-            mapHeight,
-            nodeTypeCounts.value,
-            partySize.value,
-            averagePartyLevel.value
-        );
+        // Construct party state based on size/level 
+        // (This is a simplified assumption since we don't have a full party builder UI yet)
+        const party: any[] = Array(partySize.value).fill({
+            id: 'placeholder',
+            name: 'Hero',
+            hp: 20,
+            maxHp: 20
+        });
+
+        gameStore.startRun(party);
+
+        // todo: sync settings to store if needed
 
         if (onInit) {
             onInit();
@@ -85,6 +94,7 @@ export const useMapSettings = (
         initMap,
         restartMap,
         generateWithConfig,
-        openConfigModal
+        openConfigModal,
+        partyLocationId
     };
 };
