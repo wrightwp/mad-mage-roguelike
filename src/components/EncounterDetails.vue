@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, watch } from 'vue';
+import { ref } from 'vue';
 import type { DungeonNode, DungeonMapData } from '../types';
 import { EncounterType } from '../types';
 
@@ -26,12 +26,9 @@ const props = defineProps<Props>();
 const emit = defineEmits<Emits>();
 
 // DM info toggle state
-const showDMInfo = ref(false);
+const showDMInfo = ref(true);
 
-// Reset DM info visibility when selecting a new encounter
-watch(() => props.selectedNode, () => {
-  showDMInfo.value = false;
-});
+
 
 // Helper to get connected node
 const getConnectedNode = (connectionId: string): DungeonNode | null => {
@@ -61,6 +58,13 @@ const copyToClipboard = async (text: string) => {
 };
 
 
+const isReachableFromCurrent = (targetNode: DungeonNode): boolean => {
+  if (!props.mapData) return false;
+  const currentNode = props.mapData.nodes.find(n => n.status === 'current');
+  // If no current node (start of game?), fallback to allowing available
+  if (!currentNode) return true;
+  return currentNode.connections.includes(targetNode.id);
+};
 </script>
 
 <template>
@@ -72,7 +76,7 @@ const copyToClipboard = async (text: string) => {
       <div class="bg-slate-800/40 rounded-xl p-4 border border-slate-700/50">
         <div class="text-[10px] text-slate-500 uppercase tracking-widest mb-2">Room Description</div>
         <p class="text-sm text-slate-200 leading-relaxed font-serif italic">
-          {{ (selectedNode.revealed || revealAll || selectedNode.status === 'visited' || selectedNode.status === 'current') ? (selectedNode.description || 'A mysterious chamber hidden deep within the Undermountain.') : 'The mysteries of this chamber are yet to be revealed...' }}
+          {{ selectedNode.description || 'A mysterious chamber hidden deep within the Undermountain.' }}
         </p>
       </div>
 
@@ -107,7 +111,7 @@ const copyToClipboard = async (text: string) => {
       <!-- DM Content (Collapsible) -->
       <div v-show="showDMInfo" class="space-y-4 animate-fadeIn">
         <!-- Encounter Header -->
-        <div v-if="selectedNode.encounter && (selectedNode.revealed || revealAll || selectedNode.status === 'visited' || selectedNode.status === 'current')" 
+        <div v-if="selectedNode.encounter" 
           class="bg-slate-800/50 rounded-xl p-4 border border-slate-700">
           <h2 class="text-lg font-bold text-amber-400 mb-3">{{ selectedNode.encounter.name }}</h2>
           
@@ -123,7 +127,7 @@ const copyToClipboard = async (text: string) => {
         </div>
 
         <!-- Dynamic Encounter Details -->
-        <div v-if="selectedNode.encounter && (selectedNode.revealed || revealAll || selectedNode.status === 'visited' || selectedNode.status === 'current')">
+        <div v-if="selectedNode.encounter">
           <CombatEncounter 
             v-if="selectedNode.encounter.type === EncounterType.Combat" 
             :encounter="selectedNode.encounter" 
@@ -152,7 +156,7 @@ const copyToClipboard = async (text: string) => {
 
 
         <!-- Win Conditions & Rewards -->
-        <div v-if="selectedNode.encounter?.winConditions?.length && (selectedNode.revealed || revealAll || selectedNode.status === 'visited' || selectedNode.status === 'current')" 
+        <div v-if="selectedNode.encounter?.winConditions?.length" 
           class="bg-gradient-to-br from-slate-800/50 to-slate-800/30 rounded-xl p-4 border border-slate-700">
           <div class="text-[10px] text-slate-400 uppercase tracking-widest mb-3 font-bold">
             Win Conditions
@@ -179,7 +183,7 @@ const copyToClipboard = async (text: string) => {
 
 
         <!-- AI Room Prompt -->
-        <div v-if="selectedNode.encounter?.aiRoomPrompt && (selectedNode.revealed || revealAll || selectedNode.status === 'visited' || selectedNode.status === 'current')" 
+        <div v-if="selectedNode.encounter?.aiRoomPrompt" 
           class="bg-purple-900/10 rounded-xl p-4 border border-purple-900/30">
           <div class="text-[10px] text-purple-400 uppercase tracking-widest mb-3 font-bold flex items-center justify-between">
             <span>🤖 AI Room Prompt</span>
@@ -195,7 +199,7 @@ const copyToClipboard = async (text: string) => {
         </div>
 
         <!-- Connected Encounters -->
-        <div v-if="(selectedNode.revealed || revealAll || selectedNode.status === 'visited' || selectedNode.status === 'current') && selectedNode.connections.length > 0" 
+        <div v-if="selectedNode.connections.length > 0" 
           class="bg-slate-800/40 rounded-xl p-4 border border-slate-700/50">
           <div class="text-[10px] text-slate-500 uppercase tracking-widest mb-3">Paths Lead To:</div>
           <div class="space-y-2">
@@ -231,7 +235,7 @@ const copyToClipboard = async (text: string) => {
   <!-- Action Buttons -->
   <div class="p-4 bg-slate-950/80 border-t border-slate-800">
     <button 
-      v-if="selectedNode && selectedNode.status === 'available'"
+      v-if="selectedNode && selectedNode.status === 'available' && isReachableFromCurrent(selectedNode)"
       @click="emit('enterEncounter', selectedNode)"
       class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 rounded-xl transition-all shadow-lg shadow-emerald-900/20 active:scale-95 flex items-center justify-center gap-2">
       <span>Enter Encounter</span>
@@ -245,7 +249,7 @@ const copyToClipboard = async (text: string) => {
       <span class="text-xl">✓</span>
     </button>
     <div v-else class="text-center py-3 text-xs text-slate-600 uppercase tracking-widest font-bold">
-      {{ selectedNode ? (selectedNode.status === 'visited' ? 'Already Visited' : 'Path Blocked') : 'Waiting for Input' }}
+      {{ selectedNode ? (selectedNode.status === 'visited' ? 'Already Visited' : (selectedNode.status === 'available' && !isReachableFromCurrent(selectedNode) ? 'Too Far Away' : 'Path Blocked')) : 'Waiting for Input' }}
     </div>
   </div>
 </template>

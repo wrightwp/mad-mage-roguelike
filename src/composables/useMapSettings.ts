@@ -18,7 +18,7 @@ export const useMapSettings = (
     const showRestartConfirm = ref(false);
     // Only show config modal if there is no active run
     const showConfigModal = ref(!gameStore.hasActiveRun);
-    const revealAll = ref(false);
+    const revealAll = ref(true);
 
     const nodeTypeCounts = ref<Record<string, number>>({
         combat: 30,

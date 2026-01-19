@@ -34,7 +34,7 @@ export const getNodeClass = (node: DungeonNode): string => {
     const base = "transition-all duration-300 stroke-2 cursor-pointer ";
 
     if (node.status === 'visited') return base + "fill-slate-700 stroke-slate-500 opacity-70";
-    if (node.status === 'locked') return base + "fill-slate-800 stroke-slate-700 opacity-40 pointer-events-none";
+    if (node.status === 'locked') return base + "fill-slate-800 stroke-slate-700 opacity-40";
     if (node.status === 'current') return base + "mystical-glow ring-2 ring-amber-400";
 
     return base;
