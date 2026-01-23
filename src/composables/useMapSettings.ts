@@ -13,7 +13,7 @@ export const useMapSettings = (
         return visited && visited.length > 0 ? visited[visited.length - 1] : null;
     });
 
-    const floorCount = ref(15);
+    const floorCount = ref(10);
     const currentFloor = ref(1); // Start at Floor 1
     const showRestartConfirm = ref(false);
     // Only show config modal if there is no active run
@@ -42,7 +42,7 @@ export const useMapSettings = (
             maxHp: 20
         });
 
-        gameStore.startRun(party, averagePartyLevel.value);
+        gameStore.startRun(party, averagePartyLevel.value, floorCount.value);
 
         // todo: sync settings to store if needed
 

@@ -9,6 +9,7 @@ import PuzzleEncounter from './encounters/PuzzleEncounter.vue';
 import ExplorationEncounter from './encounters/ExplorationEncounter.vue';
 import RestEncounter from './encounters/RestEncounter.vue';
 import TreasureEncounter from './encounters/TreasureEncounter.vue';
+import BossEncounter from './encounters/BossEncounter.vue';
 
 
 interface Props {
@@ -150,6 +151,10 @@ const isReachableFromCurrent = (targetNode: DungeonNode): boolean => {
           />
           <TreasureEncounter 
             v-else-if="selectedNode.encounter.type === EncounterType.Treasure" 
+            :encounter="selectedNode.encounter" 
+          />
+          <BossEncounter 
+            v-else-if="selectedNode.encounter.type === EncounterType.Boss" 
             :encounter="selectedNode.encounter" 
           />
         </div>

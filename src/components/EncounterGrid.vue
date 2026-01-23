@@ -3,6 +3,13 @@ import { ref, computed } from 'vue';
 import { encounterLibrary } from '../data/encounterLibrary';
 import type { EncounterData } from '../types';
 import { EncounterType } from '../types';
+import CombatEncounter from './encounters/CombatEncounter.vue';
+import SocialEncounter from './encounters/SocialEncounter.vue';
+import PuzzleEncounter from './encounters/PuzzleEncounter.vue';
+import ExplorationEncounter from './encounters/ExplorationEncounter.vue';
+import RestEncounter from './encounters/RestEncounter.vue';
+import TreasureEncounter from './encounters/TreasureEncounter.vue';
+import BossEncounter from './encounters/BossEncounter.vue';
 
 interface Props {
   mapData: any;
@@ -141,13 +148,7 @@ const getDifficultyColor = (difficulty: string): string => {
   }
 };
 
-// Calculate total monster count
-const getTotalMonsters = (encounter: EncounterData): number => {
-  if (encounter.type === EncounterType.Combat || encounter.type === EncounterType.Social) {
-    return encounter.monsters.reduce((sum, m) => sum + (m.count || 1), 0);
-  }
-  return 0;
-};
+
 </script>
 
 <template>
@@ -268,47 +269,37 @@ const getTotalMonsters = (encounter: EncounterData): number => {
             </p>
           </div>
 
-          <!-- Monsters (for combat/social encounters) -->
-          <div v-if="(encounter.type === EncounterType.Combat || encounter.type === EncounterType.Social) && encounter.monsters && encounter.monsters.length > 0" class="bg-red-900/10 rounded-lg p-3 border border-red-900/30">
-            <div class="text-[10px] text-red-400 uppercase tracking-widest mb-2 font-bold">Enemies ({{ getTotalMonsters(encounter) }} total)</div>
-            <div class="space-y-1.5">
-              <div
-                v-for="monster in encounter.monsters"
-                :key="monster.name"
-                class="flex items-center justify-between bg-slate-900/40 rounded-lg p-2 border border-slate-700/30"
-              >
-                <span class="text-xs text-slate-300">
-                  <span class="text-red-300 font-bold pr-3 select-none">{{ monster.count }}</span>
-                  <span>{{ monster.name }}</span>
-                  <span class="text-slate-500 ml-2">(CR {{ monster.cr }})</span>
-                </span>
-                <a
-                  :href="monster.mmLink"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  @click.stop
-                  class="px-2 py-1 bg-amber-600 hover:bg-amber-500 text-white text-xs font-bold rounded transition-colors"
-                >
-                  📖
-                </a>
-              </div>
-            </div>
-          </div>
 
-          <!-- Additional Stats -->
-          <div class="flex items-center gap-4 text-xs text-slate-400 flex-wrap">
-            <div v-if="(encounter.type === EncounterType.Combat || encounter.type === EncounterType.Social) && encounter.attitude">
-              <span class="text-slate-500">Attitude:</span> <span class="capitalize">{{ encounter.attitude }}</span>
-            </div>
-            <div v-if="(encounter.type === EncounterType.Combat || encounter.type === EncounterType.Social) && encounter.personality">
-              <span class="text-slate-500">Personality:</span> <span class="capitalize">{{ encounter.personality }}</span>
-            </div>
-            <div v-if="encounter.lair !== undefined">
-              <span class="text-slate-500">Lair:</span> {{ encounter.lair ? 'Yes' : 'No' }}
-            </div>
-            <div v-if="encounter.size">
-              <span class="text-slate-500">Size:</span> {{ encounter.size }}
-            </div>
+          <!-- specialized components -->
+          <div class="mt-2">
+            <CombatEncounter 
+              v-if="encounter.type === EncounterType.Combat" 
+              :encounter="encounter" 
+            />
+            <SocialEncounter 
+              v-else-if="encounter.type === EncounterType.Social" 
+              :encounter="encounter" 
+            />
+            <PuzzleEncounter 
+              v-else-if="encounter.type === EncounterType.Puzzle" 
+              :encounter="encounter" 
+            />
+            <ExplorationEncounter 
+              v-else-if="encounter.type === EncounterType.Exploration" 
+              :encounter="encounter" 
+            />
+            <RestEncounter 
+              v-else-if="encounter.type === EncounterType.Rest" 
+              :encounter="encounter" 
+            />
+            <TreasureEncounter 
+              v-else-if="encounter.type === EncounterType.Treasure" 
+              :encounter="encounter" 
+            />
+            <BossEncounter 
+              v-else-if="encounter.type === EncounterType.Boss" 
+              :encounter="encounter" 
+            />
           </div>
 
           <!-- Win Conditions -->

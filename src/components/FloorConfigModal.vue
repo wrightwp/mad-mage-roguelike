@@ -24,7 +24,7 @@ export interface FloorConfig {
 
 const props = withDefaults(defineProps<Props>(), {
   initialFloor: 1,
-  initialFloorDepth: 15,
+  initialFloorDepth: 10,
   initialNodeCounts: () => ({
     combat: 30,
     rest: 3,
@@ -61,7 +61,7 @@ const updateNodeCount = (type: string, value: number) => {
 // Reset to defaults
 const resetToDefaults = () => {
   selectedFloor.value = 1;
-  floorDepth.value = 15;
+  floorDepth.value = 10;
   nodeCounts.value = {
     combat: 30,
     rest: 3,

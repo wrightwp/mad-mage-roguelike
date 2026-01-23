@@ -9,7 +9,7 @@ export const useGameStore = defineStore('game', () => {
     const campaignStore = useCampaignStore();
 
     // Settings for generation (could be moved to args or another store)
-    const layerCount = ref(15);
+    const layerCount = ref(10);
 
     // These could be derived from campaignStore.activeCampaign.currentRun
     // But for reactivity and ease of use, we might want to sync them or wrap them.
@@ -52,12 +52,17 @@ export const useGameStore = defineStore('game', () => {
     });
 
     // Actions
-    function startRun(party: PartyMemberState[], partyLevel: number = 1) {
+    function startRun(party: PartyMemberState[], partyLevel: number = 1, floorDepth?: number) {
         if (!campaignStore.activeCampaign) return;
 
         // Initialize first floor
         const floorId = crypto.randomUUID();
         const floorNumber = 1;
+
+        // Update layer count if provided
+        if (floorDepth) {
+            layerCount.value = floorDepth;
+        }
 
         // Generate valid dungeon layout
         const dungeonData = generateDungeon(
