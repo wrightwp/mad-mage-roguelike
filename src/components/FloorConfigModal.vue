@@ -159,6 +159,9 @@ const handleCancel = () => {
               <span>5 (Short)</span>
               <span>30 (Epic)</span>
             </div>
+            <div class="text-[10px] text-slate-500 text-center mt-2 italic">
+              Count includes boss level but excludes the entry room (+1).
+            </div>
           </div>
         </div>
 

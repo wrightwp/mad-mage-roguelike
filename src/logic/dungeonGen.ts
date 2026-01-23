@@ -11,6 +11,10 @@ export const generateDungeon = (
     partySize: number = 4,
     averagePartyLevel: number = 1
 ): DungeonMapData => {
+    // Add 1 to configured layers to account for the Start Node separately
+    // The user configured "10 layers" means "10 layers of dungeon", plus the entrance.
+    layersPerFloor += 1;
+
     const TOTAL_FLOORS = 21;
     const edges: { from: string; to: string }[] = [];
 
