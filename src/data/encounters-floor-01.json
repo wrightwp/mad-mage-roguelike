@@ -3275,43 +3275,51 @@
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 140ft x 140ft ancient prison. Rusted cells lining walls. Ghostly spectral warden in center with ethereal chains. Shadowy atmosphere. Whispers visible as mist. Eerie blue-white lighting. Entry via iron door. Exit stairs visible. Clean lines, high contrast for virtual tabletop use."
     },
     {
-        "name": "Sszarak the Yuan-ti Malison",
+        "name": "Sszarak the Yuan-ti Infiltrator",
         "level": 1,
         "type": "boss",
         "difficulty": "high",
-        "roomDescription": "A temple dedicated to a serpent god. Stone snake statues coil around pillars. A snake-human hybrid priest performs a dark ritual at an altar, surrounded by giant constrictor snakes.",
-        "dmDescription": "Yuan-ti Malison (CR 2) with 2 Giant Constrictor Snakes. Malison has Magic Resistance and Suggestion spell (DC 13 Wis save). Uses poisoned weapons (DC 12 Con save or 2d6 poison damage). Snakes use Constrict (grapple + damage). At half HP, drinks Potion of Invisibility. Lair action: statue snakes animate (DC 12 Dex save or restrained). Treasure: Serpent Staff (magic quarterstaff), Poison Vials (3), Ritual Dagger (+1), 225 gp, Serpent God Idol (worth 150 gp).",
+        "roomDescription": "A temple dedicated to a serpent god. Stone snake statues coil around pillars. A snake-human hybrid priest performs a dark ritual at an altar, a pair of constrictor snakes slither forward to attack.",
+        "dmDescription": "Yuan-ti Infiltrator (CR 1) with 2 Constrictor Snakes. Infiltrator has Magic Resistance and Suggestion spell (DC 12 Wis save). Lair action: statue snakes animate (DC 12 Dex save or restrained, DC 12 Str save to escape on subsequent turns).",
         "size": 2,
         "monsters": [
             {
-                "name": "Sszarak (Yuan-ti Malison)",
+                "name": "Sszarak (Yuan-ti Infiltrator)",
                 "count": 1,
-                "cr": 2,
-                "exp": 450,
+                "cr": 1,
+                "exp": 200,
                 "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/monsters/17121-yuan-ti-malison-type-1"
+                "mmLink": "https://www.dndbeyond.com/monsters/5195289-yuan-ti-infiltrator"
             },
             {
-                "name": "Giant Constrictor Snake",
+                "name": "Constrictor Snake",
                 "count": 2,
-                "cr": 2,
-                "exp": 450,
+                "cr": 0.25,
+                "exp": 50,
                 "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/monsters/16871-giant-constrictor-snake"
+                "mmLink": "https://www.dndbeyond.com/monsters/4775809-constrictor-snake"
+            },
+            {
+                "name": "Flying Snake",
+                "count": 4,
+                "cr": 0.125,
+                "exp": 25,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/monsters/5194999-flying-snake"
             }
         ],
         "attitude": "hostile",
         "personality": "cold and calculating",
-        "xpBudget": 1350,
+        "xpBudget": 400,
         "lair": true,
         "winConditions": [
             {
-                "condition": "Defeat Sszarak and the constrictor snakes",
-                "reward": "1350 XP + full treasure"
+                "condition": "Defeat Sszarak and his minions",
+                "reward": "400 XP + full treasure"
             },
             {
-                "condition": "Disrupt the ritual before combat (DC 14 Arcana or Religion)",
-                "reward": "Sszarak loses lair actions and one snake doesn't fight"
+                "condition": "Disrupt the ritual to prevent Sszarak from using Lair Actions (DC 14 Arcana or Religion)",
+                "reward": "additional 100 XP"
             }
         ],
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 160ft x 140ft serpent temple. Stone snake statues coiling around pillars. Dark altar in center with yuan-ti priest. Two giant constrictor snakes. Serpentine decorations throughout. Green-tinted torchlight. Entry via temple doors. Exit passage behind altar. Clean lines, high contrast for virtual tabletop use."
