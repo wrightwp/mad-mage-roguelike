@@ -72,6 +72,11 @@ export const useMapInteraction = (
             });
         }
 
+        const currentFloorId = gameStore.currentRun?.currentFloorId;
+        if (currentFloorId && mapData.value) {
+            gameStore.setFloorData(currentFloorId, mapData.value.nodes);
+        }
+
         // Scroll Camera
         scrollToNode(node);
     };
@@ -91,6 +96,11 @@ export const useMapInteraction = (
                     target.revealed = true;
                 }
             });
+        }
+
+        const currentFloorId = gameStore.currentRun?.currentFloorId;
+        if (currentFloorId && mapData.value) {
+            gameStore.setFloorData(currentFloorId, mapData.value.nodes);
         }
     };
 

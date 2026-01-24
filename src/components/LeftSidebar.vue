@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue';
+import { ref, watch } from 'vue';
 import type { DungeonNode } from '../types';
 import headerDecoration from '../assets/header_decoration.png';
 import SaveManagerModal from './SaveManagerModal.vue';
@@ -32,7 +32,7 @@ interface Emits {
   (e: 'selectNode', nodeId: string): void;
 }
 
-defineProps<Props>();
+const props = defineProps<Props>();
 const emit = defineEmits<Emits>();
 
 const showSaveManager = ref(false);
@@ -55,6 +55,15 @@ const handleSelectEncounter = (node: DungeonNode) => {
   emit('selectNode', node.id);
   activeTab.value = 'details';
 };
+
+watch(
+  () => props.selectedNode?.id,
+  (nextId, prevId) => {
+    if (nextId && nextId !== prevId) {
+      activeTab.value = 'details';
+    }
+  }
+);
 </script>
 
 <template>

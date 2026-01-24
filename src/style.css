@@ -8,9 +8,9 @@
 /* Global styles */
 :root {
     font-family: 'Philosopher', Inter, system-ui, sans-serif;
-    line-height: 1.5;
+    line-height: 1.6;
     font-weight: 400;
-    font-size: 18px;
+    font-size: 19px;
 
     /* D&D Color Palette */
     --color-arcane-purple: #8b5cf6;

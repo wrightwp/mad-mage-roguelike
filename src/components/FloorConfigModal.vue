@@ -96,7 +96,8 @@ const handleCancel = () => {
     class="fixed inset-0 z-[100] flex items-center justify-center bg-black/80 backdrop-blur-sm"
     @click.self="handleCancel"
   >
-    <div class="bg-slate-900 border-2 border-amber-600/50 rounded-2xl p-8 max-w-2xl w-full shadow-2xl transform transition-all scale-100 max-h-[90vh] overflow-y-auto custom-scrollbar">
+    <div class="bg-slate-900 border-2 border-amber-600/50 rounded-2xl max-w-2xl w-full shadow-2xl transform transition-all scale-100 max-h-[90vh] overflow-hidden flex flex-col">
+      <div class="flex-1 overflow-y-auto custom-scrollbar px-8 pt-8 pb-6">
       <!-- Header -->
       <div class="text-center mb-8">
         <div class="w-20 h-20 bg-amber-900/30 text-amber-500 rounded-full flex items-center justify-center mx-auto mb-4 text-4xl">
@@ -281,8 +282,11 @@ const handleCancel = () => {
         </div>
       </div>
 
+      </div>
+
       <!-- Actions -->
-      <div class="flex gap-4 mt-8">
+      <div class="px-8 py-5 bg-slate-900/95 backdrop-blur border-t border-slate-800">
+        <div class="flex gap-4">
         <button 
           @click="resetToDefaults"
           class="flex-1 bg-slate-800 hover:bg-slate-700 text-slate-200 font-bold py-3 px-6 rounded-xl transition-all border border-slate-700 transform active:scale-95"
@@ -295,6 +299,7 @@ const handleCancel = () => {
         >
           ⚔️ Generate Floor
         </button>
+        </div>
       </div>
     </div>
   </div>
@@ -345,3 +350,4 @@ input[type="range"]::-moz-range-thumb {
   box-shadow: 0 0 10px rgba(245, 158, 11, 0.5);
 }
 </style>
+

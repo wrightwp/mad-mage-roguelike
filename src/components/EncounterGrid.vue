@@ -3,12 +3,7 @@ import { ref, computed } from 'vue';
 import { encounterLibrary } from '../data/encounterLibrary';
 import type { EncounterData } from '../types';
 import { EncounterType } from '../types';
-import CombatEncounter from './encounters/CombatEncounter.vue';
-import SocialEncounter from './encounters/SocialEncounter.vue';
-import ExplorationEncounter from './encounters/ExplorationEncounter.vue';
-import RestEncounter from './encounters/RestEncounter.vue';
-import TreasureEncounter from './encounters/TreasureEncounter.vue';
-import BossEncounter from './encounters/BossEncounter.vue';
+import EncounterContent from './EncounterContent.vue';
 
 interface Props {
   mapData: any;
@@ -322,77 +317,7 @@ const getDifficultyColor = (difficulty: string): string => {
           v-if="isExpanded(encounter.name)"
           class="px-4 pb-4 pt-2 bg-slate-900/40 border-t border-slate-800/50 space-y-3 animate-slideDown"
         >
-          <!-- Room Description -->
-          <div v-if="encounter.roomDescription" class="bg-slate-800/30 rounded-lg p-3 border border-slate-700/40">
-            <div class="text-[10px] text-slate-400 uppercase tracking-widest mb-2 font-bold">Room Description</div>
-            <p class="text-xs text-slate-300 leading-relaxed italic">
-              {{ encounter.roomDescription }}
-            </p>
-          </div>
-          <!-- DM Description -->
-          <div v-if="encounter.dmDescription" class="bg-slate-800/40 rounded-lg p-3 border border-slate-700/50">
-            <div class="text-[10px] text-red-400 uppercase tracking-widest mb-2 font-bold">🎲 DM Notes</div>
-            <p class="text-xs text-slate-300 leading-relaxed">
-              {{ encounter.dmDescription }}
-            </p>
-          </div>
-
-
-          <!-- specialized components -->
-          <div class="mt-2">
-            <CombatEncounter 
-              v-if="encounter.type === EncounterType.Combat" 
-              :encounter="encounter" 
-            />
-            <SocialEncounter 
-              v-else-if="encounter.type === EncounterType.Social" 
-              :encounter="encounter" 
-            />
-            <ExplorationEncounter 
-              v-else-if="encounter.type === EncounterType.Exploration" 
-              :encounter="encounter" 
-            />
-            <RestEncounter 
-              v-else-if="encounter.type === EncounterType.Rest" 
-              :encounter="encounter" 
-            />
-            <TreasureEncounter 
-              v-else-if="encounter.type === EncounterType.Treasure" 
-              :encounter="encounter" 
-            />
-            <BossEncounter 
-              v-else-if="encounter.type === EncounterType.Boss" 
-              :encounter="encounter" 
-            />
-          </div>
-
-          <!-- Win Conditions -->
-          <div v-if="encounter.winConditions && encounter.winConditions.length > 0" class="bg-gradient-to-br from-slate-800/50 to-slate-800/30 rounded-lg p-3 border border-slate-700">
-            <div class="text-[10px] text-slate-400 uppercase tracking-widest mb-2 font-bold">Win Conditions</div>
-            <div class="space-y-2">
-              <div
-                v-for="(winCondition, index) in encounter.winConditions"
-                :key="index"
-                class="rounded-lg p-2 border-l-4 bg-slate-900/40"
-                :class="index === 0 ? 'border-emerald-500 bg-emerald-900/5' : 'border-amber-500 bg-amber-900/5'"
-              >
-                <div class="text-xs font-semibold mb-1" :class="index === 0 ? 'text-emerald-300' : 'text-amber-300'">
-                  {{ winCondition.condition }}
-                </div>
-                <div class="text-[10px] text-slate-400">
-                  <span class="font-semibold">Reward:</span> {{ winCondition.reward }}
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- AI Room Prompt -->
-          <div v-if="encounter.aiRoomPrompt" class="bg-purple-900/10 rounded-lg p-3 border border-purple-900/30">
-            <div class="text-[10px] text-purple-400 uppercase tracking-widest mb-2 font-bold">🤖 AI Room Prompt</div>
-            <div class="text-xs text-slate-300 bg-slate-900/40 rounded-lg p-2 border border-slate-700/30 font-mono leading-relaxed">
-              {{ encounter.aiRoomPrompt }}
-            </div>
-          </div>
+          <EncounterContent :encounter="encounter" :show-room-description="true" />
         </div>
       </div>
     </div>

@@ -1,14 +1,7 @@
 <script setup lang="ts">
 import { ref } from 'vue';
 import type { DungeonNode, DungeonMapData } from '../types';
-import { EncounterType } from '../types';
-
-import CombatEncounter from './encounters/CombatEncounter.vue';
-import SocialEncounter from './encounters/SocialEncounter.vue';
-import ExplorationEncounter from './encounters/ExplorationEncounter.vue';
-import RestEncounter from './encounters/RestEncounter.vue';
-import TreasureEncounter from './encounters/TreasureEncounter.vue';
-import BossEncounter from './encounters/BossEncounter.vue';
+import EncounterContent from './EncounterContent.vue';
 import EncounterCompletionControls from './EncounterCompletionControls.vue';
 
 
@@ -28,7 +21,6 @@ const emit = defineEmits<Emits>();
 
 // DM info toggle state
 const showDMInfo = ref(true);
-const showAIPrompt = ref(false);
 
 
 
@@ -49,16 +41,6 @@ const getConnectedNodeType = (connectionId: string): string => {
   return connectedNode.type.charAt(0).toUpperCase() + connectedNode.type.slice(1);
 };
 
-// Copy to clipboard functionality
-const copyToClipboard = async (text: string) => {
-  try {
-    await navigator.clipboard.writeText(text);
-  } catch (err) {
-    console.error('Failed to copy:', err);
-  }
-};
-
-
 const isReachableFromCurrent = (targetNode: DungeonNode): boolean => {
   if (!props.mapData) return false;
   const currentNode = props.mapData.nodes.find(n => n.status === 'current');
@@ -76,7 +58,7 @@ const isReachableFromCurrent = (targetNode: DungeonNode): boolean => {
       <!-- Room Description -->
       <div class="bg-slate-800/40 rounded-xl p-4 border border-slate-700/50">
         <div class="text-[10px] text-slate-500 uppercase tracking-widest mb-2">Room Description</div>
-        <p class="text-sm text-slate-200 leading-relaxed font-serif italic">
+        <p class="text-base text-slate-200 leading-relaxed font-serif italic">
           {{ selectedNode.description || 'A mysterious chamber hidden deep within the Undermountain.' }}
         </p>
       </div>
@@ -103,109 +85,7 @@ const isReachableFromCurrent = (targetNode: DungeonNode): boolean => {
 
       <!-- DM Content (Collapsible) -->
       <div v-show="showDMInfo" class="space-y-4 animate-fadeIn">
-        <!-- Encounter Header -->
-        <div v-if="selectedNode.encounter" 
-          class="bg-slate-800/50 rounded-xl p-4 border border-slate-700">
-          <h2 class="text-lg font-bold text-amber-400 mb-3">{{ selectedNode.encounter.name }}</h2>
-          
-          <!-- DM Description -->
-          <div v-if="selectedNode.encounter.dmDescription" class="mb-3 pb-3 border-b border-slate-700/50">
-            <p class="text-sm text-slate-300 leading-relaxed italic">{{ selectedNode.encounter.dmDescription }}</p>
-          </div>
-          
-          <div class="flex gap-2 text-xs flex-wrap">
-            <span class="px-2 py-1 bg-slate-700 rounded">Level {{ selectedNode.encounter.level }}</span>
-            <span class="px-2 py-1 bg-slate-700 rounded capitalize">{{ selectedNode.encounter.difficulty }}</span>
-          </div>
-        </div>
-
-        <!-- Dynamic Encounter Details -->
-        <div v-if="selectedNode.encounter">
-          <CombatEncounter 
-            v-if="selectedNode.encounter.type === EncounterType.Combat" 
-            :encounter="selectedNode.encounter" 
-          />
-          <SocialEncounter 
-            v-else-if="selectedNode.encounter.type === EncounterType.Social" 
-            :encounter="selectedNode.encounter" 
-          />
-          <ExplorationEncounter 
-            v-else-if="selectedNode.encounter.type === EncounterType.Exploration" 
-            :encounter="selectedNode.encounter" 
-          />
-          <RestEncounter 
-            v-else-if="selectedNode.encounter.type === EncounterType.Rest" 
-            :encounter="selectedNode.encounter" 
-          />
-          <TreasureEncounter 
-            v-else-if="selectedNode.encounter.type === EncounterType.Treasure" 
-            :encounter="selectedNode.encounter" 
-          />
-          <BossEncounter 
-            v-else-if="selectedNode.encounter.type === EncounterType.Boss" 
-            :encounter="selectedNode.encounter" 
-          />
-        </div>
-
-
-        <!-- Win Conditions & Rewards -->
-        <div v-if="selectedNode.encounter?.winConditions?.length" 
-          class="bg-gradient-to-br from-slate-800/50 to-slate-800/30 rounded-xl p-4 border border-slate-700">
-          <div class="text-[10px] text-slate-400 uppercase tracking-widest mb-3 font-bold">
-            Win Conditions
-          </div>
-          <div class="space-y-3">
-            <div 
-              v-for="(winCondition, index) in selectedNode.encounter.winConditions" 
-              :key="index"
-              class="rounded-lg p-3 border-l-4 bg-slate-900/40"
-              :class="index === 0 ? 'border-emerald-500 bg-emerald-900/5' : 'border-amber-500 bg-amber-900/5'">
-              <div class="mb-2">
-                <div class="text-sm font-semibold mb-1" :class="index === 0 ? 'text-emerald-300' : 'text-amber-300'">
-                  {{ winCondition.condition }}
-                </div>
-                <div class="text-xs text-slate-400 flex items-center gap-1.5">
-                  <span class="font-semibold">Reward:</span>
-                  <span class="text-slate-300">{{ winCondition.reward }}</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-
-        <!-- AI Room Prompt -->
-        <div v-if="selectedNode.encounter?.aiRoomPrompt" 
-          class="bg-gradient-to-br from-purple-900/15 to-slate-900/30 rounded-xl border border-purple-900/40 overflow-hidden">
-          <div
-            class="flex items-center justify-between px-4 py-3 bg-slate-900/60 border-b border-purple-900/30 cursor-pointer select-none hover:bg-slate-900/80 transition-colors"
-            @click="showAIPrompt = !showAIPrompt"
-            role="button"
-            tabindex="0"
-            :aria-expanded="showAIPrompt"
-          >
-            <div class="flex items-center gap-2 text-[11px] font-bold uppercase tracking-widest text-purple-300">
-              <span class="text-xs transition-transform" :class="showAIPrompt ? 'rotate-0' : '-rotate-90'">▼</span>
-              <span>AI Room Prompt</span>
-            </div>
-            <button
-              @click="copyToClipboard(selectedNode.encounter.aiRoomPrompt)"
-              class="px-2.5 py-1 bg-purple-600/90 hover:bg-purple-500 text-white text-[10px] font-bold rounded-md transition-colors border border-purple-400/40"
-              @click.stop
-            >
-              Copy
-            </button>
-          </div>
-          <div v-show="!showAIPrompt" class="px-4 py-3 text-[11px] text-slate-400 italic">
-            Prompt hidden — click to expand.
-          </div>
-          <div v-show="showAIPrompt" class="px-4 py-4">
-            <div class="text-xs text-slate-200 bg-slate-950/50 rounded-lg p-3 border border-slate-700/40 font-mono leading-relaxed shadow-inner">
-              {{ selectedNode.encounter.aiRoomPrompt }}
-            </div>
-          </div>
-        </div>
+        <EncounterContent v-if="selectedNode.encounter" :encounter="selectedNode.encounter" />
 
         <!-- Connected Encounters -->
         <div v-if="selectedNode.connections.length > 0" 
