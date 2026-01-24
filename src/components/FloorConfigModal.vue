@@ -30,9 +30,8 @@ const props = withDefaults(defineProps<Props>(), {
     combat: 30,
     rest: 3,
     treasure: 4,
-    puzzle: 6,
     social: 3,
-    exploration: 4
+    exploration: 10
   })
 });
 
@@ -67,9 +66,8 @@ const resetToDefaults = () => {
     combat: 30,
     rest: 3,
     treasure: 4,
-    puzzle: 6,
     social: 3,
-    exploration: 4
+    exploration: 10
   };
   partySize.value = 4;
   averagePartyLevel.value = 1;

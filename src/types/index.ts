@@ -3,7 +3,6 @@ export type {
     EncounterData,
     CombatEncounterData,
     SocialEncounterData,
-    PuzzleEncounterData,
     ExplorationEncounterData,
     RestEncounterData
 } from './EncounterData';

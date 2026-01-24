@@ -35,21 +35,17 @@ export interface SocialEncounterData extends BaseEncounterData {
     questHook?: string;
 }
 
-export interface PuzzleEncounterData extends BaseEncounterData {
-    type: EncounterType.Puzzle;
-    puzzleDescription: string; // Specific description of the puzzle mechanics
-    dc?: number;
-    solution?: string;
-    xpBudget: number; // Reward for solving
-    penalty?: string; // Consequence for failure
-}
-
 export interface ExplorationEncounterData extends BaseEncounterData {
     type: EncounterType.Exploration;
     xpBudget?: number;
     items?: string[]; // Found items
     traps?: string[]; // Description of hazards
     secretDoors?: boolean;
+    // Optional puzzle-style fields (merged from former Puzzle encounters)
+    puzzleDescription?: string; // Specific description of puzzle mechanics
+    dc?: number;
+    solution?: string;
+    penalty?: string; // Consequence for failure
 }
 
 export interface RestEncounterData extends BaseEncounterData {
@@ -61,9 +57,7 @@ export interface RestEncounterData extends BaseEncounterData {
 export type EncounterData =
     | CombatEncounterData
     | SocialEncounterData
-    | PuzzleEncounterData
     | ExplorationEncounterData
-    | RestEncounterData
     | RestEncounterData
     | BossEncounterData
     | TreasureEncounterData;

@@ -4,7 +4,6 @@ export enum NodeType {
     Boss = 'boss',
     Start = 'start',
     Treasure = 'treasure',
-    Puzzle = 'puzzle',
     Social = 'social',
     Exploration = 'exploration'
 }

@@ -2308,7 +2308,7 @@
     {
         "name": "The Whispering Statues",
         "level": 1,
-        "type": "puzzle",
+        "type": "exploration",
         "difficulty": "low",
         "roomDescription": "Three stone statues stand in alcoves along the walls—a warrior, a wizard, and a rogue. Each holds a different colored gem: red, blue, and green. A locked door bears three matching gem-shaped indentations.",
         "dmDescription": "Simple color-matching puzzle. The statues whisper clues when approached: Warrior says 'Strength is red', Wizard says 'Magic is blue', Rogue says 'Stealth is green'. Players must place gems in the correct order based on the door's inscription: 'First comes might, then cunning, last comes power.' Solution: Red (top), Green (middle), Blue (bottom).",
@@ -2323,7 +2323,7 @@
     {
         "name": "The Runic Sequence",
         "level": 1,
-        "type": "puzzle",
+        "type": "exploration",
         "difficulty": "low",
         "roomDescription": "A circular platform in the center of the room is surrounded by eight stone pillars, each carved with a glowing rune. The runes pulse in a specific sequence, then go dark.",
         "dmDescription": "Memory puzzle. The runes light up in sequence: Fire, Water, Earth, Air. Players must touch the pillars in the same order within 30 seconds. DC 10 Intelligence (Arcana) reveals the elemental nature of the runes. DC 12 Wisdom (Perception) to memorize the sequence on first viewing.",
@@ -2338,7 +2338,7 @@
     {
         "name": "The Scales of Balance",
         "level": 1,
-        "type": "puzzle",
+        "type": "exploration",
         "difficulty": "moderate",
         "roomDescription": "An enormous bronze scale dominates the room, its two platforms perfectly level. Nearby pedestals hold various objects: a skull, a book, a sword, a crown, and a feather. An inscription reads: 'Balance truth with lies, life with death.'",
         "dmDescription": "Weight-based logic puzzle. The scale must be balanced with opposing concepts. Solution: Skull (death) + Book (truth) on one side equals Sword (lies/violence) + Feather (life/lightness) on the other. DC 13 Intelligence (Investigation) to deduce the symbolic meanings. DC 15 Wisdom (Insight) for a hint about opposing pairs.",
@@ -2353,7 +2353,7 @@
     {
         "name": "The Mirror Maze",
         "level": 1,
-        "type": "puzzle",
+        "type": "exploration",
         "difficulty": "moderate",
         "roomDescription": "The chamber is filled with standing mirrors arranged in a complex pattern. Your reflections multiply endlessly. A glowing orb sits on a pedestal at the far end, visible through the maze of glass.",
         "dmDescription": "Navigation puzzle with illusion elements. Only one path through the mirrors is real—the others are illusions that lead to dead ends. DC 14 Intelligence (Investigation) to notice subtle differences in real vs. illusory mirrors (real mirrors show slight imperfections). DC 12 Wisdom (Perception) to hear echoes differently when near real passages. Players can also break mirrors (AC 13, 1 HP each) but each broken mirror releases a harmless but disorienting flash.",
@@ -2368,7 +2368,7 @@
     {
         "name": "The Celestial Alignment",
         "level": 1,
-        "type": "puzzle",
+        "type": "exploration",
         "difficulty": "moderate",
         "roomDescription": "A domed ceiling displays a star map with constellations slowly rotating. Below, a circular floor is divided into twelve sections, each marked with a zodiac symbol. Three movable stone markers rest at the room's edge.",
         "dmDescription": "Astronomy-based pattern puzzle. Players must place the three markers on the floor sections that align with specific constellations currently visible in the ceiling. DC 13 Intelligence (Nature or Arcana) to identify the constellations. The correct positions change every minute as the ceiling rotates. Current alignment: The Warrior (Aries), The Scales (Libra), and The Archer (Sagittarius).",
@@ -2383,7 +2383,7 @@
     {
         "name": "The Chessboard Trap",
         "level": 1,
-        "type": "puzzle",
+        "type": "exploration",
         "difficulty": "high",
         "roomDescription": "The floor is a massive black and white chessboard. Stone chess pieces, sized for humans, stand frozen in mid-game. A plaque reads: 'Complete the game in three moves, or become part of it.'",
         "dmDescription": "Chess puzzle requiring actual chess knowledge. The board shows a position where white can checkmate in 3 moves. DC 15 Intelligence check to solve, or DC 12 if proficient in gaming sets. Solution: 1. Queen to H7 (check), 2. King moves (forced), 3. Queen to G7 or G8 (checkmate depending on king's move). Players who step on the board incorrectly become paralyzed until the puzzle is solved (DC 14 Wis save to resist).",
@@ -2398,7 +2398,7 @@
     {
         "name": "The Singing Crystals",
         "level": 1,
-        "type": "puzzle",
+        "type": "exploration",
         "difficulty": "high",
         "roomDescription": "Seven crystalline pillars rise from the floor, each humming at a different pitch. A musical staff is carved into the wall with five empty note positions. When touched, each crystal produces a clear tone.",
         "dmDescription": "Musical pattern puzzle. Players must identify and play a specific melody by touching the crystals in the correct sequence. DC 14 Intelligence (Performance or Arcana) to recognize the melody pattern from the wall carving. DC 16 Wisdom (Perception) to notice that the crystals' natural hum already contains the answer. The melody is a simple five-note sequence: C-E-G-E-C (do-mi-sol-mi-do). Each crystal is labeled with arcane symbols that correspond to musical notes.",
@@ -2413,7 +2413,7 @@
     {
         "name": "The Timekeeper's Riddle",
         "level": 1,
-        "type": "puzzle",
+        "type": "exploration",
         "difficulty": "high",
         "roomDescription": "An ancient grandfather clock stands against the wall, its hands frozen at different times. Four hourglasses of varying sizes sit on a nearby table. An inscription reads: 'Set the clock to the hour when all sands have fallen, yet none have begun.'",
         "dmDescription": "Logic riddle with time manipulation. The answer is midnight (12:00), representing the moment between one day ending and another beginning—when all of yesterday has 'fallen' but today hasn't 'begun'. DC 16 Intelligence (Investigation) to solve the riddle. The hourglasses are red herrings but can be used to measure time if players want to experiment. Players must physically move the clock hands to 12:00.",

@@ -10,6 +10,13 @@ Exploration encounters focus on the **Environment**, **Discovery**, and **Hazard
 
 ## Encounter Design Rules
 
+### Puzzle Elements (Optional)
+Exploration encounters can optionally include **puzzle-style elements**. If present, include:
+- **puzzleDescription**: Clear mechanics and constraints the players can observe.
+- **dc**: Primary check DC if applicable.
+- **solution**: The intended solution for the DM.
+- **penalty**: Consequence for failure, if any.
+
 ### Environment and Traps (`traps`)
 - **Hazards**: Natural dangers like slippery moss, lava flows, or toxic spores.
 - **Traps**: Constructed dangers. Always include:

@@ -36,17 +36,6 @@ export class EncounterLibrary {
                 attitude: EncounterAttitude.Indifferent,
                 personality: "weary"
             },
-            [EncounterType.Puzzle]: {
-                name: "Default Puzzle",
-                level: 0,
-                type: EncounterType.Puzzle,
-                difficulty: EncounterDifficulty.Moderate,
-                roomDescription: "A sealed door blocks your path with strange markings on its surface.",
-                dmDescription: "Generic puzzle. DC 12 Intelligence check to decipher.",
-                size: 1,
-                puzzleDescription: "Symbols need alignment.",
-                xpBudget: 100
-            },
             [EncounterType.Exploration]: {
                 name: "Default Exploration",
                 level: 0,

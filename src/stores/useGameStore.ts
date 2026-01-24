@@ -235,6 +235,25 @@ export const useGameStore = defineStore('game', () => {
     function repairState() {
         if (!currentFloor.value) return;
 
+        // Legacy migration: puzzle -> exploration
+        let didMigrate = false;
+        currentFloor.value.layout.forEach(node => {
+            if ((node.type as any) === 'puzzle') {
+                node.type = 'exploration' as any;
+                didMigrate = true;
+            }
+
+            if ((node.encounter as any)?.type === 'puzzle') {
+                (node.encounter as any).type = 'exploration';
+                didMigrate = true;
+            }
+
+            if ((node.originalEncounter as any)?.type === 'puzzle') {
+                (node.originalEncounter as any).type = 'exploration';
+                didMigrate = true;
+            }
+        });
+
         // 1. Fix missing Start Node encounter data
         const startNode = currentFloor.value.layout.find(n => n.type === 'start');
         if (startNode && !startNode.encounter) {
@@ -256,6 +275,10 @@ export const useGameStore = defineStore('game', () => {
         // 2. Ensure encounterResults map exists
         if (!currentFloor.value.encounterResults) {
             currentFloor.value.encounterResults = {};
+            campaignStore.saveToLocalStorage();
+        }
+
+        if (didMigrate) {
             campaignStore.saveToLocalStorage();
         }
     }

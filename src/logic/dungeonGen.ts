@@ -102,20 +102,26 @@ export const generateDungeon = (
 
     // 2. Prepare Counts and Configuration
     const standardNodes = layers.slice(1, layersPerFloor - 1).flat();
-    const maxCounts = nodeTypeCounts || {
-        combat: 30,
-        rest: 3,
-        treasure: 4,
-        puzzle: 6,
-        social: 3,
-        exploration: 4
-    };
+    const normalizedCounts = { ...(nodeTypeCounts || {}) };
+    if (normalizedCounts.puzzle) {
+        normalizedCounts.exploration = (normalizedCounts.exploration || 0) + normalizedCounts.puzzle;
+        delete normalizedCounts.puzzle;
+    }
+
+    const maxCounts = Object.keys(normalizedCounts).length > 0
+        ? normalizedCounts
+        : {
+            combat: 30,
+            rest: 3,
+            treasure: 4,
+            social: 3,
+            exploration: 10
+        };
 
     const usedCounts: Record<string, number> = {
         combat: 0,
         rest: 0,
         treasure: 0,
-        puzzle: 0,
         social: 0,
         exploration: 0
     };
@@ -124,7 +130,6 @@ export const generateDungeon = (
     // Map node types to encounter types
     const encounterTypeMap: Record<string, EncounterType> = {
         [NodeType.Combat]: EncounterType.Combat,
-        [NodeType.Puzzle]: EncounterType.Puzzle,
         [NodeType.Rest]: EncounterType.Rest,
         [NodeType.Treasure]: EncounterType.Treasure,
         [NodeType.Social]: EncounterType.Social,
@@ -271,7 +276,6 @@ export const generateDungeon = (
                 case 'combat': node.description = 'A group of monsters blocks your path.'; break;
                 case 'rest': node.description = 'A relatively safe spot to catch your breath and mend your wounds.'; break;
                 case 'treasure': node.description = 'A glimmering chest lies half-buried in the shadows.'; break;
-                case 'puzzle': node.description = 'An intricate mechanism or riddle prevents further progress.'; break;
                 case 'social': node.description = 'You encounter someone who may be friend or foe.'; break;
                 case 'exploration': node.description = 'An area of interest beckons for exploration.'; break;
             }

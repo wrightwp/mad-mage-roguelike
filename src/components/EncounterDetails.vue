@@ -5,7 +5,6 @@ import { EncounterType } from '../types';
 
 import CombatEncounter from './encounters/CombatEncounter.vue';
 import SocialEncounter from './encounters/SocialEncounter.vue';
-import PuzzleEncounter from './encounters/PuzzleEncounter.vue';
 import ExplorationEncounter from './encounters/ExplorationEncounter.vue';
 import RestEncounter from './encounters/RestEncounter.vue';
 import TreasureEncounter from './encounters/TreasureEncounter.vue';
@@ -136,10 +135,6 @@ const isReachableFromCurrent = (targetNode: DungeonNode): boolean => {
           />
           <SocialEncounter 
             v-else-if="selectedNode.encounter.type === EncounterType.Social" 
-            :encounter="selectedNode.encounter" 
-          />
-          <PuzzleEncounter 
-            v-else-if="selectedNode.encounter.type === EncounterType.Puzzle" 
             :encounter="selectedNode.encounter" 
           />
           <ExplorationEncounter 

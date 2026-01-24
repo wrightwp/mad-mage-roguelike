@@ -5,7 +5,6 @@ import type { EncounterData } from '../types';
 import { EncounterType } from '../types';
 import CombatEncounter from './encounters/CombatEncounter.vue';
 import SocialEncounter from './encounters/SocialEncounter.vue';
-import PuzzleEncounter from './encounters/PuzzleEncounter.vue';
 import ExplorationEncounter from './encounters/ExplorationEncounter.vue';
 import RestEncounter from './encounters/RestEncounter.vue';
 import TreasureEncounter from './encounters/TreasureEncounter.vue';
@@ -69,7 +68,6 @@ const toggleSort = (column: SortColumn) => {
 // Helper to get XP safely
 const getXP = (encounter: EncounterData): number => {
   if (encounter.type === EncounterType.Combat || 
-      encounter.type === EncounterType.Puzzle || 
       encounter.type === EncounterType.Social ||
       encounter.type === EncounterType.Exploration ||
       encounter.type === EncounterType.Treasure) {
@@ -131,7 +129,6 @@ const getTypeColor = (type: EncounterType): string => {
     case EncounterType.Combat: return 'bg-red-600';
     case EncounterType.Exploration: return 'bg-blue-600';
     case EncounterType.Social: return 'bg-purple-600';
-    case EncounterType.Puzzle: return 'bg-cyan-600';
     case EncounterType.Rest: return 'bg-amber-800';
     case EncounterType.Treasure: return 'bg-amber-500';
     default: return 'bg-slate-600';
@@ -278,10 +275,6 @@ const getDifficultyColor = (difficulty: string): string => {
             />
             <SocialEncounter 
               v-else-if="encounter.type === EncounterType.Social" 
-              :encounter="encounter" 
-            />
-            <PuzzleEncounter 
-              v-else-if="encounter.type === EncounterType.Puzzle" 
               :encounter="encounter" 
             />
             <ExplorationEncounter 
