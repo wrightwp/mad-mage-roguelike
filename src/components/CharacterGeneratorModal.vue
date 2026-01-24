@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, ref, watch } from 'vue';
-import { generateCharacter, type GeneratedCharacter, type AbilityScores } from '../utils/characterGenerator';
+import { generateCharacter, type GeneratedCharacter, type AbilityScores, CLASS_NAMES } from '../utils/characterGenerator';
 
 const props = defineProps<{
   show: boolean;
@@ -12,6 +12,8 @@ const emit = defineEmits<{
 }>();
 
 const character = ref<GeneratedCharacter | null>(null);
+const selectedLevel = ref(1);
+const selectedClass = ref('Random');
 const abilityOrder: (keyof AbilityScores)[] = ['STR', 'DEX', 'CON', 'INT', 'WIS', 'CHA'];
 const abilityEntries = computed(() => {
   if (!character.value) return [] as Array<[keyof AbilityScores, number]>;
@@ -19,61 +21,44 @@ const abilityEntries = computed(() => {
 });
 
 const buildCharacter = () => {
-  character.value = generateCharacter(props.level);
+  const classChoice = selectedClass.value === 'Random' ? undefined : selectedClass.value;
+  character.value = generateCharacter(selectedLevel.value, classChoice);
 };
 
 watch(
   () => props.show,
   (show) => {
     if (show) {
+      selectedLevel.value = props.level ?? 1;
       buildCharacter();
     }
   }
 );
 
 const listText = (items: string[], fallback = 'None') => (items.length ? items.join(', ') : fallback);
-const bulletText = (items: string[], fallback = 'None') =>
-  items.length ? items.map(item => `- ${item}`).join('\n') : fallback;
-const formattedText = computed(() => {
-  if (!character.value) return '';
-  const c = character.value;
-  const scores = abilityOrder
-    .map((key) => `${key}: ${c.abilityScores[key]} (${c.modifiers[key] >= 0 ? '+' : ''}${c.modifiers[key]})`)
-    .join('\n');
-  return [
-    `Name: ${c.name}`,
-    `Level: ${c.level}`,
-    `Class: ${c.className}${c.subclass ? ` (${c.subclass})` : ''}`,
-    '',
-    'Class Inputs',
-    bulletText(c.classInputs),
-    '',
-    'Spells',
-    bulletText(c.spells),
-    '',
-    'Background (Origin)',
-    `Background: ${c.background}`,
-    `Bonuses: +2 ${c.backgroundBoosts.plus2}, +1 ${c.backgroundBoosts.plus1}`,
-    `Origin Feat: ${c.originFeat}${c.originFeatDetail ? ` (${c.originFeatDetail})` : ''}`,
-    '',
-    'Species (Origin)',
-    `Species: ${c.species}`,
-    c.ancestry ? `Ancestry: ${c.ancestry}` : 'Ancestry: None',
-    `Languages: ${listText(c.languages)}`,
-    '',
-    'Ability Scores',
-    scores
-  ].join('\n');
+const needsSpellcastingAbilityChoice = (feat: string) => feat.startsWith('Magic Initiate');
+const lineageLabel = (species: string) => (species === 'Elf' ? 'Elven Lineage' : 'Ancestry');
+const splitLabelValue = (text: string) => {
+  const index = text.indexOf(':');
+  if (index === -1) {
+    return { label: text.trim(), value: '' };
+  }
+  return {
+    label: text.slice(0, index).trim(),
+    value: text.slice(index + 1).trim()
+  };
+};
+const classInputParts = computed(() =>
+  character.value ? character.value.classInputs.map((text) => ({ ...splitLabelValue(text), raw: text })) : []
+);
+const spellParts = computed(() =>
+  character.value ? character.value.spells.map((text) => ({ ...splitLabelValue(text), raw: text })) : []
+);
+const originFeatDetailParts = computed(() => {
+  if (!character.value?.originFeatDetail) return null;
+  return splitLabelValue(character.value.originFeatDetail);
 });
 
-const copyToClipboard = async () => {
-  if (!formattedText.value) return;
-  try {
-    await navigator.clipboard.writeText(formattedText.value);
-  } catch (err) {
-    console.error('Failed to copy character', err);
-  }
-};
 </script>
 
 <template>
@@ -103,12 +88,24 @@ const copyToClipboard = async () => {
           >
             Generate New
           </button>
-          <button
-            @click="copyToClipboard"
-            class="px-4 py-2 bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-bold uppercase tracking-wider rounded-lg transition-colors"
+          <select
+            v-model.number="selectedLevel"
+            class="px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg text-xs text-slate-200 uppercase tracking-wider"
           >
-            Copy for DnD Beyond
-          </button>
+            <option v-for="level in 20" :key="level" :value="level">
+              Level {{ level }}
+            </option>
+          </select>
+          <select
+            v-model="selectedClass"
+            class="px-3 py-2 bg-slate-900 border border-slate-700 rounded-lg text-xs text-slate-200 uppercase tracking-wider"
+          >
+            <option value="Random">Random Class</option>
+            <option v-for="className in CLASS_NAMES" :key="className" :value="className">
+              {{ className }}
+            </option>
+          </select>
+          <div class="flex-1"></div>
         </div>
       </div>
 
@@ -121,46 +118,63 @@ const copyToClipboard = async () => {
 
           <div class="bg-slate-800/40 rounded-lg p-4 border border-slate-700/50">
             <div class="text-[10px] text-slate-400 uppercase tracking-widest mb-2">Class</div>
-            <div class="text-lg font-semibold text-slate-100">
-              {{ character.className }}<span v-if="character.subclass" class="text-slate-400 text-sm"> ({{ character.subclass }})</span>
+            <div class="flex items-center justify-between text-lg font-semibold text-slate-100">
+              <div>
+                {{ character.className }}
+                <span v-if="character.subclass" class="text-slate-400 text-sm"> ({{ character.subclass }})</span>
+              </div>
+              <div class="text-sm text-slate-300">Level {{ character.level }}</div>
             </div>
-            <div class="mt-3 text-sm">
-              <div><span class="text-slate-400">Level:</span> {{ character.level }}</div>
+            <div class="mt-3">
+              <div class="text-[10px] text-slate-400 uppercase tracking-widest mb-2">Class Inputs</div>
+              <ul class="list-disc list-inside text-sm text-slate-200 space-y-1">
+                <li v-for="choice in classInputParts" :key="choice.raw">
+                  <span class="font-semibold">{{ choice.label }}</span>
+                  <span v-if="choice.value" class="font-normal">: {{ choice.value }}</span>
+                </li>
+              </ul>
             </div>
-          </div>
-
-          <div class="bg-slate-800/40 rounded-lg p-4 border border-slate-700/50">
-            <div class="text-[10px] text-slate-400 uppercase tracking-widest mb-2">Class Inputs</div>
-            <ul class="list-disc list-inside text-sm text-slate-200 space-y-1">
-              <li v-for="choice in character.classInputs" :key="choice">{{ choice }}</li>
-            </ul>
-          </div>
-
-          <div class="bg-slate-800/40 rounded-lg p-4 border border-slate-700/50">
-            <div class="text-[10px] text-slate-400 uppercase tracking-widest mb-2">Spells</div>
-            <div v-if="character.spells.length" class="text-sm text-slate-200 space-y-1">
-              <div v-for="spell in character.spells" :key="spell">- {{ spell }}</div>
-            </div>
-            <div v-else class="text-sm text-slate-500">None</div>
           </div>
 
           <div class="bg-slate-800/40 rounded-lg p-4 border border-slate-700/50">
             <div class="text-[10px] text-slate-400 uppercase tracking-widest mb-2">Background (Origin)</div>
             <div class="text-lg font-semibold text-slate-100">{{ character.background }}</div>
             <div class="text-sm text-slate-300 mt-1">
-              Bonuses: +2 {{ character.backgroundBoosts.plus2 }}, +1 {{ character.backgroundBoosts.plus1 }}
+              <span class="font-semibold">Bonuses</span>
+              <span class="font-normal">: +2 {{ character.backgroundBoosts.plus2 }}, +1 {{ character.backgroundBoosts.plus1 }}</span>
             </div>
-            <div class="text-sm text-slate-300 mt-1">Origin Feat: {{ character.originFeat }}</div>
-            <div v-if="character.originFeatDetail" class="text-sm text-slate-400 mt-1">
-              {{ character.originFeatDetail }}
+            <div class="text-sm text-slate-300 mt-1">
+              <span class="font-semibold">Origin Feat</span>
+              <span class="font-normal">: {{ character.originFeat }}</span>
+            </div>
+            <div
+              v-if="needsSpellcastingAbilityChoice(character.originFeat)"
+              class="text-sm text-slate-300 mt-1"
+            >
+              <span class="font-semibold">Spellcasting Ability</span>
+              <span class="font-normal">: Choose your Spellcasting Ability.</span>
+            </div>
+            <div v-if="originFeatDetailParts" class="text-sm text-slate-400 mt-1">
+              <span class="font-semibold">{{ originFeatDetailParts.label }}</span>
+              <span v-if="originFeatDetailParts.value" class="font-normal">: {{ originFeatDetailParts.value }}</span>
             </div>
           </div>
 
           <div class="bg-slate-800/40 rounded-lg p-4 border border-slate-700/50">
             <div class="text-[10px] text-slate-400 uppercase tracking-widest mb-2">Species (Origin)</div>
             <div class="text-lg font-semibold text-slate-100">{{ character.species }}</div>
-            <div class="text-sm text-slate-300 mt-1">Ancestry: {{ character.ancestry || 'None' }}</div>
-            <div class="text-sm text-slate-300 mt-1">Languages: {{ listText(character.languages) }}</div>
+            <div class="text-sm text-slate-300 mt-1">
+              <span class="font-semibold">{{ lineageLabel(character.species) }}</span>
+              <span class="font-normal">: {{ character.ancestry || 'None' }}</span>
+            </div>
+            <div class="text-sm text-slate-300 mt-1">
+              <span class="font-semibold">Languages</span>
+              <span class="font-normal">: {{ listText(character.languages) }}</span>
+            </div>
+            <div v-if="character.speciesInputs.length" class="text-sm text-slate-300 mt-1">
+              <span class="font-semibold">Choices</span>
+              <span class="font-normal">: {{ character.speciesInputs.join('; ') }}</span>
+            </div>
           </div>
 
           <div class="bg-slate-800/40 rounded-lg p-4 border border-slate-700/50">
@@ -174,6 +188,17 @@ const copyToClipboard = async () => {
                 </div>
               </div>
             </div>
+          </div>
+
+          <div class="bg-slate-800/40 rounded-lg p-4 border border-slate-700/50">
+            <div class="text-[10px] text-slate-400 uppercase tracking-widest mb-2">Spells</div>
+            <ul v-if="spellParts.length" class="list-disc list-inside text-sm text-slate-200 space-y-1">
+              <li v-for="spell in spellParts" :key="spell.raw">
+                <span class="font-semibold">{{ spell.label }}</span>
+                <span v-if="spell.value" class="font-normal">: {{ spell.value }}</span>
+              </li>
+            </ul>
+            <div v-else class="text-sm text-slate-500">None</div>
           </div>
 
         </div>

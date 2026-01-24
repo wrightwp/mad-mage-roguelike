@@ -26,6 +26,7 @@ export interface GeneratedCharacter {
   originFeatDetail: string;
   species: string;
   ancestry?: string;
+  speciesInputs: string[];
   languages: string[];
   abilityScores: AbilityScores;
   modifiers: AbilityScores;
@@ -154,6 +155,8 @@ const CLASSES: Record<string, ClassData> = {
     subclasses: ['Abjurer', 'Diviner', 'Evoker', 'Illusionist']
   }
 };
+
+export const CLASS_NAMES = Object.keys(CLASSES);
 
 const SPECIES_DATA: Record<string, string[]> = {
   Human: [],
@@ -382,7 +385,8 @@ const buildSpells = (className: string, classData: ClassData, level: number) => 
 
   const spells: string[] = [];
   if (classSpellList[0]) {
-    spells.push(`Cantrips: ${sample(classSpellList[0], 3).join(', ')}`);
+    const cantripCount = className === 'Bard' ? 2 : 3;
+    spells.push(`Cantrips: ${sample(classSpellList[0], cantripCount).join(', ')}`);
   }
   for (let i = 1; i <= highestSlot; i++) {
     if (classSpellList[i]) {
@@ -405,6 +409,9 @@ const buildClassInputs = (className: string, classSkills: string[], level: numbe
   }
   if (className === 'Druid') {
     inputs.push(`Primal Order: ${randomItem(['Magician (Extra Cantrip)', 'Warden (Medium Armor)'])}`);
+  }
+  if (className === 'Bard') {
+    inputs.push(`Musical Instruments: ${sample(INSTRUMENTS, 3).join(', ')}`);
   }
 
   const hasFightingStyle =
@@ -430,6 +437,14 @@ const buildClassInputs = (className: string, classSkills: string[], level: numbe
   }
 
   return inputs;
+};
+
+const buildSpeciesInputs = (speciesName: string) => {
+  if (speciesName === 'Elf') {
+    const keenChoice = randomItem(['Insight', 'Survival', 'Perception']);
+    return [`Keen Senses: ${keenChoice}`];
+  }
+  return [];
 };
 const applyBackgroundBoosts = (scores: AbilityScores, classData: ClassData, background: BackgroundData) => {
   const priority = [...classData.primary, ...ABILITY_KEYS.filter((key) => !classData.primary.includes(key))];
@@ -482,9 +497,9 @@ const applyAsiProgression = (scores: AbilityScores, className: string, classData
   });
 };
 
-export const generateCharacter = (levelInput?: number): GeneratedCharacter => {
+export const generateCharacter = (levelInput?: number, classOverride?: string): GeneratedCharacter => {
   const level = Math.max(1, Math.min(20, Math.round(levelInput ?? 1)));
-  const className = randomItem(Object.keys(CLASSES));
+  const className = classOverride && CLASSES[classOverride] ? classOverride : randomItem(CLASS_NAMES);
   const classData = CLASSES[className];
   const backgroundName = randomItem(Object.keys(BACKGROUNDS));
   const background = BACKGROUNDS[backgroundName];
@@ -507,6 +522,7 @@ export const generateCharacter = (levelInput?: number): GeneratedCharacter => {
 
   const classInputs = buildClassInputs(className, classSkills, level);
   const spells = buildSpells(className, classData, level);
+  const speciesInputs = buildSpeciesInputs(speciesName);
 
   const originFeatDetail = buildOriginFeatDetail(background.feat, classSkills);
 
@@ -528,6 +544,7 @@ export const generateCharacter = (levelInput?: number): GeneratedCharacter => {
     originFeatDetail,
     species: speciesName,
     ancestry,
+    speciesInputs,
     languages,
     abilityScores,
     modifiers
