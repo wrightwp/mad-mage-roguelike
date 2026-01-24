@@ -28,6 +28,7 @@ const emit = defineEmits<Emits>();
 
 // DM info toggle state
 const showDMInfo = ref(true);
+const showAIPrompt = ref(false);
 
 
 
@@ -52,7 +53,6 @@ const getConnectedNodeType = (connectionId: string): string => {
 const copyToClipboard = async (text: string) => {
   try {
     await navigator.clipboard.writeText(text);
-    alert('Copied to clipboard!');
   } catch (err) {
     console.error('Failed to copy:', err);
   }
@@ -79,14 +79,6 @@ const isReachableFromCurrent = (targetNode: DungeonNode): boolean => {
         <p class="text-sm text-slate-200 leading-relaxed font-serif italic">
           {{ selectedNode.description || 'A mysterious chamber hidden deep within the Undermountain.' }}
         </p>
-      </div>
-
-      <!-- Exits Info -->
-      <div class="bg-slate-800/40 rounded-xl p-4 border border-slate-700/50">
-        <div class="flex items-center gap-3">
-          <div class="text-2xl font-bold text-amber-400">{{ selectedNode.connections.length }}</div>
-          <div class="text-sm text-slate-400">visible passages leading from this room</div>
-        </div>
       </div>
 
     </div>
@@ -185,17 +177,33 @@ const isReachableFromCurrent = (targetNode: DungeonNode): boolean => {
 
         <!-- AI Room Prompt -->
         <div v-if="selectedNode.encounter?.aiRoomPrompt" 
-          class="bg-purple-900/10 rounded-xl p-4 border border-purple-900/30">
-          <div class="text-[10px] text-purple-400 uppercase tracking-widest mb-3 font-bold flex items-center justify-between">
-            <span>🤖 AI Room Prompt</span>
+          class="bg-gradient-to-br from-purple-900/15 to-slate-900/30 rounded-xl border border-purple-900/40 overflow-hidden">
+          <div
+            class="flex items-center justify-between px-4 py-3 bg-slate-900/60 border-b border-purple-900/30 cursor-pointer select-none hover:bg-slate-900/80 transition-colors"
+            @click="showAIPrompt = !showAIPrompt"
+            role="button"
+            tabindex="0"
+            :aria-expanded="showAIPrompt"
+          >
+            <div class="flex items-center gap-2 text-[11px] font-bold uppercase tracking-widest text-purple-300">
+              <span class="text-xs transition-transform" :class="showAIPrompt ? 'rotate-0' : '-rotate-90'">▼</span>
+              <span>AI Room Prompt</span>
+            </div>
             <button
               @click="copyToClipboard(selectedNode.encounter.aiRoomPrompt)"
-              class="px-2 py-1 bg-purple-600 hover:bg-purple-500 text-white text-xs font-bold rounded transition-colors">
-              📋 Copy
+              class="px-2.5 py-1 bg-purple-600/90 hover:bg-purple-500 text-white text-[10px] font-bold rounded-md transition-colors border border-purple-400/40"
+              @click.stop
+            >
+              Copy
             </button>
           </div>
-          <div class="text-xs text-slate-300 bg-slate-900/40 rounded-lg p-3 border border-slate-700/30 font-mono leading-relaxed">
-            {{ selectedNode.encounter.aiRoomPrompt }}
+          <div v-show="!showAIPrompt" class="px-4 py-3 text-[11px] text-slate-400 italic">
+            Prompt hidden — click to expand.
+          </div>
+          <div v-show="showAIPrompt" class="px-4 py-4">
+            <div class="text-xs text-slate-200 bg-slate-950/50 rounded-lg p-3 border border-slate-700/40 font-mono leading-relaxed shadow-inner">
+              {{ selectedNode.encounter.aiRoomPrompt }}
+            </div>
           </div>
         </div>
 
