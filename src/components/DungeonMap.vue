@@ -5,7 +5,6 @@ import { useResizablePanel } from '../composables/useResizablePanel';
 import { useMapInteraction } from '../composables/useMapInteraction';
 import { useMapSettings } from '../composables/useMapSettings';
 import LeftSidebar from './LeftSidebar.vue';
-import RightSidebar from './RightSidebar.vue';
 import MapCanvas from './MapCanvas.vue';
 import RestartModal from './RestartModal.vue';
 import FloorConfigModal from './FloorConfigModal.vue';
@@ -83,9 +82,7 @@ const {
 
 const {
   leftPanelWidth,
-  rightPanelWidth,
-  startResizingLeft,
-  startResizingRight
+  startResizingLeft
 } = useResizablePanel();
 
 // Don't initialize map on mount - wait for config modal
@@ -159,6 +156,7 @@ const handleEnterEncounter = (node: any) => {
       :current-floor="currentFloor"
       :reveal-all="revealAll"
       :map-data="mapData"
+      :selected-node="selectedNode"
       :party-size="partySize"
       :average-party-level="averagePartyLevel"
       @update:floor-count="floorCount = $event"
@@ -168,6 +166,9 @@ const handleEnterEncounter = (node: any) => {
       @update:average-party-level="averagePartyLevel = $event"
       @regenerate="handleRegenerate"
       @show-floor-summary="showFloorSummary = true"
+      @enter-encounter="handleEnterEncounter"
+      @complete-encounter="completeEncounter"
+      @select-node="handleNodeClickEvent"
     />
 
     <!-- Left Resizer -->
@@ -194,25 +195,6 @@ const handleEnterEncounter = (node: any) => {
       @mouseleave="handleMouseUp"
       @node-click="handleNodeClickEvent"
       @enter-encounter="handleNodeClickEvent($event); handleEnterEncounter(mapData?.nodes.find(n => n.id === $event))"
-    />
-
-    <!-- Right Resizer -->
-    <div 
-      class="w-1.5 h-full cursor-col-resize z-30 hover:bg-amber-500/30 transition-colors flex items-center justify-center group active:bg-amber-500/50"
-      @mousedown="startResizingRight"
-    >
-      <div class="w-px h-12 bg-slate-700 group-hover:bg-amber-500/50"></div>
-    </div>
-
-    <!-- Right Sidebar -->
-    <RightSidebar
-      :width="rightPanelWidth"
-      :selected-node="selectedNode"
-      :reveal-all="revealAll"
-      :map-data="mapData"
-      @enter-encounter="handleEnterEncounter"
-      @complete-encounter="completeEncounter"
-      @select-node="handleNodeClickEvent"
     />
     
     <!-- Restart Confirmation Modal -->
