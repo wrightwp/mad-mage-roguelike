@@ -44,6 +44,7 @@ export interface FloorData {
         goldEarned: number;
         xpEarned: number;
     };
+    encounterResults: Record<string, { xp: number; gold: number; conditions: string[]; customXP?: number; customGold?: number }>;
 }
 
 export interface RunMetrics {

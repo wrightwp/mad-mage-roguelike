@@ -10,6 +10,7 @@ import ExplorationEncounter from './encounters/ExplorationEncounter.vue';
 import RestEncounter from './encounters/RestEncounter.vue';
 import TreasureEncounter from './encounters/TreasureEncounter.vue';
 import BossEncounter from './encounters/BossEncounter.vue';
+import EncounterCompletionControls from './EncounterCompletionControls.vue';
 
 
 interface Props {
@@ -237,8 +238,10 @@ const isReachableFromCurrent = (targetNode: DungeonNode): boolean => {
     <p class="text-sm uppercase tracking-widest px-8">Select a node on the map to view detailed encounter information</p>
   </div>
 
-  <!-- Action Buttons -->
+  <!-- Action Buttons / Completion Controls -->
   <div class="p-4 bg-slate-950/80 border-t border-slate-800">
+    
+    <!-- Enter Encounter -->
     <button 
       v-if="selectedNode && selectedNode.status === 'available' && isReachableFromCurrent(selectedNode)"
       @click="emit('enterEncounter', selectedNode)"
@@ -246,15 +249,18 @@ const isReachableFromCurrent = (targetNode: DungeonNode): boolean => {
       <span>Enter Encounter</span>
       <span class="text-xl">➔</span>
     </button>
-    <button 
-      v-else-if="selectedNode && selectedNode.status === 'current'"
-      @click="emit('completeEncounter', selectedNode)"
-      class="w-full bg-amber-600 hover:bg-amber-500 text-white font-bold py-3 rounded-xl transition-all shadow-lg shadow-amber-900/20 active:scale-95 flex items-center justify-center gap-2">
-      <span>Complete Encounter</span>
-      <span class="text-xl">✓</span>
-    </button>
+
+    <!-- Completion Controls (Current or Visited) -->
+    <EncounterCompletionControls 
+      v-else-if="selectedNode && selectedNode.encounter && (selectedNode.status === 'current' || selectedNode.status === 'visited')"
+      :node="selectedNode"
+      :encounter="selectedNode.encounter"
+      @complete="emit('completeEncounter', selectedNode)"
+    />
+
+    <!-- Status Message if unreachable/locked -->
     <div v-else class="text-center py-3 text-xs text-slate-600 uppercase tracking-widest font-bold">
-      {{ selectedNode ? (selectedNode.status === 'visited' ? 'Already Visited' : (selectedNode.status === 'available' && !isReachableFromCurrent(selectedNode) ? 'Too Far Away' : 'Path Blocked')) : 'Waiting for Input' }}
+      {{ selectedNode ? (selectedNode.status === 'available' && !isReachableFromCurrent(selectedNode) ? 'Too Far Away' : 'Path Blocked') : 'Waiting for Input' }}
     </div>
   </div>
 </template>

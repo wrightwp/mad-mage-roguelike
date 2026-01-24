@@ -1,5 +1,7 @@
 export enum EncounterDifficulty {
     Low = 'low',
     Moderate = 'moderate',
-    High = 'high'
+    High = 'high',
+    Deadly = 'deadly',
+    Trivial = 'trivial'
 }

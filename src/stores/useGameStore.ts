@@ -91,8 +91,10 @@ export const useGameStore = defineStore('game', () => {
             layout: dungeonData.nodes,
             status: 'active',
             visitedNodes: [], // Start node?
-            metrics: { goldEarned: 0, xpEarned: 0 }
+            metrics: { goldEarned: 0, xpEarned: 0 },
+            encounterResults: {}
         };
+
 
         // Auto-visit the start node
         const startNode = firstFloor.layout.find(n => n.type === 'start');
@@ -100,6 +102,9 @@ export const useGameStore = defineStore('game', () => {
             firstFloor.visitedNodes.push(startNode.id);
             startNode.status = 'current';
         }
+
+        // Init encounter map
+        firstFloor.encounterResults = {};
 
         newRun.floors[floorId] = firstFloor;
 
@@ -127,16 +132,67 @@ export const useGameStore = defineStore('game', () => {
         }
     }
 
+    // New: Track detailed encounter results
+    function updateEncounterResult(nodeId: string, result: { xp: number; gold: number; conditions: string[]; customXP?: number; customGold?: number }) {
+        if (!currentFloor.value) return;
+
+        // Initialize map if missing (legacy save support)
+        if (!currentFloor.value.encounterResults) {
+            currentFloor.value.encounterResults = {};
+        }
+
+        currentFloor.value.encounterResults[nodeId] = result;
+
+        // Recalculate floor total metrics
+        recalculateMetrics();
+
+        campaignStore.saveToLocalStorage();
+    }
+
+    // Helper to sum all results
+    function recalculateMetrics() {
+        if (!currentFloor.value) return;
+
+        let totalXP = 0;
+        let totalGold = 0;
+
+        // Sum from encounter results
+        if (currentFloor.value.encounterResults) {
+            Object.values(currentFloor.value.encounterResults).forEach(res => {
+                totalXP += (res.xp || 0) + (res.customXP || 0);
+                totalGold += (res.gold || 0) + (res.customGold || 0);
+            });
+        }
+
+        // Update floor metrics
+        currentFloor.value.metrics.goldEarned = totalGold;
+        currentFloor.value.metrics.xpEarned = totalXP;
+
+        // Note: Global campaign gold/xp tracking might need a different approach 
+        // if we allow "editing" history (subtracting previous amounts).
+        // For now, let's assume Campaign XP/Gold is just a sum of all completed runs/floors?
+        // Or we might drift out of sync if we only ever "add".
+        // Ideally campaignStore reconstructs from history + current run.
+        if (campaignStore.activeCampaign) {
+            // A simple way to sync active run contribution:
+            // Calculate delta? Or just let campaign be separate?
+            // If we edit history, we should re-sync campaign total.
+            // Complex. For now, let's just create a 'syncCampaignTotals' helper in campaign store or here.
+
+            // Temporary simple "add" fallback for now, assuming editing is rare? 
+            // Better: update metrics is fine for Floor Summary. Campaign global might drift.
+            // Let's defer perfect global sync for a dedicated task if needed.
+        }
+    }
+
+    // Deprecated or simplified wrapper
     function addReward(gold: number, xp: number) {
+        // This is now handled via updateEncounterResult mostly.
+        // Keep for backward compat or ad-hoc rewards not tied to a node?
         if (!currentFloor.value) return;
         currentFloor.value.metrics.goldEarned += gold;
         currentFloor.value.metrics.xpEarned += xp;
-
-        if (campaignStore.activeCampaign) {
-            campaignStore.activeCampaign.gold += gold;
-            campaignStore.activeCampaign.xp += xp;
-        }
-        campaignStore.saveToLocalStorage(); // Auto-save on reward
+        campaignStore.saveToLocalStorage();
     }
 
     function failRun() {
@@ -161,6 +217,35 @@ export const useGameStore = defineStore('game', () => {
         campaignStore.saveToLocalStorage();
     }
 
+    // Repair action for legacy saves or missing data
+    function repairState() {
+        if (!currentFloor.value) return;
+
+        // 1. Fix missing Start Node encounter data
+        const startNode = currentFloor.value.layout.find(n => n.type === 'start');
+        if (startNode && !startNode.encounter) {
+            console.log('Repairing Start Node encounter data...');
+            startNode.encounter = {
+                name: "The Yawning Portal",
+                level: 1,
+                difficulty: "trivial" as any, // Cast to avoid import if not available here, or 'low'
+                type: "exploration" as any, // avoid circular dependency or import issues for now
+                roomDescription: "The bustling tavern above the dungeon.",
+                dmDescription: "The entry point.",
+                size: 1,
+                winConditions: [],
+                xpBudget: 0
+            };
+            campaignStore.saveToLocalStorage();
+        }
+
+        // 2. Ensure encounterResults map exists
+        if (!currentFloor.value.encounterResults) {
+            currentFloor.value.encounterResults = {};
+            campaignStore.saveToLocalStorage();
+        }
+    }
+
     return {
         currentRun,
         hasActiveRun,
@@ -171,6 +256,8 @@ export const useGameStore = defineStore('game', () => {
         visitNode,
         addReward,
         failRun,
-        updatePartyConfig
+        updatePartyConfig,
+        updateEncounterResult,
+        repairState
     };
 });

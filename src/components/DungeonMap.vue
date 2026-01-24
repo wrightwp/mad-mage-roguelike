@@ -9,8 +9,12 @@ import RightSidebar from './RightSidebar.vue';
 import MapCanvas from './MapCanvas.vue';
 import RestartModal from './RestartModal.vue';
 import FloorConfigModal from './FloorConfigModal.vue';
+import FloorSummaryModal from './FloorSummaryModal.vue';
 import type { FloorConfig } from './FloorConfigModal.vue';
 import outerBg from '../assets/clean_dungeon_bg.png';
+import { ref } from 'vue';
+
+const showFloorSummary = ref(false);
 
 const MAP_WIDTH = 800;
 const MAP_HEIGHT = 2000;
@@ -29,7 +33,8 @@ const {
   restartMap,
   generateWithConfig,
   openConfigModal,
-  partyLocationId
+  partyLocationId,
+  repairState
 } = useMapSettings(
   // onInit callback calls scrollToBottom
   () => {
@@ -69,6 +74,11 @@ const {
 
 // Don't initialize map on mount - wait for config modal
 onMounted(() => {
+  // Try to repair state if needed (for legacy saves)
+  if (repairState) {
+    repairState(); 
+  }
+
   // Only scroll if map already exists
   if (mapData.value) {
     scrollToBottom();
@@ -141,6 +151,7 @@ const handleEnterEncounter = (node: any) => {
       @update:party-size="partySize = $event"
       @update:average-party-level="averagePartyLevel = $event"
       @regenerate="handleRegenerate"
+      @show-floor-summary="showFloorSummary = true"
     />
 
     <!-- Left Resizer -->
@@ -203,6 +214,12 @@ const handleEnterEncounter = (node: any) => {
       :initial-node-counts="nodeTypeCounts"
       @generate="handleConfigGenerate"
       @cancel="handleConfigCancel"
+    />
+
+    <!-- Floor Summary Modal -->
+    <FloorSummaryModal
+      :show="showFloorSummary"
+      @close="showFloorSummary = false"
     />
   </div>
 </template>

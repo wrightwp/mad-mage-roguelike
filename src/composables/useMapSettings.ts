@@ -102,6 +102,10 @@ export const useMapSettings = (
         openConfigModal(); // Open config modal instead of directly regenerating
     };
 
+    const repairState = () => {
+        gameStore.repairState?.();
+    };
+
     return {
         mapData,
         floorCount,
@@ -116,6 +120,7 @@ export const useMapSettings = (
         restartMap,
         generateWithConfig,
         openConfigModal,
-        partyLocationId
+        partyLocationId,
+        repairState
     };
 };

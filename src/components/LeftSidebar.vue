@@ -21,6 +21,7 @@ interface Emits {
   (e: 'update:partySize', value: number): void;
   (e: 'update:averagePartyLevel', value: number): void;
   (e: 'regenerate'): void;
+  (e: 'showFloorSummary'): void;
 }
 
 const props = defineProps<Props>();
@@ -41,6 +42,7 @@ const actualNodeCounts = computed(() => {
   
   return counts;
 });
+
 
 
 const showSaveManager = ref(false);
@@ -206,6 +208,13 @@ const showSaveManager = ref(false);
           class="w-full text-white font-bold py-2.5 px-4 rounded transition-all text-sm"
         >
           {{ revealAll ? '👁️ Hide All' : '👁️ Reveal All' }}
+        </button>
+
+        <button 
+          @click="emit('showFloorSummary')"
+          class="w-full bg-slate-800 hover:bg-slate-700 text-purple-300 font-bold py-2.5 px-4 rounded transition-all text-sm border border-slate-700 hover:border-purple-500/50"
+        >
+          📋 Floor Summary
         </button>
       </div>
     </div>

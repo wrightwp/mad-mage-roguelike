@@ -31,15 +31,21 @@
         "winConditions": [
             {
                 "condition": "Defeat all enemies",
-                "reward": "Full XP (175)"
+                "reward": "Full XP (175)",
+                "xpReward": 175,
+                "goldReward": 0
             },
             {
                 "condition": "Force surrender via Intimidation",
-                "reward": "75% XP, goblins reveal nearby trap location"
+                "reward": "75% XP, goblins reveal nearby trap location",
+                "xpReward": 131,
+                "goldReward": 0
             },
             {
                 "condition": "Sneak past (DC 14 Stealth)",
-                "reward": "No XP, but avoid resource expenditure"
+                "reward": "No XP, but avoid resource expenditure",
+                "xpReward": 0,
+                "goldReward": 0
             }
         ],
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 120ft x 100ft underground dungeon chamber with stone dungeon walls. Dim torchlight.   Several broken crates and moldy supply sacks throughout. Entry via stone staircase descending from above. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
@@ -77,15 +83,21 @@
         "winConditions": [
             {
                 "condition": "Destroy all undead",
-                "reward": "Full XP (250)"
+                "reward": "Full XP (250)",
+                "xpReward": 250,
+                "goldReward": 25
             },
             {
                 "condition": "Destroy the cursed gemstone",
-                "reward": "Full XP + 50 bonus XP for clever solution"
+                "reward": "Full XP + 50 bonus XP for clever solution",
+                "xpReward": 300,
+                "goldReward": 25
             },
             {
                 "condition": "Turn Undead successfully",
-                "reward": "Can bypass encounter, 50% XP"
+                "reward": "Can bypass encounter, 50% XP",
+                "xpReward": 125,
+                "goldReward": 0
             }
         ],
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 150ft x 120ft underground burial crypt with ancient carved stone walls. Magical glow. A large ornate sarcophagus sits on a raised platform in the center. Dim green magical light emanates from cracks in the floor. Cobwebs in corners, scattered bones, and broken funeral urns. Two entrances on opposite ends. Entry through arched doorway at south. Two exits on opposite walls. Clean lines, high contrast for virtual tabletop use.",
@@ -123,15 +135,21 @@
         "winConditions": [
             {
                 "condition": "Kill all rats",
-                "reward": "Full XP (175)"
+                "reward": "Full XP (175)",
+                "xpReward": 175,
+                "goldReward": 0
             },
             {
                 "condition": "Use fire to drive them off",
-                "reward": "75% XP, rats flee permanently"
+                "reward": "75% XP, rats flee permanently",
+                "xpReward": 131,
+                "goldReward": 0
             },
             {
                 "condition": "Block the nest hole and flee",
-                "reward": "No XP, but can return later prepared"
+                "reward": "No XP, but can return later prepared",
+                "xpReward": 0,
+                "goldReward": 0
             }
         ],
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 100ft underground sewer junction with stone dungeon walls. Dim torchlight. Multiple rat holes (2ft diameter) in the walls and one large hole (5ft) in the floor near center. Shallow water (difficult terrain) in the lower third of the room. Dim light from phosphorescent fungus. Three tunnel exits. Entry via ladder from trapdoor above. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
@@ -169,15 +187,21 @@
         "winConditions": [
             {
                 "condition": "Defeat all kobolds",
-                "reward": "Full XP (225)"
+                "reward": "Full XP (225)",
+                "xpReward": 225,
+                "goldReward": 0
             },
             {
                 "condition": "Negotiate safe passage (DC 15 Persuasion + tribute)",
-                "reward": "No XP, but costs 10 gp tribute"
+                "reward": "No XP, but costs 10 gp tribute",
+                "xpReward": 0,
+                "goldReward": 10
             },
             {
                 "condition": "Discover and offer tribute to their 'dragon'",
-                "reward": "50% XP, gain kobold guides"
+                "reward": "50% XP, gain kobold guides",
+                "xpReward": 113,
+                "goldReward": 0
             }
         ],
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 180ft x 150ft underground mine tunnel with rough stone walls. Dim torchlight. Two rope bridges cross the crevasse (5ft wide each). The far side is 10ft higher than the entrance. Glittering mineral deposits on walls. Stalactites hang from 40ft ceiling. Natural stone formations provide cover on both sides. One entrance, main exit on the elevated far side. Entry through narrow tunnel. Two exits on opposite walls. Clean lines, high contrast for virtual tabletop use.",
@@ -215,15 +239,21 @@
         "winConditions": [
             {
                 "condition": "Kill all enemies",
-                "reward": "Full XP (350)"
+                "reward": "Full XP (350)",
+                "xpReward": 350,
+                "goldReward": 0
             },
             {
                 "condition": "Disrupt the ritual before completion",
-                "reward": "Full XP + prevent demon summoning"
+                "reward": "Full XP + prevent demon summoning",
+                "xpReward": 350,
+                "goldReward": 0
             },
             {
                 "condition": "Kill lead cultist only and flee",
-                "reward": "100 XP, ritual fails, but survivors escape"
+                "reward": "100 XP, ritual fails, but survivors escape",
+                "xpReward": 100,
+                "goldReward": 0
             }
         ],
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 100ft underground dungeon chamber with ice-covered stone walls. Dim torchlight. Four pillars mark the cardinal directions (skeleton positions). Crimson candles arranged in arcane patterns. Dark tapestries depicting demonic entities on walls. Shadowy alcoves between pillars. Single grand entrance with heavy stone doors. Ominous red glow from the altar. Entry via collapsed section in ceiling. Two exits on opposite walls. Clean lines, high contrast for virtual tabletop use.",
@@ -261,15 +291,21 @@
         "winConditions": [
             {
                 "condition": "Exterminate all creatures",
-                "reward": "Full XP (300)"
+                "reward": "Full XP (300)",
+                "xpReward": 300,
+                "goldReward": 0
             },
             {
                 "condition": "Rescue the cocooned adventurer",
-                "reward": "Full XP + future ally"
+                "reward": "Full XP + future ally",
+                "xpReward": 300,
+                "goldReward": 0
             },
             {
                 "condition": "Burn the webs and flee",
-                "reward": "50% XP, nest destroyed but creatures may survive"
+                "reward": "50% XP, nest destroyed but creatures may survive",
+                "xpReward": 150,
+                "goldReward": 0
             }
         ],
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 140ft x 120ft underground mine tunnel with stone dungeon walls. Dim bioluminescent lighting. Multiple cocoons hanging from ceiling and attached to walls (some humanoid-sized). Narrow clear paths wind between web masses. Dim bioluminescent fungi on unweb bed sections of floor. Two exits on opposite corners, one partially blocked by webs. Entry through crumbling archway. Two exits on opposite walls. Clean lines, high contrast for virtual tabletop use.",
@@ -299,15 +335,21 @@
         "winConditions": [
             {
                 "condition": "Kill all stirges",
-                "reward": "Full XP (200)"
+                "reward": "Full XP (200)",
+                "xpReward": 200,
+                "goldReward": 0
             },
             {
                 "condition": "Kill initial wave and flee",
-                "reward": "100 XP"
+                "reward": "100 XP",
+                "xpReward": 100,
+                "goldReward": 0
             },
             {
                 "condition": "Use fire/smoke to drive them away",
-                "reward": "Full XP, stirges relocate permanently"
+                "reward": "Full XP, stirges relocate permanently",
+                "xpReward": 200,
+                "goldReward": 0
             }
         ],
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 100ft underground dungeon chamber with stone dungeon walls. Dim torchlight. Dried blood pools and old bones scattered on floor. Dim light from cracks in the dome. Rough uneven floor with some rubble piles. Two low tunnel entrances on opposite sides. Gore-stained central floor area. Entry via spiral stairs in corner. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
@@ -353,19 +395,27 @@
         "winConditions": [
             {
                 "condition": "Defeat all enemies",
-                "reward": "Full XP (275)"
+                "reward": "Full XP (275)",
+                "xpReward": 275,
+                "goldReward": 0
             },
             {
                 "condition": "Pay the toll (50 gp)",
-                "reward": "No XP, safe passage"
+                "reward": "No XP, safe passage",
+                "xpReward": 0,
+                "goldReward": 0
             },
             {
                 "condition": "Negotiate reduced toll (DC 15 Intimidation)",
-                "reward": "25 XP, costs only 25 gp"
+                "reward": "25 XP, costs only 25 gp",
+                "xpReward": 25,
+                "goldReward": 25
             },
             {
                 "condition": "Use hidden passage to flank",
-                "reward": "Full XP + surprise round"
+                "reward": "Full XP + surprise round",
+                "xpReward": 275,
+                "goldReward": 0
             }
         ],
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 130ft x 80ft underground dungeon chamber with rough stone walls. Dim torchlight. Watchtower-like raised platform (10ft high) behind barricade for crossbow users. Two chain posts for dogs in front of barricade. Crates and supply stacks on both sides. Torches provide normal lighting. Entry through ancient stone portal frame. exit at north blocked by barricade. Hidden passage behind false wall on east side. Entry through fissure in the rock. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
@@ -403,11 +453,15 @@
         "winConditions": [
             {
                 "condition": "Destroy all undead",
-                "reward": "Full XP (160)"
+                "reward": "Full XP (160)",
+                "xpReward": 160,
+                "goldReward": 0
             },
             {
                 "condition": "Use holy water or Turn Undead",
-                "reward": "Full XP + easy victory"
+                "reward": "Full XP + easy victory",
+                "xpReward": 160,
+                "goldReward": 0
             }
         ],
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 80ft underground dungeon chamber with stone dungeon walls. Flickering candlelight. Dim candlelight. Scattered bones on floor. Entry via stone staircase descending from above. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
@@ -437,11 +491,15 @@
         "winConditions": [
             {
                 "condition": "Kill all wolves",
-                "reward": "Full XP (250)"
+                "reward": "Full XP (250)",
+                "xpReward": 250,
+                "goldReward": 0
             },
             {
                 "condition": "Calm the alpha (DC 15 Animal Handling)",
-                "reward": "Full XP + wolves become neutral"
+                "reward": "Full XP + wolves become neutral",
+                "xpReward": 250,
+                "goldReward": 0
             }
         ],
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 120ft x 100ft underground dungeon cavern with rough stone walls. Dim torchlight. Bones and animal remains scattered about. Two exits. Entry through arched doorway at south. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
@@ -479,11 +537,15 @@
         "winConditions": [
             {
                 "condition": "Destroy all fungi",
-                "reward": "Full XP (140)"
+                "reward": "Full XP (140)",
+                "xpReward": 140,
+                "goldReward": 0
             },
             {
                 "condition": "Sneak through (DC 12 Stealth)",
-                "reward": "No combat, avoid spores"
+                "reward": "No combat, avoid spores",
+                "xpReward": 0,
+                "goldReward": 0
             }
         ],
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 100ft underground dungeon cavern with rough stone walls. Dim torchlight. Damp floor with puddles. Phosphorescent lighting. Entry via ladder from trapdoor above. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
@@ -513,11 +575,15 @@
         "winConditions": [
             {
                 "condition": "Kill all grimlocks",
-                "reward": "Full XP (200)"
+                "reward": "Full XP (200)",
+                "xpReward": 200,
+                "goldReward": 0
             },
             {
                 "condition": "Use Silence to disable their senses",
-                "reward": "Full XP + advantage on attacks"
+                "reward": "Full XP + advantage on attacks",
+                "xpReward": 200,
+                "goldReward": 0
             }
         ],
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 110ft x 90ft underground dungeon chamber with stone dungeon walls. No light sources (darkness). Rough stone walls. Three tunnel exits. Entry through narrow tunnel. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
@@ -547,11 +613,15 @@
         "winConditions": [
             {
                 "condition": "Defeat all troglodytes",
-                "reward": "Full XP (250)"
+                "reward": "Full XP (250)",
+                "xpReward": 250,
+                "goldReward": 0
             },
             {
                 "condition": "Steal eggs and flee",
-                "reward": "50 XP + 50 gp value"
+                "reward": "50 XP + 50 gp value",
+                "xpReward": 50,
+                "goldReward": 50
             }
         ],
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 130ft x 100ft underground dungeon cavern with stone dungeon walls. Dim torchlight. Shallow stagnant pools. Terrible odor indication marks. Entry via collapsed section in ceiling. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
@@ -581,11 +651,15 @@
         "winConditions": [
             {
                 "condition": "Kill the swarms",
-                "reward": "Full XP (150)"
+                "reward": "Full XP (150)",
+                "xpReward": 150,
+                "goldReward": 0
             },
             {
                 "condition": "Sneak through quietly",
-                "reward": "No XP, avoid damage"
+                "reward": "No XP, avoid damage",
+                "xpReward": 0,
+                "goldReward": 0
             }
         ],
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 80ft underground dungeon cavern with rough stone walls. Dim torchlight. Guano-covered floor (difficult terrain). Two exits. Entry through crumbling archway. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
@@ -615,11 +689,15 @@
         "winConditions": [
             {
                 "condition": "Kill both darkmantles",
-                "reward": "Full XP (200)"
+                "reward": "Full XP (200)",
+                "xpReward": 200,
+                "goldReward": 0
             },
             {
                 "condition": "Use Light to reveal and avoid",
-                "reward": "Can bypass with caution"
+                "reward": "Can bypass with caution",
+                "xpReward": 0,
+                "goldReward": 0
             }
         ],
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 100ft underground dungeon cavern with rough stone walls. Dim torchlight. Rocky floor with debris. Dim natural light from cracks. Entry via spiral stairs in corner. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
@@ -649,11 +727,15 @@
         "winConditions": [
             {
                 "condition": "Kill all cockatrices",
-                "reward": "Full XP (300)"
+                "reward": "Full XP (300)",
+                "xpReward": 300,
+                "goldReward": 0
             },
             {
                 "condition": "Steal eggs without combat (DC 14 Stealth)",
-                "reward": "300 gp, no XP"
+                "reward": "300 gp, no XP",
+                "xpReward": 0,
+                "goldReward": 300
             }
         ],
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 140ft x 120ft underground dungeon cavern with ice-covered stone walls. Dim torchlight. Nest with eggs in corner. Feathers and debris everywhere. Entry through fissure in the rock. Two exits on opposite walls. Clean lines, high contrast for virtual tabletop use.",
@@ -683,11 +765,15 @@
         "winConditions": [
             {
                 "condition": "Destroy all shadows",
-                "reward": "Full XP (300)"
+                "reward": "Full XP (300)",
+                "xpReward": 300,
+                "goldReward": 0
             },
             {
                 "condition": "Destroy the desecrated altar",
-                "reward": "Full XP + shadows banished instantly"
+                "reward": "Full XP + shadows banished instantly",
+                "xpReward": 300,
+                "goldReward": 0
             }
         ],
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 100ft underground shrine chamber with stone dungeon walls. Dim torchlight. Broken holy symbols. Unnaturally dark corners. Dim flickering torchlight. Entry via stone staircase descending from above. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
@@ -717,11 +803,15 @@
         "winConditions": [
             {
                 "condition": "Kill rust monsters",
-                "reward": "Full XP (200)"
+                "reward": "Full XP (200)",
+                "xpReward": 200,
+                "goldReward": 0
             },
             {
                 "condition": "Distract with metal scraps and flee",
-                "reward": "No XP, preserve equipment"
+                "reward": "No XP, preserve equipment",
+                "xpReward": 0,
+                "goldReward": 0
             }
         ],
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 80ft underground mine tunnel with stone dungeon walls. Dim torchlight. Corroded metal debris. Orange-stained walls. Two exits. Entry through arched doorway at south. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
@@ -751,11 +841,15 @@
         "winConditions": [
             {
                 "condition": "Kill all orcs",
-                "reward": "Full XP (400)"
+                "reward": "Full XP (400)",
+                "xpReward": 400,
+                "goldReward": 0
             },
             {
                 "condition": "Kill the leader, others flee",
-                "reward": "200 XP + map reveals quest hook"
+                "reward": "200 XP + map reveals quest hook",
+                "xpReward": 200,
+                "goldReward": 0
             }
         ],
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 120ft x 100ft underground dungeon chamber with stone dungeon walls. Dim torchlight. Bedrolls and supplies. Crude bone decorations. One main entrance, one escape tunnel. Entry via ladder from trapdoor above. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
@@ -785,11 +879,15 @@
         "winConditions": [
             {
                 "condition": "Defeat all hobgoblins",
-                "reward": "Full XP (300)"
+                "reward": "Full XP (300)",
+                "xpReward": 300,
+                "goldReward": 0
             },
             {
                 "condition": "Capture one alive",
-                "reward": "Full XP + intelligence on hobgoblin forces"
+                "reward": "Full XP + intelligence on hobgoblin forces",
+                "xpReward": 300,
+                "goldReward": 0
             }
         ],
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 80ft underground dungeon chamber with rough stone walls. Dim torchlight. Weapon racks. Military banners. Two entrances. Entry through narrow tunnel. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
@@ -819,11 +917,15 @@
         "winConditions": [
             {
                 "condition": "Destroy both mephits",
-                "reward": "Full XP (200)"
+                "reward": "Full XP (200)",
+                "xpReward": 200,
+                "goldReward": 0
             },
             {
                 "condition": "Use water/cold to weaken them",
-                "reward": "Full XP + easier fight"
+                "reward": "Full XP + easier fight",
+                "xpReward": 200,
+                "goldReward": 0
             }
         ],
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 100ft underground dungeon cavern with stone dungeon walls. Orange glow from below. Orange glow lighting. Obsidian formations. Heat shimmer effect. Entry via collapsed section in ceiling. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
@@ -853,11 +955,15 @@
         "winConditions": [
             {
                 "condition": "Destroy both mephits",
-                "reward": "Full XP (200)"
+                "reward": "Full XP (200)",
+                "xpReward": 200,
+                "goldReward": 0
             },
             {
                 "condition": "Use fire magic effectively",
-                "reward": "Full XP + quick victory"
+                "reward": "Full XP + quick victory",
+                "xpReward": 200,
+                "goldReward": 0
             }
         ],
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 80ft underground dungeon cavern with rough stone walls. Cold blue-white lighting. Icicles hanging from ceiling. Frozen pool in center. Blue-white lighting. Entry through crumbling archway. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
@@ -887,11 +993,15 @@
         "winConditions": [
             {
                 "condition": "Destroy both oozes",
-                "reward": "Full XP (200)"
+                "reward": "Full XP (200)",
+                "xpReward": 200,
+                "goldReward": 0
             },
             {
                 "condition": "Lure them away and bypass",
-                "reward": "No XP, avoid equipment damage"
+                "reward": "No XP, avoid equipment damage",
+                "xpReward": 0,
+                "goldReward": 0
             }
         ],
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 80ft x 80ft underground dungeon chamber with stone dungeon walls. Dim torchlight. Reflective surfaces. Corroded metal debris. Two exits. Entry via spiral stairs in corner. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
@@ -929,11 +1039,15 @@
         "winConditions": [
             {
                 "condition": "Kill all enemies",
-                "reward": "Full XP (350)"
+                "reward": "Full XP (350)",
+                "xpReward": 350,
+                "goldReward": 0
             },
             {
                 "condition": "Kill worgs first, goblins surrender",
-                "reward": "Full XP + goblin prisoners"
+                "reward": "Full XP + goblin prisoners",
+                "xpReward": 350,
+                "goldReward": 0
             }
         ],
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 150ft x 100ft underground dungeon chamber with stone dungeon walls. Dim torchlight. Columns for cover. Two wide exits. Entry through fissure in the rock. Two exits on opposite walls. Clean lines, high contrast for virtual tabletop use.",
@@ -963,11 +1077,15 @@
         "winConditions": [
             {
                 "condition": "Destroy all piercers",
-                "reward": "Full XP (300)"
+                "reward": "Full XP (300)",
+                "xpReward": 300,
+                "goldReward": 0
             },
             {
                 "condition": "Spot and avoid them entirely",
-                "reward": "No XP, no damage taken"
+                "reward": "No XP, no damage taken",
+                "xpReward": 0,
+                "goldReward": 0
             }
         ],
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 100ft underground dungeon cavern with rough stone walls. Dim torchlight. Rocky floor with debris. Narrow paths between formations. Entry via stone staircase descending from above. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
@@ -1005,11 +1123,15 @@
         "winConditions": [
             {
                 "condition": "Exterminate all insects",
-                "reward": "Full XP (350)"
+                "reward": "Full XP (350)",
+                "xpReward": 350,
+                "goldReward": 0
             },
             {
                 "condition": "Burn the hive",
-                "reward": "Full XP but harder fight"
+                "reward": "Full XP but harder fight",
+                "xpReward": 350,
+                "goldReward": 0
             }
         ],
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 140ft x 100ft underground dungeon cavern with rough stone walls. Dim torchlight. Tunnel holes for centipedes. Organic debris on floor. Entry through arched doorway at south. Two exits on opposite walls. Clean lines, high contrast for virtual tabletop use.",
@@ -1039,11 +1161,15 @@
         "winConditions": [
             {
                 "condition": "Kill all gnolls",
-                "reward": "Full XP (300)"
+                "reward": "Full XP (300)",
+                "xpReward": 300,
+                "goldReward": 0
             },
             {
                 "condition": "No alternative - gnolls never surrender",
-                "reward": "N/A"
+                "reward": "N/A",
+                "xpReward": 0,
+                "goldReward": 0
             }
         ],
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 110ft x 90ft underground dungeon chamber with stone dungeon walls. Dim torchlight. Crude camp. Torchlight. Two exits. Entry via ladder from trapdoor above. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
@@ -1073,11 +1199,15 @@
         "winConditions": [
             {
                 "condition": "Destroy all blights",
-                "reward": "Full XP (150)"
+                "reward": "Full XP (150)",
+                "xpReward": 150,
+                "goldReward": 0
             },
             {
                 "condition": "Use fire to quickly eliminate them",
-                "reward": "Full XP + fast victory"
+                "reward": "Full XP + fast victory",
+                "xpReward": 150,
+                "goldReward": 0
             }
         ],
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 80ft underground mine tunnel with rough stone walls. Dim torchlight. Broken planters and rotten trellises. Dim light from luminescent moss. Entry through narrow tunnel. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
@@ -1107,11 +1237,15 @@
         "winConditions": [
             {
                 "condition": "Destroy all blights",
-                "reward": "Full XP (250)"
+                "reward": "Full XP (250)",
+                "xpReward": 250,
+                "goldReward": 0
             },
             {
                 "condition": "Close to melee range quickly",
-                "reward": "Full XP + avoid ranged damage"
+                "reward": "Full XP + avoid ranged damage",
+                "xpReward": 250,
+                "goldReward": 0
             }
         ],
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 120ft x 100ft underground dungeon chamber with stone dungeon walls. Dim torchlight. Needle-covered floor. Limited cover. Natural lighting from above. Entry via collapsed section in ceiling. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
@@ -1141,11 +1275,15 @@
         "winConditions": [
             {
                 "condition": "Destroy both blights",
-                "reward": "Full XP (200)"
+                "reward": "Full XP (200)",
+                "xpReward": 200,
+                "goldReward": 0
             },
             {
                 "condition": "Use fire to burn through quickly",
-                "reward": "Full XP + destroy vines for future parties"
+                "reward": "Full XP + destroy vines for future parties",
+                "xpReward": 200,
+                "goldReward": 0
             }
         ],
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 100ft underground dungeon chamber with stone dungeon walls. Dim torchlight. Vine curtains block visibility. Damp and humid. Entry through crumbling archway. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
@@ -1175,11 +1313,15 @@
         "winConditions": [
             {
                 "condition": "Defeat all kenku",
-                "reward": "Full XP (250)"
+                "reward": "Full XP (250)",
+                "xpReward": 250,
+                "goldReward": 0
             },
             {
                 "condition": "Intimidate them into fleeing (DC 13)",
-                "reward": "100 XP + they leave most loot"
+                "reward": "100 XP + they leave most loot",
+                "xpReward": 100,
+                "goldReward": 0
             }
         ],
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 90ft underground dungeon chamber with ice-covered stone walls. Dim torchlight. Makeshift perches on walls. Multiple shadowy corners. Two exits. Entry via spiral stairs in corner. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
@@ -1209,11 +1351,15 @@
         "winConditions": [
             {
                 "condition": "Destroy both armor",
-                "reward": "Full XP (400)"
+                "reward": "Full XP (400)",
+                "xpReward": 400,
+                "goldReward": 0
             },
             {
                 "condition": "Find and speak the command word",
-                "reward": "Full XP + armor deactivated"
+                "reward": "Full XP + armor deactivated",
+                "xpReward": 400,
+                "goldReward": 0
             }
         ],
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 80ft underground dungeon chamber with stone dungeon walls. Dim torchlight. Two armor display alcoves flanking it. Tapestries on walls. Polished stone floor. Entry through fissure in the rock. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
@@ -1251,11 +1397,15 @@
         "winConditions": [
             {
                 "condition": "Destroy all swarms",
-                "reward": "Full XP (250)"
+                "reward": "Full XP (250)",
+                "xpReward": 250,
+                "goldReward": 0
             },
             {
                 "condition": "Use fire to clear the room",
-                "reward": "Full XP + room stays clear"
+                "reward": "Full XP + room stays clear",
+                "xpReward": 250,
+                "goldReward": 0
             }
         ],
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 90ft x 90ft underground dungeon chamber with stone dungeon walls. Dim torchlight. Debris and refuse piles. Dim lighting. Multiple small exits. Entry via stone staircase descending from above. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
@@ -1285,11 +1435,15 @@
         "winConditions": [
             {
                 "condition": "Kill all kuo-toa",
-                "reward": "Full XP (250)"
+                "reward": "Full XP (250)",
+                "xpReward": 250,
+                "goldReward": 0
             },
             {
                 "condition": "Trick them with religious deception",
-                "reward": "Full XP + safe passage"
+                "reward": "Full XP + safe passage",
+                "xpReward": 250,
+                "goldReward": 0
             }
         ],
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 110ft x 100ft underground shrine chamber with ornate stone walls with carvings. Dim torchlight. Crude idol on raised platform. Torches in wet sconces. Entry through arched doorway at south. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
@@ -1319,11 +1473,15 @@
         "winConditions": [
             {
                 "condition": "Destroy all swords",
-                "reward": "Full XP (200)"
+                "reward": "Full XP (200)",
+                "xpReward": 200,
+                "goldReward": 0
             },
             {
                 "condition": "Use Dispel Magic",
-                "reward": "Full XP + swords become loot"
+                "reward": "Full XP + swords become loot",
+                "xpReward": 200,
+                "goldReward": 0
             }
         ],
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 70ft underground dungeon chamber with stone dungeon walls. Dim torchlight. Display cases. Stone floor. Entry via ladder from trapdoor above. with heavy doors. Entry via ladder from trapdoor above. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
@@ -1353,11 +1511,15 @@
         "winConditions": [
             {
                 "condition": "Kill all spiders",
-                "reward": "Full XP (400)"
+                "reward": "Full XP (400)",
+                "xpReward": 400,
+                "goldReward": 0
             },
             {
                 "condition": "Burn the webs and escape",
-                "reward": "50% XP, spiders scattered"
+                "reward": "50% XP, spiders scattered",
+                "xpReward": 200,
+                "goldReward": 0
             }
         ],
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 160ft x 140ft underground dungeon cavern with rough stone walls. Dim torchlight. Cocooned shapes. High ceiling with web strands. Entry through narrow tunnel. Two exits on opposite walls. Clean lines, high contrast for virtual tabletop use.",
@@ -1387,11 +1549,15 @@
         "winConditions": [
             {
                 "condition": "Destroy all zombies",
-                "reward": "Full XP (400)"
+                "reward": "Full XP (400)",
+                "xpReward": 400,
+                "goldReward": 0
             },
             {
                 "condition": "Use radiant damage to ensure kills",
-                "reward": "Full XP + faster victory"
+                "reward": "Full XP + faster victory",
+                "xpReward": 400,
+                "goldReward": 0
             }
         ],
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 150ft x 120ft underground burial crypt with stone dungeon walls. Magical glow. Narrow doorways for chokepoints. Dim green glow. Entry via collapsed section in ceiling. Two exits on opposite walls. Clean lines, high contrast for virtual tabletop use.",
@@ -1421,11 +1587,15 @@
         "winConditions": [
             {
                 "condition": "Destroy all skeletons",
-                "reward": "Full XP (350)"
+                "reward": "Full XP (350)",
+                "xpReward": 350,
+                "goldReward": 0
             },
             {
                 "condition": "Rush to cover and flank",
-                "reward": "Full XP + avoid ranged damage"
+                "reward": "Full XP + avoid ranged damage",
+                "xpReward": 350,
+                "goldReward": 0
             }
         ],
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 100ft underground dungeon chamber with stone dungeon walls. Dim torchlight. Low walls for cover in center. Arrow slits in platforms. Entry through crumbling archway. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
@@ -1463,11 +1633,15 @@
         "winConditions": [
             {
                 "condition": "Kill all goblins",
-                "reward": "Full XP (375)"
+                "reward": "Full XP (375)",
+                "xpReward": 375,
+                "goldReward": 0
             },
             {
                 "condition": "Break their morale at half strength",
-                "reward": "Full XP + survivors flee"
+                "reward": "Full XP + survivors flee",
+                "xpReward": 375,
+                "goldReward": 0
             }
         ],
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 140ft x 100ft underground dungeon chamber with stone dungeon walls. Dim torchlight. War table with crude map. Two exits. Entry via spiral stairs in corner. Two exits on opposite walls. Clean lines, high contrast for virtual tabletop use.",
@@ -1505,11 +1679,15 @@
         "winConditions": [
             {
                 "condition": "Destroy all undead",
-                "reward": "Full XP (400)"
+                "reward": "Full XP (400)",
+                "xpReward": 400,
+                "goldReward": 0
             },
             {
                 "condition": "Destroy the knight's corpse",
-                "reward": "Full XP + instant victory"
+                "reward": "Full XP + instant victory",
+                "xpReward": 400,
+                "goldReward": 0
             }
         ],
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 130ft x 100ft underground dungeon chamber with ancient carved stone walls. Dim torchlight. Armor displays on walls. Unnaturally dark corners. Entry through fissure in the rock. Two exits on opposite walls. Clean lines, high contrast for virtual tabletop use.",
@@ -1547,11 +1725,15 @@
         "winConditions": [
             {
                 "condition": "Kill all canines",
-                "reward": "Full XP (250)"
+                "reward": "Full XP (250)",
+                "xpReward": 250,
+                "goldReward": 0
             },
             {
                 "condition": "Negotiate with the worg",
-                "reward": "No XP, information about dungeon"
+                "reward": "No XP, information about dungeon",
+                "xpReward": 0,
+                "goldReward": 0
             }
         ],
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 110ft x 90ft underground dungeon cavern with rough stone walls. Dim torchlight. Central sleeping area. One main entrance, one small escape exit. Entry via stone staircase descending from above. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
@@ -1589,15 +1771,21 @@
         "winConditions": [
             {
                 "condition": "Destroy all modrons",
-                "reward": "Full XP (175)"
+                "reward": "Full XP (175)",
+                "xpReward": 175,
+                "goldReward": 0
             },
             {
                 "condition": "Help with their mission",
-                "reward": "50 XP + modron neutrality"
+                "reward": "50 XP + modron neutrality",
+                "xpReward": 50,
+                "goldReward": 0
             },
             {
                 "condition": "Let them pass peacefully",
-                "reward": "No combat"
+                "reward": "No combat",
+                "xpReward": 0,
+                "goldReward": 0
             }
         ],
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 100ft underground dungeon chamber with stone dungeon walls. Dim torchlight. Mechanical aesthetic. Clean and orderly. Entry through arched doorway at south. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
@@ -1627,11 +1815,15 @@
         "winConditions": [
             {
                 "condition": "Kill both jackalweres",
-                "reward": "Full XP (200)"
+                "reward": "Full XP (200)",
+                "xpReward": 200,
+                "goldReward": 0
             },
             {
                 "condition": "Resist Sleep Gaze and attack with magic/silver",
-                "reward": "Full XP + bypass resistance"
+                "reward": "Full XP + bypass resistance",
+                "xpReward": 200,
+                "goldReward": 0
             }
         ],
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 80ft underground dungeon chamber with stone dungeon walls. Dim torchlight.  Entry via ladder from trapdoor above. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
@@ -1661,15 +1853,21 @@
         "winConditions": [
             {
                 "condition": "Kill both satyrs",
-                "reward": "Full XP (200)"
+                "reward": "Full XP (200)",
+                "xpReward": 200,
+                "goldReward": 0
             },
             {
                 "condition": "Entertain them (DC 15 Performance)",
-                "reward": "50 XP + dungeon information"
+                "reward": "50 XP + dungeon information",
+                "xpReward": 50,
+                "goldReward": 0
             },
             {
                 "condition": "Pay wine tribute",
-                "reward": "Safe passage"
+                "reward": "Safe passage",
+                "xpReward": 0,
+                "goldReward": 0
             }
         ],
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 120ft x 100ft underground dungeon chamber with stone dungeon walls. Dim torchlight. Natural spring. Fey aesthetic. Entry through narrow tunnel. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
@@ -1699,11 +1897,15 @@
         "winConditions": [
             {
                 "condition": "Kill all frogs",
-                "reward": "Full XP (250)"
+                "reward": "Full XP (250)",
+                "xpReward": 250,
+                "goldReward": 0
             },
             {
                 "condition": "Stay on dry land and fight defensively",
-                "reward": "Full XP + positional advantage"
+                "reward": "Full XP + positional advantage",
+                "xpReward": 250,
+                "goldReward": 0
             }
         ],
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 100ft underground dungeon chamber with stone dungeon walls. Dim torchlight. Narrow dry ledges around edges. Lily pads. Entry via collapsed section in ceiling. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
@@ -1733,11 +1935,15 @@
         "winConditions": [
             {
                 "condition": "Kill both crocodiles",
-                "reward": "Full XP (200)"
+                "reward": "Full XP (200)",
+                "xpReward": 200,
+                "goldReward": 0
             },
             {
                 "condition": "Lure them onto land",
-                "reward": "Full XP + easier fight"
+                "reward": "Full XP + easier fight",
+                "xpReward": 200,
+                "goldReward": 0
             }
         ],
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 120ft x 80ft underground dungeon chamber with rough stone walls. Dim torchlight. Raised walkways on sides. Submerged logs. Entry through crumbling archway. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
@@ -1767,11 +1973,15 @@
         "winConditions": [
             {
                 "condition": "Destroy all brooms",
-                "reward": "Full XP (150)"
+                "reward": "Full XP (150)",
+                "xpReward": 150,
+                "goldReward": 0
             },
             {
                 "condition": "Simply close the door and leave",
-                "reward": "No XP, avoid combat"
+                "reward": "No XP, avoid combat",
+                "xpReward": 0,
+                "goldReward": 0
             }
         ],
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 60ft x 40ft underground dungeon chamber with rough-hewn rock walls with wooden supports. Dim torchlight. Mops and buckets. Cramped space. Entry via spiral stairs in corner. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
@@ -1801,11 +2011,15 @@
         "winConditions": [
             {
                 "condition": "Destroy all mephits",
-                "reward": "Full XP (300)"
+                "reward": "Full XP (300)",
+                "xpReward": 300,
+                "goldReward": 0
             },
             {
                 "condition": "Use water to weaken them",
-                "reward": "Full XP + easier fight"
+                "reward": "Full XP + easier fight",
+                "xpReward": 300,
+                "goldReward": 0
             }
         ],
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 120ft x 100ft underground dungeon chamber with ice-covered stone walls. Dim torchlight. Broken pillars and walls. Collapsed ceiling section. Entry through fissure in the rock. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
@@ -1835,11 +2049,15 @@
         "winConditions": [
             {
                 "condition": "Destroy both spores",
-                "reward": "Full XP (200)"
+                "reward": "Full XP (200)",
+                "xpReward": 200,
+                "goldReward": 0
             },
             {
                 "condition": "Identify and destroy from range",
-                "reward": "Full XP + avoid infection risk"
+                "reward": "Full XP + avoid infection risk",
+                "xpReward": 200,
+                "goldReward": 0
             }
         ],
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 80ft underground dungeon chamber with ice-covered stone walls. Dim torchlight. Sealed doors. Dead adventurer's remains in corner. Entry via stone staircase descending from above. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
@@ -1869,11 +2087,15 @@
         "winConditions": [
             {
                 "condition": "Kill both scouts",
-                "reward": "Full XP (200)"
+                "reward": "Full XP (200)",
+                "xpReward": 200,
+                "goldReward": 0
             },
             {
                 "condition": "Intimidate into surrender",
-                "reward": "Full XP + intelligence notes"
+                "reward": "Full XP + intelligence notes",
+                "xpReward": 200,
+                "goldReward": 0
             }
         ],
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 90ft x 70ft underground dungeon chamber with stone dungeon walls. Dim torchlight. Surveillance equipment. Multiple exits for escape. Entry through arched doorway at south. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
@@ -1903,11 +2125,15 @@
         "winConditions": [
             {
                 "condition": "Kill both toughs",
-                "reward": "Full XP (200)"
+                "reward": "Full XP (200)",
+                "xpReward": 200,
+                "goldReward": 0
             },
             {
                 "condition": "Bribe them (50 gp)",
-                "reward": "Safe passage + gang info"
+                "reward": "Safe passage + gang info",
+                "xpReward": 0,
+                "goldReward": 0
             }
         ],
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 80ft x 60ft underground dungeon chamber with stone dungeon walls. Dim torchlight. Graffiti on walls. Makeshift weapons. One main entrance. Entry via ladder from trapdoor above. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
@@ -1937,15 +2163,21 @@
         "winConditions": [
             {
                 "condition": "Kill both performers",
-                "reward": "Full XP (200)"
+                "reward": "Full XP (200)",
+                "xpReward": 200,
+                "goldReward": 0
             },
             {
                 "condition": "Catch the thief in action",
-                "reward": "Full XP + confession"
+                "reward": "Full XP + confession",
+                "xpReward": 200,
+                "goldReward": 0
             },
             {
                 "condition": "Watch the show and leave",
-                "reward": "No XP, lose 2d6 gp to pickpocket"
+                "reward": "No XP, lose 2d6 gp to pickpocket",
+                "xpReward": 0,
+                "goldReward": 6
             }
         ],
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 80ft underground dungeon chamber with stone dungeon walls. Dim torchlight. Tables and chairs. Atmospheric lighting. Entry through narrow tunnel. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
@@ -1975,11 +2207,15 @@
         "winConditions": [
             {
                 "condition": "Kill both myconids",
-                "reward": "Full XP (200)"
+                "reward": "Full XP (200)",
+                "xpReward": 200,
+                "goldReward": 0
             },
             {
                 "condition": "Communicate and ally with them",
-                "reward": "50 XP + healing spores (1d8+2)"
+                "reward": "50 XP + healing spores (1d8+2)",
+                "xpReward": 50,
+                "goldReward": 0
             }
         ],
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 120ft x 100ft underground mine tunnel with stone dungeon walls. Dim bioluminescent lighting. Spore-filled air. Bioluminescent lighting. Entry via collapsed section in ceiling. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
@@ -2009,11 +2245,15 @@
         "winConditions": [
             {
                 "condition": "Kill both bears",
-                "reward": "Full XP (200)"
+                "reward": "Full XP (200)",
+                "xpReward": 200,
+                "goldReward": 0
             },
             {
                 "condition": "Calm them with Animal Handling",
-                "reward": "Full XP + safe passage"
+                "reward": "Full XP + safe passage",
+                "xpReward": 200,
+                "goldReward": 0
             }
         ],
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 80ft underground dungeon cavern with rough stone walls. Dim torchlight. Honeycomb in corner. Bear cubs (non-combatants). Two exits. Entry through crumbling archway. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
@@ -2051,11 +2291,15 @@
         "winConditions": [
             {
                 "condition": "Destroy all undead",
-                "reward": "Full XP (260)"
+                "reward": "Full XP (260)",
+                "xpReward": 260,
+                "goldReward": 0
             },
             {
                 "condition": "Destroy the carved skull",
-                "reward": "Full XP + undead collapse"
+                "reward": "Full XP + undead collapse",
+                "xpReward": 260,
+                "goldReward": 0
             }
         ],
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 100ft underground dungeon chamber with stone dungeon walls. Flickering candlelight. Carved skull on wall. Dim candlelight. Macabre decorations. Entry via spiral stairs in corner. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
@@ -2362,11 +2606,15 @@
         "winConditions": [
             {
                 "condition": "Take treasure after cleansing the curse",
-                "reward": "Full treasure value + 250 XP"
+                "reward": "Full treasure value + 250 XP",
+                "xpReward": 250,
+                "goldReward": 0
             },
             {
                 "condition": "Take treasure without cleansing",
-                "reward": "Full treasure but suffer curse (disadvantage on saves for 24 hours)"
+                "reward": "Full treasure but suffer curse (disadvantage on saves for 24 hours)",
+                "xpReward": 0,
+                "goldReward": 0
             }
         ],
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 90ft x 90ft chamber. Pile of gold and gems in corner. Faint ghostly aura (visible with detect magic). Dark atmosphere. Entry via archway. Clean lines, high contrast for virtual tabletop use."
@@ -2393,11 +2641,15 @@
         "winConditions": [
             {
                 "condition": "Find the hidden compartment without triggering the trap",
-                "reward": "Full XP + all treasure"
+                "reward": "Full XP + all treasure",
+                "xpReward": 275,
+                "goldReward": 0
             },
             {
                 "condition": "Trigger the trap but survive and find the real treasure",
-                "reward": "Half XP + all treasure"
+                "reward": "Half XP + all treasure",
+                "xpReward": 0,
+                "goldReward": 0
             }
         ],
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 100ft vault chamber. Iron vault door. Raised platform with ornate chest. Beam of light from above. Hidden compartment beneath platform. Entry via reinforced corridor. Clean lines, high contrast for virtual tabletop use."
@@ -2817,15 +3069,21 @@
         "winConditions": [
             {
                 "condition": "Pay the toll (50 gp) or negotiate (25 gp)",
-                "reward": "Safe passage, no combat"
+                "reward": "Safe passage, no combat",
+                "xpReward": 0,
+                "goldReward": 0
             },
             {
                 "condition": "Intimidate or deceive successfully",
-                "reward": "Free passage + possible information"
+                "reward": "Free passage + possible information",
+                "xpReward": 0,
+                "goldReward": 0
             },
             {
                 "condition": "Defeat in combat but spare them",
-                "reward": "Treasure location + trap password + 250 XP"
+                "reward": "Treasure location + trap password + 250 XP",
+                "xpReward": 250,
+                "goldReward": 0
             }
         ],
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 60ft corridor. Three bandits blocking passage. Leader in front with crossbow. Defensive positions. Tense atmosphere. Entry and exit via corridors. Clean lines, high contrast for virtual tabletop use."
@@ -2855,11 +3113,15 @@
         "winConditions": [
             {
                 "condition": "Defeat him in honorable combat",
-                "reward": "200 XP + his tarnished armor (can be restored for 100 gp value)"
+                "reward": "200 XP + his tarnished armor (can be restored for 100 gp value)",
+                "xpReward": 200,
+                "goldReward": 100
             },
             {
                 "condition": "Complete his quest and free him from curse",
-                "reward": "275 XP + blessing + hidden cache"
+                "reward": "275 XP + blessing + hidden cache",
+                "xpReward": 275,
+                "goldReward": 0
             }
         ],
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 90ft x 90ft chamber. Broken altar in center. Spectral knight kneeling. Ghostly blue lighting. Solemn atmosphere. Hidden cache location. Entry via stone archway. Clean lines, high contrast for virtual tabletop use."
@@ -2945,15 +3207,21 @@
         "winConditions": [
             {
                 "condition": "Talk him down from completing ritual",
-                "reward": "300 XP + cult intelligence + ritual components (75 gp value)"
+                "reward": "300 XP + cult intelligence + ritual components (75 gp value)",
+                "xpReward": 300,
+                "goldReward": 75
             },
             {
                 "condition": "Disrupt ritual and defeat cultist",
-                "reward": "200 XP + ritual components"
+                "reward": "200 XP + ritual components",
+                "xpReward": 200,
+                "goldReward": 0
             },
             {
                 "condition": "Let ritual complete",
-                "reward": "Must fight cultist + summoned demon (additional 200 XP)"
+                "reward": "Must fight cultist + summoned demon (additional 200 XP)",
+                "xpReward": 200,
+                "goldReward": 0
             }
         ],
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 90ft x 90ft ritual chamber. Dark altar in center. Arcane circle on floor. Robed cultist. Ominous lighting. Ritual components scattered. Entry via corridor. Clean lines, high contrast for virtual tabletop use."
@@ -2991,11 +3259,15 @@
         "winConditions": [
             {
                 "condition": "Defeat Gorthak and his guards",
-                "reward": "300 XP + treasure + access to next floor"
+                "reward": "300 XP + treasure + access to next floor",
+                "xpReward": 300,
+                "goldReward": 0
             },
             {
                 "condition": "Convince Gorthak to surrender (DC 18 Intimidation after killing guards)",
-                "reward": "250 XP + treasure + Gorthak reveals secret treasure cache (additional 100 gp)"
+                "reward": "250 XP + treasure + Gorthak reveals secret treasure cache (additional 100 gp)",
+                "xpReward": 250,
+                "goldReward": 100
             }
         ],
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 150ft x 120ft throne room. Raised platform with crude throne made of scavenged armor. Tattered banners on walls. Goblin guards positioned defensively. Bone crown visible. Dim torchlight. Entry via large double doors. Stairs to next level behind throne. Clean lines, high contrast for virtual tabletop use."
@@ -3025,11 +3297,15 @@
         "winConditions": [
             {
                 "condition": "Destroy the Skeletal Champion",
-                "reward": "450 XP + treasure + access to next floor"
+                "reward": "450 XP + treasure + access to next floor",
+                "xpReward": 450,
+                "goldReward": 0
             },
             {
                 "condition": "Use Turn Undead or similar ability to make it flee",
-                "reward": "300 XP + partial treasure (it drops greatsword)"
+                "reward": "300 XP + partial treasure (it drops greatsword)",
+                "xpReward": 300,
+                "goldReward": 0
             }
         ],
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 140ft x 140ft ancient armory. Rusted weapons and broken shields scattered throughout. Skeletal champion in center with glowing greatsword. Suits of armor that can animate. Dark atmosphere with necromantic green lighting. Entry via stone archway. Exit stairs visible. Clean lines, high contrast for virtual tabletop use."
@@ -3059,11 +3335,15 @@
         "winConditions": [
             {
                 "condition": "Slay the dragon",
-                "reward": "500 XP + full treasure hoard + dragon scales (crafting material)"
+                "reward": "500 XP + full treasure hoard + dragon scales (crafting material)",
+                "xpReward": 500,
+                "goldReward": 0
             },
             {
                 "condition": "Negotiate with the dragon (DC 18 Persuasion, must offer tribute worth 200+ gp)",
-                "reward": "300 XP + safe passage + dragon allows one item from hoard"
+                "reward": "300 XP + safe passage + dragon allows one item from hoard",
+                "xpReward": 300,
+                "goldReward": 0
             }
         ],
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 200ft x 180ft massive cavern. High ceiling (40ft). Treasure pile in center with green dragon perched on top. Poisonous fumes visible. Vines and vegetation. Dim green-tinted lighting. Entry via tunnel. Exit passage behind treasure. Clean lines, high contrast for virtual tabletop use."
@@ -3101,11 +3381,15 @@
         "winConditions": [
             {
                 "condition": "Destroy the Corrupted Treant and all blights",
-                "reward": "550 XP + full treasure"
+                "reward": "550 XP + full treasure",
+                "xpReward": 550,
+                "goldReward": 0
             },
             {
                 "condition": "Purify the treant with Remove Curse or similar magic (DC 15 Arcana)",
-                "reward": "600 XP + treant becomes grateful ally, grants blessing of the forest (+1d4 to Nature checks for 7 days)"
+                "reward": "600 XP + treant becomes grateful ally, grants blessing of the forest (+1d4 to Nature checks for 7 days)",
+                "xpReward": 600,
+                "goldReward": 0
             }
         ],
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 160ft x 160ft underground grove. Massive corrupted treant in center. Twisted roots breaking through stone floor. Twig blights scattered around. Dark sap oozing. Eerie green-black lighting. Entry via cavern. Exit passage visible. Clean lines, high contrast for virtual tabletop use."
@@ -3143,11 +3427,15 @@
         "winConditions": [
             {
                 "condition": "Defeat Malakar and his guardians",
-                "reward": "600 XP + full treasure + access to next floor"
+                "reward": "600 XP + full treasure + access to next floor",
+                "xpReward": 600,
+                "goldReward": 0
             },
             {
                 "condition": "Disrupt the ritual circle (DC 14 Arcana) before combat",
-                "reward": "Malakar loses access to lair actions and Contingency, easier fight"
+                "reward": "Malakar loses access to lair actions and Contingency, easier fight",
+                "xpReward": 0,
+                "goldReward": 0
             }
         ],
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 130ft diameter circular ritual chamber. Glowing pentagram in center with sorcerer. Arcane symbols covering floor and walls. Two animated armor suits flanking. Dark energy crackling. Purple-black magical lighting. Entry via reinforced door. Exit stairs behind ritual circle. Clean lines, high contrast for virtual tabletop use."
@@ -3177,11 +3465,15 @@
         "winConditions": [
             {
                 "condition": "Destroy the cube and both splits",
-                "reward": "450 XP + treasure (must extract from cube remains)"
+                "reward": "450 XP + treasure (must extract from cube remains)",
+                "xpReward": 450,
+                "goldReward": 0
             },
             {
                 "condition": "Lure the cube into a pit trap in adjacent room",
-                "reward": "300 XP + treasure accessible without fight"
+                "reward": "300 XP + treasure accessible without fight",
+                "xpReward": 300,
+                "goldReward": 0
             }
         ],
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 120ft x 120ft perfectly square chamber. Massive translucent gelatinous cube in center. Narrow ledges along walls. Skeletal remains and treasure visible inside cube. Smooth stone walls. Dim lighting. Entry via corridor. Exit opposite. Clean lines, high contrast for virtual tabletop use."
@@ -3227,11 +3519,15 @@
         "winConditions": [
             {
                 "condition": "Defeat Grimjaw and all allies",
-                "reward": "700 XP + full treasure + battle plans"
+                "reward": "700 XP + full treasure + battle plans",
+                "xpReward": 700,
+                "goldReward": 0
             },
             {
                 "condition": "Challenge Grimjaw to single combat (DC 15 Intimidation)",
-                "reward": "He accepts, minions stand down. Win: 500 XP + treasure + remaining minions flee"
+                "reward": "He accepts, minions stand down. Win: 500 XP + treasure + remaining minions flee",
+                "xpReward": 500,
+                "goldReward": 0
             }
         ],
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 150ft x 130ft war room. Tables with crude maps and battle plans. Massive bugbear chieftain in center. Two goblin advisors. Dire wolf companion. Weapon racks on walls. Torchlight. Entry via reinforced door. Exit passage behind. Clean lines, high contrast for virtual tabletop use."
@@ -3261,15 +3557,21 @@
         "winConditions": [
             {
                 "condition": "Destroy the Spectral Warden in combat",
-                "reward": "450 XP + treasure"
+                "reward": "450 XP + treasure",
+                "xpReward": 450,
+                "goldReward": 0
             },
             {
                 "condition": "Destroy the warden's chains",
-                "reward": "500 XP + treasure + warden's grateful spirit provides blessing (resistance to necrotic damage for 24 hours)"
+                "reward": "500 XP + treasure + warden's grateful spirit provides blessing (resistance to necrotic damage for 24 hours)",
+                "xpReward": 500,
+                "goldReward": 0
             },
             {
                 "condition": "Free the imprisoned souls (DC 15 Religion ritual)",
-                "reward": "600 XP + warden is released from duty peacefully + enhanced treasure (additional magic item)"
+                "reward": "600 XP + warden is released from duty peacefully + enhanced treasure (additional magic item)",
+                "xpReward": 600,
+                "goldReward": 0
             }
         ],
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 140ft x 140ft ancient prison. Rusted cells lining walls. Ghostly spectral warden in center with ethereal chains. Shadowy atmosphere. Whispers visible as mist. Eerie blue-white lighting. Entry via iron door. Exit stairs visible. Clean lines, high contrast for virtual tabletop use."
@@ -3315,11 +3617,15 @@
         "winConditions": [
             {
                 "condition": "Defeat Sszarak and his minions",
-                "reward": "400 XP + full treasure"
+                "reward": "400 XP + full treasure",
+                "xpReward": 400,
+                "goldReward": 0
             },
             {
                 "condition": "Disrupt the ritual to prevent Sszarak from using Lair Actions (DC 14 Arcana or Religion)",
-                "reward": "additional 100 XP"
+                "reward": "additional 100 XP",
+                "xpReward": 100,
+                "goldReward": 0
             }
         ],
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 160ft x 140ft serpent temple. Stone snake statues coiling around pillars. Dark altar in center with yuan-ti priest. Two giant constrictor snakes. Serpentine decorations throughout. Green-tinted torchlight. Entry via temple doors. Exit passage behind altar. Clean lines, high contrast for virtual tabletop use."
@@ -3349,15 +3655,21 @@
         "winConditions": [
             {
                 "condition": "Destroy the Flesh Golem",
-                "reward": "450 XP + treasure"
+                "reward": "450 XP + treasure",
+                "xpReward": 450,
+                "goldReward": 0
             },
             {
                 "condition": "Use lightning to heal it, then calm it with DC 16 Persuasion or Animal Handling",
-                "reward": "500 XP + golem becomes docile, can be commanded for one task + treasure"
+                "reward": "500 XP + golem becomes docile, can be commanded for one task + treasure",
+                "xpReward": 500,
+                "goldReward": 0
             },
             {
                 "condition": "Lure it into alchemical vats (DC 14 Deception or Athletics)",
-                "reward": "400 XP + easier fight (golem takes 4d6 acid damage) + some treasure destroyed"
+                "reward": "400 XP + easier fight (golem takes 4d6 acid damage) + some treasure destroyed",
+                "xpReward": 400,
+                "goldReward": 0
             }
         ],
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 150ft x 150ft mad scientist laboratory. Bubbling alchemical vats throughout. Surgical tables with restraints. Massive flesh golem breaking free. Electricity crackling. Scientific equipment scattered. Eerie green-blue lighting. Entry via reinforced door. Exit stairs visible. Clean lines, high contrast for virtual tabletop use."
