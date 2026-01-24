@@ -53,6 +53,10 @@ type SortColumn = 'name' | 'type' | 'difficulty' | 'level' | 'xp';
 const sortBy = ref<SortColumn>('level');
 const sortDirection = ref<'asc' | 'desc'>('asc');
 
+// Filter state
+const nameFilter = ref('');
+const typeFilter = ref<EncounterType | 'all'>('all');
+
 // Toggle sort column
 const toggleSort = (column: SortColumn) => {
   if (sortBy.value === column) {
@@ -76,9 +80,24 @@ const getXP = (encounter: EncounterData): number => {
   return 0;
 };
 
+const filteredEncounters = computed(() => {
+  const nameQuery = nameFilter.value.trim().toLowerCase();
+  const typeQuery = typeFilter.value;
+
+  return allEncounters.value.filter(encounter => {
+    const matchesName = nameQuery.length === 0 || encounter.name.toLowerCase().includes(nameQuery);
+    const matchesType = typeQuery === 'all' || encounter.type === typeQuery;
+    return matchesName && matchesType;
+  });
+});
+
+const isFiltered = computed(() => {
+  return nameFilter.value.trim().length > 0 || typeFilter.value !== 'all';
+});
+
 // Sorted encounters
 const sortedEncounters = computed(() => {
-  const sorted = [...allEncounters.value].sort((a, b) => {
+  const sorted = [...filteredEncounters.value].sort((a, b) => {
     let comparison = 0;
     
     switch (sortBy.value) {
@@ -135,6 +154,11 @@ const getTypeColor = (type: EncounterType): string => {
   }
 };
 
+const clearFilters = () => {
+  nameFilter.value = '';
+  typeFilter.value = 'all';
+};
+
 // Get difficulty color
 const getDifficultyColor = (difficulty: string): string => {
   switch (difficulty.toLowerCase()) {
@@ -153,17 +177,56 @@ const getDifficultyColor = (difficulty: string): string => {
     <!-- Header -->
     <div class="p-4 pb-3 border-b border-slate-800 bg-slate-950/50">
       <div class="text-sm text-slate-400">
-        {{ allEncounters.length }} total encounter{{ allEncounters.length !== 1 ? 's' : '' }}
+        <span v-if="isFiltered">
+          {{ filteredEncounters.length }} of {{ allEncounters.length }} encounters
+        </span>
+        <span v-else>
+          {{ allEncounters.length }} total encounter{{ allEncounters.length !== 1 ? 's' : '' }}
+        </span>
+      </div>
+    </div>
+
+    <!-- Filters -->
+    <div class="px-4 py-3 border-b border-slate-800 bg-slate-900/40">
+      <div class="flex items-end gap-3">
+        <div class="flex-1">
+          <label class="block text-[10px] text-slate-500 uppercase tracking-wider mb-1">Name</label>
+          <input
+            v-model="nameFilter"
+            type="text"
+            placeholder="Filter by name..."
+            class="w-full bg-slate-900/80 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-200 focus:outline-none focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20"
+          />
+        </div>
+        <div class="w-44">
+          <label class="block text-[10px] text-slate-500 uppercase tracking-wider mb-1">Type</label>
+          <select
+            v-model="typeFilter"
+            class="w-full bg-slate-900/80 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-200 focus:outline-none focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20"
+          >
+            <option value="all">All Types</option>
+            <option v-for="type in Object.values(EncounterType)" :key="type" :value="type">
+              {{ type }}
+            </option>
+          </select>
+        </div>
+        <button
+          v-if="isFiltered"
+          @click="clearFilters"
+          class="px-3 py-2 text-xs font-bold uppercase tracking-wider rounded-lg border border-slate-700 text-slate-300 hover:text-white hover:border-amber-500/60 hover:bg-slate-800/60 transition-colors"
+        >
+          Clear
+        </button>
       </div>
     </div>
 
     <!-- Column Headers -->
-    <div v-if="allEncounters.length > 0" class="px-4 py-2 bg-slate-900/50 border-b border-slate-800 flex items-center gap-3 text-xs font-bold uppercase tracking-wider text-slate-500">
+    <div v-if="allEncounters.length > 0" class="px-4 py-2 bg-slate-900/50 border-b border-slate-800 text-xs font-bold uppercase tracking-wider text-slate-500 grid items-center grid-cols-[24px_minmax(140px,1fr)_minmax(72px,auto)_minmax(0,40px)] md:grid-cols-[24px_minmax(140px,1fr)_minmax(72px,auto)_minmax(0,48px)_minmax(0,40px)_minmax(0,48px)]">
       <div class="w-6"></div> <!-- Spacer for expand icon -->
       
       <button 
         @click="toggleSort('name')"
-        class="flex-1 min-w-0 text-left hover:text-amber-400 transition-colors flex items-center gap-1"
+        class="w-full min-w-0 text-left hover:text-amber-400 transition-colors flex items-center gap-1"
       >
         <span>Name</span>
         <span v-if="sortBy === 'name'" class="text-amber-400">{{ sortDirection === 'asc' ? '↑' : '↓' }}</span>
@@ -171,7 +234,7 @@ const getDifficultyColor = (difficulty: string): string => {
       
       <button 
         @click="toggleSort('type')"
-        class="flex-shrink-0 hover:text-amber-400 transition-colors flex items-center gap-1"
+        class="w-full min-w-[72px] hover:text-amber-400 transition-colors flex items-center justify-center gap-1"
       >
         <span>Type</span>
         <span v-if="sortBy === 'type'" class="text-amber-400">{{ sortDirection === 'asc' ? '↑' : '↓' }}</span>
@@ -179,7 +242,7 @@ const getDifficultyColor = (difficulty: string): string => {
       
       <button 
         @click="toggleSort('difficulty')"
-        class="flex-shrink-0 w-16 text-right hover:text-amber-400 transition-colors flex items-center justify-end gap-1"
+        class="w-full text-right hover:text-amber-400 transition-colors items-center justify-end gap-1 hidden md:flex"
       >
         <span>Diff</span>
         <span v-if="sortBy === 'difficulty'" class="text-amber-400">{{ sortDirection === 'asc' ? '↑' : '↓' }}</span>
@@ -187,7 +250,7 @@ const getDifficultyColor = (difficulty: string): string => {
       
       <button 
         @click="toggleSort('level')"
-        class="flex-shrink-0 w-12 text-right hover:text-amber-400 transition-colors flex items-center justify-end gap-1"
+        class="w-full text-right hover:text-amber-400 transition-colors flex items-center justify-end gap-1"
       >
         <span>Lvl</span>
         <span v-if="sortBy === 'level'" class="text-amber-400">{{ sortDirection === 'asc' ? '↑' : '↓' }}</span>
@@ -195,7 +258,8 @@ const getDifficultyColor = (difficulty: string): string => {
       
       <button 
         @click="toggleSort('xp')"
-        class="flex-shrink-0 w-16 text-right hover:text-amber-400 transition-colors flex items-center justify-end gap-1"
+        class="w-full text-right hover:text-amber-400 transition-colors items-center justify-end gap-1 hidden md:flex"
+        title="XP Budget"
       >
         <span>XP</span>
         <span v-if="sortBy === 'xp'" class="text-amber-400">{{ sortDirection === 'asc' ? '↑' : '↓' }}</span>
@@ -212,7 +276,7 @@ const getDifficultyColor = (difficulty: string): string => {
         <!-- Table Row (Clickable) -->
         <div
           @click="toggleRow(encounter.name)"
-          class="px-4 py-3 cursor-pointer flex items-center gap-3 select-none"
+          class="px-4 py-3 cursor-pointer select-none grid items-center grid-cols-[24px_minmax(140px,1fr)_minmax(72px,auto)_minmax(0,40px)] md:grid-cols-[24px_minmax(140px,1fr)_minmax(72px,auto)_minmax(0,48px)_minmax(0,40px)_minmax(0,48px)]"
         >
           <!-- Expand Icon -->
           <div class="text-slate-500 transition-transform" :class="isExpanded(encounter.name) ? 'rotate-90' : ''">
@@ -220,15 +284,15 @@ const getDifficultyColor = (difficulty: string): string => {
           </div>
           
           <!-- Name -->
-          <div class="flex-1 min-w-0">
-            <div class="font-semibold text-sm text-slate-200 truncate">
+          <div class="flex-1 min-w-[140px]">
+            <div class="font-semibold text-sm text-slate-200 leading-snug whitespace-normal">
               {{ encounter.name }}
             </div>
           </div>
           
           <!-- Type Badge -->
           <span 
-            class="px-2 py-0.5 rounded text-[10px] font-bold text-white uppercase tracking-wider flex-shrink-0"
+            class="px-2 py-0.5 rounded text-[10px] font-bold text-white uppercase tracking-wider flex-shrink-0 min-w-[72px] text-center"
             :class="getTypeColor(encounter.type)"
           >
             {{ encounter.type }}
@@ -236,19 +300,19 @@ const getDifficultyColor = (difficulty: string): string => {
           
           <!-- Difficulty -->
           <span 
-            class="text-[10px] font-bold uppercase tracking-wider flex-shrink-0 w-16 text-right"
+            class="text-[9px] font-bold uppercase tracking-wider flex-shrink-0 w-12 text-right hidden md:block"
             :class="getDifficultyColor(encounter.difficulty)"
           >
             {{ encounter.difficulty }}
           </span>
           
           <!-- Level -->
-          <div class="text-xs text-slate-500 flex-shrink-0 w-12 text-right">
+          <div class="text-[10px] text-slate-500 flex-shrink-0 w-10 text-right">
             Lvl {{ encounter.level }}
           </div>
           
           <!-- XP -->
-          <div class="text-xs text-slate-500 flex-shrink-0 w-16 text-right">
+          <div class="text-[10px] text-slate-500 flex-shrink-0 w-12 text-right hidden md:block">
             {{ getXP(encounter) }} XP
           </div>
         </div>
@@ -258,6 +322,13 @@ const getDifficultyColor = (difficulty: string): string => {
           v-if="isExpanded(encounter.name)"
           class="px-4 pb-4 pt-2 bg-slate-900/40 border-t border-slate-800/50 space-y-3 animate-slideDown"
         >
+          <!-- Room Description -->
+          <div v-if="encounter.roomDescription" class="bg-slate-800/30 rounded-lg p-3 border border-slate-700/40">
+            <div class="text-[10px] text-slate-400 uppercase tracking-widest mb-2 font-bold">Room Description</div>
+            <p class="text-xs text-slate-300 leading-relaxed italic">
+              {{ encounter.roomDescription }}
+            </p>
+          </div>
           <!-- DM Description -->
           <div v-if="encounter.dmDescription" class="bg-slate-800/40 rounded-lg p-3 border border-slate-700/50">
             <div class="text-[10px] text-red-400 uppercase tracking-widest mb-2 font-bold">🎲 DM Notes</div>
@@ -326,8 +397,13 @@ const getDifficultyColor = (difficulty: string): string => {
       </div>
     </div>
 
+    <div v-if="allEncounters.length > 0 && sortedEncounters.length === 0" class="flex flex-col items-center justify-center py-10 text-center text-slate-500">
+      <div class="text-base font-semibold mb-1">No matches</div>
+      <p class="text-xs uppercase tracking-widest">Adjust filters to see encounters</p>
+    </div>
+
     <!-- Empty State -->
-    <div v-else class="flex flex-col items-center justify-center py-12 text-center opacity-30">
+    <div v-if="allEncounters.length === 0" class="flex flex-col items-center justify-center py-12 text-center opacity-30">
       <div class="text-4xl mb-3">📚</div>
       <p class="text-sm text-slate-500 uppercase tracking-widest">
         No encounters loaded
@@ -366,3 +442,5 @@ const getDifficultyColor = (difficulty: string): string => {
   animation: slideDown 0.3s ease-out;
 }
 </style>
+
+

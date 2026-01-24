@@ -47,8 +47,8 @@ type TabDef = {
 
 const tabs: TabDef[] = [
   { id: 'settings', label: 'Dungeon Settings', icon: 'settings' },
-  { id: 'details', label: 'Current Encounter', icon: 'details' },
-  { id: 'library', label: 'Encounter Library', icon: 'library' }
+  { id: 'library', label: 'Encounter Library', icon: 'library' },
+  { id: 'details', label: 'Current Encounter', icon: 'details' }
 ];
 
 const handleSelectEncounter = (node: DungeonNode) => {
