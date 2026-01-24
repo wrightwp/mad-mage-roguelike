@@ -130,6 +130,12 @@ const showSaveManager = ref(false);
           <div class="text-xs text-slate-400 mt-2">
             {{ mapData.layersPerFloor }} layers deep
           </div>
+          <button 
+            @click="emit('showFloorSummary')"
+            class="w-full mt-3 bg-slate-700/50 hover:bg-slate-700 text-purple-300 font-bold py-2 px-3 rounded transition-all text-xs border border-slate-600 hover:border-purple-500/50"
+          >
+            📋 Floor Summary
+          </button>
         </div>
         
         <!-- Party Configuration Display -->
@@ -210,12 +216,7 @@ const showSaveManager = ref(false);
           {{ revealAll ? '👁️ Hide All' : '👁️ Reveal All' }}
         </button>
 
-        <button 
-          @click="emit('showFloorSummary')"
-          class="w-full bg-slate-800 hover:bg-slate-700 text-purple-300 font-bold py-2.5 px-4 rounded transition-all text-sm border border-slate-700 hover:border-purple-500/50"
-        >
-          📋 Floor Summary
-        </button>
+
       </div>
     </div>
 

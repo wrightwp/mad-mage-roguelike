@@ -96,15 +96,29 @@ export const useGameStore = defineStore('game', () => {
         };
 
 
-        // Auto-visit the start node
+        // Auto-complete the start node (Home/Entrance)
         const startNode = firstFloor.layout.find(n => n.type === 'start');
         if (startNode) {
             firstFloor.visitedNodes.push(startNode.id);
-            startNode.status = 'current';
-        }
+            startNode.status = 'visited'; // Completed, not current
 
-        // Init encounter map
-        firstFloor.encounterResults = {};
+            // Add empty encounter result for the start node
+            firstFloor.encounterResults[startNode.id] = {
+                xp: 0,
+                gold: 0,
+                conditions: ['Entered the Dungeon'],
+                customXP: 0,
+                customGold: 0
+            };
+
+            // Mark connected nodes as available
+            startNode.connections.forEach(connId => {
+                const connectedNode = firstFloor.layout.find(n => n.id === connId);
+                if (connectedNode) {
+                    connectedNode.status = 'available';
+                }
+            });
+        }
 
         newRun.floors[floorId] = firstFloor;
 

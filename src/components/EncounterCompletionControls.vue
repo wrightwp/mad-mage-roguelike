@@ -19,7 +19,7 @@ const gameStore = useGameStore();
 const selectedConditions = ref<string[]>([]);
 const customXP = ref<number>(0);
 const customGold = ref<number>(0);
-const isExpanded = ref(!props.node.status || props.node.status === 'current');
+const isExpanded = ref(false); // Start collapsed by default
 
 // Load saved results if available
 const loadSavedResults = () => {
