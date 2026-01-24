@@ -7,6 +7,7 @@ interface Props {
   initialFloor?: number;
   initialFloorDepth?: number;
   initialNodeCounts?: Record<string, number>;
+  actualNodeCounts?: Record<string, number>; // Current map's generated counts
 }
 
 interface Emits {
@@ -113,6 +114,7 @@ const handleCancel = () => {
 
       <!-- Configuration Sections -->
       <div class="space-y-6">
+
         <!-- Floor Selection -->
         <div class="bg-slate-800/50 rounded-xl p-6 border border-slate-700">
           <h3 class="text-lg font-bold text-slate-100 mb-4 uppercase tracking-wider flex items-center gap-2">
@@ -236,14 +238,20 @@ const handleCancel = () => {
                 </div>
                 <div class="flex-1">
                   <div class="capitalize text-xs font-bold text-slate-300 uppercase tracking-wider mb-1">{{ type }}</div>
-                  <input 
-                    type="number" 
-                    :value="nodeCounts[type]"
-                    @input="updateNodeCount(type, Number(($event.target as HTMLInputElement).value))"
-                    min="0" 
-                    max="50"
-                    class="w-full bg-slate-800 border border-slate-600 rounded px-3 py-2 text-slate-200 font-semibold focus:outline-none focus:border-amber-500"
-                  />
+                  <div class="flex items-center gap-2">
+                    <input 
+                      type="number" 
+                      :value="nodeCounts[type]"
+                      @input="updateNodeCount(type, Number(($event.target as HTMLInputElement).value))"
+                      min="0" 
+                      max="50"
+                      class="w-16 bg-slate-800 border border-slate-600 rounded px-2 py-1 text-slate-200 font-semibold focus:outline-none focus:border-amber-500 text-sm"
+                    />
+                    <span v-if="actualNodeCounts && actualNodeCounts[type] !== undefined" 
+                      class="text-xs text-emerald-400 font-bold bg-emerald-900/30 px-2 py-1 rounded border border-emerald-600/30">
+                      {{ actualNodeCounts[type] }} generated
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>

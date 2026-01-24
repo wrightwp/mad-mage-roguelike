@@ -42,7 +42,7 @@ export const useMapSettings = (
             maxHp: 20
         });
 
-        gameStore.startRun(party, averagePartyLevel.value, floorCount.value);
+        gameStore.startRun(party, averagePartyLevel.value, floorCount.value, nodeTypeCounts.value);
 
         // todo: sync settings to store if needed
 

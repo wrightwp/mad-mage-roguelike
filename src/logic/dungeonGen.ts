@@ -190,20 +190,28 @@ export const generateDungeon = (
         Object.entries(maxCounts).forEach(([type, max]) => {
             if (type !== 'boss' && type !== 'start' && type !== NodeType.Rest) {
                 const current = poolUsedCounts[type] || 0;
-                if (current < max) {
-                    const weight = (type === NodeType.Combat) ? 1 : 2;
+                // Non-combat types strictly respect their max
+                // Combat is always a candidate (can go over max as fallback)
+                if (type === NodeType.Combat) {
+                    // Combat always available, but with lower weight if under max
+                    const weight = current < max ? 1 : 0.5; // Lower priority when over max
+                    candidates.push({ type: type as NodeType, weight });
+                } else if (current < max) {
+                    // Non-combat types only available if under max
+                    const weight = 2; // Higher priority for non-combat
                     candidates.push({ type: type as NodeType, weight });
                 }
             }
         });
 
         if (candidates.length === 0) {
+            // Fallback to Combat if somehow no candidates (shouldn't happen since Combat is always added)
             otherTypesPool.push(NodeType.Combat);
             poolUsedCounts.combat++;
         } else {
             const totalWeight = candidates.reduce((sum, c) => sum + c.weight, 0);
             let random = Math.random() * totalWeight;
-            let selectedType = NodeType.Combat;
+            let selectedType = candidates[0].type; // Default to first candidate
 
             for (const candidate of candidates) {
                 random -= candidate.weight;

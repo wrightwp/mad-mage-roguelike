@@ -52,7 +52,7 @@ export const useGameStore = defineStore('game', () => {
     });
 
     // Actions
-    function startRun(party: PartyMemberState[], partyLevel: number = 1, floorDepth?: number) {
+    function startRun(party: PartyMemberState[], partyLevel: number = 1, floorDepth?: number, nodeTypeCounts?: Record<string, number>) {
         if (!campaignStore.activeCampaign) return;
 
         // Initialize first floor
@@ -70,7 +70,7 @@ export const useGameStore = defineStore('game', () => {
             floorNumber,
             800, // Width (should match UI)
             2000, // Height
-            undefined, // Default node counts
+            nodeTypeCounts, // Pass the configured node counts
             party.length,
             partyLevel
         );

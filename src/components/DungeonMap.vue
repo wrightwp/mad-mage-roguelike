@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { onMounted } from 'vue';
+import { onMounted, computed } from 'vue';
 import { useMapViewport } from '../composables/useMapViewport';
 import { useResizablePanel } from '../composables/useResizablePanel';
 import { useMapInteraction } from '../composables/useMapInteraction';
@@ -43,6 +43,22 @@ const {
     }
   }
 );
+
+// Calculate actual node counts from the generated map
+const actualNodeCounts = computed(() => {
+  if (!mapData.value?.nodes) {
+    return {};
+  }
+  
+  const counts: Record<string, number> = {};
+  mapData.value.nodes.forEach((node: any) => {
+    if (node.type !== 'boss' && node.type !== 'start') {
+      counts[node.type] = (counts[node.type] || 0) + 1;
+    }
+  });
+  
+  return counts;
+});
 
 const {
   viewBox,
@@ -212,6 +228,7 @@ const handleEnterEncounter = (node: any) => {
       :initial-floor="currentFloor"
       :initial-floor-depth="floorCount"
       :initial-node-counts="nodeTypeCounts"
+      :actual-node-counts="actualNodeCounts"
       @generate="handleConfigGenerate"
       @cancel="handleConfigCancel"
     />
