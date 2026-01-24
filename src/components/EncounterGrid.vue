@@ -4,6 +4,7 @@ import { encounterLibrary } from '../data/encounterLibrary';
 import type { EncounterData } from '../types';
 import { EncounterType } from '../types';
 import EncounterContent from './EncounterContent.vue';
+import EncounterFeedbackPanel from './EncounterFeedbackPanel.vue';
 
 interface Props {
   mapData: any;
@@ -318,6 +319,10 @@ const getDifficultyColor = (difficulty: string): string => {
           class="px-4 pb-4 pt-2 bg-slate-900/40 border-t border-slate-800/50 space-y-3 animate-slideDown"
         >
           <EncounterContent :encounter="encounter" :show-room-description="true" />
+          <EncounterFeedbackPanel
+            :encounter="encounter"
+            :floor="encounter.level ?? null"
+          />
         </div>
       </div>
     </div>

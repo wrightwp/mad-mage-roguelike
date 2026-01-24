@@ -3,6 +3,7 @@ import { ref } from 'vue';
 import type { DungeonNode, DungeonMapData } from '../types';
 import EncounterContent from './EncounterContent.vue';
 import EncounterCompletionControls from './EncounterCompletionControls.vue';
+import EncounterFeedbackPanel from './EncounterFeedbackPanel.vue';
 
 
 interface Props {
@@ -86,6 +87,12 @@ const isReachableFromCurrent = (targetNode: DungeonNode): boolean => {
       <!-- DM Content (Collapsible) -->
       <div v-show="showDMInfo" class="space-y-4 animate-fadeIn">
         <EncounterContent v-if="selectedNode.encounter" :encounter="selectedNode.encounter" />
+        <EncounterFeedbackPanel
+          v-if="selectedNode.encounter"
+          :encounter="selectedNode.encounter"
+          :floor="mapData?.currentFloor ?? null"
+          :node-id="selectedNode.id"
+        />
 
         <!-- Connected Encounters -->
         <div v-if="selectedNode.connections.length > 0" 

@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import { useEncounterFeedbackStore } from '../stores/useEncounterFeedbackStore';
 interface Props {
   floorCount: number;
   currentFloor: number;
@@ -20,6 +21,7 @@ interface Emits {
 
 defineProps<Props>();
 const emit = defineEmits<Emits>();
+const feedbackStore = useEncounterFeedbackStore();
 </script>
 
 <template>
@@ -136,6 +138,25 @@ const emit = defineEmits<Emits>();
               class="w-full text-white font-bold py-2.5 px-4 rounded-lg transition-all text-sm"
             >
               {{ revealAll ? 'Hide All' : 'Reveal All' }}
+            </button>
+          </div>
+        </div>
+
+        <div class="bg-slate-900/40 rounded-xl p-4 border border-slate-700">
+          <div class="flex items-center justify-between">
+            <div>
+              <div class="text-[11px] text-slate-400 uppercase tracking-widest mb-1">Encounter Feedback</div>
+              <div class="text-sm text-slate-200">
+                {{ feedbackStore.feedbackCount }} encounter{{ feedbackStore.feedbackCount === 1 ? '' : 's' }} edited
+              </div>
+              <div class="text-[10px] text-slate-500 mt-1">Download clears local feedback.</div>
+            </div>
+            <button
+              :disabled="feedbackStore.feedbackCount === 0"
+              @click="feedbackStore.exportAndDownload()"
+              class="px-3 py-2 text-xs font-bold uppercase tracking-wider rounded-lg border border-amber-500/50 text-amber-300 hover:text-white hover:border-amber-400 hover:bg-amber-600/20 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+            >
+              Download JSON
             </button>
           </div>
         </div>
