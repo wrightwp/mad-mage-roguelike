@@ -1,5 +1,7 @@
 <script setup lang="ts">
+import { ref } from 'vue';
 import { useEncounterFeedbackStore } from '../stores/useEncounterFeedbackStore';
+import CharacterGeneratorModal from './CharacterGeneratorModal.vue';
 interface Props {
   floorCount: number;
   currentFloor: number;
@@ -22,6 +24,7 @@ interface Emits {
 defineProps<Props>();
 const emit = defineEmits<Emits>();
 const feedbackStore = useEncounterFeedbackStore();
+const showCharacterModal = ref(false);
 </script>
 
 <template>
@@ -160,9 +163,30 @@ const feedbackStore = useEncounterFeedbackStore();
             </button>
           </div>
         </div>
+
+        <div class="bg-slate-900/40 rounded-xl p-4 border border-slate-700">
+          <div class="text-[11px] text-slate-400 uppercase tracking-widest mb-2">Random Character</div>
+          <div class="text-sm text-slate-200 mb-3">
+            Generate a 2024 Core Rules character ready for DnD Beyond entry.
+          </div>
+          <button
+            @click="showCharacterModal = true"
+            class="px-4 py-2 bg-purple-600/90 hover:bg-purple-500 text-white text-xs font-bold uppercase tracking-wider rounded-lg transition-colors"
+          >
+            Generate Character
+          </button>
+        </div>
       </div>
     </div>
   </div>
+
+  <teleport to="body">
+    <CharacterGeneratorModal
+      :show="showCharacterModal"
+      :level="averagePartyLevel"
+      @close="showCharacterModal = false"
+    />
+  </teleport>
 </template>
 
 <style scoped>
