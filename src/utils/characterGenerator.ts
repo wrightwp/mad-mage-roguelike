@@ -573,7 +573,39 @@ const applyAsiProgression = (scores: AbilityScores, className: string, classData
   return progression;
 };
 
-export const generateCharacter = (levelInput?: number, classOverride?: string): GeneratedCharacter => {
+// New random ASI/Feat progression when toggle is enabled
+function randomizeAsiProgression(scores: AbilityScores, className: string, classData: ClassData, level: number): string[] {
+  const asiLevels = getAsiLevels(className).filter((lvl) => lvl <= level);
+  const progression: string[] = [];
+  asiLevels.forEach((asiLevel) => {
+    if (Math.random() < 0.5) {
+      const feat = randomItem(FEATS);
+      progression.push(`Level ${asiLevel}: Feat ${feat}`);
+    } else {
+      const available = ABILITY_KEYS.filter((key) => scores[key] < 20);
+      if (!available.length) {
+        progression.push(`Level ${asiLevel}: ASI (all abilities at 20)`);
+        return;
+      }
+      const primary = randomItem(available);
+      const increase = scores[primary] <= 18 ? 2 : 1;
+      scores[primary] = Math.min(20, scores[primary] + increase);
+      if (increase === 1) {
+        const secondaryOptions = ABILITY_KEYS.filter((key) => key !== primary && scores[key] < 20);
+        if (secondaryOptions.length) {
+          const secondary = randomItem(secondaryOptions);
+          scores[secondary] += 1;
+          progression.push(`Level ${asiLevel}: ASI +1 ${primary}, +1 ${secondary}`);
+          return;
+        }
+      }
+      progression.push(`Level ${asiLevel}: ASI +${increase} ${primary}`);
+    }
+  });
+  return progression;
+}
+
+export const generateCharacter = (levelInput?: number, classOverride?: string, randomizeAsiFeats?: boolean): GeneratedCharacter => {
   const level = Math.max(1, Math.min(20, Math.round(levelInput ?? 1)));
   const className = classOverride && CLASSES[classOverride] ? classOverride : randomItem(CLASS_NAMES);
   const classData = CLASSES[className];
@@ -590,7 +622,7 @@ export const generateCharacter = (levelInput?: number, classOverride?: string): 
   const rawAbilityScores = { ...abilityScores };
 
   const backgroundBoosts = applyBackgroundBoosts(abilityScores, classData, background);
-  const asiProgression = applyAsiProgression(abilityScores, className, classData, level);
+  const asiProgression = randomizeAsiFeats ? randomizeAsiProgression(abilityScores, className, classData, level) : applyAsiProgression(abilityScores, className, classData, level);
 
   const modifiers = buildModifiers(abilityScores);
 

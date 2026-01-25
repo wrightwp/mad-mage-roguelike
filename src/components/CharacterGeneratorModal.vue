@@ -14,11 +14,12 @@ const emit = defineEmits<{
 const character = ref<GeneratedCharacter | null>(null);
 const selectedLevel = ref(1);
 const selectedClass = ref('Random');
+const randomizeToggle = ref(false);
 const abilityOrder: (keyof AbilityScores)[] = ['STR', 'DEX', 'CON', 'INT', 'WIS', 'CHA'];
 
 const buildCharacter = () => {
   const classChoice = selectedClass.value === 'Random' ? undefined : selectedClass.value;
-  character.value = generateCharacter(selectedLevel.value, classChoice);
+  character.value = generateCharacter(selectedLevel.value, classChoice, randomizeToggle.value);
 };
 
 watch(
@@ -106,6 +107,10 @@ const originFeatDetailParts = computed(() => {
               {{ className }}
             </option>
           </select>
+          <label class="flex items-center space-x-2 ml-4">
+            <input type="checkbox" v-model="randomizeToggle" class="form-checkbox h-4 w-4 text-amber-600" />
+            <span class="text-xs text-slate-200">Randomize ASI/Feats</span>
+          </label>
           <div class="flex-1"></div>
         </div>
       </div>
