@@ -37,7 +37,11 @@ watch(
 
 const listText = (items: string[], fallback = 'None') => (items.length ? items.join(', ') : fallback);
 const needsSpellcastingAbilityChoice = (feat: string) => feat.startsWith('Magic Initiate');
-const lineageLabel = (species: string) => (species === 'Elf' ? 'Elven Lineage' : 'Ancestry');
+const lineageLabel = (species: string) => {
+  if (species === 'Elf') return 'Elven Lineage';
+  if (species === 'Tiefling') return 'Fiendish Legacy';
+  return 'Ancestry';
+};
 const splitLabelValue = (text: string) => {
   const index = text.indexOf(':');
   if (index === -1) {
@@ -65,7 +69,7 @@ const originFeatDetailParts = computed(() => {
   <div
     v-if="show"
     class="fixed inset-0 z-[110] flex items-center justify-center bg-black/80 backdrop-blur-sm"
-    @click.self="emit('close')"
+    @pointerdown.self="emit('close')"
   >
     <div class="bg-slate-900 border-2 border-amber-600/50 rounded-2xl p-0 max-w-2xl w-full shadow-2xl overflow-hidden flex flex-col max-h-[85vh]">
       <div class="p-6 pb-4 bg-slate-950 border-b border-amber-900/50">
@@ -143,6 +147,10 @@ const originFeatDetailParts = computed(() => {
               <span class="font-semibold">Bonuses</span>
               <span class="font-normal">: +2 {{ character.backgroundBoosts.plus2 }}, +1 {{ character.backgroundBoosts.plus1 }}</span>
             </div>
+            <div v-if="character.backgroundSkillProficiencies.length" class="text-sm text-slate-300 mt-1">
+              <span class="font-semibold">Skill Proficiency</span>
+              <span class="font-normal">: {{ listText(character.backgroundSkillProficiencies) }}</span>
+            </div>
             <div class="text-sm text-slate-300 mt-1">
               <span class="font-semibold">Origin Feat</span>
               <span class="font-normal">: {{ character.originFeat }}</span>
@@ -179,13 +187,14 @@ const originFeatDetailParts = computed(() => {
 
           <div class="bg-slate-800/40 rounded-lg p-4 border border-slate-700/50">
             <div class="text-[10px] text-slate-400 uppercase tracking-widest mb-3">Ability Scores</div>
-            <div class="grid grid-cols-3 gap-3 text-center">
-              <div v-for="([key, score]) in abilityEntries" :key="key" class="bg-slate-900/50 rounded-lg p-2 border border-slate-700/50">
+            <div class="grid grid-cols-6 gap-2 text-center">
+              <div
+                v-for="([key, score]) in abilityEntries"
+                :key="key"
+                class="bg-slate-900/50 rounded-lg p-2 border border-slate-700/50"
+              >
                 <div class="text-[10px] text-slate-500 uppercase tracking-widest">{{ key }}</div>
                 <div class="text-lg font-bold text-slate-100">{{ score }}</div>
-                <div class="text-xs text-emerald-300">
-                  {{ character.modifiers[key] >= 0 ? '+' : '' }}{{ character.modifiers[key] }}
-                </div>
               </div>
             </div>
           </div>

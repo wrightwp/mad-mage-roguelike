@@ -24,6 +24,7 @@ export interface GeneratedCharacter {
   };
   originFeat: string;
   originFeatDetail: string;
+  backgroundSkillProficiencies: string[];
   species: string;
   ancestry?: string;
   speciesInputs: string[];
@@ -45,6 +46,7 @@ type ClassData = {
 type BackgroundData = {
   stats: AbilityKey[];
   feat: string;
+  skillProficiencies?: string[];
 };
 
 const OPTIMIZE_STATS = true;
@@ -168,7 +170,7 @@ const SPECIES_DATA: Record<string, string[]> = {
   Dragonborn: ['Black (Acid)', 'Blue (Lightning)', 'Brass (Fire)', 'Bronze (Lightning)', 'Copper (Acid)', 'Gold (Fire)', 'Green (Poison)', 'Red (Fire)', 'Silver (Cold)', 'White (Cold)'],
   Elf: ['Drow', 'High Elf', 'Wood Elf'],
   Goliath: ['Cloud Giant', 'Fire Giant', 'Frost Giant', 'Hill Giant', 'Stone Giant', 'Storm Giant'],
-  Tiefling: ['Abyssal', 'Chthonic', 'Infernal']
+  Tiefling: ['Abyssal', 'Cthonic', 'Infernal']
 };
 
 const LANGUAGES = ['Abyssal', 'Celestial', 'Common', 'Draconic', 'Dwarvish', 'Elvish', 'Giant', 'Gnomish', 'Goblin', 'Halfling', 'Infernal', 'Orc'];
@@ -186,7 +188,7 @@ const BACKGROUNDS: Record<string, BackgroundData> = {
   Merchant: { stats: ['CON', 'INT', 'CHA'], feat: 'Lucky' },
   Noble: { stats: ['STR', 'INT', 'CHA'], feat: 'Skilled' },
   Sage: { stats: ['CON', 'INT', 'WIS'], feat: 'Magic Initiate (Wizard)' },
-  Sailor: { stats: ['STR', 'DEX', 'WIS'], feat: 'Tavern Brawler' },
+  Sailor: { stats: ['STR', 'DEX', 'WIS'], feat: 'Tavern Brawler', skillProficiencies: ['Athletics'] },
   Scribe: { stats: ['DEX', 'INT', 'WIS'], feat: 'Skilled' },
   Soldier: { stats: ['STR', 'DEX', 'CON'], feat: 'Savage Attacker' },
   Wayfarer: { stats: ['DEX', 'WIS', 'CHA'], feat: 'Lucky' }
@@ -366,7 +368,7 @@ const buildOriginFeatDetail = (feat: string, selectedSkills: string[]) => {
   return '';
 };
 
-const buildSpells = (className: string, classData: ClassData, level: number) => {
+const buildSpells = (className: string, classData: ClassData, level: number, extraCantrip: boolean) => {
   const classSpellList = CLASS_SPELLS[className];
   if (!classData.caster || !classSpellList) return [];
 
@@ -385,11 +387,18 @@ const buildSpells = (className: string, classData: ClassData, level: number) => 
 
   const spells: string[] = [];
   if (classSpellList[0]) {
-    const cantripCount = className === 'Bard' ? 2 : 3;
+    let cantripCount = className === 'Bard' ? 2 : 3;
+    if (className === 'Druid') {
+      cantripCount = 2 + (extraCantrip ? 1 : 0);
+    }
     spells.push(`Cantrips: ${sample(classSpellList[0], cantripCount).join(', ')}`);
   }
   for (let i = 1; i <= highestSlot; i++) {
     if (classSpellList[i]) {
+      if (className === 'Druid' && i === 1) {
+        spells.push('Choose spells to prepare for the dungeon.');
+        continue;
+      }
       spells.push(`Level ${i}: ${sample(classSpellList[i], 2).join(', ')}`);
     }
   }
@@ -403,15 +412,27 @@ const buildSpells = (className: string, classData: ClassData, level: number) => 
 
 const buildClassInputs = (className: string, classSkills: string[], level: number) => {
   const inputs: string[] = [`${className} Skill Proficiencies: ${classSkills.join(', ')}`];
+  let extraCantrip = false;
 
   if (className === 'Cleric') {
     inputs.push(`Divine Order: ${randomItem(['Protector (Heavy Armor)', 'Thaumaturge (Extra Cantrip)'])}`);
   }
   if (className === 'Druid') {
-    inputs.push(`Primal Order: ${randomItem(['Magician (Extra Cantrip)', 'Warden (Medium Armor)'])}`);
+    const primalOrder = randomItem(['Magician (Extra Cantrip)', 'Warden (Medium Armor)']);
+    inputs.push(`Primal Order: ${primalOrder}`);
+    if (primalOrder.startsWith('Magician')) {
+      extraCantrip = true;
+    }
   }
   if (className === 'Bard') {
     inputs.push(`Musical Instruments: ${sample(INSTRUMENTS, 3).join(', ')}`);
+  }
+  if (className === 'Monk') {
+    if (Math.random() < 0.5) {
+      inputs.push(`Musical Instrument: ${randomItem(INSTRUMENTS)}`);
+    } else {
+      inputs.push(`Artisan's Tools: ${randomItem(TOOLS)}`);
+    }
   }
 
   const hasFightingStyle =
@@ -436,7 +457,7 @@ const buildClassInputs = (className: string, classSkills: string[], level: numbe
     inputs.push(`Metamagic (${count}): ${sample(METAMAGIC_OPTIONS, count).join(', ')}`);
   }
 
-  return inputs;
+  return { inputs, extraCantrip };
 };
 
 const buildSpeciesInputs = (speciesName: string) => {
@@ -520,8 +541,8 @@ export const generateCharacter = (levelInput?: number, classOverride?: string): 
   const skillCount = className === 'Rogue' ? 4 : className === 'Bard' ? 3 : 2;
   const classSkills = sample(classData.skills, skillCount);
 
-  const classInputs = buildClassInputs(className, classSkills, level);
-  const spells = buildSpells(className, classData, level);
+  const classInputResult = buildClassInputs(className, classSkills, level);
+  const spells = buildSpells(className, classData, level, classInputResult.extraCantrip);
   const speciesInputs = buildSpeciesInputs(speciesName);
 
   const originFeatDetail = buildOriginFeatDetail(background.feat, classSkills);
@@ -536,12 +557,13 @@ export const generateCharacter = (levelInput?: number, classOverride?: string): 
     className,
     subclass,
     level,
-    classInputs,
+    classInputs: classInputResult.inputs,
     spells,
     background: backgroundName,
     backgroundBoosts,
     originFeat: background.feat,
     originFeatDetail,
+    backgroundSkillProficiencies: background.skillProficiencies ?? [],
     species: speciesName,
     ancestry,
     speciesInputs,
