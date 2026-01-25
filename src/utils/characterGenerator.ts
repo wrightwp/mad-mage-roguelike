@@ -164,7 +164,7 @@ const SPECIES_DATA: Record<string, string[]> = {
   Human: [],
   Aasimar: [],
   Dwarf: [],
-  Gnome: [],
+  Gnome: ['Forest', 'Rock'],
   Halfling: [],
   Orc: [],
   Dragonborn: ['Black (Acid)', 'Blue (Lightning)', 'Brass (Fire)', 'Bronze (Lightning)', 'Copper (Acid)', 'Gold (Fire)', 'Green (Poison)', 'Red (Fire)', 'Silver (Cold)', 'White (Cold)'],
@@ -387,7 +387,7 @@ const buildSpells = (className: string, classData: ClassData, level: number, ext
 
   const spells: string[] = [];
   if (classSpellList[0]) {
-    let cantripCount = className === 'Bard' ? 2 : 3;
+    let cantripCount = className === 'Bard' ? 2 : className === 'Sorcerer' ? 4 : 3;
     if (className === 'Druid') {
       cantripCount = 2 + (extraCantrip ? 1 : 0);
     }
@@ -395,6 +395,11 @@ const buildSpells = (className: string, classData: ClassData, level: number, ext
   }
   for (let i = 1; i <= highestSlot; i++) {
     if (classSpellList[i]) {
+      if (className === 'Wizard' && i === 1) {
+        spells.push(`Spellbook: ${sample(classSpellList[1], 6).join(', ')}`);
+        spells.push('Prepared Spells: Choose 4 from your spellbook after a long rest.');
+        continue;
+      }
       if (className === 'Druid' && i === 1) {
         spells.push('Choose spells to prepare for the dungeon.');
         continue;
@@ -411,8 +416,33 @@ const buildSpells = (className: string, classData: ClassData, level: number, ext
 };
 
 const buildClassInputs = (className: string, classSkills: string[], level: number) => {
-  const inputs: string[] = [`${className} Skill Proficiencies: ${classSkills.join(', ')}`];
+  const skillLabel =
+    className === 'Ranger'
+      ? 'Core Ranger Traits'
+      : className === 'Rogue'
+        ? 'Core Rogue Traits'
+        : `${className} Skill Proficiencies`;
+  const inputs: string[] = [`${skillLabel}: ${classSkills.join(', ')}`];
   let extraCantrip = false;
+  let thiefLanguage: string | undefined;
+
+  if (className === 'Rogue') {
+    inputs.push(`Expertise: ${sample(classSkills, 2).join(', ')}`);
+    const languageChoices = LANGUAGES.filter((lang) => lang !== 'Common');
+    thiefLanguage = randomItem(languageChoices);
+    inputs.push(`Thieves' Cant: ${thiefLanguage}`);
+  }
+  if (className === 'Warlock') {
+    inputs.push(
+      `Eldritch Invocations: ${randomItem([
+        'Armor of Shadows',
+        'Eldritch Mind',
+        'Pact of the Blade',
+        'Pact of the Chain',
+        'Pact of the Tome'
+      ])}`
+    );
+  }
 
   if (className === 'Cleric') {
     inputs.push(`Divine Order: ${randomItem(['Protector (Heavy Armor)', 'Thaumaturge (Extra Cantrip)'])}`);
@@ -457,7 +487,7 @@ const buildClassInputs = (className: string, classSkills: string[], level: numbe
     inputs.push(`Metamagic (${count}): ${sample(METAMAGIC_OPTIONS, count).join(', ')}`);
   }
 
-  return { inputs, extraCantrip };
+  return { inputs, extraCantrip, thiefLanguage };
 };
 
 const buildSpeciesInputs = (speciesName: string) => {
@@ -466,6 +496,21 @@ const buildSpeciesInputs = (speciesName: string) => {
     return [`Keen Senses: ${keenChoice}`];
   }
   return [];
+};
+
+const buildBackgroundSkillProficiencies = (backgroundName: string, classSkills: string[], background: BackgroundData) => {
+  const proficiencies = background.skillProficiencies ? [...background.skillProficiencies] : [];
+
+  if (backgroundName === 'Merchant') {
+    const available = ALL_SKILLS.filter((skill) => !classSkills.includes(skill) && !proficiencies.includes(skill));
+    const fallback = ALL_SKILLS.filter((skill) => !proficiencies.includes(skill));
+    const selectionPool = available.length ? available : fallback;
+    if (selectionPool.length) {
+      proficiencies.push(randomItem(selectionPool));
+    }
+  }
+
+  return proficiencies;
 };
 const applyBackgroundBoosts = (scores: AbilityScores, classData: ClassData, background: BackgroundData) => {
   const priority = [...classData.primary, ...ABILITY_KEYS.filter((key) => !classData.primary.includes(key))];
@@ -538,17 +583,21 @@ export const generateCharacter = (levelInput?: number, classOverride?: string): 
 
   const modifiers = buildModifiers(abilityScores);
 
-  const skillCount = className === 'Rogue' ? 4 : className === 'Bard' ? 3 : 2;
+  const skillCount = className === 'Rogue' ? 4 : className === 'Bard' ? 3 : className === 'Ranger' ? 3 : 2;
   const classSkills = sample(classData.skills, skillCount);
 
   const classInputResult = buildClassInputs(className, classSkills, level);
   const spells = buildSpells(className, classData, level, classInputResult.extraCantrip);
   const speciesInputs = buildSpeciesInputs(speciesName);
+  const backgroundSkillProficiencies = buildBackgroundSkillProficiencies(backgroundName, classSkills, background);
 
   const originFeatDetail = buildOriginFeatDetail(background.feat, classSkills);
 
   const otherLangs = LANGUAGES.filter((lang) => lang !== 'Common');
   const languages = ['Common', ...sample(otherLangs, 2)];
+  if (className === 'Rogue' && classInputResult.thiefLanguage && !languages.includes(classInputResult.thiefLanguage)) {
+    languages.push(classInputResult.thiefLanguage);
+  }
 
   const subclass = level >= 3 ? randomItem(classData.subclasses) : undefined;
 
@@ -563,7 +612,7 @@ export const generateCharacter = (levelInput?: number, classOverride?: string): 
     backgroundBoosts,
     originFeat: background.feat,
     originFeatDetail,
-    backgroundSkillProficiencies: background.skillProficiencies ?? [],
+    backgroundSkillProficiencies,
     species: speciesName,
     ancestry,
     speciesInputs,

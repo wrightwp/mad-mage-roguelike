@@ -39,6 +39,7 @@ const listText = (items: string[], fallback = 'None') => (items.length ? items.j
 const needsSpellcastingAbilityChoice = (feat: string) => feat.startsWith('Magic Initiate');
 const lineageLabel = (species: string) => {
   if (species === 'Elf') return 'Elven Lineage';
+  if (species === 'Gnome') return 'Gnomish Lineage';
   if (species === 'Tiefling') return 'Fiendish Legacy';
   return 'Ancestry';
 };
