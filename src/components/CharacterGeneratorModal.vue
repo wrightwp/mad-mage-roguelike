@@ -15,10 +15,6 @@ const character = ref<GeneratedCharacter | null>(null);
 const selectedLevel = ref(1);
 const selectedClass = ref('Random');
 const abilityOrder: (keyof AbilityScores)[] = ['STR', 'DEX', 'CON', 'INT', 'WIS', 'CHA'];
-const abilityEntries = computed(() => {
-  if (!character.value) return [] as Array<[keyof AbilityScores, number]>;
-  return abilityOrder.map((key) => [key, character.value!.abilityScores[key]] as [keyof AbilityScores, number]);
-});
 
 const buildCharacter = () => {
   const classChoice = selectedClass.value === 'Random' ? undefined : selectedClass.value;
@@ -37,10 +33,6 @@ watch(
 
 const listText = (items: string[], fallback = 'None') => (items.length ? items.join(', ') : fallback);
 const needsSpellcastingAbilityChoice = (feat: string) => feat.startsWith('Magic Initiate');
-const formatScores = (scores?: AbilityScores) => {
-  if (!scores) return '';
-  return abilityOrder.map((key) => `${key} ${scores[key]}`).join(', ');
-};
 const lineageLabel = (species: string) => {
   if (species === 'Elf') return 'Elven Lineage';
   if (species === 'Gnome') return 'Gnomish Lineage';
