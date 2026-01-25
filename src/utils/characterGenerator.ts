@@ -574,7 +574,7 @@ const applyAsiProgression = (scores: AbilityScores, className: string, classData
 };
 
 // New random ASI/Feat progression when toggle is enabled
-function randomizeAsiProgression(scores: AbilityScores, className: string, classData: ClassData, level: number): string[] {
+function randomizeAsiProgression(scores: AbilityScores, className: string, level: number): string[] {
   const asiLevels = getAsiLevels(className).filter((lvl) => lvl <= level);
   const progression: string[] = [];
   asiLevels.forEach((asiLevel) => {
@@ -622,7 +622,7 @@ export const generateCharacter = (levelInput?: number, classOverride?: string, r
   const rawAbilityScores = { ...abilityScores };
 
   const backgroundBoosts = applyBackgroundBoosts(abilityScores, classData, background);
-  const asiProgression = randomizeAsiFeats ? randomizeAsiProgression(abilityScores, className, classData, level) : applyAsiProgression(abilityScores, className, classData, level);
+  const asiProgression = randomizeAsiFeats ? randomizeAsiProgression(abilityScores, className, level) : applyAsiProgression(abilityScores, className, classData, level);
 
   const modifiers = buildModifiers(abilityScores);
 
