@@ -37,6 +37,10 @@ watch(
 
 const listText = (items: string[], fallback = 'None') => (items.length ? items.join(', ') : fallback);
 const needsSpellcastingAbilityChoice = (feat: string) => feat.startsWith('Magic Initiate');
+const formatScores = (scores?: AbilityScores) => {
+  if (!scores) return '';
+  return abilityOrder.map((key) => `${key} ${scores[key]}`).join(', ');
+};
 const lineageLabel = (species: string) => {
   if (species === 'Elf') return 'Elven Lineage';
   if (species === 'Gnome') return 'Gnomish Lineage';
@@ -132,10 +136,18 @@ const originFeatDetailParts = computed(() => {
             </div>
             <div class="mt-3">
               <div class="text-[10px] text-slate-400 uppercase tracking-widest mb-2">Class Inputs</div>
-              <ul class="list-disc list-inside text-sm text-slate-200 space-y-1">
+              <ul class="text-sm text-slate-200 space-y-1">
                 <li v-for="choice in classInputParts" :key="choice.raw">
                   <span class="font-semibold">{{ choice.label }}</span>
                   <span v-if="choice.value" class="font-normal">: {{ choice.value }}</span>
+                </li>
+                <li v-if="character.asiProgression?.length" class="pt-2 list-none">
+                  <div class="font-semibold">Ability Score Improvements / Feats</div>
+                  <ul class="list-disc list-inside text-sm text-slate-200 space-y-1 mt-1 ml-4">
+                    <li v-for="entry in character.asiProgression" :key="entry">
+                      {{ entry }}
+                    </li>
+                  </ul>
                 </li>
               </ul>
             </div>
@@ -187,15 +199,17 @@ const originFeatDetailParts = computed(() => {
           </div>
 
           <div class="bg-slate-800/40 rounded-lg p-4 border border-slate-700/50">
-            <div class="text-[10px] text-slate-400 uppercase tracking-widest mb-3">Ability Scores</div>
+            <div class="text-[10px] text-slate-400 uppercase tracking-widest mb-3">Raw Ability Scores</div>
             <div class="grid grid-cols-6 gap-2 text-center">
               <div
-                v-for="([key, score]) in abilityEntries"
+                v-for="key in abilityOrder"
                 :key="key"
                 class="bg-slate-900/50 rounded-lg p-2 border border-slate-700/50"
               >
                 <div class="text-[10px] text-slate-500 uppercase tracking-widest">{{ key }}</div>
-                <div class="text-lg font-bold text-slate-100">{{ score }}</div>
+                <div class="text-lg font-bold text-slate-100">
+                  {{ character.rawAbilityScores ? character.rawAbilityScores[key] : character.abilityScores[key] }}
+                </div>
               </div>
             </div>
           </div>

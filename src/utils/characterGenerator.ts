@@ -30,6 +30,8 @@ export interface GeneratedCharacter {
   speciesInputs: string[];
   languages: string[];
   abilityScores: AbilityScores;
+  rawAbilityScores?: AbilityScores;
+  asiProgression?: string[];
   modifiers: AbilityScores;
 }
 
@@ -542,25 +544,33 @@ const applyAsiProgression = (scores: AbilityScores, className: string, classData
   const asiLevels = getAsiLevels(className).filter((lvl) => lvl <= level);
   const primary = classData.primary[0];
   const secondary = classData.primary[1] ?? 'CON';
+  const progression: string[] = [];
 
-  asiLevels.forEach(() => {
+  asiLevels.forEach((asiLevel) => {
     if (OPTIMIZE_STATS && scores[primary] < 20) {
       const increase = Math.min(2, 20 - scores[primary]);
       scores[primary] += increase;
       if (increase === 1 && scores[secondary] < 20) {
         scores[secondary] += 1;
+        progression.push(`Level ${asiLevel}: ASI +1 ${primary}, +1 ${secondary}`);
+        return;
       }
+      progression.push(`Level ${asiLevel}: ASI +${increase} ${primary}`);
       return;
     }
 
     if (Math.random() < 0.5) {
-      randomItem(FEATS);
+      const feat = randomItem(FEATS);
+      progression.push(`Level ${asiLevel}: Feat ${feat}`);
       return;
     }
 
     const increase = scores[primary] <= 18 ? 2 : 1;
     scores[primary] = Math.min(20, scores[primary] + increase);
+    progression.push(`Level ${asiLevel}: ASI +${increase} ${primary}`);
   });
+
+  return progression;
 };
 
 export const generateCharacter = (levelInput?: number, classOverride?: string): GeneratedCharacter => {
@@ -577,9 +587,10 @@ export const generateCharacter = (levelInput?: number, classOverride?: string): 
     acc[key] = roll4d6DropLowest();
     return acc;
   }, {} as AbilityScores);
+  const rawAbilityScores = { ...abilityScores };
 
   const backgroundBoosts = applyBackgroundBoosts(abilityScores, classData, background);
-  applyAsiProgression(abilityScores, className, classData, level);
+  const asiProgression = applyAsiProgression(abilityScores, className, classData, level);
 
   const modifiers = buildModifiers(abilityScores);
 
@@ -618,6 +629,8 @@ export const generateCharacter = (levelInput?: number, classOverride?: string): 
     speciesInputs,
     languages,
     abilityScores,
+    rawAbilityScores,
+    asiProgression,
     modifiers
   };
 };
