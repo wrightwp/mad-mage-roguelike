@@ -4,5 +4,6 @@ export interface MonsterData {
     exp: number; // Experience points
     pb: number; // Proficiency Bonus
     mmLink: string; // Link to Monster Manual entry
+    thematicType?: string; // e.g., "Undead", "Dragon", "Construct"
     count?: number; // Number of this monster type in an encounter (null/undefined in general database)
 }
