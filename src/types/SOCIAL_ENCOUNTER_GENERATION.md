@@ -1,6 +1,6 @@
 # Social Encounter Generation Guide
 
-This document provides guidelines for AI-assisted **Social Encounter** generation following D&D 2024 rules and the `SocialEncounterData` interface.
+This document provides guidelines for AI-assisted **Social Encounter** generation following D&D 2024 rules, the `SocialEncounterData` interface, and the [Scaling Guide](file:///c:/Users/Willi/Repos/mad-mage-roguelike/src/types/SCALING_GUIDE.md).
 
 ## Core Concepts
 
@@ -26,10 +26,13 @@ Social encounters focus on **Interaction**, **NPCs**, and **Roleplay**. The part
 - **Quest Hooks**: Receiving a task or objective (`questHook`).
 
 ### Attitude (`attitude`)
-Define the starting disposition of the NPCs:
-- **Friendly**: Helpful, willing to chat. Good for merchants or rescued prisoners.
-- **Indifferent**: Neutral, business-like, or wary. Needs convincing.
-- **Hostile**: Aggressive but willing to talk first. Might demand a toll or surrender.
+Define the starting disposition of the NPCs. You can use a **1d12 roll** to determine this:
+- **Hostile** (1-4): Aggressive but willing to talk first. Might demand a toll or surrender.
+- **Indifferent** (5-8): Neutral, business-like, or wary. Needs convincing.
+- **Friendly** (9-12): Helpful, willing to chat. Good for merchants or rescued prisoners.
+
+> [!TIP]
+> Modify the result based on creature type (e.g., predators +2 to hostility) or circumstances.
 
 ### Personality (`personality`)
 A short, evocative descriptor to guide roleplay (e.g., "nervous and twitchy", "arrogant noble", "grumpy merchant").

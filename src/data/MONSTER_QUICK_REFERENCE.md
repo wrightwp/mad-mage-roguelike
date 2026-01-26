@@ -127,25 +127,29 @@ Flying Sword, Animated Armor, Rug of Smothering, Gargoyle
 
 ## Common Use Cases
 
-### Low-Level Encounters (Levels 1-3)
-Use CR 0.125 - 2 monsters:
+### Tier 1 (Levels 1-4)
+Use CR 0 - 4 monsters:
 - Goblins, Kobolds, Skeletons, Zombies
 - Bandits, Cultists, Guards
 - Wolves, Giant Rats, Giant Spiders
 
-### Mid-Level Encounters (Levels 4-10)
-Use CR 3 - 10 monsters:
+### Tier 2 (Levels 5-10)
+Use CR 5 - 10 monsters:
 - Undead (Wights, Wraiths, Mummies)
 - Giants (Hill, Stone, Frost)
-- Young Dragons
+- Young Dragons, Aboleths
 - Drow warriors and mages
 
-### High-Level Encounters (Levels 11-20)
-Use CR 11 - 24 monsters:
-- Adult and Ancient Dragons
-- Beholders, Aboleths
-- Vampires, Liches
+### Tier 3 (Levels 11-16)
+Use CR 11 - 16 monsters:
+- Adult Dragons
+- Beholders, Vampires
 - Storm Giants, Archmages
+
+### Tier 4 (Levels 17-20)
+Use CR 17 - 24+ monsters:
+- Ancient Dragons
+- Liches
 
 ## XP Budget Guidelines
 

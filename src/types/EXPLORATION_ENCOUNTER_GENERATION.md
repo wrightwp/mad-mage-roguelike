@@ -1,6 +1,6 @@
 # Exploration Encounter Generation Guide
 
-This document provides guidelines for AI-assisted **Exploration Encounter** generation following D&D 2024 rules and the `ExplorationEncounterData` interface.
+This document provides guidelines for AI-assisted **Exploration Encounter** generation following D&D 2024 rules, the `ExplorationEncounterData` interface, and the [Scaling Guide](file:///c:/Users/Willi/Repos/mad-mage-roguelike/src/types/SCALING_GUIDE.md).
 
 ## Core Concepts
 
@@ -18,6 +18,10 @@ Exploration encounters can optionally include **puzzle-style elements**. If pres
 - **penalty**: Consequence for failure, if any.
 
 ### Environment and Traps (`traps`)
+- **Interactive Terrain**: D&D 2024 emphasizes environments that reward movement and positioning.
+    - **Verticality**: Elevation changes (ledges, balconies) that reward climbing or flight.
+    - **Dynamic Elements**: Things that change state, like a bridge that can be cut or a lever that opens a sluice gate.
+    - **Strategic Hazards**: Environmental dangers (e.g., slippery ice, toxic spores) that both PCs and NPCs can use strategically.
 - **Hazards**: Natural dangers like slippery moss, lava flows, or toxic spores.
 - **Traps**: Constructed dangers. Always include:
   - **Trigger**: What sets it off (e.g., pressure plate, tripwire).
