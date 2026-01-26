@@ -1,6 +1,6 @@
 ---
 name: scrape_monsters
-description: Scrapes monster data from a 2024 Monster Manual URL and updates the monsters.json database.
+description: Scrapes monster data from a 2024 Monster Manual URL for a specific Challenge Rating (CR) and updates the monsters.json database.
 ---
 
 # Scrape Monsters Skill
@@ -8,6 +8,7 @@ description: Scrapes monster data from a 2024 Monster Manual URL and updates the
 Use this skill when you need to add or update monster data in the project's database from official or reference sources (like D&D Beyond's 2024 Monster Manual).
 
 ## 1. Extract Data in batches
+Provide a Monster Manual URL that points to a specific Challenge Rating (CR) page. The skill will only extract monsters listed under that CR.
 Use `read_browser_page` on the provided URL to extract the following information:
 - **Name**: The full name of the monster.
 - **CR**: Challenge Rating (e.g., 1/8, 1/4, 2, 10).
@@ -24,9 +25,9 @@ Construct a `MonsterData` object for each monster found:
   "cr": 0.25,
   "exp": 50,
   "pb": 2,
-  "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-m#MonsterName",
+  "mmLink": "https://www.dndbeyond.com/monsters/5194996-flaming-skeleton",
   "thematicType": "Type"
-}
+}`
 ```
 *Note: Convert fractional CRs strings to numbers (e.g., "1/8" -> 0.125).*
 
