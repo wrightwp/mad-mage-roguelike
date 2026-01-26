@@ -1,14 +1,26 @@
 import type { EncounterData } from '../types';
 import { EncounterType, EncounterDifficulty, EncounterAttitude } from '../types';
 import encountersTier1 from './encounters-tier-1.json';
+import encountersTier2 from './encounters-tier-2.json';
+import encountersTier3 from './encounters-tier-3.json';
+import encountersTier4 from './encounters-tier-4.json';
 
 export class EncounterLibrary {
     private encountersByFloor: Map<number, EncounterData[]> = new Map();
 
     constructor() {
-        // Load encounters by tier or floor
-        this.encountersByFloor.set(1, encountersTier1 as EncounterData[]);
-        // TODO: Load other tiers/floors when encounter files are created
+        // Initialize encounters by tier levels
+        // Tier 1: Levels 1-4
+        [1, 2, 3, 4].forEach(level => this.encountersByFloor.set(level, encountersTier1 as EncounterData[]));
+
+        // Tier 2: Levels 5-10
+        [5, 6, 7, 8, 9, 10].forEach(level => this.encountersByFloor.set(level, encountersTier2 as EncounterData[]));
+
+        // Tier 3: Levels 11-16
+        [11, 12, 13, 14, 15, 16].forEach(level => this.encountersByFloor.set(level, encountersTier3 as EncounterData[]));
+
+        // Tier 4: Levels 17-20
+        [17, 18, 19, 20].forEach(level => this.encountersByFloor.set(level, encountersTier4 as EncounterData[]));
     }
 
     /**
