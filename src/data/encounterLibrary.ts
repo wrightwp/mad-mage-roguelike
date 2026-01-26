@@ -1,14 +1,14 @@
 import type { EncounterData } from '../types';
 import { EncounterType, EncounterDifficulty, EncounterAttitude } from '../types';
-import encountersFloor01 from './encounters-floor-01.json';
+import encountersTier1 from './encounters-tier-1.json';
 
 export class EncounterLibrary {
     private encountersByFloor: Map<number, EncounterData[]> = new Map();
 
     constructor() {
-        // Load encounters by floor
-        this.encountersByFloor.set(1, encountersFloor01 as EncounterData[]);
-        // TODO: Load floors 2-21 when encounter files are created
+        // Load encounters by tier or floor
+        this.encountersByFloor.set(1, encountersTier1 as EncounterData[]);
+        // TODO: Load other tiers/floors when encounter files are created
     }
 
     /**

@@ -46,4 +46,4 @@ Generate a valid JSON object matching the `EncounterData` interface in `src/type
 
 ## 5. Final Output
 Present the JSON code block to the user.
-- If asking to "add" it to the game, you may use `write_to_file` to append it to `src/data/encounters-floor-01.json` (or the relevant floor file), but **ONLY** if specificially asked to "add" or "save" it. Otherwise, just show the JSON.
+- If asking to "add" it to the game, you may use `write_to_file` to append it to `src/data/encounters-tier-1.json` (or the relevant tier file), but **ONLY** if specificially asked to "add" or "save" it. Otherwise, just show the JSON.

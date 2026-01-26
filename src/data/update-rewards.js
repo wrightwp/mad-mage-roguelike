@@ -6,7 +6,7 @@ import { dirname, join } from 'path';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 
-const filePath = join(__dirname, 'encounters-floor-01.json');
+const filePath = join(__dirname, 'encounters-tier-1.json');
 const data = JSON.parse(readFileSync(filePath, 'utf-8'));
 
 // Helper function to parse XP from reward text
