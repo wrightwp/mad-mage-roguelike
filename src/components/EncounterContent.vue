@@ -14,9 +14,36 @@ interface Props {
   showRoomDescription?: boolean;
 }
 
-withDefaults(defineProps<Props>(), {
+const props = withDefaults(defineProps<Props>(), {
   showRoomDescription: false
 });
+
+// Helper to resolve mechanic by ID
+// Explicitly type 'm' to avoid implicit any if needed, though 'encounter' type should infer it.
+// Actually, safely typing it as any or ScalingMechanic is better.
+const getMechanic = (id: string) => {
+  return props.encounter.scalingMechanics?.find((m: any) => m.id === id);
+};
+
+// Helper to parse description line into parts
+const parseDescription = (text: string) => {
+  const parts: { type: 'text' | 'mechanic', content: string }[] = [];
+  const regex = /{{(.*?)}}/g;
+  let lastIndex = 0;
+  let match;
+
+  while ((match = regex.exec(text)) !== null) {
+    if (match.index > lastIndex) {
+      parts.push({ type: 'text', content: text.substring(lastIndex, match.index) });
+    }
+    parts.push({ type: 'mechanic', content: match[1] });
+    lastIndex = regex.lastIndex;
+  }
+  if (lastIndex < text.length) {
+    parts.push({ type: 'text', content: text.substring(lastIndex) });
+  }
+  return parts;
+};
 
 const showAIPrompt = ref(false);
 
@@ -47,31 +74,36 @@ const copyToClipboard = async (text: string) => {
       <div v-if="encounter.dmDescription" class="mb-3 pb-3 border-b border-slate-700/50">
         <ul v-if="Array.isArray(encounter.dmDescription)" class="list-disc list-outside ml-4 space-y-1">
           <li v-for="(line, idx) in encounter.dmDescription" :key="idx" class="text-sm text-slate-300 leading-relaxed italic">
-            {{ line }}
+            <template v-for="(part, pIdx) in parseDescription(line)" :key="pIdx">
+              <span v-if="part.type === 'text'">{{ part.content }}</span>
+              <span v-else-if="getMechanic(part.content)" 
+                class="inline-flex items-center gap-1 align-middle px-1.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider mx-1 select-none cursor-help"
+                :class="{
+                   'bg-red-900/60 text-red-200 border border-red-800/50': getMechanic(part.content)?.type === 'trap',
+                   'bg-blue-900/60 text-blue-200 border border-blue-800/50': getMechanic(part.content)?.type === 'skill',
+                   'bg-amber-900/60 text-amber-200 border border-amber-800/50': getMechanic(part.content)?.type === 'puzzle',
+                   'bg-orange-900/60 text-orange-200 border border-orange-800/50': getMechanic(part.content)?.type === 'hazard',
+                }"
+                :title="getMechanic(part.content)?.subType"
+              >
+                 {{ getMechanic(part.content)?.subType || getMechanic(part.content)?.type }} :
+                 <span v-if="getMechanic(part.content)?.dc" class="bg-black/30 px-1 rounded">DC {{ getMechanic(part.content)?.dc }}</span>
+                 <span v-if="getMechanic(part.content)?.damage" class="ml-0.5">{{ getMechanic(part.content)?.damage }}</span>
+              </span>
+              <span v-else class="text-red-500 text-xs">??</span>
+            </template>
           </li>
         </ul>
         <p v-else class="text-sm text-slate-300 leading-relaxed italic">{{ encounter.dmDescription }}</p>
       </div>
 
-       <!-- Scaling Mechanics (Loop) -->
+       <!-- Scaling Mechanics (Loop - generic fallback if not in text? Or just hide?) -->
+       <!-- Hiding explicit loop as requested by "integrate into text". Leaving code for simple debugging if needed -->
+       <!-- 
        <div class="flex gap-2 text-xs flex-wrap mb-3" v-if="encounter.scalingMechanics && encounter.scalingMechanics.length > 0">
-         <span 
-           v-for="(mech, idx) in encounter.scalingMechanics" 
-           :key="idx"
-           class="px-2 py-1 rounded border capitalize flex items-center gap-1"
-           :class="{
-             'bg-red-900/40 text-red-200 border-red-800/50': mech.type === 'trap',
-             'bg-blue-900/40 text-blue-200 border-blue-800/50': mech.type === 'skill',
-             'bg-amber-900/40 text-amber-200 border-amber-800/50': mech.type === 'puzzle',
-             'bg-orange-900/40 text-orange-200 border-orange-800/50': mech.type === 'hazard',
-             'bg-slate-700 text-slate-300 border-slate-600': mech.type === 'other'
-           }"
-         >
-           <span class="font-bold">{{ mech.subType || mech.type }}</span>
-           <span v-if="mech.dc" class="font-mono bg-black/20 px-1 rounded">DC {{ mech.dc }}</span>
-           <span v-if="mech.damage" class="font-mono text-[10px] ml-1 opacity-80">{{ mech.damage }}</span>
-         </span>
-      </div>
+          ...
+       </div> 
+       -->
       
       <div class="flex gap-2 text-xs flex-wrap">
         <span class="px-2 py-1 bg-slate-700 rounded">Level {{ encounter.level }}</span>

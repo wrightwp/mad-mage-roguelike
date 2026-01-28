@@ -6,6 +6,7 @@ import { EncounterAttitude } from './EncounterAttitude';
 
 export interface ScalingMechanic {
     type: 'trap' | 'hazard' | 'skill' | 'puzzle' | 'other';
+    id: string; // Unique ID for text replacement (e.g. "sm-0")
     subType?: string; // Specific skill or save (e.g., "Athletics", "Dex Save")
     dc?: number;
     damage?: string;
