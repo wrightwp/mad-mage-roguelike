@@ -4,13 +4,24 @@ import { EncounterType } from './EncounterType';
 import { EncounterDifficulty } from './EncounterDifficulty';
 import { EncounterAttitude } from './EncounterAttitude';
 
+export interface ScalingMechanic {
+    type: 'trap' | 'hazard' | 'skill' | 'puzzle' | 'other';
+    subType?: string; // Specific skill or save (e.g., "Athletics", "Dex Save")
+    dc?: number;
+    damage?: string;
+}
+
 interface BaseEncounterData {
     id?: string; // Optional unique ID for tracking
     name: string;
     level: number; // Corresponds to Floor/CR
     difficulty: EncounterDifficulty;
     roomDescription: string; // Description visible to players
-    dmDescription: string; // Additional details for the DM
+    dmDescription: string[]; // Additional details for the DM (bullet points)
+
+    // Scaling Mechanics (Flexible array)
+    scalingMechanics?: ScalingMechanic[];
+
     size: number; // Number of rooms/areas
     winConditions?: WinCondition[];
     lair?: boolean;

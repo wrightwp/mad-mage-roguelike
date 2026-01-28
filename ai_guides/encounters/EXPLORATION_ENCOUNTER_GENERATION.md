@@ -23,10 +23,21 @@ Exploration encounters can optionally include **puzzle-style elements**. If pres
     - **Dynamic Elements**: Things that change state, like a bridge that can be cut or a lever that opens a sluice gate.
     - **Strategic Hazards**: Environmental dangers (e.g., slippery ice, toxic spores) that both PCs and NPCs can use strategically.
 - **Hazards**: Natural dangers like slippery moss, lava flows, or toxic spores.
-- **Traps**: Constructed dangers. Always include:
-  - **Trigger**: What sets it off (e.g., pressure plate, tripwire).
-  - **Effect**: Damage or condition (e.g., 2d6 Fire damage, Restrained).
-  - **Countermeasures**: DC to spot (Perception/Investigation) and DC to disarm (Sleight of Hand/Thieves' Tools).
+**Scaling Mechanics (`scalingMechanics`)**:
+- **Format**: An array of objects.
+- **Fields**:
+    - `type`: 'trap', 'hazard', 'puzzle', 'other'.
+    - `subType`: (Optional) String detail (e.g. "Perception", "Constitution Save").
+    - `dc`: (Optional) Number. The difficulty class.
+    - `damage`: (Optional) String. The damage dice (e.g. "2d6").
+- **Example**:
+    ```json
+    "scalingMechanics": [
+        { "type": "trap", "subType": "Spore Cloud", "dc": 12, "damage": "1d6" },
+        { "type": "puzzle", "subType": "Glyph Decipher", "dc": 14 }
+    ]
+    ```
+- *Usage*: Use this for ANY numerical difficulty requiring scaling. Do not bury numbers in text.
 
 ### Secrets and Loot (`secretDoors`, `items`)
 - **Secret Doors**: Hidden passages leading to treasure or shortcuts. Define the DC to find them.
@@ -51,10 +62,17 @@ Exploration encounters can optionally include **puzzle-style elements**. If pres
     "difficulty": "moderate",
     "xpBudget": 150,
     "roomDescription": "The air in this long hallway is thick with yellow dust. Strange, bulbous fungi line the walls, pulsing slowly. A wooden chest sits at the far end.",
-    "dmDescription": "The fungi are Violet Fungi (hazards, not monsters here). Disturbing them releases toxic spores.",
+    "dmDescription": [
+        "The fungi are Violet Fungi (hazards, not monsters here).",
+        "Disturbing them releases toxic spores."
+    ],
     "traps": [
-        "Spore Cloud: Triggered by loud noise or touching the fungi. Effect: DC 12 Con save or 1d6 Poison damage and Poisoned for 1 hour.",
-        "False Floor (Pit Trap): DC 14 Perception to spot. 10ft drop (1d6 bludgeoning)."
+        "Spore Cloud: Triggered by loud noise or touching the fungi.",
+        "False Floor (Pit Trap): 10ft drop."
+    ],
+    "scalingMechanics": [
+        { "type": "hazard", "subType": "Spore Cloud (Con Save)", "dc": 12, "damage": "1d6" },
+        { "type": "trap", "subType": "False Floor (Perception)", "dc": 14, "damage": "1d6" }
     ],
     "items": ["Potion of Healing", "Gold Ring (25gp)", "Dwarven Helm"],
     "secretDoors": true,

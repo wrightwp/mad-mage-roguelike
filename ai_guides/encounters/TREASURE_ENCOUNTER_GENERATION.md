@@ -24,6 +24,10 @@ Treasure encounters are rewards for exploration but should always carry a sense 
 - **Traps**: protect the goods. Poison needles, collapsing ceilings, or magical wards.
 - **Mimics**: The ultimate "Treasure" encounter twist. If `isMimic` is true, the chest/object *is* the monster.
 
+**Scaling Mechanics (`scalingMechanics`)**:
+- Use this array for `lockDC` (if you want generic scaling) and Trap DCs.
+- Example: `{ "type": "trap", "subType": "Poison Needle", "dc": 15, "damage": "1d4" }`.
+
 ---
 
 ## Example Treasure Encounter Template
@@ -36,7 +40,10 @@ Treasure encounters are rewards for exploration but should always carry a sense 
     "difficulty": "hard",
     "xpBudget": 450,
     "roomDescription": "A small, circular room with a domed ceiling painted to look like the night sky. In the center, bathed in magical light, sits a heavy chest reinforced with bands of blue steel.",
-    "dmDescription": "The chest is locked (DC 15) and trapped. The floor tiles around it are pressure sensitive.",
+    "dmDescription": [
+        "The chest is locked (DC 15) and trapped.",
+        "The floor tiles around it are pressure sensitive."
+    ],
     "size": 1,
     "items": [
         "Potion of Greater Healing",
@@ -49,8 +56,12 @@ Treasure encounters are rewards for exploration but should always carry a sense 
     "isLocked": true,
     "lockDC": 15,
     "isMimic": false,
+    "scalingMechanics": [
+        { "type": "trap", "subType": "Sleeping Gas (Con Save)", "dc": 13 },
+        { "type": "skill", "subType": "Thieves Tools (Lock)", "dc": 15 }
+    ],
     "winConditions": [
-        { "condition": "Loot the chest", "reward": "Gain Items + XP" }
+        { "condition": "Loot the chest", "reward": "Gain Items + XP", "xpReward": 50 }
     ],
     "aiRoomPrompt": "Small circular vault, starry ceiling, magical spotlight on a blue steel chest, pristine condition",
     "lair": false
@@ -67,7 +78,7 @@ Treasure encounters are rewards for exploration but should always carry a sense 
     "difficulty": "deadly",
     "xpBudget": 700,
     "roomDescription": "This damp alcove contains a single, magnificent wooden chest with golden latches. It looks almost too clean compared to the surrounding rubble.",
-    "dmDescription": "The chest is a Mimic. It waits for touch.",
+    "dmDescription": ["The chest is a Mimic. It waits for touch."],
     "size": 1,
     "items": [" chewed remnants of leather armor", "300 gp inside the creature's gullet"],
     "goldValue": 300,
@@ -75,8 +86,8 @@ Treasure encounters are rewards for exploration but should always carry a sense 
     "isLocked": false,
     "isMimic": true,
     "winConditions": [
-        { "condition": "Defeat the Mimic", "reward": "Loot + XP" },
-        { "condition": "Recognize and avoid", "reward": "Survival, but no loot" }
+        { "condition": "Defeat the Mimic", "reward": "Loot + XP", "xpReward": 700 },
+        { "condition": "Recognize and avoid", "reward": "Survival, but no loot", "xpReward": 100 }
     ],
     "aiRoomPrompt": "Damp alcove, rubble everywhere, one pristine golden chest in the center, ominous silence",
     "lair": false

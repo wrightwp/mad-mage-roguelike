@@ -66,7 +66,7 @@ export const generateDungeon = (
                     difficulty: EncounterDifficulty.Trivial,
                     type: EncounterType.Exploration,
                     roomDescription: "The bustling tavern above the dungeon.",
-                    dmDescription: "The entry point.",
+                    dmDescription: ["The entry point."],
                     size: 1,
                     winConditions: [],
                     xpBudget: 0

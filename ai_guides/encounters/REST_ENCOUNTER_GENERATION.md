@@ -34,6 +34,7 @@ Rest encounters provide a moment of respite in the dangerous dungeon. They focus
 - **False**: Standard rest rules apply.
 
 ### DM Description (`dmDescription`)
+- **Format**: `string[]` (list of bullet points).
 - Note any restrictions (e.g., "The magic barrier fades after 1 hour").
 - Mention if the room has any one-time use boons (e.g., "The fountain restores one 1st-level spell slot").
 
@@ -48,7 +49,11 @@ Rest encounters provide a moment of respite in the dangerous dungeon. They focus
     "type": "rest",
     "difficulty": "low", // Rest encounters are usually low 'difficulty' as they are rewards
     "roomDescription": "You slip through the crack in the wall and find a small, circular chamber. The air here smells of lavender and roasted nuts. A warm, golden light radiates from a crystal embedded in the ceiling, and piles of soft furs are arranged around a small, smokeless fire.",
-    "dmDescription": "A Sanctuary spell protects this room. It cannot be entered by Undead. The fire never goes out.",
+    "dmDescription": [
+        "A Sanctuary spell protects this room.",
+        "It cannot be entered by Undead.",
+        "The fire never goes out."
+    ],
     "shelterQuality": "secure",
     "healingBonus": true,
     "size": 1,

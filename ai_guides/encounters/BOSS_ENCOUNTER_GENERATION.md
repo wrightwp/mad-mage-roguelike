@@ -70,7 +70,15 @@ Boss encounters are the climax of a dungeon floor or quest line. They feature **
     "attitude": "hostile",
     "personality": "Arrogant, speaks in riddles, believes they are a god.",
     "roomDescription": "A massive circular chamber with a floor of obsidian glass. Beneath the glass, a swirling purple galaxy churns. In the center, a throne of floating crystals hovers 10 feet in the air.",
-    "dmDescription": "The floor is slippery (Acrobatics DC 10 to run). Wisps explode on death.",
+    "dmDescription": [
+        "The floor is slippery (Acrobatics DC 10 to run).",
+        "Wisps explode on death.",
+        "Xar'Kala uses telepathy to taunt players."
+    ],
+    "scalingMechanics": [
+        { "type": "skill", "subType": "Acrobatics (Slippery Floor)", "dc": 10 },
+        { "type": "hazard", "subType": "Wisp Explosion", "damage": "2d6" }
+    ],
     "legendaryActions": [
         "Teleport: Xar'Kala teleports up to 30ft.",
         "Void Bolt: Ranged Spell Attack +5, 1d10 Force damage."

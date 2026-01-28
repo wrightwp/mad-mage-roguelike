@@ -21,8 +21,11 @@ All encounters should be tagged with a **Tier** and a **Reference Level** (the `
 
 When an encounter's **Reference Level** does not match the **Current Party Level**, use the following scaling rules.
 
-### 1. DC Scaling (Traps, Hazards, Skills)
-As party level increases, characters' proficiency bonuses and ability scores increase. Adjust DCs to maintain the intended challenge.
+### 1. Mechanics Scaling (`scalingMechanics`)
+The encounter data contains a `scalingMechanics` array. Iterate through this array and apply adjustments to every object found.
+
+**A. DC Scaling (Traps, Skills, Puzzles)**
+As party level increases, adjust DCs to maintain the intended challenge.
 
 **Formula**: `New DC = Base DC + (Current Party Level - Reference Level)`
 *Note: For every 2 levels above the reference, increase the DC by roughly 1.*
@@ -33,9 +36,7 @@ As party level increases, characters' proficiency bonuses and ability scores inc
 | +3 to +4 | +2 |
 | +5 to +6 | +3 |
 
-**Party Size Adjustment**: Increase the DC by `+1` if the party size is 6 or more to account for more "help" actions and expertise.
-
-### 2. Damage Scaling
+**B. Damage Scaling**
 Damage for traps and hazards must scale to remain a threat relative to increased HP.
 
 **Formula**: Increase damage by approximately **1d6 (or 3.5)** for every 2 levels above the Reference Level.

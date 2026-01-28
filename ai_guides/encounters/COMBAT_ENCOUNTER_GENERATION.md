@@ -99,14 +99,28 @@ When creating and running combat encounters, keep the following in mind.
 - Written in immersive, descriptive prose.
 
 **DM Description (`dmDescription`)**:
-- DM-only information.
-- Hidden elements (traps, ambushes, secrets).
-- Monster tactics and personality.
-- Alternative solutions to combat.
-- Treasure and reward locations.
-- Allow scaling of DC checks for puzzles and traps.
-- Scale based on the Tier of the encounter.
-- Separate different elements of the dmDescription into a list format for easy readability.
+- **Format**: A list of strings (`string[]`). Each string is a bullet point.
+- **Content**:
+    - Hidden elements (traps, ambushes, secrets).
+    - Monster tactics and personality.
+    - Alternative solutions to combat.
+    - Treasure and reward locations.
+
+**Scaling Mechanics (`scalingMechanics`)**:
+- **Format**: An array of objects.
+- **Fields**:
+    - `type`: 'trap', 'hazard', 'skill', 'puzzle', 'other'.
+    - `subType`: (Optional) String detail (e.g. "Athletics", "Dex Save", "Riddle").
+    - `dc`: (Optional) Number. The difficulty class.
+    - `damage`: (Optional) String. The damage dice (e.g. "2d6").
+- **Example**:
+    ```json
+    "scalingMechanics": [
+        { "type": "skill", "subType": "Athletics", "dc": 14 },
+        { "type": "hazard", "subType": "Slippery Floor", "dc": 12, "damage": "2d6" }
+    ]
+    ```
+- *Usage*: Use this for ANY numerical difficulty requiring scaling. Do not bury numbers in text.
 
 ### Combat Specifics
 - **Attitude** (`attitude`):
@@ -117,11 +131,13 @@ When creating and running combat encounters, keep the following in mind.
 
 ### Win Conditions (`winConditions`)
 Optional. Always consider alternatives to "kill all enemies":
-- Negotiate, bribe, or intimidate
-- Sneak past
-- Disable a specific objective
-- Rescue a hostage
-- Survive for X rounds
+- **Fields**: Ensure `xpReward` and `goldReward` (numbers) are populated if applicable, to allow scaling.
+- conditions:
+    - Negotiate, bribe, or intimidate
+    - Sneak past
+    - Disable a specific objective
+    - Rescue a hostage
+    - Survive for X rounds
 
 ---
 

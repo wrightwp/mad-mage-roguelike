@@ -45,7 +45,32 @@ const copyToClipboard = async (text: string) => {
       
       <!-- DM Description -->
       <div v-if="encounter.dmDescription" class="mb-3 pb-3 border-b border-slate-700/50">
-        <p class="text-sm text-slate-300 leading-relaxed italic">{{ encounter.dmDescription }}</p>
+        <ul v-if="Array.isArray(encounter.dmDescription)" class="list-disc list-outside ml-4 space-y-1">
+          <li v-for="(line, idx) in encounter.dmDescription" :key="idx" class="text-sm text-slate-300 leading-relaxed italic">
+            {{ line }}
+          </li>
+        </ul>
+        <p v-else class="text-sm text-slate-300 leading-relaxed italic">{{ encounter.dmDescription }}</p>
+      </div>
+
+       <!-- Scaling Mechanics (Loop) -->
+       <div class="flex gap-2 text-xs flex-wrap mb-3" v-if="encounter.scalingMechanics && encounter.scalingMechanics.length > 0">
+         <span 
+           v-for="(mech, idx) in encounter.scalingMechanics" 
+           :key="idx"
+           class="px-2 py-1 rounded border capitalize flex items-center gap-1"
+           :class="{
+             'bg-red-900/40 text-red-200 border-red-800/50': mech.type === 'trap',
+             'bg-blue-900/40 text-blue-200 border-blue-800/50': mech.type === 'skill',
+             'bg-amber-900/40 text-amber-200 border-amber-800/50': mech.type === 'puzzle',
+             'bg-orange-900/40 text-orange-200 border-orange-800/50': mech.type === 'hazard',
+             'bg-slate-700 text-slate-300 border-slate-600': mech.type === 'other'
+           }"
+         >
+           <span class="font-bold">{{ mech.subType || mech.type }}</span>
+           <span v-if="mech.dc" class="font-mono bg-black/20 px-1 rounded">DC {{ mech.dc }}</span>
+           <span v-if="mech.damage" class="font-mono text-[10px] ml-1 opacity-80">{{ mech.damage }}</span>
+         </span>
       </div>
       
       <div class="flex gap-2 text-xs flex-wrap">

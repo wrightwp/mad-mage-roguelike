@@ -264,7 +264,7 @@ export const useGameStore = defineStore('game', () => {
                 difficulty: "trivial" as any, // Cast to avoid import if not available here, or 'low'
                 type: "exploration" as any, // avoid circular dependency or import issues for now
                 roomDescription: "The bustling tavern above the dungeon.",
-                dmDescription: "The entry point.",
+                dmDescription: ["The entry point."],
                 size: 1,
                 winConditions: [],
                 xpBudget: 0

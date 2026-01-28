@@ -50,7 +50,7 @@ export function buildCustomEncounter(
         monsters,
         attitude: EncounterAttitude.Hostile, // Default for combat
         roomDescription: `A custom encounter featuring ${monsterNames.join(', ')}`,
-        dmDescription: `Custom encounter with ${monsters.length} monster type(s). Total XP: ${totalXP}`,
+        dmDescription: [`Custom encounter with ${monsters.length} monster type(s). Total XP: ${totalXP}`],
         size: 1,
         lair: false
     };

@@ -40,6 +40,20 @@ A short, evocative descriptor to guide roleplay (e.g., "nervous and twitchy", "a
 ### Rewards (`xpBudget` & `tradeGoods`)
 - **XP**: Set a budget appropriate for the difficulty of the social challenge.
 - **Trade Goods**: Optional list of items available for barter or purchase if the NPC is a merchant.
+**Scaling Mechanics (`scalingMechanics`)**:
+- **Format**: An array of objects.
+- **Fields**:
+    - `type`: 'skill', 'other'.
+    - `subType`: (Optional) String detail (e.g. "Persuasion", "Insight").
+    - `dc`: (Optional) Number. The difficulty class.
+- **Example**:
+    ```json
+    "scalingMechanics": [
+        { "type": "skill", "subType": "Persuasion (Haggle)", "dc": 14 },
+        { "type": "skill", "subType": "Insight (Detect Lie)", "dc": 12 }
+    ]
+    ```
+- *Usage*: Use this for ANY numerical difficulty requiring scaling. Do not bury numbers in text.
 
 ---
 
@@ -58,11 +72,18 @@ A short, evocative descriptor to guide roleplay (e.g., "nervous and twitchy", "a
     "attitude": "indifferent",
     "personality": "Obsessed with shiny rocks, skittish",
     "roomDescription": "A small campfire flickers in the center of the room. A small, reptilian figure is sorting through a pile of rocks and mushrooms, muttering to itself. It looks up with wide, yellow eyes as you enter.",
-    "dmDescription": "Meepo the Kobold is separated from his clan. He has scavenged some dungeon fungi and minor trinkets. He knows the location of a nearby trap.",
+    "dmDescription": [
+        "Meepo the Kobold is separated from his clan.",
+        "He has scavenged some dungeon fungi and minor trinkets.",
+        "He knows the location of a nearby trap."
+    ],
     "size": 1,
     "winConditions": [
-        { "condition": "Trade with Meepo", "reward": "Information on nearby trap" },
-        { "condition": "Intimidate Meepo", "reward": "He flees via secret tunnel" }
+        { "condition": "Trade with Meepo", "reward": "Information on nearby trap", "xpReward": 50 },
+        { "condition": "Intimidate Meepo", "reward": "He flees via secret tunnel", "xpReward": 50 }
+    ],
+    "scalingMechanics": [
+        { "type": "skill", "subType": "Intimidation", "dc": 10 }
     ],
     "tradeGoods": ["Torch", "Rations (1 day)", "Strange glowing mushroom"],
     "questHook": "Find his lost pet giant rat 'Snibbles' on the next floor.",
