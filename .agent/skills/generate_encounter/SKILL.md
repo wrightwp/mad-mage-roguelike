@@ -47,10 +47,12 @@ You **MUST** read the specific generation guide for the requested type AND the s
     - Text: `"A hidden lever ({{sm-0}} to spot it) is behind the bookshelf."`
 
 ## 3. Select Monsters (If Combat/Boss)
-Refer to **monsters.json**, the **2024 Monster Manual**, or the lists below.
+**CRITICAL**: You must **ONLY** use monsters found in the `src/data/monsters.json` file.
+- **Do NOT** use monsters from the 2014 Monster Manual.
+- **Do** use monsters from the 2024 Monster Manual if they exist in `src/data/monsters.json`.
+- **Do NOT** invent stats or use "legacy" versions.
 - **Sum the XP**: Pick monsters so their total XP hits your Budget.
 - **Mix CRs**: You can use many low-CR monsters or fewer high-CR ones.
-- **Do not** invent stats. Use valid names and CRs/XP.
 
 ## 4. Construct the JSON
 Generate a valid JSON object matching the `EncounterData` interface in `src/types/EncounterData.ts`.
