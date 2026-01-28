@@ -1,1 +1,602 @@
-[]
+[
+    {
+        "name": "The Obsidian Forge",
+        "level": 15,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 21600,
+        "monsters": [
+            {
+                "name": "Salamander Inferno Master",
+                "cr": 15,
+                "exp": 13000,
+                "pb": 5,
+                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-s#SalamanderInfernoMaster",
+                "count": 1
+            },
+            {
+                "name": "Salamander",
+                "cr": 5,
+                "exp": 1800,
+                "pb": 3,
+                "mmLink": "https://www.dndbeyond.com/monsters/16999-salamander",
+                "count": 4
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "imperious",
+        "roomDescription": "A lake of magma dominates this chamber, feeding a massive obsidian anvil where a towering, serpent-bodied figure strikes red-hot metal. Smaller salamanders tend the fires, their spears glowing with heat. 'More fuel for the forge!' the master roars, pointing his hammer at you.",
+        "dmDescription": [
+            "The Inferno Master is immune to fire and heals from it.",
+            "Magma pools deal 10d10 fire damage ({{sm-0}} to avoid falling in).",
+            "The anvil can be tipped over ({{sm-1}}) to create cover or crush enemies (4d10 bludgeoning).",
+            "Lair Action: Flare shoots magma at players ({{sm-2}} or burned).",
+            "Treasure: The hammer is a +2 Warhammer (requires fire resistance attunement)."
+        ],
+        "size": 3,
+        "winConditions": [
+            {
+                "condition": "Defeat the Master",
+                "reward": "Full XP",
+                "xpReward": 21600,
+                "goldReward": 2000
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 150ft x 150ft volcanic cavern. Magma lake. Obsidian anvil island. Stone bridges. Heat distortion. Orange and black color palette. Clean lines.",
+        "lair": true,
+        "tier": 3,
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "skill",
+                "subType": "Dexterity (DEX) Save",
+                "dc": 18
+            },
+            {
+                "id": "sm-1",
+                "type": "skill",
+                "subType": "Athletics (STR)",
+                "dc": 20
+            },
+            {
+                "id": "sm-2",
+                "type": "skill",
+                "subType": "Constitution (CON) Save",
+                "dc": 16
+            }
+        ]
+    },
+    {
+        "name": "Golem Assembly Line",
+        "level": 15,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 18000,
+        "monsters": [
+            {
+                "name": "Iron Golem",
+                "cr": 16,
+                "exp": 15000,
+                "pb": 5,
+                "mmLink": "https://www.dndbeyond.com/monsters/16935-iron-golem",
+                "count": 1
+            },
+            {
+                "name": "Flesh Golem",
+                "cr": 5,
+                "exp": 1800,
+                "pb": 3,
+                "mmLink": "https://www.dndbeyond.com/monsters/16863-flesh-golem",
+                "count": 2
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "mindless",
+        "roomDescription": "Conveyor belts move massive limbs and torso plates through this factory. In the center, a towering iron giant stands motionless until its eyes flare red. Two horrific conglomerations of stitched flesh lurch from the shadows to intercept you.",
+        "dmDescription": [
+            "The Iron Golem's poison breath fills a 15ft cone.",
+            "Conveyor belts move creatures 15ft/turn into crushers ({{sm-0}} damage).",
+            "Electrical arcs from the ceiling heal the Flesh Golems ({{sm-1}} to disable the generator).",
+            "The floor is greased in areas ({{sm-2}} or prone).",
+            "Loot: Golem Manual (Flesh) found in the office."
+        ],
+        "size": 2,
+        "winConditions": [
+            {
+                "condition": "Destroy the Golems",
+                "reward": "Full XP",
+                "xpReward": 18000,
+                "goldReward": 500
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 120ft factory. Conveyor belts. Crushing gears. Tesla coils. Grease stains. Industrial horror. Dim lighting. Clean lines.",
+        "lair": false,
+        "tier": 3,
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "hazard",
+                "subType": "Bludgeoning Damage",
+                "damage": "6d10"
+            },
+            {
+                "id": "sm-1",
+                "type": "skill",
+                "subType": "Investigation (INT)",
+                "dc": 18
+            },
+            {
+                "id": "sm-2",
+                "type": "skill",
+                "subType": "Acrobatics (DEX)",
+                "dc": 14
+            }
+        ]
+    },
+    {
+        "name": "Vampire Lord's Court",
+        "level": 15,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 20800,
+        "monsters": [
+            {
+                "name": "Vampire",
+                "cr": 13,
+                "exp": 10000,
+                "pb": 5,
+                "mmLink": "https://www.dndbeyond.com/monsters/17043-vampire",
+                "count": 1
+            },
+            {
+                "name": "Vampire Spawn",
+                "cr": 5,
+                "exp": 1800,
+                "pb": 3,
+                "mmLink": "https://www.dndbeyond.com/monsters/17044-vampire-spawn",
+                "count": 6
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "arrogant",
+        "roomDescription": "Red velvet curtains block all light in this opulent hall. A pale aristocrat sits on a throne of bone, swirling a glass of blood. 'Dinner is served,' he whispers, as six pale youths descend from the ceiling, their fangs bared.",
+        "dmDescription": [
+            "The Vampire attacks from the ceiling using Spider Climb.",
+            "Bite attacks reduce max HP.",
+            "The curtains can be torn down (AC 12, 10 HP) to admit sunlight (20 radiant damage/turn to undead).",
+            "A hidden crypt entrance ({{sm-0}}) leads to the coffin.",
+            "Charmed players must make a {{sm-1}} to resist commands."
+        ],
+        "size": 2,
+        "winConditions": [
+            {
+                "condition": "Slay the Vampire",
+                "reward": "Full XP",
+                "xpReward": 20800,
+                "goldReward": 3000
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 80ft x 100ft gothic hall. Red curtains. Bone throne. Chandeliers. Polished wood floor. Vampire aesthetic. Clean lines.",
+        "lair": true,
+        "tier": 3,
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "skill",
+                "subType": "Investigation (INT)",
+                "dc": 20
+            },
+            {
+                "id": "sm-1",
+                "type": "skill",
+                "subType": "Wisdom (WIS) Save",
+                "dc": 17
+            }
+        ]
+    },
+    {
+        "name": "Gladiator Arena",
+        "level": 15,
+        "type": "combat",
+        "difficulty": "low",
+        "xpBudget": 14400,
+        "monsters": [
+            {
+                "name": "Gladiator",
+                "cr": 5,
+                "exp": 1800,
+                "pb": 3,
+                "mmLink": "https://www.dndbeyond.com/monsters/16905-gladiator",
+                "count": 8
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "bloodthirsty",
+        "roomDescription": "Sand covers the floor of this subterranean fighting pit. The crowd—spectral undead in the stands—cheers silently. Eight heavily armored warriors, veterans of a thousand battles, salute you before raising their tridents and shields.",
+        "dmDescription": [
+            "The Gladiators work in pairs to flank.",
+            "Shield Bash knocks players prone (Str save DC 15).",
+            "Spiked pits in the corners deal 2d10 damage.",
+            "The crowd throws boons (potions) or banes (rocks) depending on Performance checks ({{sm-0}}).",
+            "Winning earns the spectral crowd's favor (Bless effect for 1 hour)."
+        ],
+        "size": 3,
+        "winConditions": [
+            {
+                "condition": "Defeat all Gladiators",
+                "reward": "Full XP",
+                "xpReward": 14400,
+                "goldReward": 1000
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 120ft x 120ft oval arena. Sand floor. Spiked pits in corners. Stone bleachers with ghostly figures. Torchlight. Clean lines.",
+        "lair": false,
+        "tier": 3,
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "skill",
+                "subType": "Performance (CHA)",
+                "dc": 15
+            }
+        ]
+    },
+    {
+        "name": "Elemental Convergence",
+        "level": 15,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 20600,
+        "monsters": [
+            {
+                "name": "Fire Elemental",
+                "cr": 5,
+                "exp": 1800,
+                "pb": 3,
+                "mmLink": "https://www.dndbeyond.com/monsters/16862-fire-elemental",
+                "count": 4
+            },
+            {
+                "name": "Earth Elemental",
+                "cr": 5,
+                "exp": 1800,
+                "pb": 3,
+                "mmLink": "https://www.dndbeyond.com/monsters/16853-earth-elemental",
+                "count": 4
+            },
+            {
+                "name": "Air Elemental",
+                "cr": 5,
+                "exp": 1800,
+                "pb": 3,
+                "mmLink": "https://www.dndbeyond.com/monsters/16766-air-elemental",
+                "count": 2
+            },
+            {
+                "name": "Water Elemental",
+                "cr": 5,
+                "exp": 1800,
+                "pb": 3,
+                "mmLink": "https://www.dndbeyond.com/monsters/17054-water-elemental",
+                "count": 2
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "chaotic",
+        "roomDescription": "Physical laws break down here. Floating islands of rock drift through a storm of fire and rain. Twelve elemental spirits appear, warring with each other until they notice your presence.",
+        "dmDescription": [
+            "Total chaos: every round, roll d4 for environmental effect (1: Fire, 2: Cold, 3: Lightning, 4: Bludgeoning).",
+            "Fire Elementals set players on fire.",
+            "Earth Elementals utilize Earth Glide to ambush from walls.",
+            "Players can stabilize a zone with an {{sm-0}}.",
+            "Water Elementals can Whelm (grapple/drown) targets."
+        ],
+        "size": 3,
+        "winConditions": [
+            {
+                "condition": "Banish/Kill Elementals",
+                "reward": "Full XP",
+                "xpReward": 21600,
+                "goldReward": 0
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 150ft x 150ft void. Floating rock islands. Fire storms. Rain clouds. Lightning arcs. Elemental chaos. Clean lines.",
+        "lair": false,
+        "tier": 3,
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "skill",
+                "subType": "Arcana (INT)",
+                "dc": 19
+            }
+        ]
+    },
+    {
+        "name": "Troll Bridge",
+        "level": 15,
+        "type": "combat",
+        "difficulty": "low",
+        "xpBudget": 14400,
+        "monsters": [
+            {
+                "name": "Troll",
+                "cr": 5,
+                "exp": 1800,
+                "pb": 3,
+                "mmLink": "https://www.dndbeyond.com/monsters/17040-troll",
+                "count": 8
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "hungry",
+        "roomDescription": "A massive stone bridge spans a chasm. Blocking the way is a family of trolls—hideous, green-skinned giants with regenerative flesh. They sniff the air. 'Man-flesh!' the largest bellows.",
+        "dmDescription": [
+            "Trolls regenerate 10 HP/turn unless burned or dissolved.",
+            "The bridge has weak spots ({{sm-0}} to spot).",
+            "Destroying a bridge section (AC 15, 30 HP) drops a Troll into the abyss.",
+            "Trolls can throw rocks (range 30/60).",
+            "Under the bridge: Chest with 2000 gp (requires flight/climb)."
+        ],
+        "size": 2,
+        "winConditions": [
+            {
+                "condition": "Defeat Trolls",
+                "reward": "Full XP",
+                "xpReward": 14400,
+                "goldReward": 2000
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 60ft x 120ft stone bridge over dark abyss. Cracks in stone. Troll camp on far side. Misty depths. Clean lines.",
+        "lair": false,
+        "tier": 3,
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "skill",
+                "subType": "Investigation (INT)",
+                "dc": 14
+            }
+        ]
+    },
+    {
+        "name": "Wraith Haunt",
+        "level": 15,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 18000,
+        "monsters": [
+            {
+                "name": "Wraith",
+                "cr": 5,
+                "exp": 1800,
+                "pb": 3,
+                "mmLink": "https://www.dndbeyond.com/monsters/17064-wraith",
+                "count": 10
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "hateful",
+        "roomDescription": "The temperature plummets as you enter this crypt. Shadows detach themselves from the walls, forming hooded figures with burning red eyes. A chorus of whispers fills your mind: 'Life... must... end.'",
+        "dmDescription": [
+            "Wraiths drain life (reduce max HP).",
+            "Sunlight sensitivity: Light spell imposes disadvantage.",
+            "Create Specter: Humanoids killed rise as Specters (CR 1).",
+            "The altar in the center radiates necrotic energy ({{sm-0}} prevents healing within 30ft).",
+            "Cleansing the altar ({{sm-1}}) destroys d4 Wraiths."
+        ],
+        "size": 2,
+        "winConditions": [
+            {
+                "condition": "Banish Spirits",
+                "reward": "Full XP",
+                "xpReward": 18000,
+                "goldReward": 0
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 100ft crypt. Central black altar. Sarcophagi. Shadows. Fog. Desaturated colors with red highlights. Clean lines.",
+        "lair": true,
+        "tier": 3,
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "hazard",
+                "subType": "Necrotic Aura",
+                "damage": "0"
+            },
+            {
+                "id": "sm-1",
+                "type": "skill",
+                "subType": "Religion (INT)",
+                "dc": 18
+            }
+        ]
+    },
+    {
+        "name": "Roper Cave",
+        "level": 15,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 20800,
+        "monsters": [
+            {
+                "name": "Roper",
+                "cr": 5,
+                "exp": 1800,
+                "pb": 3,
+                "mmLink": "https://www.dndbeyond.com/monsters/16997-roper",
+                "count": 8
+            },
+            {
+                "name": "Darkmantle",
+                "cr": 0.5,
+                "exp": 100,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/monsters/16838-darkmantle",
+                "count": 10
+            },
+            {
+                "name": "Piercer",
+                "cr": 0.5,
+                "exp": 100,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/monsters/16980-piercer",
+                "count": 10
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "ambush",
+        "roomDescription": "A forest of stalagmites and stalactites fills this cavern. It's difficult to navigate. You hear a sticky shifting sound, but can't see the source. Suddenly, the 'rocks' blink.",
+        "dmDescription": [
+            "Ropers grapple from 50ft away and Reel targets in.",
+            "Piercers drop from the ceiling for extra damage.",
+            "Darkmantles create magical darkness areas.",
+            "Difficult terrain everywhere.",
+            "A {{sm-0}} reveals which stalagmites are monsters."
+        ],
+        "size": 3,
+        "winConditions": [
+            {
+                "condition": "Survive the Ambush",
+                "reward": "Full XP",
+                "xpReward": 16400,
+                "goldReward": 500
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 120ft x 120ft cavern. Dense stalagmites. Stalactites (shadows). Uneven floor. Grey and brown tones. Clean lines.",
+        "lair": false,
+        "tier": 3,
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "skill",
+                "subType": "Nature (INT)",
+                "dc": 19
+            }
+        ]
+    },
+    {
+        "name": "Umber Hulk Tunnelers",
+        "level": 15,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 18000,
+        "monsters": [
+            {
+                "name": "Umber Hulk",
+                "cr": 5,
+                "exp": 1800,
+                "pb": 3,
+                "mmLink": "https://www.dndbeyond.com/monsters/17041-umber-hulk",
+                "count": 10
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "confusing",
+        "roomDescription": "The walls of this tunnel have been freshly dug by massive claws. The rock vibrates. Suddenly, beetle-like monstrosities burst from the walls around you, their compound eyes flashing with a bewildering pattern.",
+        "dmDescription": [
+            "Confusing Gaze: Players must avert eyes or be confused (random action).",
+            "Umber Hulks burrow through solid rock to reposition.",
+            "Cave-in risk: Explosive spells might cause ceiling collapse ({{sm-0}}).",
+            "The tunnel is narrow (10ft wide), forcing tight formation.",
+            "Valuable gems (5000 gp) embedded in the walls ({{sm-1}} to mine)."
+        ],
+        "size": 2,
+        "winConditions": [
+            {
+                "condition": "Defeat the Swarm",
+                "reward": "Full XP",
+                "xpReward": 18000,
+                "goldReward": 5000
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 150ft long tunnel, 20ft wide. Freshly dug earth walls. Beetle burrows. Rubble piles. Glowing crystals in walls. Clean lines.",
+        "lair": false,
+        "tier": 3,
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "hazard",
+                "subType": "Bludgeoning Damage (Collapse)",
+                "damage": "4d10"
+            },
+            {
+                "id": "sm-1",
+                "type": "skill",
+                "subType": "Mason's Tools (STR)",
+                "dc": 15
+            }
+        ]
+    },
+    {
+        "name": "Sahuagin Baron's Throne",
+        "level": 15,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 21600,
+        "monsters": [
+            {
+                "name": "Sahuagin Baron",
+                "cr": 5,
+                "exp": 1800,
+                "pb": 3,
+                "mmLink": "https://www.dndbeyond.com/monsters/17006-sahuagin-baron",
+                "count": 2
+            },
+            {
+                "name": "Giant Shark",
+                "cr": 5,
+                "exp": 1800,
+                "pb": 3,
+                "mmLink": "https://www.dndbeyond.com/monsters/16893-giant-shark",
+                "count": 4
+            },
+            {
+                "name": "Sahuagin Priestess",
+                "cr": 2,
+                "exp": 450,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/monsters/17007-sahuagin-priestess",
+                "count": 4
+            },
+            {
+                "name": "Sahuagin",
+                "cr": 0.5,
+                "exp": 100,
+                "pb": 2,
+                "mmLink": "https://www.dndbeyond.com/monsters/17005-sahuagin",
+                "count": 10
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "ruthless",
+        "roomDescription": "This flooded chamber is entirely underwater. A massive coral throne sits on a dais. Two four-armed fish-men flank it, while sharks patrol the upper waters. The water tastes of salt and blood.",
+        "dmDescription": [
+            "Underwater Combat rules apply (Disadvantage on melee unless swim speed/piercing).",
+            "Barons have 4 attacks per turn.",
+            "Priestesses cast Hold Person.",
+            "Blood Frenzy: Advantage against wounded targets.",
+            "The throne controls the water level ({{sm-0}} to drain the room)."
+        ],
+        "size": 3,
+        "winConditions": [
+            {
+                "condition": "Defeat the Barons",
+                "reward": "Full XP",
+                "xpReward": 13600,
+                "goldReward": 3000
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 120ft x 120ft underwater palace. Coral throne. Kelp forests. Stone pillars. Blue/Green lighting. Bubbles. Swimming creatures. Clean lines.",
+        "lair": true,
+        "tier": 3,
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "skill",
+                "subType": "Arcana (INT)",
+                "dc": 20
+            }
+        ]
+    }
+]
