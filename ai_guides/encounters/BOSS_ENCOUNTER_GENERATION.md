@@ -1,6 +1,11 @@
 # Boss Encounter Generation Guide
 
+
 This document provides guidelines for AI-assisted **Boss Encounter** generation following D&D 2024 rules and the `BossEncounterData` interface.
+
+## Troubleshooting (Boss Editions)
+**Powerful Creatures**: If your combat encounter includes a creature whose CR is higher than the party’s level, be aware that such a creature might deal enough damage with a single action to take out one or more characters.
+**Unusual Features**: If a monster has a feature that lower-level characters can’t easily overcome, consider not adding that monster to an encounter for characters whose level is lower than the monster’s Challenge Rating.
 
 ## Core Concepts
 
