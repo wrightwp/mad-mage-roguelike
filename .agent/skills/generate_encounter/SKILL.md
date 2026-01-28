@@ -38,7 +38,13 @@ You **MUST** read the specific generation guide for the requested type AND the s
 - **Step 1: Choose a Difficulty**: Low, Moderate, or High (see `COMBAT_ENCOUNTER_GENERATION.md` for definitions).
 - **Step 2: Determine XP Budget**: Cros-reference Level and Difficulty in the XP Table to get the per-character budget, then multiply by Party Size.
 - **Step 3: Spend Your Budget**: Select monsters by deducting their XP from the budget until it is close to 0. Mix and match creature types.
-- Adjust **DCs** and **Damage** following the `SCALING_GUIDE.md` (Populate `scalingMechanics`).
+- **Scaling (CRITICAL Update)**:
+  - Populate the `scalingMechanics` array with objects.
+  - **IDs**: Each mechanic MUST have a unique `id` (e.g., `"sm-0"`, `"sm-1"`).
+  - **Text Integration**: In `dmDescription`, `roomDescription`, `winConditions`, etc., DO NOT write "DC 15 Perception". Instead, write `{{sm-0}}`.
+  - **Subtype Format**: For the `subType` field in the mechanic, use the format: `Skill (Ability) (Descriptive Text)`.
+    - Example: `{ "id": "sm-0", "type": "skill", "subType": "Investigation (INT)", "dc": 15 }`
+    - Text: `"A hidden lever ({{sm-0}} to spot it) is behind the bookshelf."`
 
 ## 3. Select Monsters (If Combat/Boss)
 Refer to **monsters.json**, the **2024 Monster Manual**, or the lists below.
