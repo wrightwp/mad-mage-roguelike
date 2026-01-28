@@ -4,12 +4,36 @@ A comprehensive library of D&D 5e monsters for encounter building in the Mad Mag
 
 ## Data Structure
 
-Each monster in the library contains:
-- **name**: Monster name
-- **cr**: Challenge Rating (can be fractional: 0.125, 0.25, 0.5, or whole numbers)
-- **exp**: Experience points awarded
-- **pb**: Proficiency Bonus
-- **mmLink**: Direct link to the monster's D&D Beyond Monster Manual entry
+    Each monster in the library contains:
+    - **name**: Monster name
+    - **cr**: Challenge Rating (can be fractional: 0.125, 0.25, 0.5, or whole numbers)
+    - **exp**: Experience points awarded
+    - **pb**: Proficiency Bonus
+    - **mmLink**: Direct link to the monster's D&D Beyond Monster Manual entry
+    - **thematicType**: The type of monster (e.g., Humanoid, Beast, Undead)
+    - **mmPage**: Page reference in the Monster Manual (if available)
+
+## XP vs CR Reference
+
+| Challenge Rating (CR) | XP Award | | Challenge Rating (CR) | XP Award |
+| :--- | :--- | :--- | :--- | :--- |
+| **0** | 0 or 10 | | **14** | 11,500 |
+| **1/8** | 25 | | **15** | 13,000 |
+| **1/4** | 50 | | **16** | 15,000 |
+| **1/2** | 100 | | **17** | 18,000 |
+| **1** | 200 | | **18** | 20,000 |
+| **2** | 450 | | **19** | 22,000 |
+| **3** | 700 | | **20** | 25,000 |
+| **4** | 1,100 | | **21** | 33,000 |
+| **5** | 1,800 | | **22** | 41,000 |
+| **6** | 2,300 | | **23** | 50,000 |
+| **7** | 2,900 | | **24** | 62,000 |
+| **8** | 3,900 | | **25** | 75,000 |
+| **9** | 5,000 | | **26** | 90,000 |
+| **10** | 5,900 | | **27** | 105,000 |
+| **11** | 7,200 | | **28** | 120,000 |
+| **12** | 8,400 | | **29** | 135,000 |
+| **13** | 10,000 | | **30** | 155,000 |
 
 ## Usage
 
@@ -91,18 +115,21 @@ const allCRs = monsterLibrary.getAllCRs();
 
 ## Monster Categories
 
-The library includes:
-- **Goblinoids**: Goblins, Hobgoblins, Bugbears
-- **Undead**: Skeletons, Zombies, Ghouls, Wraiths, Vampires, Liches
-- **Giants**: Hill, Stone, Frost, Fire, Cloud, Storm
-- **Oozes**: Gelatinous Cube, Black Pudding, Ochre Jelly, Gray Ooze
-- **Aberrations**: Beholders, Mind Flayers, Aboleths
-- **Drow**: Warriors, Mages, Priestesses, Driders
-- **Dragons**: All chromatic dragons (White, Black, Green, Blue, Red) from Wyrmling to Ancient
-- **Humanoids**: Cultists, Bandits, Guards, Knights, Mages, Priests
-- **Beasts**: Tigers, Wolves, Giant Spiders, Swarms
-- **Constructs**: Animated Armor, Flying Swords, Gargoyles
-- **Monstrosities**: Minotaurs, Owlbears, Basilisks, Medusas, Mimics
+    The library includes the following thematic types (based on `monsters.json`):
+    - **Aberration**: Beholders, Mind Flayers, Aboleths
+    - **Beast**: Tigers, Wolves, Giant Spiders, Swarms
+    - **Celestial**: Angels, Pegasi, Unicorns
+    - **Construct**: Animated Armor, Flying Swords, Golems
+    - **Dragon**: Chromatic and Metallic Dragons, Wyverns
+    - **Elemental**: Air/Earth/Fire/Water Elementals, Mephits, Salamanders
+    - **Fey**: Hags, Pixies, Satyrs, Dryads
+    - **Fiend**: Demons, Devils, Yugoloths
+    - **Giant**: Hill/Stone/Frost/Fire/Cloud/Storm Giants, Ogres, Trolls
+    - **Humanoid**: Cultists, Bandits, Guards, Knights, Mages, Priests
+    - **Monstrosity**: Minotaurs, Owlbears, Basilisks, Mimics
+    - **Ooze**: Gelatinous Cube, Black Pudding, Ochre Jelly
+    - **Plant**: Shambling Mounds, Treants, Blights
+    - **Undead**: Skeletons, Zombies, Ghouls, Wraiths, Vampires, Liches
 
 ## Integration with Encounters
 

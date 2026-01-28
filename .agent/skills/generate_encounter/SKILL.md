@@ -35,7 +35,7 @@ You **MUST** read the specific generation guide for the requested type AND the s
 - Adjust **DCs** and **Damage** following the `SCALING_GUIDE.md`.
 
 ## 3. Select Monsters (If Combat/Boss)
-Refer to **`ai_guides/monsters/MONSTER_QUICK_REFERENCE.md`** to select appropriate monsters.
+Refer to **monsters.json**, the **Monster Manual**, or the lists below to select appropriate monsters.
 - **Do not** invent stats. Use the names and CRs listed in the reference or `monsters.json`.
 - Adhere to the XP Budget rules in the Combat Generation guide.
 
