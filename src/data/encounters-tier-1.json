@@ -48,7 +48,7 @@
                 "goldReward": 0
             },
             {
-                "condition": "Sneak past (DC 14 Stealth)",
+                "condition": "Sneak past ({{sm-3}})",
                 "reward": "No XP, but avoid resource expenditure",
                 "xpReward": 0,
                 "goldReward": 0
@@ -74,6 +74,12 @@
                 "id": "sm-2",
                 "type": "skill",
                 "subType": "Investigation",
+                "dc": 14
+            },
+            {
+                "id": "sm-3",
+                "type": "skill",
+                "subType": "Stealth",
                 "dc": 14
             }
         ]
@@ -181,7 +187,7 @@
         "dmDescription": [
             "The giant rats attack immediately, drawn by hunger.",
             "The swarm emerges from a large hole in the floor on round 2 unless players seal it first (can block with debris, {{sm-0}}).",
-            "The rats are protecting a nest in the southeast corner containing stolen goods: a merchant's lockbox (DC 15 Thieves' Tools to open) with 35 gp and a gemstone worth 50 gp.",
+            "The rats are protecting a nest in the southeast corner containing stolen goods: a merchant's lockbox ({{sm-2}}) with 35 gp and a gemstone worth 50 gp.",
             "Fire and area effects work well here.",
             "Disease risk: any player bitten must make {{sm-1}}."
         ],
@@ -221,6 +227,12 @@
                 "type": "skill",
                 "subType": "Constitution save or contract Sewer Plague",
                 "dc": 10
+            },
+            {
+                "id": "sm-2",
+                "type": "skill",
+                "subType": "Thieves' Tools to open",
+                "dc": 15
             }
         ]
     },
@@ -253,10 +265,10 @@
         "roomDescription": "This natural cavern glitters with mineral deposits that catch your torchlight. Crude rope bridges span a 20-foot wide crevasse that splits the chamber. On the far side, small reptilian creatures chitter excitedly, their scales glinting orange and brown. Two of them have small leathery wings and hover near the ceiling, clutching rocks.",
         "dmDescription": [
             "The kobolds have prepared this ambush carefully.",
-            "The rope bridges are trapped—cutting a rope ({{sm-0}}, AC 10, 5 HP) drops anyone on it into the 30ft crevasse (3d6 fal{{sm-1}}",
-            "Winged kobolds drop rocks from above (ranged attack, 1d6 damage) and stay out of melee range.",
+            "The rope bridges are trapped—cutting a rope ({{sm-0}}, AC 10, 5 HP) drops anyone on it into the 30ft crevasse ({{sm-1}}).",
+            "Winged kobolds drop rocks from above (ranged attack, {{sm-3}}) and stay out of melee range.",
             "The ground kobolds use Pack Tactics.",
-            "DC 15 Persuasion with Draconic language: kobolds reveal they serve a 'great dragon' (actually just a pseudodragon they worship).",
+            "{{sm-4}}: kobolds reveal they serve a 'great dragon' (actually just a pseudodragon they worship).",
             "Hidden cache behind a loose rock ({{sm-2}}): 20 gp, 3 javelins, and a vial of alchemist's fire."
         ],
         "size": 2,
@@ -268,7 +280,7 @@
                 "goldReward": 0
             },
             {
-                "condition": "Negotiate safe passage (DC 15 Persuasion + tribute)",
+                "condition": "Negotiate safe passage ({{sm-5}}+ tribute)",
                 "reward": "No XP, but costs 10 gp tribute",
                 "xpReward": 0,
                 "goldReward": 10
@@ -301,6 +313,24 @@
                 "type": "skill",
                 "subType": "Investigation",
                 "dc": 14
+            },
+            {
+                "id": "sm-3",
+                "type": "hazard",
+                "subType": " Damage",
+                "damage": "1d6"
+            },
+            {
+                "id": "sm-4",
+                "type": "skill",
+                "subType": "Persuasion with Draconic language",
+                "dc": 15
+            },
+            {
+                "id": "sm-5",
+                "type": "skill",
+                "subType": "Persuasion",
+                "dc": 15
             }
         ]
     },
@@ -475,7 +505,7 @@
             "Stirges that successfully attach deal automatic damage each round and must be killed or pulled off ({{sm-0}}).",
             "The bloated stirges are slower (20ft fly speed) but have already dealt their blood drain.",
             "Escape is easy—stirges won't pursue beyond this room.",
-            "Dried blood pools mark previous victims; DC 13 Investigation reveals a skeleton with: 12 gp, a rusty shortsword, and a silver ring (10 gp)."
+            "Dried blood pools mark previous victims; {{sm-1}}: 12 gp, a rusty shortsword, and a silver ring (10 gp)."
         ],
         "size": 1,
         "winConditions": [
@@ -507,6 +537,12 @@
                 "type": "skill",
                 "subType": "Strength",
                 "dc": 12
+            },
+            {
+                "id": "sm-1",
+                "type": "skill",
+                "subType": "Investigation reveals a skeleton with",
+                "dc": 13
             }
         ]
     },
@@ -547,7 +583,7 @@
         "roomDescription": "The tunnel widens into a fortified checkpoint. A crude barricade of overturned carts and barrels blocks the path forward, with armed men positioned behind it. Two large dogs strain at their chains, growling at your approach. A scarred woman steps forward, crossbow aimed at your chest. 'Toll's fifty gold per head. Can't pay? You can leave your gear and crawl back the way you came.'",
         "dmDescription": [
             "These bandits have claimed this chokepoint and extort travelers.",
-            "The leader (female bandit with 15 HP, has a Potion of Healing) will negotiate—DC 15 Intimidation causes them to demand only 25 gp total, {{sm-0}}.",
+            "The leader (female bandit with 15 HP, has a Potion of Healing) will negotiate—{{sm-3}}, {{sm-0}}.",
             "The two guards are former soldiers and better equipped (chain shirt, AC 16).",
             "The mastiffs are released if combat starts.",
             "A hidden passage ({{sm-1}}) behind a false wall allows flanking.",
@@ -568,7 +604,7 @@
                 "goldReward": 0
             },
             {
-                "condition": "Negotiate reduced toll (DC 15 Intimidation)",
+                "condition": "Negotiate reduced toll ({{sm-2}})",
                 "reward": "25 XP, costs only 25 gp",
                 "xpReward": 25,
                 "goldReward": 25
@@ -595,6 +631,18 @@
                 "type": "skill",
                 "subType": "Perception",
                 "dc": 16
+            },
+            {
+                "id": "sm-2",
+                "type": "skill",
+                "subType": "Intimidation",
+                "dc": 15
+            },
+            {
+                "id": "sm-3",
+                "type": "skill",
+                "subType": "Intimidation causes them to demand only 25 gp total",
+                "dc": 15
             }
         ]
     },
@@ -683,7 +731,7 @@
                 "goldReward": 0
             },
             {
-                "condition": "Calm the alpha (DC 15 Animal Handling)",
+                "condition": "Calm the alpha ({{sm-1}})",
                 "reward": "Full XP + wolves become neutral",
                 "xpReward": 250,
                 "goldReward": 0
@@ -697,6 +745,12 @@
                 "id": "sm-0",
                 "type": "skill",
                 "subType": "Animal Handling calms the alpha",
+                "dc": 15
+            },
+            {
+                "id": "sm-1",
+                "type": "skill",
+                "subType": "Animal Handling",
                 "dc": 15
             }
         ]
@@ -729,7 +783,7 @@
         "personality": "territorial",
         "roomDescription": "Phosphorescent fungi illuminate this damp cavern in shades of purple and blue. Mushrooms of unusual size cluster together, some swaying despite the still air. As you approach, smaller fungi scatter while larger ones extend writhing tendrils.",
         "dmDescription": [
-            "The myconids release spores if threatened (DC 11 Con save or poisoned 1 min).",
+            "The myconids release spores if threatened ({{sm-1}}).",
             "Violet fungi are stationary but deadly.",
             "Fire is very effective here."
         ],
@@ -742,7 +796,7 @@
                 "goldReward": 0
             },
             {
-                "condition": "Sneak through (DC 12 Stealth)",
+                "condition": "Sneak through ({{sm-0}})",
                 "reward": "No combat, avoid spores",
                 "xpReward": 0,
                 "goldReward": 0
@@ -751,7 +805,20 @@
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 100ft underground dungeon cavern with rough stone walls. Dim torchlight. Damp floor with puddles. Phosphorescent lighting. Entry via ladder from trapdoor above. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
         "lair": false,
         "tier": 1,
-        "scalingMechanics": []
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "skill",
+                "subType": "Stealth",
+                "dc": 12
+            },
+            {
+                "id": "sm-1",
+                "type": "skill",
+                "subType": "Con save or poisoned 1 min",
+                "dc": 11
+            }
+        ]
     },
     {
         "name": "Grimlock Patrol",
@@ -989,7 +1056,7 @@
                 "goldReward": 0
             },
             {
-                "condition": "Steal eggs without combat (DC 14 Stealth)",
+                "condition": "Steal eggs without combat ({{sm-1}})",
                 "reward": "300 gp, no XP",
                 "xpReward": 0,
                 "goldReward": 300
@@ -1004,6 +1071,12 @@
                 "type": "skill",
                 "subType": "Con save or restrained",
                 "dc": 11
+            },
+            {
+                "id": "sm-1",
+                "type": "skill",
+                "subType": "Stealth",
+                "dc": 14
             }
         ]
     },
@@ -1170,7 +1243,7 @@
         "personality": "disciplined",
         "roomDescription": "Three armored goblinoids stand at rigid attention, their military bearing evident. They wear matching insignia and respond to your presence with coordinated precision, leveling crossbows in unison.",
         "dmDescription": [
-            "Hobgoblins use Martial Advantage (+2d6 damage if ally adjacent).",
+            "Hobgoblins use Martial Advantage (+{{sm-0}} if ally adjacent).",
             "They fight tactically: one engages in melee while two provide crossbow support.",
             "If losing, they attempt organized retreat to warn others.",
             "Treasure: 20 gp each, military orders written in Goblin."
@@ -1193,7 +1266,14 @@
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 80ft underground dungeon chamber with rough stone walls. Dim torchlight. Weapon racks. Military banners. Two entrances. Entry through narrow tunnel. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
         "lair": false,
         "tier": 1,
-        "scalingMechanics": []
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "hazard",
+                "subType": " Damage",
+                "damage": "2d6"
+            }
+        ]
     },
     {
         "name": "Magma Mephit Vent",
@@ -1501,7 +1581,7 @@
         "roomDescription": "A papery structure clings to the cavern walls, buzzing with activity. Giant wasps patrol while armored centipedes writhe along the floor. The insects turn toward you with predatory intent.",
         "dmDescription": [
             "Wasps dive-bomb casters while centipedes swarm melee fighters.",
-            "Centipede poison: DC 11 Con or 10 poison damage + poisoned.",
+            "Centipede poison: {{sm-0}}+ poisoned.",
             "Fire destroys the hive but enrages survivors.",
             "Honey in hive is valuable: 30 gp worth."
         ],
@@ -1523,7 +1603,14 @@
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 140ft x 100ft underground dungeon cavern with rough stone walls. Dim torchlight. Tunnel holes for centipedes. Organic debris on floor. Entry through arched doorway at south. Two exits on opposite walls. Clean lines, high contrast for virtual tabletop use.",
         "lair": true,
         "tier": 1,
-        "scalingMechanics": []
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "skill",
+                "subType": "Con or 10 poison damage",
+                "dc": 11
+            }
+        ]
     },
     {
         "name": "Gnoll Foragers",
@@ -1760,7 +1847,7 @@
                 "goldReward": 0
             },
             {
-                "condition": "Intimidate them into fleeing (DC 13)",
+                "condition": "Intimidate them into fleeing ({{sm-1}})",
                 "reward": "100 XP + they leave most loot",
                 "xpReward": 100,
                 "goldReward": 0
@@ -1775,6 +1862,12 @@
                 "type": "skill",
                 "subType": "Insight to recognize",
                 "dc": 14
+            },
+            {
+                "id": "sm-1",
+                "type": "skill",
+                "subType": "Check",
+                "dc": 13
             }
         ]
     },
@@ -2002,7 +2095,7 @@
         "dmDescription": [
             "Spiders attack from webs (advantage if target in web).",
             "Spider Climb lets them attack from any angle.",
-            "Poison: DC 11 Con or 2d6 poison + poisoned.",
+            "Poison: {{sm-0}}+ poisoned.",
             "Fire destroys webs quickly.",
             "Cocooned corpse has: 45 gp, a silver ring (20 gp), and a Potion of Healing."
         ],
@@ -2024,7 +2117,14 @@
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 160ft x 140ft underground dungeon cavern with rough stone walls. Dim torchlight. Cocooned shapes. High ceiling with web strands. Entry through narrow tunnel. Two exits on opposite walls. Clean lines, high contrast for virtual tabletop use.",
         "lair": true,
         "tier": 1,
-        "scalingMechanics": []
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "skill",
+                "subType": "Con or 2d6 poison",
+                "dc": 11
+            }
+        ]
     },
     {
         "name": "Zombie Horde",
@@ -2046,7 +2146,7 @@
         "personality": "mindless",
         "roomDescription": "The stench of decay is overwhelming. Corpses in various states of rot shamble toward you, their dead eyes empty, their jaws snapping hungrily. There are so many of them.",
         "dmDescription": [
-            "Zombies have Undead Fortitude (DC 5+damage Con save to stay at 1 HP instead of dropping).",
+            "Zombies have Undead Fortitude ({{sm-0}}+damage Con save to stay at 1 HP instead of dropping).",
             "Radiant damage bypasses this.",
             "They're slow but numerous.",
             "Bottleneck doorways to fight fewer at once.",
@@ -2070,7 +2170,14 @@
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 150ft x 120ft underground burial crypt with stone dungeon walls. Magical glow. Narrow doorways for chokepoints. Dim green glow. Entry via collapsed section in ceiling. Two exits on opposite walls. Clean lines, high contrast for virtual tabletop use.",
         "lair": false,
         "tier": 1,
-        "scalingMechanics": []
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "skill",
+                "subType": "Check",
+                "dc": 5
+            }
+        ]
     },
     {
         "name": "Skeleton Archers",
@@ -2424,7 +2531,7 @@
         "roomDescription": "Melodious music echoes through this overgrown grotto. Two goat-legged figures lounge on rocks, playing pipes and drinking wine. They eye you with amused curiosity rather than hostility.",
         "dmDescription": [
             "Satyrs aren't inherently hostile but enjoy pranks.",
-            "They demand entertainment or tribute (DC 15 Performance or 25 gp wine) to pass.",
+            "They demand entertainment or tribute ({{sm-1}}) to pass.",
             "If insulted, they attack with magic.",
             "They know dungeon secrets and will share if entertained."
         ],
@@ -2437,7 +2544,7 @@
                 "goldReward": 0
             },
             {
-                "condition": "Entertain them (DC 15 Performance)",
+                "condition": "Entertain them ({{sm-0}})",
                 "reward": "50 XP + dungeon information",
                 "xpReward": 50,
                 "goldReward": 0
@@ -2452,7 +2559,20 @@
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 120ft x 100ft underground dungeon chamber with stone dungeon walls. Dim torchlight. Natural spring. Fey aesthetic. Entry through narrow tunnel. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
         "lair": false,
         "tier": 1,
-        "scalingMechanics": []
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "skill",
+                "subType": "Performance",
+                "dc": 15
+            },
+            {
+                "id": "sm-1",
+                "type": "skill",
+                "subType": "Performance or 25 gp wine",
+                "dc": 15
+            }
+        ]
     },
     {
         "name": "Giant Frog Pond",
@@ -2622,7 +2742,7 @@
         "personality": "irritable",
         "roomDescription": "Ancient ruins lie thick with dust. Clouds of particles swirl unnaturally, coalescing into small humanoid forms with dry, rasping voices that cough mockingly at your presence.",
         "dmDescription": [
-            "Dust mephits use Blinding Breath (DC 10 Dex or blinded 1 min).",
+            "Dust mephits use Blinding Breath ({{sm-0}}).",
             "Death Burst creates 5ft dust cloud (same effect).",
             "Water suppresses their abilities.",
             "Ancient treasures buried in dust: 45 gp, a corroded bronze crown (30 gp restored)."
@@ -2645,7 +2765,14 @@
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 120ft x 100ft underground dungeon chamber with ice-covered stone walls. Dim torchlight. Broken pillars and walls. Collapsed ceiling section. Entry through fissure in the rock. Single exit opposite the entrance. Clean lines, high contrast for virtual tabletop use.",
         "lair": false,
         "tier": 1,
-        "scalingMechanics": []
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "skill",
+                "subType": "Dex or blinded 1 min",
+                "dc": 10
+            }
+        ]
     },
     {
         "name": "Gas Spore Quarantine",
@@ -2668,7 +2795,7 @@
         "roomDescription": "Two beholders float motionless ahead, their eye stalks drooping oddly. Something seems wrong—they're not attacking. Then you notice the fungal texture of their 'skin' and realize these are something far stranger.",
         "dmDescription": [
             "Gas spores look like beholders ({{sm-0}}).",
-            "When they die, they explode (DC 15 Con or 3d6 poison + infected).",
+            "When they die, they explode ({{sm-1}}+ infected).",
             "Infection: without treatment, creature dies in 1d12+Con hours and sprouts 2d4 new gas spores.",
             "Treasure in corner from panicked victim: 40 gp."
         ],
@@ -2695,6 +2822,12 @@
                 "id": "sm-0",
                 "type": "skill",
                 "subType": "Nature to identify",
+                "dc": 15
+            },
+            {
+                "id": "sm-1",
+                "type": "skill",
+                "subType": "Con or 3d6 poison",
                 "dc": 15
             }
         ]
@@ -3043,8 +3176,8 @@
             "Memory puzzle.",
             "The runes light up in sequence: Fire, Water, Earth, Air.",
             "Players must touch the pillars in the same order within 30 seconds.",
-            "DC 10 Intelligence (Arcana) reveals the elemental nature of the runes.",
-            "DC 12 Wisdom (Perception) to memorize the sequence on first viewing."
+            "{{sm-0}}.",
+            "{{sm-1}}."
         ],
         "size": 1,
         "puzzleDescription": "Eight pillars with elemental runes pulse in a specific sequence. Players must replicate the pattern by touching the pillars in the correct order.",
@@ -3054,7 +3187,20 @@
         "penalty": "Touching the wrong pillar causes 1d4 force damage and resets the sequence.",
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 100ft circular chamber. Eight stone pillars arranged in a circle around central platform. Glowing runes on each pillar. Entry via stone archway. Clean lines, high contrast for virtual tabletop use.",
         "tier": 1,
-        "scalingMechanics": []
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "skill",
+                "subType": "Intelligence (Arcana) reveals the elemental nature of the runes",
+                "dc": 10
+            },
+            {
+                "id": "sm-1",
+                "type": "skill",
+                "subType": "Wisdom (Perception) to memorize the sequence on first viewing",
+                "dc": 12
+            }
+        ]
     },
     {
         "name": "The Scales of Balance",
@@ -3066,8 +3212,8 @@
             "Weight-based logic puzzle.",
             "The scale must be balanced with opposing concepts.",
             "Solution: Skull (death) + Book (truth) on one side equals Sword (lies/violence) + Feather (life/lightness) on the other.",
-            "DC 13 Intelligence (Investigation) to deduce the symbolic meanings.",
-            "DC 15 Wisdom (Insight) for a hint about opposing pairs."
+            "{{sm-0}}.",
+            "{{sm-1}}."
         ],
         "size": 1,
         "puzzleDescription": "A large bronze scale must be balanced using symbolic objects. The inscription provides cryptic guidance about pairing opposites.",
@@ -3077,7 +3223,20 @@
         "penalty": "Incorrect placement causes the scale to tip violently, dealing 2d6 bludgeoning damage to anyone within 10 feet (DC 13 Dex save for half).",
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 120ft x 100ft rectangular stone chamber. Massive bronze scale in center. Five pedestals arranged in semicircle. Ornate inscription on wall. Entry via double doors. Clean lines, high contrast for virtual tabletop use.",
         "tier": 1,
-        "scalingMechanics": []
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "skill",
+                "subType": "Intelligence (Investigation) to deduce the symbolic meanings",
+                "dc": 13
+            },
+            {
+                "id": "sm-1",
+                "type": "skill",
+                "subType": "Wisdom (Insight) for a hint about opposing pairs",
+                "dc": 15
+            }
+        ]
     },
     {
         "name": "The Mirror Maze",
@@ -3088,8 +3247,8 @@
         "dmDescription": [
             "Navigation puzzle with illusion elements.",
             "Only one path through the mirrors is real—the others are illusions that lead to dead ends.",
-            "DC 14 Intelligence (Investigation) to notice subtle differences in real vs. illusory mirrors (real mirrors show slight imperfections).",
-            "DC 12 Wisdom (Perception) to hear echoes differently when near real passages.",
+            "{{sm-0}}. illusory mirrors (real mirrors show slight imperfections).",
+            "{{sm-1}}.",
             "Players can also break mirrors (AC 13, 1 HP each) but each broken mirror releases a harmless but disorienting flash."
         ],
         "size": 2,
@@ -3100,7 +3259,20 @@
         "penalty": "Walking into an illusory mirror causes disorientation (disadvantage on next ability check). Breaking more than 3 mirrors summons a hostile shadow (50 XP) that must be defeated.",
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 150ft x 120ft rectangular chamber filled with standing mirrors in maze pattern. Glowing orb on pedestal at far end. Reflective surfaces throughout. Entry via narrow corridor. Clean lines, high contrast for virtual tabletop use.",
         "tier": 1,
-        "scalingMechanics": []
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "skill",
+                "subType": "Intelligence (Investigation) to notice subtle differences in real vs",
+                "dc": 14
+            },
+            {
+                "id": "sm-1",
+                "type": "skill",
+                "subType": "Wisdom (Perception) to hear echoes differently when near real passages",
+                "dc": 12
+            }
+        ]
     },
     {
         "name": "The Celestial Alignment",
@@ -3111,7 +3283,7 @@
         "dmDescription": [
             "Astronomy-based pattern puzzle.",
             "Players must place the three markers on the floor sections that align with specific constellations currently visible in the ceiling.",
-            "DC 13 Intelligence (Nature or Arcana) to identify the constellations.",
+            "{{sm-0}}.",
             "The correct positions change every minute as the ceiling rotates.",
             "Current alignment: The Warrior (Aries), The Scales (Libra), and The Archer (Sagittarius)."
         ],
@@ -3123,7 +3295,14 @@
         "penalty": "If the ceiling completes a full rotation before solving, the room fills with harmless but obscuring mist for 10 minutes, and the puzzle resets with new constellations.",
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft diameter circular chamber with domed ceiling showing star map. Floor divided into twelve zodiac sections. Three stone markers at edge. Mystical lighting from above. Entry via arched doorway. Clean lines, high contrast for virtual tabletop use.",
         "tier": 1,
-        "scalingMechanics": []
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "skill",
+                "subType": "Intelligence (Nature or Arcana) to identify the constellations",
+                "dc": 13
+            }
+        ]
     },
     {
         "name": "The Chessboard Trap",
@@ -3179,8 +3358,8 @@
         "dmDescription": [
             "Musical pattern puzzle.",
             "Players must identify and play a specific melody by touching the crystals in the correct sequence.",
-            "DC 14 Intelligence (Performance or Arcana) to recognize the melody pattern from the wall carving.",
-            "DC 16 Wisdom (Perception) to notice that the crystals' natural hum already contains the answer.",
+            "{{sm-0}}.",
+            "{{sm-1}}.",
             "The melody is a simple five-note sequence: C-E-G-E-C (do-mi-sol-mi-do).",
             "Each crystal is labeled with arcane symbols that correspond to musical notes."
         ],
@@ -3192,7 +3371,20 @@
         "penalty": "Playing an incorrect sequence causes a discordant blast that deals 2d6 thunder damage to all creatures in the room (DC 14 Constitution save for half) and resets the puzzle.",
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 90ft x 90ft octagonal chamber. Seven crystalline pillars arranged in a circle, each glowing with different colors. Musical staff carved into wall. Magical lighting from crystals. Entry via arched passage. Clean lines, high contrast for virtual tabletop use.",
         "tier": 1,
-        "scalingMechanics": []
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "skill",
+                "subType": "Intelligence (Performance or Arcana) to recognize the melody pattern from the wall carving",
+                "dc": 14
+            },
+            {
+                "id": "sm-1",
+                "type": "skill",
+                "subType": "Wisdom (Perception) to notice that the crystals' natural hum already contains the answer",
+                "dc": 16
+            }
+        ]
     },
     {
         "name": "The Timekeeper's Riddle",
@@ -3203,7 +3395,7 @@
         "dmDescription": [
             "Logic riddle with time manipulation.",
             "The answer is midnight (12:00), representing the moment between one day ending and another beginning—when all of yesterday has 'fallen' but today hasn't 'begun'.",
-            "DC 16 Intelligence (Investigation) to solve the riddle.",
+            "{{sm-0}}.",
             "The hourglasses are red herrings but can be used to measure time if players want to experiment.",
             "Players must physically move the clock hands to 12:00."
         ],
@@ -3215,7 +3407,14 @@
         "penalty": "Setting the clock to the wrong time causes it to chime loudly, alerting nearby monsters (random encounter check) and aging the character who touched it by 1d4 years (cosmetic only, reversible with Greater Restoration).",
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 80ft x 100ft rectangular chamber. Ornate grandfather clock against wall. Table with four hourglasses of different sizes. Inscription carved in stone. Dim candlelight. Entry via wooden door. Clean lines, high contrast for virtual tabletop use.",
         "tier": 1,
-        "scalingMechanics": []
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "skill",
+                "subType": "Intelligence (Investigation) to solve the riddle",
+                "dc": 16
+            }
+        ]
     },
     {
         "name": "Abandoned Supply Cache",
@@ -3329,7 +3528,7 @@
         "roomDescription": "An iron-bound wooden chest sits on a stone pedestal. A sturdy lock secures the lid, and the wood shows signs of age but remains solid.",
         "dmDescription": [
             "Locked treasure with no trap.",
-            "DC 15 to pick the lock with thieves' tools, or DC 17 Strength check to break it open (alerts nearby creatures on a roll of 15+).",
+            "{{sm-0}}, or {{sm-1}}+).",
             "The chest contains a small fortune in mixed coins and a minor magic item."
         ],
         "size": 1,
@@ -3345,7 +3544,20 @@
         "xpBudget": 125,
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 80ft x 80ft square chamber. Stone pedestal in center with iron-bound chest. Empty weapon racks on walls. Torchlight. Entry via double doors. Clean lines, high contrast for virtual tabletop use.",
         "tier": 1,
-        "scalingMechanics": []
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "skill",
+                "subType": "to pick the lock with thieves' tools",
+                "dc": 15
+            },
+            {
+                "id": "sm-1",
+                "type": "skill",
+                "subType": "Strength check to break it open (alerts nearby creatures on a roll of 15",
+                "dc": 17
+            }
+        ]
     },
     {
         "name": "The Poisoned Prize",
@@ -3356,7 +3568,7 @@
         "dmDescription": [
             "Trapped treasure.",
             "The box lid is coated with contact poison ({{sm-1}}, {{sm-0}}).",
-            "Opening without precautions: DC 13 Constitution save or take {{sm-2}} and become poisoned for 1 hour.",
+            "Opening without precautions: {{sm-4}}{{sm-2}} and become poisoned for 1 hour.",
             "The poison can be neutralized with water or carefully wiped off."
         ],
         "size": 1,
@@ -3366,7 +3578,7 @@
         ],
         "goldValue": 25,
         "hasTrap": true,
-        "trapDescription": "Contact poison on the box lid (DC 13 Con save or 2d4 poison damage + poisoned condition for 1 hour)",
+        "trapDescription": "Contact poison on the box lid ({{sm-5}}{{sm-3}} + poisoned condition for 1 hour)",
         "isLocked": false,
         "isMimic": false,
         "xpBudget": 150,
@@ -3390,6 +3602,24 @@
                 "type": "hazard",
                 "subType": "poison Damage",
                 "damage": "2d4"
+            },
+            {
+                "id": "sm-3",
+                "type": "hazard",
+                "subType": "poison Damage",
+                "damage": "2d4"
+            },
+            {
+                "id": "sm-4",
+                "type": "skill",
+                "subType": "Constitution save or take",
+                "dc": 13
+            },
+            {
+                "id": "sm-5",
+                "type": "skill",
+                "subType": "Con save or",
+                "dc": 13
             }
         ]
     },
@@ -3439,7 +3669,7 @@
             "Taking the chest without proper support triggers a collapse.",
             "{{sm-1}}, {{sm-0}}.",
             "Solution: use pitons/rope to brace the ceiling, or carefully remove treasure piece by piece (takes 10 minutes).",
-            "Triggering collapse: DC 15 Dex save or take {{sm-2}}, chest takes damage and may break open."
+            "Triggering collapse: {{sm-4}}{{sm-2}}, chest takes damage and may break open."
         ],
         "size": 1,
         "items": [
@@ -3449,7 +3679,7 @@
         ],
         "goldValue": 85,
         "hasTrap": true,
-        "trapDescription": "Unstable ceiling collapses when chest is moved (DC 15 Dex save or 3d6 bludgeoning damage)",
+        "trapDescription": "Unstable ceiling collapses when chest is moved ({{sm-5}}{{sm-3}})",
         "isLocked": false,
         "isMimic": false,
         "xpBudget": 200,
@@ -3473,6 +3703,24 @@
                 "type": "hazard",
                 "subType": "bludgeoning Damage",
                 "damage": "3d6"
+            },
+            {
+                "id": "sm-3",
+                "type": "hazard",
+                "subType": "bludgeoning Damage",
+                "damage": "3d6"
+            },
+            {
+                "id": "sm-4",
+                "type": "skill",
+                "subType": "Dex save or take",
+                "dc": 15
+            },
+            {
+                "id": "sm-5",
+                "type": "skill",
+                "subType": "Dex save or",
+                "dc": 15
             }
         ]
     },
@@ -3486,7 +3734,7 @@
             "Locked and trapped treasure.",
             "{{sm-0}}.",
             "{{sm-2}}, or {{sm-1}}.",
-            "Failure triggers poisoned needles: DC 14 Dex save or take 1d4 piercing + {{sm-3}}.",
+            "Failure triggers poisoned needles: {{sm-5}}+ {{sm-3}}.",
             "The chest contains valuable trade goods and coins."
         ],
         "size": 1,
@@ -3497,7 +3745,7 @@
         ],
         "goldValue": 95,
         "hasTrap": true,
-        "trapDescription": "Poisoned needles in lock mechanism (DC 14 Dex save or 1d4 piercing + 2d6 poison damage)",
+        "trapDescription": "Poisoned needles in lock mechanism ({{sm-6}}+ {{sm-4}})",
         "isLocked": true,
         "lockDC": 16,
         "isMimic": false,
@@ -3528,6 +3776,24 @@
                 "type": "hazard",
                 "subType": "poison Damage",
                 "damage": "2d6"
+            },
+            {
+                "id": "sm-4",
+                "type": "hazard",
+                "subType": "poison Damage",
+                "damage": "2d6"
+            },
+            {
+                "id": "sm-5",
+                "type": "skill",
+                "subType": "Dex save or take 1d4 piercing",
+                "dc": 14
+            },
+            {
+                "id": "sm-6",
+                "type": "skill",
+                "subType": "Dex save or 1d4 piercing",
+                "dc": 14
             }
         ]
     },
@@ -3593,7 +3859,7 @@
         "roomDescription": "A reinforced iron vault door stands ajar, revealing a small chamber beyond. Inside, a single ornate chest sits on a raised platform, illuminated by a beam of light from above.",
         "dmDescription": [
             "Elaborate trap disguised as treasure.",
-            "The chest is a decoy—opening it triggers a poison gas trap (DC 15 Con save or take {{sm-0}} and become poisoned for 1 hour).",
+            "The chest is a decoy—opening it triggers a poison gas trap ({{sm-3}}{{sm-0}} and become poisoned for 1 hour).",
             "The REAL treasure is hidden beneath the platform ({{sm-1}}).",
             "The decoy chest contains only copper pieces painted gold."
         ],
@@ -3605,7 +3871,7 @@
         ],
         "goldValue": 75,
         "hasTrap": true,
-        "trapDescription": "Poison gas trap on decoy chest (DC 15 Con save or 3d6 poison damage + poisoned for 1 hour). Real treasure is hidden beneath platform.",
+        "trapDescription": "Poison gas trap on decoy chest ({{sm-4}}{{sm-2}} + poisoned for 1 hour). Real treasure is hidden beneath platform.",
         "isLocked": false,
         "isMimic": false,
         "xpBudget": 275,
@@ -3637,6 +3903,24 @@
                 "type": "skill",
                 "subType": "Investigation to find the hidden compartment",
                 "dc": 17
+            },
+            {
+                "id": "sm-2",
+                "type": "hazard",
+                "subType": "poison Damage",
+                "damage": "3d6"
+            },
+            {
+                "id": "sm-3",
+                "type": "skill",
+                "subType": "Con save or take",
+                "dc": 15
+            },
+            {
+                "id": "sm-4",
+                "type": "skill",
+                "subType": "Con save or",
+                "dc": 15
             }
         ]
     },
@@ -3649,7 +3933,7 @@
         "dmDescription": [
             "Simple trap room with hidden door.",
             "Three pressure plates are concealed beneath the dust ({{sm-1}}, {{sm-0}}).",
-            "Stepping on a plate triggers a dart trap (DC 12 Dex save or {{sm-2}}).",
+            "Stepping on a plate triggers a dart trap ({{sm-4}}{{sm-2}}).",
             "A hidden door in the east wall ({{sm-3}}) leads to a shortcut.",
             "The murals contain clues: warriors stepping carefully between marked stones."
         ],
@@ -3689,6 +3973,12 @@
                 "type": "skill",
                 "subType": "Investigation",
                 "dc": 13
+            },
+            {
+                "id": "sm-4",
+                "type": "skill",
+                "subType": "Dex save or",
+                "dc": 12
             }
         ]
     },
@@ -3701,7 +3991,7 @@
         "dmDescription": [
             "Environmental hazard with hidden cache.",
             "The water is only 6 inches deep but obscures a spiked pit trap in the center ({{sm-1}}, {{sm-0}}).",
-            "Falling in: DC 13 Dex save or {{sm-2}}.",
+            "Falling in: {{sm-4}}{{sm-2}}.",
             "A waterproof chest is hidden beneath a loose stone in the north wall ({{sm-3}}), containing minor treasure."
         ],
         "size": 1,
@@ -3740,6 +4030,12 @@
                 "type": "skill",
                 "subType": "Investigation",
                 "dc": 15
+            },
+            {
+                "id": "sm-4",
+                "type": "skill",
+                "subType": "Dex save or",
+                "dc": 13
             }
         ]
     },
@@ -3751,7 +4047,7 @@
         "roomDescription": "Four stone statues of armored warriors stand in the corners of the room, their stone eyes seeming to follow your movement. A large ornate door dominates the far wall.",
         "dmDescription": [
             "Trap room with multiple secrets.",
-            "The statues are pressure-sensitive—touching one triggers a poison gas vent (DC 14 Con save or {{sm-0}} + poisoned for 10 minutes).",
+            "The statues are pressure-sensitive—touching one triggers a poison gas vent ({{sm-3}}{{sm-0}} + poisoned for 10 minutes).",
             "{{sm-1}}.",
             "Rotating all four to face the center disables the trap AND reveals a hidden compartment in the floor (contains treasure).",
             "A secret door behind the northeast statue ({{sm-2}}) leads to a side passage."
@@ -3786,6 +4082,12 @@
                 "type": "skill",
                 "subType": "Investigation",
                 "dc": 16
+            },
+            {
+                "id": "sm-3",
+                "type": "skill",
+                "subType": "Con save or",
+                "dc": 14
             }
         ]
     },
@@ -3798,7 +4100,7 @@
         "dmDescription": [
             "Navigation hazard with hidden path.",
             "The bridge has three weak sections ({{sm-0}}).",
-            "Walking on weak sections: DC 14 Dex save or fall through (catch yourself on edge, {{sm-2}}, or fall 30 feet into water below—3d6 bludgeoning damage, {{sm-3}}",
+            "Walking on weak sections: {{sm-6}}, {{sm-2}}, or fall 30 feet into water below—{{sm-5}}, {{sm-3}}",
             "A hidden ledge path along the left wall ({{sm-4}}) allows safe passage.",
             "The ledge also contains a skeleton with a pouch of gems."
         ],
@@ -3844,6 +4146,18 @@
                 "type": "skill",
                 "subType": "Investigation",
                 "dc": 15
+            },
+            {
+                "id": "sm-5",
+                "type": "hazard",
+                "subType": "bludgeoning Damage",
+                "damage": "3d6"
+            },
+            {
+                "id": "sm-6",
+                "type": "skill",
+                "subType": "Dex save or fall through (catch yourself on edge",
+                "dc": 14
             }
         ]
     },
@@ -3857,7 +4171,7 @@
             "Illusion-based trap room.",
             "One mirror is actually a secret door (DC 16 Investigation to find—it doesn't show a reflection).",
             "Three mirrors are trapped with magical symbols ({{sm-0}}).",
-            "Looking directly at a trapped mirror: DC 14 Wisdom save or become frightened for 1 minute.",
+            "Looking directly at a trapped mirror: {{sm-1}}.",
             "Breaking a trapped mirror summons a hostile shadow (50 XP).",
             "The secret mirror-door leads to a treasure room."
         ],
@@ -3879,6 +4193,12 @@
                 "type": "skill",
                 "subType": "Arcana to identify",
                 "dc": 14
+            },
+            {
+                "id": "sm-1",
+                "type": "skill",
+                "subType": "Wisdom save or become frightened for 1 minute",
+                "dc": 14
             }
         ]
     },
@@ -3891,7 +4211,7 @@
         "dmDescription": [
             "Complex trap room with valuable rewards.",
             "Five books are trapped with explosive runes ({{sm-1}}, {{sm-0}}).",
-            "Opening a trapped book: DC 15 Dex save or {{sm-2}}.",
+            "Opening a trapped book: {{sm-5}}{{sm-2}}.",
             "Two books are safe and valuable (History and Arcana tomes worth 50 gp each).",
             "A hidden compartment in the desk ({{sm-3}}) contains a spellbook.",
             "The north bookshelf is actually a secret rotating door ({{sm-4}})."
@@ -3939,6 +4259,12 @@
                 "type": "skill",
                 "subType": "Investigation",
                 "dc": 18
+            },
+            {
+                "id": "sm-5",
+                "type": "skill",
+                "subType": "Dex save or",
+                "dc": 15
             }
         ]
     },
@@ -3950,7 +4276,7 @@
         "roomDescription": "Narrow slits line both walls of this corridor. The floor is stained with old, dark marks. At the far end, you can see what appears to be a valuable gem on a pedestal.",
         "dmDescription": [
             "Classic blade trap with hidden bypass.",
-            "Walking down the corridor triggers swinging blade traps from the wall slits ({{sm-0}}, DC 16 Dex save or 2d8 slashing damage).{{sm-1}}",
+            "Walking down the corridor triggers swinging blade traps from the wall slits ({{sm-0}}, {{sm-6}}{{sm-5}}).{{sm-1}}",
             "The gem is fake ({{sm-2}}).",
             "The REAL treasure is in a hidden alcove behind a loose brick ({{sm-3}}) halfway down the corridor.",
             "A secret passage in the ceiling ({{sm-4}}, requires climbing) bypasses the entire trap."
@@ -3998,6 +4324,18 @@
                 "type": "skill",
                 "subType": "Investigation",
                 "dc": 17
+            },
+            {
+                "id": "sm-5",
+                "type": "hazard",
+                "subType": "slashing Damage",
+                "damage": "2d8"
+            },
+            {
+                "id": "sm-6",
+                "type": "skill",
+                "subType": "Dex save or",
+                "dc": 16
             }
         ]
     },
@@ -4085,7 +4423,7 @@
         "roomDescription": "A cave-in has partially blocked this passage. Rubble and broken timbers are piled high, leaving only a narrow gap near the ceiling. The debris looks unstable.",
         "dmDescription": [
             "Environmental hazard with multiple solutions.",
-            "Climbing over the rubble: {{sm-0}}, but risks triggering a collapse (DC 16 Dex save or 3d6 blu{{sm-1}}alling rocks).",
+            "Climbing over the rubble: {{sm-0}}, but risks triggering a collapse ({{sm-4}}{{sm-1}}alling rocks).",
             "A hidden side passage ({{sm-2}}) goes around the collapse.",
             "Alternatively, carefully clearing the rubble takes 1 hour but reveals a skeleton with treasure.",
             "Behind the rubble is a secret room ({{sm-3}})."
@@ -4126,6 +4464,12 @@
                 "type": "skill",
                 "subType": "Investigation to find the hidden door in the debris",
                 "dc": 18
+            },
+            {
+                "id": "sm-4",
+                "type": "skill",
+                "subType": "Dex save or 3d6 blu",
+                "dc": 16
             }
         ]
     },
@@ -4376,7 +4720,7 @@
         "dmDescription": [
             "Indifferent scouts (Theron and Mira) from a rival adventuring party.",
             "They're mapping the dungeon and see the party as competition.",
-            "DC 12 Persuasion to convince them to share information (they know about a nearby trap).",
+            "{{sm-1}}.",
             "{{sm-0}}.",
             "If attacked, they flee after taking any damage.",
             "They might become allies if treated well (future encounter potential)."
@@ -4403,6 +4747,12 @@
                 "type": "skill",
                 "subType": "Intimidation to make them leave",
                 "dc": 14
+            },
+            {
+                "id": "sm-1",
+                "type": "skill",
+                "subType": "Persuasion to convince them to share information (they know about a nearby trap)",
+                "dc": 12
             }
         ]
     },
@@ -4549,8 +4899,8 @@
             "Hostile bandits demanding 50 gp toll.",
             "Leader is Kara Blackknife (Bandit Captain stats but CR 1).",
             "{{sm-0}}.",
-            "DC 16 Persuasion to negotiate lower toll (25 gp).",
-            "DC 14 Deception to convince them you're allies of their boss.",
+            "{{sm-2}}.",
+            "{{sm-1}}.",
             "If combat starts, they fight but surrender at half HP, offering information about a treasure cache (worth 100 gp, 2 rooms away) in exchange for their lives.",
             "They know the password to bypass a trap ahead."
         ],
@@ -4605,6 +4955,18 @@
                 "type": "skill",
                 "subType": "Intimidation to make them back down",
                 "dc": 15
+            },
+            {
+                "id": "sm-1",
+                "type": "skill",
+                "subType": "Deception to convince them you're allies of their boss",
+                "dc": 14
+            },
+            {
+                "id": "sm-2",
+                "type": "skill",
+                "subType": "Persuasion to negotiate lower toll (25 gp)",
+                "dc": 16
             }
         ]
     },
@@ -4740,9 +5102,9 @@
         "dmDescription": [
             "Indifferent rival adventurer named Sylvara Swiftarrow.",
             "She's competing for the same bounty/treasure and sees the party as competition.",
-            "DC 15 Persuasion to convince her to team up temporarily (she'll help with one encounter then leave).",
+            "{{sm-2}}.",
             "{{sm-0}}.",
-            "DC 14 Insight reveals she's actually testing the party to see if they're worthy allies.",
+            "{{sm-1}}.",
             "If impressed (party shares information or offers fair deal), she becomes friendly and offers: trade (has 2 Potions of Greater Healing, 100 gp each), information about boss encounter ahead, or temporary alliance.",
             "Future recurring NPC potential."
         ],
@@ -4773,6 +5135,18 @@
                 "type": "skill",
                 "subType": "Intimidation to make her back off",
                 "dc": 16
+            },
+            {
+                "id": "sm-1",
+                "type": "skill",
+                "subType": "Insight reveals she's actually testing the party to see if they're worthy allies",
+                "dc": 14
+            },
+            {
+                "id": "sm-2",
+                "type": "skill",
+                "subType": "Persuasion to convince her to team up temporarily (she'll help with one encounter then leave)",
+                "dc": 15
             }
         ]
     },
@@ -4785,7 +5159,7 @@
         "dmDescription": [
             "Hostile cultist attempting to summon a minor demon.",
             "He's desperate and dangerous.",
-            "DC 16 Persuasion to talk him down (he's having second thoughts).",
+            "{{sm-2}}.",
             "{{sm-0}}.",
             "{{sm-1}}.",
             "If ritual completes (3 rounds), summons a minor demon (CR 1).",
@@ -4842,6 +5216,12 @@
                 "type": "skill",
                 "subType": "Arcana to disrupt the ritual safely",
                 "dc": 14
+            },
+            {
+                "id": "sm-2",
+                "type": "skill",
+                "subType": "Persuasion to talk him down (he's having second thoughts)",
+                "dc": 16
             }
         ]
     },
@@ -4854,7 +5234,7 @@
         "dmDescription": [
             "Goblin Boss with 2 Goblin Warriors as bodyguards.",
             "Gorthak fights tactically, using his guards as shields and throwing alchemist's fire.",
-            "At half HP, he drinks a Potion of Growth (becomes Large, +1d4 damage).",
+            "At half HP, he drinks a Potion of Growth (becomes Large, +{{sm-0}}).",
             "He has a horn that summons 2 more goblin minions (once per fight).",
             "Treasure: 150 gp, Potion of Healing, +1 Shortsword, Bone Crown (worth 75 gp)."
         ],
@@ -4889,7 +5269,7 @@
                 "goldReward": 0
             },
             {
-                "condition": "Convince Gorthak to surrender (DC 18 Intimidation after killing guards)",
+                "condition": "Convince Gorthak to surrender ({{sm-1}})",
                 "reward": "250 XP + treasure + Gorthak reveals secret treasure cache (additional 100 gp)",
                 "xpReward": 250,
                 "goldReward": 100
@@ -4897,7 +5277,20 @@
         ],
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 150ft x 120ft throne room. Raised platform with crude throne made of scavenged armor. Tattered banners on walls. Goblin guards positioned defensively. Bone crown visible. Dim torchlight. Entry via large double doors. Stairs to next level behind throne. Clean lines, high contrast for virtual tabletop use.",
         "tier": 1,
-        "scalingMechanics": []
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "hazard",
+                "subType": " Damage",
+                "damage": "1d4"
+            },
+            {
+                "id": "sm-1",
+                "type": "skill",
+                "subType": "Intimidation after killing guards",
+                "dc": 18
+            }
+        ]
     },
     {
         "name": "The Skeletal Champion",
@@ -4954,7 +5347,7 @@
         "roomDescription": "A vast cavern with a high ceiling. The air is thick with poisonous fumes. A young green dragon perches on a pile of treasure, its emerald scales gleaming in the dim light.",
         "dmDescription": [
             "CR 2 Young Green Dragon (scaled down).",
-            "Breath Weapon: 30ft cone, DC 12 Con save or {{sm-0}} (recharge 5-6).",
+            "Breath Weapon: 30ft cone, {{sm-3}}{{sm-0}} (recharge 5-6).",
             "Flies to ceiling when bloodied.",
             "Lair Actions: poison gas cloud ({{sm-1}}), difficult terrain from vines.",
             "Treasure hoard: 500 gp, 3 gems (50 gp each), Potion of Poison Resistance, Ring of Swimming."
@@ -4982,7 +5375,7 @@
                 "goldReward": 0
             },
             {
-                "condition": "Negotiate with the dragon (DC 18 Persuasion, must offer tribute worth 200+ gp)",
+                "condition": "Negotiate with the dragon ({{sm-2}}, must offer tribute worth 200+ gp)",
                 "reward": "300 XP + safe passage + dragon allows one item from hoard",
                 "xpReward": 300,
                 "goldReward": 0
@@ -5002,6 +5395,18 @@
                 "type": "skill",
                 "subType": "Con save or poisoned",
                 "dc": 11
+            },
+            {
+                "id": "sm-2",
+                "type": "skill",
+                "subType": "Persuasion",
+                "dc": 18
+            },
+            {
+                "id": "sm-3",
+                "type": "skill",
+                "subType": "Con save or",
+                "dc": 12
             }
         ]
     },
@@ -5050,7 +5455,7 @@
                 "goldReward": 0
             },
             {
-                "condition": "Purify the treant with Remove Curse or similar magic (DC 15 Arcana)",
+                "condition": "Purify the treant with Remove Curse or similar magic ({{sm-1}})",
                 "reward": "600 XP + treant becomes grateful ally, grants blessing of the forest (+1d4 to Nature checks for 7 days)",
                 "xpReward": 600,
                 "goldReward": 0
@@ -5064,6 +5469,12 @@
                 "type": "skill",
                 "subType": "Str save",
                 "dc": 13
+            },
+            {
+                "id": "sm-1",
+                "type": "skill",
+                "subType": "Arcana",
+                "dc": 15
             }
         ]
     },
@@ -5111,7 +5522,7 @@
                 "goldReward": 0
             },
             {
-                "condition": "Disrupt the ritual circle (DC 14 Arcana) before combat",
+                "condition": "Disrupt the ritual circle ({{sm-0}}) before combat",
                 "reward": "Malakar loses access to lair actions and Contingency, easier fight",
                 "xpReward": 0,
                 "goldReward": 0
@@ -5119,7 +5530,14 @@
         ],
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 130ft diameter circular ritual chamber. Glowing pentagram in center with sorcerer. Arcane symbols covering floor and walls. Two animated armor suits flanking. Dark energy crackling. Purple-black magical lighting. Entry via reinforced door. Exit stairs behind ritual circle. Clean lines, high contrast for virtual tabletop use.",
         "tier": 1,
-        "scalingMechanics": []
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "skill",
+                "subType": "Arcana",
+                "dc": 14
+            }
+        ]
     },
     {
         "name": "The Gelatinous Cube Overlord",
@@ -5129,7 +5547,7 @@
         "roomDescription": "A perfectly square chamber with smooth walls. A massive translucent cube fills most of the room, slowly pulsing. Skeletal remains and treasure are visible suspended within its body.",
         "dmDescription": [
             "Huge Gelatinous Cube (CR 2).",
-            "Engulf attack: DC 13 Dex save or be engulfed (restrained, {{sm-1}} per turn, {{sm-0}}).",
+            "Engulf attack: {{sm-4}}, {{sm-1}} per turn, {{sm-0}}).",
             "Transparent: {{sm-2}}.",
             "Splits into 2 smaller cubes when reduced to half HP (each CR 1).",
             "Room has narrow ledges along walls ({{sm-3}}).",
@@ -5190,6 +5608,12 @@
                 "type": "skill",
                 "subType": "Acrobatics to navigate",
                 "dc": 12
+            },
+            {
+                "id": "sm-4",
+                "type": "skill",
+                "subType": "Dex save or be engulfed (restrained",
+                "dc": 13
             }
         ]
     },
@@ -5201,7 +5625,7 @@
         "roomDescription": "A war room with crude maps and battle plans scattered across tables. A massive bugbear covered in scars stands at the center, flanked by his goblin advisors and a trained dire wolf.",
         "dmDescription": [
             "Bugbear Chief (CR 2) with 2 Goblin Bosses and 1 Wolf.",
-            "Grimjaw has Brute feature (+1d8 damage).",
+            "Grimjaw has Brute feature (+{{sm-0}}).",
             "Uses tactical positioning and sends minions first.",
             "At half HP, enters frenzy (advantage on attacks, reckless).",
             "Wolf has Pack Tactics.",
@@ -5247,7 +5671,7 @@
                 "goldReward": 0
             },
             {
-                "condition": "Challenge Grimjaw to single combat (DC 15 Intimidation)",
+                "condition": "Challenge Grimjaw to single combat ({{sm-1}})",
                 "reward": "He accepts, minions stand down. Win: 500 XP + treasure + remaining minions flee",
                 "xpReward": 500,
                 "goldReward": 0
@@ -5255,7 +5679,20 @@
         ],
         "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 150ft x 130ft war room. Tables with crude maps and battle plans. Massive bugbear chieftain in center. Two goblin advisors. Dire wolf companion. Weapon racks on walls. Torchlight. Entry via reinforced door. Exit passage behind. Clean lines, high contrast for virtual tabletop use.",
         "tier": 1,
-        "scalingMechanics": []
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "hazard",
+                "subType": " Damage",
+                "damage": "1d8"
+            },
+            {
+                "id": "sm-1",
+                "type": "skill",
+                "subType": "Intimidation",
+                "dc": 15
+            }
+        ]
     },
     {
         "name": "The Spectral Warden",
@@ -5301,7 +5738,7 @@
                 "goldReward": 0
             },
             {
-                "condition": "Free the imprisoned souls (DC 15 Religion ritual)",
+                "condition": "Free the imprisoned souls ({{sm-1}})",
                 "reward": "600 XP + warden is released from duty peacefully + enhanced treasure (additional magic item)",
                 "xpReward": 600,
                 "goldReward": 0
@@ -5315,6 +5752,12 @@
                 "type": "hazard",
                 "subType": "necrotic Damage",
                 "damage": "3d6"
+            },
+            {
+                "id": "sm-1",
+                "type": "skill",
+                "subType": "Religion ritual",
+                "dc": 15
             }
         ]
     },
@@ -5368,7 +5811,7 @@
                 "goldReward": 0
             },
             {
-                "condition": "Disrupt the ritual to prevent Sszarak from using Lair Actions (DC 14 Arcana or Religion)",
+                "condition": "Disrupt the ritual to prevent Sszarak from using Lair Actions ({{sm-3}})",
                 "reward": "additional 100 XP",
                 "xpReward": 100,
                 "goldReward": 0
@@ -5394,6 +5837,12 @@
                 "type": "skill",
                 "subType": "Dex save or restrained",
                 "dc": 12
+            },
+            {
+                "id": "sm-3",
+                "type": "skill",
+                "subType": "Arcana or Religion",
+                "dc": 14
             }
         ]
     },
@@ -5435,14 +5884,14 @@
                 "goldReward": 0
             },
             {
-                "condition": "Use lightning to heal it, then calm it with DC 16 Persuasion or Animal Handling",
+                "condition": "Use lightning to heal it, then calm it with {{sm-5}}",
                 "reward": "500 XP + golem becomes docile, can be commanded for one task + treasure",
                 "xpReward": 500,
                 "goldReward": 0
             },
             {
-                "condition": "Lure it into alchemical vats (DC 14 Deception or Athletics)",
-                "reward": "400 XP + easier fight (golem takes 4d6 acid damage) + some treasure destroyed",
+                "condition": "Lure it into alchemical vats ({{sm-6}})",
+                "reward": "400 XP + easier fight (golem takes {{sm-7}}) + some treasure destroyed",
                 "xpReward": 400,
                 "goldReward": 0
             }
@@ -5479,6 +5928,24 @@
                 "type": "hazard",
                 "subType": "acid Damage",
                 "damage": "2d6"
+            },
+            {
+                "id": "sm-5",
+                "type": "skill",
+                "subType": "Persuasion or Animal Handling",
+                "dc": 16
+            },
+            {
+                "id": "sm-6",
+                "type": "skill",
+                "subType": "Deception or Athletics",
+                "dc": 14
+            },
+            {
+                "id": "sm-7",
+                "type": "hazard",
+                "subType": "acid Damage",
+                "damage": "4d6"
             }
         ]
     }

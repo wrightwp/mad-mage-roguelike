@@ -8,39 +8,40 @@ const __dirname = path.dirname(__filename);
 const filePath = path.join(__dirname, 'encounters-tier-1.json');
 
 // Regex patterns
-const DC_REGEX = /DC (\d+) ([a-zA-Z\s]+?)(?=[).,]|$)/g;
-const DMG_REGEX = /(\d+d\d+) ([a-zA-Z\s]+?) damage/g;
+const DC_REGEX = /DC\s*(\d+)\s*([a-zA-Z0-9\s'\-()]+)(?=[.,;:+|{]|$)/g;
+const DMG_REGEX = /(\d+d\d+)\s*([a-zA-Z\s'-]*?)\s*damage/g;
 
 try {
     const data = fs.readFileSync(filePath, 'utf8');
     let encounters = JSON.parse(data);
     let updatedCount = 0;
 
-    encounters = encounters.map(enc => {
+    encounters = encounters.map((enc) => {
         let changed = false;
 
-        // Reset or init scalingMechanics for a fresh pass to ensure IDs match text
-        // (Assuming we want to regenerate mechanics to link them perfectly)
-        // But the previous pass already created them without IDs. 
-        // Let's clear and re-generate to ensure perfect sync, 
-        // OR we map existing ones. Re-generating is safer for "Integration".
-        enc.scalingMechanics = [];
-        let mechCounter = 0;
+        // Ensure mechanics array exists
+        if (!enc.scalingMechanics) enc.scalingMechanics = [];
 
-        // Combine descriptions to process full text then split again, 
-        // OR process line by line. Line by line is safer for existing structure.
+        // Determine next ID suffix
+        let maxId = -1;
+        enc.scalingMechanics.forEach(m => {
+            if (m.id && m.id.startsWith('sm-')) {
+                const num = parseInt(m.id.split('-')[1]);
+                if (!isNaN(num) && num > maxId) maxId = num;
+            }
+        });
+        let mechCounter = maxId + 1;
 
         const processText = (text) => {
+            if (!text || typeof text !== 'string') return text;
+
             let processedText = text;
+            let textChanged = false; // Local tracking for this string
 
             // 1. DCs
-            // Reset regex lastIndex
             DC_REGEX.lastIndex = 0;
-            let match;
-            // We need to replace match-by-match. 
-            // replacing while iterating regex can be tricky with indices.
-            // Better to find all matches, then replace.
             const dcMatches = [];
+            let match;
             while ((match = DC_REGEX.exec(text)) !== null) {
                 dcMatches.push({
                     full: match[0],
@@ -50,7 +51,6 @@ try {
                 });
             }
 
-            // Process matches in reverse order so replacements don't mess up indices
             for (let i = dcMatches.length - 1; i >= 0; i--) {
                 const m = dcMatches[i];
                 const id = `sm-${mechCounter++}`;
@@ -58,20 +58,14 @@ try {
                 enc.scalingMechanics.push({
                     id: id,
                     type: m.name.includes('Save') ? 'trap' : 'skill',
-                    subType: m.name,
+                    subType: m.name || 'Check',
                     dc: m.val
                 });
 
-                // Replace in text
-                // Check if wrapped in paren to avoid double paren? 
-                // The regex includes "DC 12 Name".
-                // We replace "DC 12 Name" with "{{sm-X}}"
-
-                // Construct replacement based on location
                 const before = processedText.substring(0, m.index);
                 const after = processedText.substring(m.index + m.full.length);
                 processedText = `${before}{{${id}}}${after}`;
-                changed = true;
+                textChanged = true;
             }
 
             // 2. Damage
@@ -100,24 +94,62 @@ try {
                 const before = processedText.substring(0, m.index);
                 const after = processedText.substring(m.index + m.full.length);
                 processedText = `${before}{{${id}}}${after}`;
-                changed = true;
+                textChanged = true;
             }
 
+            if (textChanged) changed = true;
             return processedText;
         };
 
+        // --- Apply to Fields ---
+
+        // 1. dmDescription (Array or String)
         if (Array.isArray(enc.dmDescription)) {
             enc.dmDescription = enc.dmDescription.map(line => processText(line));
         } else if (typeof enc.dmDescription === 'string') {
             enc.dmDescription = [processText(enc.dmDescription)];
         }
 
+        // 2. roomDescription (String)
+        if (enc.roomDescription) {
+            enc.roomDescription = processText(enc.roomDescription);
+        }
+
+        // 3. trapDescription (String) - specific to Treasure/Exploration
+        if (enc.trapDescription) {
+            enc.trapDescription = processText(enc.trapDescription);
+        }
+
+        // 4. puzzleDescription (String) - specific to Puzzle/Exploration
+        if (enc.puzzleDescription) {
+            enc.puzzleDescription = processText(enc.puzzleDescription);
+        }
+
+        // 5. winConditions (Array of Objects)
+        if (enc.winConditions && Array.isArray(enc.winConditions)) {
+            enc.winConditions = enc.winConditions.map(wc => {
+                if (wc.condition) {
+                    wc.condition = processText(wc.condition);
+                }
+                // Optional: check reward text too? "Gain 50 GP" -> usually static, but could have "DC 10 for bonus".
+                // Let's safe-check reward too.
+                if (wc.reward) {
+                    wc.reward = processText(wc.reward);
+                }
+                return wc;
+            });
+        }
+
+        if (changed) updatedCount++;
         return enc;
     });
 
-    // Check if we actually made changes (updatedCount logic was removed above, assuming all processed)
-    fs.writeFileSync(filePath, JSON.stringify(encounters, null, 4), 'utf8');
-    console.log(`Successfully integrated scaling mechanics with placeholders.`);
+    if (updatedCount > 0) {
+        fs.writeFileSync(filePath, JSON.stringify(encounters, null, 4), 'utf8');
+        console.log(`Successfully updated ${updatedCount} encounters with broader scaling placeholders.`);
+    } else {
+        console.log("No new scaling patterns found in broad scan.");
+    }
 
 } catch (err) {
     console.error("Error:", err);
