@@ -305,7 +305,7 @@ const NAMES: Record<string, string[]> = {
   Goliath: ['Brakka', 'Dorra', 'Kothar', 'Mavri', 'Toram', 'Varka', 'Yorin', 'Zorla']
 };
 
-const SURNAMES = ['Brightwood', 'Ironfist', 'Stormwind', 'Duskwalker', 'Ashcroft', 'Ravenwood', 'Stonehelm', 'Moonfall'];
+const SURNAMES = ['Brightwood', 'Ironfist', 'Stormwind', 'Duskwalker', 'Ashcroft', 'Ravenwood', 'Stonehelm', 'Moonfall', 'Whispershard', 'Frostbloom', 'Mistcloak', 'Sunspire'];
 
 const ABILITY_KEYS: AbilityKey[] = ['STR', 'DEX', 'CON', 'INT', 'WIS', 'CHA'];
 

@@ -15,13 +15,13 @@ Determine the following from the user's prompt:
 
 ## 2. Consult the Rules
 You **MUST** read the specific generation guide for the requested type AND the scaling guide.
-- Combat: `src/types/COMBAT_ENCOUNTER_GENERATION.md`
-- Social: `src/types/SOCIAL_ENCOUNTER_GENERATION.md`
-- Exploration: `src/types/EXPLORATION_ENCOUNTER_GENERATION.md`
-- Rest: `src/types/REST_ENCOUNTER_GENERATION.md`
-- Treasure: `src/types/TREASURE_ENCOUNTER_GENERATION.md`
-- Boss: `src/types/BOSS_ENCOUNTER_GENERATION.md`
-- **Scaling & Tiers**: `src/types/SCALING_GUIDE.md`
+- Combat: `ai_guides/encounters/COMBAT_ENCOUNTER_GENERATION.md`
+- Social: `ai_guides/encounters/SOCIAL_ENCOUNTER_GENERATION.md`
+- Exploration: `ai_guides/encounters/EXPLORATION_ENCOUNTER_GENERATION.md`
+- Rest: `ai_guides/encounters/REST_ENCOUNTER_GENERATION.md`
+- Treasure: `ai_guides/encounters/TREASURE_ENCOUNTER_GENERATION.md`
+- Boss: `ai_guides/encounters/BOSS_ENCOUNTER_GENERATION.md`
+- **Scaling & Tiers**: `ai_guides/encounters/SCALING_GUIDE.md`
 
 ### Tier of Play Definitions:
 - **Tier 1**: Levels 1-4
@@ -35,7 +35,7 @@ You **MUST** read the specific generation guide for the requested type AND the s
 - Adjust **DCs** and **Damage** following the `SCALING_GUIDE.md`.
 
 ## 3. Select Monsters (If Combat/Boss)
-Refer to **`src/data/MONSTER_QUICK_REFERENCE.md`** to select appropriate monsters.
+Refer to **`ai_guides/monsters/MONSTER_QUICK_REFERENCE.md`** to select appropriate monsters.
 - **Do not** invent stats. Use the names and CRs listed in the reference or `monsters.json`.
 - Adhere to the XP Budget rules in the Combat Generation guide.
 
