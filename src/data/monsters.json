@@ -4,7 +4,7 @@
         "cr": 0,
         "exp": 10,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5194905-awakened-shrub",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-a#AwakenedShrub",
         "thematicType": "Plant",
         "mmPage": "mm 23"
     },
@@ -13,7 +13,7 @@
         "cr": 0,
         "exp": 10,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5194910-baboon",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#Baboon",
         "thematicType": "Beast",
         "mmPage": "mm 349"
     },
@@ -22,7 +22,7 @@
         "cr": 0,
         "exp": 10,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/4775802-badger",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#Badger",
         "thematicType": "Beast",
         "mmPage": "mm 349"
     },
@@ -31,7 +31,7 @@
         "cr": 0,
         "exp": 10,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/4775803-badger",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#Bat",
         "thematicType": "Beast",
         "mmPage": "mm 349"
     },
@@ -40,7 +40,7 @@
         "cr": 0,
         "exp": 10,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/4775808-cat",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#Cat",
         "thematicType": "Beast",
         "mmPage": "mm 351"
     },
@@ -49,7 +49,7 @@
         "cr": 0,
         "exp": 10,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5194951-commoner",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-c#Commoner",
         "thematicType": "Humanoid",
         "mmPage": "mm 77"
     },
@@ -58,7 +58,7 @@
         "cr": 0,
         "exp": 10,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/4775810-crab",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#Crab",
         "thematicType": "Beast",
         "mmPage": "mm 351"
     },
@@ -67,7 +67,7 @@
         "cr": 0,
         "exp": 10,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5194954-crawling-claw",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-c#CrawlingClaw",
         "thematicType": "Undead",
         "mmPage": "mm 83"
     },
@@ -76,7 +76,7 @@
         "cr": 0,
         "exp": 10,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5194966-deer",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#Deer",
         "thematicType": "Beast",
         "mmPage": "mm 352"
     },
@@ -85,7 +85,7 @@
         "cr": 0,
         "exp": 10,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5194979-eagle",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#Eagle",
         "thematicType": "Beast",
         "mmPage": "mm 353"
     },
@@ -94,7 +94,7 @@
         "cr": 0,
         "exp": 10,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/4775816-frog",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#Frog",
         "thematicType": "Beast",
         "mmPage": "mm 354"
     },
@@ -103,7 +103,7 @@
         "cr": 0,
         "exp": 10,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195019-giant-fire-beetle",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#GiantFireBeetle",
         "thematicType": "Beast",
         "mmPage": "mm 357"
     },
@@ -112,7 +112,7 @@
         "cr": 0,
         "exp": 10,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/4775823-goat",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#Goat",
         "thematicType": "Beast",
         "mmPage": "mm 362"
     },
@@ -121,7 +121,7 @@
         "cr": 0,
         "exp": 10,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/4775824-hawk",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#Hawk",
         "thematicType": "Beast",
         "mmPage": "mm 362"
     },
@@ -130,7 +130,7 @@
         "cr": 0,
         "exp": 10,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195080-homunculus",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-h#Homunculus",
         "thematicType": "Construct",
         "mmPage": "mm 172"
     },
@@ -139,7 +139,7 @@
         "cr": 0,
         "exp": 10,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195085-hyena",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#Hyena",
         "thematicType": "Beast",
         "mmPage": "mm 363"
     },
@@ -148,7 +148,7 @@
         "cr": 0,
         "exp": 10,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195091-jackal",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#Jackal",
         "thematicType": "Beast",
         "mmPage": "mm 364"
     },
@@ -175,7 +175,7 @@
         "cr": 0,
         "exp": 10,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/4775827-lizard",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#Lizard",
         "thematicType": "Beast",
         "mmPage": "mm 364"
     },
@@ -184,7 +184,7 @@
         "cr": 0,
         "exp": 10,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195139-myconid-sprout",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-m#MyconidSprout",
         "thematicType": "Plant",
         "mmPage": "mm 222"
     },
@@ -193,7 +193,7 @@
         "cr": 0,
         "exp": 10,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/4775830-octopus",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#Octopus",
         "thematicType": "Beast",
         "mmPage": "mm 365"
     },
@@ -202,7 +202,7 @@
         "cr": 0,
         "exp": 10,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/4775831-owl",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#Owl",
         "thematicType": "Beast",
         "mmPage": "mm 366"
     },
@@ -211,7 +211,7 @@
         "cr": 0,
         "exp": 10,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195160-piranha",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#Piranha",
         "thematicType": "Beast",
         "mmPage": "mm 366"
     },
@@ -220,7 +220,7 @@
         "cr": 0,
         "exp": 10,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/4775836-rat",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#Rat",
         "thematicType": "Beast",
         "mmPage": "mm 367"
     },
@@ -229,7 +229,7 @@
         "cr": 0,
         "exp": 10,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/4775837-raven",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#Raven",
         "thematicType": "Beast",
         "mmPage": "mm 368"
     },
@@ -238,7 +238,7 @@
         "cr": 0,
         "exp": 10,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/4775840-scorpion",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#Scorpion",
         "thematicType": "Beast",
         "mmPage": "mm 369"
     },
@@ -247,7 +247,7 @@
         "cr": 0,
         "exp": 10,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195199-seahorse",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#Seahorse",
         "thematicType": "Beast",
         "mmPage": "mm 369"
     },
@@ -256,7 +256,7 @@
         "cr": 0,
         "exp": 0,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195205-shrieker-fungus",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-s#ShriekerFungus",
         "thematicType": "Plant",
         "mmPage": "mm 125"
     },
@@ -265,7 +265,7 @@
         "cr": 0,
         "exp": 10,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/4775844-spider",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#Spider",
         "thematicType": "Beast",
         "mmPage": "mm 369"
     },
@@ -274,7 +274,7 @@
         "cr": 0,
         "exp": 10,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195256-vulture",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#Vulture",
         "thematicType": "Beast",
         "mmPage": "mm 372"
     },
@@ -283,7 +283,7 @@
         "cr": 0,
         "exp": 10,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/4775849-weasel",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#Weasel",
         "thematicType": "Beast",
         "mmPage": "mm 373"
     },
@@ -292,7 +292,7 @@
         "cr": 0.125,
         "exp": 25,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5194915-bandit",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-b#Bandit",
         "thematicType": "Humanoid",
         "mmPage": "mm 27"
     },
@@ -301,7 +301,7 @@
         "cr": 0.125,
         "exp": 25,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5194927-blood-hawk",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#BloodHawk",
         "thematicType": "Beast",
         "mmPage": "mm 350"
     },
@@ -310,7 +310,7 @@
         "cr": 0.125,
         "exp": 25,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/4775807-camel",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#Camel",
         "thematicType": "Beast",
         "mmPage": "mm 351"
     },
@@ -319,7 +319,7 @@
         "cr": 0.125,
         "exp": 25,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/4904636-cultist",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-c#Cultist",
         "thematicType": "Humanoid",
         "mmPage": "mm 84"
     },
@@ -328,7 +328,7 @@
         "cr": 0.125,
         "exp": 25,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5194998-flumph",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-f#Flumph",
         "thematicType": "Aberration",
         "mmPage": "mm 122"
     },
@@ -337,7 +337,7 @@
         "cr": 0.125,
         "exp": 25,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5194999-flying-snake",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-f#FlyingSnake",
         "thematicType": "Monstrosity",
         "mmPage": "mm 353"
     },
@@ -346,7 +346,7 @@
         "cr": 0.125,
         "exp": 25,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/4775818-giant-crab",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#GiantCrab",
         "thematicType": "Beast",
         "mmPage": "mm 356"
     },
@@ -355,7 +355,7 @@
         "cr": 0.125,
         "exp": 25,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195025-giant-rat",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#GiantRat",
         "thematicType": "Beast",
         "mmPage": "mm 358"
     },
@@ -364,7 +364,7 @@
         "cr": 0.125,
         "exp": 25,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/4775822-giant-weasel",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#GiantWeasel",
         "thematicType": "Beast",
         "mmPage": "mm 361"
     },
@@ -373,7 +373,7 @@
         "cr": 0.125,
         "exp": 25,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195049-goblin-minion",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#GoblinMinion",
         "thematicType": "Fey",
         "mmPage": "mm 142"
     },
@@ -382,7 +382,7 @@
         "cr": 0.125,
         "exp": 25,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195065-guard",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#Guard",
         "thematicType": "Humanoid",
         "mmPage": "mm 162"
     },
@@ -391,7 +391,7 @@
         "cr": 0.125,
         "exp": 25,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/16939-kobold",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-k#Kobold",
         "thematicType": "Humanoid"
     },
     {
@@ -399,7 +399,7 @@
         "cr": 0.125,
         "exp": 25,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195096-kobold-warrior",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-k#KoboldWarrior",
         "thematicType": "Dragon",
         "mmPage": "mm 185"
     },
@@ -417,7 +417,7 @@
         "cr": 0.125,
         "exp": 25,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/4775828-mastiff",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#Mastiff",
         "thematicType": "Beast",
         "mmPage": "mm 365"
     },
@@ -426,7 +426,7 @@
         "cr": 0.125,
         "exp": 25,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195119-merfolk-skirmisher",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-m#MerfolkSkirmisher",
         "thematicType": "Elemental",
         "mmPage": "mm 209"
     },
@@ -435,7 +435,7 @@
         "cr": 0.125,
         "exp": 25,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195129-modron-monodrone",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-m#ModronMonodrone",
         "thematicType": "Construct",
         "mmPage": "mm 216"
     },
@@ -444,7 +444,7 @@
         "cr": 0.125,
         "exp": 25,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/4775829-mule",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#Mule",
         "thematicType": "Beast",
         "mmPage": "mm 365"
     },
@@ -453,7 +453,7 @@
         "cr": 0.125,
         "exp": 25,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195145-noble",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-n#Noble",
         "thematicType": "Humanoid",
         "mmPage": "mm 227"
     },
@@ -462,7 +462,7 @@
         "cr": 0.125,
         "exp": 25,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/4775833-pony",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#Pony",
         "thematicType": "Beast",
         "mmPage": "mm 367"
     },
@@ -480,7 +480,7 @@
         "cr": 0.125,
         "exp": 25,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195219-stirge",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-s#Stirge",
         "thematicType": "Monstrosity",
         "mmPage": "mm 299"
     },
@@ -489,7 +489,7 @@
         "cr": 0.125,
         "exp": 25,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195242-twig-blight",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-t#TwigBlight",
         "thematicType": "Plant",
         "mmPage": "mm 43"
     },
@@ -498,7 +498,7 @@
         "cr": 0.125,
         "exp": 25,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/4775847-venomous-snake",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#VenomousSnake",
         "thematicType": "Beast",
         "mmPage": "mm 372"
     },
@@ -507,7 +507,7 @@
         "cr": 0.125,
         "exp": 25,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195259-warrior-infantry",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-w#WarriorInfantry",
         "thematicType": "Humanoid",
         "mmPage": "mm 320"
     },
@@ -516,7 +516,7 @@
         "cr": 0.25,
         "exp": 50,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5194865-aarakocra-skirmisher",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-a#AarakocraSkirmisher",
         "thematicType": "Elemental",
         "mmPage": "mm 10"
     },
@@ -525,7 +525,7 @@
         "cr": 0.25,
         "exp": 50,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/16763-acolyte",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-a#Acolyte",
         "thematicType": "Humanoid"
     },
     {
@@ -533,7 +533,7 @@
         "cr": 0.25,
         "exp": 50,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5194894-animated-broom",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-a#AnimatedBroom",
         "thematicType": "Construct",
         "mmPage": "mm 16"
     },
@@ -542,7 +542,7 @@
         "cr": 0.25,
         "exp": 50,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5194895-animated-flying-sword",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-a#AnimatedFlyingSword",
         "thematicType": "Construct",
         "mmPage": "mm 17"
     },
@@ -551,7 +551,7 @@
         "cr": 0.25,
         "exp": 50,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5194907-axe-beak",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-a#AxeBeak",
         "thematicType": "Monstrosity",
         "mmPage": "mm 24"
     },
@@ -560,7 +560,7 @@
         "cr": 0.25,
         "exp": 50,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/4830980-blink-dog",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-b#BlinkDog",
         "thematicType": "Fey",
         "mmPage": "mm 46"
     },
@@ -569,7 +569,7 @@
         "cr": 0.25,
         "exp": 50,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/4775805-boar",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#Boar",
         "thematicType": "Beast",
         "mmPage": "mm 350"
     },
@@ -578,7 +578,7 @@
         "cr": 0.25,
         "exp": 50,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/4831017-bullywug-warrior",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-b#BullywugWarrior",
         "thematicType": "Fey",
         "mmPage": "mm 64"
     },
@@ -587,7 +587,7 @@
         "cr": 0.25,
         "exp": 50,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/4775809-constrictor-snake",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#ConstrictorSnake",
         "thematicType": "Beast",
         "mmPage": "mm 351"
     },
@@ -596,7 +596,7 @@
         "cr": 0.25,
         "exp": 50,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/4775813-draft-horse",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#DraftHorse",
         "thematicType": "Beast",
         "mmPage": "mm 352"
     },
@@ -614,7 +614,7 @@
         "cr": 0.25,
         "exp": 50,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/17133-drow",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-d#Drow",
         "thematicType": "Humanoid"
     },
     {
@@ -622,7 +622,7 @@
         "cr": 0.25,
         "exp": 50,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/4775815-elk",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#Elk",
         "thematicType": "Beast",
         "mmPage": "mm 353"
     },
@@ -631,14 +631,14 @@
         "cr": 0.25,
         "exp": 50,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/16865-flying-sword"
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-f#FlyingSword"
     },
     {
         "name": "Giant Badger",
         "cr": 0.25,
         "exp": 50,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/4775817-giant-badger",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#GiantBadger",
         "thematicType": "Beast",
         "mmPage": "mm 354"
     },
@@ -647,7 +647,7 @@
         "cr": 0.25,
         "exp": 50,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195012-giant-bat",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#GiantBat",
         "thematicType": "Beast",
         "mmPage": "mm 355"
     },
@@ -656,7 +656,7 @@
         "cr": 0.25,
         "exp": 50,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195014-giant-centipede",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#GiantCentipede",
         "thematicType": "Beast",
         "mmPage": "mm 355"
     },
@@ -665,7 +665,7 @@
         "cr": 0.25,
         "exp": 50,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195020-giant-frog",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#GiantFrog",
         "thematicType": "Beast",
         "mmPage": "mm 357"
     },
@@ -674,7 +674,7 @@
         "cr": 0.25,
         "exp": 50,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195022-giant-lizard",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#GiantLizard",
         "thematicType": "Beast",
         "mmPage": "mm 358"
     },
@@ -683,7 +683,7 @@
         "cr": 0.25,
         "exp": 50,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195024-giant-owl",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#GiantOwl",
         "thematicType": "Celestial",
         "mmPage": "mm 358"
     },
@@ -692,7 +692,7 @@
         "cr": 0.25,
         "exp": 50,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195030-giant-venomous-snake",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#GiantVenomousSnake",
         "thematicType": "Beast",
         "mmPage": "mm 361"
     },
@@ -701,7 +701,7 @@
         "cr": 0.25,
         "exp": 50,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195033-giant-wolf-spider",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#GiantWolfSpider",
         "thematicType": "Beast",
         "mmPage": "mm 362"
     },
@@ -710,7 +710,7 @@
         "cr": 0.25,
         "exp": 50,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/16907-goblin",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#Goblin",
         "thematicType": "Humanoid"
     },
     {
@@ -718,7 +718,7 @@
         "cr": 0.25,
         "exp": 50,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195050-goblin-warrior",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#GoblinWarrior",
         "thematicType": "Fey",
         "mmPage": "mm 142"
     },
@@ -727,7 +727,7 @@
         "cr": 0.25,
         "exp": 50,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195063-grimlock",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#Grimlock",
         "thematicType": "Aberration",
         "mmPage": "mm 160"
     },
@@ -736,7 +736,7 @@
         "cr": 0.25,
         "exp": 50,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195094-kenku",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-k#Kenku",
         "thematicType": "Monstrosity",
         "mmPage": "mm 183"
     },
@@ -745,7 +745,7 @@
         "cr": 0.25,
         "exp": 50,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195101-kuo-toa",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-k#Kuo-toa",
         "thematicType": "Aberration",
         "mmPage": "mm 188"
     },
@@ -754,7 +754,7 @@
         "cr": 0.25,
         "exp": 50,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195128-modron-duodrone",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-m#ModronDuodrone",
         "thematicType": "Construct",
         "mmPage": "mm 217"
     },
@@ -772,7 +772,7 @@
         "cr": 0.25,
         "exp": 50,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195141-needle-blight",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-n#NeedleBlight",
         "thematicType": "Plant",
         "mmPage": "mm 43"
     },
@@ -781,7 +781,7 @@
         "cr": 0.25,
         "exp": 50,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/4775832-panther",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#Panther",
         "thematicType": "Beast",
         "mmPage": "mm 366"
     },
@@ -790,7 +790,7 @@
         "cr": 0.25,
         "exp": 50,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195164-pixie",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-p#Pixie",
         "thematicType": "Fey",
         "mmPage": "mm 244"
     },
@@ -799,7 +799,7 @@
         "cr": 0.25,
         "exp": 50,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195169-priest-acolyte",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-p#PriestAcolyte",
         "thematicType": "Humanoid",
         "mmPage": "mm 247"
     },
@@ -808,7 +808,7 @@
         "cr": 0.25,
         "exp": 50,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/4775834-pseudodragon",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-p#Pseudodragon",
         "thematicType": "Dragon",
         "mmPage": "mm 249"
     },
@@ -817,7 +817,7 @@
         "cr": 0.25,
         "exp": 50,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195173-pteranodon",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#Pteranodon",
         "thematicType": "Beast",
         "mmPage": "mm 367"
     },
@@ -826,7 +826,7 @@
         "cr": 0.25,
         "exp": 50,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/4775839-riding-horse",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#RidingHorse",
         "thematicType": "Beast",
         "mmPage": "mm 368"
     },
@@ -835,7 +835,7 @@
         "cr": 0.25,
         "exp": 50,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/4775841-skeleton",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-s#Skeleton",
         "thematicType": "Undead",
         "mmPage": "mm 282"
     },
@@ -853,7 +853,7 @@
         "cr": 0.25,
         "exp": 50,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/4775845-sprite",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-s#Sprite",
         "thematicType": "Fey",
         "mmPage": "mm 298"
     },
@@ -871,7 +871,7 @@
         "cr": 0.25,
         "exp": 50,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-b#SwarmofBats",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#SwarmofBats",
         "thematicType": "Beast",
         "mmPage": "mm 370"
     },
@@ -880,7 +880,7 @@
         "cr": 0.25,
         "exp": 50,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-r#SwarmofRats",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#SwarmofRats",
         "thematicType": "Beast",
         "mmPage": "mm 370"
     },
@@ -889,7 +889,7 @@
         "cr": 0.25,
         "exp": 50,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-r#SwarmofRavens",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#SwarmofRavens",
         "thematicType": "Beast",
         "mmPage": "mm 371"
     },
@@ -898,7 +898,7 @@
         "cr": 0.25,
         "exp": 50,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195239-troglodyte",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-t#Troglodyte",
         "thematicType": "Monstrosity",
         "mmPage": "mm 309"
     },
@@ -907,7 +907,7 @@
         "cr": 0.25,
         "exp": 50,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195254-violet-fungus",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-v#VioletFungus",
         "thematicType": "Plant",
         "mmPage": "mm 126"
     },
@@ -916,7 +916,7 @@
         "cr": 0.25,
         "exp": 50,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195271-winged-kobold",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-w#WingedKobold",
         "thematicType": "Dragon",
         "mmPage": "mm 185"
     },
@@ -925,7 +925,7 @@
         "cr": 0.25,
         "exp": 50,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/4775850-wolf",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#Wolf",
         "thematicType": "Beast",
         "mmPage": "mm 373"
     },
@@ -934,7 +934,7 @@
         "cr": 0.25,
         "exp": 50,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/4775851-zombie",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-z#Zombie",
         "thematicType": "Undead",
         "mmPage": "mm 346"
     },
@@ -943,7 +943,7 @@
         "cr": 0.5,
         "exp": 100,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/4775801-ape",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#Ape",
         "thematicType": "Beast",
         "mmPage": "mm 348"
     },
@@ -952,7 +952,7 @@
         "cr": 0.5,
         "exp": 100,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/4775804-black-bear",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#BlackBear",
         "thematicType": "Beast",
         "mmPage": "mm 349"
     },
@@ -961,7 +961,7 @@
         "cr": 0.5,
         "exp": 100,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5194949-cockatrice",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-c#Cockatrice",
         "thematicType": "Monstrosity",
         "mmPage": "mm 75"
     },
@@ -970,7 +970,7 @@
         "cr": 0.5,
         "exp": 100,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/4775811-crocodile",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#Crocodile",
         "thematicType": "Beast",
         "mmPage": "mm 352"
     },
@@ -979,7 +979,7 @@
         "cr": 0.5,
         "exp": 100,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5194959-darkmantle",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-d#Darkmantle",
         "thematicType": "Aberration",
         "mmPage": "mm 90"
     },
@@ -997,7 +997,7 @@
         "cr": 0.5,
         "exp": 100,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195004-gas-spore-fungus",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#GasSporeFungus",
         "thematicType": "Plant",
         "mmPage": "mm 125"
     },
@@ -1006,7 +1006,7 @@
         "cr": 0.5,
         "exp": 100,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/4775819-giant-goat",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#GiantGoat",
         "thematicType": "Beast",
         "mmPage": "mm 357"
     },
@@ -1015,7 +1015,7 @@
         "cr": 0.5,
         "exp": 100,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/4775820-giant-seahorse",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#GiantSeahorse",
         "thematicType": "Beast",
         "mmPage": "mm 359"
     },
@@ -1024,7 +1024,7 @@
         "cr": 0.5,
         "exp": 100,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195032-giant-wasp",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#GiantWasp",
         "thematicType": "Beast",
         "mmPage": "mm 361"
     },
@@ -1033,7 +1033,7 @@
         "cr": 0.5,
         "exp": 100,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195046-gnoll-warrior",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#GnollWarrior",
         "thematicType": "Fiend",
         "mmPage": "mm 140"
     },
@@ -1042,7 +1042,7 @@
         "cr": 0.5,
         "exp": 100,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/4904776-gray-ooze",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#GrayOoze",
         "thematicType": "Ooze",
         "mmPage": "mm 151"
     },
@@ -1051,14 +1051,14 @@
         "cr": 0.5,
         "exp": 100,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/16925-hobgoblin"
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-h#Hobgoblin"
     },
     {
         "name": "Hobgoblin Warrior",
         "cr": 0.5,
         "exp": 100,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195079-hobgoblin-warrior",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-h#HobgoblinWarrior",
         "thematicType": "Fey",
         "mmPage": "mm 170"
     },
@@ -1076,7 +1076,7 @@
         "cr": 0.5,
         "exp": 100,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195092-jackalwere",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-j#Jackalwere",
         "thematicType": "Fiend",
         "mmPage": "mm 182"
     },
@@ -1103,7 +1103,7 @@
         "cr": 0.5,
         "exp": 100,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195132-modron-tridrone",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-m#ModronTridrone",
         "thematicType": "Construct",
         "mmPage": "mm 217"
     },
@@ -1112,7 +1112,7 @@
         "cr": 0.5,
         "exp": 100,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195136-myconid-adult",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-m#MyconidAdult",
         "thematicType": "Plant",
         "mmPage": "mm 223"
     },
@@ -1121,7 +1121,7 @@
         "cr": 0.5,
         "exp": 100,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/16972-orc",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-o#Orc",
         "thematicType": "Humanoid"
     },
     {
@@ -1129,7 +1129,7 @@
         "cr": 0.5,
         "exp": 100,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195156-performer",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-p#Performer",
         "thematicType": "Humanoid",
         "mmPage": "mm 236"
     },
@@ -1138,7 +1138,7 @@
         "cr": 0.5,
         "exp": 100,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195159-piercer",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-p#Piercer",
         "thematicType": "Aberration",
         "mmPage": "mm 240"
     },
@@ -1147,7 +1147,7 @@
         "cr": 0.5,
         "exp": 100,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/4775838-reef-shark",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#ReefShark",
         "thematicType": "Beast",
         "mmPage": "mm 368"
     },
@@ -1156,7 +1156,7 @@
         "cr": 0.5,
         "exp": 100,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195186-rust-monster",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-r#RustMonster",
         "thematicType": "Monstrosity",
         "mmPage": "mm 263"
     },
@@ -1165,7 +1165,7 @@
         "cr": 0.5,
         "exp": 100,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195190-sahuagin-warrior",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-s#SahuaginWarrior",
         "thematicType": "Fiend",
         "mmPage": "mm 264"
     },
@@ -1174,7 +1174,7 @@
         "cr": 0.5,
         "exp": 100,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195195-satyr",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-s#Satyr",
         "thematicType": "Fey",
         "mmPage": "mm 268"
     },
@@ -1183,7 +1183,7 @@
         "cr": 0.5,
         "exp": 100,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5174957-scout",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-s#Scout",
         "thematicType": "Humanoid",
         "mmPage": "mm 270"
     },
@@ -1192,7 +1192,7 @@
         "cr": 0.5,
         "exp": 100,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5174958-shadow",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-s#Shadow",
         "thematicType": "Undead",
         "mmPage": "mm 272"
     },
@@ -1201,7 +1201,7 @@
         "cr": 0.5,
         "exp": 100,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-i#SwarmofInsects",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#SwarmofInsects",
         "thematicType": "Beast",
         "mmPage": "mm 370"
     },
@@ -1210,7 +1210,7 @@
         "cr": 0.5,
         "exp": 100,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195235-tough",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-t#Tough",
         "thematicType": "Humanoid",
         "mmPage": "mm 307"
     },
@@ -1219,7 +1219,7 @@
         "cr": 0.5,
         "exp": 100,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-t#TrollLimbStatBlock",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-t#TrollLimb",
         "thematicType": "Giant",
         "mmPage": "mm 310"
     },
@@ -1228,7 +1228,7 @@
         "cr": 0.5,
         "exp": 100,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195252-vine-blight",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-v#VineBlight",
         "thematicType": "Plant",
         "mmPage": "mm 44"
     },
@@ -1237,7 +1237,7 @@
         "cr": 0.5,
         "exp": 100,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/4775848-warhorse",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#Warhorse",
         "thematicType": "Beast",
         "mmPage": "mm 373"
     },
@@ -1246,7 +1246,7 @@
         "cr": 0.5,
         "exp": 100,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195257-warhorse-skeleton",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-w#WarhorseSkeleton",
         "thematicType": "Undead",
         "mmPage": "mm 282"
     },
@@ -1255,7 +1255,7 @@
         "cr": 0.5,
         "exp": 100,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/4831031-worg",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-w#Worg",
         "thematicType": "Fey",
         "mmPage": "mm 335"
     },
@@ -1264,7 +1264,7 @@
         "cr": 1,
         "exp": 200,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5194893-animated-armor",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-a#AnimatedArmor",
         "thematicType": "Construct",
         "mmPage": "mm 16"
     },
@@ -1273,7 +1273,7 @@
         "cr": 1,
         "exp": 200,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5194931-brass-dragon-wyrmling",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-b#BrassDragonWyrmling",
         "thematicType": "Dragon",
         "mmPage": "mm 54"
     },
@@ -1282,7 +1282,7 @@
         "cr": 1,
         "exp": 200,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/4775806-brown-bear",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#BrownBear",
         "thematicType": "Beast",
         "mmPage": "mm 350"
     },
@@ -1291,14 +1291,14 @@
         "cr": 1,
         "exp": 200,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/16817-bugbear"
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-b#Bugbear"
     },
     {
         "name": "Bugbear Warrior",
         "cr": 1,
         "exp": 200,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/4831002-bugbear-warrior",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-b#BugbearWarrior",
         "thematicType": "Fey",
         "mmPage": "mm 62"
     },
@@ -1307,7 +1307,7 @@
         "cr": 1,
         "exp": 200,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5194952-copper-dragon-wyrmling",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-c#CopperDragonWyrmling",
         "thematicType": "Dragon",
         "mmPage": "mm 78"
     },
@@ -1316,7 +1316,7 @@
         "cr": 1,
         "exp": 200,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5194961-death-dog",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-d#DeathDog",
         "thematicType": "Monstrosity",
         "mmPage": "mm 91"
     },
@@ -1325,7 +1325,7 @@
         "cr": 1,
         "exp": 200,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/4775812-dire-wolf",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#DireWolf",
         "thematicType": "Beast",
         "mmPage": "mm 352"
     },
@@ -1334,7 +1334,7 @@
         "cr": 1,
         "exp": 200,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5194977-dryad",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-d#Dryad",
         "thematicType": "Fey",
         "mmPage": "mm 107"
     },
@@ -1343,7 +1343,7 @@
         "cr": 1,
         "exp": 200,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5194986-empyrean-iota-celestial",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-e#EmpyreanIota",
         "thematicType": "Celestial",
         "mmPage": "mm 112"
     },
@@ -1352,7 +1352,7 @@
         "cr": 1,
         "exp": 200,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5194992-faerie-dragon-youth",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-f#FaerieDragonYouth",
         "thematicType": "Dragon",
         "mmPage": "mm 117"
     },
@@ -1361,7 +1361,7 @@
         "cr": 1,
         "exp": 200,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195009-ghoul",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#Ghoul",
         "thematicType": "Undead",
         "mmPage": "mm 132"
     },
@@ -1370,7 +1370,7 @@
         "cr": 1,
         "exp": 200,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195017-giant-eagle",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#GiantEagle",
         "thematicType": "Celestial",
         "mmPage": "mm 356"
     },
@@ -1379,7 +1379,7 @@
         "cr": 1,
         "exp": 200,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195021-giant-hyena",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#GiantHyena",
         "thematicType": "Beast",
         "mmPage": "mm 357"
     },
@@ -1388,7 +1388,7 @@
         "cr": 1,
         "exp": 200,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195023-giant-octopus",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#GiantOctopus",
         "thematicType": "Beast",
         "mmPage": "mm 358"
     },
@@ -1397,7 +1397,7 @@
         "cr": 1,
         "exp": 200,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/4775821-giant-spider",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#GiantSpider",
         "thematicType": "Beast",
         "mmPage": "mm 359"
     },
@@ -1406,7 +1406,7 @@
         "cr": 1,
         "exp": 200,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195029-giant-toad",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#GiantToad",
         "thematicType": "Beast",
         "mmPage": "mm 360"
     },
@@ -1415,7 +1415,7 @@
         "cr": 1,
         "exp": 200,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195031-giant-vulture",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#GiantVulture",
         "thematicType": "Monstrosity",
         "mmPage": "mm 361"
     },
@@ -1424,7 +1424,7 @@
         "cr": 1,
         "exp": 200,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195047-goblin-boss",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#GoblinBoss",
         "thematicType": "Fey",
         "mmPage": "mm 143"
     },
@@ -1433,7 +1433,7 @@
         "cr": 1,
         "exp": 200,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195069-harpy",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-h#Harpy",
         "thematicType": "Monstrosity",
         "mmPage": "mm 164"
     },
@@ -1442,7 +1442,7 @@
         "cr": 1,
         "exp": 200,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195075-hippogriff",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-h#Hippogriff",
         "thematicType": "Monstrosity",
         "mmPage": "mm 169"
     },
@@ -1451,7 +1451,7 @@
         "cr": 1,
         "exp": 200,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/4775825-imp",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-i#Imp",
         "thematicType": "Fiend",
         "mmPage": "mm 177"
     },
@@ -1460,7 +1460,7 @@
         "cr": 1,
         "exp": 200,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195100-kuo-toa-whip",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-k#Kuo-toaWhip",
         "thematicType": "Aberration",
         "mmPage": "mm 190"
     },
@@ -1469,7 +1469,7 @@
         "cr": 1,
         "exp": 200,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195102-lacedon-ghoul",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-l#LacedonGhoul",
         "thematicType": "Undead",
         "mmPage": "mm 132"
     },
@@ -1478,7 +1478,7 @@
         "cr": 1,
         "exp": 200,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/4775826-lion",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#Lion",
         "thematicType": "Beast",
         "mmPage": "mm 364"
     },
@@ -1496,7 +1496,7 @@
         "cr": 1,
         "exp": 200,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195131-modron-quadrone",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-m#ModronQuadrone",
         "thematicType": "Construct",
         "mmPage": "mm 218"
     },
@@ -1505,7 +1505,7 @@
         "cr": 1,
         "exp": 200,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195138-myconid-spore-servant",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-m#MyconidSporeServant",
         "thematicType": "Plant",
         "mmPage": "mm 223"
     },
@@ -1514,7 +1514,7 @@
         "cr": 1,
         "exp": 200,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195149-ogrillon-ogre",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-o#OgrillonOgre",
         "thematicType": "Giant",
         "mmPage": "mm 231"
     },
@@ -1523,7 +1523,7 @@
         "cr": 1,
         "exp": 200,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/4904830-pirate",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-p#Pirate",
         "thematicType": "Humanoid",
         "mmPage": "mm 241"
     },
@@ -1532,7 +1532,7 @@
         "cr": 1,
         "exp": 200,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195172-psychic-gray-ooze",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-p#PsychicGrayOoze",
         "thematicType": "Ooze",
         "mmPage": "mm 151"
     },
@@ -1550,7 +1550,7 @@
         "cr": 1,
         "exp": 200,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195191-salamander-fire-snake",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-s#SalamanderFireSnake",
         "thematicType": "Elemental",
         "mmPage": "mm 266"
     },
@@ -1559,7 +1559,7 @@
         "cr": 1,
         "exp": 200,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195196-scarecrow",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-s#Scarecrow",
         "thematicType": "Construct",
         "mmPage": "mm 269"
     },
@@ -1568,7 +1568,7 @@
         "cr": 1,
         "exp": 200,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195210-specter",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-s#Specter",
         "thematicType": "Undead",
         "mmPage": "mm 290"
     },
@@ -1577,7 +1577,7 @@
         "cr": 1,
         "exp": 200,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/4775843-sphinx-of-wonder",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-s#SphinxofWonder",
         "thematicType": "Celestial",
         "mmPage": "mm 291"
     },
@@ -1586,7 +1586,7 @@
         "cr": 1,
         "exp": 200,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195217-spy",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-s#Spy",
         "thematicType": "Humanoid",
         "mmPage": "mm 295"
     },
@@ -1595,7 +1595,7 @@
         "cr": 1,
         "exp": 200,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-l#SwarmofLarvae",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-s#SwarmofLarvae",
         "thematicType": "Fiend",
         "mmPage": "mm 193"
     },
@@ -1604,7 +1604,7 @@
         "cr": 1,
         "exp": 200,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-p#SwarmofPiranhas",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#SwarmofPiranhas",
         "thematicType": "Beast",
         "mmPage": "mm 370"
     },
@@ -1613,7 +1613,7 @@
         "cr": 1,
         "exp": 200,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195233-thri-kreen-marauder",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-t#Thri-kreenMarauder",
         "thematicType": "Monstrosity",
         "mmPage": "mm 306"
     },
@@ -1622,7 +1622,7 @@
         "cr": 1,
         "exp": 200,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/4775846-tiger",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#Tiger",
         "thematicType": "Beast",
         "mmPage": "mm 371"
     },
@@ -1631,7 +1631,7 @@
         "cr": 1,
         "exp": 200,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195289-yuan-ti-infiltrator",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-y#Yuan-tiInfiltrator",
         "thematicType": "Monstrosity",
         "mmPage": "mm 342"
     },
@@ -1640,7 +1640,7 @@
         "cr": 2,
         "exp": 450,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5194879-allosaurus",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#Allosaurus",
         "thematicType": "Beast",
         "mmPage": "mm 348"
     },
@@ -1649,7 +1649,7 @@
         "cr": 2,
         "exp": 450,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5194896-animated-rug-of-smothering",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-a#AnimatedRugofSmothering",
         "thematicType": "Construct",
         "mmPage": "mm 17"
     },
@@ -1658,7 +1658,7 @@
         "cr": 2,
         "exp": 450,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5194897-ankheg",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-a#Ankheg",
         "thematicType": "Monstrosity",
         "mmPage": "mm 18"
     },
@@ -1667,7 +1667,7 @@
         "cr": 2,
         "exp": 450,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5194906-awakened-tree",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-a#AwakenedTree",
         "thematicType": "Plant",
         "mmPage": "mm 23"
     },
@@ -1676,7 +1676,7 @@
         "cr": 2,
         "exp": 450,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5194909-azer-sentinel",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-a#AzerSentinel",
         "thematicType": "Elemental",
         "mmPage": "mm 25"
     },
@@ -1685,7 +1685,7 @@
         "cr": 2,
         "exp": 450,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5194912-bandit-captain",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-b#BanditCaptain",
         "thematicType": "Humanoid",
         "mmPage": "mm 27"
     },
@@ -1694,7 +1694,7 @@
         "cr": 2,
         "exp": 450,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/4904621-berserker",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-b#Berserker",
         "thematicType": "Humanoid",
         "mmPage": "mm 37"
     },
@@ -1703,7 +1703,7 @@
         "cr": 2,
         "exp": 450,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5198095-black-dragon-wyrmling",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-b#BlackDragonWyrmling",
         "thematicType": "Dragon",
         "mmPage": "mm 38"
     },
@@ -1712,7 +1712,7 @@
         "cr": 2,
         "exp": 450,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5194933-bronze-dragon-wyrmling",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-b#BronzeDragonWyrmling",
         "thematicType": "Dragon",
         "mmPage": "mm 58"
     },
@@ -1730,7 +1730,7 @@
         "cr": 2,
         "exp": 450,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5194938-carrion-crawler",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-c#CarrionCrawler",
         "thematicType": "Monstrosity",
         "mmPage": "mm 66"
     },
@@ -1748,7 +1748,7 @@
         "cr": 2,
         "exp": 450,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/16836-cult-fanatic",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-c#CultFanatic",
         "thematicType": "Humanoid"
     },
     {
@@ -1774,7 +1774,7 @@
         "cr": 2,
         "exp": 450,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5194989-ettercap",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-e#Ettercap",
         "thematicType": "Monstrosity",
         "mmPage": "mm 115"
     },
@@ -1792,7 +1792,7 @@
         "cr": 2,
         "exp": 450,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195003-gargoyle",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#Gargoyle",
         "thematicType": "Elemental",
         "mmPage": "mm 128"
     },
@@ -1801,7 +1801,7 @@
         "cr": 2,
         "exp": 450,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195005-gelatinous-cube",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#GelatinousCube",
         "thematicType": "Ooze",
         "mmPage": "mm 129"
     },
@@ -1810,7 +1810,7 @@
         "cr": 2,
         "exp": 450,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195007-ghast",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#Ghast",
         "thematicType": "Undead",
         "mmPage": "mm 130"
     },
@@ -1819,7 +1819,7 @@
         "cr": 2,
         "exp": 450,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#GiantBoar",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#GiantBoar",
         "thematicType": "Beast",
         "mmPage": "mm 355"
     },
@@ -1828,7 +1828,7 @@
         "cr": 2,
         "exp": 450,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195015-giant-constrictor-snake",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#GiantConstrictorSnake",
         "thematicType": "Beast",
         "mmPage": "mm 355"
     },
@@ -1846,7 +1846,7 @@
         "cr": 2,
         "exp": 450,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195034-gibbering-mouther",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#GibberingMouther",
         "thematicType": "Aberration",
         "mmPage": "mm 133"
     },
@@ -1888,7 +1888,7 @@
         "cr": 2,
         "exp": 450,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195056-green-dragon-wyrmling",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#GreenDragonWyrmling",
         "thematicType": "Dragon",
         "mmPage": "mm 152"
     },
@@ -1897,7 +1897,7 @@
         "cr": 2,
         "exp": 450,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195061-grick",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#Grick",
         "thematicType": "Aberration",
         "mmPage": "mm 158"
     },
@@ -1906,7 +1906,7 @@
         "cr": 2,
         "exp": 450,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195062-griffon",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#Griffon",
         "thematicType": "Monstrosity",
         "mmPage": "mm 159"
     },
@@ -1915,7 +1915,7 @@
         "cr": 2,
         "exp": 450,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195083-hunter-shark",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#HunterShark",
         "thematicType": "Beast",
         "mmPage": "mm 363"
     },
@@ -1924,7 +1924,7 @@
         "cr": 2,
         "exp": 450,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195088-intellect-devourer",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-i#IntellectDevourer",
         "thematicType": "Aberration",
         "mmPage": "mm 179"
     },
@@ -1951,7 +1951,7 @@
         "cr": 2,
         "exp": 450,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195121-merrow",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-m#Merrow",
         "thematicType": "Monstrosity",
         "mmPage": "mm 210"
     },
@@ -1960,7 +1960,7 @@
         "cr": 2,
         "exp": 450,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195123-mimic",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-m#Mimic",
         "thematicType": "Monstrosity",
         "mmPage": "mm 212"
     },
@@ -1969,7 +1969,7 @@
         "cr": 2,
         "exp": 450,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195127-minotaur-skeleton",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-m#MinotaurSkeleton",
         "thematicType": "Undead",
         "mmPage": "mm 283"
     },
@@ -1996,7 +1996,7 @@
         "cr": 2,
         "exp": 450,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195146-nothic",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-n#Nothic",
         "thematicType": "Aberration",
         "mmPage": "mm 228"
     },
@@ -2005,7 +2005,7 @@
         "cr": 2,
         "exp": 450,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195148-ochre-jelly",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-o#OchreJelly",
         "thematicType": "Ooze",
         "mmPage": "mm 230"
     },
@@ -2014,7 +2014,7 @@
         "cr": 2,
         "exp": 450,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/4904825-ogre",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-o#Ogre",
         "thematicType": "Giant",
         "mmPage": "mm 231"
     },
@@ -2023,7 +2023,7 @@
         "cr": 2,
         "exp": 450,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5174956-ogre-zombie",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-o#OgreZombie",
         "thematicType": "Undead",
         "mmPage": "mm 346"
     },
@@ -2032,7 +2032,7 @@
         "cr": 2,
         "exp": 450,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/17188-orc-eye-of-gruumsh",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-o#OrcEyeofGruumsh",
         "thematicType": "Humanoid"
     },
     {
@@ -2040,7 +2040,7 @@
         "cr": 2,
         "exp": 450,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195153-pegasus",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-p#Pegasus",
         "thematicType": "Celestial",
         "mmPage": "mm 235"
     },
@@ -2058,7 +2058,7 @@
         "cr": 2,
         "exp": 450,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195166-plesiosaurus",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#Plesiosaurus",
         "thematicType": "Beast",
         "mmPage": "mm 366"
     },
@@ -2067,7 +2067,7 @@
         "cr": 2,
         "exp": 450,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195167-polar-bear",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#PolarBear",
         "thematicType": "Beast",
         "mmPage": "mm 367"
     },
@@ -2085,7 +2085,7 @@
         "cr": 2,
         "exp": 450,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195170-priest",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-p#Priest",
         "thematicType": "Humanoid",
         "mmPage": "mm 248"
     },
@@ -2103,7 +2103,7 @@
         "cr": 2,
         "exp": 450,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195183-rhinoceros",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#Rhinoceros",
         "thematicType": "Beast",
         "mmPage": "mm 368"
     },
@@ -2112,14 +2112,14 @@
         "cr": 2,
         "exp": 450,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/17000-rug-of-smothering"
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-r#RugofSmothering"
     },
     {
         "name": "Saber-Toothed Tiger",
         "cr": 2,
         "exp": 450,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195187-saber-toothed-tiger",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#Saber-ToothedTiger",
         "thematicType": "Beast",
         "mmPage": "mm 369"
     },
@@ -2137,7 +2137,7 @@
         "cr": 2,
         "exp": 450,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195198-sea-hag",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-s#SeaHag",
         "thematicType": "Fey",
         "mmPage": "mm 271"
     },
@@ -2146,7 +2146,7 @@
         "cr": 2,
         "exp": 450,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195206-silver-dragon-wyrmling",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-s#SilverDragonWyrmling",
         "thematicType": "Dragon",
         "mmPage": "mm 278"
     },
@@ -2164,7 +2164,7 @@
         "cr": 2,
         "exp": 450,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-p#SwarmofPoisonousSnakes",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#SwarmofPoisonousSnakes",
         "thematicType": "Beast"
     },
     {
@@ -2181,7 +2181,7 @@
         "cr": 2,
         "exp": 450,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-v#SwarmofVenomousSnakes",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#SwarmofVenomousSnakes",
         "thematicType": "Beast",
         "mmPage": "mm 371"
     },
@@ -2199,7 +2199,7 @@
         "cr": 2,
         "exp": 450,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195268-white-dragon-wyrmling",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-w#WhiteDragonWyrmling",
         "thematicType": "Dragon",
         "mmPage": "mm 328"
     },
@@ -2208,7 +2208,7 @@
         "cr": 2,
         "exp": 450,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-w#WilloWisp",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-w#Will-o'-Wisp",
         "thematicType": "Undead",
         "mmPage": "mm 333"
     },
@@ -2217,7 +2217,7 @@
         "cr": 3,
         "exp": 700,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5194898-ankylosaurus",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#Ankylosaurus",
         "thematicType": "Beast",
         "mmPage": "mm 348"
     },
@@ -2233,7 +2233,7 @@
         "cr": 3,
         "exp": 700,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5194919-basilisk",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-b#Basilisk",
         "thematicType": "Monstrosity",
         "mmPage": "mm 32"
     },
@@ -2251,7 +2251,7 @@
         "cr": 3,
         "exp": 700,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5194928-blue-dragon-wyrmling",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-b#BlueDragonWyrmling",
         "thematicType": "Dragon",
         "mmPage": "mm 48"
     },
@@ -2285,7 +2285,7 @@
         "cr": 3,
         "exp": 700,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5174955-doppelganger",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-d#Doppelganger",
         "thematicType": "Monstrosity",
         "mmPage": "mm 100"
     },
@@ -2303,7 +2303,7 @@
         "cr": 3,
         "exp": 700,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195026-giant-scorpion",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#GiantScorpion",
         "thematicType": "Beast",
         "mmPage": "mm 359"
     },
@@ -2330,7 +2330,7 @@
         "cr": 3,
         "exp": 700,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195051-gold-dragon-wyrmling",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#GoldDragonWyrmling",
         "thematicType": "Dragon",
         "mmPage": "mm 144"
     },
@@ -2339,7 +2339,7 @@
         "cr": 3,
         "exp": 700,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195057-green-hag",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#GreenHag",
         "thematicType": "Fey",
         "mmPage": "mm 156"
     },
@@ -2366,7 +2366,7 @@
         "cr": 3,
         "exp": 700,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195071-hell-hound",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-h#HellHound",
         "thematicType": "Fiend",
         "mmPage": "mm 165"
     },
@@ -2375,7 +2375,7 @@
         "cr": 3,
         "exp": 700,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195077-hobgoblin-captain",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-h#HobgoblinCaptain",
         "thematicType": "Fey",
         "mmPage": "mm 171"
     },
@@ -2384,7 +2384,7 @@
         "cr": 3,
         "exp": 700,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195081-hook-horror",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-h#HookHorror",
         "thematicType": "Monstrosity",
         "mmPage": "mm 173"
     },
@@ -2393,7 +2393,7 @@
         "cr": 3,
         "exp": 700,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195095-killer-whale",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#KillerWhale",
         "thematicType": "Beast",
         "mmPage": "mm 364"
     },
@@ -2402,7 +2402,7 @@
         "cr": 3,
         "exp": 700,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/4904816-knight",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-k#Knight",
         "thematicType": "Humanoid",
         "mmPage": "mm 184"
     },
@@ -2411,7 +2411,7 @@
         "cr": 3,
         "exp": 700,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195099-kuo-toa-monitor",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-k#Kuo-toaMonitor",
         "thematicType": "Aberration",
         "mmPage": "mm 190"
     },
@@ -2420,7 +2420,7 @@
         "cr": 3,
         "exp": 700,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195115-manticore",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-m#Manticore",
         "thematicType": "Monstrosity",
         "mmPage": "mm 202"
     },
@@ -2429,7 +2429,7 @@
         "cr": 3,
         "exp": 700,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/16958-minotaur"
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-m#Minotaur"
     },
     {
         "name": "Minotaur of Baphomet",
@@ -2445,7 +2445,7 @@
         "cr": 3,
         "exp": 700,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195135-mummy",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-m#Mummy",
         "thematicType": "Undead",
         "mmPage": "mm 219"
     },
@@ -2463,7 +2463,7 @@
         "cr": 3,
         "exp": 700,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195152-owlbear",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-o#Owlbear",
         "thematicType": "Monstrosity",
         "mmPage": "mm 234"
     },
@@ -2472,7 +2472,7 @@
         "cr": 3,
         "exp": 700,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195158-phase-spider",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-p#PhaseSpider",
         "thematicType": "Monstrosity",
         "mmPage": "mm 239"
     },
@@ -2499,7 +2499,7 @@
         "cr": 3,
         "exp": 700,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195209-spectator",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-s#Spectator",
         "thematicType": "Aberration",
         "mmPage": "mm 289"
     },
@@ -2508,7 +2508,7 @@
         "cr": 3,
         "exp": 700,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-c#SwarmofCrawlingClaws",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-s#SwarmofCrawlingClaws",
         "thematicType": "Undead",
         "mmPage": "mm 83"
     },
@@ -2517,7 +2517,7 @@
         "cr": 3,
         "exp": 700,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-l#SwarmofLemures",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-s#SwarmofLemures",
         "thematicType": "Fiend",
         "mmPage": "mm 194"
     },
@@ -2535,7 +2535,7 @@
         "cr": 3,
         "exp": 700,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/17045-veteran"
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-v#Veteran"
     },
     {
         "name": "Warrior Veteran",
@@ -2569,7 +2569,7 @@
         "cr": 3,
         "exp": 700,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195269-wight",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-w#Wight",
         "thematicType": "Undead",
         "mmPage": "mm 332"
     },
@@ -2578,7 +2578,7 @@
         "cr": 3,
         "exp": 700,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195272-winter-wolf",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-w#WinterWolf",
         "thematicType": "Monstrosity",
         "mmPage": "mm 334"
     },
@@ -2587,7 +2587,7 @@
         "cr": 3,
         "exp": 700,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195275-yeti",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-y#Yeti",
         "thematicType": "Monstrosity",
         "mmPage": "mm 339"
     },
@@ -2596,7 +2596,7 @@
         "cr": 3,
         "exp": 700,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-y#YuantiMalisonType1",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-y#Yuan-tiMalison(Type1)",
         "thematicType": "Monstrosity",
         "mmPage": "mm 343"
     },
@@ -2605,7 +2605,7 @@
         "cr": 3,
         "exp": 700,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-y#YuantiMalisonType2",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-y#Yuan-tiMalison(Type2)",
         "thematicType": "Monstrosity",
         "mmPage": "mm 343"
     },
@@ -2614,7 +2614,7 @@
         "cr": 3,
         "exp": 700,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-y#YuantiMalisonType3",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-y#Yuan-tiMalison(Type3)",
         "thematicType": "Monstrosity",
         "mmPage": "mm 344"
     },
@@ -2632,7 +2632,7 @@
         "cr": 4,
         "exp": 1100,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-a#Archelon",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#Archelon",
         "thematicType": "Beast",
         "mmPage": "mm 349"
     },
@@ -2650,7 +2650,7 @@
         "cr": 4,
         "exp": 1100,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5194925-black-pudding",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-b#BlackPudding",
         "thematicType": "Ooze",
         "mmPage": "mm 42"
     },
@@ -2677,7 +2677,7 @@
         "cr": 4,
         "exp": 1100,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5194944-chuul",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-c#Chuul",
         "thematicType": "Aberration",
         "mmPage": "mm 71"
     },
@@ -2686,7 +2686,7 @@
         "cr": 4,
         "exp": 1100,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5194953-couatl",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-c#Couatl",
         "thematicType": "Celestial",
         "mmPage": "mm 82"
     },
@@ -2695,7 +2695,7 @@
         "cr": 4,
         "exp": 1100,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/4775814-elephant",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#Elephant",
         "thematicType": "Beast",
         "mmPage": "mm 353"
     },
@@ -2704,7 +2704,7 @@
         "cr": 4,
         "exp": 1100,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5194990-ettin",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-e#Ettin",
         "thematicType": "Giant",
         "mmPage": "mm 116"
     },
@@ -2713,7 +2713,7 @@
         "cr": 4,
         "exp": 1100,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5194995-flameskull",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-f#Flameskull",
         "thematicType": "Undead",
         "mmPage": "mm 120"
     },
@@ -2722,7 +2722,7 @@
         "cr": 4,
         "exp": 1100,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195008-ghost",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#Ghost",
         "thematicType": "Undead",
         "mmPage": "mm 131"
     },
@@ -2756,7 +2756,7 @@
         "cr": 4,
         "exp": 1100,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195072-helmed-horror",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-h#HelmedHorror",
         "thematicType": "Construct",
         "mmPage": "mm 166"
     },
@@ -2765,7 +2765,7 @@
         "cr": 4,
         "exp": 1100,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-h#Hippopotamus",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#Hippopotamus",
         "thematicType": "Beast",
         "mmPage": "mm 362"
     },
@@ -2774,7 +2774,7 @@
         "cr": 4,
         "exp": 1100,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/4904793-incubus",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-i#Incubus",
         "thematicType": "Fiend",
         "mmPage": "mm 178"
     },
@@ -2792,7 +2792,7 @@
         "cr": 4,
         "exp": 1100,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195103-lamia",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-l#Lamia",
         "thematicType": "Fiend",
         "mmPage": "mm 192"
     },
@@ -2801,7 +2801,7 @@
         "cr": 4,
         "exp": 1100,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/17171-lizardfolk-shaman"
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-l#LizardfolkShaman"
     },
     {
         "name": "Lizardfolk Sovereign",
@@ -2824,14 +2824,14 @@
         "cr": 4,
         "exp": 1100,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/17187-orc-war-chief"
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-o#OrcWarChief"
     },
     {
         "name": "Red Dragon Wyrmling",
         "cr": 4,
         "exp": 1100,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195179-red-dragon-wyrmling",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-r#RedDragonWyrmling",
         "thematicType": "Dragon",
         "mmPage": "mm 254"
     },
@@ -2849,7 +2849,7 @@
         "cr": 4,
         "exp": 1100,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/4904865-succubus",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-s#Succubus",
         "thematicType": "Fiend",
         "mmPage": "mm 303"
     },
@@ -2858,7 +2858,7 @@
         "cr": 4,
         "exp": 1100,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-d#SwarmofDretches",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-s#SwarmofDretches",
         "thematicType": "Fiend",
         "mmPage": "mm 104"
     },
@@ -2876,7 +2876,7 @@
         "cr": 4,
         "exp": 1100,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195264-wereboar",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-w#Wereboar",
         "thematicType": "Monstrosity",
         "mmPage": "mm 325"
     },
@@ -2885,7 +2885,7 @@
         "cr": 4,
         "exp": 1100,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195266-weretiger",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-w#Weretiger",
         "thematicType": "Monstrosity",
         "mmPage": "mm 326"
     },
@@ -2894,7 +2894,7 @@
         "cr": 5,
         "exp": 1800,
         "pb": 3,
-        "mmLink": "https://www.dndbeyond.com/monsters/5194878-air-elemental",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-a#AirElemental",
         "thematicType": "Elemental",
         "mmPage": "mm 13"
     },
@@ -2921,7 +2921,7 @@
         "cr": 5,
         "exp": 1800,
         "pb": 3,
-        "mmLink": "https://www.dndbeyond.com/monsters/5194922-beholder-zombie",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-b#BeholderZombie",
         "thematicType": "Undead",
         "mmPage": "mm 347"
     },
@@ -2930,7 +2930,7 @@
         "cr": 5,
         "exp": 1800,
         "pb": 3,
-        "mmLink": "https://www.dndbeyond.com/monsters/5194936-bulette",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-b#Bulette",
         "thematicType": "Monstrosity",
         "mmPage": "mm 63"
     },
@@ -2939,7 +2939,7 @@
         "cr": 5,
         "exp": 1800,
         "pb": 3,
-        "mmLink": "https://www.dndbeyond.com/monsters/5194937-cambion",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-c#Cambion",
         "thematicType": "Fiend",
         "mmPage": "mm 65"
     },
@@ -2948,14 +2948,14 @@
         "cr": 5,
         "exp": 1800,
         "pb": 3,
-        "mmLink": "https://www.dndbeyond.com/monsters/17134-drow-elite-warrior"
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-d#DrowEliteWarrior"
     },
     {
         "name": "Earth Elemental",
         "cr": 5,
         "exp": 1800,
         "pb": 3,
-        "mmLink": "https://www.dndbeyond.com/monsters/5194980-earth-elemental",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-e#EarthElemental",
         "thematicType": "Elemental",
         "mmPage": "mm 108"
     },
@@ -2964,7 +2964,7 @@
         "cr": 5,
         "exp": 1800,
         "pb": 3,
-        "mmLink": "https://www.dndbeyond.com/monsters/4904758-fire-elemental",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-f#FireElemental",
         "thematicType": "Elemental",
         "mmPage": "mm 118"
     },
@@ -2973,7 +2973,7 @@
         "cr": 5,
         "exp": 1800,
         "pb": 3,
-        "mmLink": "https://www.dndbeyond.com/monsters/5194997-flesh-golem",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-f#FleshGolem",
         "thematicType": "Construct",
         "mmPage": "mm 121"
     },
@@ -2991,7 +2991,7 @@
         "cr": 5,
         "exp": 1800,
         "pb": 3,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195016-giant-crocodile",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#GiantCrocodile",
         "thematicType": "Beast",
         "mmPage": "mm 356"
     },
@@ -3000,7 +3000,7 @@
         "cr": 5,
         "exp": 1800,
         "pb": 3,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195027-giant-shark",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#GiantShark",
         "thematicType": "Beast",
         "mmPage": "mm 359"
     },
@@ -3009,7 +3009,7 @@
         "cr": 5,
         "exp": 1800,
         "pb": 3,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195042-gladiator",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#Gladiator",
         "thematicType": "Humanoid",
         "mmPage": "mm 139"
     },
@@ -3018,7 +3018,7 @@
         "cr": 5,
         "exp": 1800,
         "pb": 3,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195052-gorgon",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#Gorgon",
         "thematicType": "Construct",
         "mmPage": "mm 148"
     },
@@ -3027,7 +3027,7 @@
         "cr": 5,
         "exp": 1800,
         "pb": 3,
-        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-h#HalfDragon",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-h#Half-Dragon",
         "thematicType": "Dragon",
         "mmPage": "mm 163"
     },
@@ -3036,14 +3036,14 @@
         "cr": 5,
         "exp": 1800,
         "pb": 3,
-        "mmLink": "https://www.dndbeyond.com/monsters/16918-half-red-dragon-veteran"
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-h#Half-RedDragonVeteran"
     },
     {
         "name": "Hill Giant",
         "cr": 5,
         "exp": 1800,
         "pb": 3,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195074-hill-giant",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-h#HillGiant",
         "thematicType": "Giant",
         "mmPage": "mm 168"
     },
@@ -3070,7 +3070,7 @@
         "cr": 5,
         "exp": 1800,
         "pb": 3,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195151-otyugh",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-o#Otyugh",
         "thematicType": "Aberration",
         "mmPage": "mm 233"
     },
@@ -3088,7 +3088,7 @@
         "cr": 5,
         "exp": 1800,
         "pb": 3,
-        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-r#RedSlaad",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-s#RedSlaad",
         "thematicType": "Aberration",
         "mmPage": "mm 285"
     },
@@ -3106,7 +3106,7 @@
         "cr": 5,
         "exp": 1800,
         "pb": 3,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195185-roper",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-r#Roper",
         "thematicType": "Aberration",
         "mmPage": "mm 262"
     },
@@ -3124,7 +3124,7 @@
         "cr": 5,
         "exp": 1800,
         "pb": 3,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195193-salamander",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-s#Salamander",
         "thematicType": "Elemental",
         "mmPage": "mm 267"
     },
@@ -3133,7 +3133,7 @@
         "cr": 5,
         "exp": 1800,
         "pb": 3,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195203-shambling-mound",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-s#ShamblingMound",
         "thematicType": "Plant",
         "mmPage": "mm 276"
     },
@@ -3142,7 +3142,7 @@
         "cr": 5,
         "exp": 1800,
         "pb": 3,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195238-triceratops",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#Triceratops",
         "thematicType": "Beast",
         "mmPage": "mm 372"
     },
@@ -3151,7 +3151,7 @@
         "cr": 5,
         "exp": 1800,
         "pb": 3,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195241-troll",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-t#Troll",
         "thematicType": "Giant",
         "mmPage": "mm 310"
     },
@@ -3160,7 +3160,7 @@
         "cr": 5,
         "exp": 1800,
         "pb": 3,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195245-umber-hulk",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-u#UmberHulk",
         "thematicType": "Monstrosity",
         "mmPage": "mm 312"
     },
@@ -3169,7 +3169,7 @@
         "cr": 5,
         "exp": 1800,
         "pb": 3,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195246-unicorn",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-u#Unicorn",
         "thematicType": "Celestial",
         "mmPage": "mm 313"
     },
@@ -3178,7 +3178,7 @@
         "cr": 5,
         "exp": 1800,
         "pb": 3,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195249-vampire-spawn",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-v#VampireSpawn",
         "thematicType": "Undead",
         "mmPage": "mm 315"
     },
@@ -3187,7 +3187,7 @@
         "cr": 5,
         "exp": 1800,
         "pb": 3,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195261-water-elemental",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-w#WaterElemental",
         "thematicType": "Elemental",
         "mmPage": "mm 322"
     },
@@ -3196,7 +3196,7 @@
         "cr": 5,
         "exp": 1800,
         "pb": 3,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195263-werebear",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-w#Werebear",
         "thematicType": "Monstrosity",
         "mmPage": "mm 324"
     },
@@ -3205,7 +3205,7 @@
         "cr": 5,
         "exp": 1800,
         "pb": 3,
-        "mmLink": "https://www.dndbeyond.com/monsters/5174960-wraith",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-w#Wraith",
         "thematicType": "Undead",
         "mmPage": "mm 336"
     },
@@ -3214,7 +3214,7 @@
         "cr": 5,
         "exp": 1800,
         "pb": 3,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195274-xorn",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-x#Xorn",
         "thematicType": "Elemental",
         "mmPage": "mm 338"
     },
@@ -3257,7 +3257,7 @@
         "cr": 6,
         "exp": 2300,
         "pb": 3,
-        "mmLink": "https://www.dndbeyond.com/monsters/5194943-chimera",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-c#Chimera",
         "thematicType": "Monstrosity",
         "mmPage": "mm 70"
     },
@@ -3266,7 +3266,7 @@
         "cr": 6,
         "exp": 2300,
         "pb": 3,
-        "mmLink": "https://www.dndbeyond.com/monsters/17090-cyclops"
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-c#Cyclops"
     },
     {
         "name": "Cyclops Sentry",
@@ -3282,7 +3282,7 @@
         "cr": 6,
         "exp": 2300,
         "pb": 3,
-        "mmLink": "https://www.dndbeyond.com/monsters/5194975-drider",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-d#Drider",
         "thematicType": "Monstrosity",
         "mmPage": "mm 105"
     },
@@ -3291,7 +3291,7 @@
         "cr": 6,
         "exp": 2300,
         "pb": 3,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195002-galeb-duhr",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#GalebDuhr",
         "thematicType": "Elemental",
         "mmPage": "mm 127"
     },
@@ -3309,7 +3309,7 @@
         "cr": 6,
         "exp": 2300,
         "pb": 3,
-        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#GiantSquid",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#GiantSquid",
         "thematicType": "Beast",
         "mmPage": "mm 360"
     },
@@ -3318,7 +3318,7 @@
         "cr": 6,
         "exp": 2300,
         "pb": 3,
-        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#GithyankiKithrak"
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#GithyankiKith'rak"
     },
     {
         "name": "Githzerai Futurist",
@@ -3341,7 +3341,7 @@
         "cr": 6,
         "exp": 2300,
         "pb": 3,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195078-hobgoblin-warlord",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-h#HobgoblinWarlord",
         "thematicType": "Fey",
         "mmPage": "mm 171"
     },
@@ -3350,7 +3350,7 @@
         "cr": 6,
         "exp": 2300,
         "pb": 3,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195089-invisible-stalker",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-i#InvisibleStalker",
         "thematicType": "Elemental",
         "mmPage": "mm 180"
     },
@@ -3359,7 +3359,7 @@
         "cr": 6,
         "exp": 2300,
         "pb": 3,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195098-kuo-toa-archpriest",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-k#Kuo-toaArchpriest",
         "thematicType": "Aberration",
         "mmPage": "mm 191"
     },
@@ -3368,7 +3368,7 @@
         "cr": 6,
         "exp": 2300,
         "pb": 3,
-        "mmLink": "https://www.dndbeyond.com/monsters/4831023-mage",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-m#Mage",
         "thematicType": "Humanoid",
         "mmPage": "mm 199"
     },
@@ -3377,7 +3377,7 @@
         "cr": 6,
         "exp": 2300,
         "pb": 3,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195112-mammoth",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#Mammoth",
         "thematicType": "Beast",
         "mmPage": "mm 365"
     },
@@ -3386,7 +3386,7 @@
         "cr": 6,
         "exp": 2300,
         "pb": 3,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195118-medusa",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-m#Medusa",
         "thematicType": "Monstrosity",
         "mmPage": "mm 205"
     },
@@ -3440,7 +3440,7 @@
         "cr": 6,
         "exp": 2300,
         "pb": 3,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195273-wyvern",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-w#Wyvern",
         "thematicType": "Dragon",
         "mmPage": "mm 337"
     },
@@ -3458,7 +3458,7 @@
         "cr": 6,
         "exp": 2300,
         "pb": 3,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195287-young-white-dragon",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-y#YoungWhiteDragon",
         "thematicType": "Dragon",
         "mmPage": "mm 328"
     },
@@ -3476,7 +3476,7 @@
         "cr": 7,
         "exp": 2900,
         "pb": 3,
-        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-b#BlueSlaad",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-s#BlueSlaad",
         "thematicType": "Aberration",
         "mmPage": "mm 285"
     },
@@ -3494,14 +3494,14 @@
         "cr": 7,
         "exp": 2900,
         "pb": 3,
-        "mmLink": "https://www.dndbeyond.com/monsters/17135-drow-mage"
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-d#DrowMage"
     },
     {
         "name": "Giant Ape",
         "cr": 7,
         "exp": 2900,
         "pb": 3,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195010-giant-ape",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#GiantApe",
         "thematicType": "Beast",
         "mmPage": "mm 354"
     },
@@ -3519,7 +3519,7 @@
         "cr": 7,
         "exp": 2900,
         "pb": 3,
-        "mmLink": "https://www.dndbeyond.com/monsters/17158-grick-alpha"
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#GrickAlpha"
     },
     {
         "name": "Grick Ancient",
@@ -3535,7 +3535,7 @@
         "cr": 7,
         "exp": 2900,
         "pb": 3,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195125-mind-flayer",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-m#MindFlayer",
         "thematicType": "Aberration",
         "mmPage": "mm 213"
     },
@@ -3544,7 +3544,7 @@
         "cr": 7,
         "exp": 2900,
         "pb": 3,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195150-oni",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-o#Oni",
         "thematicType": "Fiend",
         "mmPage": "mm 232"
     },
@@ -3562,7 +3562,7 @@
         "cr": 7,
         "exp": 2900,
         "pb": 3,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195204-shield-guardian",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-s#ShieldGuardian",
         "thematicType": "Construct",
         "mmPage": "mm 277"
     },
@@ -3571,7 +3571,7 @@
         "cr": 7,
         "exp": 2900,
         "pb": 3,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195220-stone-giant",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-s#StoneGiant",
         "thematicType": "Giant",
         "mmPage": "mm 300"
     },
@@ -3598,7 +3598,7 @@
         "cr": 7,
         "exp": 2900,
         "pb": 3,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195277-young-black-dragon",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-y#YoungBlackDragon",
         "thematicType": "Dragon",
         "mmPage": "mm 38"
     },
@@ -3616,7 +3616,7 @@
         "cr": 7,
         "exp": 2900,
         "pb": 3,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195288-yuan-ti-abomination",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-y#Yuan-tiAbomination",
         "thematicType": "Monstrosity",
         "mmPage": "mm 345"
     },
@@ -3634,7 +3634,7 @@
         "cr": 8,
         "exp": 3900,
         "pb": 3,
-        "mmLink": "https://www.dndbeyond.com/monsters/5194904-assassin",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-a#Assassin",
         "thematicType": "Humanoid",
         "mmPage": "mm 22"
     },
@@ -3661,7 +3661,7 @@
         "cr": 8,
         "exp": 3900,
         "pb": 3,
-        "mmLink": "https://www.dndbeyond.com/monsters/5194946-cloaker",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-c#Cloaker",
         "thematicType": "Aberration",
         "mmPage": "mm 73"
     },
@@ -3688,7 +3688,7 @@
         "cr": 8,
         "exp": 3900,
         "pb": 3,
-        "mmLink": "https://www.dndbeyond.com/monsters/17136-drow-priestess-of-lolth"
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-d#DrowPriestessofLolth"
     },
     {
         "name": "Elemental Cultist",
@@ -3713,7 +3713,7 @@
         "cr": 8,
         "exp": 3900,
         "pb": 3,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195000-fomorian",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-f#Fomorian",
         "thematicType": "Giant",
         "mmPage": "mm 123"
     },
@@ -3722,7 +3722,7 @@
         "cr": 8,
         "exp": 3900,
         "pb": 3,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195001-frost-giant",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-f#FrostGiant",
         "thematicType": "Giant",
         "mmPage": "mm 124"
     },
@@ -3749,7 +3749,7 @@
         "cr": 8,
         "exp": 3900,
         "pb": 3,
-        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#GreenSlaad",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-s#GreenSlaad",
         "thematicType": "Aberration",
         "mmPage": "mm 286"
     },
@@ -3767,7 +3767,7 @@
         "cr": 8,
         "exp": 3900,
         "pb": 3,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195084-hydra",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-h#Hydra",
         "thematicType": "Monstrosity",
         "mmPage": "mm 175"
     },
@@ -3785,7 +3785,7 @@
         "cr": 8,
         "exp": 3900,
         "pb": 3,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195215-spirit-naga",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-s#SpiritNaga",
         "thematicType": "Fiend",
         "mmPage": "mm 297"
     },
@@ -3794,7 +3794,7 @@
         "cr": 8,
         "exp": 3900,
         "pb": 3,
-        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-t#ThrikreenPsion",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-t#Thri-kreenPsion",
         "thematicType": "Monstrosity",
         "mmPage": "mm 306"
     },
@@ -3803,7 +3803,7 @@
         "cr": 8,
         "exp": 3900,
         "pb": 3,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195243-tyrannosaurus-rex",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#TyrannosaurusRex",
         "thematicType": "Beast",
         "mmPage": "mm 372"
     },
@@ -3821,7 +3821,7 @@
         "cr": 8,
         "exp": 3900,
         "pb": 3,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195280-young-bronze-dragon",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-y#YoungBronzeDragon",
         "thematicType": "Dragon",
         "mmPage": "mm 58"
     },
@@ -3830,7 +3830,7 @@
         "cr": 8,
         "exp": 3900,
         "pb": 3,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195283-young-green-dragon",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-y#YoungGreenDragon",
         "thematicType": "Dragon",
         "mmPage": "mm 152"
     },
@@ -3839,7 +3839,7 @@
         "cr": 9,
         "exp": 5000,
         "pb": 4,
-        "mmLink": "https://www.dndbeyond.com/monsters/5194868-abominable-yeti",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-a#AbominableYeti",
         "thematicType": "Monstrosity",
         "mmPage": "mm 340"
     },
@@ -3866,7 +3866,7 @@
         "cr": 9,
         "exp": 5000,
         "pb": 4,
-        "mmLink": "https://www.dndbeyond.com/monsters/5194945-clay-golem",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-c#ClayGolem",
         "thematicType": "Construct",
         "mmPage": "mm 72"
     },
@@ -3875,7 +3875,7 @@
         "cr": 9,
         "exp": 5000,
         "pb": 4,
-        "mmLink": "https://www.dndbeyond.com/monsters/5194947-cloud-giant",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-c#CloudGiant",
         "thematicType": "Giant",
         "mmPage": "mm 74"
     },
@@ -3884,7 +3884,7 @@
         "cr": 9,
         "exp": 5000,
         "pb": 4,
-        "mmLink": "https://www.dndbeyond.com/monsters/5194994-fire-giant",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-f#FireGiant",
         "thematicType": "Giant",
         "mmPage": "mm 119"
     },
@@ -3902,7 +3902,7 @@
         "cr": 9,
         "exp": 5000,
         "pb": 4,
-        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#GraySlaad",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-s#GraySlaad",
         "thematicType": "Aberration",
         "mmPage": "mm 286"
     },
@@ -3920,7 +3920,7 @@
         "cr": 9,
         "exp": 5000,
         "pb": 4,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195236-treant",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-t#Treant",
         "thematicType": "Plant",
         "mmPage": "mm 308"
     },
@@ -3929,7 +3929,7 @@
         "cr": 9,
         "exp": 5000,
         "pb": 4,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195278-young-blue-dragon",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-y#YoungBlueDragon",
         "thematicType": "Dragon",
         "mmPage": "mm 48"
     },
@@ -3938,7 +3938,7 @@
         "cr": 9,
         "exp": 5000,
         "pb": 4,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195286-young-silver-dragon",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-y#YoungSilverDragon",
         "thematicType": "Dragon",
         "mmPage": "mm 278"
     },
@@ -3947,7 +3947,7 @@
         "cr": 10,
         "exp": 5900,
         "pb": 4,
-        "mmLink": "https://www.dndbeyond.com/monsters/5194867-aboleth",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-a#Aboleth",
         "thematicType": "Aberration",
         "mmPage": "mm 11"
     },
@@ -3974,7 +3974,7 @@
         "cr": 10,
         "exp": 5900,
         "pb": 4,
-        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-d#DeathSlaad",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-s#DeathSlaad",
         "thematicType": "Aberration",
         "mmPage": "mm 287"
     },
@@ -4001,7 +4001,7 @@
         "cr": 10,
         "exp": 5900,
         "pb": 4,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195066-guardian-naga",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#GuardianNaga",
         "thematicType": "Celestial",
         "mmPage": "mm 161"
     },
@@ -4046,7 +4046,7 @@
         "cr": 10,
         "exp": 5900,
         "pb": 4,
-        "mmLink": "https://www.dndbeyond.com/monsters/4904850-stone-golem",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-s#StoneGolem",
         "thematicType": "Construct",
         "mmPage": "mm 301"
     },
@@ -4073,7 +4073,7 @@
         "cr": 10,
         "exp": 5900,
         "pb": 4,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195282-young-gold-dragon",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-y#YoungGoldDragon",
         "thematicType": "Dragon",
         "mmPage": "mm 144"
     },
@@ -4082,7 +4082,7 @@
         "cr": 10,
         "exp": 5900,
         "pb": 4,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195284-young-red-dragon",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-y#YoungRedDragon",
         "thematicType": "Dragon",
         "mmPage": "mm 254"
     },
@@ -4208,7 +4208,7 @@
         "cr": 12,
         "exp": 8400,
         "pb": 4,
-        "mmLink": "https://www.dndbeyond.com/monsters/5194902-archmage",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-a#Archmage",
         "thematicType": "Humanoid",
         "mmPage": "mm 199"
     },
@@ -4271,7 +4271,7 @@
         "cr": 13,
         "exp": 10000,
         "pb": 5,
-        "mmLink": "https://www.dndbeyond.com/monsters/5194877-adult-white-dragon",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-a#AdultWhiteDragon",
         "thematicType": "Dragon",
         "mmPage": "mm 329"
     },
@@ -4280,7 +4280,7 @@
         "cr": 13,
         "exp": 10000,
         "pb": 5,
-        "mmLink": "https://www.dndbeyond.com/monsters/5194923-beholder",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-b#Beholder",
         "thematicType": "Aberration",
         "mmPage": "mm 35"
     },
@@ -4316,7 +4316,7 @@
         "cr": 13,
         "exp": 10000,
         "pb": 5,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195221-storm-giant",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-s#StormGiant",
         "thematicType": "Giant",
         "mmPage": "mm 302"
     },
@@ -4334,7 +4334,7 @@
         "cr": 13,
         "exp": 10000,
         "pb": 5,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195251-vampire",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-v#Vampire",
         "thematicType": "Undead",
         "mmPage": "mm 317"
     },
@@ -4343,7 +4343,7 @@
         "cr": 14,
         "exp": 11500,
         "pb": 5,
-        "mmLink": "https://www.dndbeyond.com/monsters/5194869-adult-black-dragon",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-a#AdultBlackDragon",
         "thematicType": "Dragon",
         "mmPage": "mm 39"
     },
@@ -4388,7 +4388,7 @@
         "cr": 15,
         "exp": 13000,
         "pb": 5,
-        "mmLink": "https://www.dndbeyond.com/monsters/5194874-adult-green-dragon",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-a#AdultGreenDragon",
         "thematicType": "Dragon",
         "mmPage": "mm 153"
     },
@@ -4433,7 +4433,7 @@
         "cr": 16,
         "exp": 15000,
         "pb": 5,
-        "mmLink": "https://www.dndbeyond.com/monsters/5194870-adult-blue-dragon",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-a#AdultBlueDragon",
         "thematicType": "Dragon",
         "mmPage": "mm 49"
     },
@@ -4505,7 +4505,7 @@
         "cr": 17,
         "exp": 18000,
         "pb": 6,
-        "mmLink": "https://www.dndbeyond.com/monsters/5194875-adult-red-dragon",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-a#AdultRedDragon",
         "thematicType": "Dragon",
         "mmPage": "mm 255"
     },
@@ -4586,7 +4586,7 @@
         "cr": 20,
         "exp": 25000,
         "pb": 6,
-        "mmLink": "https://www.dndbeyond.com/monsters/5194889-ancient-white-dragon",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-a#AncientWhiteDragon",
         "thematicType": "Dragon",
         "mmPage": "mm 330"
     },
@@ -4613,7 +4613,7 @@
         "cr": 21,
         "exp": 33000,
         "pb": 7,
-        "mmLink": "https://www.dndbeyond.com/monsters/5194880-ancient-black-dragon",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-a#AncientBlackDragon",
         "thematicType": "Dragon",
         "mmPage": "mm 40"
     },
@@ -4631,7 +4631,7 @@
         "cr": 21,
         "exp": 33000,
         "pb": 7,
-        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-a#ArchHag",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-a#Arch-Hag",
         "thematicType": "Fey",
         "mmPage": "mm 20"
     },
@@ -4640,7 +4640,7 @@
         "cr": 21,
         "exp": 33000,
         "pb": 7,
-        "mmLink": "https://www.dndbeyond.com/monsters/5195106-lich",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-l#Lich",
         "thematicType": "Undead",
         "mmPage": "mm 195"
     },
@@ -4667,7 +4667,7 @@
         "cr": 22,
         "exp": 41000,
         "pb": 7,
-        "mmLink": "https://www.dndbeyond.com/monsters/5194886-ancient-green-dragon",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-a#AncientGreenDragon",
         "thematicType": "Dragon",
         "mmPage": "mm 154"
     },
@@ -4685,7 +4685,7 @@
         "cr": 23,
         "exp": 50000,
         "pb": 7,
-        "mmLink": "https://www.dndbeyond.com/monsters/5194881-ancient-blue-dragon",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-a#AncientBlueDragon",
         "thematicType": "Dragon",
         "mmPage": "mm 50"
     },
@@ -4739,7 +4739,7 @@
         "cr": 24,
         "exp": 62000,
         "pb": 7,
-        "mmLink": "https://www.dndbeyond.com/monsters/5194887-ancient-red-dragon",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-a#AncientRedDragon",
         "thematicType": "Dragon",
         "mmPage": "mm 256"
     },
