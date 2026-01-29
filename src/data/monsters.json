@@ -1,5 +1,6 @@
 [
     {
+        "id": "awakened-shrub",
         "name": "Awakened Shrub",
         "cr": 0,
         "exp": 10,
@@ -9,6 +10,7 @@
         "mmPage": "mm 23"
     },
     {
+        "id": "baboon",
         "name": "Baboon",
         "cr": 0,
         "exp": 10,
@@ -18,6 +20,7 @@
         "mmPage": "mm 349"
     },
     {
+        "id": "badger",
         "name": "Badger",
         "cr": 0,
         "exp": 10,
@@ -27,6 +30,7 @@
         "mmPage": "mm 349"
     },
     {
+        "id": "bat",
         "name": "Bat",
         "cr": 0,
         "exp": 10,
@@ -36,6 +40,7 @@
         "mmPage": "mm 349"
     },
     {
+        "id": "cat",
         "name": "Cat",
         "cr": 0,
         "exp": 10,
@@ -45,6 +50,7 @@
         "mmPage": "mm 351"
     },
     {
+        "id": "commoner",
         "name": "Commoner",
         "cr": 0,
         "exp": 10,
@@ -54,6 +60,7 @@
         "mmPage": "mm 77"
     },
     {
+        "id": "crab",
         "name": "Crab",
         "cr": 0,
         "exp": 10,
@@ -63,6 +70,7 @@
         "mmPage": "mm 351"
     },
     {
+        "id": "crawling-claw",
         "name": "Crawling Claw",
         "cr": 0,
         "exp": 10,
@@ -72,6 +80,7 @@
         "mmPage": "mm 83"
     },
     {
+        "id": "deer",
         "name": "Deer",
         "cr": 0,
         "exp": 10,
@@ -81,6 +90,7 @@
         "mmPage": "mm 352"
     },
     {
+        "id": "eagle",
         "name": "Eagle",
         "cr": 0,
         "exp": 10,
@@ -90,6 +100,7 @@
         "mmPage": "mm 353"
     },
     {
+        "id": "frog",
         "name": "Frog",
         "cr": 0,
         "exp": 10,
@@ -99,6 +110,7 @@
         "mmPage": "mm 354"
     },
     {
+        "id": "giant-fire-beetle",
         "name": "Giant Fire Beetle",
         "cr": 0,
         "exp": 10,
@@ -108,6 +120,7 @@
         "mmPage": "mm 357"
     },
     {
+        "id": "goat",
         "name": "Goat",
         "cr": 0,
         "exp": 10,
@@ -117,6 +130,7 @@
         "mmPage": "mm 362"
     },
     {
+        "id": "hawk",
         "name": "Hawk",
         "cr": 0,
         "exp": 10,
@@ -126,6 +140,7 @@
         "mmPage": "mm 362"
     },
     {
+        "id": "homunculus",
         "name": "Homunculus",
         "cr": 0,
         "exp": 10,
@@ -135,6 +150,7 @@
         "mmPage": "mm 172"
     },
     {
+        "id": "hyena",
         "name": "Hyena",
         "cr": 0,
         "exp": 10,
@@ -144,6 +160,7 @@
         "mmPage": "mm 363"
     },
     {
+        "id": "jackal",
         "name": "Jackal",
         "cr": 0,
         "exp": 10,
@@ -153,6 +170,7 @@
         "mmPage": "mm 364"
     },
     {
+        "id": "larva",
         "name": "Larva",
         "cr": 0,
         "exp": 10,
@@ -162,6 +180,7 @@
         "mmPage": "mm 193"
     },
     {
+        "id": "lemure",
         "name": "Lemure",
         "cr": 0,
         "exp": 10,
@@ -171,6 +190,7 @@
         "mmPage": "mm 194"
     },
     {
+        "id": "lizard",
         "name": "Lizard",
         "cr": 0,
         "exp": 10,
@@ -180,6 +200,7 @@
         "mmPage": "mm 364"
     },
     {
+        "id": "myconid-sprout",
         "name": "Myconid Sprout",
         "cr": 0,
         "exp": 10,
@@ -189,6 +210,7 @@
         "mmPage": "mm 222"
     },
     {
+        "id": "octopus",
         "name": "Octopus",
         "cr": 0,
         "exp": 10,
@@ -198,6 +220,7 @@
         "mmPage": "mm 365"
     },
     {
+        "id": "owl",
         "name": "Owl",
         "cr": 0,
         "exp": 10,
@@ -207,6 +230,7 @@
         "mmPage": "mm 366"
     },
     {
+        "id": "piranha",
         "name": "Piranha",
         "cr": 0,
         "exp": 10,
@@ -216,6 +240,7 @@
         "mmPage": "mm 366"
     },
     {
+        "id": "rat",
         "name": "Rat",
         "cr": 0,
         "exp": 10,
@@ -225,6 +250,7 @@
         "mmPage": "mm 367"
     },
     {
+        "id": "raven",
         "name": "Raven",
         "cr": 0,
         "exp": 10,
@@ -234,6 +260,7 @@
         "mmPage": "mm 368"
     },
     {
+        "id": "scorpion",
         "name": "Scorpion",
         "cr": 0,
         "exp": 10,
@@ -243,6 +270,7 @@
         "mmPage": "mm 369"
     },
     {
+        "id": "seahorse",
         "name": "Seahorse",
         "cr": 0,
         "exp": 10,
@@ -252,6 +280,7 @@
         "mmPage": "mm 369"
     },
     {
+        "id": "shrieker-fungus",
         "name": "Shrieker Fungus",
         "cr": 0,
         "exp": 0,
@@ -261,6 +290,7 @@
         "mmPage": "mm 125"
     },
     {
+        "id": "spider",
         "name": "Spider",
         "cr": 0,
         "exp": 10,
@@ -270,6 +300,7 @@
         "mmPage": "mm 369"
     },
     {
+        "id": "vulture",
         "name": "Vulture",
         "cr": 0,
         "exp": 10,
@@ -279,6 +310,7 @@
         "mmPage": "mm 372"
     },
     {
+        "id": "weasel",
         "name": "Weasel",
         "cr": 0,
         "exp": 10,
@@ -288,6 +320,7 @@
         "mmPage": "mm 373"
     },
     {
+        "id": "bandit",
         "name": "Bandit",
         "cr": 0.125,
         "exp": 25,
@@ -297,6 +330,7 @@
         "mmPage": "mm 27"
     },
     {
+        "id": "blood-hawk",
         "name": "Blood Hawk",
         "cr": 0.125,
         "exp": 25,
@@ -306,6 +340,7 @@
         "mmPage": "mm 350"
     },
     {
+        "id": "camel",
         "name": "Camel",
         "cr": 0.125,
         "exp": 25,
@@ -315,6 +350,7 @@
         "mmPage": "mm 351"
     },
     {
+        "id": "cultist",
         "name": "Cultist",
         "cr": 0.125,
         "exp": 25,
@@ -324,6 +360,7 @@
         "mmPage": "mm 84"
     },
     {
+        "id": "flumph",
         "name": "Flumph",
         "cr": 0.125,
         "exp": 25,
@@ -333,6 +370,7 @@
         "mmPage": "mm 122"
     },
     {
+        "id": "flying-snake",
         "name": "Flying Snake",
         "cr": 0.125,
         "exp": 25,
@@ -342,6 +380,7 @@
         "mmPage": "mm 353"
     },
     {
+        "id": "giant-crab",
         "name": "Giant Crab",
         "cr": 0.125,
         "exp": 25,
@@ -351,6 +390,7 @@
         "mmPage": "mm 356"
     },
     {
+        "id": "giant-rat",
         "name": "Giant Rat",
         "cr": 0.125,
         "exp": 25,
@@ -360,6 +400,7 @@
         "mmPage": "mm 358"
     },
     {
+        "id": "giant-weasel",
         "name": "Giant Weasel",
         "cr": 0.125,
         "exp": 25,
@@ -369,6 +410,7 @@
         "mmPage": "mm 361"
     },
     {
+        "id": "goblin-minion",
         "name": "Goblin Minion",
         "cr": 0.125,
         "exp": 25,
@@ -378,6 +420,7 @@
         "mmPage": "mm 142"
     },
     {
+        "id": "guard",
         "name": "Guard",
         "cr": 0.125,
         "exp": 25,
@@ -387,6 +430,7 @@
         "mmPage": "mm 162"
     },
     {
+        "id": "kobold",
         "name": "Kobold",
         "cr": 0.125,
         "exp": 25,
@@ -395,6 +439,7 @@
         "thematicType": "Humanoid"
     },
     {
+        "id": "kobold-warrior",
         "name": "Kobold Warrior",
         "cr": 0.125,
         "exp": 25,
@@ -404,6 +449,7 @@
         "mmPage": "mm 185"
     },
     {
+        "id": "manes",
         "name": "Manes",
         "cr": 0.125,
         "exp": 25,
@@ -413,6 +459,7 @@
         "mmPage": "mm 201"
     },
     {
+        "id": "mastiff",
         "name": "Mastiff",
         "cr": 0.125,
         "exp": 25,
@@ -422,6 +469,7 @@
         "mmPage": "mm 365"
     },
     {
+        "id": "merfolk-skirmisher",
         "name": "Merfolk Skirmisher",
         "cr": 0.125,
         "exp": 25,
@@ -431,6 +479,7 @@
         "mmPage": "mm 209"
     },
     {
+        "id": "modron-monodrone",
         "name": "Modron Monodrone",
         "cr": 0.125,
         "exp": 25,
@@ -440,6 +489,7 @@
         "mmPage": "mm 216"
     },
     {
+        "id": "mule",
         "name": "Mule",
         "cr": 0.125,
         "exp": 25,
@@ -449,6 +499,7 @@
         "mmPage": "mm 365"
     },
     {
+        "id": "noble",
         "name": "Noble",
         "cr": 0.125,
         "exp": 25,
@@ -458,6 +509,7 @@
         "mmPage": "mm 227"
     },
     {
+        "id": "pony",
         "name": "Pony",
         "cr": 0.125,
         "exp": 25,
@@ -467,6 +519,7 @@
         "mmPage": "mm 367"
     },
     {
+        "id": "slaad-tadpole",
         "name": "Slaad Tadpole",
         "cr": 0.125,
         "exp": 25,
@@ -476,6 +529,7 @@
         "mmPage": "mm 284"
     },
     {
+        "id": "stirge",
         "name": "Stirge",
         "cr": 0.125,
         "exp": 25,
@@ -485,6 +539,7 @@
         "mmPage": "mm 299"
     },
     {
+        "id": "twig-blight",
         "name": "Twig Blight",
         "cr": 0.125,
         "exp": 25,
@@ -494,6 +549,7 @@
         "mmPage": "mm 43"
     },
     {
+        "id": "venomous-snake",
         "name": "Venomous Snake",
         "cr": 0.125,
         "exp": 25,
@@ -503,6 +559,7 @@
         "mmPage": "mm 372"
     },
     {
+        "id": "warrior-infantry",
         "name": "Warrior Infantry",
         "cr": 0.125,
         "exp": 25,
@@ -512,6 +569,7 @@
         "mmPage": "mm 320"
     },
     {
+        "id": "aarakocra-skirmisher",
         "name": "Aarakocra Skirmisher",
         "cr": 0.25,
         "exp": 50,
@@ -521,6 +579,7 @@
         "mmPage": "mm 10"
     },
     {
+        "id": "acolyte",
         "name": "Acolyte",
         "cr": 0.25,
         "exp": 50,
@@ -529,6 +588,7 @@
         "thematicType": "Humanoid"
     },
     {
+        "id": "animated-broom",
         "name": "Animated Broom",
         "cr": 0.25,
         "exp": 50,
@@ -538,6 +598,7 @@
         "mmPage": "mm 16"
     },
     {
+        "id": "animated-flying-sword",
         "name": "Animated Flying Sword",
         "cr": 0.25,
         "exp": 50,
@@ -547,6 +608,7 @@
         "mmPage": "mm 17"
     },
     {
+        "id": "axe-beak",
         "name": "Axe Beak",
         "cr": 0.25,
         "exp": 50,
@@ -556,6 +618,7 @@
         "mmPage": "mm 24"
     },
     {
+        "id": "blink-dog",
         "name": "Blink Dog",
         "cr": 0.25,
         "exp": 50,
@@ -565,6 +628,7 @@
         "mmPage": "mm 46"
     },
     {
+        "id": "boar",
         "name": "Boar",
         "cr": 0.25,
         "exp": 50,
@@ -574,6 +638,7 @@
         "mmPage": "mm 350"
     },
     {
+        "id": "bullywug-warrior",
         "name": "Bullywug Warrior",
         "cr": 0.25,
         "exp": 50,
@@ -583,6 +648,7 @@
         "mmPage": "mm 64"
     },
     {
+        "id": "constrictor-snake",
         "name": "Constrictor Snake",
         "cr": 0.25,
         "exp": 50,
@@ -592,6 +658,7 @@
         "mmPage": "mm 351"
     },
     {
+        "id": "draft-horse",
         "name": "Draft Horse",
         "cr": 0.25,
         "exp": 50,
@@ -601,6 +668,7 @@
         "mmPage": "mm 352"
     },
     {
+        "id": "dretch",
         "name": "Dretch",
         "cr": 0.25,
         "exp": 50,
@@ -610,6 +678,7 @@
         "mmPage": "mm 104"
     },
     {
+        "id": "drow",
         "name": "Drow",
         "cr": 0.25,
         "exp": 50,
@@ -618,6 +687,7 @@
         "thematicType": "Humanoid"
     },
     {
+        "id": "elk",
         "name": "Elk",
         "cr": 0.25,
         "exp": 50,
@@ -627,6 +697,7 @@
         "mmPage": "mm 353"
     },
     {
+        "id": "flying-sword",
         "name": "Flying Sword",
         "cr": 0.25,
         "exp": 50,
@@ -634,6 +705,7 @@
         "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-f#FlyingSword"
     },
     {
+        "id": "giant-badger",
         "name": "Giant Badger",
         "cr": 0.25,
         "exp": 50,
@@ -643,6 +715,7 @@
         "mmPage": "mm 354"
     },
     {
+        "id": "giant-bat",
         "name": "Giant Bat",
         "cr": 0.25,
         "exp": 50,
@@ -652,6 +725,7 @@
         "mmPage": "mm 355"
     },
     {
+        "id": "giant-centipede",
         "name": "Giant Centipede",
         "cr": 0.25,
         "exp": 50,
@@ -661,6 +735,7 @@
         "mmPage": "mm 355"
     },
     {
+        "id": "giant-frog",
         "name": "Giant Frog",
         "cr": 0.25,
         "exp": 50,
@@ -670,6 +745,7 @@
         "mmPage": "mm 357"
     },
     {
+        "id": "giant-lizard",
         "name": "Giant Lizard",
         "cr": 0.25,
         "exp": 50,
@@ -679,6 +755,7 @@
         "mmPage": "mm 358"
     },
     {
+        "id": "giant-owl",
         "name": "Giant Owl",
         "cr": 0.25,
         "exp": 50,
@@ -688,6 +765,7 @@
         "mmPage": "mm 358"
     },
     {
+        "id": "giant-venomous-snake",
         "name": "Giant Venomous Snake",
         "cr": 0.25,
         "exp": 50,
@@ -697,6 +775,7 @@
         "mmPage": "mm 361"
     },
     {
+        "id": "giant-wolf-spider",
         "name": "Giant Wolf Spider",
         "cr": 0.25,
         "exp": 50,
@@ -706,6 +785,7 @@
         "mmPage": "mm 362"
     },
     {
+        "id": "goblin",
         "name": "Goblin",
         "cr": 0.25,
         "exp": 50,
@@ -714,6 +794,7 @@
         "thematicType": "Humanoid"
     },
     {
+        "id": "goblin-warrior",
         "name": "Goblin Warrior",
         "cr": 0.25,
         "exp": 50,
@@ -723,6 +804,7 @@
         "mmPage": "mm 142"
     },
     {
+        "id": "grimlock",
         "name": "Grimlock",
         "cr": 0.25,
         "exp": 50,
@@ -732,6 +814,7 @@
         "mmPage": "mm 160"
     },
     {
+        "id": "kenku",
         "name": "Kenku",
         "cr": 0.25,
         "exp": 50,
@@ -741,6 +824,7 @@
         "mmPage": "mm 183"
     },
     {
+        "id": "kuo-toa",
         "name": "Kuo-toa",
         "cr": 0.25,
         "exp": 50,
@@ -750,6 +834,7 @@
         "mmPage": "mm 188"
     },
     {
+        "id": "modron-duodrone",
         "name": "Modron Duodrone",
         "cr": 0.25,
         "exp": 50,
@@ -759,6 +844,7 @@
         "mmPage": "mm 217"
     },
     {
+        "id": "mud-mephit",
         "name": "Mud Mephit",
         "cr": 0.25,
         "exp": 50,
@@ -768,6 +854,7 @@
         "mmPage": "mm 207"
     },
     {
+        "id": "needle-blight",
         "name": "Needle Blight",
         "cr": 0.25,
         "exp": 50,
@@ -777,6 +864,7 @@
         "mmPage": "mm 43"
     },
     {
+        "id": "panther",
         "name": "Panther",
         "cr": 0.25,
         "exp": 50,
@@ -786,6 +874,7 @@
         "mmPage": "mm 366"
     },
     {
+        "id": "pixie",
         "name": "Pixie",
         "cr": 0.25,
         "exp": 50,
@@ -795,6 +884,7 @@
         "mmPage": "mm 244"
     },
     {
+        "id": "priest-acolyte",
         "name": "Priest Acolyte",
         "cr": 0.25,
         "exp": 50,
@@ -804,6 +894,7 @@
         "mmPage": "mm 247"
     },
     {
+        "id": "pseudodragon",
         "name": "Pseudodragon",
         "cr": 0.25,
         "exp": 50,
@@ -813,6 +904,7 @@
         "mmPage": "mm 249"
     },
     {
+        "id": "pteranodon",
         "name": "Pteranodon",
         "cr": 0.25,
         "exp": 50,
@@ -822,6 +914,7 @@
         "mmPage": "mm 367"
     },
     {
+        "id": "riding-horse",
         "name": "Riding Horse",
         "cr": 0.25,
         "exp": 50,
@@ -831,6 +924,7 @@
         "mmPage": "mm 368"
     },
     {
+        "id": "skeleton",
         "name": "Skeleton",
         "cr": 0.25,
         "exp": 50,
@@ -840,6 +934,7 @@
         "mmPage": "mm 282"
     },
     {
+        "id": "smoke-mephit",
         "name": "Smoke Mephit",
         "cr": 0.25,
         "exp": 50,
@@ -849,6 +944,7 @@
         "mmPage": "mm 208"
     },
     {
+        "id": "sprite",
         "name": "Sprite",
         "cr": 0.25,
         "exp": 50,
@@ -858,6 +954,7 @@
         "mmPage": "mm 298"
     },
     {
+        "id": "steam-mephit",
         "name": "Steam Mephit",
         "cr": 0.25,
         "exp": 50,
@@ -867,6 +964,7 @@
         "mmPage": "mm 208"
     },
     {
+        "id": "swarm-of-bats",
         "name": "Swarm of Bats",
         "cr": 0.25,
         "exp": 50,
@@ -876,6 +974,7 @@
         "mmPage": "mm 370"
     },
     {
+        "id": "swarm-of-rats",
         "name": "Swarm of Rats",
         "cr": 0.25,
         "exp": 50,
@@ -885,6 +984,7 @@
         "mmPage": "mm 370"
     },
     {
+        "id": "swarm-of-ravens",
         "name": "Swarm of Ravens",
         "cr": 0.25,
         "exp": 50,
@@ -894,6 +994,7 @@
         "mmPage": "mm 371"
     },
     {
+        "id": "troglodyte",
         "name": "Troglodyte",
         "cr": 0.25,
         "exp": 50,
@@ -903,6 +1004,7 @@
         "mmPage": "mm 309"
     },
     {
+        "id": "violet-fungus",
         "name": "Violet Fungus",
         "cr": 0.25,
         "exp": 50,
@@ -912,6 +1014,7 @@
         "mmPage": "mm 126"
     },
     {
+        "id": "winged-kobold",
         "name": "Winged Kobold",
         "cr": 0.25,
         "exp": 50,
@@ -921,6 +1024,7 @@
         "mmPage": "mm 185"
     },
     {
+        "id": "wolf",
         "name": "Wolf",
         "cr": 0.25,
         "exp": 50,
@@ -930,6 +1034,7 @@
         "mmPage": "mm 373"
     },
     {
+        "id": "zombie",
         "name": "Zombie",
         "cr": 0.25,
         "exp": 50,
@@ -939,6 +1044,7 @@
         "mmPage": "mm 346"
     },
     {
+        "id": "ape",
         "name": "Ape",
         "cr": 0.5,
         "exp": 100,
@@ -948,6 +1054,7 @@
         "mmPage": "mm 348"
     },
     {
+        "id": "black-bear",
         "name": "Black Bear",
         "cr": 0.5,
         "exp": 100,
@@ -957,6 +1064,7 @@
         "mmPage": "mm 349"
     },
     {
+        "id": "cockatrice",
         "name": "Cockatrice",
         "cr": 0.5,
         "exp": 100,
@@ -966,6 +1074,7 @@
         "mmPage": "mm 75"
     },
     {
+        "id": "crocodile",
         "name": "Crocodile",
         "cr": 0.5,
         "exp": 100,
@@ -975,6 +1084,7 @@
         "mmPage": "mm 352"
     },
     {
+        "id": "darkmantle",
         "name": "Darkmantle",
         "cr": 0.5,
         "exp": 100,
@@ -984,6 +1094,7 @@
         "mmPage": "mm 90"
     },
     {
+        "id": "dust-mephit",
         "name": "Dust Mephit",
         "cr": 0.5,
         "exp": 100,
@@ -993,6 +1104,7 @@
         "mmPage": "mm 206"
     },
     {
+        "id": "gas-spore-fungus",
         "name": "Gas Spore Fungus",
         "cr": 0.5,
         "exp": 100,
@@ -1002,6 +1114,7 @@
         "mmPage": "mm 125"
     },
     {
+        "id": "giant-goat",
         "name": "Giant Goat",
         "cr": 0.5,
         "exp": 100,
@@ -1011,6 +1124,7 @@
         "mmPage": "mm 357"
     },
     {
+        "id": "giant-seahorse",
         "name": "Giant Seahorse",
         "cr": 0.5,
         "exp": 100,
@@ -1020,6 +1134,7 @@
         "mmPage": "mm 359"
     },
     {
+        "id": "giant-wasp",
         "name": "Giant Wasp",
         "cr": 0.5,
         "exp": 100,
@@ -1029,6 +1144,7 @@
         "mmPage": "mm 361"
     },
     {
+        "id": "gnoll-warrior",
         "name": "Gnoll Warrior",
         "cr": 0.5,
         "exp": 100,
@@ -1038,6 +1154,7 @@
         "mmPage": "mm 140"
     },
     {
+        "id": "gray-ooze",
         "name": "Gray Ooze",
         "cr": 0.5,
         "exp": 100,
@@ -1047,6 +1164,7 @@
         "mmPage": "mm 151"
     },
     {
+        "id": "hobgoblin",
         "name": "Hobgoblin",
         "cr": 0.5,
         "exp": 100,
@@ -1054,6 +1172,7 @@
         "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-h#Hobgoblin"
     },
     {
+        "id": "hobgoblin-warrior",
         "name": "Hobgoblin Warrior",
         "cr": 0.5,
         "exp": 100,
@@ -1063,6 +1182,7 @@
         "mmPage": "mm 170"
     },
     {
+        "id": "ice-mephit",
         "name": "Ice Mephit",
         "cr": 0.5,
         "exp": 100,
@@ -1072,6 +1192,7 @@
         "mmPage": "mm 206"
     },
     {
+        "id": "jackalwere",
         "name": "Jackalwere",
         "cr": 0.5,
         "exp": 100,
@@ -1081,6 +1202,7 @@
         "mmPage": "mm 182"
     },
     {
+        "id": "magma-mephit",
         "name": "Magma Mephit",
         "cr": 0.5,
         "exp": 100,
@@ -1090,6 +1212,7 @@
         "mmPage": "mm 207"
     },
     {
+        "id": "magmin",
         "name": "Magmin",
         "cr": 0.5,
         "exp": 100,
@@ -1099,6 +1222,7 @@
         "mmPage": "mm 200"
     },
     {
+        "id": "modron-tridrone",
         "name": "Modron Tridrone",
         "cr": 0.5,
         "exp": 100,
@@ -1108,6 +1232,7 @@
         "mmPage": "mm 217"
     },
     {
+        "id": "myconid-adult",
         "name": "Myconid Adult",
         "cr": 0.5,
         "exp": 100,
@@ -1117,6 +1242,7 @@
         "mmPage": "mm 223"
     },
     {
+        "id": "orc",
         "name": "Orc",
         "cr": 0.5,
         "exp": 100,
@@ -1125,6 +1251,7 @@
         "thematicType": "Humanoid"
     },
     {
+        "id": "performer",
         "name": "Performer",
         "cr": 0.5,
         "exp": 100,
@@ -1134,6 +1261,7 @@
         "mmPage": "mm 236"
     },
     {
+        "id": "piercer",
         "name": "Piercer",
         "cr": 0.5,
         "exp": 100,
@@ -1143,6 +1271,7 @@
         "mmPage": "mm 240"
     },
     {
+        "id": "reef-shark",
         "name": "Reef Shark",
         "cr": 0.5,
         "exp": 100,
@@ -1152,6 +1281,7 @@
         "mmPage": "mm 368"
     },
     {
+        "id": "rust-monster",
         "name": "Rust Monster",
         "cr": 0.5,
         "exp": 100,
@@ -1161,6 +1291,7 @@
         "mmPage": "mm 263"
     },
     {
+        "id": "sahuagin-warrior",
         "name": "Sahuagin Warrior",
         "cr": 0.5,
         "exp": 100,
@@ -1170,6 +1301,7 @@
         "mmPage": "mm 264"
     },
     {
+        "id": "satyr",
         "name": "Satyr",
         "cr": 0.5,
         "exp": 100,
@@ -1179,6 +1311,7 @@
         "mmPage": "mm 268"
     },
     {
+        "id": "scout",
         "name": "Scout",
         "cr": 0.5,
         "exp": 100,
@@ -1188,6 +1321,7 @@
         "mmPage": "mm 270"
     },
     {
+        "id": "shadow",
         "name": "Shadow",
         "cr": 0.5,
         "exp": 100,
@@ -1197,6 +1331,7 @@
         "mmPage": "mm 272"
     },
     {
+        "id": "swarm-of-insects",
         "name": "Swarm of Insects",
         "cr": 0.5,
         "exp": 100,
@@ -1206,6 +1341,7 @@
         "mmPage": "mm 370"
     },
     {
+        "id": "tough",
         "name": "Tough",
         "cr": 0.5,
         "exp": 100,
@@ -1215,6 +1351,7 @@
         "mmPage": "mm 307"
     },
     {
+        "id": "troll-limb",
         "name": "Troll Limb",
         "cr": 0.5,
         "exp": 100,
@@ -1224,6 +1361,7 @@
         "mmPage": "mm 310"
     },
     {
+        "id": "vine-blight",
         "name": "Vine Blight",
         "cr": 0.5,
         "exp": 100,
@@ -1233,6 +1371,7 @@
         "mmPage": "mm 44"
     },
     {
+        "id": "warhorse",
         "name": "Warhorse",
         "cr": 0.5,
         "exp": 100,
@@ -1242,6 +1381,7 @@
         "mmPage": "mm 373"
     },
     {
+        "id": "warhorse-skeleton",
         "name": "Warhorse Skeleton",
         "cr": 0.5,
         "exp": 100,
@@ -1251,6 +1391,7 @@
         "mmPage": "mm 282"
     },
     {
+        "id": "worg",
         "name": "Worg",
         "cr": 0.5,
         "exp": 100,
@@ -1260,6 +1401,7 @@
         "mmPage": "mm 335"
     },
     {
+        "id": "animated-armor",
         "name": "Animated Armor",
         "cr": 1,
         "exp": 200,
@@ -1269,6 +1411,7 @@
         "mmPage": "mm 16"
     },
     {
+        "id": "brass-dragon-wyrmling",
         "name": "Brass Dragon Wyrmling",
         "cr": 1,
         "exp": 200,
@@ -1278,6 +1421,7 @@
         "mmPage": "mm 54"
     },
     {
+        "id": "brown-bear",
         "name": "Brown Bear",
         "cr": 1,
         "exp": 200,
@@ -1287,6 +1431,7 @@
         "mmPage": "mm 350"
     },
     {
+        "id": "bugbear",
         "name": "Bugbear",
         "cr": 1,
         "exp": 200,
@@ -1294,6 +1439,7 @@
         "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-b#Bugbear"
     },
     {
+        "id": "bugbear-warrior",
         "name": "Bugbear Warrior",
         "cr": 1,
         "exp": 200,
@@ -1303,6 +1449,7 @@
         "mmPage": "mm 62"
     },
     {
+        "id": "copper-dragon-wyrmling",
         "name": "Copper Dragon Wyrmling",
         "cr": 1,
         "exp": 200,
@@ -1312,6 +1459,7 @@
         "mmPage": "mm 78"
     },
     {
+        "id": "death-dog",
         "name": "Death Dog",
         "cr": 1,
         "exp": 200,
@@ -1321,6 +1469,7 @@
         "mmPage": "mm 91"
     },
     {
+        "id": "dire-wolf",
         "name": "Dire Wolf",
         "cr": 1,
         "exp": 200,
@@ -1330,6 +1479,7 @@
         "mmPage": "mm 352"
     },
     {
+        "id": "dryad",
         "name": "Dryad",
         "cr": 1,
         "exp": 200,
@@ -1339,6 +1489,7 @@
         "mmPage": "mm 107"
     },
     {
+        "id": "empyrean-iota",
         "name": "Empyrean Iota",
         "cr": 1,
         "exp": 200,
@@ -1348,6 +1499,7 @@
         "mmPage": "mm 112"
     },
     {
+        "id": "faerie-dragon-youth",
         "name": "Faerie Dragon Youth",
         "cr": 1,
         "exp": 200,
@@ -1357,6 +1509,7 @@
         "mmPage": "mm 117"
     },
     {
+        "id": "ghoul",
         "name": "Ghoul",
         "cr": 1,
         "exp": 200,
@@ -1366,6 +1519,7 @@
         "mmPage": "mm 132"
     },
     {
+        "id": "giant-eagle",
         "name": "Giant Eagle",
         "cr": 1,
         "exp": 200,
@@ -1375,6 +1529,7 @@
         "mmPage": "mm 356"
     },
     {
+        "id": "giant-hyena",
         "name": "Giant Hyena",
         "cr": 1,
         "exp": 200,
@@ -1384,6 +1539,7 @@
         "mmPage": "mm 357"
     },
     {
+        "id": "giant-octopus",
         "name": "Giant Octopus",
         "cr": 1,
         "exp": 200,
@@ -1393,6 +1549,7 @@
         "mmPage": "mm 358"
     },
     {
+        "id": "giant-spider",
         "name": "Giant Spider",
         "cr": 1,
         "exp": 200,
@@ -1402,6 +1559,7 @@
         "mmPage": "mm 359"
     },
     {
+        "id": "giant-toad",
         "name": "Giant Toad",
         "cr": 1,
         "exp": 200,
@@ -1411,6 +1569,7 @@
         "mmPage": "mm 360"
     },
     {
+        "id": "giant-vulture",
         "name": "Giant Vulture",
         "cr": 1,
         "exp": 200,
@@ -1420,6 +1579,7 @@
         "mmPage": "mm 361"
     },
     {
+        "id": "goblin-boss",
         "name": "Goblin Boss",
         "cr": 1,
         "exp": 200,
@@ -1429,6 +1589,7 @@
         "mmPage": "mm 143"
     },
     {
+        "id": "harpy",
         "name": "Harpy",
         "cr": 1,
         "exp": 200,
@@ -1438,6 +1599,7 @@
         "mmPage": "mm 164"
     },
     {
+        "id": "hippogriff",
         "name": "Hippogriff",
         "cr": 1,
         "exp": 200,
@@ -1447,6 +1609,7 @@
         "mmPage": "mm 169"
     },
     {
+        "id": "imp",
         "name": "Imp",
         "cr": 1,
         "exp": 200,
@@ -1456,6 +1619,7 @@
         "mmPage": "mm 177"
     },
     {
+        "id": "kuo-toa-whip",
         "name": "Kuo-toa Whip",
         "cr": 1,
         "exp": 200,
@@ -1465,6 +1629,7 @@
         "mmPage": "mm 190"
     },
     {
+        "id": "lacedon-ghoul",
         "name": "Lacedon Ghoul",
         "cr": 1,
         "exp": 200,
@@ -1474,6 +1639,7 @@
         "mmPage": "mm 132"
     },
     {
+        "id": "lion",
         "name": "Lion",
         "cr": 1,
         "exp": 200,
@@ -1483,6 +1649,7 @@
         "mmPage": "mm 364"
     },
     {
+        "id": "manes-vaporspawn",
         "name": "Manes Vaporspawn",
         "cr": 1,
         "exp": 200,
@@ -1492,6 +1659,7 @@
         "mmPage": "mm 201"
     },
     {
+        "id": "modron-quadrone",
         "name": "Modron Quadrone",
         "cr": 1,
         "exp": 200,
@@ -1501,6 +1669,7 @@
         "mmPage": "mm 218"
     },
     {
+        "id": "myconid-spore-servant",
         "name": "Myconid Spore Servant",
         "cr": 1,
         "exp": 200,
@@ -1510,6 +1679,7 @@
         "mmPage": "mm 223"
     },
     {
+        "id": "ogrillon-ogre",
         "name": "Ogrillon Ogre",
         "cr": 1,
         "exp": 200,
@@ -1519,6 +1689,7 @@
         "mmPage": "mm 231"
     },
     {
+        "id": "pirate",
         "name": "Pirate",
         "cr": 1,
         "exp": 200,
@@ -1528,6 +1699,7 @@
         "mmPage": "mm 241"
     },
     {
+        "id": "psychic-gray-ooze",
         "name": "Psychic Gray Ooze",
         "cr": 1,
         "exp": 200,
@@ -1537,6 +1709,7 @@
         "mmPage": "mm 151"
     },
     {
+        "id": "quasit",
         "name": "Quasit",
         "cr": 1,
         "exp": 200,
@@ -1546,6 +1719,7 @@
         "mmPage": "mm 252"
     },
     {
+        "id": "salamander-fire-snake",
         "name": "Salamander Fire Snake",
         "cr": 1,
         "exp": 200,
@@ -1555,6 +1729,7 @@
         "mmPage": "mm 266"
     },
     {
+        "id": "scarecrow",
         "name": "Scarecrow",
         "cr": 1,
         "exp": 200,
@@ -1564,6 +1739,7 @@
         "mmPage": "mm 269"
     },
     {
+        "id": "specter",
         "name": "Specter",
         "cr": 1,
         "exp": 200,
@@ -1573,6 +1749,7 @@
         "mmPage": "mm 290"
     },
     {
+        "id": "sphinx-of-wonder",
         "name": "Sphinx of Wonder",
         "cr": 1,
         "exp": 200,
@@ -1582,6 +1759,7 @@
         "mmPage": "mm 291"
     },
     {
+        "id": "spy",
         "name": "Spy",
         "cr": 1,
         "exp": 200,
@@ -1591,6 +1769,7 @@
         "mmPage": "mm 295"
     },
     {
+        "id": "swarm-of-larvae",
         "name": "Swarm of Larvae",
         "cr": 1,
         "exp": 200,
@@ -1600,6 +1779,7 @@
         "mmPage": "mm 193"
     },
     {
+        "id": "swarm-of-piranhas",
         "name": "Swarm of Piranhas",
         "cr": 1,
         "exp": 200,
@@ -1609,6 +1789,7 @@
         "mmPage": "mm 370"
     },
     {
+        "id": "thri-kreen-marauder",
         "name": "Thri-kreen Marauder",
         "cr": 1,
         "exp": 200,
@@ -1618,6 +1799,7 @@
         "mmPage": "mm 306"
     },
     {
+        "id": "tiger",
         "name": "Tiger",
         "cr": 1,
         "exp": 200,
@@ -1627,6 +1809,7 @@
         "mmPage": "mm 371"
     },
     {
+        "id": "yuan-ti-infiltrator",
         "name": "Yuan-ti Infiltrator",
         "cr": 1,
         "exp": 200,
@@ -1636,6 +1819,7 @@
         "mmPage": "mm 342"
     },
     {
+        "id": "allosaurus",
         "name": "Allosaurus",
         "cr": 2,
         "exp": 450,
@@ -1645,6 +1829,7 @@
         "mmPage": "mm 348"
     },
     {
+        "id": "animated-rug-of-smothering",
         "name": "Animated Rug of Smothering",
         "cr": 2,
         "exp": 450,
@@ -1654,6 +1839,7 @@
         "mmPage": "mm 17"
     },
     {
+        "id": "ankheg",
         "name": "Ankheg",
         "cr": 2,
         "exp": 450,
@@ -1663,6 +1849,7 @@
         "mmPage": "mm 18"
     },
     {
+        "id": "awakened-tree",
         "name": "Awakened Tree",
         "cr": 2,
         "exp": 450,
@@ -1672,6 +1859,7 @@
         "mmPage": "mm 23"
     },
     {
+        "id": "azer-sentinel",
         "name": "Azer Sentinel",
         "cr": 2,
         "exp": 450,
@@ -1681,6 +1869,7 @@
         "mmPage": "mm 25"
     },
     {
+        "id": "bandit-captain",
         "name": "Bandit Captain",
         "cr": 2,
         "exp": 450,
@@ -1690,6 +1879,7 @@
         "mmPage": "mm 27"
     },
     {
+        "id": "berserker",
         "name": "Berserker",
         "cr": 2,
         "exp": 450,
@@ -1699,6 +1889,7 @@
         "mmPage": "mm 37"
     },
     {
+        "id": "black-dragon-wyrmling",
         "name": "Black Dragon Wyrmling",
         "cr": 2,
         "exp": 450,
@@ -1708,6 +1899,7 @@
         "mmPage": "mm 38"
     },
     {
+        "id": "bronze-dragon-wyrmling",
         "name": "Bronze Dragon Wyrmling",
         "cr": 2,
         "exp": 450,
@@ -1717,6 +1909,7 @@
         "mmPage": "mm 58"
     },
     {
+        "id": "bulette-pup",
         "name": "Bulette Pup",
         "cr": 2,
         "exp": 450,
@@ -1726,6 +1919,7 @@
         "mmPage": "mm 63"
     },
     {
+        "id": "carrion-crawler",
         "name": "Carrion Crawler",
         "cr": 2,
         "exp": 450,
@@ -1735,6 +1929,7 @@
         "mmPage": "mm 66"
     },
     {
+        "id": "centaur-trooper",
         "name": "Centaur Trooper",
         "cr": 2,
         "exp": 450,
@@ -1744,6 +1939,7 @@
         "mmPage": "mm 67"
     },
     {
+        "id": "cult-fanatic",
         "name": "Cult Fanatic",
         "cr": 2,
         "exp": 450,
@@ -1752,6 +1948,7 @@
         "thematicType": "Humanoid"
     },
     {
+        "id": "cultist-fanatic",
         "name": "Cultist Fanatic",
         "cr": 2,
         "exp": 450,
@@ -1761,6 +1958,7 @@
         "mmPage": "mm 85"
     },
     {
+        "id": "druid",
         "name": "Druid",
         "cr": 2,
         "exp": 450,
@@ -1770,6 +1968,7 @@
         "mmPage": "mm 106"
     },
     {
+        "id": "ettercap",
         "name": "Ettercap",
         "cr": 2,
         "exp": 450,
@@ -1779,6 +1978,7 @@
         "mmPage": "mm 115"
     },
     {
+        "id": "faerie-dragon-adult",
         "name": "Faerie Dragon Adult",
         "cr": 2,
         "exp": 450,
@@ -1788,6 +1988,7 @@
         "mmPage": "mm 117"
     },
     {
+        "id": "gargoyle",
         "name": "Gargoyle",
         "cr": 2,
         "exp": 450,
@@ -1797,6 +1998,7 @@
         "mmPage": "mm 128"
     },
     {
+        "id": "gelatinous-cube",
         "name": "Gelatinous Cube",
         "cr": 2,
         "exp": 450,
@@ -1806,6 +2008,7 @@
         "mmPage": "mm 129"
     },
     {
+        "id": "ghast",
         "name": "Ghast",
         "cr": 2,
         "exp": 450,
@@ -1815,6 +2018,7 @@
         "mmPage": "mm 130"
     },
     {
+        "id": "giant-boar",
         "name": "Giant Boar",
         "cr": 2,
         "exp": 450,
@@ -1824,6 +2028,7 @@
         "mmPage": "mm 355"
     },
     {
+        "id": "giant-constrictor-snake",
         "name": "Giant Constrictor Snake",
         "cr": 2,
         "exp": 450,
@@ -1833,6 +2038,7 @@
         "mmPage": "mm 355"
     },
     {
+        "id": "giant-elk",
         "name": "Giant Elk",
         "cr": 2,
         "exp": 450,
@@ -1842,6 +2048,7 @@
         "mmPage": "mm 356"
     },
     {
+        "id": "gibbering-mouther",
         "name": "Gibbering Mouther",
         "cr": 2,
         "exp": 450,
@@ -1851,6 +2058,7 @@
         "mmPage": "mm 133"
     },
     {
+        "id": "githzerai-monk",
         "name": "Githzerai Monk",
         "cr": 2,
         "exp": 450,
@@ -1860,6 +2068,7 @@
         "mmPage": "mm 136"
     },
     {
+        "id": "githzerai-traveler",
         "name": "Githzerai Traveler",
         "cr": 2,
         "exp": 450,
@@ -1867,6 +2076,7 @@
         "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#GithzeraiTraveler"
     },
     {
+        "id": "gnoll-flesh-gnawer",
         "name": "Gnoll Flesh Gnawer",
         "cr": 2,
         "exp": 450,
@@ -1875,6 +2085,7 @@
         "thematicType": "Humanoid"
     },
     {
+        "id": "gnoll-pack-lord",
         "name": "Gnoll Pack Lord",
         "cr": 2,
         "exp": 450,
@@ -1884,6 +2095,7 @@
         "mmPage": "mm 140"
     },
     {
+        "id": "green-dragon-wyrmling",
         "name": "Green Dragon Wyrmling",
         "cr": 2,
         "exp": 450,
@@ -1893,6 +2105,7 @@
         "mmPage": "mm 152"
     },
     {
+        "id": "grick",
         "name": "Grick",
         "cr": 2,
         "exp": 450,
@@ -1902,6 +2115,7 @@
         "mmPage": "mm 158"
     },
     {
+        "id": "griffon",
         "name": "Griffon",
         "cr": 2,
         "exp": 450,
@@ -1911,6 +2125,7 @@
         "mmPage": "mm 159"
     },
     {
+        "id": "hunter-shark",
         "name": "Hunter Shark",
         "cr": 2,
         "exp": 450,
@@ -1920,6 +2135,7 @@
         "mmPage": "mm 363"
     },
     {
+        "id": "intellect-devourer",
         "name": "Intellect Devourer",
         "cr": 2,
         "exp": 450,
@@ -1929,6 +2145,7 @@
         "mmPage": "mm 179"
     },
     {
+        "id": "lizardfolk-geomancer",
         "name": "Lizardfolk Geomancer",
         "cr": 2,
         "exp": 450,
@@ -1938,6 +2155,7 @@
         "mmPage": "mm 197"
     },
     {
+        "id": "mage-apprentice",
         "name": "Mage Apprentice",
         "cr": 2,
         "exp": 450,
@@ -1947,6 +2165,7 @@
         "mmPage": "mm 198"
     },
     {
+        "id": "merrow",
         "name": "Merrow",
         "cr": 2,
         "exp": 450,
@@ -1956,6 +2175,7 @@
         "mmPage": "mm 210"
     },
     {
+        "id": "mimic",
         "name": "Mimic",
         "cr": 2,
         "exp": 450,
@@ -1965,6 +2185,7 @@
         "mmPage": "mm 212"
     },
     {
+        "id": "minotaur-skeleton",
         "name": "Minotaur Skeleton",
         "cr": 2,
         "exp": 450,
@@ -1974,6 +2195,7 @@
         "mmPage": "mm 283"
     },
     {
+        "id": "modron-pentadrone",
         "name": "Modron Pentadrone",
         "cr": 2,
         "exp": 450,
@@ -1983,6 +2205,7 @@
         "mmPage": "mm 218"
     },
     {
+        "id": "myconid-sovereign",
         "name": "Myconid Sovereign",
         "cr": 2,
         "exp": 450,
@@ -1992,6 +2215,7 @@
         "mmPage": "mm 223"
     },
     {
+        "id": "nothic",
         "name": "Nothic",
         "cr": 2,
         "exp": 450,
@@ -2001,6 +2225,7 @@
         "mmPage": "mm 228"
     },
     {
+        "id": "ochre-jelly",
         "name": "Ochre Jelly",
         "cr": 2,
         "exp": 450,
@@ -2010,6 +2235,7 @@
         "mmPage": "mm 230"
     },
     {
+        "id": "ogre",
         "name": "Ogre",
         "cr": 2,
         "exp": 450,
@@ -2019,6 +2245,7 @@
         "mmPage": "mm 231"
     },
     {
+        "id": "ogre-zombie",
         "name": "Ogre Zombie",
         "cr": 2,
         "exp": 450,
@@ -2028,6 +2255,7 @@
         "mmPage": "mm 346"
     },
     {
+        "id": "orc-eye-of-gruumsh",
         "name": "Orc Eye of Gruumsh",
         "cr": 2,
         "exp": 450,
@@ -2036,6 +2264,7 @@
         "thematicType": "Humanoid"
     },
     {
+        "id": "pegasus",
         "name": "Pegasus",
         "cr": 2,
         "exp": 450,
@@ -2045,6 +2274,7 @@
         "mmPage": "mm 235"
     },
     {
+        "id": "peryton",
         "name": "Peryton",
         "cr": 2,
         "exp": 450,
@@ -2054,6 +2284,7 @@
         "mmPage": "mm 238"
     },
     {
+        "id": "plesiosaurus",
         "name": "Plesiosaurus",
         "cr": 2,
         "exp": 450,
@@ -2063,6 +2294,7 @@
         "mmPage": "mm 366"
     },
     {
+        "id": "polar-bear",
         "name": "Polar Bear",
         "cr": 2,
         "exp": 450,
@@ -2072,6 +2304,7 @@
         "mmPage": "mm 367"
     },
     {
+        "id": "poltergeist",
         "name": "Poltergeist",
         "cr": 2,
         "exp": 450,
@@ -2081,6 +2314,7 @@
         "mmPage": "mm 246"
     },
     {
+        "id": "priest",
         "name": "Priest",
         "cr": 2,
         "exp": 450,
@@ -2090,6 +2324,7 @@
         "mmPage": "mm 248"
     },
     {
+        "id": "quaggoth",
         "name": "Quaggoth",
         "cr": 2,
         "exp": 450,
@@ -2099,6 +2334,7 @@
         "mmPage": "mm 251"
     },
     {
+        "id": "rhinoceros",
         "name": "Rhinoceros",
         "cr": 2,
         "exp": 450,
@@ -2108,6 +2344,7 @@
         "mmPage": "mm 368"
     },
     {
+        "id": "rug-of-smothering",
         "name": "Rug of Smothering",
         "cr": 2,
         "exp": 450,
@@ -2115,6 +2352,7 @@
         "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-r#RugofSmothering"
     },
     {
+        "id": "saber-toothed-tiger",
         "name": "Saber-Toothed Tiger",
         "cr": 2,
         "exp": 450,
@@ -2124,6 +2362,7 @@
         "mmPage": "mm 369"
     },
     {
+        "id": "sahuagin-priest",
         "name": "Sahuagin Priest",
         "cr": 2,
         "exp": 450,
@@ -2133,6 +2372,7 @@
         "mmPage": "mm 265"
     },
     {
+        "id": "sea-hag",
         "name": "Sea Hag",
         "cr": 2,
         "exp": 450,
@@ -2142,6 +2382,7 @@
         "mmPage": "mm 271"
     },
     {
+        "id": "silver-dragon-wyrmling",
         "name": "Silver Dragon Wyrmling",
         "cr": 2,
         "exp": 450,
@@ -2151,6 +2392,7 @@
         "mmPage": "mm 278"
     },
     {
+        "id": "spined-devil",
         "name": "Spined Devil",
         "cr": 2,
         "exp": 450,
@@ -2160,6 +2402,7 @@
         "mmPage": "mm 296"
     },
     {
+        "id": "swarm-of-poisonous-snakes",
         "name": "Swarm of Poisonous Snakes",
         "cr": 2,
         "exp": 450,
@@ -2168,6 +2411,7 @@
         "thematicType": "Beast"
     },
     {
+        "id": "swarm-of-stirges",
         "name": "Swarm of Stirges",
         "cr": 2,
         "exp": 450,
@@ -2177,6 +2421,7 @@
         "mmPage": "mm 299"
     },
     {
+        "id": "swarm-of-venomous-snakes",
         "name": "Swarm of Venomous Snakes",
         "cr": 2,
         "exp": 450,
@@ -2186,6 +2431,7 @@
         "mmPage": "mm 371"
     },
     {
+        "id": "wererat",
         "name": "Wererat",
         "cr": 2,
         "exp": 450,
@@ -2195,6 +2441,7 @@
         "mmPage": "mm 325"
     },
     {
+        "id": "white-dragon-wyrmling",
         "name": "White Dragon Wyrmling",
         "cr": 2,
         "exp": 450,
@@ -2204,6 +2451,7 @@
         "mmPage": "mm 328"
     },
     {
+        "id": "will-o-wisp",
         "name": "Will-o'-Wisp",
         "cr": 2,
         "exp": 450,
@@ -2213,6 +2461,7 @@
         "mmPage": "mm 333"
     },
     {
+        "id": "ankylosaurus",
         "name": "Ankylosaurus",
         "cr": 3,
         "exp": 700,
@@ -2222,6 +2471,7 @@
         "mmPage": "mm 348"
     },
     {
+        "id": "archer",
         "name": "Archer",
         "cr": 3,
         "exp": 700,
@@ -2229,6 +2479,7 @@
         "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-a#Archer"
     },
     {
+        "id": "basilisk",
         "name": "Basilisk",
         "cr": 3,
         "exp": 700,
@@ -2238,6 +2489,7 @@
         "mmPage": "mm 32"
     },
     {
+        "id": "bearded-devil",
         "name": "Bearded Devil",
         "cr": 3,
         "exp": 700,
@@ -2247,6 +2499,7 @@
         "mmPage": "mm 33"
     },
     {
+        "id": "blue-dragon-wyrmling",
         "name": "Blue Dragon Wyrmling",
         "cr": 3,
         "exp": 700,
@@ -2256,6 +2509,7 @@
         "mmPage": "mm 48"
     },
     {
+        "id": "bugbear-chief",
         "name": "Bugbear Chief",
         "cr": 3,
         "exp": 700,
@@ -2263,6 +2517,7 @@
         "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-b#BugbearChief"
     },
     {
+        "id": "bugbear-stalker",
         "name": "Bugbear Stalker",
         "cr": 3,
         "exp": 700,
@@ -2272,6 +2527,7 @@
         "mmPage": "mm 62"
     },
     {
+        "id": "displacer-beast",
         "name": "Displacer Beast",
         "cr": 3,
         "exp": 700,
@@ -2281,6 +2537,7 @@
         "mmPage": "mm 98"
     },
     {
+        "id": "doppelganger",
         "name": "Doppelganger",
         "cr": 3,
         "exp": 700,
@@ -2290,6 +2547,7 @@
         "mmPage": "mm 100"
     },
     {
+        "id": "flaming-skeleton",
         "name": "Flaming Skeleton",
         "cr": 3,
         "exp": 700,
@@ -2299,6 +2557,7 @@
         "mmPage": "mm 283"
     },
     {
+        "id": "giant-scorpion",
         "name": "Giant Scorpion",
         "cr": 3,
         "exp": 700,
@@ -2308,6 +2567,7 @@
         "mmPage": "mm 359"
     },
     {
+        "id": "githyanki-warrior",
         "name": "Githyanki Warrior",
         "cr": 3,
         "exp": 700,
@@ -2317,6 +2577,7 @@
         "mmPage": "mm 134"
     },
     {
+        "id": "goblin-hexer",
         "name": "Goblin Hexer",
         "cr": 3,
         "exp": 700,
@@ -2326,6 +2587,7 @@
         "mmPage": "mm 143"
     },
     {
+        "id": "gold-dragon-wyrmling",
         "name": "Gold Dragon Wyrmling",
         "cr": 3,
         "exp": 700,
@@ -2335,6 +2597,7 @@
         "mmPage": "mm 144"
     },
     {
+        "id": "green-hag",
         "name": "Green Hag",
         "cr": 3,
         "exp": 700,
@@ -2344,6 +2607,7 @@
         "mmPage": "mm 156"
     },
     {
+        "id": "grell",
         "name": "Grell",
         "cr": 3,
         "exp": 700,
@@ -2353,6 +2617,7 @@
         "mmPage": "mm 157"
     },
     {
+        "id": "grell",
         "name": "Grell",
         "cr": 3,
         "exp": 700,
@@ -2362,6 +2627,7 @@
         "mmPage": "mm 157"
     },
     {
+        "id": "hell-hound",
         "name": "Hell Hound",
         "cr": 3,
         "exp": 700,
@@ -2371,6 +2637,7 @@
         "mmPage": "mm 165"
     },
     {
+        "id": "hobgoblin-captain",
         "name": "Hobgoblin Captain",
         "cr": 3,
         "exp": 700,
@@ -2380,6 +2647,7 @@
         "mmPage": "mm 171"
     },
     {
+        "id": "hook-horror",
         "name": "Hook Horror",
         "cr": 3,
         "exp": 700,
@@ -2389,6 +2657,7 @@
         "mmPage": "mm 173"
     },
     {
+        "id": "killer-whale",
         "name": "Killer Whale",
         "cr": 3,
         "exp": 700,
@@ -2398,6 +2667,7 @@
         "mmPage": "mm 364"
     },
     {
+        "id": "knight",
         "name": "Knight",
         "cr": 3,
         "exp": 700,
@@ -2407,6 +2677,7 @@
         "mmPage": "mm 184"
     },
     {
+        "id": "kuo-toa-monitor",
         "name": "Kuo-toa Monitor",
         "cr": 3,
         "exp": 700,
@@ -2416,6 +2687,7 @@
         "mmPage": "mm 190"
     },
     {
+        "id": "manticore",
         "name": "Manticore",
         "cr": 3,
         "exp": 700,
@@ -2425,6 +2697,7 @@
         "mmPage": "mm 202"
     },
     {
+        "id": "minotaur",
         "name": "Minotaur",
         "cr": 3,
         "exp": 700,
@@ -2432,6 +2705,7 @@
         "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-m#Minotaur"
     },
     {
+        "id": "minotaur-of-baphomet",
         "name": "Minotaur of Baphomet",
         "cr": 3,
         "exp": 700,
@@ -2441,6 +2715,7 @@
         "mmPage": "mm 215"
     },
     {
+        "id": "mummy",
         "name": "Mummy",
         "cr": 3,
         "exp": 700,
@@ -2450,6 +2725,7 @@
         "mmPage": "mm 219"
     },
     {
+        "id": "nightmare",
         "name": "Nightmare",
         "cr": 3,
         "exp": 700,
@@ -2459,6 +2735,7 @@
         "mmPage": "mm 226"
     },
     {
+        "id": "owlbear",
         "name": "Owlbear",
         "cr": 3,
         "exp": 700,
@@ -2468,6 +2745,7 @@
         "mmPage": "mm 234"
     },
     {
+        "id": "phase-spider",
         "name": "Phase Spider",
         "cr": 3,
         "exp": 700,
@@ -2477,6 +2755,7 @@
         "mmPage": "mm 239"
     },
     {
+        "id": "quaggoth-thonot",
         "name": "Quaggoth Thonot",
         "cr": 3,
         "exp": 700,
@@ -2486,6 +2765,7 @@
         "mmPage": "mm 251"
     },
     {
+        "id": "scout-captain",
         "name": "Scout Captain",
         "cr": 3,
         "exp": 700,
@@ -2495,6 +2775,7 @@
         "mmPage": "mm 270"
     },
     {
+        "id": "spectator",
         "name": "Spectator",
         "cr": 3,
         "exp": 700,
@@ -2504,6 +2785,7 @@
         "mmPage": "mm 289"
     },
     {
+        "id": "swarm-of-crawling-claws",
         "name": "Swarm of Crawling Claws",
         "cr": 3,
         "exp": 700,
@@ -2513,6 +2795,7 @@
         "mmPage": "mm 83"
     },
     {
+        "id": "swarm-of-lemures",
         "name": "Swarm of Lemures",
         "cr": 3,
         "exp": 700,
@@ -2522,6 +2805,7 @@
         "mmPage": "mm 194"
     },
     {
+        "id": "vampire-familiar",
         "name": "Vampire Familiar",
         "cr": 3,
         "exp": 700,
@@ -2531,6 +2815,7 @@
         "mmPage": "mm 314"
     },
     {
+        "id": "veteran",
         "name": "Veteran",
         "cr": 3,
         "exp": 700,
@@ -2538,6 +2823,7 @@
         "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-v#Veteran"
     },
     {
+        "id": "warrior-veteran",
         "name": "Warrior Veteran",
         "cr": 3,
         "exp": 700,
@@ -2547,6 +2833,7 @@
         "mmPage": "mm 320"
     },
     {
+        "id": "water-weird",
         "name": "Water Weird",
         "cr": 3,
         "exp": 700,
@@ -2556,6 +2843,7 @@
         "mmPage": "mm 323"
     },
     {
+        "id": "werewolf",
         "name": "Werewolf",
         "cr": 3,
         "exp": 700,
@@ -2565,6 +2853,7 @@
         "mmPage": "mm 327"
     },
     {
+        "id": "wight",
         "name": "Wight",
         "cr": 3,
         "exp": 700,
@@ -2574,6 +2863,7 @@
         "mmPage": "mm 332"
     },
     {
+        "id": "winter-wolf",
         "name": "Winter Wolf",
         "cr": 3,
         "exp": 700,
@@ -2583,6 +2873,7 @@
         "mmPage": "mm 334"
     },
     {
+        "id": "yeti",
         "name": "Yeti",
         "cr": 3,
         "exp": 700,
@@ -2592,6 +2883,7 @@
         "mmPage": "mm 339"
     },
     {
+        "id": "yuan-ti-malison-type-1",
         "name": "Yuan-ti Malison (Type 1)",
         "cr": 3,
         "exp": 700,
@@ -2601,6 +2893,7 @@
         "mmPage": "mm 343"
     },
     {
+        "id": "yuan-ti-malison-type-2",
         "name": "Yuan-ti Malison (Type 2)",
         "cr": 3,
         "exp": 700,
@@ -2610,6 +2903,7 @@
         "mmPage": "mm 343"
     },
     {
+        "id": "yuan-ti-malison-type-3",
         "name": "Yuan-ti Malison (Type 3)",
         "cr": 3,
         "exp": 700,
@@ -2619,6 +2913,7 @@
         "mmPage": "mm 344"
     },
     {
+        "id": "aarakocra-aeromancer",
         "name": "Aarakocra Aeromancer",
         "cr": 4,
         "exp": 1100,
@@ -2628,6 +2923,7 @@
         "mmPage": "mm 10"
     },
     {
+        "id": "archelon",
         "name": "Archelon",
         "cr": 4,
         "exp": 1100,
@@ -2637,6 +2933,7 @@
         "mmPage": "mm 349"
     },
     {
+        "id": "banshee",
         "name": "Banshee",
         "cr": 4,
         "exp": 1100,
@@ -2646,6 +2943,7 @@
         "mmPage": "mm 29"
     },
     {
+        "id": "black-pudding",
         "name": "Black Pudding",
         "cr": 4,
         "exp": 1100,
@@ -2655,6 +2953,7 @@
         "mmPage": "mm 42"
     },
     {
+        "id": "bone-naga",
         "name": "Bone Naga",
         "cr": 4,
         "exp": 1100,
@@ -2664,6 +2963,7 @@
         "mmPage": "mm 53"
     },
     {
+        "id": "bullywug-bog-sage",
         "name": "Bullywug Bog Sage",
         "cr": 4,
         "exp": 1100,
@@ -2673,6 +2973,7 @@
         "mmPage": "mm 64"
     },
     {
+        "id": "chuul",
         "name": "Chuul",
         "cr": 4,
         "exp": 1100,
@@ -2682,6 +2983,7 @@
         "mmPage": "mm 71"
     },
     {
+        "id": "couatl",
         "name": "Couatl",
         "cr": 4,
         "exp": 1100,
@@ -2691,6 +2993,7 @@
         "mmPage": "mm 82"
     },
     {
+        "id": "elephant",
         "name": "Elephant",
         "cr": 4,
         "exp": 1100,
@@ -2700,6 +3003,7 @@
         "mmPage": "mm 353"
     },
     {
+        "id": "ettin",
         "name": "Ettin",
         "cr": 4,
         "exp": 1100,
@@ -2709,6 +3013,7 @@
         "mmPage": "mm 116"
     },
     {
+        "id": "flameskull",
         "name": "Flameskull",
         "cr": 4,
         "exp": 1100,
@@ -2718,6 +3023,7 @@
         "mmPage": "mm 120"
     },
     {
+        "id": "ghost",
         "name": "Ghost",
         "cr": 4,
         "exp": 1100,
@@ -2727,6 +3033,7 @@
         "mmPage": "mm 131"
     },
     {
+        "id": "gnoll-fang-of-yeenoghu",
         "name": "Gnoll Fang of Yeenoghu",
         "cr": 4,
         "exp": 1100,
@@ -2736,6 +3043,7 @@
         "mmPage": "mm 141"
     },
     {
+        "id": "gnoll-hunter",
         "name": "Gnoll Hunter",
         "cr": 4,
         "exp": 1100,
@@ -2743,6 +3051,7 @@
         "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#GnollHunter"
     },
     {
+        "id": "guard-captain",
         "name": "Guard Captain",
         "cr": 4,
         "exp": 1100,
@@ -2752,6 +3061,7 @@
         "mmPage": "mm 162"
     },
     {
+        "id": "helmed-horror",
         "name": "Helmed Horror",
         "cr": 4,
         "exp": 1100,
@@ -2761,6 +3071,7 @@
         "mmPage": "mm 166"
     },
     {
+        "id": "hippopotamus",
         "name": "Hippopotamus",
         "cr": 4,
         "exp": 1100,
@@ -2770,6 +3081,7 @@
         "mmPage": "mm 362"
     },
     {
+        "id": "incubus",
         "name": "Incubus",
         "cr": 4,
         "exp": 1100,
@@ -2779,6 +3091,7 @@
         "mmPage": "mm 178"
     },
     {
+        "id": "juvenile-shadow-dragon",
         "name": "Juvenile Shadow Dragon",
         "cr": 4,
         "exp": 1100,
@@ -2788,6 +3101,7 @@
         "mmPage": "mm 275"
     },
     {
+        "id": "lamia",
         "name": "Lamia",
         "cr": 4,
         "exp": 1100,
@@ -2797,6 +3111,7 @@
         "mmPage": "mm 192"
     },
     {
+        "id": "lizardfolk-shaman",
         "name": "Lizardfolk Shaman",
         "cr": 4,
         "exp": 1100,
@@ -2804,6 +3119,7 @@
         "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-l#LizardfolkShaman"
     },
     {
+        "id": "lizardfolk-sovereign",
         "name": "Lizardfolk Sovereign",
         "cr": 4,
         "exp": 1100,
@@ -2813,6 +3129,7 @@
         "mmPage": "mm 197"
     },
     {
+        "id": "orc-blade-of-ilneval",
         "name": "Orc Blade of Ilneval",
         "cr": 4,
         "exp": 1100,
@@ -2820,6 +3137,7 @@
         "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-o#OrcBladeofIlneval"
     },
     {
+        "id": "orc-war-chief",
         "name": "Orc War Chief",
         "cr": 4,
         "exp": 1100,
@@ -2827,6 +3145,7 @@
         "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-o#OrcWarChief"
     },
     {
+        "id": "red-dragon-wyrmling",
         "name": "Red Dragon Wyrmling",
         "cr": 4,
         "exp": 1100,
@@ -2836,6 +3155,7 @@
         "mmPage": "mm 254"
     },
     {
+        "id": "shadow-demon",
         "name": "Shadow Demon",
         "cr": 4,
         "exp": 1100,
@@ -2845,6 +3165,7 @@
         "mmPage": "mm 273"
     },
     {
+        "id": "succubus",
         "name": "Succubus",
         "cr": 4,
         "exp": 1100,
@@ -2854,6 +3175,7 @@
         "mmPage": "mm 303"
     },
     {
+        "id": "swarm-of-dretches",
         "name": "Swarm of Dretches",
         "cr": 4,
         "exp": 1100,
@@ -2863,6 +3185,7 @@
         "mmPage": "mm 104"
     },
     {
+        "id": "tough-boss",
         "name": "Tough Boss",
         "cr": 4,
         "exp": 1100,
@@ -2872,6 +3195,7 @@
         "mmPage": "mm 307"
     },
     {
+        "id": "wereboar",
         "name": "Wereboar",
         "cr": 4,
         "exp": 1100,
@@ -2881,6 +3205,7 @@
         "mmPage": "mm 325"
     },
     {
+        "id": "weretiger",
         "name": "Weretiger",
         "cr": 4,
         "exp": 1100,
@@ -2890,6 +3215,7 @@
         "mmPage": "mm 326"
     },
     {
+        "id": "air-elemental",
         "name": "Air Elemental",
         "cr": 5,
         "exp": 1800,
@@ -2899,6 +3225,7 @@
         "mmPage": "mm 13"
     },
     {
+        "id": "barbed-devil",
         "name": "Barbed Devil",
         "cr": 5,
         "exp": 1800,
@@ -2908,6 +3235,7 @@
         "mmPage": "mm 30"
     },
     {
+        "id": "barlgura",
         "name": "Barlgura",
         "cr": 5,
         "exp": 1800,
@@ -2917,6 +3245,7 @@
         "mmPage": "mm 31"
     },
     {
+        "id": "beholder-zombie",
         "name": "Beholder Zombie",
         "cr": 5,
         "exp": 1800,
@@ -2926,6 +3255,7 @@
         "mmPage": "mm 347"
     },
     {
+        "id": "bulette",
         "name": "Bulette",
         "cr": 5,
         "exp": 1800,
@@ -2935,6 +3265,7 @@
         "mmPage": "mm 63"
     },
     {
+        "id": "cambion",
         "name": "Cambion",
         "cr": 5,
         "exp": 1800,
@@ -2944,6 +3275,7 @@
         "mmPage": "mm 65"
     },
     {
+        "id": "drow-elite-warrior",
         "name": "Drow Elite Warrior",
         "cr": 5,
         "exp": 1800,
@@ -2951,6 +3283,7 @@
         "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-d#DrowEliteWarrior"
     },
     {
+        "id": "earth-elemental",
         "name": "Earth Elemental",
         "cr": 5,
         "exp": 1800,
@@ -2960,6 +3293,7 @@
         "mmPage": "mm 108"
     },
     {
+        "id": "fire-elemental",
         "name": "Fire Elemental",
         "cr": 5,
         "exp": 1800,
@@ -2969,6 +3303,7 @@
         "mmPage": "mm 118"
     },
     {
+        "id": "flesh-golem",
         "name": "Flesh Golem",
         "cr": 5,
         "exp": 1800,
@@ -2978,6 +3313,7 @@
         "mmPage": "mm 121"
     },
     {
+        "id": "giant-axe-beak",
         "name": "Giant Axe Beak",
         "cr": 5,
         "exp": 1800,
@@ -2987,6 +3323,7 @@
         "mmPage": "mm 24"
     },
     {
+        "id": "giant-crocodile",
         "name": "Giant Crocodile",
         "cr": 5,
         "exp": 1800,
@@ -2996,6 +3333,7 @@
         "mmPage": "mm 356"
     },
     {
+        "id": "giant-shark",
         "name": "Giant Shark",
         "cr": 5,
         "exp": 1800,
@@ -3005,6 +3343,7 @@
         "mmPage": "mm 359"
     },
     {
+        "id": "gladiator",
         "name": "Gladiator",
         "cr": 5,
         "exp": 1800,
@@ -3014,6 +3353,7 @@
         "mmPage": "mm 139"
     },
     {
+        "id": "gorgon",
         "name": "Gorgon",
         "cr": 5,
         "exp": 1800,
@@ -3023,6 +3363,7 @@
         "mmPage": "mm 148"
     },
     {
+        "id": "half-dragon",
         "name": "Half-Dragon",
         "cr": 5,
         "exp": 1800,
@@ -3032,6 +3373,7 @@
         "mmPage": "mm 163"
     },
     {
+        "id": "half-red-dragon-veteran",
         "name": "Half-Red Dragon Veteran",
         "cr": 5,
         "exp": 1800,
@@ -3039,6 +3381,7 @@
         "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-h#Half-RedDragonVeteran"
     },
     {
+        "id": "hill-giant",
         "name": "Hill Giant",
         "cr": 5,
         "exp": 1800,
@@ -3048,6 +3391,7 @@
         "mmPage": "mm 168"
     },
     {
+        "id": "mezzoloth",
         "name": "Mezzoloth",
         "cr": 5,
         "exp": 1800,
@@ -3057,6 +3401,7 @@
         "mmPage": "mm 211"
     },
     {
+        "id": "night-hag",
         "name": "Night Hag",
         "cr": 5,
         "exp": 1800,
@@ -3066,6 +3411,7 @@
         "mmPage": "mm 225"
     },
     {
+        "id": "otyugh",
         "name": "Otyugh",
         "cr": 5,
         "exp": 1800,
@@ -3075,6 +3421,7 @@
         "mmPage": "mm 233"
     },
     {
+        "id": "pixie-wonderbringer",
         "name": "Pixie Wonderbringer",
         "cr": 5,
         "exp": 1800,
@@ -3084,6 +3431,7 @@
         "mmPage": "mm 244"
     },
     {
+        "id": "red-slaad",
         "name": "Red Slaad",
         "cr": 5,
         "exp": 1800,
@@ -3093,6 +3441,7 @@
         "mmPage": "mm 285"
     },
     {
+        "id": "revenant",
         "name": "Revenant",
         "cr": 5,
         "exp": 1800,
@@ -3102,6 +3451,7 @@
         "mmPage": "mm 259"
     },
     {
+        "id": "roper",
         "name": "Roper",
         "cr": 5,
         "exp": 1800,
@@ -3111,6 +3461,7 @@
         "mmPage": "mm 262"
     },
     {
+        "id": "sahuagin-baron",
         "name": "Sahuagin Baron",
         "cr": 5,
         "exp": 1800,
@@ -3120,6 +3471,7 @@
         "mmPage": "mm 265"
     },
     {
+        "id": "salamander",
         "name": "Salamander",
         "cr": 5,
         "exp": 1800,
@@ -3129,6 +3481,7 @@
         "mmPage": "mm 267"
     },
     {
+        "id": "shambling-mound",
         "name": "Shambling Mound",
         "cr": 5,
         "exp": 1800,
@@ -3138,6 +3491,7 @@
         "mmPage": "mm 276"
     },
     {
+        "id": "triceratops",
         "name": "Triceratops",
         "cr": 5,
         "exp": 1800,
@@ -3147,6 +3501,7 @@
         "mmPage": "mm 372"
     },
     {
+        "id": "troll",
         "name": "Troll",
         "cr": 5,
         "exp": 1800,
@@ -3156,6 +3511,7 @@
         "mmPage": "mm 310"
     },
     {
+        "id": "umber-hulk",
         "name": "Umber Hulk",
         "cr": 5,
         "exp": 1800,
@@ -3165,6 +3521,7 @@
         "mmPage": "mm 312"
     },
     {
+        "id": "unicorn",
         "name": "Unicorn",
         "cr": 5,
         "exp": 1800,
@@ -3174,6 +3531,7 @@
         "mmPage": "mm 313"
     },
     {
+        "id": "vampire-spawn",
         "name": "Vampire Spawn",
         "cr": 5,
         "exp": 1800,
@@ -3183,6 +3541,7 @@
         "mmPage": "mm 315"
     },
     {
+        "id": "water-elemental",
         "name": "Water Elemental",
         "cr": 5,
         "exp": 1800,
@@ -3192,6 +3551,7 @@
         "mmPage": "mm 322"
     },
     {
+        "id": "werebear",
         "name": "Werebear",
         "cr": 5,
         "exp": 1800,
@@ -3201,6 +3561,7 @@
         "mmPage": "mm 324"
     },
     {
+        "id": "wraith",
         "name": "Wraith",
         "cr": 5,
         "exp": 1800,
@@ -3210,6 +3571,7 @@
         "mmPage": "mm 336"
     },
     {
+        "id": "xorn",
         "name": "Xorn",
         "cr": 5,
         "exp": 1800,
@@ -3219,6 +3581,7 @@
         "mmPage": "mm 338"
     },
     {
+        "id": "young-remorhaz",
         "name": "Young Remorhaz",
         "cr": 5,
         "exp": 1800,
@@ -3228,6 +3591,7 @@
         "mmPage": "mm 258"
     },
     {
+        "id": "annis-hag",
         "name": "Annis Hag",
         "cr": 6,
         "exp": 2300,
@@ -3235,6 +3599,7 @@
         "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-a#AnnisHag"
     },
     {
+        "id": "azer-pyromancer",
         "name": "Azer Pyromancer",
         "cr": 6,
         "exp": 2300,
@@ -3244,6 +3609,7 @@
         "mmPage": "mm 25"
     },
     {
+        "id": "chasme",
         "name": "Chasme",
         "cr": 6,
         "exp": 2300,
@@ -3253,6 +3619,7 @@
         "mmPage": "mm 69"
     },
     {
+        "id": "chimera",
         "name": "Chimera",
         "cr": 6,
         "exp": 2300,
@@ -3262,6 +3629,7 @@
         "mmPage": "mm 70"
     },
     {
+        "id": "cyclops",
         "name": "Cyclops",
         "cr": 6,
         "exp": 2300,
@@ -3269,6 +3637,7 @@
         "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-c#Cyclops"
     },
     {
+        "id": "cyclops-sentry",
         "name": "Cyclops Sentry",
         "cr": 6,
         "exp": 2300,
@@ -3278,6 +3647,7 @@
         "mmPage": "mm 88"
     },
     {
+        "id": "drider",
         "name": "Drider",
         "cr": 6,
         "exp": 2300,
@@ -3287,6 +3657,7 @@
         "mmPage": "mm 105"
     },
     {
+        "id": "galeb-duhr",
         "name": "Galeb Duhr",
         "cr": 6,
         "exp": 2300,
@@ -3296,6 +3667,7 @@
         "mmPage": "mm 127"
     },
     {
+        "id": "ghast-gravecaller",
         "name": "Ghast Gravecaller",
         "cr": 6,
         "exp": 2300,
@@ -3305,6 +3677,7 @@
         "mmPage": "mm 130"
     },
     {
+        "id": "giant-squid",
         "name": "Giant Squid",
         "cr": 6,
         "exp": 2300,
@@ -3314,6 +3687,7 @@
         "mmPage": "mm 360"
     },
     {
+        "id": "githyanki-kith-rak",
         "name": "Githyanki Kith'rak",
         "cr": 6,
         "exp": 2300,
@@ -3321,6 +3695,7 @@
         "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#GithyankiKith'rak"
     },
     {
+        "id": "githzerai-futurist",
         "name": "Githzerai Futurist",
         "cr": 6,
         "exp": 2300,
@@ -3328,6 +3703,7 @@
         "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#GithzeraiFuturist"
     },
     {
+        "id": "githzerai-zerth",
         "name": "Githzerai Zerth",
         "cr": 6,
         "exp": 2300,
@@ -3337,6 +3713,7 @@
         "mmPage": "mm 137"
     },
     {
+        "id": "hobgoblin-warlord",
         "name": "Hobgoblin Warlord",
         "cr": 6,
         "exp": 2300,
@@ -3346,6 +3723,7 @@
         "mmPage": "mm 171"
     },
     {
+        "id": "invisible-stalker",
         "name": "Invisible Stalker",
         "cr": 6,
         "exp": 2300,
@@ -3355,6 +3733,7 @@
         "mmPage": "mm 180"
     },
     {
+        "id": "kuo-toa-archpriest",
         "name": "Kuo-toa Archpriest",
         "cr": 6,
         "exp": 2300,
@@ -3364,6 +3743,7 @@
         "mmPage": "mm 191"
     },
     {
+        "id": "mage",
         "name": "Mage",
         "cr": 6,
         "exp": 2300,
@@ -3373,6 +3753,7 @@
         "mmPage": "mm 199"
     },
     {
+        "id": "mammoth",
         "name": "Mammoth",
         "cr": 6,
         "exp": 2300,
@@ -3382,6 +3763,7 @@
         "mmPage": "mm 365"
     },
     {
+        "id": "medusa",
         "name": "Medusa",
         "cr": 6,
         "exp": 2300,
@@ -3391,6 +3773,7 @@
         "mmPage": "mm 205"
     },
     {
+        "id": "merfolk-wavebender",
         "name": "Merfolk Wavebender",
         "cr": 6,
         "exp": 2300,
@@ -3400,6 +3783,7 @@
         "mmPage": "mm 209"
     },
     {
+        "id": "performer-maestro",
         "name": "Performer Maestro",
         "cr": 6,
         "exp": 2300,
@@ -3409,6 +3793,7 @@
         "mmPage": "mm 237"
     },
     {
+        "id": "pirate-captain",
         "name": "Pirate Captain",
         "cr": 6,
         "exp": 2300,
@@ -3418,6 +3803,7 @@
         "mmPage": "mm 242"
     },
     {
+        "id": "satyr-revelmaster",
         "name": "Satyr Revelmaster",
         "cr": 6,
         "exp": 2300,
@@ -3427,6 +3813,7 @@
         "mmPage": "mm 268"
     },
     {
+        "id": "vrock",
         "name": "Vrock",
         "cr": 6,
         "exp": 2300,
@@ -3436,6 +3823,7 @@
         "mmPage": "mm 319"
     },
     {
+        "id": "wyvern",
         "name": "Wyvern",
         "cr": 6,
         "exp": 2300,
@@ -3445,6 +3833,7 @@
         "mmPage": "mm 337"
     },
     {
+        "id": "young-brass-dragon",
         "name": "Young Brass Dragon",
         "cr": 6,
         "exp": 2300,
@@ -3454,6 +3843,7 @@
         "mmPage": "mm 54"
     },
     {
+        "id": "young-white-dragon",
         "name": "Young White Dragon",
         "cr": 6,
         "exp": 2300,
@@ -3463,6 +3853,7 @@
         "mmPage": "mm 328"
     },
     {
+        "id": "bandit-deceiver",
         "name": "Bandit Deceiver",
         "cr": 7,
         "exp": 2900,
@@ -3472,6 +3863,7 @@
         "mmPage": "mm 28"
     },
     {
+        "id": "blue-slaad",
         "name": "Blue Slaad",
         "cr": 7,
         "exp": 2900,
@@ -3481,6 +3873,7 @@
         "mmPage": "mm 285"
     },
     {
+        "id": "centaur-warden",
         "name": "Centaur Warden",
         "cr": 7,
         "exp": 2900,
@@ -3490,6 +3883,7 @@
         "mmPage": "mm 67"
     },
     {
+        "id": "drow-mage",
         "name": "Drow Mage",
         "cr": 7,
         "exp": 2900,
@@ -3497,6 +3891,7 @@
         "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-d#DrowMage"
     },
     {
+        "id": "giant-ape",
         "name": "Giant Ape",
         "cr": 7,
         "exp": 2900,
@@ -3506,6 +3901,7 @@
         "mmPage": "mm 354"
     },
     {
+        "id": "graveyard-revenant",
         "name": "Graveyard Revenant",
         "cr": 7,
         "exp": 2900,
@@ -3515,6 +3911,7 @@
         "mmPage": "mm 260"
     },
     {
+        "id": "grick-alpha",
         "name": "Grick Alpha",
         "cr": 7,
         "exp": 2900,
@@ -3522,6 +3919,7 @@
         "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#GrickAlpha"
     },
     {
+        "id": "grick-ancient",
         "name": "Grick Ancient",
         "cr": 7,
         "exp": 2900,
@@ -3531,6 +3929,7 @@
         "mmPage": "mm 158"
     },
     {
+        "id": "mind-flayer",
         "name": "Mind Flayer",
         "cr": 7,
         "exp": 2900,
@@ -3540,6 +3939,7 @@
         "mmPage": "mm 213"
     },
     {
+        "id": "oni",
         "name": "Oni",
         "cr": 7,
         "exp": 2900,
@@ -3549,6 +3949,7 @@
         "mmPage": "mm 232"
     },
     {
+        "id": "primeval-owlbear",
         "name": "Primeval Owlbear",
         "cr": 7,
         "exp": 2900,
@@ -3558,6 +3959,7 @@
         "mmPage": "mm 234"
     },
     {
+        "id": "shield-guardian",
         "name": "Shield Guardian",
         "cr": 7,
         "exp": 2900,
@@ -3567,6 +3969,7 @@
         "mmPage": "mm 277"
     },
     {
+        "id": "stone-giant",
         "name": "Stone Giant",
         "cr": 7,
         "exp": 2900,
@@ -3576,6 +3979,7 @@
         "mmPage": "mm 300"
     },
     {
+        "id": "tree-blight",
         "name": "Tree Blight",
         "cr": 7,
         "exp": 2900,
@@ -3585,6 +3989,7 @@
         "mmPage": "mm 44"
     },
     {
+        "id": "violet-fungus-necrohulk",
         "name": "Violet Fungus Necrohulk",
         "cr": 7,
         "exp": 2900,
@@ -3594,6 +3999,7 @@
         "mmPage": "mm 126"
     },
     {
+        "id": "young-black-dragon",
         "name": "Young Black Dragon",
         "cr": 7,
         "exp": 2900,
@@ -3603,6 +4009,7 @@
         "mmPage": "mm 38"
     },
     {
+        "id": "young-copper-dragon",
         "name": "Young Copper Dragon",
         "cr": 7,
         "exp": 2900,
@@ -3612,6 +4019,7 @@
         "mmPage": "mm 78"
     },
     {
+        "id": "yuan-ti-abomination",
         "name": "Yuan-ti Abomination",
         "cr": 7,
         "exp": 2900,
@@ -3621,6 +4029,7 @@
         "mmPage": "mm 345"
     },
     {
+        "id": "aberrant-cultist",
         "name": "Aberrant Cultist",
         "cr": 8,
         "exp": 3900,
@@ -3630,6 +4039,7 @@
         "mmPage": "mm 86"
     },
     {
+        "id": "assassin",
         "name": "Assassin",
         "cr": 8,
         "exp": 3900,
@@ -3639,6 +4049,7 @@
         "mmPage": "mm 22"
     },
     {
+        "id": "berserker-commander",
         "name": "Berserker Commander",
         "cr": 8,
         "exp": 3900,
@@ -3648,6 +4059,7 @@
         "mmPage": "mm 37"
     },
     {
+        "id": "chain-devil",
         "name": "Chain Devil",
         "cr": 8,
         "exp": 3900,
@@ -3657,6 +4069,7 @@
         "mmPage": "mm 68"
     },
     {
+        "id": "cloaker",
         "name": "Cloaker",
         "cr": 8,
         "exp": 3900,
@@ -3666,6 +4079,7 @@
         "mmPage": "mm 73"
     },
     {
+        "id": "cockatrice-regent",
         "name": "Cockatrice Regent",
         "cr": 8,
         "exp": 3900,
@@ -3675,6 +4089,7 @@
         "mmPage": "mm 75"
     },
     {
+        "id": "death-cultist",
         "name": "Death Cultist",
         "cr": 8,
         "exp": 3900,
@@ -3684,6 +4099,7 @@
         "mmPage": "mm 86"
     },
     {
+        "id": "drow-priestess-of-lolth",
         "name": "Drow Priestess of Lolth",
         "cr": 8,
         "exp": 3900,
@@ -3691,6 +4107,7 @@
         "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-d#DrowPriestessofLolth"
     },
     {
+        "id": "elemental-cultist",
         "name": "Elemental Cultist",
         "cr": 8,
         "exp": 3900,
@@ -3700,6 +4117,7 @@
         "mmPage": "mm 87"
     },
     {
+        "id": "fiend-cultist",
         "name": "Fiend Cultist",
         "cr": 8,
         "exp": 3900,
@@ -3709,6 +4127,7 @@
         "mmPage": "mm 87"
     },
     {
+        "id": "fomorian",
         "name": "Fomorian",
         "cr": 8,
         "exp": 3900,
@@ -3718,6 +4137,7 @@
         "mmPage": "mm 123"
     },
     {
+        "id": "frost-giant",
         "name": "Frost Giant",
         "cr": 8,
         "exp": 3900,
@@ -3727,6 +4147,7 @@
         "mmPage": "mm 124"
     },
     {
+        "id": "githyanki-knight",
         "name": "Githyanki Knight",
         "cr": 8,
         "exp": 3900,
@@ -3736,6 +4157,7 @@
         "mmPage": "mm 135"
     },
     {
+        "id": "gnoll-demoniac",
         "name": "Gnoll Demoniac",
         "cr": 8,
         "exp": 3900,
@@ -3745,6 +4167,7 @@
         "mmPage": "mm 141"
     },
     {
+        "id": "green-slaad",
         "name": "Green Slaad",
         "cr": 8,
         "exp": 3900,
@@ -3754,6 +4177,7 @@
         "mmPage": "mm 286"
     },
     {
+        "id": "hezrou",
         "name": "Hezrou",
         "cr": 8,
         "exp": 3900,
@@ -3763,6 +4187,7 @@
         "mmPage": "mm 167"
     },
     {
+        "id": "hydra",
         "name": "Hydra",
         "cr": 8,
         "exp": 3900,
@@ -3772,6 +4197,7 @@
         "mmPage": "mm 175"
     },
     {
+        "id": "sphinx-of-secrets",
         "name": "Sphinx of Secrets",
         "cr": 8,
         "exp": 3900,
@@ -3781,6 +4207,7 @@
         "mmPage": "mm 292"
     },
     {
+        "id": "spirit-naga",
         "name": "Spirit Naga",
         "cr": 8,
         "exp": 3900,
@@ -3790,6 +4217,7 @@
         "mmPage": "mm 297"
     },
     {
+        "id": "thri-kreen-psion",
         "name": "Thri-kreen Psion",
         "cr": 8,
         "exp": 3900,
@@ -3799,6 +4227,7 @@
         "mmPage": "mm 306"
     },
     {
+        "id": "tyrannosaurus-rex",
         "name": "Tyrannosaurus Rex",
         "cr": 8,
         "exp": 3900,
@@ -3808,6 +4237,7 @@
         "mmPage": "mm 372"
     },
     {
+        "id": "vampire-nightbringer",
         "name": "Vampire Nightbringer",
         "cr": 8,
         "exp": 3900,
@@ -3817,6 +4247,7 @@
         "mmPage": "mm 316"
     },
     {
+        "id": "young-bronze-dragon",
         "name": "Young Bronze Dragon",
         "cr": 8,
         "exp": 3900,
@@ -3826,6 +4257,7 @@
         "mmPage": "mm 58"
     },
     {
+        "id": "young-green-dragon",
         "name": "Young Green Dragon",
         "cr": 8,
         "exp": 3900,
@@ -3835,6 +4267,7 @@
         "mmPage": "mm 152"
     },
     {
+        "id": "abominable-yeti",
         "name": "Abominable Yeti",
         "cr": 9,
         "exp": 5000,
@@ -3844,6 +4277,7 @@
         "mmPage": "mm 340"
     },
     {
+        "id": "bone-devil",
         "name": "Bone Devil",
         "cr": 9,
         "exp": 5000,
@@ -3853,6 +4287,7 @@
         "mmPage": "mm 52"
     },
     {
+        "id": "brazen-gorgon",
         "name": "Brazen Gorgon",
         "cr": 9,
         "exp": 5000,
@@ -3862,6 +4297,7 @@
         "mmPage": "mm 149"
     },
     {
+        "id": "clay-golem",
         "name": "Clay Golem",
         "cr": 9,
         "exp": 5000,
@@ -3871,6 +4307,7 @@
         "mmPage": "mm 72"
     },
     {
+        "id": "cloud-giant",
         "name": "Cloud Giant",
         "cr": 9,
         "exp": 5000,
@@ -3880,6 +4317,7 @@
         "mmPage": "mm 74"
     },
     {
+        "id": "fire-giant",
         "name": "Fire Giant",
         "cr": 9,
         "exp": 5000,
@@ -3889,6 +4327,7 @@
         "mmPage": "mm 119"
     },
     {
+        "id": "glabrezu",
         "name": "Glabrezu",
         "cr": 9,
         "exp": 5000,
@@ -3898,6 +4337,7 @@
         "mmPage": "mm 138"
     },
     {
+        "id": "gray-slaad",
         "name": "Gray Slaad",
         "cr": 9,
         "exp": 5000,
@@ -3907,6 +4347,7 @@
         "mmPage": "mm 286"
     },
     {
+        "id": "nycaloth",
         "name": "Nycaloth",
         "cr": 9,
         "exp": 5000,
@@ -3916,6 +4357,7 @@
         "mmPage": "mm 229"
     },
     {
+        "id": "treant",
         "name": "Treant",
         "cr": 9,
         "exp": 5000,
@@ -3925,6 +4367,7 @@
         "mmPage": "mm 308"
     },
     {
+        "id": "young-blue-dragon",
         "name": "Young Blue Dragon",
         "cr": 9,
         "exp": 5000,
@@ -3934,6 +4377,7 @@
         "mmPage": "mm 48"
     },
     {
+        "id": "young-silver-dragon",
         "name": "Young Silver Dragon",
         "cr": 9,
         "exp": 5000,
@@ -3943,6 +4387,7 @@
         "mmPage": "mm 278"
     },
     {
+        "id": "aboleth",
         "name": "Aboleth",
         "cr": 10,
         "exp": 5900,
@@ -3952,6 +4397,7 @@
         "mmPage": "mm 11"
     },
     {
+        "id": "cultist-hierophant",
         "name": "Cultist Hierophant",
         "cr": 10,
         "exp": 5900,
@@ -3961,6 +4407,7 @@
         "mmPage": "mm 85"
     },
     {
+        "id": "cyclops-oracle",
         "name": "Cyclops Oracle",
         "cr": 10,
         "exp": 5900,
@@ -3970,6 +4417,7 @@
         "mmPage": "mm 88"
     },
     {
+        "id": "death-slaad",
         "name": "Death Slaad",
         "cr": 10,
         "exp": 5900,
@@ -3979,6 +4427,7 @@
         "mmPage": "mm 287"
     },
     {
+        "id": "deva",
         "name": "Deva",
         "cr": 10,
         "exp": 5900,
@@ -3988,6 +4437,7 @@
         "mmPage": "mm 97"
     },
     {
+        "id": "dire-worg",
         "name": "Dire Worg",
         "cr": 10,
         "exp": 5900,
@@ -3997,6 +4447,7 @@
         "mmPage": "mm 335"
     },
     {
+        "id": "guardian-naga",
         "name": "Guardian Naga",
         "cr": 10,
         "exp": 5900,
@@ -4006,6 +4457,7 @@
         "mmPage": "mm 161"
     },
     {
+        "id": "haunting-revenant",
         "name": "Haunting Revenant",
         "cr": 10,
         "exp": 5900,
@@ -4015,6 +4467,7 @@
         "mmPage": "mm 260"
     },
     {
+        "id": "noble-prodigy",
         "name": "Noble Prodigy",
         "cr": 10,
         "exp": 5900,
@@ -4024,6 +4477,7 @@
         "mmPage": "mm 227"
     },
     {
+        "id": "performer-legend",
         "name": "Performer Legend",
         "cr": 10,
         "exp": 5900,
@@ -4033,6 +4487,7 @@
         "mmPage": "mm 237"
     },
     {
+        "id": "spy-master",
         "name": "Spy Master",
         "cr": 10,
         "exp": 5900,
@@ -4042,6 +4497,7 @@
         "mmPage": "mm 295"
     },
     {
+        "id": "stone-golem",
         "name": "Stone Golem",
         "cr": 10,
         "exp": 5900,
@@ -4051,6 +4507,7 @@
         "mmPage": "mm 301"
     },
     {
+        "id": "warrior-commander",
         "name": "Warrior Commander",
         "cr": 10,
         "exp": 5900,
@@ -4060,6 +4517,7 @@
         "mmPage": "mm 321"
     },
     {
+        "id": "yochlol",
         "name": "Yochlol",
         "cr": 10,
         "exp": 5900,
@@ -4069,6 +4527,7 @@
         "mmPage": "mm 341"
     },
     {
+        "id": "young-gold-dragon",
         "name": "Young Gold Dragon",
         "cr": 10,
         "exp": 5900,
@@ -4078,6 +4537,7 @@
         "mmPage": "mm 144"
     },
     {
+        "id": "young-red-dragon",
         "name": "Young Red Dragon",
         "cr": 10,
         "exp": 5900,
@@ -4087,6 +4547,7 @@
         "mmPage": "mm 254"
     },
     {
+        "id": "bandit-crime-lord",
         "name": "Bandit Crime Lord",
         "cr": 11,
         "exp": 7200,
@@ -4096,6 +4557,7 @@
         "mmPage": "mm 28"
     },
     {
+        "id": "behir",
         "name": "Behir",
         "cr": 11,
         "exp": 7200,
@@ -4105,6 +4567,7 @@
         "mmPage": "mm 34"
     },
     {
+        "id": "dao",
         "name": "Dao",
         "cr": 11,
         "exp": 7200,
@@ -4114,6 +4577,7 @@
         "mmPage": "mm 89"
     },
     {
+        "id": "death-knight-aspirant",
         "name": "Death Knight Aspirant",
         "cr": 11,
         "exp": 7200,
@@ -4123,6 +4587,7 @@
         "mmPage": "mm 93"
     },
     {
+        "id": "djinni",
         "name": "Djinni",
         "cr": 11,
         "exp": 7200,
@@ -4132,6 +4597,7 @@
         "mmPage": "mm 99"
     },
     {
+        "id": "efreeti",
         "name": "Efreeti",
         "cr": 11,
         "exp": 7200,
@@ -4141,6 +4607,7 @@
         "mmPage": "mm 109"
     },
     {
+        "id": "horned-devil",
         "name": "Horned Devil",
         "cr": 11,
         "exp": 7200,
@@ -4150,6 +4617,7 @@
         "mmPage": "mm 174"
     },
     {
+        "id": "marid",
         "name": "Marid",
         "cr": 11,
         "exp": 7200,
@@ -4159,6 +4627,7 @@
         "mmPage": "mm 203"
     },
     {
+        "id": "mind-flayer-arcanist",
         "name": "Mind Flayer Arcanist",
         "cr": 11,
         "exp": 7200,
@@ -4168,6 +4637,7 @@
         "mmPage": "mm 214"
     },
     {
+        "id": "remorhaz",
         "name": "Remorhaz",
         "cr": 11,
         "exp": 7200,
@@ -4177,6 +4647,7 @@
         "mmPage": "mm 258"
     },
     {
+        "id": "roc",
         "name": "Roc",
         "cr": 11,
         "exp": 7200,
@@ -4186,6 +4657,7 @@
         "mmPage": "mm 261"
     },
     {
+        "id": "sphinx-of-lore",
         "name": "Sphinx of Lore",
         "cr": 11,
         "exp": 7200,
@@ -4195,6 +4667,7 @@
         "mmPage": "mm 293"
     },
     {
+        "id": "arcanaloth",
         "name": "Arcanaloth",
         "cr": 12,
         "exp": 8400,
@@ -4204,6 +4677,7 @@
         "mmPage": "mm 19"
     },
     {
+        "id": "archmage",
         "name": "Archmage",
         "cr": 12,
         "exp": 8400,
@@ -4213,6 +4687,7 @@
         "mmPage": "mm 199"
     },
     {
+        "id": "archpriest",
         "name": "Archpriest",
         "cr": 12,
         "exp": 8400,
@@ -4222,6 +4697,7 @@
         "mmPage": "mm 248"
     },
     {
+        "id": "erinyes",
         "name": "Erinyes",
         "cr": 12,
         "exp": 8400,
@@ -4231,6 +4707,7 @@
         "mmPage": "mm 114"
     },
     {
+        "id": "githzerai-psion",
         "name": "Githzerai Psion",
         "cr": 12,
         "exp": 8400,
@@ -4240,6 +4717,7 @@
         "mmPage": "mm 137"
     },
     {
+        "id": "pirate-admiral",
         "name": "Pirate Admiral",
         "cr": 12,
         "exp": 8400,
@@ -4249,6 +4727,7 @@
         "mmPage": "mm 242"
     },
     {
+        "id": "questing-knight",
         "name": "Questing Knight",
         "cr": 12,
         "exp": 8400,
@@ -4258,6 +4737,7 @@
         "mmPage": "mm 184"
     },
     {
+        "id": "adult-brass-dragon",
         "name": "Adult Brass Dragon",
         "cr": 13,
         "exp": 10000,
@@ -4267,6 +4747,7 @@
         "mmPage": "mm 55"
     },
     {
+        "id": "adult-white-dragon",
         "name": "Adult White Dragon",
         "cr": 13,
         "exp": 10000,
@@ -4276,6 +4757,7 @@
         "mmPage": "mm 329"
     },
     {
+        "id": "beholder",
         "name": "Beholder",
         "cr": 13,
         "exp": 10000,
@@ -4285,6 +4767,7 @@
         "mmPage": "mm 35"
     },
     {
+        "id": "nalfeshnee",
         "name": "Nalfeshnee",
         "cr": 13,
         "exp": 10000,
@@ -4294,6 +4777,7 @@
         "mmPage": "mm 224"
     },
     {
+        "id": "rakshasa",
         "name": "Rakshasa",
         "cr": 13,
         "exp": 10000,
@@ -4303,6 +4787,7 @@
         "mmPage": "mm 253"
     },
     {
+        "id": "shadow-dragon",
         "name": "Shadow Dragon",
         "cr": 13,
         "exp": 10000,
@@ -4312,6 +4797,7 @@
         "mmPage": "mm 274"
     },
     {
+        "id": "storm-giant",
         "name": "Storm Giant",
         "cr": 13,
         "exp": 10000,
@@ -4321,6 +4807,7 @@
         "mmPage": "mm 302"
     },
     {
+        "id": "ultroloth",
         "name": "Ultroloth",
         "cr": 13,
         "exp": 10000,
@@ -4330,6 +4817,7 @@
         "mmPage": "mm 311"
     },
     {
+        "id": "vampire",
         "name": "Vampire",
         "cr": 13,
         "exp": 10000,
@@ -4339,6 +4827,7 @@
         "mmPage": "mm 317"
     },
     {
+        "id": "adult-black-dragon",
         "name": "Adult Black Dragon",
         "cr": 14,
         "exp": 11500,
@@ -4348,6 +4837,7 @@
         "mmPage": "mm 39"
     },
     {
+        "id": "adult-copper-dragon",
         "name": "Adult Copper Dragon",
         "cr": 14,
         "exp": 11500,
@@ -4357,6 +4847,7 @@
         "mmPage": "mm 79"
     },
     {
+        "id": "death-tyrant",
         "name": "Death Tyrant",
         "cr": 14,
         "exp": 11500,
@@ -4366,6 +4857,7 @@
         "mmPage": "mm 94"
     },
     {
+        "id": "ice-devil",
         "name": "Ice Devil",
         "cr": 14,
         "exp": 11500,
@@ -4375,6 +4867,7 @@
         "mmPage": "mm 176"
     },
     {
+        "id": "adult-bronze-dragon",
         "name": "Adult Bronze Dragon",
         "cr": 15,
         "exp": 13000,
@@ -4384,6 +4877,7 @@
         "mmPage": "mm 59"
     },
     {
+        "id": "adult-green-dragon",
         "name": "Adult Green Dragon",
         "cr": 15,
         "exp": 13000,
@@ -4393,6 +4887,7 @@
         "mmPage": "mm 153"
     },
     {
+        "id": "mummy-lord",
         "name": "Mummy Lord",
         "cr": 15,
         "exp": 13000,
@@ -4402,6 +4897,7 @@
         "mmPage": "mm 220"
     },
     {
+        "id": "purple-worm",
         "name": "Purple Worm",
         "cr": 15,
         "exp": 13000,
@@ -4411,6 +4907,7 @@
         "mmPage": "mm 250"
     },
     {
+        "id": "salamander-inferno-master",
         "name": "Salamander Inferno Master",
         "cr": 15,
         "exp": 13000,
@@ -4420,6 +4917,7 @@
         "mmPage": "mm 267"
     },
     {
+        "id": "vampire-umbral-lord",
         "name": "Vampire Umbral Lord",
         "cr": 15,
         "exp": 13000,
@@ -4429,6 +4927,7 @@
         "mmPage": "mm 318"
     },
     {
+        "id": "adult-blue-dragon",
         "name": "Adult Blue Dragon",
         "cr": 16,
         "exp": 15000,
@@ -4438,6 +4937,7 @@
         "mmPage": "mm 49"
     },
     {
+        "id": "adult-silver-dragon",
         "name": "Adult Silver Dragon",
         "cr": 16,
         "exp": 15000,
@@ -4447,6 +4947,7 @@
         "mmPage": "mm 279"
     },
     {
+        "id": "githyanki-dracomancer",
         "name": "Githyanki Dracomancer",
         "cr": 16,
         "exp": 15000,
@@ -4456,6 +4957,7 @@
         "mmPage": "mm 135"
     },
     {
+        "id": "gulthias-blight",
         "name": "Gulthias Blight",
         "cr": 16,
         "exp": 15000,
@@ -4465,6 +4967,7 @@
         "mmPage": "mm 45"
     },
     {
+        "id": "iron-golem",
         "name": "Iron Golem",
         "cr": 16,
         "exp": 15000,
@@ -4474,6 +4977,7 @@
         "mmPage": "mm 181"
     },
     {
+        "id": "marilith",
         "name": "Marilith",
         "cr": 16,
         "exp": 15000,
@@ -4483,6 +4987,7 @@
         "mmPage": "mm 204"
     },
     {
+        "id": "planetar",
         "name": "Planetar",
         "cr": 16,
         "exp": 15000,
@@ -4492,6 +4997,7 @@
         "mmPage": "mm 245"
     },
     {
+        "id": "adult-gold-dragon",
         "name": "Adult Gold Dragon",
         "cr": 17,
         "exp": 18000,
@@ -4501,6 +5007,7 @@
         "mmPage": "mm 145"
     },
     {
+        "id": "adult-red-dragon",
         "name": "Adult Red Dragon",
         "cr": 17,
         "exp": 18000,
@@ -4510,6 +5017,7 @@
         "mmPage": "mm 255"
     },
     {
+        "id": "death-knight",
         "name": "Death Knight",
         "cr": 17,
         "exp": 18000,
@@ -4519,6 +5027,7 @@
         "mmPage": "mm 92"
     },
     {
+        "id": "dracolich",
         "name": "Dracolich",
         "cr": 17,
         "exp": 18000,
@@ -4528,6 +5037,7 @@
         "mmPage": "mm 101"
     },
     {
+        "id": "dragon-turtle",
         "name": "Dragon Turtle",
         "cr": 17,
         "exp": 18000,
@@ -4537,6 +5047,7 @@
         "mmPage": "mm 103"
     },
     {
+        "id": "goristro",
         "name": "Goristro",
         "cr": 17,
         "exp": 18000,
@@ -4546,6 +5057,7 @@
         "mmPage": "mm 150"
     },
     {
+        "id": "sphinx-of-valor",
         "name": "Sphinx of Valor",
         "cr": 17,
         "exp": 18000,
@@ -4555,6 +5067,7 @@
         "mmPage": "mm 294"
     },
     {
+        "id": "demilich",
         "name": "Demilich",
         "cr": 18,
         "exp": 20000,
@@ -4564,6 +5077,7 @@
         "mmPage": "mm 96"
     },
     {
+        "id": "balor",
         "name": "Balor",
         "cr": 19,
         "exp": 22000,
@@ -4573,6 +5087,7 @@
         "mmPage": "mm 26"
     },
     {
+        "id": "ancient-brass-dragon",
         "name": "Ancient Brass Dragon",
         "cr": 20,
         "exp": 25000,
@@ -4582,6 +5097,7 @@
         "mmPage": "mm 56"
     },
     {
+        "id": "ancient-white-dragon",
         "name": "Ancient White Dragon",
         "cr": 20,
         "exp": 25000,
@@ -4591,6 +5107,7 @@
         "mmPage": "mm 330"
     },
     {
+        "id": "animal-lord",
         "name": "Animal Lord",
         "cr": 20,
         "exp": 25000,
@@ -4600,6 +5117,7 @@
         "mmPage": "mm 14"
     },
     {
+        "id": "pit-fiend",
         "name": "Pit Fiend",
         "cr": 20,
         "exp": 25000,
@@ -4609,6 +5127,7 @@
         "mmPage": "mm 243"
     },
     {
+        "id": "ancient-black-dragon",
         "name": "Ancient Black Dragon",
         "cr": 21,
         "exp": 33000,
@@ -4618,6 +5137,7 @@
         "mmPage": "mm 40"
     },
     {
+        "id": "ancient-copper-dragon",
         "name": "Ancient Copper Dragon",
         "cr": 21,
         "exp": 33000,
@@ -4627,6 +5147,7 @@
         "mmPage": "mm 80"
     },
     {
+        "id": "arch-hag",
         "name": "Arch-Hag",
         "cr": 21,
         "exp": 33000,
@@ -4636,6 +5157,7 @@
         "mmPage": "mm 20"
     },
     {
+        "id": "lich",
         "name": "Lich",
         "cr": 21,
         "exp": 33000,
@@ -4645,6 +5167,7 @@
         "mmPage": "mm 195"
     },
     {
+        "id": "solar",
         "name": "Solar",
         "cr": 21,
         "exp": 33000,
@@ -4654,6 +5177,7 @@
         "mmPage": "mm 288"
     },
     {
+        "id": "ancient-bronze-dragon",
         "name": "Ancient Bronze Dragon",
         "cr": 22,
         "exp": 41000,
@@ -4663,6 +5187,7 @@
         "mmPage": "mm 60"
     },
     {
+        "id": "ancient-green-dragon",
         "name": "Ancient Green Dragon",
         "cr": 22,
         "exp": 41000,
@@ -4672,6 +5197,7 @@
         "mmPage": "mm 154"
     },
     {
+        "id": "elemental-cataclysm",
         "name": "Elemental Cataclysm",
         "cr": 22,
         "exp": 41000,
@@ -4681,6 +5207,7 @@
         "mmPage": "mm 110"
     },
     {
+        "id": "ancient-blue-dragon",
         "name": "Ancient Blue Dragon",
         "cr": 23,
         "exp": 50000,
@@ -4690,6 +5217,7 @@
         "mmPage": "mm 50"
     },
     {
+        "id": "ancient-silver-dragon",
         "name": "Ancient Silver Dragon",
         "cr": 23,
         "exp": 50000,
@@ -4699,6 +5227,7 @@
         "mmPage": "mm 280"
     },
     {
+        "id": "blob-of-annihilation",
         "name": "Blob of Annihilation",
         "cr": 23,
         "exp": 50000,
@@ -4708,6 +5237,7 @@
         "mmPage": "mm 46"
     },
     {
+        "id": "empyrean",
         "name": "Empyrean",
         "cr": 23,
         "exp": 50000,
@@ -4717,6 +5247,7 @@
         "mmPage": "mm 113"
     },
     {
+        "id": "kraken",
         "name": "Kraken",
         "cr": 23,
         "exp": 50000,
@@ -4726,6 +5257,7 @@
         "mmPage": "mm 186"
     },
     {
+        "id": "ancient-gold-dragon",
         "name": "Ancient Gold Dragon",
         "cr": 24,
         "exp": 62000,
@@ -4735,6 +5267,7 @@
         "mmPage": "mm 146"
     },
     {
+        "id": "ancient-red-dragon",
         "name": "Ancient Red Dragon",
         "cr": 24,
         "exp": 62000,
@@ -4744,6 +5277,7 @@
         "mmPage": "mm 256"
     },
     {
+        "id": "colossus",
         "name": "Colossus",
         "cr": 25,
         "exp": 75000,
@@ -4753,6 +5287,7 @@
         "mmPage": "mm 76"
     },
     {
+        "id": "tarrasque",
         "name": "Tarrasque",
         "cr": 30,
         "exp": 155000,

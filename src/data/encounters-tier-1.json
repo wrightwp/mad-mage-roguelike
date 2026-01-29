@@ -7,19 +7,11 @@
         "xpBudget": 175,
         "monsters": [
             {
-                "name": "Goblin Minion",
-                "cr": 0.125,
-                "exp": 25,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#GoblinMinion",
+                "id": "goblin-minion",
                 "count": 3
             },
             {
-                "name": "Goblin Warrior",
-                "cr": 0.25,
-                "exp": 50,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#GoblinWarrior",
+                "id": "goblin-warrior",
                 "count": 2
             }
         ],
@@ -92,19 +84,11 @@
         "xpBudget": 250,
         "monsters": [
             {
-                "name": "Skeleton",
-                "cr": 0.25,
-                "exp": 50,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-s#Skeleton",
+                "id": "skeleton",
                 "count": 3
             },
             {
-                "name": "Zombie",
-                "cr": 0.25,
-                "exp": 50,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-z#Zombie",
+                "id": "zombie",
                 "count": 2
             }
         ],
@@ -165,19 +149,11 @@
         "xpBudget": 175,
         "monsters": [
             {
-                "name": "Giant Rat",
-                "cr": 0.125,
-                "exp": 25,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#GiantRat",
+                "id": "giant-rat",
                 "count": 5
             },
             {
-                "name": "Swarm of Rats",
-                "cr": 0.25,
-                "exp": 50,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#SwarmofRats",
+                "id": "swarm-of-rats",
                 "count": 1
             }
         ],
@@ -244,19 +220,11 @@
         "xpBudget": 225,
         "monsters": [
             {
-                "name": "Kobold Warrior",
-                "cr": 0.125,
-                "exp": 25,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-k#KoboldWarrior",
+                "id": "kobold-warrior",
                 "count": 5
             },
             {
-                "name": "Winged Kobold",
-                "cr": 0.25,
-                "exp": 50,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-k#WingedKobold",
+                "id": "winged-kobold",
                 "count": 2
             }
         ],
@@ -342,19 +310,11 @@
         "xpBudget": 350,
         "monsters": [
             {
-                "name": "Cultist",
-                "cr": 0.125,
-                "exp": 25,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-c#Cultist",
+                "id": "cultist",
                 "count": 6
             },
             {
-                "name": "Skeleton",
-                "cr": 0.25,
-                "exp": 50,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-s#Skeleton",
+                "id": "skeleton",
                 "count": 4
             }
         ],
@@ -409,19 +369,11 @@
         "xpBudget": 300,
         "monsters": [
             {
-                "name": "Giant Wolf Spider",
-                "cr": 0.25,
-                "exp": 50,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#GiantWolfSpider",
+                "id": "giant-wolf-spider",
                 "count": 4
             },
             {
-                "name": "Giant Centipede",
-                "cr": 0.25,
-                "exp": 50,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#GiantCentipede",
+                "id": "giant-centipede",
                 "count": 2
             }
         ],
@@ -488,11 +440,7 @@
         "xpBudget": 200,
         "monsters": [
             {
-                "name": "Stirge",
-                "cr": 0.125,
-                "exp": 25,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-s#Stirge",
+                "id": "stirge",
                 "count": 8
             }
         ],
@@ -554,27 +502,15 @@
         "xpBudget": 275,
         "monsters": [
             {
-                "name": "Bandit",
-                "cr": 0.125,
-                "exp": 25,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-b#Bandit",
+                "id": "bandit",
                 "count": 5
             },
             {
-                "name": "Guard",
-                "cr": 0.125,
-                "exp": 25,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#Guard",
+                "id": "guard",
                 "count": 2
             },
             {
-                "name": "Mastiff",
-                "cr": 0.125,
-                "exp": 25,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#Mastiff",
+                "id": "mastiff",
                 "count": 2
             }
         ],
@@ -654,19 +590,11 @@
         "xpBudget": 160,
         "monsters": [
             {
-                "name": "Crawling Claw",
-                "cr": 0,
-                "exp": 10,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-c#CrawlingClaw",
+                "id": "crawling-claw",
                 "count": 6
             },
             {
-                "name": "Zombie",
-                "cr": 0.25,
-                "exp": 50,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-z#Zombie",
+                "id": "zombie",
                 "count": 2
             }
         ],
@@ -706,11 +634,7 @@
         "xpBudget": 250,
         "monsters": [
             {
-                "name": "Wolf",
-                "cr": 0.25,
-                "exp": 50,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#Wolf",
+                "id": "wolf",
                 "count": 5
             }
         ],
@@ -763,19 +687,11 @@
         "xpBudget": 140,
         "monsters": [
             {
-                "name": "Myconid Sprout",
-                "cr": 0,
-                "exp": 10,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-m#MyconidSprout",
+                "id": "myconid-sprout",
                 "count": 4
             },
             {
-                "name": "Violet Fungus",
-                "cr": 0.25,
-                "exp": 50,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-f#VioletFungus",
+                "id": "violet-fungus",
                 "count": 2
             }
         ],
@@ -828,11 +744,7 @@
         "xpBudget": 200,
         "monsters": [
             {
-                "name": "Grimlock",
-                "cr": 0.25,
-                "exp": 50,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#Grimlock",
+                "id": "grimlock",
                 "count": 4
             }
         ],
@@ -874,11 +786,7 @@
         "xpBudget": 250,
         "monsters": [
             {
-                "name": "Troglodyte",
-                "cr": 0.25,
-                "exp": 50,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-t#Troglodyte",
+                "id": "troglodyte",
                 "count": 5
             }
         ],
@@ -925,11 +833,7 @@
         "xpBudget": 150,
         "monsters": [
             {
-                "name": "Swarm of Bats",
-                "cr": 0.25,
-                "exp": 50,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#SwarmofBats",
+                "id": "swarm-of-bats",
                 "count": 3
             }
         ],
@@ -977,11 +881,7 @@
         "xpBudget": 200,
         "monsters": [
             {
-                "name": "Darkmantle",
-                "cr": 0.5,
-                "exp": 100,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-d#Darkmantle",
+                "id": "darkmantle",
                 "count": 2
             }
         ],
@@ -1030,11 +930,7 @@
         "xpBudget": 300,
         "monsters": [
             {
-                "name": "Cockatrice",
-                "cr": 0.5,
-                "exp": 100,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-c#Cockatrice",
+                "id": "cockatrice",
                 "count": 3
             }
         ],
@@ -1088,11 +984,7 @@
         "xpBudget": 300,
         "monsters": [
             {
-                "name": "Shadow",
-                "cr": 0.5,
-                "exp": 100,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-s#Shadow",
+                "id": "shadow",
                 "count": 3
             }
         ],
@@ -1141,11 +1033,7 @@
         "xpBudget": 200,
         "monsters": [
             {
-                "name": "Rust Monster",
-                "cr": 0.5,
-                "exp": 100,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-r#RustMonster",
+                "id": "rust-monster",
                 "count": 2
             }
         ],
@@ -1187,11 +1075,7 @@
         "xpBudget": 400,
         "monsters": [
             {
-                "name": "Orc",
-                "cr": 0.5,
-                "exp": 100,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/monsters/16972-orc",
+                "id": "orc",
                 "count": 4
             }
         ],
@@ -1231,11 +1115,7 @@
         "xpBudget": 300,
         "monsters": [
             {
-                "name": "Hobgoblin Warrior",
-                "cr": 0.5,
-                "exp": 100,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-h#HobgoblinWarrior",
+                "id": "hobgoblin-warrior",
                 "count": 3
             }
         ],
@@ -1283,11 +1163,7 @@
         "xpBudget": 200,
         "monsters": [
             {
-                "name": "Magma Mephit",
-                "cr": 0.5,
-                "exp": 100,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-m#MagmaMephit",
+                "id": "magma-mephit",
                 "count": 2
             }
         ],
@@ -1335,11 +1211,7 @@
         "xpBudget": 200,
         "monsters": [
             {
-                "name": "Ice Mephit",
-                "cr": 0.5,
-                "exp": 100,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-m#IceMephit",
+                "id": "ice-mephit",
                 "count": 2
             }
         ],
@@ -1387,11 +1259,7 @@
         "xpBudget": 200,
         "monsters": [
             {
-                "name": "Gray Ooze",
-                "cr": 0.5,
-                "exp": 100,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#GrayOoze",
+                "id": "gray-ooze",
                 "count": 2
             }
         ],
@@ -1440,19 +1308,11 @@
         "xpBudget": 350,
         "monsters": [
             {
-                "name": "Goblin Warrior",
-                "cr": 0.25,
-                "exp": 50,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#GoblinWarrior",
+                "id": "goblin-warrior",
                 "count": 3
             },
             {
-                "name": "Worg",
-                "cr": 0.5,
-                "exp": 100,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-w#Worg",
+                "id": "worg",
                 "count": 2
             }
         ],
@@ -1501,11 +1361,7 @@
         "xpBudget": 300,
         "monsters": [
             {
-                "name": "Piercer",
-                "cr": 0.5,
-                "exp": 100,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-p#Piercer",
+                "id": "piercer",
                 "count": 3
             }
         ],
@@ -1560,19 +1416,11 @@
         "xpBudget": 350,
         "monsters": [
             {
-                "name": "Giant Centipede",
-                "cr": 0.25,
-                "exp": 50,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#GiantCentipede",
+                "id": "giant-centipede",
                 "count": 3
             },
             {
-                "name": "Giant Wasp",
-                "cr": 0.5,
-                "exp": 100,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#GiantWasp",
+                "id": "giant-wasp",
                 "count": 2
             }
         ],
@@ -1620,11 +1468,7 @@
         "xpBudget": 300,
         "monsters": [
             {
-                "name": "Gnoll Warrior",
-                "cr": 0.5,
-                "exp": 100,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#GnollWarrior",
+                "id": "gnoll-warrior",
                 "count": 3
             }
         ],
@@ -1664,11 +1508,7 @@
         "xpBudget": 150,
         "monsters": [
             {
-                "name": "Twig Blight",
-                "cr": 0.125,
-                "exp": 25,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-b#TwigBlight",
+                "id": "twig-blight",
                 "count": 6
             }
         ],
@@ -1717,11 +1557,7 @@
         "xpBudget": 250,
         "monsters": [
             {
-                "name": "Needle Blight",
-                "cr": 0.25,
-                "exp": 50,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-b#NeedleBlight",
+                "id": "needle-blight",
                 "count": 5
             }
         ],
@@ -1763,11 +1599,7 @@
         "xpBudget": 200,
         "monsters": [
             {
-                "name": "Vine Blight",
-                "cr": 0.5,
-                "exp": 100,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-b#VineBlight",
+                "id": "vine-blight",
                 "count": 2
             }
         ],
@@ -1822,11 +1654,7 @@
         "xpBudget": 250,
         "monsters": [
             {
-                "name": "Kenku",
-                "cr": 0.25,
-                "exp": 50,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-k#Kenku",
+                "id": "kenku",
                 "count": 5
             }
         ],
@@ -1879,11 +1707,7 @@
         "xpBudget": 400,
         "monsters": [
             {
-                "name": "Animated Armor",
-                "cr": 1,
-                "exp": 200,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-a#AnimatedArmor",
+                "id": "animated-armor",
                 "count": 2
             }
         ],
@@ -1930,19 +1754,11 @@
         "xpBudget": 250,
         "monsters": [
             {
-                "name": "Swarm of Insects",
-                "cr": 0.5,
-                "exp": 100,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#SwarmofInsects",
+                "id": "swarm-of-insects",
                 "count": 2
             },
             {
-                "name": "Swarm of Rats",
-                "cr": 0.25,
-                "exp": 50,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#SwarmofRats",
+                "id": "swarm-of-rats",
                 "count": 1
             }
         ],
@@ -1983,11 +1799,7 @@
         "xpBudget": 250,
         "monsters": [
             {
-                "name": "Kuo-toa",
-                "cr": 0.25,
-                "exp": 50,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-k#Kuotoa",
+                "id": "kuo-toa",
                 "count": 5
             }
         ],
@@ -2035,11 +1847,7 @@
         "xpBudget": 200,
         "monsters": [
             {
-                "name": "Animated Flying Sword",
-                "cr": 0.25,
-                "exp": 50,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-a#AnimatedFlyingSword",
+                "id": "animated-flying-sword",
                 "count": 4
             }
         ],
@@ -2081,11 +1889,7 @@
         "xpBudget": 400,
         "monsters": [
             {
-                "name": "Giant Wolf Spider",
-                "cr": 0.25,
-                "exp": 50,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#GiantWolfSpider",
+                "id": "giant-wolf-spider",
                 "count": 8
             }
         ],
@@ -2134,11 +1938,7 @@
         "xpBudget": 400,
         "monsters": [
             {
-                "name": "Zombie",
-                "cr": 0.25,
-                "exp": 50,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-z#Zombie",
+                "id": "zombie",
                 "count": 8
             }
         ],
@@ -2187,11 +1987,7 @@
         "xpBudget": 350,
         "monsters": [
             {
-                "name": "Skeleton",
-                "cr": 0.25,
-                "exp": 50,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-s#Skeleton",
+                "id": "skeleton",
                 "count": 7
             }
         ],
@@ -2233,19 +2029,11 @@
         "xpBudget": 375,
         "monsters": [
             {
-                "name": "Goblin Minion",
-                "cr": 0.125,
-                "exp": 25,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#GoblinMinion",
+                "id": "goblin-minion",
                 "count": 5
             },
             {
-                "name": "Goblin Warrior",
-                "cr": 0.25,
-                "exp": 50,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#GoblinWarrior",
+                "id": "goblin-warrior",
                 "count": 5
             }
         ],
@@ -2293,19 +2081,11 @@
         "xpBudget": 400,
         "monsters": [
             {
-                "name": "Shadow",
-                "cr": 0.5,
-                "exp": 100,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-s#Shadow",
+                "id": "shadow",
                 "count": 2
             },
             {
-                "name": "Skeleton",
-                "cr": 0.25,
-                "exp": 50,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-s#Skeleton",
+                "id": "skeleton",
                 "count": 4
             }
         ],
@@ -2347,19 +2127,11 @@
         "xpBudget": 250,
         "monsters": [
             {
-                "name": "Wolf",
-                "cr": 0.25,
-                "exp": 50,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#Wolf",
+                "id": "wolf",
                 "count": 3
             },
             {
-                "name": "Worg",
-                "cr": 0.5,
-                "exp": 100,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-w#Worg",
+                "id": "worg",
                 "count": 1
             }
         ],
@@ -2407,19 +2179,11 @@
         "xpBudget": 175,
         "monsters": [
             {
-                "name": "Modron Monodrone",
-                "cr": 0.125,
-                "exp": 25,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-m#ModronMonodrone",
+                "id": "modron-monodrone",
                 "count": 3
             },
             {
-                "name": "Modron Duodrone",
-                "cr": 0.25,
-                "exp": 50,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-m#ModronDuodrone",
+                "id": "modron-duodrone",
                 "count": 2
             }
         ],
@@ -2466,11 +2230,7 @@
         "xpBudget": 200,
         "monsters": [
             {
-                "name": "Jackalwere",
-                "cr": 0.5,
-                "exp": 100,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-j#Jackalwere",
+                "id": "jackalwere",
                 "count": 2
             }
         ],
@@ -2518,11 +2278,7 @@
         "xpBudget": 200,
         "monsters": [
             {
-                "name": "Satyr",
-                "cr": 0.5,
-                "exp": 100,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-s#Satyr",
+                "id": "satyr",
                 "count": 2
             }
         ],
@@ -2582,11 +2338,7 @@
         "xpBudget": 250,
         "monsters": [
             {
-                "name": "Giant Frog",
-                "cr": 0.25,
-                "exp": 50,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#GiantFrog",
+                "id": "giant-frog",
                 "count": 5
             }
         ],
@@ -2634,11 +2386,7 @@
         "xpBudget": 200,
         "monsters": [
             {
-                "name": "Crocodile",
-                "cr": 0.5,
-                "exp": 100,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#Crocodile",
+                "id": "crocodile",
                 "count": 2
             }
         ],
@@ -2686,11 +2434,7 @@
         "xpBudget": 150,
         "monsters": [
             {
-                "name": "Animated Broom",
-                "cr": 0.25,
-                "exp": 50,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-a#AnimatedBroom",
+                "id": "animated-broom",
                 "count": 3
             }
         ],
@@ -2730,11 +2474,7 @@
         "xpBudget": 300,
         "monsters": [
             {
-                "name": "Dust Mephit",
-                "cr": 0.5,
-                "exp": 100,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-m#DustMephit",
+                "id": "dust-mephit",
                 "count": 3
             }
         ],
@@ -2782,11 +2522,7 @@
         "xpBudget": 200,
         "monsters": [
             {
-                "name": "Gas Spore Fungus",
-                "cr": 0.5,
-                "exp": 100,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-f#GasSporeFungus",
+                "id": "gas-spore-fungus",
                 "count": 2
             }
         ],
@@ -2840,11 +2576,7 @@
         "xpBudget": 200,
         "monsters": [
             {
-                "name": "Scout",
-                "cr": 0.5,
-                "exp": 100,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-s#Scout",
+                "id": "scout",
                 "count": 2
             }
         ],
@@ -2892,11 +2624,7 @@
         "xpBudget": 200,
         "monsters": [
             {
-                "name": "Tough",
-                "cr": 0.5,
-                "exp": 100,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-t#Tough",
+                "id": "tough",
                 "count": 2
             }
         ],
@@ -2937,11 +2665,7 @@
         "xpBudget": 200,
         "monsters": [
             {
-                "name": "Performer",
-                "cr": 0.5,
-                "exp": 100,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-p#Performer",
+                "id": "performer",
                 "count": 2
             }
         ],
@@ -2995,11 +2719,7 @@
         "xpBudget": 200,
         "monsters": [
             {
-                "name": "Myconid Adult",
-                "cr": 0.5,
-                "exp": 100,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-m#MyconidAdult",
+                "id": "myconid-adult",
                 "count": 2
             }
         ],
@@ -3040,11 +2760,7 @@
         "xpBudget": 200,
         "monsters": [
             {
-                "name": "Black Bear",
-                "cr": 0.5,
-                "exp": 100,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/animals#BlackBear",
+                "id": "black-bear",
                 "count": 2
             }
         ],
@@ -3093,19 +2809,11 @@
         "xpBudget": 260,
         "monsters": [
             {
-                "name": "Skeleton",
-                "cr": 0.25,
-                "exp": 50,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-s#Skeleton",
+                "id": "skeleton",
                 "count": 4
             },
             {
-                "name": "Crawling Claw",
-                "cr": 0,
-                "exp": 10,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-c#CrawlingClaw",
+                "id": "crawling-claw",
                 "count": 6
             }
         ],
@@ -4690,12 +4398,8 @@
         "size": 1,
         "monsters": [
             {
-                "name": "Wimble Tosscoin (Halfling Merchant)",
-                "count": 1,
-                "cr": 0,
-                "exp": 0,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/sources/dnd/dmg-2024/dms-toolbox#Commoner"
+                "id": "wimble-tosscoin-halfling-merchant",
+                "count": 1
             }
         ],
         "attitude": "friendly",
@@ -4728,12 +4432,8 @@
         "size": 1,
         "monsters": [
             {
-                "name": "Human Scout",
-                "count": 2,
-                "cr": 0.5,
-                "exp": 100,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/monsters/17007-scout"
+                "id": "human-scout",
+                "count": 2
             }
         ],
         "attitude": "indifferent",
@@ -4773,12 +4473,8 @@
         "size": 1,
         "monsters": [
             {
-                "name": "Skrix (Goblin Deserter)",
-                "count": 1,
-                "cr": 0.25,
-                "exp": 50,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/monsters/16907-goblin"
+                "id": "skrix-goblin-deserter",
+                "count": 1
             }
         ],
         "attitude": "friendly",
@@ -4812,12 +4508,8 @@
         "size": 1,
         "monsters": [
             {
-                "name": "Thorin Ironseam (Dwarf Prospector)",
-                "count": 1,
-                "cr": 0.5,
-                "exp": 100,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/sources/dnd/dmg-2024/dms-toolbox#Commoner"
+                "id": "thorin-ironseam-dwarf-prospector",
+                "count": 1
             }
         ],
         "attitude": "indifferent",
@@ -4860,12 +4552,8 @@
         "size": 1,
         "monsters": [
             {
-                "name": "Aldric Moonwhisper (Wizard)",
-                "count": 1,
-                "cr": 1,
-                "exp": 200,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-m#Mage"
+                "id": "aldric-moonwhisper-wizard",
+                "count": 1
             }
         ],
         "attitude": "friendly",
@@ -4907,20 +4595,12 @@
         "size": 1,
         "monsters": [
             {
-                "name": "Kara Blackknife (Bandit Leader)",
-                "count": 1,
-                "cr": 1,
-                "exp": 200,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/monsters/16798-bandit"
+                "id": "kara-blackknife-bandit-leader",
+                "count": 1
             },
             {
-                "name": "Bandit",
-                "count": 2,
-                "cr": 0.125,
-                "exp": 25,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/monsters/16798-bandit"
+                "id": "bandit",
+                "count": 2
             }
         ],
         "attitude": "hostile",
@@ -4987,12 +4667,8 @@
         "size": 1,
         "monsters": [
             {
-                "name": "Sir Aldren the Cursed (Spectral Knight)",
-                "count": 1,
-                "cr": 1,
-                "exp": 200,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/monsters/17014-skeleton"
+                "id": "sir-aldren-the-cursed-spectral-knight",
+                "count": 1
             }
         ],
         "attitude": "indifferent",
@@ -5060,12 +4736,8 @@
         "size": 1,
         "monsters": [
             {
-                "name": "Myconid Adult",
-                "count": 3,
-                "cr": 0.5,
-                "exp": 100,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/monsters/16967-myconid-adult"
+                "id": "myconid-adult",
+                "count": 3
             }
         ],
         "attitude": "indifferent",
@@ -5111,12 +4783,8 @@
         "size": 1,
         "monsters": [
             {
-                "name": "Sylvara Swiftarrow (Elf Ranger)",
-                "count": 1,
-                "cr": 1,
-                "exp": 200,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/monsters/17007-scout"
+                "id": "sylvara-swiftarrow-elf-ranger",
+                "count": 1
             }
         ],
         "attitude": "indifferent",
@@ -5170,12 +4838,8 @@
         "size": 1,
         "monsters": [
             {
-                "name": "Desperate Cultist",
-                "count": 1,
-                "cr": 0.5,
-                "exp": 100,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/monsters/16836-cultist"
+                "id": "desperate-cultist",
+                "count": 1
             }
         ],
         "attitude": "hostile",
@@ -5241,20 +4905,12 @@
         "size": 2,
         "monsters": [
             {
-                "name": "Gorthak the Goblin King",
-                "count": 1,
-                "cr": 1,
-                "exp": 200,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/monsters/16907-goblin-boss"
+                "id": "gorthak-the-goblin-king",
+                "count": 1
             },
             {
-                "name": "Goblin Warrior",
-                "count": 2,
-                "cr": 0.25,
-                "exp": 50,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#GoblinWarrior"
+                "id": "goblin-warrior",
+                "count": 2
             }
         ],
         "attitude": "hostile",
@@ -5309,12 +4965,8 @@
         "size": 2,
         "monsters": [
             {
-                "name": "Skeletal Champion",
-                "count": 1,
-                "cr": 2,
-                "exp": 450,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/monsters/17014-skeleton"
+                "id": "skeletal-champion",
+                "count": 1
             }
         ],
         "attitude": "hostile",
@@ -5355,12 +5007,8 @@
         "size": 3,
         "monsters": [
             {
-                "name": "Venomfang (Young Green Dragon)",
-                "count": 1,
-                "cr": 2,
-                "exp": 450,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/monsters/16902-young-green-dragon"
+                "id": "venomfang-young-green-dragon",
+                "count": 1
             }
         ],
         "attitude": "hostile",
@@ -5427,20 +5075,12 @@
         "size": 2,
         "monsters": [
             {
-                "name": "Corrupted Treant",
-                "count": 1,
-                "cr": 2,
-                "exp": 450,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/monsters/17035-treant"
+                "id": "corrupted-treant",
+                "count": 1
             },
             {
-                "name": "Twig Blight",
-                "count": 4,
-                "cr": 0.125,
-                "exp": 25,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/monsters/17038-twig-blight"
+                "id": "twig-blight",
+                "count": 4
             }
         ],
         "attitude": "hostile",
@@ -5494,20 +5134,12 @@
         "size": 2,
         "monsters": [
             {
-                "name": "Malakar the Dark Sorcerer",
-                "count": 1,
-                "cr": 1,
-                "exp": 200,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-m#Mage"
+                "id": "malakar-the-dark-sorcerer",
+                "count": 1
             },
             {
-                "name": "Animated Armor",
-                "count": 2,
-                "cr": 1,
-                "exp": 200,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/monsters/16787-animated-armor"
+                "id": "animated-armor",
+                "count": 2
             }
         ],
         "attitude": "hostile",
@@ -5556,12 +5188,8 @@
         "size": 2,
         "monsters": [
             {
-                "name": "Gelatinous Cube Overlord",
-                "count": 1,
-                "cr": 2,
-                "exp": 450,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/monsters/16869-gelatinous-cube"
+                "id": "gelatinous-cube-overlord",
+                "count": 1
             }
         ],
         "attitude": "hostile",
@@ -5635,28 +5263,16 @@
         "size": 2,
         "monsters": [
             {
-                "name": "Grimjaw the Bugbear Chieftain",
-                "count": 1,
-                "cr": 2,
-                "exp": 450,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/monsters/4775844-bugbear"
+                "id": "grimjaw-the-bugbear-chieftain",
+                "count": 1
             },
             {
-                "name": "Goblin Boss",
-                "count": 2,
-                "cr": 1,
-                "exp": 200,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/monsters/16907-goblin-boss"
+                "id": "goblin-boss",
+                "count": 2
             },
             {
-                "name": "Wolf",
-                "count": 1,
-                "cr": 0.25,
-                "exp": 50,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/monsters/17062-wolf"
+                "id": "wolf",
+                "count": 1
             }
         ],
         "attitude": "hostile",
@@ -5712,12 +5328,8 @@
         "size": 2,
         "monsters": [
             {
-                "name": "The Spectral Warden",
-                "count": 1,
-                "cr": 2,
-                "exp": 450,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/monsters/17064-wraith"
+                "id": "the-spectral-warden",
+                "count": 1
             }
         ],
         "attitude": "hostile",
@@ -5775,28 +5387,16 @@
         "size": 2,
         "monsters": [
             {
-                "name": "Sszarak (Yuan-ti Infiltrator)",
-                "count": 1,
-                "cr": 1,
-                "exp": 200,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/monsters/5195289-yuan-ti-infiltrator"
+                "id": "sszarak-yuan-ti-infiltrator",
+                "count": 1
             },
             {
-                "name": "Constrictor Snake",
-                "count": 2,
-                "cr": 0.25,
-                "exp": 50,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/monsters/4775809-constrictor-snake"
+                "id": "constrictor-snake",
+                "count": 2
             },
             {
-                "name": "Flying Snake",
-                "count": 4,
-                "cr": 0.125,
-                "exp": 25,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/monsters/5194999-flying-snake"
+                "id": "flying-snake",
+                "count": 4
             }
         ],
         "attitude": "hostile",
@@ -5864,12 +5464,8 @@
         "size": 2,
         "monsters": [
             {
-                "name": "Flesh Golem Experiment",
-                "count": 1,
-                "cr": 2,
-                "exp": 450,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/monsters/16865-flesh-golem"
+                "id": "flesh-golem-experiment",
+                "count": 1
             }
         ],
         "attitude": "hostile",

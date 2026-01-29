@@ -12,10 +12,34 @@ export class MonsterLibrary {
     }
 
     /**
+     * Merge new monster data into the library
+     * Uses ID to match and overwrite existing entries
+     */
+    updateMonsters(newMonsters: MonsterData[]) {
+        newMonsters.forEach(newMonster => {
+            const index = this.monsters.findIndex(m => m.id === newMonster.id);
+            if (index !== -1) {
+                // Update existing
+                this.monsters[index] = newMonster;
+            } else {
+                // Add new
+                this.monsters.push(newMonster);
+            }
+        });
+    }
+
+    /**
      * Get monster by exact name
      */
     getMonsterByName(name: string): MonsterData | null {
         return this.monsters.find(m => m.name.toLowerCase() === name.toLowerCase()) || null;
+    }
+
+    /**
+     * Get monster by unique ID
+     */
+    getMonsterById(id: string): MonsterData | null {
+        return this.monsters.find(m => m.id === id) || null;
     }
 
     /**

@@ -7,19 +7,11 @@
         "xpBudget": 21600,
         "monsters": [
             {
-                "name": "Salamander Inferno Master",
-                "cr": 15,
-                "exp": 13000,
-                "pb": 5,
-                "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-s#SalamanderInfernoMaster",
+                "id": "salamander-inferno-master",
                 "count": 1
             },
             {
-                "name": "Salamander",
-                "cr": 5,
-                "exp": 1800,
-                "pb": 3,
-                "mmLink": "https://www.dndbeyond.com/monsters/16999-salamander",
+                "id": "salamander",
                 "count": 4
             }
         ],
@@ -74,19 +66,11 @@
         "xpBudget": 18000,
         "monsters": [
             {
-                "name": "Iron Golem",
-                "cr": 16,
-                "exp": 15000,
-                "pb": 5,
-                "mmLink": "https://www.dndbeyond.com/monsters/16935-iron-golem",
+                "id": "iron-golem",
                 "count": 1
             },
             {
-                "name": "Flesh Golem",
-                "cr": 5,
-                "exp": 1800,
-                "pb": 3,
-                "mmLink": "https://www.dndbeyond.com/monsters/16863-flesh-golem",
+                "id": "flesh-golem",
                 "count": 2
             }
         ],
@@ -141,19 +125,11 @@
         "xpBudget": 20800,
         "monsters": [
             {
-                "name": "Vampire",
-                "cr": 13,
-                "exp": 10000,
-                "pb": 5,
-                "mmLink": "https://www.dndbeyond.com/monsters/17043-vampire",
+                "id": "vampire",
                 "count": 1
             },
             {
-                "name": "Vampire Spawn",
-                "cr": 5,
-                "exp": 1800,
-                "pb": 3,
-                "mmLink": "https://www.dndbeyond.com/monsters/17044-vampire-spawn",
+                "id": "vampire-spawn",
                 "count": 6
             }
         ],
@@ -202,11 +178,7 @@
         "xpBudget": 14400,
         "monsters": [
             {
-                "name": "Gladiator",
-                "cr": 5,
-                "exp": 1800,
-                "pb": 3,
-                "mmLink": "https://www.dndbeyond.com/monsters/16905-gladiator",
+                "id": "gladiator",
                 "count": 8
             }
         ],
@@ -249,35 +221,19 @@
         "xpBudget": 20600,
         "monsters": [
             {
-                "name": "Fire Elemental",
-                "cr": 5,
-                "exp": 1800,
-                "pb": 3,
-                "mmLink": "https://www.dndbeyond.com/monsters/16862-fire-elemental",
+                "id": "fire-elemental",
                 "count": 4
             },
             {
-                "name": "Earth Elemental",
-                "cr": 5,
-                "exp": 1800,
-                "pb": 3,
-                "mmLink": "https://www.dndbeyond.com/monsters/16853-earth-elemental",
+                "id": "earth-elemental",
                 "count": 4
             },
             {
-                "name": "Air Elemental",
-                "cr": 5,
-                "exp": 1800,
-                "pb": 3,
-                "mmLink": "https://www.dndbeyond.com/monsters/16766-air-elemental",
+                "id": "air-elemental",
                 "count": 2
             },
             {
-                "name": "Water Elemental",
-                "cr": 5,
-                "exp": 1800,
-                "pb": 3,
-                "mmLink": "https://www.dndbeyond.com/monsters/17054-water-elemental",
+                "id": "water-elemental",
                 "count": 2
             }
         ],
@@ -320,11 +276,7 @@
         "xpBudget": 14400,
         "monsters": [
             {
-                "name": "Troll",
-                "cr": 5,
-                "exp": 1800,
-                "pb": 3,
-                "mmLink": "https://www.dndbeyond.com/monsters/17040-troll",
+                "id": "troll",
                 "count": 8
             }
         ],
@@ -367,11 +319,7 @@
         "xpBudget": 18000,
         "monsters": [
             {
-                "name": "Wraith",
-                "cr": 5,
-                "exp": 1800,
-                "pb": 3,
-                "mmLink": "https://www.dndbeyond.com/monsters/17064-wraith",
+                "id": "wraith",
                 "count": 10
             }
         ],
@@ -420,27 +368,15 @@
         "xpBudget": 20800,
         "monsters": [
             {
-                "name": "Roper",
-                "cr": 5,
-                "exp": 1800,
-                "pb": 3,
-                "mmLink": "https://www.dndbeyond.com/monsters/16997-roper",
+                "id": "roper",
                 "count": 8
             },
             {
-                "name": "Darkmantle",
-                "cr": 0.5,
-                "exp": 100,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/monsters/16838-darkmantle",
+                "id": "darkmantle",
                 "count": 10
             },
             {
-                "name": "Piercer",
-                "cr": 0.5,
-                "exp": 100,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/monsters/16980-piercer",
+                "id": "piercer",
                 "count": 10
             }
         ],
@@ -483,11 +419,7 @@
         "xpBudget": 18000,
         "monsters": [
             {
-                "name": "Umber Hulk",
-                "cr": 5,
-                "exp": 1800,
-                "pb": 3,
-                "mmLink": "https://www.dndbeyond.com/monsters/17041-umber-hulk",
+                "id": "umber-hulk",
                 "count": 10
             }
         ],
@@ -536,35 +468,19 @@
         "xpBudget": 21600,
         "monsters": [
             {
-                "name": "Sahuagin Baron",
-                "cr": 5,
-                "exp": 1800,
-                "pb": 3,
-                "mmLink": "https://www.dndbeyond.com/monsters/17006-sahuagin-baron",
+                "id": "sahuagin-baron",
                 "count": 2
             },
             {
-                "name": "Giant Shark",
-                "cr": 5,
-                "exp": 1800,
-                "pb": 3,
-                "mmLink": "https://www.dndbeyond.com/monsters/16893-giant-shark",
+                "id": "giant-shark",
                 "count": 4
             },
             {
-                "name": "Sahuagin Priestess",
-                "cr": 2,
-                "exp": 450,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/monsters/17007-sahuagin-priestess",
+                "id": "sahuagin-priestess",
                 "count": 4
             },
             {
-                "name": "Sahuagin",
-                "cr": 0.5,
-                "exp": 100,
-                "pb": 2,
-                "mmLink": "https://www.dndbeyond.com/monsters/17005-sahuagin",
+                "id": "sahuagin",
                 "count": 10
             }
         ],

@@ -4,23 +4,65 @@ import encountersTier1 from './encounters-tier-1.json';
 import encountersTier2 from './encounters-tier-2.json';
 import encountersTier3 from './encounters-tier-3.json';
 import encountersTier4 from './encounters-tier-4.json';
+import { monsterLibrary } from './monsterLibrary';
 
 export class EncounterLibrary {
     private encountersByFloor: Map<number, EncounterData[]> = new Map();
 
     constructor() {
+        // Helper to hydrate monsters from IDs
+        const hydrateEncounters = (encounters: any[]): EncounterData[] => {
+            return encounters.map(enc => {
+                if (!enc.monsters) return enc as EncounterData;
+
+                const hydratedMonsters = enc.monsters.map((m: any) => {
+                    // If it's already a full monster object, return it (legacy support/mixed data)
+                    if (m.name && m.exp) return m;
+
+                    // If it's a reference { id, count }
+                    if (m.id) {
+                        const monsterData = monsterLibrary.getMonsterById(m.id);
+                        if (monsterData) {
+                            return {
+                                ...monsterData,
+                                count: m.count || 1
+                            };
+                        } else {
+                            console.warn(`EncounterLibrary: Could not find monster with id '${m.id}' for encounter '${enc.name}'`);
+                            // Return a placeholder or the raw ref to avoid crashing, but it won't have stats
+                            return {
+                                id: m.id,
+                                name: `Unknown (${m.id})`,
+                                count: m.count || 1,
+                                cr: 0,
+                                exp: 0,
+                                pb: 2,
+                                mmLink: ''
+                            };
+                        }
+                    }
+                    return m;
+                });
+
+                return {
+                    ...enc,
+                    monsters: hydratedMonsters
+                } as EncounterData;
+            });
+        };
+
         // Initialize encounters by tier levels
         // Tier 1: Levels 1-4
-        [1, 2, 3, 4].forEach(level => this.encountersByFloor.set(level, encountersTier1 as EncounterData[]));
+        [1, 2, 3, 4].forEach(level => this.encountersByFloor.set(level, hydrateEncounters(encountersTier1)));
 
         // Tier 2: Levels 5-10
-        [5, 6, 7, 8, 9, 10].forEach(level => this.encountersByFloor.set(level, encountersTier2 as EncounterData[]));
+        [5, 6, 7, 8, 9, 10].forEach(level => this.encountersByFloor.set(level, hydrateEncounters(encountersTier2)));
 
         // Tier 3: Levels 11-16
-        [11, 12, 13, 14, 15, 16].forEach(level => this.encountersByFloor.set(level, encountersTier3 as EncounterData[]));
+        [11, 12, 13, 14, 15, 16].forEach(level => this.encountersByFloor.set(level, hydrateEncounters(encountersTier3)));
 
         // Tier 4: Levels 17-20
-        [17, 18, 19, 20].forEach(level => this.encountersByFloor.set(level, encountersTier4 as EncounterData[]));
+        [17, 18, 19, 20].forEach(level => this.encountersByFloor.set(level, hydrateEncounters(encountersTier4)));
     }
 
     /**

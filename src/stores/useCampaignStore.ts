@@ -1,6 +1,7 @@
 import { defineStore } from 'pinia';
 import { ref, computed } from 'vue';
 import type { Campaign, SaveFileExport } from '../types/Persistence';
+import { monsterLibrary } from '../data/monsterLibrary';
 
 export const useCampaignStore = defineStore('campaign', () => {
     const campaigns = ref<Campaign[]>([]);
@@ -74,7 +75,8 @@ export const useCampaignStore = defineStore('campaign', () => {
         const exportData: SaveFileExport = {
             version: 1,
             timestamp: Date.now(),
-            campaigns: campaigns.value
+            campaigns: campaigns.value,
+            monsters: monsterLibrary.getAllMonsters()
         };
         return JSON.stringify(exportData, null, 2);
     }
@@ -82,6 +84,12 @@ export const useCampaignStore = defineStore('campaign', () => {
     function importData(json: string): boolean {
         try {
             const data = JSON.parse(json) as SaveFileExport;
+
+            // Import monsters first if present
+            if (data.monsters && Array.isArray(data.monsters)) {
+                monsterLibrary.updateMonsters(data.monsters);
+            }
+
             if (data.campaigns && Array.isArray(data.campaigns)) {
                 campaigns.value = data.campaigns;
                 // Reset active ID if it doesn't exist anymore

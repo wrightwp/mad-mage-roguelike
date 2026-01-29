@@ -65,8 +65,11 @@ export interface PartyMemberState {
     // Add other stats as needed
 }
 
+import type { MonsterData } from './MonsterData';
+
 export interface SaveFileExport {
     version: number;
     timestamp: number;
     campaigns: Campaign[];
+    monsters?: MonsterData[];
 }
