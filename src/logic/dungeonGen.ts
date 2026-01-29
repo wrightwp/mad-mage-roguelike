@@ -253,9 +253,9 @@ export const generateDungeon = (
         // Get encounter type for this node
         const encounterType = encounterTypeMap[node.type] || EncounterType.Combat;
 
-        // Get appropriate encounter for this floor, excluding already-used encounters
+        // Get appropriate encounter for party level (determines tier), excluding already-used encounters
         let encounter = encounterLibrary.getRandomEncounter(
-            currentFloor,
+            averagePartyLevel,
             encounterType,
             { excludeNames: usedEncounterNames }
         );
@@ -285,13 +285,13 @@ export const generateDungeon = (
     // Special handling for Boss Node
     const bossNode = layers[layersPerFloor - 1][0];
     if (bossNode && bossNode.type === NodeType.Boss) {
-        let bossEncounter = encounterLibrary.getRandomEncounter(currentFloor, EncounterType.Boss);
+        let bossEncounter = encounterLibrary.getRandomEncounter(averagePartyLevel, EncounterType.Boss);
 
         // Fallback to High Difficulty Combat if no Boss encounter found
         if (!bossEncounter) {
             console.warn('No Boss encounter found, falling back to High Difficulty Combat');
             bossEncounter = encounterLibrary.getRandomEncounter(
-                currentFloor,
+                averagePartyLevel,
                 EncounterType.Combat,
                 { difficulty: EncounterDifficulty.High }
             ) as any; // Cast as any because we're assigning a Combat encounter to a slot meant for Boss type logically, though the field is generic EncounterData

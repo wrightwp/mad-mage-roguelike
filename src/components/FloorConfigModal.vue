@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue';
+import { ref, computed, watch } from 'vue';
 import { TYPE_COLORS, getNodeIcon } from '../utils/nodeStyles';
 
 interface Props {
@@ -42,7 +42,12 @@ const selectedFloor = ref(props.initialFloor);
 const floorDepth = ref(props.initialFloorDepth);
 const nodeCounts = ref({ ...props.initialNodeCounts });
 const partySize = ref(4);
-const averagePartyLevel = ref(1);
+const averagePartyLevel = ref(props.initialFloor); // Initialize to match floor
+
+// Sync party level when floor changes during configuration
+watch(selectedFloor, (newFloor) => {
+  averagePartyLevel.value = Math.min(20, Math.max(1, newFloor));
+});
 
 // Computed values
 const totalNodes = computed(() => {
