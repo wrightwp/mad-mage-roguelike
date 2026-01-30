@@ -5544,5 +5544,1353 @@
                 "damage": "4d6"
             }
         ]
+    },
+    {
+        "name": "Rat Warren Infestation",
+        "level": 2,
+        "type": "combat",
+        "difficulty": "low",
+        "xpBudget": 400,
+        "monsters": [
+            {
+                "id": "giant-rat",
+                "count": 6
+            },
+            {
+                "id": "swarm-of-rats",
+                "count": 2
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "frenzied",
+        "roomDescription": "A foul stench assaults your nostrils as you enter this refuse-strewn chamber. Piles of gnawed bones and rotting garbage create a maze of filth. Dozens of gleaming red eyes reflect your torchlight, and the skittering of countless claws echoes from every direction.",
+        "dmDescription": [
+            "The giant rats are diseased - any creature bitten must succeed on a {{sm-0}} or contract Filth Fever.",
+            "The swarms emerge from wall holes on round 2 unless players block them with debris ({{sm-1}}).",
+            "A dead adventurer's pack hidden under refuse contains a spell scroll of Fog Cloud ({{sm-2}} to find).",
+            "The rats fight to the death, driven mad by hunger."
+        ],
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Eliminate all rats",
+                "reward": "Full XP",
+                "xpReward": 400,
+                "goldReward": 0
+            },
+            {
+                "condition": "Burn out the warren with fire",
+                "reward": "Full XP, faster resolution",
+                "xpReward": 400,
+                "goldReward": 0
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 80ft x 60ft underground sewer chamber with stone walls. Piles of garbage and bones scattered throughout. Multiple rat holes in walls. Shallow water channels. Dim lighting. Clean lines, high contrast for virtual tabletop use.",
+        "lair": false,
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "skill",
+                "subType": "Constitution Save",
+                "dc": 10
+            },
+            {
+                "id": "sm-1",
+                "type": "skill",
+                "subType": "Athletics (STR)",
+                "dc": 12
+            },
+            {
+                "id": "sm-2",
+                "type": "skill",
+                "subType": "Investigation (INT)",
+                "dc": 14
+            }
+        ]
+    },
+    {
+        "name": "Silent Stalkers",
+        "level": 2,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 600,
+        "monsters": [
+            {
+                "id": "darkling",
+                "count": 4
+            },
+            {
+                "id": "shadow",
+                "count": 2
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "patient",
+        "roomDescription": "The torchlight seems to shrink as you enter this unnaturally dark chamber. The shadows themselves appear to move, pooling in corners and stretching toward you with hungry intent. A cold whisper of wind carries the scent of decay.",
+        "dmDescription": [
+            "STEALTH ENCOUNTER: Players may attempt to sneak through undetected ({{sm-0}} contested by the monsters' passive Perception of 11).",
+            "The shadows hide in the darkest corners and will ambush any light source first.",
+            "Darklings explode in bright light when killed - adjacent creatures take 2d6 radiant damage ({{sm-1}} for half).",
+            "If players extinguish their lights, they gain advantage on Stealth but fight blind.",
+            "A cache of shadow gems worth 50gp is hidden in the southeast corner ({{sm-2}})."
+        ],
+        "size": 2,
+        "winConditions": [
+            {
+                "condition": "Destroy all shadow creatures",
+                "reward": "Full XP",
+                "xpReward": 600,
+                "goldReward": 50
+            },
+            {
+                "condition": "Sneak through undetected",
+                "reward": "Half XP, no resources spent",
+                "xpReward": 300,
+                "goldReward": 0
+            },
+            {
+                "condition": "Use Turn Undead to route shadows",
+                "reward": "Full XP",
+                "xpReward": 600,
+                "goldReward": 50
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 80ft underground chamber with oppressive darkness. Pools of supernatural shadow in corners. Broken pillars casting deep shadows. Ancient burial niches in walls. Minimal lighting. Clean lines, high contrast for virtual tabletop use.",
+        "lair": false,
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "skill",
+                "subType": "Stealth (DEX)",
+                "dc": 11
+            },
+            {
+                "id": "sm-1",
+                "type": "skill",
+                "subType": "Dexterity Save",
+                "dc": 10
+            },
+            {
+                "id": "sm-2",
+                "type": "skill",
+                "subType": "Perception (WIS)",
+                "dc": 15
+            }
+        ]
+    },
+    {
+        "name": "Skeleton Patrol",
+        "level": 2,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 550,
+        "monsters": [
+            {
+                "id": "skeleton",
+                "count": 6
+            },
+            {
+                "id": "crawling-claw",
+                "count": 5
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "relentless",
+        "roomDescription": "Bones litter this ancient burial hall, piled against the walls in grim display. As you enter, several skeletons rise from among the debris, their empty eye sockets flickering with pale blue light. Severed hands scuttle across the floor toward you.",
+        "dmDescription": [
+            "The skeletons are programmed to patrol - they attack any living creature on sight.",
+            "Crawling claws will grapple spellcasters and archers first (Escape {{sm-0}}).",
+            "Two skeletons carry rusted but functional shortbows.",
+            "A necromancer's journal lies near a shattered coffin ({{sm-1}} to spot), containing a ritual for Speak with Dead.",
+            "Bludgeoning damage is effective against skeletons (vulnerability)."
+        ],
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Destroy all undead",
+                "reward": "Full XP",
+                "xpReward": 550,
+                "goldReward": 0
+            },
+            {
+                "condition": "Find and destroy the controlling phylactery",
+                "reward": "Full XP, undead crumble instantly",
+                "xpReward": 550,
+                "goldReward": 25
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 90ft x 70ft underground burial chamber with stone sarcophagi. Bone piles against walls. Broken coffins. Ancient columns with death motifs. Flickering blue magical light. Clean lines, high contrast for virtual tabletop use.",
+        "lair": false,
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "skill",
+                "subType": "Athletics (STR)",
+                "dc": 11
+            },
+            {
+                "id": "sm-1",
+                "type": "skill",
+                "subType": "Investigation (INT)",
+                "dc": 13
+            }
+        ]
+    },
+    {
+        "name": "Cultist Ritual",
+        "level": 2,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 600,
+        "monsters": [
+            {
+                "id": "cultist",
+                "count": 6
+            },
+            {
+                "id": "acolyte",
+                "count": 2
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "fanatical",
+        "roomDescription": "Dark chanting fills this chamber where robed figures surround a blood-stained altar. Candles flicker in a complex pattern on the floor, and the air crackles with profane energy. One figure turns toward you with wide, manic eyes.",
+        "dmDescription": [
+            "The acolytes are mid-ritual and will try to complete it for 3 rounds before joining combat.",
+            "If the ritual completes, an additional {{sm-0}} demon appears (Manes, 25 XP).",
+            "Disrupting the altar ({{sm-1}}) ends the ritual immediately and panics the cultists.",
+            "The lead acolyte carries a silver unholy symbol worth 25gp and a potion of healing.",
+            "Cultists will fight to the death, believing sacrifice brings rewards."
+        ],
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Eliminate all cultists",
+                "reward": "Full XP",
+                "xpReward": 600,
+                "goldReward": 25
+            },
+            {
+                "condition": "Disrupt the ritual and capture a cultist for interrogation",
+                "reward": "Full XP plus information",
+                "xpReward": 600,
+                "goldReward": 0
+            },
+            {
+                "condition": "Intimidate the cultists into surrendering ({{sm-2}})",
+                "reward": "Half XP, captives",
+                "xpReward": 300,
+                "goldReward": 25
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 80ft x 80ft underground ritual chamber. Blood-stained altar at center. Ritual circle with candles. Robed figures. Demonic symbols on floor. Eerie red and purple lighting. Clean lines, high contrast for virtual tabletop use.",
+        "lair": false,
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "other",
+                "subType": "Demon Summon"
+            },
+            {
+                "id": "sm-1",
+                "type": "skill",
+                "subType": "Arcana (INT)",
+                "dc": 12
+            },
+            {
+                "id": "sm-2",
+                "type": "skill",
+                "subType": "Intimidation (CHA)",
+                "dc": 15
+            }
+        ]
+    },
+    {
+        "name": "Kobold Trappers",
+        "level": 2,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 575,
+        "monsters": [
+            {
+                "id": "kobold-warrior",
+                "count": 6
+            },
+            {
+                "id": "winged-kobold",
+                "count": 3
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "cunning",
+        "roomDescription": "This winding corridor is lined with suspicious holes and loose flagstones. Yipping laughter echoes from the shadows as small reptilian creatures dart between cover. Above, winged kobolds cling to the ceiling, readying javelins.",
+        "dmDescription": [
+            "Three pit traps are hidden in the floor ({{sm-0}} to spot, {{sm-1}} to avoid, 1d6 falling damage).",
+            "Winged kobolds will drop alchemist's fire on round 2 (2d6 fire damage, {{sm-2}} for half).",
+            "The kobolds use Pack Tactics - they gain advantage when allies are adjacent.",
+            "Leader kobold carries a crude map showing nearby dragon lair (quest hook).",
+            "If 4+ kobolds fall, survivors flee to warn their tribe."
+        ],
+        "size": 2,
+        "winConditions": [
+            {
+                "condition": "Defeat all kobolds",
+                "reward": "Full XP",
+                "xpReward": 575,
+                "goldReward": 15
+            },
+            {
+                "condition": "Capture the leader for information",
+                "reward": "Full XP plus dragon lair location",
+                "xpReward": 575,
+                "goldReward": 0
+            },
+            {
+                "condition": "Use fire against the winged kobolds' nest",
+                "reward": "Full XP, winged kobolds panic",
+                "xpReward": 575,
+                "goldReward": 15
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 120ft x 50ft winding underground corridor. Pit traps with covers. Narrow ledges above. Stalactites for flying creatures. Kobold-sized tunnels in walls. Dim torchlight. Clean lines, high contrast for virtual tabletop use.",
+        "lair": false,
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "skill",
+                "subType": "Perception (WIS)",
+                "dc": 12
+            },
+            {
+                "id": "sm-1",
+                "type": "skill",
+                "subType": "Dexterity Save",
+                "dc": 12
+            },
+            {
+                "id": "sm-2",
+                "type": "skill",
+                "subType": "Dexterity Save",
+                "dc": 11
+            }
+        ]
+    },
+    {
+        "name": "Prowling Predators",
+        "level": 2,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 550,
+        "monsters": [
+            {
+                "id": "wolf",
+                "count": 4
+            },
+            {
+                "id": "dire-wolf",
+                "count": 1
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "territorial",
+        "roomDescription": "Animal bones and scraps of fur litter this natural cavern. The smell of musk and blood is overwhelming. Low growls echo from the shadows as several pairs of glowing eyes fix upon you. A massive wolf emerges from the darkness, its hackles raised.",
+        "dmDescription": [
+            "STEALTH ENCOUNTER: Players may attempt to sneak past if they stay downwind ({{sm-0}} plus bonus if they use scent-masking).",
+            "The dire wolf is the alpha - if it falls, the pack scatters.",
+            "Wolves use Pack Tactics and will try to knock prone and surround single targets.",
+            "Offering fresh meat (rations) grants {{sm-1}} to avoid combat entirely.",
+            "A wolf pup den in the back contains 3 trainable pups worth 50gp each to the right buyer.",
+            "The wolves guard a previous victim's belongings: 30gp and a +1 dagger."
+        ],
+        "size": 2,
+        "winConditions": [
+            {
+                "condition": "Kill or drive off the wolves",
+                "reward": "Full XP",
+                "xpReward": 550,
+                "goldReward": 30
+            },
+            {
+                "condition": "Sneak through undetected",
+                "reward": "Half XP, no resources spent",
+                "xpReward": 275,
+                "goldReward": 0
+            },
+            {
+                "condition": "Pacify with Animal Handling ({{sm-2}})",
+                "reward": "Full XP, wolves become neutral",
+                "xpReward": 550,
+                "goldReward": 30
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 90ft natural cavern with rocky outcroppings. Bone piles. Wolf den in corner. Natural pillars. Multiple entrances. Moonlight filtering through crack above. Clean lines, high contrast for virtual tabletop use.",
+        "lair": true,
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "skill",
+                "subType": "Stealth (DEX)",
+                "dc": 13
+            },
+            {
+                "id": "sm-1",
+                "type": "skill",
+                "subType": "Animal Handling (WIS)",
+                "dc": 12
+            },
+            {
+                "id": "sm-2",
+                "type": "skill",
+                "subType": "Animal Handling (WIS)",
+                "dc": 16
+            }
+        ]
+    },
+    {
+        "name": "Zombie Horde",
+        "level": 2,
+        "type": "combat",
+        "difficulty": "high",
+        "xpBudget": 750,
+        "monsters": [
+            {
+                "id": "zombie",
+                "count": 8
+            },
+            {
+                "id": "crawling-claw",
+                "count": 5
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "mindless",
+        "roomDescription": "The stench of rotting flesh fills this chamber as shambling corpses emerge from the shadows. Their groans echo off the walls as they lumber toward you, arms outstretched. Severed hands skitter across the floor between their feet.",
+        "dmDescription": [
+            "Zombies have Undead Fortitude - when reduced to 0 HP, {{sm-0}} or rise with 1 HP.",
+            "The crawling claws will climb onto characters and grapple (Escape {{sm-1}}).",
+            "Source of animation: a cursed amulet on a corpse in the back ({{sm-2}} to find).",
+            "Destroying the amulet instantly kills 4 zombies.",
+            "Radiant damage prevents Undead Fortitude from triggering.",
+            "The chamber has no exits except back - zombies corner the party."
+        ],
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Destroy all undead",
+                "reward": "Full XP",
+                "xpReward": 750,
+                "goldReward": 0
+            },
+            {
+                "condition": "Find and destroy the cursed amulet",
+                "reward": "Full XP, easier fight",
+                "xpReward": 750,
+                "goldReward": 50
+            },
+            {
+                "condition": "Survive for 5 rounds until dawn light through crack destroys them",
+                "reward": "Full XP",
+                "xpReward": 750,
+                "goldReward": 0
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 70ft x 70ft underground crypt chamber. Multiple open coffins. Shambling zombies throughout. Severed hands on floor. Single entrance. Crack in ceiling. Eerie green necromantic glow. Clean lines, high contrast for virtual tabletop use.",
+        "lair": false,
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "skill",
+                "subType": "Constitution Save",
+                "dc": 5
+            },
+            {
+                "id": "sm-1",
+                "type": "skill",
+                "subType": "Athletics (STR)",
+                "dc": 11
+            },
+            {
+                "id": "sm-2",
+                "type": "skill",
+                "subType": "Investigation (INT)",
+                "dc": 14
+            }
+        ]
+    },
+    {
+        "name": "Spider Nest",
+        "level": 2,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 600,
+        "monsters": [
+            {
+                "id": "giant-wolf-spider",
+                "count": 4
+            },
+            {
+                "id": "spider",
+                "count": 6
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "ambush",
+        "roomDescription": "Thick webs coat this chamber like a grotesque tapestry. Cocooned shapes hang from the ceiling - some still twitching. As you enter, dozens of eyes gleam from the shadows, and massive spiders descend on silken threads.",
+        "dmDescription": [
+            "The webs are difficult terrain. Moving through them requires {{sm-0}} or become restrained.",
+            "Giant wolf spiders hide on the ceiling ({{sm-1}} to spot) and drop onto targets.",
+            "A cocooned victim is still alive but unconscious ({{sm-2}} to free before they suffocate in 3 rounds).",
+            "The victim, if saved, is a merchant who offers 50gp reward.",
+            "Fire instantly clears 10ft of webbing but alerts all spiders."
+        ],
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Kill all spiders",
+                "reward": "Full XP",
+                "xpReward": 600,
+                "goldReward": 0
+            },
+            {
+                "condition": "Rescue the cocooned victim",
+                "reward": "Full XP plus 50gp reward",
+                "xpReward": 600,
+                "goldReward": 50
+            },
+            {
+                "condition": "Burn down the nest",
+                "reward": "Full XP, faster resolution",
+                "xpReward": 600,
+                "goldReward": 0
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 80ft x 80ft underground cavern covered in thick spider webs. Cocooned shapes hanging from ceiling. Giant spiders on walls. Web-covered stalagmites. Dim lighting. Clean lines, high contrast for virtual tabletop use.",
+        "lair": true,
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "skill",
+                "subType": "Strength (STR)",
+                "dc": 12
+            },
+            {
+                "id": "sm-1",
+                "type": "skill",
+                "subType": "Perception (WIS)",
+                "dc": 13
+            },
+            {
+                "id": "sm-2",
+                "type": "skill",
+                "subType": "Medicine (WIS)",
+                "dc": 10
+            }
+        ]
+    },
+    {
+        "name": "Bandit Toll",
+        "level": 2,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 575,
+        "monsters": [
+            {
+                "id": "bandit",
+                "count": 5
+            },
+            {
+                "id": "bandit-captain",
+                "count": 1
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "greedy",
+        "roomDescription": "A makeshift barricade blocks the corridor ahead. Behind it, rough-looking men and women in mismatched armor eye your belongings with undisguised greed. A scarred man in a leather coat steps forward.",
+        "dmDescription": [
+            "The bandit captain demands 50gp toll to pass. Intimidation ({{sm-0}}) can reduce to 25gp.",
+            "If paid, bandits let party pass but will ambush them on return trip.",
+            "Bandits have crossbows with half cover (+2 AC) behind barricade.",
+            "Captain carries 30gp and a potion of healing.",
+            "If captain falls, bandits surrender ({{sm-1}} to prevent them fleeing with treasure).",
+            "A secret passage bypasses the barricade ({{sm-2}})."
+        ],
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Defeat all bandits",
+                "reward": "Full XP, loot",
+                "xpReward": 575,
+                "goldReward": 45
+            },
+            {
+                "condition": "Pay the toll",
+                "reward": "No XP, passage granted",
+                "xpReward": 0,
+                "goldReward": -50
+            },
+            {
+                "condition": "Intimidate bandits into fleeing ({{sm-3}})",
+                "reward": "Half XP",
+                "xpReward": 287,
+                "goldReward": 0
+            },
+            {
+                "condition": "Find and use secret passage",
+                "reward": "No combat, no toll",
+                "xpReward": 100,
+                "goldReward": 0
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 60ft underground tunnel intersection. Wooden barricade across center. Crates and debris for cover. Torch sconces. Multiple side passages. Bandit camp setup. Clean lines, high contrast for virtual tabletop use.",
+        "lair": false,
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "skill",
+                "subType": "Intimidation (CHA)",
+                "dc": 13
+            },
+            {
+                "id": "sm-1",
+                "type": "skill",
+                "subType": "Athletics (STR)",
+                "dc": 12
+            },
+            {
+                "id": "sm-2",
+                "type": "skill",
+                "subType": "Investigation (INT)",
+                "dc": 15
+            },
+            {
+                "id": "sm-3",
+                "type": "skill",
+                "subType": "Intimidation (CHA)",
+                "dc": 16
+            }
+        ]
+    },
+    {
+        "name": "Stirge Swarm Attack",
+        "level": 2,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 500,
+        "monsters": [
+            {
+                "id": "stirge",
+                "count": 10
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "bloodthirsty",
+        "roomDescription": "A cloud of leathery wings erupts from the darkness as you enter this damp cave. Dozens of mosquito-like creatures with long proboscises dive toward you, their high-pitched whine filling the air.",
+        "dmDescription": [
+            "Stirges attach on hit and drain 1d4+3 HP per turn until removed ({{sm-0}}).",
+            "Fire or bright light causes stirges to disengage for 1 round.",
+            "The stirges guard a corpse with valuable items: 40gp and a Cloak of Elvenkind.",
+            "Stirges have 2 HP each - area effects are extremely effective.",
+            "If 6+ stirges die in one round, survivors flee to regroup."
+        ],
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Kill all stirges",
+                "reward": "Full XP",
+                "xpReward": 500,
+                "goldReward": 40
+            },
+            {
+                "condition": "Drive them off with fire/light",
+                "reward": "Half XP",
+                "xpReward": 250,
+                "goldReward": 40
+            },
+            {
+                "condition": "Quickly loot the corpse and flee ({{sm-1}})",
+                "reward": "No XP, full loot",
+                "xpReward": 0,
+                "goldReward": 40
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 60ft x 60ft underground cave. High ceiling with roosting stirges. Stalagmites. Shallow pools of water. Corpse in center. Dim natural lighting. Clean lines, high contrast for virtual tabletop use.",
+        "lair": true,
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "skill",
+                "subType": "Athletics (STR)",
+                "dc": 11
+            },
+            {
+                "id": "sm-1",
+                "type": "skill",
+                "subType": "Sleight of Hand (DEX)",
+                "dc": 14
+            }
+        ]
+    },
+    {
+        "name": "Goblin Scouts",
+        "level": 2,
+        "type": "combat",
+        "difficulty": "low",
+        "xpBudget": 400,
+        "monsters": [
+            {
+                "id": "goblin-warrior",
+                "count": 4
+            },
+            {
+                "id": "goblin-minion",
+                "count": 4
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "cowardly",
+        "roomDescription": "Chittering voices echo ahead as a group of goblins argues over a pile of trinkets. Their crude weapons lean against the wall as they squabble. One spots you and shrieks an alarm.",
+        "dmDescription": [
+            "Goblins are distracted and can be surprised with {{sm-0}}.",
+            "The warriors will try to escape to warn their boss if combat goes badly ({{sm-1}} to prevent).",
+            "Minions will flee if all warriors die.",
+            "The trinkets include 25gp worth of stolen goods and a silver ring (15gp).",
+            "A captured goblin can be bribed with shiny objects to reveal nearby traps."
+        ],
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Defeat all goblins",
+                "reward": "Full XP",
+                "xpReward": 400,
+                "goldReward": 40
+            },
+            {
+                "condition": "Capture a survivor for information",
+                "reward": "Full XP plus intel",
+                "xpReward": 400,
+                "goldReward": 0
+            },
+            {
+                "condition": "Bribe them with 10gp to leave",
+                "reward": "No XP, safe passage",
+                "xpReward": 0,
+                "goldReward": -10
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 70ft x 50ft underground chamber. Pile of trinkets in center. Crude goblin weapons against wall. Makeshift camp with bedrolls. Two exits. Flickering torchlight. Clean lines, high contrast for virtual tabletop use.",
+        "lair": false,
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "skill",
+                "subType": "Stealth (DEX)",
+                "dc": 10
+            },
+            {
+                "id": "sm-1",
+                "type": "skill",
+                "subType": "Athletics (STR)",
+                "dc": 12
+            }
+        ]
+    },
+    {
+        "name": "Animated Guardians",
+        "level": 2,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 600,
+        "monsters": [
+            {
+                "id": "animated-armor",
+                "count": 2
+            },
+            {
+                "id": "flying-sword",
+                "count": 4
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "mechanical",
+        "roomDescription": "Ancient suits of armor stand in alcoves along this dusty corridor, their polished surfaces gleaming despite the age. As you pass, their helms turn to track you, and swords lift from their scabbards to hover menacingly in the air.",
+        "dmDescription": [
+            "The constructs only attack if someone touches the treasure at the end of the hall.",
+            "Speaking the command word 'Alamar' (found via {{sm-0}}) deactivates them.",
+            "Flying swords are immune to poison and psychic damage.",
+            "Adamantine weapons deal critical hits to the armors.",
+            "The treasure chest contains 75gp and a wand of Magic Missiles (7 charges).",
+            "Constructs pursue up to 100ft then return to positions."
+        ],
+        "size": 2,
+        "winConditions": [
+            {
+                "condition": "Destroy all constructs",
+                "reward": "Full XP plus treasure",
+                "xpReward": 600,
+                "goldReward": 75
+            },
+            {
+                "condition": "Speak the command word",
+                "reward": "Full XP, no combat",
+                "xpReward": 600,
+                "goldReward": 75
+            },
+            {
+                "condition": "Sneak past without touching treasure",
+                "reward": "No XP, avoid combat",
+                "xpReward": 0,
+                "goldReward": 0
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 120ft x 40ft long corridor with armor alcoves on both sides. Treasure chest at far end. Flying swords. Stone pillars. Magical blue lighting. Clean lines, high contrast for virtual tabletop use.",
+        "lair": false,
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "skill",
+                "subType": "Arcana (INT)",
+                "dc": 15
+            }
+        ]
+    },
+    {
+        "name": "Hobgoblin Patrol",
+        "level": 2,
+        "type": "combat",
+        "difficulty": "high",
+        "xpBudget": 800,
+        "monsters": [
+            {
+                "id": "hobgoblin-warrior",
+                "count": 4
+            },
+            {
+                "id": "goblin-minion",
+                "count": 6
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "disciplined",
+        "roomDescription": "Military precision marks this enemy patrol. Four armored hobgoblins march in formation, their goblin servants scurrying to keep pace. The leader barks orders in a harsh tongue as they advance.",
+        "dmDescription": [
+            "Hobgoblins gain +2 damage when attacking with an ally within 5ft (Martial Advantage).",
+            "The goblins serve as scouts and will attempt to flank.",
+            "If the patrol leader falls, hobgoblins make a tactical retreat.",
+            "Goblins flee immediately if hobgoblins retreat.",
+            "The leader carries military orders (quest hook) and 35gp.",
+            "Diplomatic approach possible ({{sm-0}}) - hobgoblins respect strength."
+        ],
+        "size": 2,
+        "winConditions": [
+            {
+                "condition": "Defeat the patrol",
+                "reward": "Full XP",
+                "xpReward": 800,
+                "goldReward": 50
+            },
+            {
+                "condition": "Kill the leader to cause retreat",
+                "reward": "75% XP",
+                "xpReward": 600,
+                "goldReward": 35
+            },
+            {
+                "condition": "Challenge leader to single combat ({{sm-1}})",
+                "reward": "Full XP if won, patrol departs",
+                "xpReward": 800,
+                "goldReward": 35
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 80ft underground barracks area. Military banners. Training dummies. Weapon racks. Marching hobgoblins in formation. Goblin servants. Torch-lit. Clean lines, high contrast for virtual tabletop use.",
+        "lair": false,
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "skill",
+                "subType": "Persuasion (CHA)",
+                "dc": 16
+            },
+            {
+                "id": "sm-1",
+                "type": "skill",
+                "subType": "Intimidation (CHA)",
+                "dc": 14
+            }
+        ]
+    },
+    {
+        "name": "Twig Blight Grove",
+        "level": 2,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 550,
+        "monsters": [
+            {
+                "id": "twig-blight",
+                "count": 8
+            },
+            {
+                "id": "needle-blight",
+                "count": 3
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "silent",
+        "roomDescription": "What appeared to be dead shrubbery suddenly stirs. Twisted plant creatures with thorn-like fingers rise from the undergrowth, their wooden bodies creaking. Larger specimens in the back launch volleys of needles.",
+        "dmDescription": [
+            "Twig blights are vulnerable to fire - fire damage kills them instantly.",
+            "Needle blights stay at range (30ft) and use needle attacks.",
+            "Blights are blind but have Blindsight 60ft - invisibility is useless.",
+            "A druid's staff lies broken near the largest blight ({{sm-0}}), still holding 3 charges of Entangle.",
+            "The blights guard a natural spring with healing properties (1d8 HP, once per day)."
+        ],
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Destroy all blights",
+                "reward": "Full XP",
+                "xpReward": 550,
+                "goldReward": 0
+            },
+            {
+                "condition": "Use fire to clear the grove",
+                "reward": "Full XP, faster resolution",
+                "xpReward": 550,
+                "goldReward": 0
+            },
+            {
+                "condition": "Reach the healing spring without killing all blights",
+                "reward": "Half XP",
+                "xpReward": 275,
+                "goldReward": 0
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 90ft x 70ft underground cavern with phosphorescent lighting. Dead vegetation and twisted plants. Natural spring at center. Twig creatures emerging from brush. Needle blights in corners. Clean lines, high contrast for virtual tabletop use.",
+        "lair": true,
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "skill",
+                "subType": "Arcana (INT)",
+                "dc": 12
+            }
+        ]
+    },
+    {
+        "name": "Mephit Vent",
+        "level": 2,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 600,
+        "monsters": [
+            {
+                "id": "mud-mephit",
+                "count": 3
+            },
+            {
+                "id": "steam-mephit",
+                "count": 3
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "mischievous",
+        "roomDescription": "Jets of steam and bubbling mud pools fill this geothermal chamber. Small elemental creatures caper about, their high-pitched giggles echoing. They seem almost playful until they notice your intrusion.",
+        "dmDescription": [
+            "Mephits explode on death - mud mephits in 5ft of mud ({{sm-0}} or restrained), steam in scalding vapor ({{sm-1}}, 2d4 fire).",
+            "Standing in steam jets deals 1d6 fire damage per turn.",
+            "Mud pools are difficult terrain and can swallow Small creatures.",
+            "Mephits can be bribed with shiny objects ({{sm-2}} + 25gp worth of gems).",
+            "A heat-resistant lockbox in a steam vent contains 60gp and a Ring of Warmth."
+        ],
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Destroy all mephits",
+                "reward": "Full XP",
+                "xpReward": 600,
+                "goldReward": 60
+            },
+            {
+                "condition": "Bribe mephits to leave",
+                "reward": "Half XP, peaceful resolution",
+                "xpReward": 300,
+                "goldReward": 35
+            },
+            {
+                "condition": "Retrieve lockbox without mephit interference",
+                "reward": "Treasure only",
+                "xpReward": 0,
+                "goldReward": 60
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 80ft x 80ft underground geothermal chamber. Steam vents. Bubbling mud pools. Small elemental creatures. Orange and brown coloring. Humid mist effects. Clean lines, high contrast for virtual tabletop use.",
+        "lair": false,
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "skill",
+                "subType": "Strength Save",
+                "dc": 11
+            },
+            {
+                "id": "sm-1",
+                "type": "skill",
+                "subType": "Dexterity Save",
+                "dc": 10
+            },
+            {
+                "id": "sm-2",
+                "type": "skill",
+                "subType": "Persuasion (CHA)",
+                "dc": 13
+            }
+        ]
+    },
+    {
+        "name": "Ooze Pit",
+        "level": 2,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 500,
+        "monsters": [
+            {
+                "id": "gray-ooze",
+                "count": 3
+            },
+            {
+                "id": "ochre-jelly",
+                "count": 1
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "mindless",
+        "roomDescription": "Glistening patches of slime coat the floor of this chamber, and the air smells of acid. What you took for puddles suddenly ripples and begins to flow toward you with deliberate, hungry purpose.",
+        "dmDescription": [
+            "Gray oozes are nearly invisible when still ({{sm-0}} to spot before combat).",
+            "Oozes corrode nonmagical metal - armor takes -1 AC per hit until destroyed.",
+            "The ochre jelly splits into two smaller jellies when hit with slashing/lightning damage.",
+            "Fire damage is effective against oozes.",
+            "A half-dissolved adventurer's pack contains an intact Bag of Holding ({{sm-1}} to salvage).",
+            "Oozes cannot climb walls - high ground is safe."
+        ],
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Destroy all oozes",
+                "reward": "Full XP",
+                "xpReward": 500,
+                "goldReward": 0
+            },
+            {
+                "condition": "Lure oozes with meat and bypass",
+                "reward": "No XP, safe passage",
+                "xpReward": 0,
+                "goldReward": 0
+            },
+            {
+                "condition": "Retrieve the Bag of Holding",
+                "reward": "Partial XP plus treasure",
+                "xpReward": 200,
+                "goldReward": 0
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 70ft x 70ft underground chamber. Acid-scarred stone floor. Glistening slime patches. Dissolved bones and equipment. Raised stone platforms. Dim green lighting. Clean lines, high contrast for virtual tabletop use.",
+        "lair": false,
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "skill",
+                "subType": "Perception (WIS)",
+                "dc": 14
+            },
+            {
+                "id": "sm-1",
+                "type": "skill",
+                "subType": "Sleight of Hand (DEX)",
+                "dc": 13
+            }
+        ]
+    },
+    {
+        "name": "Drow Ambush",
+        "level": 2,
+        "type": "combat",
+        "difficulty": "high",
+        "xpBudget": 750,
+        "monsters": [
+            {
+                "id": "drow",
+                "count": 4
+            },
+            {
+                "id": "giant-spider",
+                "count": 2
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "cruel",
+        "roomDescription": "The darkness seems absolute here, swallowing your torchlight hungrily. Crossbow bolts whistle from the shadows, and massive spiders descend on webs of shadow. Cruel laughter echoes from unseen attackers.",
+        "dmDescription": [
+            "Drow have Sunlight Sensitivity - bright light gives them disadvantage.",
+            "Drow crossbows are poisoned ({{sm-0}}, 2d6 poison damage and unconscious for 1 minute).",
+            "Giant spiders restrain targets with webbing ({{sm-1}} to escape).",
+            "Drow fight intelligently - they retreat if 3+ fall.",
+            "Lead drow carries a spider silk rope worth 50gp and a letter in Undercommon (quest hook).",
+            "Casting Daylight or similar causes immediate retreat."
+        ],
+        "size": 2,
+        "winConditions": [
+            {
+                "condition": "Defeat the drow ambush",
+                "reward": "Full XP",
+                "xpReward": 750,
+                "goldReward": 65
+            },
+            {
+                "condition": "Use bright light to force retreat",
+                "reward": "Half XP",
+                "xpReward": 375,
+                "goldReward": 0
+            },
+            {
+                "condition": "Negotiate in Undercommon/Elvish ({{sm-2}})",
+                "reward": "Full XP, potential alliance",
+                "xpReward": 750,
+                "goldReward": 0
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 100ft underground cavern. Supernatural darkness. Spider webs. Stalactites and stalagmites. Drow in elevated positions. Giant spiders on walls. Purple and black coloring. Clean lines, high contrast for virtual tabletop use.",
+        "lair": false,
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "skill",
+                "subType": "Constitution Save",
+                "dc": 13
+            },
+            {
+                "id": "sm-1",
+                "type": "skill",
+                "subType": "Strength (STR)",
+                "dc": 12
+            },
+            {
+                "id": "sm-2",
+                "type": "skill",
+                "subType": "Persuasion (CHA)",
+                "dc": 17
+            }
+        ]
+    },
+    {
+        "name": "Gnoll Raiders",
+        "level": 2,
+        "type": "combat",
+        "difficulty": "high",
+        "xpBudget": 800,
+        "monsters": [
+            {
+                "id": "gnoll-warrior",
+                "count": 4
+            },
+            {
+                "id": "hyena",
+                "count": 6
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "savage",
+        "roomDescription": "Bestial howls echo through the chamber as hyena-headed humanoids charge forward, their hyena companions baying alongside them. Fresh blood stains their weapons and muzzles, and their eyes gleam with primal hunger.",
+        "dmDescription": [
+            "Gnolls enter Rampage mode if they reduce a creature to 0 HP - they get a free bite attack.",
+            "Hyenas use Pack Tactics and try to knock targets prone.",
+            "Gnolls fear fire (morale check {{sm-0}} if hit with fire damage).",
+            "The gnolls are guarding prisoners in a side cave (2 commoners).",
+            "Freeing prisoners quietly ({{sm-1}}) before combat grants surprise.",
+            "Leader gnoll wears a bone necklace worth 25gp."
+        ],
+        "size": 2,
+        "winConditions": [
+            {
+                "condition": "Defeat all gnolls and hyenas",
+                "reward": "Full XP",
+                "xpReward": 800,
+                "goldReward": 40
+            },
+            {
+                "condition": "Rescue the prisoners",
+                "reward": "Full XP plus 50gp reward later",
+                "xpReward": 800,
+                "goldReward": 90
+            },
+            {
+                "condition": "Drive gnolls off with fire ({{sm-2}})",
+                "reward": "Half XP, freed prisoners",
+                "xpReward": 400,
+                "goldReward": 50
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 110ft x 90ft underground lair. Bone piles. Crude tents. Campfire at center. Prisoner cage to side. Gnoll and hyena figures. Savage decorations. Torch-lit. Clean lines, high contrast for virtual tabletop use.",
+        "lair": true,
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "skill",
+                "subType": "Wisdom Save",
+                "dc": 10
+            },
+            {
+                "id": "sm-1",
+                "type": "skill",
+                "subType": "Stealth (DEX)",
+                "dc": 13
+            },
+            {
+                "id": "sm-2",
+                "type": "skill",
+                "subType": "Fire Attack"
+            }
+        ]
+    },
+    {
+        "name": "Troglodyte Cave",
+        "level": 2,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 550,
+        "monsters": [
+            {
+                "id": "troglodyte",
+                "count": 6
+            },
+            {
+                "id": "giant-lizard",
+                "count": 2
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "territorial",
+        "roomDescription": "A nauseating stench fills this cavern, making your eyes water. Hunched reptilian humanoids emerge from the shadows, their pale scales glistening with foul secretions. Larger lizards hiss at their feet.",
+        "dmDescription": [
+            "Troglodyte Stench: creatures within 5ft must make {{sm-0}} or be poisoned until start of next turn.",
+            "Giant lizards serve as mounts for two troglodytes.",
+            "Troglodytes are colorblind - camouflage is less effective.",
+            "A clutch of troglodyte eggs can be used as leverage ({{sm-1}}).",
+            "Treasure cache behind a loose stone: 55gp and a Cloak of Protection ({{sm-2}})."
+        ],
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Eliminate troglodyte threat",
+                "reward": "Full XP",
+                "xpReward": 550,
+                "goldReward": 55
+            },
+            {
+                "condition": "Drive them out by threatening eggs",
+                "reward": "Half XP, peaceful resolution",
+                "xpReward": 275,
+                "goldReward": 0
+            },
+            {
+                "condition": "Find hidden treasure cache",
+                "reward": "Full treasure",
+                "xpReward": 0,
+                "goldReward": 55
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 90ft x 80ft underground cavern. Shallow pools. Egg clutch in corner. Troglodyte figures. Giant lizards. Phosphorescent moss. Fetid atmosphere. Clean lines, high contrast for virtual tabletop use.",
+        "lair": true,
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "skill",
+                "subType": "Constitution Save",
+                "dc": 12
+            },
+            {
+                "id": "sm-1",
+                "type": "skill",
+                "subType": "Intimidation (CHA)",
+                "dc": 13
+            },
+            {
+                "id": "sm-2",
+                "type": "skill",
+                "subType": "Investigation (INT)",
+                "dc": 14
+            }
+        ]
+    },
+    {
+        "name": "Darkmantle Colony",
+        "level": 2,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 600,
+        "monsters": [
+            {
+                "id": "darkmantle",
+                "count": 4
+            },
+            {
+                "id": "piercer",
+                "count": 4
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "lurking",
+        "roomDescription": "The ceiling of this cavern is lost in shadow, dotted with what appear to be stalactites. As you cross the center, darkness engulfs your light sources, and something drops from above with terrifying speed.",
+        "dmDescription": [
+            "Darkmantles create magical darkness (15ft radius) when attacking.",
+            "Piercers drop on first creature to pass beneath ({{sm-0}} or 2d6 piercing damage).",
+            "After dropping, piercers are helpless for 1 round (AC 5).",
+            "Looking up before entering ({{sm-1}}) reveals the trap.",
+            "Darkmantles suffocate grappled creatures (Escape {{sm-2}}).",
+            "A previous victim's skeleton has 40gp and a potion of Darkvision."
+        ],
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Clear the ceiling predators",
+                "reward": "Full XP",
+                "xpReward": 600,
+                "goldReward": 40
+            },
+            {
+                "condition": "Spot the trap and navigate carefully",
+                "reward": "Half XP, avoid most damage",
+                "xpReward": 300,
+                "goldReward": 40
+            },
+            {
+                "condition": "Use ranged attacks to clear before entering",
+                "reward": "Full XP, tactical victory",
+                "xpReward": 600,
+                "goldReward": 40
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 80ft x 80ft underground cavern with very high ceiling. Natural stalactites (some are creatures). Scattered bones on floor. Darkness patches. Clean lines, high contrast for virtual tabletop use.",
+        "lair": true,
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "skill",
+                "subType": "Dexterity Save",
+                "dc": 14
+            },
+            {
+                "id": "sm-1",
+                "type": "skill",
+                "subType": "Perception (WIS)",
+                "dc": 15
+            },
+            {
+                "id": "sm-2",
+                "type": "skill",
+                "subType": "Strength (STR)",
+                "dc": 13
+            }
+        ]
     }
 ]

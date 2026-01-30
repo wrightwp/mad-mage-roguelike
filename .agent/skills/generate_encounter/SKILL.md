@@ -36,7 +36,20 @@ You **MUST** read the specific generation guide for the requested type AND the s
 - **Constraint 1**: **Max CR** per monster = **Party Level + 1**. Never exceed this.
 - **Constraint 2**: Monsters must be appropriate for the requested **Tier**.
 - **Step 1: Choose a Difficulty**: Low, Moderate, or High (see `COMBAT_ENCOUNTER_GENERATION.md` for definitions).
-- **Step 2: Determine XP Budget**: Cros-reference Level and Difficulty in the XP Table to get the per-character budget, then multiply by Party Size.
+
+### Difficulty Distribution (Batch Generation)
+When generating **multiple encounters at once** (e.g., "Generate 20 encounters"), distribute difficulties as follows unless the user specifies otherwise:
+
+| Difficulty | Target % | Example (20 encounters) |
+|------------|----------|-------------------------|
+| **Low**    | 25%      | 5 encounters            |
+| **Moderate** | 50%    | 10 encounters           |
+| **High**   | 25%      | 5 encounters            |
+
+> [!TIP]
+> This distribution ensures a balanced dungeon experience with mostly moderate challenges, occasional easy victories (Low), and some tense moments (High).
+
+- **Step 2: Determine XP Budget**: Cross-reference Level and Difficulty in the XP Table to get the per-character budget, then multiply by Party Size.
 - **Step 3: Spend Your Budget**: Select monsters by deducting their XP from the budget until it is close to 0. Mix and match creature types.
 - **Scaling (CRITICAL Update)**:
   - Populate the `scalingMechanics` array with objects.
