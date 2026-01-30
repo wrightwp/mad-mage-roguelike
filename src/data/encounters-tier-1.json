@@ -6892,5 +6892,1625 @@
                 "dc": 13
             }
         ]
+    },
+    {
+        "name": "Rust-Eaten Armory",
+        "level": 3,
+        "type": "combat",
+        "difficulty": "low",
+        "xpBudget": 600,
+        "monsters": [
+            {
+                "id": "animated-armor",
+                "count": 1
+            },
+            {
+                "id": "rust-monster",
+                "count": 1
+            },
+            {
+                "id": "animated-flying-sword",
+                "count": 4
+            },
+            {
+                "id": "animated-broom",
+                "count": 2
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "programmed",
+        "roomDescription": "The door grinds open on a narrow armory packed with corroded weapon racks and toppled mannequins. A cold blue sigil glows beneath a dust-caked tapestry, and metal whispers as if the room is breathing. Something skitters in the rust piles, and the weapons seem to tilt toward you.",
+        "dmDescription": [
+            "A tripwire at ankle height is almost fused with rust ({{sm-0}} to notice before crossing); triggering it animates the weapons.",
+            "Animated swords harry backline targets while the animated armor pins the first creature through the doorway.",
+            "A concealed blade-sweep mechanism along the side aisles forces creatures in the marked lanes to make {{sm-1}} or take the trap's damage and be shoved 5 feet.",
+            "The rust monster prioritizes metal armor and metal shields, darting in when a target is restrained or isolated.",
+            "A chalk-ringed command sigil can be disrupted with {{sm-2}}; on a success, the animated objects go inert at the start of their next turns.",
+            "If the party advances quietly ({{sm-3}}), the swords do not animate until someone touches a weapon rack."
+        ],
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Defeat all enemies",
+                "reward": "Full XP (600) and salvageable gear",
+                "xpReward": 600,
+                "goldReward": 75
+            },
+            {
+                "condition": "Disrupt the command sigil ({{sm-2}})",
+                "reward": "Full XP and end the fight early",
+                "xpReward": 600,
+                "goldReward": 100
+            },
+            {
+                "condition": "Slip through without triggering the armory ({{sm-3}})",
+                "reward": "No XP, but avoid attrition and traps",
+                "xpReward": 0,
+                "goldReward": 0
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 90ft x 70ft stone armory. Weapon racks, toppled armor mannequins, scattered rust piles, glowing rune circle on the floor, narrow side aisles with hidden blade traps, single entry door and opposite exit. Clean lines, high contrast for virtual tabletop use.",
+        "lair": true,
+        "tier": 1,
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "skill",
+                "subType": "Perception (WIS) (Spot tripwire)",
+                "dc": 14
+            },
+            {
+                "id": "sm-1",
+                "type": "trap",
+                "subType": "Dexterity Save (Avoid blade-sweep)",
+                "dc": 14,
+                "damage": "2d6"
+            },
+            {
+                "id": "sm-2",
+                "type": "skill",
+                "subType": "Arcana (INT) (Disrupt command sigil)",
+                "dc": 15
+            },
+            {
+                "id": "sm-3",
+                "type": "skill",
+                "subType": "Stealth (DEX) (Move quietly through armory)",
+                "dc": 14
+            }
+        ]
+    },
+    {
+        "name": "Overgrown Conservatory",
+        "level": 3,
+        "type": "combat",
+        "difficulty": "low",
+        "xpBudget": 600,
+        "monsters": [
+            {
+                "id": "awakened-tree",
+                "count": 1
+            },
+            {
+                "id": "needle-blight",
+                "count": 1
+            },
+            {
+                "id": "twig-blight",
+                "count": 4
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "territorial",
+        "roomDescription": "A glass-domed conservatory lies ahead, its panes cracked and webbed with roots. Wet leaves slap the stone as a slow wind moves without any open door. The central tree shudders, and thorny shapes uncoil from the undergrowth.",
+        "dmDescription": [
+            "The awakened tree is anchored at the center and tries to keep intruders away from the dry fountain.",
+            "The needle blight fires from behind a trellis; it has strong cover until someone circles the planters ({{sm-1}} to spot its firing slit early).",
+            "Twig blights swarm ankles to set up the tree's attacks; they retreat into foliage if half of them are destroyed.",
+            "A sudden pollen burst fills a marked zone; creatures that enter or start their turn there must make {{sm-2}} or take the hazard's damage and cough loudly, ending attempts at stealth.",
+            "A character who identifies the grove's warding pattern ({{sm-0}}) can offer clean water or a druidic token to force the plants to stand down.",
+            "Toppling the cracked marble statue with {{sm-3}} creates difficult terrain and can pin the awakened tree's roots for 1 round."
+        ],
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Defeat all enemies",
+                "reward": "Full XP (600) and harvested valuables",
+                "xpReward": 600,
+                "goldReward": 55
+            },
+            {
+                "condition": "Calm the grove ({{sm-0}})",
+                "reward": "75% XP and safe passage",
+                "xpReward": 450,
+                "goldReward": 0
+            },
+            {
+                "condition": "Force a path through the vines ({{sm-3}})",
+                "reward": "50% XP and escape",
+                "xpReward": 300,
+                "goldReward": 0
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 80ft ruined glass conservatory with cracked dome, overgrown planters, dry fountain, fallen marble statue, thick vines creating lanes, patches of dense undergrowth, two exits. Clean lines, high contrast for virtual tabletop use.",
+        "lair": true,
+        "tier": 1,
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "skill",
+                "subType": "Nature (INT) (Read grove warding)",
+                "dc": 14
+            },
+            {
+                "id": "sm-1",
+                "type": "skill",
+                "subType": "Perception (WIS) (Spot needle blight cover)",
+                "dc": 14
+            },
+            {
+                "id": "sm-2",
+                "type": "hazard",
+                "subType": "Constitution Save (Resist choking pollen)",
+                "dc": 13,
+                "damage": "1d6"
+            },
+            {
+                "id": "sm-3",
+                "type": "skill",
+                "subType": "Athletics (STR) (Topple statue / force path)",
+                "dc": 14
+            }
+        ]
+    },
+    {
+        "name": "Tidepool Sacrament",
+        "level": 3,
+        "type": "combat",
+        "difficulty": "low",
+        "xpBudget": 600,
+        "monsters": [
+            {
+                "id": "sahuagin-priest",
+                "count": 1
+            },
+            {
+                "id": "sahuagin-warrior",
+                "count": 1
+            },
+            {
+                "id": "giant-crab",
+                "count": 2
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "fanatical",
+        "roomDescription": "Brackish water laps across a shattered mosaic, and salty incense hangs in the air. A barnacle-crusted idol rises from the center pool, surrounded by stone steps barely above the surface. From beneath the ripples, pale shapes watch and wait.",
+        "dmDescription": [
+            "Shallow water is difficult terrain; the central pool is deeper and hides the sahuagin priest until it strikes.",
+            "Two giant crabs cling to submerged steps, grappling and dragging targets toward the deeper water.",
+            "A jagged line of barbed coral is hidden under algae near the idol ({{sm-1}} to notice); crossing it forces {{sm-2}}.",
+            "The priest opens by demanding tribute; a convincing bluff or offer ({{sm-3}}) can delay combat for 1 minute.",
+            "A heavy sluice wheel can be turned with {{sm-0}} to lower the water level, stranding the crabs and forcing the sahuagin onto exposed steps.",
+            "Treasure is wedged inside the idol's cracked base: pearls and a coral charm worth 70 gp."
+        ],
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Defeat all enemies",
+                "reward": "Full XP (600) and recovered tribute",
+                "xpReward": 600,
+                "goldReward": 70
+            },
+            {
+                "condition": "Convince the priest to accept tribute ({{sm-3}})",
+                "reward": "50% XP and avoid bloodshed",
+                "xpReward": 300,
+                "goldReward": 0
+            },
+            {
+                "condition": "Drain the chamber and escape ({{sm-0}})",
+                "reward": "75% XP and safe passage",
+                "xpReward": 450,
+                "goldReward": 0
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 90ft x 80ft flooded stone shrine with shallow water, central round tidepool around a barnacle idol, raised stone steps and small dry platforms, algae slicks, coral hazard strip, sluice wheel on wall, one entrance and one exit. Clean lines, high contrast for virtual tabletop use.",
+        "lair": true,
+        "tier": 1,
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "skill",
+                "subType": "Athletics (STR) (Turn sluice wheel)",
+                "dc": 14
+            },
+            {
+                "id": "sm-1",
+                "type": "skill",
+                "subType": "Perception (WIS) (Notice hidden coral)",
+                "dc": 13
+            },
+            {
+                "id": "sm-2",
+                "type": "hazard",
+                "subType": "Dexterity Save (Avoid barbed coral)",
+                "dc": 14,
+                "damage": "2d6"
+            },
+            {
+                "id": "sm-3",
+                "type": "skill",
+                "subType": "Deception (CHA) (Bluff as envoys)",
+                "dc": 15
+            }
+        ]
+    },
+    {
+        "name": "Kennel Breakout",
+        "level": 3,
+        "type": "combat",
+        "difficulty": "low",
+        "xpBudget": 600,
+        "monsters": [
+            {
+                "id": "dire-wolf",
+                "count": 2
+            },
+            {
+                "id": "worg",
+                "count": 2
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "feral",
+        "roomDescription": "A corridor of iron cages stretches ahead, straw and old blood matted into the stone. One cage door hangs open, bent outward, and low growls ripple through the dark. Yellow eyes flare as heavy bodies lunge against the bars.",
+        "dmDescription": [
+            "The worgs coordinate flanks while the dire wolves focus whoever looks weakest.",
+            "A dangling chain with old meat can distract a wolf long enough for someone to attempt {{sm-0}}.",
+            "Broken bars and bone piles clutter the floor; creatures moving at full speed must succeed on {{sm-2}} or stumble, ending their movement.",
+            "A loose latch near the entry can be spotted with {{sm-1}}; securing it prevents the pack from spilling into the hall and lets the party withdraw.",
+            "Following fresh scratch marks ({{sm-3}}) reveals a side kennel with a small coin purse and stolen rations.",
+            "If a worg drops, the remaining wolves fight to the death rather than flee."
+        ],
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Defeat all enemies",
+                "reward": "Full XP (600) and minor loot",
+                "xpReward": 600,
+                "goldReward": 35
+            },
+            {
+                "condition": "Calm and re-cage the pack ({{sm-0}})",
+                "reward": "75% XP and avoid injuries",
+                "xpReward": 450,
+                "goldReward": 0
+            },
+            {
+                "condition": "Secure the latch and slip past ({{sm-1}})",
+                "reward": "50% XP and safe bypass",
+                "xpReward": 300,
+                "goldReward": 0
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 60ft dungeon kennel hall with iron cages along both walls, scattered straw, bone piles, one broken cage door, narrow side alcove with storage, heavy shadows, single entrance and exit. Clean lines, high contrast for virtual tabletop use.",
+        "lair": false,
+        "tier": 1,
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "skill",
+                "subType": "Animal Handling (WIS) (Calm a worg)",
+                "dc": 15
+            },
+            {
+                "id": "sm-1",
+                "type": "skill",
+                "subType": "Perception (WIS) (Spot loose latch)",
+                "dc": 13
+            },
+            {
+                "id": "sm-2",
+                "type": "skill",
+                "subType": "Acrobatics (DEX) (Keep footing on debris)",
+                "dc": 14
+            },
+            {
+                "id": "sm-3",
+                "type": "skill",
+                "subType": "Survival (WIS) (Track pack cache)",
+                "dc": 14
+            }
+        ]
+    },
+    {
+        "name": "Modron Audit",
+        "level": 3,
+        "type": "combat",
+        "difficulty": "low",
+        "xpBudget": 600,
+        "monsters": [
+            {
+                "id": "modron-pentadrone",
+                "count": 1
+            },
+            {
+                "id": "modron-tridrone",
+                "count": 1
+            },
+            {
+                "id": "modron-monodrone",
+                "count": 2
+            }
+        ],
+        "attitude": "indifferent",
+        "personality": "literal",
+        "roomDescription": "Brass plates click underfoot as you enter a cramped office of gears and parchment. A floating quill scratches neat columns of numbers onto a ledger, and a faceless metal sphere turns toward you. More clockwork shapes fold out from behind a filing cabinet.",
+        "dmDescription": [
+            "The modrons begin with a monotone demand for identification and a list of trespass fines; if the party refuses, they attack.",
+            "A concealed stamp bearing the correct seal is wedged under the ledger tray ({{sm-2}} to find); presenting it grants safe passage.",
+            "The pentadrone focuses on anyone who casts a spell, labeling them as a priority infraction.",
+            "The floor plates occasionally slide apart, exposing grinding gears; a creature that starts its turn in a marked square must make {{sm-3}} or take the hazard's damage and fall prone.",
+            "A convincing argument about jurisdiction ({{sm-0}}) or a forged writ ({{sm-1}}) buys one minute to move through before hostility resumes.",
+            "If reduced to half HP, the pentadrone attempts to retreat to file an incident report and may surrender if cornered."
+        ],
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Defeat all enemies",
+                "reward": "Full XP (600) and salvageable components",
+                "xpReward": 600,
+                "goldReward": 40
+            },
+            {
+                "condition": "Present the correct seal ({{sm-2}})",
+                "reward": "75% XP and safe passage",
+                "xpReward": 450,
+                "goldReward": 0
+            },
+            {
+                "condition": "Bluff an exemption and move on ({{sm-1}})",
+                "reward": "50% XP and avoid the fight",
+                "xpReward": 300,
+                "goldReward": 0
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 70ft x 70ft clockwork office with brass floor plates, exposed gear pits, desks and filing cabinets, scattered paperwork, spinning wall mechanism, two doors. Clean lines, high contrast for virtual tabletop use.",
+        "lair": true,
+        "tier": 1,
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "skill",
+                "subType": "Persuasion (CHA) (Argue jurisdiction)",
+                "dc": 14
+            },
+            {
+                "id": "sm-1",
+                "type": "skill",
+                "subType": "Deception (CHA) (Present forged writ)",
+                "dc": 15
+            },
+            {
+                "id": "sm-2",
+                "type": "skill",
+                "subType": "Investigation (INT) (Find ledger stamp)",
+                "dc": 14
+            },
+            {
+                "id": "sm-3",
+                "type": "hazard",
+                "subType": "Dexterity Save (Avoid gear crush)",
+                "dc": 13,
+                "damage": "2d6"
+            }
+        ]
+    },
+    {
+        "name": "Ankheg Cave-In",
+        "level": 3,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 900,
+        "monsters": [
+            {
+                "id": "ankheg",
+                "count": 1
+            },
+            {
+                "id": "carrion-crawler",
+                "count": 1
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "burrowing",
+        "roomDescription": "The tunnel narrows and reeks of damp soil and rot. Fresh claw marks furrow the walls, and the floor feels spongy under your boots. Something massive shifts beneath the stone, and a pale, many-legged shape unfurls from a heap of corpses.",
+        "dmDescription": [
+            "The ankheg begins burrowed; it erupts beneath the rearmost character unless spotted early ({{sm-0}}).",
+            "The carrion crawler clings to the ceiling near the corpse pile, dropping onto the first creature that approaches within 10 feet.",
+            "A ceiling crack widens during combat; falling rubble forces {{sm-1}} or deals the hazard's damage and creates difficult terrain.",
+            "A character who studies the tunnel scars ({{sm-2}}) can predict the ankheg's next emergence point, granting advantage on one attack or enabling a prepared trap.",
+            "Climbing the rubble to reach the side passage requires {{sm-3}}, letting the party reposition and avoid being boxed in.",
+            "The ankheg's nest holds a half-digested pouch with 80 gp in mixed coin."
+        ],
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Defeat all enemies",
+                "reward": "Full XP (900) and recovered coin",
+                "xpReward": 900,
+                "goldReward": 80
+            },
+            {
+                "condition": "Seal the burrow and escape ({{sm-3}})",
+                "reward": "Two-thirds XP and avoid the worst of the fight",
+                "xpReward": 600,
+                "goldReward": 0
+            },
+            {
+                "condition": "Slip past during feeding chaos ({{sm-0}})",
+                "reward": "One-third XP and conserve resources",
+                "xpReward": 300,
+                "goldReward": 0
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 120ft x 60ft narrow underground tunnel with uneven stone walls, corpse heap, multiple burrow holes, a partial cave-in with rubble, cracked ceiling sections that can collapse, side passage exit. Clean lines, high contrast for virtual tabletop use.",
+        "lair": false,
+        "tier": 1,
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "skill",
+                "subType": "Perception (WIS) (Notice tremors)",
+                "dc": 14
+            },
+            {
+                "id": "sm-1",
+                "type": "hazard",
+                "subType": "Dexterity Save (Avoid falling rubble)",
+                "dc": 14,
+                "damage": "2d6"
+            },
+            {
+                "id": "sm-2",
+                "type": "skill",
+                "subType": "Survival (WIS) (Read burrow signs)",
+                "dc": 15
+            },
+            {
+                "id": "sm-3",
+                "type": "skill",
+                "subType": "Athletics (STR) (Brace and climb rubble)",
+                "dc": 14
+            }
+        ]
+    },
+    {
+        "name": "Fey Feud in the Ruined Glade",
+        "level": 3,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 900,
+        "monsters": [
+            {
+                "id": "green-hag",
+                "count": 1
+            },
+            {
+                "id": "dryad",
+                "count": 1
+            }
+        ],
+        "attitude": "indifferent",
+        "personality": "spiteful",
+        "roomDescription": "A ring of cracked columns opens into a pocket of impossible greenery, damp with mist. A willow grows where no tree should, its leaves whispering words you almost understand. Two figures stand on opposite sides of the glade, both watching you as if deciding your use.",
+        "dmDescription": [
+            "The dryad warns the party away; the green hag immediately tries to turn the group against her rival.",
+            "Each fey offers a bargain if approached alone; reading their tells requires {{sm-0}}.",
+            "Glamour veils bramble snares along the path; {{sm-2}} reveals the safe route through the brush.",
+            "Stagnant vapors seep from a cracked fountain; creatures that enter the mist must make {{sm-3}} or take the hazard's damage and become poisoned until end of their next turn.",
+            "If the party mediates the dispute with {{sm-1}}, both fey disengage; if the party attacks either, the other joins the fight on round 2.",
+            "A cache of fey coins and carved bone charms (100 gp total) is hidden beneath the willow roots."
+        ],
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Defeat both fey",
+                "reward": "Full XP (900) and fey trinkets",
+                "xpReward": 900,
+                "goldReward": 100
+            },
+            {
+                "condition": "Negotiate a truce ({{sm-1}})",
+                "reward": "Most XP and safe passage",
+                "xpReward": 700,
+                "goldReward": 0
+            },
+            {
+                "condition": "Side with one fey and drive off the other ({{sm-0}})",
+                "reward": "High XP and a lesser reward",
+                "xpReward": 800,
+                "goldReward": 50
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 90ft x 90ft ruined stone shrine overtaken by lush glade, cracked columns, central dry fountain with mist, willow tree, dense brambles forming paths, small stream, two exits. Clean lines, high contrast for virtual tabletop use.",
+        "lair": true,
+        "tier": 1,
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "skill",
+                "subType": "Insight (WIS) (Read motives and lies)",
+                "dc": 14
+            },
+            {
+                "id": "sm-1",
+                "type": "skill",
+                "subType": "Persuasion (CHA) (Mediate the feud)",
+                "dc": 15
+            },
+            {
+                "id": "sm-2",
+                "type": "skill",
+                "subType": "Arcana (INT) (See through glamour)",
+                "dc": 14
+            },
+            {
+                "id": "sm-3",
+                "type": "hazard",
+                "subType": "Constitution Save (Resist swamp vapors)",
+                "dc": 13,
+                "damage": "1d6"
+            }
+        ]
+    },
+    {
+        "name": "The Silent Gallery",
+        "level": 3,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 900,
+        "monsters": [
+            {
+                "id": "gelatinous-cube",
+                "count": 1
+            },
+            {
+                "id": "nothic",
+                "count": 1
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "hungry",
+        "roomDescription": "A long gallery stretches ahead, lined with dust-choked statues and faded tapestries. The floor gleams as if freshly washed, and the air tastes faintly sour. A hunched silhouette peers from behind a pedestal while something unseen sloshes in the darkness.",
+        "dmDescription": [
+            "The gelatinous cube occupies the center aisle; its near-invisibility is betrayed by wet tracks ({{sm-0}}) and the way loose coins hover inside it.",
+            "The nothic lurks among the statues; a character who recognizes its muttering and gaze ({{sm-1}}) can predict which cover it prefers.",
+            "Stone pedestals create stepping routes; a character can leap from pedestal to pedestal with {{sm-2}} to avoid the cube entirely.",
+            "A hidden wall latch ({{sm-3}}) opens a narrow side passage that bypasses the gallery; the nothic tries to ambush anyone working on it.",
+            "If the nothic drops below half HP, it offers to trade secrets for safety and points to the cube's trapped treasure.",
+            "Treasure: a half-dissolved satchel contains 90 gp and a tarnished silver brooch."
+        ],
+        "size": 2,
+        "winConditions": [
+            {
+                "condition": "Destroy both threats",
+                "reward": "Full XP (900) and recovered treasure",
+                "xpReward": 900,
+                "goldReward": 90
+            },
+            {
+                "condition": "Open the bypass latch ({{sm-3}}) and escape",
+                "reward": "Two-thirds XP and avoid the cube",
+                "xpReward": 600,
+                "goldReward": 0
+            },
+            {
+                "condition": "Cross without touching the floor ({{sm-2}})",
+                "reward": "One-third XP and a handful of coins",
+                "xpReward": 300,
+                "goldReward": 50
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 120ft x 50ft stone art gallery with statues along walls, rectangular pedestals forming a path, long central aisle with glossy wet floor, hidden side door panel, tapestries, dim lighting. Clean lines, high contrast for virtual tabletop use.",
+        "lair": true,
+        "tier": 1,
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "skill",
+                "subType": "Perception (WIS) (Notice cube trail)",
+                "dc": 15
+            },
+            {
+                "id": "sm-1",
+                "type": "skill",
+                "subType": "Arcana (INT) (Recognize nothic threat)",
+                "dc": 14
+            },
+            {
+                "id": "sm-2",
+                "type": "skill",
+                "subType": "Acrobatics (DEX) (Leap between pedestals)",
+                "dc": 14
+            },
+            {
+                "id": "sm-3",
+                "type": "skill",
+                "subType": "Investigation (INT) (Find hidden latch)",
+                "dc": 13
+            }
+        ]
+    },
+    {
+        "name": "Webbed Workshop",
+        "level": 3,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 900,
+        "monsters": [
+            {
+                "id": "ettercap",
+                "count": 1
+            },
+            {
+                "id": "giant-spider",
+                "count": 2
+            },
+            {
+                "id": "giant-wolf-spider",
+                "count": 1
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "patient",
+        "roomDescription": "Thick webbing drapes this workshop like curtains, muffling every sound. Tools and half-finished contraptions hang from silken strands, gently swaying as you enter. The webs tremble, then something taps the stone from above.",
+        "dmDescription": [
+            "Trip-webs crisscross the entry; {{sm-0}} spots the least-sticky path before anyone blunders into it.",
+            "The ettercap stays back, using webs to isolate a target while the spiders focus on restrained prey.",
+            "A hanging snare drops a weighted net; creatures beneath it must make {{sm-1}} or take the trap's damage and become restrained until they escape.",
+            "A pungent pheromone jar can be smashed to scatter the smaller spiders; doing so requires {{sm-2}} and buys one round of breathing room.",
+            "A cocooned NPC is still alive; freeing them quietly takes {{sm-3}} and earns the party a grateful guide.",
+            "Treasure is wrapped in the far corner: 60 gp and a potion sealed in wax."
+        ],
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Clear the nest",
+                "reward": "Full XP (900) and recovered valuables",
+                "xpReward": 900,
+                "goldReward": 60
+            },
+            {
+                "condition": "Rescue the captive and force a retreat ({{sm-3}})",
+                "reward": "Most XP and a grateful guide",
+                "xpReward": 700,
+                "goldReward": 120
+            },
+            {
+                "condition": "Drive them off with smoke and withdraw ({{sm-2}})",
+                "reward": "Half XP and avoid a prolonged fight",
+                "xpReward": 450,
+                "goldReward": 0
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 80ft x 90ft cluttered workshop chamber with heavy webbing, hanging cocoons, suspended tables and tools, sticky web zones as difficult terrain, ceiling beams, one entrance and one exit. Clean lines, high contrast for virtual tabletop use.",
+        "lair": true,
+        "tier": 1,
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "skill",
+                "subType": "Perception (WIS) (Spot trip-webs)",
+                "dc": 14
+            },
+            {
+                "id": "sm-1",
+                "type": "trap",
+                "subType": "Dexterity Save (Avoid falling snare)",
+                "dc": 14,
+                "damage": "2d6"
+            },
+            {
+                "id": "sm-2",
+                "type": "skill",
+                "subType": "Nature (INT) (Use smoke/pheromones)",
+                "dc": 15
+            },
+            {
+                "id": "sm-3",
+                "type": "skill",
+                "subType": "Sleight of Hand (DEX) (Cut cocoon quietly)",
+                "dc": 14
+            }
+        ]
+    },
+    {
+        "name": "Twin Azer Sentinels",
+        "level": 3,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 900,
+        "monsters": [
+            {
+                "id": "azer-sentinel",
+                "count": 2
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "proud",
+        "roomDescription": "Heat rolls out of this chamber in visible waves. A glowing canal of molten slag cuts across the floor, and vents exhale sparks in steady breaths. Two ember-eyed warriors stand at attention beside an anvil the size of a cart.",
+        "dmDescription": [
+            "The azers demand a toll in precious metal; a respectful approach ({{sm-0}}) may buy passage, but refusal turns them hostile.",
+            "Invoking old forge-law ({{sm-1}}) can force them to offer a duel instead of a brawl, reducing the fight to one sentinel at a time.",
+            "On initiative count 20, a slag vent erupts in a marked line; creatures in it must make {{sm-2}} or take the hazard's fire damage.",
+            "A heavy valve wheel can be cranked with {{sm-3}} to shut down the vents for 2 rounds.",
+            "If one sentinel falls, the other fights with reckless fury but will accept surrender if offered the anvil's maker-mark back.",
+            "Treasure: scattered in a cooling trough are 75 gp worth of ingots and gemstones."
+        ],
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Defeat both sentinels",
+                "reward": "Full XP (900) and forge loot",
+                "xpReward": 900,
+                "goldReward": 75
+            },
+            {
+                "condition": "Negotiate safe passage ({{sm-0}})",
+                "reward": "Half XP and avoid bloodshed",
+                "xpReward": 450,
+                "goldReward": 0
+            },
+            {
+                "condition": "Shut down the vents and force a withdrawal ({{sm-3}})",
+                "reward": "Two-thirds XP and partial salvage",
+                "xpReward": 600,
+                "goldReward": 40
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 70ft fiery forge room with molten slag canal, anvil platform, chains and cranes, vent grates that erupt, piles of coal, metal walkways over lava, two exits. Clean lines, high contrast for virtual tabletop use.",
+        "lair": true,
+        "tier": 1,
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "skill",
+                "subType": "Persuasion (CHA) (Negotiate with guardians)",
+                "dc": 15
+            },
+            {
+                "id": "sm-1",
+                "type": "skill",
+                "subType": "History (INT) (Recall forge-law rites)",
+                "dc": 14
+            },
+            {
+                "id": "sm-2",
+                "type": "hazard",
+                "subType": "Dexterity Save (Dodge slag vent)",
+                "dc": 14,
+                "damage": "2d6"
+            },
+            {
+                "id": "sm-3",
+                "type": "skill",
+                "subType": "Athletics (STR) (Crank valve wheel)",
+                "dc": 14
+            }
+        ]
+    },
+    {
+        "name": "Infernal Contract Circle",
+        "level": 3,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 900,
+        "monsters": [
+            {
+                "id": "cult-fanatic",
+                "count": 1
+            },
+            {
+                "id": "spined-devil",
+                "count": 1
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "zealous",
+        "roomDescription": "Soot-black candles burn without flicker around a circle of chalk and cracked bone. The smell of hot iron stings your nose, and parchment rustles as if something unseen is turning pages. A hooded figure looks up from a contract, and a barbed silhouette unfolds its wings above.",
+        "dmDescription": [
+            "The spined devil perches overhead, pelting backliners while the cult fanatic uses the circle as a defensive anchor.",
+            "The circle flares when crossed; the first creature to step into it must make {{sm-2}} or take the trap's fire damage.",
+            "Recognizing the rite ({{sm-0}}) reveals a safe gap in the chalk line that avoids triggering the flare.",
+            "Disrupting the circle with salt, water, or a scratched rune requires {{sm-1}}; on a success, the devil is banished at the end of the round.",
+            "A fast-talking claim of legal authority ({{sm-3}}) can stall combat long enough to grab the contract or reposition.",
+            "Treasure: a gilded vellum contract worth 100 gp and 50 gp in offerings."
+        ],
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Defeat both foes",
+                "reward": "Full XP (900)",
+                "xpReward": 900,
+                "goldReward": 50
+            },
+            {
+                "condition": "Disrupt the circle ({{sm-1}})",
+                "reward": "Most XP and seize the contract",
+                "xpReward": 700,
+                "goldReward": 100
+            },
+            {
+                "condition": "Trick the cultist into surrendering the contract ({{sm-3}})",
+                "reward": "High XP and bigger payout",
+                "xpReward": 600,
+                "goldReward": 150
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 80ft x 80ft ritual chamber with chalk summoning circle, candles, hanging chains, broken pews, rafters or balcony edge for a flying creature, scorch marks on floor, two exits. Clean lines, high contrast for virtual tabletop use.",
+        "lair": true,
+        "tier": 1,
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "skill",
+                "subType": "Religion (INT) (Identify infernal rite)",
+                "dc": 14
+            },
+            {
+                "id": "sm-1",
+                "type": "skill",
+                "subType": "Arcana (INT) (Disrupt circle)",
+                "dc": 15
+            },
+            {
+                "id": "sm-2",
+                "type": "trap",
+                "subType": "Dexterity Save (Avoid circle flare)",
+                "dc": 14,
+                "damage": "2d6"
+            },
+            {
+                "id": "sm-3",
+                "type": "skill",
+                "subType": "Deception (CHA) (Claim legal authority)",
+                "dc": 15
+            }
+        ]
+    },
+    {
+        "name": "Hungry Guest Suite",
+        "level": 3,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 900,
+        "monsters": [
+            {
+                "id": "mimic",
+                "count": 1
+            },
+            {
+                "id": "animated-rug-of-smothering",
+                "count": 1
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "lurking",
+        "roomDescription": "The room looks almost welcoming: a curtained bed, a polished chest, and a plush rug in the center. Then the chest's hinge blinks, and the rug ripples like a living thing. The door clicks shut behind you without being touched.",
+        "dmDescription": [
+            "The mimic pretends to be the chest until someone approaches; {{sm-0}} spots the wet sheen and misplaced nails.",
+            "The rug waits to wrap the first creature who steps fully onto it; {{sm-1}} notices its slow slide across the floor.",
+            "Once a creature is grappled, allies can tear them free with {{sm-2}}.",
+            "A character can jam the chest shut with tools; doing so takes {{sm-3}} and prevents the mimic from biting until it breaks free.",
+            "If the mimic drops below half HP, it tries to bargain with stolen trinkets and safe passage (a lie unless checked).",
+            "Treasure: jewelry and coins spilled under the bed total 90 gp."
+        ],
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Destroy both monsters",
+                "reward": "Full XP (900) and recovered treasure",
+                "xpReward": 900,
+                "goldReward": 90
+            },
+            {
+                "condition": "Jam the mimic shut and flee ({{sm-3}})",
+                "reward": "Half XP and avoid a long fight",
+                "xpReward": 450,
+                "goldReward": 0
+            },
+            {
+                "condition": "Detect the ambush and back out ({{sm-0}})",
+                "reward": "No XP, but avoid danger",
+                "xpReward": 0,
+                "goldReward": 0
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 50ft x 50ft small dungeon guest room with bed, wardrobe, chest, large rug at center, scattered luggage, narrow doorway, a second exit hidden behind curtain, dim lantern light. Clean lines, high contrast for virtual tabletop use.",
+        "lair": true,
+        "tier": 1,
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "skill",
+                "subType": "Investigation (INT) (Notice mimic details)",
+                "dc": 14
+            },
+            {
+                "id": "sm-1",
+                "type": "skill",
+                "subType": "Perception (WIS) (Spot moving rug)",
+                "dc": 14
+            },
+            {
+                "id": "sm-2",
+                "type": "skill",
+                "subType": "Athletics (STR) (Rip free from grapple)",
+                "dc": 14
+            },
+            {
+                "id": "sm-3",
+                "type": "skill",
+                "subType": "Thieves' Tools (DEX) (Jam/lock chest)",
+                "dc": 15
+            }
+        ]
+    },
+    {
+        "name": "Lanternless Infirmary",
+        "level": 3,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 900,
+        "monsters": [
+            {
+                "id": "will-o-wisp",
+                "count": 1
+            },
+            {
+                "id": "ghast",
+                "count": 1
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "malicious",
+        "roomDescription": "Rotten cots line this infirmary, their sheets stained and stiff. A lone blue light hovers above a cracked basin, bobbing like a lantern in a swamp. The air turns suddenly cold as a corpse drags itself upright, grinning.",
+        "dmDescription": [
+            "The will-o'-wisp stays just out of reach, luring characters toward the ghast and the narrow aisles between beds.",
+            "The ghast fights from cover, trying to drop a target so the wisp can finish them; anyone who starts their turn near it must make {{sm-2}} or be poisoned until the start of their next turn.",
+            "A character who assesses the old medical supplies ({{sm-0}}) can improvise a sharp-smelling salve that grants advantage on the next save against the stench for one creature.",
+            "Spotting the wisp's movement through curtains and hanging sheets requires {{sm-1}}.",
+            "A cracked brazier can be hastily consecrated with {{sm-3}}; while it burns, the undead have disadvantage on their first attack each round.",
+            "Treasure: a medicine coffer contains 60 gp in alchemical reagents and a healing draught."
+        ],
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Destroy both undead",
+                "reward": "Full XP (900) and reagents",
+                "xpReward": 900,
+                "goldReward": 60
+            },
+            {
+                "condition": "Consecrate the brazier ({{sm-3}}) and force a retreat",
+                "reward": "Most XP and avoid casualties",
+                "xpReward": 700,
+                "goldReward": 0
+            },
+            {
+                "condition": "Grab the coffer and escape the aisles ({{sm-1}})",
+                "reward": "Half XP and take the loot",
+                "xpReward": 450,
+                "goldReward": 60
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 90ft x 60ft ruined infirmary with rows of cots, curtains, cracked basin, scattered medical crates, narrow aisles, a faint floating light, small brazier, two exits. Clean lines, high contrast for virtual tabletop use.",
+        "lair": true,
+        "tier": 1,
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "skill",
+                "subType": "Medicine (WIS) (Improvise protective salve)",
+                "dc": 14
+            },
+            {
+                "id": "sm-1",
+                "type": "skill",
+                "subType": "Perception (WIS) (Track flickering light)",
+                "dc": 15
+            },
+            {
+                "id": "sm-2",
+                "type": "skill",
+                "subType": "Constitution Save (Resist corpse stench)",
+                "dc": 13
+            },
+            {
+                "id": "sm-3",
+                "type": "skill",
+                "subType": "Religion (INT) (Consecrate brazier)",
+                "dc": 15
+            }
+        ]
+    },
+    {
+        "name": "Rival Delvers at the Crossroads",
+        "level": 3,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 900,
+        "monsters": [
+            {
+                "id": "scout-captain",
+                "count": 1
+            },
+            {
+                "id": "spy",
+                "count": 1
+            }
+        ],
+        "attitude": "indifferent",
+        "personality": "competitive",
+        "roomDescription": "At a four-way junction, a lantern burns over a map spread across a stone block. Two adventurers glance up, well-equipped and alert, already judging you. One smiles without warmth and casually sets a hand on their weapon.",
+        "dmDescription": [
+            "The rivals open with conversation, fishing for information; if the party looks weak or refuses to share, they attack.",
+            "Reading which one is planning a double-cross takes {{sm-1}}.",
+            "A calm proposal to split routes or trade information uses {{sm-0}}; success avoids combat and earns a tip about the next room.",
+            "If combat starts, the spy tries to vanish into shadows and flank while the captain focuses on the party's caster.",
+            "A character can bluff that a monster patrol is behind them ({{sm-2}}), potentially forcing the rivals to disengage.",
+            "Stealing their marked map and slipping away requires {{sm-3}}; the map is worth 50 gp to other delvers."
+        ],
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Defeat the rivals",
+                "reward": "Full XP (900) and their supplies",
+                "xpReward": 900,
+                "goldReward": 120
+            },
+            {
+                "condition": "Negotiate a pact ({{sm-0}})",
+                "reward": "Half XP and avoid bloodshed",
+                "xpReward": 450,
+                "goldReward": 0
+            },
+            {
+                "condition": "Steal the map and slip away ({{sm-3}})",
+                "reward": "One-third XP and the map's value",
+                "xpReward": 300,
+                "goldReward": 50
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 70ft x 70ft stone crossroads room with four corridors, central stone block used as map table, lantern on table, scattered backpacks, small pillars for cover, dim lighting, multiple exits. Clean lines, high contrast for virtual tabletop use.",
+        "lair": false,
+        "tier": 1,
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "skill",
+                "subType": "Persuasion (CHA) (Negotiate with rivals)",
+                "dc": 14
+            },
+            {
+                "id": "sm-1",
+                "type": "skill",
+                "subType": "Insight (WIS) (Detect ambush intent)",
+                "dc": 14
+            },
+            {
+                "id": "sm-2",
+                "type": "skill",
+                "subType": "Deception (CHA) (Bluff about approaching threat)",
+                "dc": 14
+            },
+            {
+                "id": "sm-3",
+                "type": "skill",
+                "subType": "Stealth (DEX) (Slip away with map)",
+                "dc": 15
+            }
+        ]
+    },
+    {
+        "name": "Bathhouse of the Sea Hag",
+        "level": 3,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 900,
+        "monsters": [
+            {
+                "id": "sea-hag",
+                "count": 1
+            },
+            {
+                "id": "swarm-of-poisonous-snakes",
+                "count": 1
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "cruel",
+        "roomDescription": "Steam curls through a ruined bathhouse where broken tiles vanish beneath murky water. Mirrors hang crooked on the walls, reflecting shapes that are not in the room. The water stirs, and a whispering laugh bubbles up from the deepest pool.",
+        "dmDescription": [
+            "The swarm of poisonous snakes hides in the warm shallows; {{sm-0}} spots the unnatural ripple before someone steps in.",
+            "The sea hag uses mirrors to distort distance; resisting the most terrifying reflection requires {{sm-1}}.",
+            "A drain at the far end forms a tugging undertow; escaping it once caught takes {{sm-2}}.",
+            "A cold-iron mirror shard is wedged behind a cracked frame ({{sm-3}} to find); holding it up breaks the hag's illusion for 1 round.",
+            "If the party retreats to the dry tile platforms, the hag tries to push them back into the water with hit-and-run tactics.",
+            "Treasure: a jade comb and pearl earrings worth 80 gp sit on a sunken vanity."
+        ],
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Defeat hag and swarm",
+                "reward": "Full XP (900) and recovered jewelry",
+                "xpReward": 900,
+                "goldReward": 80
+            },
+            {
+                "condition": "Break the illusion focus ({{sm-3}}) and force a bargain",
+                "reward": "Most XP and keep the loot",
+                "xpReward": 700,
+                "goldReward": 80
+            },
+            {
+                "condition": "Drain the bathhouse and bypass ({{sm-2}})",
+                "reward": "Half XP and avoid the fight",
+                "xpReward": 450,
+                "goldReward": 0
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 90ft x 80ft ruined bathhouse with shallow pools, dry tile platforms, broken mirrors on walls, sunken vanity, central deep pool, drain creating current, steam/fog, two exits. Clean lines, high contrast for virtual tabletop use.",
+        "lair": true,
+        "tier": 1,
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "skill",
+                "subType": "Perception (WIS) (Spot snakes in water)",
+                "dc": 14
+            },
+            {
+                "id": "sm-1",
+                "type": "skill",
+                "subType": "Wisdom Save (Resist hag reflection)",
+                "dc": 14
+            },
+            {
+                "id": "sm-2",
+                "type": "skill",
+                "subType": "Athletics (STR) (Fight undertow/drain)",
+                "dc": 14
+            },
+            {
+                "id": "sm-3",
+                "type": "skill",
+                "subType": "Investigation (INT) (Find cold-iron shard)",
+                "dc": 15
+            }
+        ]
+    },
+    {
+        "name": "Banshee's Broken Vespers",
+        "level": 3,
+        "type": "combat",
+        "difficulty": "high",
+        "xpBudget": 1600,
+        "monsters": [
+            {
+                "id": "banshee",
+                "count": 1
+            },
+            {
+                "id": "ghast",
+                "count": 1
+            },
+            {
+                "id": "skeleton",
+                "count": 1
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "mourning",
+        "roomDescription": "A collapsed chapel opens before you, its pews splintered and its altar cracked in two. A faint hymn echoes from nowhere, growing sharper with each step. A translucent figure turns toward you in grief, and the air itself seems to tighten around your throat.",
+        "dmDescription": [
+            "The banshee haunts the altar, repeating the last moments of a forgotten rite; {{sm-0}} notices the cursed chimes and the warning signs of an early wail.",
+            "The ghast and skeleton act as ushers, blocking exits and trying to keep the party in the nave.",
+            "A wave of necrotic cold radiates from the broken altar; creatures that begin their turn in the marked area must make {{sm-2}} or take the hazard's damage.",
+            "A quick absolution at the altar with {{sm-1}} can calm the spirit for a moment, buying a round of hesitation.",
+            "Singing the correct lament ({{sm-3}}) can create a lull long enough to retrieve the relic without finishing the fight.",
+            "Treasure: beneath the altar stone lies a silver reliquary and coins worth 150 gp."
+        ],
+        "size": 2,
+        "winConditions": [
+            {
+                "condition": "Destroy the undead",
+                "reward": "Full XP (1600) and the reliquary",
+                "xpReward": 1600,
+                "goldReward": 150
+            },
+            {
+                "condition": "Perform absolution and calm the banshee ({{sm-1}})",
+                "reward": "Most XP and claim the relic",
+                "xpReward": 1200,
+                "goldReward": 150
+            },
+            {
+                "condition": "Create a lull with the lament ({{sm-3}}) and flee with the relic",
+                "reward": "Half XP and take the treasure",
+                "xpReward": 800,
+                "goldReward": 150
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 110ft x 70ft ruined stone chapel with broken pews, cracked altar, hanging chimes, collapsed roof section, scattered rubble, spectral mist, two side doors and one main entrance. Clean lines, high contrast for virtual tabletop use.",
+        "lair": true,
+        "tier": 1,
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "skill",
+                "subType": "Perception (WIS) (Notice cursed chimes / avoid noise)",
+                "dc": 15
+            },
+            {
+                "id": "sm-1",
+                "type": "skill",
+                "subType": "Religion (INT) (Perform absolution rite)",
+                "dc": 16
+            },
+            {
+                "id": "sm-2",
+                "type": "hazard",
+                "subType": "Constitution Save (Resist necrotic chill)",
+                "dc": 14,
+                "damage": "2d6"
+            },
+            {
+                "id": "sm-3",
+                "type": "skill",
+                "subType": "Performance (CHA) (Sing the lament)",
+                "dc": 15
+            }
+        ]
+    },
+    {
+        "name": "Forge of the Burning Skull",
+        "level": 3,
+        "type": "combat",
+        "difficulty": "high",
+        "xpBudget": 1600,
+        "monsters": [
+            {
+                "id": "flameskull",
+                "count": 1
+            },
+            {
+                "id": "salamander-fire-snake",
+                "count": 1
+            },
+            {
+                "id": "magma-mephit",
+                "count": 2
+            },
+            {
+                "id": "magmin",
+                "count": 1
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "cackling",
+        "roomDescription": "This forge chamber roars like a living beast. A skull-shaped brazier floats above the furnace, its eye sockets blazing, while molten streams hiss through channels in the floor. Small ember-born creatures dance between anvils, delighted to see new fuel enter.",
+        "dmDescription": [
+            "The flameskull hovers above the furnace channel, focusing on clustered targets.",
+            "Magma mephits try to box the party into the hottest lanes while the fire snake guards a narrow catwalk.",
+            "On initiative count 20, a bank of vents belches flame in a marked pattern; creatures in the line must make {{sm-1}} or take the hazard's fire damage.",
+            "Thick smoke rolls low; a creature that ends its turn in a smoky zone must succeed on {{sm-3}} or be blinded until the start of its next turn.",
+            "A binding rune carved into the furnace lip anchors the flameskull; disrupting it with {{sm-0}} causes the skull to falter for 1 round and weakens the mephits' morale.",
+            "A chain winch can slam the furnace gate shut with {{sm-2}}, cutting off the vents for 2 rounds and forcing the fire creatures to reposition.",
+            "Treasure: a cooling tray holds 120 gp worth of worked silver and fire-kissed gemstones."
+        ],
+        "size": 2,
+        "winConditions": [
+            {
+                "condition": "Defeat the fire creatures",
+                "reward": "Full XP (1600) and forge loot",
+                "xpReward": 1600,
+                "goldReward": 120
+            },
+            {
+                "condition": "Disrupt the binding rune ({{sm-0}})",
+                "reward": "Most XP and end the danger faster",
+                "xpReward": 1200,
+                "goldReward": 120
+            },
+            {
+                "condition": "Shut the furnace gate and escape ({{sm-2}})",
+                "reward": "High XP and avoid total defeat",
+                "xpReward": 900,
+                "goldReward": 0
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 120ft x 90ft blazing forge room with molten channels, anvils, metal catwalks, furnace gate, vent grates that blast flames, chain winch, piles of coal, intense lighting, two exits. Clean lines, high contrast for virtual tabletop use.",
+        "lair": true,
+        "tier": 1,
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "skill",
+                "subType": "Arcana (INT) (Disrupt binding rune)",
+                "dc": 16
+            },
+            {
+                "id": "sm-1",
+                "type": "hazard",
+                "subType": "Dexterity Save (Avoid flame jets)",
+                "dc": 15,
+                "damage": "2d6"
+            },
+            {
+                "id": "sm-2",
+                "type": "skill",
+                "subType": "Athletics (STR) (Crank chain winch)",
+                "dc": 15
+            },
+            {
+                "id": "sm-3",
+                "type": "hazard",
+                "subType": "Constitution Save (Endure choking smoke)",
+                "dc": 14
+            }
+        ]
+    },
+    {
+        "name": "Sluice-Gate Predator",
+        "level": 3,
+        "type": "combat",
+        "difficulty": "high",
+        "xpBudget": 1600,
+        "monsters": [
+            {
+                "id": "chuul",
+                "count": 1
+            },
+            {
+                "id": "carrion-crawler",
+                "count": 1
+            },
+            {
+                "id": "giant-crab",
+                "count": 2
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "lurking",
+        "roomDescription": "A heavy iron gate splits this chamber, water rushing through its bars with a deep, steady roar. The stone is slick, and the smell of brine fights with the stink of old rot. Something clicks beneath the surface, then a claw breaks the water like a hook.",
+        "dmDescription": [
+            "The chuul waits submerged near the gate; {{sm-0}} spots the faint antennae ripple before it strikes.",
+            "The carrion crawler clings to the damp ceiling and drops behind the party, trying to cut off retreat.",
+            "Crabs scuttle along the edges, grappling and holding someone in the current while the chuul closes.",
+            "The current pulls toward the grate; a creature shoved into the marked channel must succeed on {{sm-2}} or take the hazard's damage and be pulled 10 feet toward the gate.",
+            "A hidden lever can partially drain the chamber ({{sm-3}}), removing the current hazard after 1 round.",
+            "The sluice wheel can be forced with {{sm-1}}; opening it fully lets the party shove creatures through the bars into the next tunnel.",
+            "Treasure: a waterproof satchel snagged on the grate contains 90 gp and a carved onyx die."
+        ],
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Defeat the predators",
+                "reward": "Full XP (1600) and recovered satchel",
+                "xpReward": 1600,
+                "goldReward": 90
+            },
+            {
+                "condition": "Drain the chamber and force retreat ({{sm-3}})",
+                "reward": "Most XP and keep the treasure",
+                "xpReward": 1200,
+                "goldReward": 90
+            },
+            {
+                "condition": "Force the sluice and slip through ({{sm-1}})",
+                "reward": "Half XP and avoid a deadly fight",
+                "xpReward": 800,
+                "goldReward": 0
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 80ft wet sluice chamber with rushing water channel, iron gate/grate, slick stone platforms, ceiling hooks, puddles, drain lever, large wheel mechanism, two exits. Clean lines, high contrast for virtual tabletop use.",
+        "lair": true,
+        "tier": 1,
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "skill",
+                "subType": "Perception (WIS) (Spot movement in murky water)",
+                "dc": 15
+            },
+            {
+                "id": "sm-1",
+                "type": "skill",
+                "subType": "Athletics (STR) (Force sluice wheel)",
+                "dc": 15
+            },
+            {
+                "id": "sm-2",
+                "type": "hazard",
+                "subType": "Dexterity Save (Avoid being swept into grates)",
+                "dc": 14,
+                "damage": "2d6"
+            },
+            {
+                "id": "sm-3",
+                "type": "skill",
+                "subType": "Investigation (INT) (Find drain lever)",
+                "dc": 15
+            }
+        ]
+    },
+    {
+        "name": "Clockwork Study Sentinel",
+        "level": 3,
+        "type": "combat",
+        "difficulty": "high",
+        "xpBudget": 1600,
+        "monsters": [
+            {
+                "id": "helmed-horror",
+                "count": 1
+            },
+            {
+                "id": "animated-rug-of-smothering",
+                "count": 1
+            },
+            {
+                "id": "animated-broom",
+                "count": 1
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "relentless",
+        "roomDescription": "A wizard's study lies in careful ruin: shelves toppled, papers pinned by daggers, and a velvet rug smeared with ash. A suit of armor stands motionless by a lectern, helm tilted as if listening. The moment you cross the threshold, the rug surges and the armor steps forward without a sound.",
+        "dmDescription": [
+            "The helmed horror ignores taunts and focuses on the first creature to cast a spell.",
+            "The rug and broom attempt to restrain and harry a single target, dragging them toward the armor.",
+            "A heavy chandelier drops into a marked area when combat starts; creatures there must make {{sm-2}} or take the trap's damage and the area becomes difficult terrain.",
+            "A command word is etched into a brass pedestal; identifying it with {{sm-0}} lets a character speak it as an action to halt the helmed horror for 1 round.",
+            "The matching word appears on a torn journal page tucked in a desk ({{sm-1}}); finding it grants advantage on the command attempt.",
+            "A nimble thief can snatch a key from a hovering hook with {{sm-3}}; the key opens the side door without needing to finish the fight.",
+            "Treasure: residuum dust and coins worth 140 gp are inside the desk."
+        ],
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Defeat the constructs",
+                "reward": "Full XP (1600) and desk valuables",
+                "xpReward": 1600,
+                "goldReward": 140
+            },
+            {
+                "condition": "Speak the command word and disengage ({{sm-0}})",
+                "reward": "Most XP and take the loot",
+                "xpReward": 1200,
+                "goldReward": 140
+            },
+            {
+                "condition": "Grab the key and flee ({{sm-3}})",
+                "reward": "Half XP and escape",
+                "xpReward": 800,
+                "goldReward": 0
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 90ft x 70ft wizard study with toppled bookcases, lectern, large rug, desks, hanging chandelier, brass pedestal with rune, floating hook holding a key, scattered papers, two exits. Clean lines, high contrast for virtual tabletop use.",
+        "lair": true,
+        "tier": 1,
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "skill",
+                "subType": "Arcana (INT) (Identify command word)",
+                "dc": 16
+            },
+            {
+                "id": "sm-1",
+                "type": "skill",
+                "subType": "Investigation (INT) (Find journal clue)",
+                "dc": 15
+            },
+            {
+                "id": "sm-2",
+                "type": "trap",
+                "subType": "Dexterity Save (Avoid falling chandelier)",
+                "dc": 15,
+                "damage": "2d6"
+            },
+            {
+                "id": "sm-3",
+                "type": "skill",
+                "subType": "Sleight of Hand (DEX) (Snatch key quickly)",
+                "dc": 15
+            }
+        ]
+    },
+    {
+        "name": "Ettin Breaker Squad",
+        "level": 3,
+        "type": "combat",
+        "difficulty": "high",
+        "xpBudget": 1600,
+        "monsters": [
+            {
+                "id": "ettin",
+                "count": 1
+            },
+            {
+                "id": "bugbear",
+                "count": 2
+            },
+            {
+                "id": "worg",
+                "count": 1
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "belligerent",
+        "roomDescription": "This butcher's chamber is all hooks, chains, and old blood. A two-headed brute squats beside a smoking brazier, arguing with itself in guttural snarls while two lanky goblinoids watch with cruel patience. A worg lifts its head from a bone pile and growls low enough to shake the air.",
+        "dmDescription": [
+            "The bugbears hold the flanks, using reach and cover to force the party into the ettin's lane.",
+            "Murder holes and hanging chains create shifting sightlines; {{sm-0}} spots the bugbears' preferred firing angles before the fight starts.",
+            "Intimidating the ettin's weaker head ({{sm-1}}) can make it hesitate for one round, or turn on its handlers if the bugbears are bloodied.",
+            "The worg can be driven back with fire and dominance; {{sm-2}} makes it break and flee into a side pen.",
+            "A character can yank a chain release with {{sm-3}}, dropping a curtain of hooks that splits the room and buys a round of separation.",
+            "Treasure: the bugbears carry a heavy pouch with 110 gp and a crude silver ring."
+        ],
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Defeat the raiders",
+                "reward": "Full XP (1600) and their spoils",
+                "xpReward": 1600,
+                "goldReward": 110
+            },
+            {
+                "condition": "Fracture the ettin's resolve ({{sm-1}})",
+                "reward": "Most XP and partial plunder",
+                "xpReward": 1400,
+                "goldReward": 60
+            },
+            {
+                "condition": "Drive off the worg and slip through the side pen ({{sm-2}})",
+                "reward": "Half XP and avoid the bloodiest part",
+                "xpReward": 800,
+                "goldReward": 0
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 110ft x 80ft butcher chamber with hanging hooks and chains, bone piles, brazier, wooden pens, alcoves for cover, chain release lever, blood-stained floor, two exits. Clean lines, high contrast for virtual tabletop use.",
+        "lair": false,
+        "tier": 1,
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "skill",
+                "subType": "Perception (WIS) (Spot crossfire positions)",
+                "dc": 14
+            },
+            {
+                "id": "sm-1",
+                "type": "skill",
+                "subType": "Intimidation (CHA) (Cow the weaker head)",
+                "dc": 15
+            },
+            {
+                "id": "sm-2",
+                "type": "skill",
+                "subType": "Animal Handling (WIS) (Drive off worg)",
+                "dc": 14
+            },
+            {
+                "id": "sm-3",
+                "type": "skill",
+                "subType": "Athletics (STR) (Yank chain release)",
+                "dc": 15
+            }
+        ]
     }
 ]
