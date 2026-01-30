@@ -4,7 +4,8 @@ export type {
     CombatEncounterData,
     SocialEncounterData,
     ExplorationEncounterData,
-    RestEncounterData
+    RestEncounterData,
+    ScalingMechanic
 } from './EncounterData';
 export type { MonsterData } from './MonsterData';
 export type { DungeonNode } from './DungeonNode';
