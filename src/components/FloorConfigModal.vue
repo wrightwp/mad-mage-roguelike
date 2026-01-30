@@ -1,6 +1,8 @@
 <script setup lang="ts">
 import { ref, computed, watch } from 'vue';
 import { TYPE_COLORS, getNodeIcon } from '../utils/nodeStyles';
+import { calculatePartyXPBudget } from '../utils/encounterScaling';
+import { EncounterDifficulty } from '../types';
 
 interface Props {
   show: boolean;
@@ -56,6 +58,17 @@ const totalNodes = computed(() => {
 
 const estimatedLayers = computed(() => {
   return floorDepth.value;
+});
+
+// XP Budget computed values for display
+const xpBudgets = computed(() => {
+  const level = averagePartyLevel.value;
+  const size = partySize.value;
+  return {
+    low: calculatePartyXPBudget(level, size, EncounterDifficulty.Low),
+    moderate: calculatePartyXPBudget(level, size, EncounterDifficulty.Moderate),
+    high: calculatePartyXPBudget(level, size, EncounterDifficulty.High)
+  };
 });
 
 // Update node count
@@ -136,9 +149,20 @@ const handleCancel = () => {
               />
             </div>
             <div>
-              <label class="block text-xs text-slate-400 mb-2 tracking-widest uppercase">Challenge Rating</label>
-              <div class="w-full bg-slate-900 border border-slate-600 rounded-lg px-4 py-3 text-amber-400 text-lg font-bold">
-                CR {{ selectedFloor }}
+              <label class="block text-xs text-slate-400 mb-2 tracking-widest uppercase">XP Budget ({{ partySize }} players)</label>
+              <div class="w-full bg-slate-900 border border-slate-600 rounded-lg px-4 py-2 text-sm">
+                <div class="flex justify-between">
+                  <span class="text-green-400">Low:</span>
+                  <span class="text-green-400 font-bold">{{ xpBudgets.low }} XP</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-yellow-400">Moderate:</span>
+                  <span class="text-yellow-400 font-bold">{{ xpBudgets.moderate }} XP</span>
+                </div>
+                <div class="flex justify-between">
+                  <span class="text-red-400">High:</span>
+                  <span class="text-red-400 font-bold">{{ xpBudgets.high }} XP</span>
+                </div>
               </div>
             </div>
           </div>
