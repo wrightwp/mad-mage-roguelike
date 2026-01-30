@@ -153,7 +153,24 @@ const copyToClipboard = async (text: string) => {
           :class="index === 0 ? 'border-emerald-500 bg-emerald-900/5' : 'border-amber-500 bg-amber-900/5'">
           <div class="mb-2">
             <div class="text-sm font-semibold mb-1" :class="index === 0 ? 'text-emerald-300' : 'text-amber-300'">
-              {{ winCondition.condition }}
+              <template v-for="(part, pIdx) in parseDescription(winCondition.condition)" :key="pIdx">
+                <span v-if="part.type === 'text'">{{ part.content }}</span>
+                <span v-else-if="getMechanic(part.content)" 
+                  class="inline-flex items-center gap-1 align-middle px-1.5 py-0.5 rounded text-[10px] font-bold uppercase tracking-wider mx-1 select-none cursor-help"
+                  :class="{
+                     'bg-red-900/60 text-red-200 border border-red-800/50': getMechanic(part.content)?.type === 'trap',
+                     'bg-blue-900/60 text-blue-200 border border-blue-800/50': getMechanic(part.content)?.type === 'skill',
+                     'bg-amber-900/60 text-amber-200 border border-amber-800/50': getMechanic(part.content)?.type === 'puzzle',
+                     'bg-orange-900/60 text-orange-200 border border-orange-800/50': getMechanic(part.content)?.type === 'hazard',
+                  }"
+                  :title="getMechanic(part.content)?.subType"
+                >
+                   {{ getMechanic(part.content)?.subType || getMechanic(part.content)?.type }} :
+                   <span v-if="getMechanic(part.content)?.dc" class="bg-black/30 px-1 rounded">DC {{ getMechanic(part.content)?.dc }}</span>
+                   <span v-if="getMechanic(part.content)?.damage" class="ml-0.5">{{ getMechanic(part.content)?.damage }}</span>
+                </span>
+                <span v-else class="text-red-500 text-xs">??</span>
+              </template>
             </div>
             <div class="text-xs text-slate-400 flex items-center gap-1.5">
               <span class="font-semibold">Reward:</span>
