@@ -74,7 +74,7 @@ export class EncounterLibrary {
     getRandomEncounter(
         floor: number,
         type: EncounterType,
-        options?: { difficulty?: EncounterDifficulty; excludeNames?: string[] }
+        options?: { difficulty?: EncounterDifficulty; excludeNames?: string[]; maxXPBudget?: number }
     ): EncounterData | null {
         // Hardcoded Default Encounters to ensure availability
         const DEFAULT_ENCOUNTERS: Partial<Record<EncounterType, EncounterData>> = {
@@ -137,6 +137,15 @@ export class EncounterLibrary {
 
         if (options?.difficulty) {
             matching = matching.filter(e => e.difficulty === options.difficulty);
+        }
+
+        // Filter by max XP budget to ensure encounters can scale properly
+        if (options?.maxXPBudget) {
+            matching = matching.filter(e => {
+                // xpBudget may not exist on all encounter types (e.g., Rest)
+                const encounterXP = 'xpBudget' in e ? (e.xpBudget as number) || 0 : 0;
+                return encounterXP <= options.maxXPBudget!;
+            });
         }
 
         // Exclude already-used encounter names to prevent duplicates on the same map

@@ -1,6 +1,6 @@
 import { DungeonNode, DungeonMapData, EncounterType, NodeType, EncounterDifficulty } from '../types';
 import { encounterLibrary } from '../data/encounterLibrary';
-import { scaleEncounter } from '../utils/encounterScaling';
+import { scaleEncounter, calculatePartyXPBudget } from '../utils/encounterScaling';
 
 export const generateDungeon = (
     layersPerFloor: number = 15,
@@ -248,16 +248,22 @@ export const generateDungeon = (
         usedCounts[node.type]++;
     });
 
+    // Calculate the maximum XP budget for encounter selection (2x party's High budget)
+    // This ensures encounters can scale properly without being too far outside the party's capability
+    const partyHighBudget = calculatePartyXPBudget(averagePartyLevel, partySize, EncounterDifficulty.High);
+    const maxXPBudget = partyHighBudget * 2;
+
     // Final pass for encounter data assignment
     standardNodes.forEach((node) => {
         // Get encounter type for this node
         const encounterType = encounterTypeMap[node.type] || EncounterType.Combat;
 
         // Get appropriate encounter for party level (determines tier), excluding already-used encounters
+        // Also filter by maxXPBudget to ensure encounters are within scaling range
         let encounter = encounterLibrary.getRandomEncounter(
             averagePartyLevel,
             encounterType,
-            { excludeNames: usedEncounterNames }
+            { excludeNames: usedEncounterNames, maxXPBudget }
         );
 
         if (encounter) {
@@ -285,7 +291,7 @@ export const generateDungeon = (
     // Special handling for Boss Node
     const bossNode = layers[layersPerFloor - 1][0];
     if (bossNode && bossNode.type === NodeType.Boss) {
-        let bossEncounter = encounterLibrary.getRandomEncounter(averagePartyLevel, EncounterType.Boss);
+        let bossEncounter = encounterLibrary.getRandomEncounter(averagePartyLevel, EncounterType.Boss, { maxXPBudget });
 
         // Fallback to High Difficulty Combat if no Boss encounter found
         if (!bossEncounter) {
@@ -293,7 +299,7 @@ export const generateDungeon = (
             bossEncounter = encounterLibrary.getRandomEncounter(
                 averagePartyLevel,
                 EncounterType.Combat,
-                { difficulty: EncounterDifficulty.High }
+                { difficulty: EncounterDifficulty.High, maxXPBudget }
             ) as any; // Cast as any because we're assigning a Combat encounter to a slot meant for Boss type logically, though the field is generic EncounterData
 
             // If even that fails, we can't do much, but the system handles null encounter.
