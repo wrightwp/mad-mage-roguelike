@@ -125,6 +125,17 @@ const addScalingMechanic = () => {
     damage: ''
   });
 };
+
+const copiedId = ref<string | null>(null);
+
+const copyToken = (id: string) => {
+  const token = `{{${id}}}`;
+  navigator.clipboard.writeText(token);
+  copiedId.value = id;
+  setTimeout(() => {
+    copiedId.value = null;
+  }, 1500);
+};
 </script>
 
 <template>
@@ -334,7 +345,14 @@ const addScalingMechanic = () => {
               
               <!-- Row 2: Mechanics & ID -->
               <div class="flex items-center gap-2">
-                <div class="text-[10px] text-slate-500 font-mono select-none">{{ mechanic.id }}</div>
+                <div 
+                  @click="copyToken(mechanic.id)"
+                  class="text-[10px] text-slate-500 font-mono select-none cursor-pointer hover:text-amber-400 transition-colors"
+                  title="Click to copy token"
+                >
+                  {{ mechanic.id }}
+                  <span v-if="copiedId === mechanic.id" class="text-emerald-400 font-bold ml-1">Copied!</span>
+                </div>
 
                 <div class="flex items-center gap-1 w-16">
                   <span class="text-[9px] text-slate-500 select-none">DC</span>

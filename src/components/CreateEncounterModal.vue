@@ -126,6 +126,17 @@ const handleCreate = () => {
   dmDescriptionText.value = '';
 };
 
+const copiedId = ref<string | null>(null);
+
+const copyToken = (id: string) => {
+  const token = `{{${id}}}`;
+  navigator.clipboard.writeText(token);
+  copiedId.value = id;
+  setTimeout(() => {
+    copiedId.value = null;
+  }, 1500);
+};
+
 const addWinCondition = () => {
   if (!newEncounter.value.winConditions) {
     newEncounter.value.winConditions = [];
@@ -283,7 +294,14 @@ const addWinCondition = () => {
                        <input v-model="mechanic.subType" type="text" class="flex-1 bg-transparent border-b border-slate-700/50 text-xs text-slate-200 placeholder-slate-600 focus:outline-none focus:border-amber-500/50 pb-0.5" placeholder="Details (e.g. Dex Save)" />
                     </div>
                     <div class="flex items-center gap-2">
-                       <div class="text-[10px] text-slate-500 font-mono select-none">{{ mechanic.id }}</div>
+                       <div 
+                          @click="copyToken(mechanic.id)"
+                          class="text-[10px] text-slate-500 font-mono select-none cursor-pointer hover:text-amber-400 transition-colors"
+                          title="Click to copy token"
+                       >
+                          {{ mechanic.id }}
+                          <span v-if="copiedId === mechanic.id" class="text-emerald-400 font-bold ml-1">Copied!</span>
+                       </div>
                        <div class="flex items-center gap-1 w-16">
                           <span class="text-[9px] text-slate-500 select-none">DC</span>
                           <input v-model.number="mechanic.dc" type="number" class="w-full bg-slate-800/50 border-none rounded px-1 py-0.5 text-[10px] text-right text-slate-300 focus:outline-none focus:ring-1 focus:ring-amber-500/20" placeholder="-" />
