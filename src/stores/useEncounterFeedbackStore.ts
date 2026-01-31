@@ -13,7 +13,6 @@ export interface EncounterFeedbackEntry {
   };
   original: EncounterData;
   edited: EncounterData;
-  notes?: string;
   editedAt: string;
 }
 

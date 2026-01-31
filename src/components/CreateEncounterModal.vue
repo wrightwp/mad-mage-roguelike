@@ -116,7 +116,6 @@ const handleCreate = () => {
     floor: finalEncounter.level,
     original: finalEncounter,
     edited: finalEncounter,
-    notes: 'Manually created custom encounter',
     editedAt: new Date().toISOString()
   });
 

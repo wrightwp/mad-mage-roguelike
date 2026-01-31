@@ -13,7 +13,6 @@ interface Props {
 const props = defineProps<Props>();
 const feedbackStore = useEncounterFeedbackStore();
 
-const notes = ref('');
 const draftEncounter = ref<EncounterData>(cloneEncounter(props.encounter));
 const showEditor = ref(false);
 const showRawJson = ref(false);
@@ -41,7 +40,6 @@ function cloneEncounter<T>(value: T): T {
 const hydrateFromEntry = () => {
   const entry = existingEntry.value;
   draftEncounter.value = cloneEncounter(entry?.edited ?? props.encounter);
-  notes.value = entry?.notes ?? '';
   jsonText.value = '';
   jsonError.value = null;
   showRawJson.value = false;
@@ -84,7 +82,6 @@ const saveFeedback = () => {
     source: props.nodeId ? { nodeId: props.nodeId } : undefined,
     original,
     edited,
-    notes: notes.value?.trim() || undefined,
     editedAt: now
   });
 };
@@ -92,7 +89,6 @@ const saveFeedback = () => {
 const resetFeedback = () => {
   feedbackStore.removeEntry(feedbackKey.value);
   draftEncounter.value = cloneEncounter(props.encounter);
-  notes.value = '';
   jsonText.value = '';
   jsonError.value = null;
   showRawJson.value = false;
@@ -397,15 +393,6 @@ const copyToken = (id: string) => {
           <span>+</span> Add Scaling Mechanic
         </button>
       </div>
-      </div>
-
-      <div>
-        <label class="block text-[10px] text-slate-500 uppercase tracking-wider mb-1">Notes</label>
-        <textarea
-          v-model="notes"
-          rows="2"
-          class="w-full bg-slate-900/70 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-200 focus:outline-none focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20"
-        ></textarea>
       </div>
 
       <div class="bg-slate-900/40 rounded-lg border border-slate-700">
