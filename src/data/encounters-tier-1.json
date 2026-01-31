@@ -8512,5 +8512,857 @@
                 "dc": 15
             }
         ]
+    },
+    {
+        "name": "Flooded Crypt",
+        "level": 4,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 1500,
+        "monsters": [
+            {
+                "id": "wight",
+                "count": 1
+            },
+            {
+                "id": "ghoul",
+                "count": 4
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "relentless",
+        "roomDescription": "Kneeling-high brackish water floods this crypt, concealing the uneven floor. Cracked sarcophagi jut from the murk like jagged teeth. A central dais holds a skeletal figure in rusted mail, while submerged shapes ripple toward you, their groans bubbling up through the slime.",
+        "dmDescription": [
+            "The water makes the entire room Difficult Terrain.",
+            "Enemies use the Push mastery to shove players into 10ft deep open graves ({{sm-0}} to swim out).",
+            "The wight focuses on the weakest adventurer, using Life Drain to reduce their max HP.",
+            "Submerged ghouls burst from the water (Advantage on Stealth) to surprise the party."
+        ],
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Defeat the undead",
+                "xpReward": 1500,
+                "goldReward": 100
+            },
+            {
+                "condition": "Purify the central font ({{sm-1}})",
+                "xpReward": 1500,
+                "goldReward": 50
+            }
+        ],
+        "aiRoomPrompt": "D&D battle map, flooded crypt, dark water, stone sarcophagi, green slime, dimly lit, 5ft grid, top down view",
+        "lair": false,
+        "tier": 1,
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "skill",
+                "subType": "Athletics (STR) (Swim out of grave)",
+                "dc": 14
+            },
+            {
+                "id": "sm-1",
+                "type": "skill",
+                "subType": "Religion (INT) (Purify font)",
+                "dc": 15
+            }
+        ]
+    },
+    {
+        "name": "Chasm Bridge",
+        "level": 4,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 1500,
+        "monsters": [
+            {
+                "id": "harpy",
+                "count": 3
+            },
+            {
+                "id": "white-dragon-wyrmling",
+                "count": 2
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "sadistic",
+        "roomDescription": "A rickety wooden suspension bridge spans a howling dark void. The wind screams, masking the shrieks of winged shapes circling below. Rime frost coats the ropes, making your grip slick.",
+        "dmDescription": [
+            "Any ranged spell attack that misses a creature on the bridge strikes the bridge itself (AC 12, HP 20 per section).",
+            "Destroyed sections force a {{sm-0}} or fall.",
+            "Harpies use their Luring Song to draw players off the edge.",
+            "The wyrmlings strafe with Cold Breath to freeze adventurers onto the slippery planks."
+        ],
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Cross the bridge alive",
+                "xpReward": 1500,
+                "goldReward": 0
+            },
+            {
+                "condition": "Kill the flock",
+                "xpReward": 1500,
+                "goldReward": 120
+            }
+        ],
+        "aiRoomPrompt": "D&D battle map, rope bridge over chasm, foggy void, icy planks, dangerous drop, 5ft grid, top down view",
+        "lair": false,
+        "tier": 1,
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "skill",
+                "subType": "Dexterity Save (Catch ledge)",
+                "dc": 13
+            }
+        ]
+    },
+    {
+        "name": "Fungal Spore Room",
+        "level": 4,
+        "type": "combat",
+        "difficulty": "low",
+        "xpBudget": 1000,
+        "monsters": [
+            {
+                "id": "myconid-adult",
+                "count": 5
+            },
+            {
+                "id": "gas-spore-fungus",
+                "count": 5
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "mindless",
+        "roomDescription": "The air here is thick with yellow dust. Towering mushrooms block sightlines, pulsating with a sickly light. As you move, puffballs explode underfoot, releasing choking clouds.",
+        "dmDescription": [
+            "Dealing Slashing damage to any fungus releases a cloud: creatures within 5ft must pass a {{sm-0}} or be Poisoned for 1 minute.",
+            "Gas Spores explode on death, dealing damage to adjacent creatures.",
+            "The Myconids attempt to Pacifying Spores the party into submission."
+        ],
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Clear the infestation",
+                "xpReward": 1000,
+                "goldReward": 40
+            }
+        ],
+        "aiRoomPrompt": "D&D battle map, fungal forest, giant glowing mushrooms, yellow spores, cavern, 5ft grid, top down view",
+        "lair": false,
+        "tier": 1,
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "skill",
+                "subType": "Constitution Save (Resist poison)",
+                "dc": 12
+            }
+        ]
+    },
+    {
+        "name": "Magma Forge",
+        "level": 4,
+        "type": "combat",
+        "difficulty": "high",
+        "xpBudget": 2000,
+        "monsters": [
+            {
+                "id": "flameskull",
+                "count": 1
+            },
+            {
+                "id": "magma-mephit",
+                "count": 4
+            },
+            {
+                "id": "magmin",
+                "count": 5
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "destructive",
+        "roomDescription": "Scorching heat rolls off metal floor grates that glow cherry-red. A massive anvil sits in the center, guarded by a floating skull wreathed in green flame. Small magma creatures cackle as they ooze from the vents.",
+        "dmDescription": [
+            "The floor grates are superheated. Being knocked Prone on a grate deals 2d6 fire damage instantly.",
+            "The Flameskull flies out of reach, blasting Fireball.",
+            "Magmins try to grapple players and drag them onto the hot grates.",
+            "Mephits use Heat Metal on armored characters."
+        ],
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Extinguish the forge guardians",
+                "xpReward": 2000,
+                "goldReward": 200
+            }
+        ],
+        "aiRoomPrompt": "D&D battle map, magma forge, glowing floor grates, lava channels, anvil, industrial fantasy, 5ft grid, top down view",
+        "lair": false,
+        "tier": 1,
+        "scalingMechanics": []
+    },
+    {
+        "name": "Echoing Hall",
+        "level": 4,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 1400,
+        "monsters": [
+            {
+                "id": "hook-horror",
+                "count": 2
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "predatory",
+        "roomDescription": "This cavern is vast and silent. Every footstep echoes like a hammer blow. High above, stalactites tremble. Two clicking sounds signify the approach of armored predators.",
+        "dmDescription": [
+            "Loud noises (Thunder spells, shouting) trigger a cave-in: DC 13 Dex save or take 3d6 bludgeoning.",
+            "Players must use the Hide Action ({{sm-0}}) to avoid being targeted by debris or the keen hearing of the horrors.",
+            "The Hook Horrors use the echoes to pinpoint invisible creatures."
+        ],
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Slay the horrors",
+                "xpReward": 1400,
+                "goldReward": 80
+            }
+        ],
+        "aiRoomPrompt": "D&D battle map, large cavern, stalactites, echoing void, rocky terrain, 5ft grid, top down view",
+        "lair": false,
+        "tier": 1,
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "skill",
+                "subType": "Stealth (DEX) (Move quietly)",
+                "dc": 14
+            }
+        ]
+    },
+    {
+        "name": "Magnetic Ore Vein",
+        "level": 4,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 1500,
+        "monsters": [
+            {
+                "id": "helmed-horror",
+                "count": 1
+            },
+            {
+                "id": "animated-armor",
+                "count": 2
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "implacable",
+        "roomDescription": "The walls here sparkle with purple veins of heavy ore. You feel a tug on your weapons. Three suits of armor detach from the wall, moving with unnatural weight.",
+        "dmDescription": [
+            "The ore is highly magnetic. Metal weapons count as 'Heavy' and attacking with them imposes Disadvantage unless the wielder has 15+ Strength.",
+            "The Helmed Horror is immune to Force, Necrotic, and Poison.",
+            "Animated Armors reform on a 5-6 recharge if not destroyed by acid or fire."
+        ],
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Scrap the constructs",
+                "xpReward": 1500,
+                "goldReward": 150
+            }
+        ],
+        "aiRoomPrompt": "D&D battle map, crystal mine, purple ore veins, magnetic rocks, metallic walls, 5ft grid, top down view",
+        "lair": false,
+        "tier": 1,
+        "scalingMechanics": []
+    },
+    {
+        "name": "Webbed Shaft",
+        "level": 4,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 1500,
+        "monsters": [
+            {
+                "id": "phase-spider",
+                "count": 1
+            },
+            {
+                "id": "giant-spider",
+                "count": 4
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "ambushing",
+        "roomDescription": "You are climbing a vertical shaft choked with thick, sticky webs. Spiders scamper along the silk, defying gravity. One large arachnid flickers in and out of existence.",
+        "dmDescription": [
+            "Combat is vertical; players must climb ({{sm-0}}) or stick to the webs.",
+            "Fire clears the webs instantly, but anyone standing on burning web falls.",
+            "The Phase Spider ambushes from the Ethereal Plane, targeting climbers."
+        ],
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Reach the top or kill the brood",
+                "xpReward": 1500,
+                "goldReward": 60
+            }
+        ],
+        "aiRoomPrompt": "D&D battle map, vertical shaft, spider webs, dark pit, climbing gear, 5ft grid, top down view",
+        "lair": false,
+        "tier": 1,
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "skill",
+                "subType": "Athletics (STR) (Climb webs)",
+                "dc": 12
+            }
+        ]
+    },
+    {
+        "name": "Vertical Ooze",
+        "level": 4,
+        "type": "combat",
+        "difficulty": "low",
+        "xpBudget": 1000,
+        "monsters": [
+            {
+                "id": "gray-ooze",
+                "count": 10
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "hungry",
+        "roomDescription": "The stone ceiling above glistens with moisture. Suddenly, glob after glob of grey sludge detaches and falls, sizzling as it hits the floor.",
+        "dmDescription": [
+            "Oozes drip from above. Players must use the Study Action ({{sm-0}}) to predict which ceiling tiles are safe.",
+            "Gray Oozes corrode metal weapons (-1 penalty per hit).",
+            "This is a 'hazard' encounter; the sheer number of oozes makes movement treacherous."
+        ],
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Survive the rain",
+                "xpReward": 1000,
+                "goldReward": 50
+            }
+        ],
+        "aiRoomPrompt": "D&D battle map, dungeon room, dripping ceiling, puddles of acid, stone tiles, 5ft grid, top down view",
+        "lair": false,
+        "tier": 1,
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "skill",
+                "subType": "Investigation (INT) (Predict drips)",
+                "dc": 13
+            }
+        ]
+    },
+    {
+        "name": "Pillar Shuffle",
+        "level": 4,
+        "type": "combat",
+        "difficulty": "high",
+        "xpBudget": 2000,
+        "monsters": [
+            {
+                "id": "minotaur",
+                "count": 2
+            },
+            {
+                "id": "animated-armor",
+                "count": 3
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "territorial",
+        "roomDescription": "A maze of crumbling marble pillars fills this hall. Massive beast-men sharpen their horns on the stone, while suits of armor stand rigid like statues.",
+        "dmDescription": [
+            "Pillars provide Total Cover but collapse if hit by a Topple mastery or Minotaur charge.",
+            "Collapsing pillars deal 3d6 bludgeoning in a line.",
+            "Minotaurs charge through pillars to surprise players."
+        ],
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Navigate the maze and kill the guardians",
+                "xpReward": 2000,
+                "goldReward": 180
+            }
+        ],
+        "aiRoomPrompt": "D&D battle map, marble pillars, ruined temple, maze like, broken stone, 5ft grid, top down view",
+        "lair": false,
+        "tier": 1,
+        "scalingMechanics": []
+    },
+    {
+        "name": "Bioluminescent Hive",
+        "level": 4,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 1500,
+        "monsters": [
+            {
+                "id": "giant-scorpion",
+                "count": 1
+            },
+            {
+                "id": "giant-wasp",
+                "count": 8
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "defensive",
+        "roomDescription": "Pitch blackness. The only light comes from the bioluminescent glands of the insectoid horrors scuttling on the walls. A massive scorpion chitters in the dark.",
+        "dmDescription": [
+            "The room is magical darkness. Only glowing enemies are visible.",
+            "Hitting an enemy causes it to flare, lighting up 10ft radius for 1 round.",
+            "The scorpion tries to grapple and carry victims into the dark."
+        ],
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Exterminate the hive",
+                "xpReward": 1500,
+                "goldReward": 75
+            }
+        ],
+        "aiRoomPrompt": "D&D battle map, dark cave, glowing blue fungus, insect hive, organic walls, 5ft grid, top down view",
+        "lair": false,
+        "tier": 1,
+        "scalingMechanics": []
+    },
+    {
+        "name": "Rolling Boulder Trap",
+        "level": 4,
+        "type": "combat",
+        "difficulty": "low",
+        "xpBudget": 1000,
+        "monsters": [
+            {
+                "id": "goblin-boss",
+                "count": 2
+            },
+            {
+                "id": "goblin",
+                "count": 12
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "manic",
+        "roomDescription": "A circular chamber with a grooved track around the edge. Goblins jeer from a central platform. A massive stone sphere rumbles around the perimeter!",
+        "dmDescription": [
+            "On Initiative 20, the boulder moves 30ft along the track. Anyone hit takes 4d10 bludgeoning.",
+            "Goblin Bosses use Redirect Attack to swap places with players near the track.",
+            "Players can jump the track ({{sm-0}}) to reach the central platform."
+        ],
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Kill the goblin leadership",
+                "xpReward": 1000,
+                "goldReward": 50
+            }
+        ],
+        "aiRoomPrompt": "D&D battle map, circular room, stone track, giant boulder, central platform, 5ft grid, top down view",
+        "lair": false,
+        "tier": 1,
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "skill",
+                "subType": "Acrobatics (DEX) (Jump track)",
+                "dc": 14
+            }
+        ]
+    },
+    {
+        "name": "Necrotic Mist",
+        "level": 4,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 1500,
+        "monsters": [
+            {
+                "id": "wight",
+                "count": 1
+            },
+            {
+                "id": "shadow",
+                "count": 8
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "hateful",
+        "roomDescription": "A waist-high purple fog swirls across the floor of this ossuary. Shadows seem to detach from the walls and lengthen toward you.",
+        "dmDescription": [
+            "The mist prevents any healing while standing within it.",
+            "Shadows hide in the mist ({{sm-0}} to spot) and drain Strength.",
+            "The Wight commands the shadows to flank spellcasters."
+        ],
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Banish the darkness",
+                "xpReward": 1500,
+                "goldReward": 90
+            }
+        ],
+        "aiRoomPrompt": "D&D battle map, ossuary, purple mist, bones, dark stone, gothic atmosphere, 5ft grid, top down view",
+        "lair": false,
+        "tier": 1,
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "skill",
+                "subType": "Perception (WIS) (Spot shadows)",
+                "dc": 15
+            }
+        ]
+    },
+    {
+        "name": "Mirror Mine",
+        "level": 4,
+        "type": "combat",
+        "difficulty": "high",
+        "xpBudget": 2000,
+        "monsters": [
+            {
+                "id": "doppelganger",
+                "count": 2
+            },
+            {
+                "id": "animated-armor",
+                "count": 3
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "deceptive",
+        "roomDescription": "Walls of polished obsidian reflect your image a thousand times. You see your party members attacking you... or are they?",
+        "dmDescription": [
+            "Walls reflect spells: any ranged spell attack that misses has a 50% chance to redirect at a random target.",
+            "Doppelgangers take the appearance of party members to cause confusion.",
+            "Armors are polished to a mirror sheen, imposing Disadvantage on first attacks."
+        ],
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Reveal and defeat the shapeshifters",
+                "xpReward": 2000,
+                "goldReward": 150
+            },
+            {
+                "condition": "Shatter the mirrors ({{sm-0}})",
+                "xpReward": 1800,
+                "goldReward": 0
+            }
+        ],
+        "aiRoomPrompt": "D&D battle map, obsidian walls, mirror reflections, crystal cave, shiny surfaces, 5ft grid, top down view",
+        "lair": false,
+        "tier": 1,
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "skill",
+                "subType": "Athletics (STR) (Shatter walls)",
+                "dc": 16
+            }
+        ]
+    },
+    {
+        "name": "Pendulum Blade Hallway",
+        "level": 4,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 1500,
+        "monsters": [
+            {
+                "id": "veteran",
+                "count": 1
+            },
+            {
+                "id": "scout",
+                "count": 8
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "tactical",
+        "roomDescription": "A long hallway filled with swinging scythe blades. Archers wait at the far end behind barricades, while a heavily armored warrior holding a lever laughs.",
+        "dmDescription": [
+            "Blades swing on initiative 10. DC 14 Dex save or take 2d8 slashing.",
+            "Enemies use the Slow mastery to reduce player speed, keeping them in the blade zone.",
+            "The Veteran uses the lever to change blade patterns.",
+            "Scouts use the barricades for 3/4 cover."
+        ],
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Reach the end and kill the ambushers",
+                "xpReward": 1500,
+                "goldReward": 100
+            }
+        ],
+        "aiRoomPrompt": "D&D battle map, long hallway, swinging blades, barricades, stone floor, traps, 5ft grid, top down view",
+        "lair": false,
+        "tier": 1,
+        "scalingMechanics": []
+    },
+    {
+        "name": "Gemstone Golem Lab",
+        "level": 4,
+        "type": "combat",
+        "difficulty": "high",
+        "xpBudget": 2000,
+        "monsters": [
+            {
+                "id": "helmed-horror",
+                "count": 1
+            },
+            {
+                "id": "animated-armor",
+                "count": 4
+            },
+            {
+                "id": "flying-sword",
+                "count": 2
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "robotic",
+        "roomDescription": "A pristine laboratory lined with glowing crystals. A suit of plate armor crackling with energy stands guard. As you enter, the other suits turn their heads in unison.",
+        "dmDescription": [
+            "Shattering wall crystals (AC 10, 5 HP) grants Heroic Inspiration to the breaker but alerts 1d4 more flying swords.",
+            "The Helmed Horror is the lab warden, prioritizing spellcasters.",
+            "Animated Armors attempt to grapple intruders."
+        ],
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Deactivate the security",
+                "xpReward": 2000,
+                "goldReward": 250
+            }
+        ],
+        "aiRoomPrompt": "D&D battle map, arcane lab, glowing crystals, constructs, clean stone, magic circle, 5ft grid, top down view",
+        "lair": false,
+        "tier": 1,
+        "scalingMechanics": []
+    },
+    {
+        "name": "Sinking Sand Pit",
+        "level": 4,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 1500,
+        "monsters": [
+            {
+                "id": "giant-scorpion",
+                "count": 2
+            },
+            {
+                "id": "dust-mephit",
+                "count": 1
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "lurking",
+        "roomDescription": "The floor of this room is loose sand that churns like water. Rusted iron rings are set into the walls just above the surface. Something large moves beneath the grit.",
+        "dmDescription": [
+            "The sand is difficult terrain and sinkhole hazard.",
+            "Players must Grapple wall-rings ({{sm-0}}) to stay above the surface.",
+            "Scorpions use tremorsense to attack from below.",
+            "The Mephit uses its breath to blind players hanging from rings."
+        ],
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Survive the pit",
+                "xpReward": 1500,
+                "goldReward": 60
+            }
+        ],
+        "aiRoomPrompt": "D&D battle map, sand pit, desert ruins, wall rings, sinking hazards, 5ft grid, top down view",
+        "lair": false,
+        "tier": 1,
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "skill",
+                "subType": "Athletics (STR) (Hold ring)",
+                "dc": 13
+            }
+        ]
+    },
+    {
+        "name": "Arcane Vacuum",
+        "level": 4,
+        "type": "combat",
+        "difficulty": "high",
+        "xpBudget": 2000,
+        "monsters": [
+            {
+                "id": "spectator",
+                "count": 2
+            },
+            {
+                "id": "spined-devil",
+                "count": 3
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "alien",
+        "roomDescription": "A void of silence. Sound is baffled here. Floating eyes with stalks examine you, while small winged devils perch on floating debris.",
+        "dmDescription": [
+            "The room is under a permanent Silence effect (no verbal components).",
+            "Spectators reflect spells that don't need verbal components.",
+            "Spined Devils fly out of reach and rain spines.",
+            "Players can destroy the silence crystal (AC 15, 20 HP) to restore sound."
+        ],
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Defeat the magic-eaters",
+                "xpReward": 2000,
+                "goldReward": 180
+            }
+        ],
+        "aiRoomPrompt": "D&D battle map, void, floating debris, purple nebula background, magical silence, 5ft grid, top down view",
+        "lair": false,
+        "tier": 1,
+        "scalingMechanics": []
+    },
+    {
+        "name": "Chain Gang",
+        "level": 4,
+        "type": "combat",
+        "difficulty": "low",
+        "xpBudget": 1000,
+        "monsters": [
+            {
+                "id": "hobgoblin-captain",
+                "count": 1
+            },
+            {
+                "id": "hobgoblin",
+                "count": 3
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "disciplined",
+        "roomDescription": "A prison transport gone wrong. Hobgoblins in riot gear stand ready. Chains litter the floor, some still attached to manacles.",
+        "dmDescription": [
+            "Enemies try to use the manacles to chain themselves to players.",
+            "If chained, moving one drags the other ({{sm-0}} contest).",
+            "Hobgoblins use Martial Advantage on chained targets."
+        ],
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Break the line",
+                "xpReward": 1000,
+                "goldReward": 40
+            }
+        ],
+        "aiRoomPrompt": "D&D battle map, dungeon jail, iron bars, chains, torture rack, 5ft grid, top down view",
+        "lair": false,
+        "tier": 1,
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "skill",
+                "subType": "Athletics (STR) (Resist drag)",
+                "dc": 14
+            }
+        ]
+    },
+    {
+        "name": "Garbage Compactor",
+        "level": 4,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 1500,
+        "monsters": [
+            {
+                "id": "black-pudding",
+                "count": 1
+            },
+            {
+                "id": "gray-ooze",
+                "count": 4
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "mindless",
+        "roomDescription": "A trash pit filled with refuse. The walls screech as they slowly grind inward. Amidst the garbage, pools of black sludge rise up.",
+        "dmDescription": [
+            "The walls close in every round, reducing grid size by 1 square on all sides.",
+            "Black Pudding splits if hit by slashing or lightning.",
+            "Gray Oozes hide in the trash (Advantage Stealth).",
+            "Players can jam the mechanism ({{sm-0}}) to stop the walls."
+        ],
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Survive the compaction",
+                "xpReward": 1500,
+                "goldReward": 0
+            }
+        ],
+        "aiRoomPrompt": "D&D battle map, trash pit, moving walls, garbage piles, sludge, mechanical gears, 5ft grid, top down view",
+        "lair": false,
+        "tier": 1,
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "skill",
+                "subType": "Thieves Tools (DEX) (Jam gears)",
+                "dc": 15
+            }
+        ]
+    },
+    {
+        "name": "Bat Colony",
+        "level": 4,
+        "type": "combat",
+        "difficulty": "low",
+        "xpBudget": 1000,
+        "monsters": [
+            {
+                "id": "spined-devil",
+                "count": 2
+            },
+            {
+                "id": "swarm-of-bats",
+                "count": 2
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "chaotic",
+        "roomDescription": "The ceiling is alive. Thousands of leathery wings beat the air, creating a confusing storm of noise. Two small devils laugh as they direct the swarm.",
+        "dmDescription": [
+            "Bat swarms give the Blinded condition to anyone in their space not holding a light source.",
+            "Spined Devils use the cover of the swarm to snipe.",
+            "Area attacks disperse the bats."
+        ],
+        "size": 1,
+        "winConditions": [
+            {
+                "condition": "Clear the roost",
+                "xpReward": 1000,
+                "goldReward": 20
+            }
+        ],
+        "aiRoomPrompt": "D&D battle map, cave ceiling, guano, flying bats, stalactites, 5ft grid, top down view",
+        "lair": false,
+        "tier": 1,
+        "scalingMechanics": []
     }
 ]
