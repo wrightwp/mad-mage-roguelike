@@ -15,6 +15,7 @@ export interface ScalingMechanic {
 interface BaseEncounterData {
     id?: string; // Optional unique ID for tracking
     name: string;
+    tier?: number; // Tier 1, 2, 3 etc.
     level: number; // Corresponds to Floor/CR
     difficulty: EncounterDifficulty;
     roomDescription: string; // Description visible to players

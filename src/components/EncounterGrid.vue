@@ -165,6 +165,24 @@ const getDifficultyColor = (difficulty: string): string => {
   }
 };
 
+const encounterStats = computed(() => {
+  const stats: Record<number, { total: number; byType: Record<string, number> }> = {};
+
+  allEncounters.value.forEach(enc => {
+    const tier = enc.tier || (enc.level <= 4 ? 1 : enc.level <= 10 ? 2 : 3);
+    
+    if (!stats[tier]) {
+      stats[tier] = { total: 0, byType: {} };
+    }
+    
+    stats[tier].total++;
+    const type = enc.type;
+    stats[tier].byType[type] = (stats[tier].byType[type] || 0) + 1;
+  });
+
+  return stats;
+});
+
 
 </script>
 
@@ -179,6 +197,23 @@ const getDifficultyColor = (difficulty: string): string => {
         <span v-else>
           {{ allEncounters.length }} total encounter{{ allEncounters.length !== 1 ? 's' : '' }}
         </span>
+      </div>
+    </div>
+
+    <!-- Tier Statistics -->
+    <div v-if="!isFiltered && allEncounters.length > 0" class="px-4 py-3 border-b border-slate-800 bg-slate-900/30 text-xs">
+      <h3 class="text-[10px] uppercase tracking-widest text-slate-500 mb-2 font-bold">Instance Statistics</h3>
+      <div v-for="(stat, tier) in encounterStats" :key="tier" class="mb-3 last:mb-0">
+        <div class="flex justify-between items-center mb-1">
+          <span class="text-amber-500 font-bold">Tier {{ tier }}</span>
+          <span class="text-slate-400">{{ stat.total }} encounters</span>
+        </div>
+        <div class="flex flex-wrap gap-x-3 gap-y-1">
+          <div v-for="(count, type) in stat.byType" :key="type" class="flex items-center gap-1.5">
+            <span class="w-1.5 h-1.5 rounded-full" :class="getTypeColor(type as EncounterType)"></span>
+            <span class="text-slate-300">{{ type }}: <span class="text-slate-500">{{ count }}</span></span>
+          </div>
+        </div>
       </div>
     </div>
 
