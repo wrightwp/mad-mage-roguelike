@@ -1,0 +1,101 @@
+Starting Dungeon Generation Statistics (100 runs per floor, Floors 1-4)...
+
+--- Floor 1 (Party Level 1, 100 runs) ---
+Total Encounters Generated: 5703
+Fallbacks (Default *): 0 (0.00%)
+
+By Type:
+  combat: 3503 (61.4%)
+  exploration: 1100 (19.3%)
+  treasure: 400 (7.0%)
+  social: 300 (5.3%)
+  rest: 300 (5.3%)
+  boss: 100 (1.8%)
+
+Top 10 Encounters:
+  The Yawning Portal: 100
+  Cultist Ritual: 73
+  Spider Nest: 73
+  Zombie Horde: 72
+  Kobold Trappers: 71
+  The Celestial Alignment: 68
+  The Trapped Library: 67
+  The Runic Sequence: 66
+  The Old Barracks: 65
+  The Collapsed Tunnel: 64
+
+
+--- Floor 2 (Party Level 2, 100 runs) ---
+Total Encounters Generated: 5735
+Fallbacks (Default *): 0 (0.00%)
+
+By Type:
+  combat: 3535 (61.6%)
+  exploration: 1100 (19.2%)
+  treasure: 400 (7.0%)
+  rest: 300 (5.2%)
+  social: 300 (5.2%)
+  boss: 100 (1.7%)
+
+Top 10 Encounters:
+  The Yawning Portal: 100
+  The Needle Trap Chest: 100
+  The Cursed Hoard: 100
+  The Collapsing Alcove: 100
+  The Decoy Vault: 100
+  The Shifting Tiles: 90
+  The Scales of Balance: 89
+  The Celestial Alignment: 89
+  The Mirror Hall: 88
+  The Mirror Maze: 88
+
+
+--- Floor 3 (Party Level 3, 100 runs) ---
+Total Encounters Generated: 5738
+Fallbacks (Default *): 1100 (19.17%)
+
+By Type:
+  combat: 3538 (61.7%)
+  exploration: 1100 (19.2%)
+  treasure: 400 (7.0%)
+  rest: 300 (5.2%)
+  social: 300 (5.2%)
+  boss: 100 (1.7%)
+
+Top 10 Encounters:
+  Default Exploration: 600
+  Default Treasure: 400
+  The Yawning Portal: 100
+  The Arcane Laboratory: 100
+  The Chessboard Trap: 100
+  The Desperate Cultist: 100
+  The Shifting Tiles: 100
+  The Timekeeper's Riddle: 100
+  The Myconid Circle: 100
+  Default Social: 100
+
+
+--- Floor 4 (Party Level 4, 100 runs) ---
+Total Encounters Generated: 5704
+Fallbacks (Default *): 1700 (29.80%)
+
+By Type:
+  combat: 3504 (61.4%)
+  exploration: 1100 (19.3%)
+  treasure: 400 (7.0%)
+  rest: 300 (5.3%)
+  social: 300 (5.3%)
+  boss: 100 (1.8%)
+
+Top 10 Encounters:
+  Default Exploration: 1000
+  Default Treasure: 400
+  Default Social: 300
+  The Yawning Portal: 100
+  The Abandoned Guard Post: 79
+  The Sacred Spring: 76
+  The Hidden Alcove: 74
+  Echoing Hall: 72
+  The Old Barracks: 71
+  Ooze Pit: 71
+
