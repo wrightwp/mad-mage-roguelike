@@ -176,6 +176,14 @@ const copyToClipboard = async (text: string) => {
               <span class="font-semibold">Reward:</span>
               <span class="text-slate-300">{{ winCondition.reward }}</span>
             </div>
+            <div class="flex gap-3 mt-1.5" v-if="winCondition.xpReward || winCondition.goldReward">
+              <span v-if="winCondition.xpReward" class="text-[10px] bg-indigo-900/60 text-indigo-200 px-1.5 py-0.5 rounded border border-indigo-700/50">
+                +{{ winCondition.xpReward }} XP
+              </span>
+              <span v-if="winCondition.goldReward" class="text-[10px] bg-amber-900/60 text-amber-200 px-1.5 py-0.5 rounded border border-amber-700/50">
+                +{{ winCondition.goldReward }} GP
+              </span>
+            </div>
           </div>
         </div>
       </div>

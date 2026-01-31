@@ -97,6 +97,18 @@ const resetFeedback = () => {
   jsonError.value = null;
   showRawJson.value = false;
 };
+const addWinCondition = () => {
+  if (!draftEncounter.value.winConditions) {
+    draftEncounter.value.winConditions = [];
+  }
+  
+  draftEncounter.value.winConditions.push({
+    condition: '',
+    reward: '',
+    xpReward: 0,
+    goldReward: 0
+  });
+};
 </script>
 
 <template>
@@ -194,10 +206,82 @@ const resetFeedback = () => {
       <div>
         <label class="block text-[10px] text-slate-500 uppercase tracking-wider mb-1">AI Room Prompt</label>
         <textarea
-          v-model="draftEncounter.aiRoomPrompt"
-          rows="2"
-          class="w-full bg-slate-900/70 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-200 focus:outline-none focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20"
         ></textarea>
+      </div>
+
+      <!-- Win Conditions Editor -->
+      <div class="space-y-2">
+        <label class="block text-[10px] text-slate-500 uppercase tracking-wider">Win Conditions</label>
+        
+        <div v-if="draftEncounter.winConditions && draftEncounter.winConditions.length > 0" class="space-y-3">
+          <div 
+            v-for="(wc, index) in draftEncounter.winConditions" 
+            :key="index"
+            class="bg-slate-900/40 border border-slate-700/50 rounded-lg p-3 space-y-2 relative"
+          >
+            <!-- Remove Button -->
+            <button 
+              @click="draftEncounter.winConditions?.splice(index, 1)"
+              class="absolute top-2 right-2 text-slate-500 hover:text-red-400 transition-colors text-xs"
+              title="Remove Condition"
+            >
+              ✕
+            </button>
+
+            <!-- Condition -->
+            <div>
+              <label class="block text-[9px] text-slate-600 uppercase tracking-wider mb-0.5">Condition</label>
+              <input
+                v-model="wc.condition"
+                type="text"
+                class="w-full bg-slate-900/60 border border-slate-700/50 rounded px-2 py-1.5 text-xs text-slate-200 focus:outline-none focus:border-amber-500/50"
+                placeholder="e.g. Defeat the boss"
+              />
+            </div>
+
+            <!-- Reward Text -->
+            <div>
+              <label class="block text-[9px] text-slate-600 uppercase tracking-wider mb-0.5">Narrative Reward</label>
+              <input
+                v-model="wc.reward"
+                type="text"
+                class="w-full bg-slate-900/60 border border-slate-700/50 rounded px-2 py-1.5 text-xs text-slate-200 focus:outline-none focus:border-amber-500/50"
+                placeholder="e.g. The door unlocks"
+              />
+            </div>
+
+            <!-- Numeric Rewards -->
+            <div class="grid grid-cols-2 gap-2">
+              <div>
+                <label class="block text-[9px] text-slate-600 uppercase tracking-wider mb-0.5">XP</label>
+                <input
+                  v-model.number="wc.xpReward"
+                  type="number"
+                  class="w-full bg-slate-900/60 border border-slate-700/50 rounded px-2 py-1.5 text-xs text-slate-200 focus:outline-none focus:border-amber-500/50"
+                />
+              </div>
+              <div>
+                <label class="block text-[9px] text-slate-600 uppercase tracking-wider mb-0.5">Gold</label>
+                <input
+                  v-model.number="wc.goldReward"
+                  type="number"
+                  class="w-full bg-slate-900/60 border border-slate-700/50 rounded px-2 py-1.5 text-xs text-slate-200 focus:outline-none focus:border-amber-500/50"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div v-else class="text-xs text-slate-600 italic px-2">
+          No win conditions defined.
+        </div>
+
+        <button
+          @click="addWinCondition"
+          class="w-full py-1.5 border border-dashed border-slate-700 text-slate-500 hover:text-amber-500 hover:border-amber-500/50 rounded text-xs transition-colors flex items-center justify-center gap-1"
+        >
+          <span>+</span> Add Win Condition
+        </button>
       </div>
 
       <div>
