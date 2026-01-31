@@ -253,17 +253,22 @@ export const generateDungeon = (
     const partyHighBudget = calculatePartyXPBudget(averagePartyLevel, partySize, EncounterDifficulty.High);
     const maxXPBudget = partyHighBudget * 2;
 
+    // Calculate the minimum XP budget (half of party's Low budget)
+    // This filters out encounters that would be too easy/weak for the party
+    const partyLowBudget = calculatePartyXPBudget(averagePartyLevel, partySize, EncounterDifficulty.Low);
+    const minXPBudget = Math.floor(partyLowBudget / 2);
+
     // Final pass for encounter data assignment
     standardNodes.forEach((node) => {
         // Get encounter type for this node
         const encounterType = encounterTypeMap[node.type] || EncounterType.Combat;
 
         // Get appropriate encounter for party level (determines tier), excluding already-used encounters
-        // Also filter by maxXPBudget to ensure encounters are within scaling range
+        // Also filter by min/max XP budget to ensure encounters are within scaling range
         let encounter = encounterLibrary.getRandomEncounter(
             averagePartyLevel,
             encounterType,
-            { excludeNames: usedEncounterNames, maxXPBudget }
+            { excludeNames: usedEncounterNames, minXPBudget, maxXPBudget }
         );
 
         if (encounter) {
@@ -291,7 +296,7 @@ export const generateDungeon = (
     // Special handling for Boss Node
     const bossNode = layers[layersPerFloor - 1][0];
     if (bossNode && bossNode.type === NodeType.Boss) {
-        let bossEncounter = encounterLibrary.getRandomEncounter(averagePartyLevel, EncounterType.Boss, { maxXPBudget });
+        let bossEncounter = encounterLibrary.getRandomEncounter(averagePartyLevel, EncounterType.Boss, { minXPBudget, maxXPBudget });
 
         // Fallback to High Difficulty Combat if no Boss encounter found
         if (!bossEncounter) {
@@ -299,7 +304,7 @@ export const generateDungeon = (
             bossEncounter = encounterLibrary.getRandomEncounter(
                 averagePartyLevel,
                 EncounterType.Combat,
-                { difficulty: EncounterDifficulty.High, maxXPBudget }
+                { difficulty: EncounterDifficulty.High, minXPBudget, maxXPBudget }
             ) as any; // Cast as any because we're assigning a Combat encounter to a slot meant for Boss type logically, though the field is generic EncounterData
 
             // If even that fails, we can't do much, but the system handles null encounter.

@@ -74,7 +74,7 @@ export class EncounterLibrary {
     getRandomEncounter(
         floor: number,
         type: EncounterType,
-        options?: { difficulty?: EncounterDifficulty; excludeNames?: string[]; maxXPBudget?: number }
+        options?: { difficulty?: EncounterDifficulty; excludeNames?: string[]; minXPBudget?: number; maxXPBudget?: number }
     ): EncounterData | null {
         // Hardcoded Default Encounters to ensure availability
         const DEFAULT_ENCOUNTERS: Partial<Record<EncounterType, EncounterData>> = {
@@ -145,6 +145,16 @@ export class EncounterLibrary {
                 // xpBudget may not exist on all encounter types (e.g., Rest)
                 const encounterXP = 'xpBudget' in e ? (e.xpBudget as number) || 0 : 0;
                 return encounterXP <= options.maxXPBudget!;
+            });
+        }
+
+        // Filter by min XP budget to exclude encounters that would be too weak
+        if (options?.minXPBudget) {
+            matching = matching.filter(e => {
+                // xpBudget may not exist on all encounter types (e.g., Rest)
+                const encounterXP = 'xpBudget' in e ? (e.xpBudget as number) || 0 : 0;
+                // Encounters without xpBudget (like Rest) pass through
+                return encounterXP === 0 || encounterXP >= options.minXPBudget!;
             });
         }
 
