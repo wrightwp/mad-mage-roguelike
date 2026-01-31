@@ -109,6 +109,22 @@ const addWinCondition = () => {
     goldReward: 0
   });
 };
+
+const addScalingMechanic = () => {
+  if (!draftEncounter.value.scalingMechanics) {
+    draftEncounter.value.scalingMechanics = [];
+  }
+  
+  const id = `sm-${draftEncounter.value.scalingMechanics.length + 1}`;
+  
+  draftEncounter.value.scalingMechanics.push({
+    type: 'trap',
+    id: id,
+    subType: '',
+    dc: 15,
+    damage: ''
+  });
+};
 </script>
 
 <template>
@@ -206,67 +222,67 @@ const addWinCondition = () => {
       <div>
         <label class="block text-[10px] text-slate-500 uppercase tracking-wider mb-1">AI Room Prompt</label>
         <textarea
+          v-model="draftEncounter.aiRoomPrompt"
+          rows="3"
+          class="w-full bg-slate-900/70 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-200 focus:outline-none focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20"
         ></textarea>
       </div>
 
-      <!-- Win Conditions Editor -->
-      <div class="space-y-2">
+      <div class="space-y-2 mt-2">
         <label class="block text-[10px] text-slate-500 uppercase tracking-wider">Win Conditions</label>
         
-        <div v-if="draftEncounter.winConditions && draftEncounter.winConditions.length > 0" class="space-y-3">
+        <div v-if="draftEncounter.winConditions && draftEncounter.winConditions.length > 0" class="space-y-2">
           <div 
             v-for="(wc, index) in draftEncounter.winConditions" 
             :key="index"
-            class="bg-slate-900/40 border border-slate-700/50 rounded-lg p-3 space-y-2 relative"
+            class="bg-slate-900/40 border border-slate-700/50 rounded px-2 py-2 relative group"
           >
-            <!-- Remove Button -->
-            <button 
-              @click="draftEncounter.winConditions?.splice(index, 1)"
-              class="absolute top-2 right-2 text-slate-500 hover:text-red-400 transition-colors text-xs"
-              title="Remove Condition"
-            >
-              ✕
-            </button>
-
-            <!-- Condition -->
-            <div>
-              <label class="block text-[9px] text-slate-600 uppercase tracking-wider mb-0.5">Condition</label>
+            <!-- Inputs Grid -->
+            <div class="flex flex-col gap-1.5">
+              <!-- Row 1: Condition -->
               <input
                 v-model="wc.condition"
                 type="text"
-                class="w-full bg-slate-900/60 border border-slate-700/50 rounded px-2 py-1.5 text-xs text-slate-200 focus:outline-none focus:border-amber-500/50"
-                placeholder="e.g. Defeat the boss"
+                class="w-full bg-transparent border-b border-slate-700/50 text-xs text-slate-200 placeholder-slate-600 focus:outline-none focus:border-amber-500/50 pb-0.5"
+                placeholder="Condition (e.g. Defeat the boss)"
               />
-            </div>
-
-            <!-- Reward Text -->
-            <div>
-              <label class="block text-[9px] text-slate-600 uppercase tracking-wider mb-0.5">Narrative Reward</label>
-              <input
-                v-model="wc.reward"
-                type="text"
-                class="w-full bg-slate-900/60 border border-slate-700/50 rounded px-2 py-1.5 text-xs text-slate-200 focus:outline-none focus:border-amber-500/50"
-                placeholder="e.g. The door unlocks"
-              />
-            </div>
-
-            <!-- Numeric Rewards -->
-            <div class="grid grid-cols-2 gap-2">
-              <div>
-                <label class="block text-[9px] text-slate-600 uppercase tracking-wider mb-0.5">XP</label>
+              
+              <!-- Row 2: Rewards & Controls -->
+              <div class="flex items-center gap-2">
                 <input
-                  v-model.number="wc.xpReward"
-                  type="number"
-                  class="w-full bg-slate-900/60 border border-slate-700/50 rounded px-2 py-1.5 text-xs text-slate-200 focus:outline-none focus:border-amber-500/50"
+                  v-model="wc.reward"
+                  type="text"
+                  class="flex-1 bg-transparent border-b border-slate-700/50 text-[11px] text-slate-300 placeholder-slate-600 focus:outline-none focus:border-amber-500/50 pb-0.5"
+                  placeholder="Narrative Reward"
                 />
-              </div>
-              <div>
-                <label class="block text-[9px] text-slate-600 uppercase tracking-wider mb-0.5">Gold</label>
-                <input
-                  v-model.number="wc.goldReward"
-                  type="number"
-                  class="w-full bg-slate-900/60 border border-slate-700/50 rounded px-2 py-1.5 text-xs text-slate-200 focus:outline-none focus:border-amber-500/50"
-                />
+                
+                <div class="flex items-center gap-1 w-16">
+                  <span class="text-[9px] text-slate-500 select-none">XP</span>
+                  <input
+                    v-model.number="wc.xpReward"
+                    type="number"
+                    class="w-full bg-slate-800/50 border-none rounded px-1 py-0.5 text-[10px] text-right text-slate-300 focus:outline-none focus:ring-1 focus:ring-amber-500/20"
+                    placeholder="0"
+                  />
+                </div>
+
+                <div class="flex items-center gap-1 w-16">
+                  <span class="text-[9px] text-slate-500 select-none">GP</span>
+                  <input
+                    v-model.number="wc.goldReward"
+                    type="number"
+                    class="w-full bg-slate-800/50 border-none rounded px-1 py-0.5 text-[10px] text-right text-amber-300 focus:outline-none focus:ring-1 focus:ring-amber-500/20"
+                    placeholder="0"
+                  />
+                </div>
+
+                <button 
+                  @click="draftEncounter.winConditions?.splice(index, 1)"
+                  class="text-slate-600 hover:text-red-400 transition-colors px-1"
+                  title="Remove Condition"
+                >
+                  ✕
+                </button>
               </div>
             </div>
           </div>
@@ -278,10 +294,91 @@ const addWinCondition = () => {
 
         <button
           @click="addWinCondition"
-          class="w-full py-1.5 border border-dashed border-slate-700 text-slate-500 hover:text-amber-500 hover:border-amber-500/50 rounded text-xs transition-colors flex items-center justify-center gap-1"
+          class="w-full py-1.5 border border-dashed border-slate-700 text-slate-500 hover:text-amber-500 hover:border-amber-500/50 rounded text-xs transition-colors flex items-center justify-center gap-1 mt-2"
         >
           <span>+</span> Add Win Condition
         </button>
+
+      <div class="space-y-2 mt-2">
+        <label class="block text-[10px] text-slate-500 uppercase tracking-wider">Scaling Mechanics</label>
+        
+        <div v-if="draftEncounter.scalingMechanics && draftEncounter.scalingMechanics.length > 0" class="space-y-2">
+          <div 
+            v-for="(mechanic, index) in draftEncounter.scalingMechanics" 
+            :key="index"
+            class="bg-slate-900/40 border border-slate-700/50 rounded px-2 py-2 relative group"
+          >
+            <!-- Inputs Grid -->
+            <div class="flex flex-col gap-1.5">
+              <div class="flex items-center gap-2">
+                <!-- Type Select -->
+                <select
+                  v-model="mechanic.type"
+                  class="w-24 bg-transparent border-b border-slate-700/50 text-xs text-slate-200 focus:outline-none focus:border-amber-500/50 pb-0.5 uppercase font-bold tracking-wider"
+                >
+                  <option value="trap">Trap</option>
+                  <option value="hazard">Hazard</option>
+                  <option value="skill">Skill</option>
+                  <option value="puzzle">Puzzle</option>
+                  <option value="other">Other</option>
+                </select>
+
+                <!-- SubType (Name) -->
+                <input
+                  v-model="mechanic.subType"
+                  type="text"
+                  class="flex-1 bg-transparent border-b border-slate-700/50 text-xs text-slate-200 placeholder-slate-600 focus:outline-none focus:border-amber-500/50 pb-0.5"
+                  placeholder="Details (e.g. Dex Save, Athletics)"
+                />
+              </div>
+              
+              <!-- Row 2: Mechanics & ID -->
+              <div class="flex items-center gap-2">
+                <div class="text-[10px] text-slate-500 font-mono select-none">{{ mechanic.id }}</div>
+
+                <div class="flex items-center gap-1 w-16">
+                  <span class="text-[9px] text-slate-500 select-none">DC</span>
+                  <input
+                    v-model.number="mechanic.dc"
+                    type="number"
+                    class="w-full bg-slate-800/50 border-none rounded px-1 py-0.5 text-[10px] text-right text-slate-300 focus:outline-none focus:ring-1 focus:ring-amber-500/20"
+                    placeholder="-"
+                  />
+                </div>
+
+                <div class="flex items-center gap-1 flex-1">
+                  <span class="text-[9px] text-slate-500 select-none">DMG</span>
+                  <input
+                    v-model="mechanic.damage"
+                    type="text"
+                    class="w-full bg-slate-800/50 border-none rounded px-1 py-0.5 text-[10px] text-slate-300 focus:outline-none focus:ring-1 focus:ring-amber-500/20"
+                    placeholder="e.g. 2d6 fire"
+                  />
+                </div>
+
+                <button 
+                  @click="draftEncounter.scalingMechanics?.splice(index, 1)"
+                  class="text-slate-600 hover:text-red-400 transition-colors px-1"
+                  title="Remove Mechanic"
+                >
+                  ✕
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div v-else class="text-xs text-slate-600 italic px-2">
+          No scaling mechanics defined.
+        </div>
+
+        <button
+          @click="addScalingMechanic"
+          class="w-full py-1.5 border border-dashed border-slate-700 text-slate-500 hover:text-amber-500 hover:border-amber-500/50 rounded text-xs transition-colors flex items-center justify-center gap-1 mt-2"
+        >
+          <span>+</span> Add Scaling Mechanic
+        </button>
+      </div>
       </div>
 
       <div>

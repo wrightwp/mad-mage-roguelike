@@ -1,7 +1,7 @@
 import { ref, onMounted, onUnmounted } from 'vue';
 
 export const useResizablePanel = () => {
-    const leftPanelWidth = ref(500);
+    const leftPanelWidth = ref(600);
     const isResizingLeft = ref(false);
 
     const startResizingLeft = (e: MouseEvent) => {

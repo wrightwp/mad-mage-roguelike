@@ -1,23 +1,15 @@
 <script setup lang="ts">
-import { ref, computed } from 'vue';
+import { ref, computed, watch } from 'vue';
 import { encounterLibrary } from '../data/encounterLibrary';
 import type { EncounterData } from '../types';
 import { EncounterType } from '../types';
+import CreateEncounterModal from './CreateEncounterModal.vue';
 import EncounterContent from './EncounterContent.vue';
 import EncounterFeedbackPanel from './EncounterFeedbackPanel.vue';
+import { useEncounterFeedbackStore } from '../stores/useEncounterFeedbackStore';
 
-interface Props {
-  mapData: any;
-  selectedNode: any;
-  revealAll: boolean;
-}
-
-interface Emits {
-  (e: 'selectEncounter', node: any): void;
-}
-
-defineProps<Props>();
-defineEmits<Emits>();
+const feedbackStore = useEncounterFeedbackStore();
+const showCreateModal = ref(false);
 
 // Get all encounters from the library
 const allEncounters = ref<EncounterData[]>([]);
@@ -38,20 +30,59 @@ const loadEncounters = () => {
   const uniqueEncounters = Array.from(
     new Map(encounters.map(e => [e.name, e])).values()
   );
-  
-  allEncounters.value = uniqueEncounters;
+
+  // Add custom encounters from feedback store
+  const customEncounters = feedbackStore.feedbackList
+    .filter(entry => entry.key.startsWith('custom-'))
+    .map(entry => entry.edited);
+    
+  // Merge custom encounters
+  // We prioritize custom encounters if there's a name collision, though there shouldn't be with unique naming
+  allEncounters.value = [...uniqueEncounters, ...customEncounters];
 };
 
 loadEncounters();
 
+// Watch for changes in feedback store to update list (e.g. if name changes or new one added)
+// Note: We need deep watch or watch the list length/contents
+watch(() => feedbackStore.feedbackList, () => {
+  loadEncounters();
+}, { deep: true });
+
+const createNewEncounter = () => {
+  showCreateModal.value = true;
+};
+
+const handleEncounterCreated = (encounter: EncounterData) => {
+  // Force expand the new row and filter to it so the user sees it
+  // We need to wait for the watch to trigger and update the list (which happens in the modal save)
+  setTimeout(() => {
+    clearFilters();
+    nameFilter.value = encounter.name;
+    if (!expandedRows.value.has(encounter.name)) {
+      expandedRows.value.add(encounter.name);
+    }
+  }, 100);
+};
+
 // Sorting state
-type SortColumn = 'name' | 'type' | 'difficulty' | 'level' | 'xp';
+type SortColumn = 'name' | 'type' | 'difficulty' | 'level' | 'xp' | 'tier';
 const sortBy = ref<SortColumn>('level');
 const sortDirection = ref<'asc' | 'desc'>('asc');
 
 // Filter state
 const nameFilter = ref('');
 const typeFilter = ref<EncounterType | 'all'>('all');
+const tierFilter = ref<number | 'all'>('all');
+
+// Helper to get Tier
+const getTier = (encounter: EncounterData): number => {
+  if (encounter.tier) return encounter.tier;
+  if (encounter.level <= 4) return 1;
+  if (encounter.level <= 10) return 2;
+  if (encounter.level <= 16) return 3; // Adjusted to standard play tiers roughly (1-4, 5-10, 11-16, 17-20)
+  return 4;
+};
 
 // Toggle sort column
 const toggleSort = (column: SortColumn) => {
@@ -79,16 +110,18 @@ const getXP = (encounter: EncounterData): number => {
 const filteredEncounters = computed(() => {
   const nameQuery = nameFilter.value.trim().toLowerCase();
   const typeQuery = typeFilter.value;
+  const tierQuery = tierFilter.value;
 
   return allEncounters.value.filter(encounter => {
     const matchesName = nameQuery.length === 0 || encounter.name.toLowerCase().includes(nameQuery);
     const matchesType = typeQuery === 'all' || encounter.type === typeQuery;
-    return matchesName && matchesType;
+    const matchesTier = tierQuery === 'all' || getTier(encounter) === tierQuery;
+    return matchesName && matchesType && matchesTier;
   });
 });
 
 const isFiltered = computed(() => {
-  return nameFilter.value.trim().length > 0 || typeFilter.value !== 'all';
+  return nameFilter.value.trim().length > 0 || typeFilter.value !== 'all' || tierFilter.value !== 'all';
 });
 
 // Sorted encounters
@@ -111,6 +144,9 @@ const sortedEncounters = computed(() => {
         break;
       case 'level':
         comparison = a.level - b.level;
+        break;
+      case 'tier':
+        comparison = getTier(a) - getTier(b);
         break;
       case 'xp':
         comparison = getXP(a) - getXP(b);
@@ -153,6 +189,7 @@ const getTypeColor = (type: EncounterType): string => {
 const clearFilters = () => {
   nameFilter.value = '';
   typeFilter.value = 'all';
+  tierFilter.value = 'all';
 };
 
 // Get difficulty color
@@ -169,7 +206,7 @@ const encounterStats = computed(() => {
   const stats: Record<number, { total: number; byType: Record<string, number> }> = {};
 
   allEncounters.value.forEach(enc => {
-    const tier = enc.tier || (enc.level <= 4 ? 1 : enc.level <= 10 ? 2 : 3);
+    const tier = getTier(enc);
     
     if (!stats[tier]) {
       stats[tier] = { total: 0, byType: {} };
@@ -189,7 +226,7 @@ const encounterStats = computed(() => {
 <template>
   <div class="flex-1 overflow-y-auto custom-scrollbar">
     <!-- Header -->
-    <div class="p-4 pb-3 border-b border-slate-800 bg-slate-950/50">
+    <div class="p-4 pb-3 border-b border-slate-800 bg-slate-950/50 flex justify-between items-center">
       <div class="text-sm text-slate-400">
         <span v-if="isFiltered">
           {{ filteredEncounters.length }} of {{ allEncounters.length }} encounters
@@ -198,20 +235,37 @@ const encounterStats = computed(() => {
           {{ allEncounters.length }} total encounter{{ allEncounters.length !== 1 ? 's' : '' }}
         </span>
       </div>
+      <button 
+        @click="createNewEncounter"
+        class="px-3 py-1.5 bg-emerald-700/80 hover:bg-emerald-600 text-emerald-100 text-xs font-bold uppercase tracking-wider rounded border border-emerald-600/50 flex items-center gap-1 transition-colors shadow-sm ml-4"
+      >
+        <span>+</span> Add Encounter
+      </button>
     </div>
 
+    <!-- Create Encounter Modal -->
+    <teleport to="body">
+      <CreateEncounterModal 
+        :show="showCreateModal" 
+        @close="showCreateModal = false"
+        @created="handleEncounterCreated"
+      />
+    </teleport>
+
     <!-- Tier Statistics -->
-    <div v-if="!isFiltered && allEncounters.length > 0" class="px-4 py-3 border-b border-slate-800 bg-slate-900/30 text-xs">
+    <div v-if="!isFiltered && allEncounters.length > 0" class="px-4 py-3 border-b border-slate-800 bg-slate-900/30 text-xs shadow-inner">
       <h3 class="text-[10px] uppercase tracking-widest text-slate-500 mb-2 font-bold">Instance Statistics</h3>
-      <div v-for="(stat, tier) in encounterStats" :key="tier" class="mb-3 last:mb-0">
-        <div class="flex justify-between items-center mb-1">
-          <span class="text-amber-500 font-bold">Tier {{ tier }}</span>
-          <span class="text-slate-400">{{ stat.total }} encounters</span>
-        </div>
-        <div class="flex flex-wrap gap-x-3 gap-y-1">
-          <div v-for="(count, type) in stat.byType" :key="type" class="flex items-center gap-1.5">
-            <span class="w-1.5 h-1.5 rounded-full" :class="getTypeColor(type as EncounterType)"></span>
-            <span class="text-slate-300">{{ type }}: <span class="text-slate-500">{{ count }}</span></span>
+      <div class="flex flex-wrap gap-4">
+        <div v-for="(stat, tier) in encounterStats" :key="tier" class="mb-0 bg-slate-950/50 rounded px-2 py-1.5 border border-slate-800/50 min-w-[120px]">
+          <div class="flex justify-between items-center mb-1 border-b border-slate-800 pb-1">
+            <span class="text-amber-500 font-bold text-[10px] uppercase">Tier {{ tier }}</span>
+            <span class="text-slate-400 text-[10px]">{{ stat.total }}</span>
+          </div>
+          <div class="flex flex-col gap-0.5">
+            <div v-for="(count, type) in stat.byType" :key="type" class="flex items-center justify-between gap-1.5">
+              <span class="text-[9px] text-slate-400">{{ type }}</span>
+              <span class="text-[9px] text-slate-300">{{ count }}</span>
+            </div>
           </div>
         </div>
       </div>
@@ -229,7 +283,20 @@ const encounterStats = computed(() => {
             class="w-full bg-slate-900/80 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-200 focus:outline-none focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20"
           />
         </div>
-        <div class="w-44">
+        <div class="w-32">
+          <label class="block text-[10px] text-slate-500 uppercase tracking-wider mb-1">Tier</label>
+          <select
+            v-model="tierFilter"
+            class="w-full bg-slate-900/80 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-200 focus:outline-none focus:border-amber-500 focus:ring-2 focus:ring-amber-500/20"
+          >
+            <option value="all">All Tiers</option>
+            <option :value="1">Tier 1 (1-4)</option>
+            <option :value="2">Tier 2 (5-10)</option>
+            <option :value="3">Tier 3 (11-16)</option>
+            <option :value="4">Tier 4 (17-20)</option>
+          </select>
+        </div>
+        <div class="w-32">
           <label class="block text-[10px] text-slate-500 uppercase tracking-wider mb-1">Type</label>
           <select
             v-model="typeFilter"
@@ -252,7 +319,7 @@ const encounterStats = computed(() => {
     </div>
 
     <!-- Column Headers -->
-    <div v-if="allEncounters.length > 0" class="px-4 py-2 bg-slate-900/50 border-b border-slate-800 text-xs font-bold uppercase tracking-wider text-slate-500 grid items-center grid-cols-[24px_minmax(140px,1fr)_minmax(72px,auto)_minmax(0,40px)] md:grid-cols-[24px_minmax(140px,1fr)_minmax(72px,auto)_minmax(0,48px)_minmax(0,40px)_minmax(0,48px)]">
+    <div v-if="allEncounters.length > 0" class="px-4 py-2 bg-slate-900/50 border-b border-slate-800 text-xs font-bold uppercase tracking-wider text-slate-500 grid items-center grid-cols-[24px_minmax(140px,1fr)_minmax(72px,auto)_minmax(40px,auto)_minmax(0,40px)] md:grid-cols-[24px_minmax(140px,1fr)_minmax(72px,auto)_minmax(40px,auto)_minmax(0,48px)_minmax(0,40px)_minmax(0,48px)]">
       <div class="w-6"></div> <!-- Spacer for expand icon -->
       
       <button 
@@ -269,6 +336,14 @@ const encounterStats = computed(() => {
       >
         <span>Type</span>
         <span v-if="sortBy === 'type'" class="text-amber-400">{{ sortDirection === 'asc' ? '↑' : '↓' }}</span>
+      </button>
+
+      <button 
+        @click="toggleSort('tier')"
+        class="w-full text-center hover:text-amber-400 transition-colors flex items-center justify-center gap-1"
+      >
+        <span>Tier</span>
+        <span v-if="sortBy === 'tier'" class="text-amber-400">{{ sortDirection === 'asc' ? '↑' : '↓' }}</span>
       </button>
       
       <button 
@@ -307,7 +382,7 @@ const encounterStats = computed(() => {
         <!-- Table Row (Clickable) -->
         <div
           @click="toggleRow(encounter.name)"
-          class="px-4 py-3 cursor-pointer select-none grid items-center grid-cols-[24px_minmax(140px,1fr)_minmax(72px,auto)_minmax(0,40px)] md:grid-cols-[24px_minmax(140px,1fr)_minmax(72px,auto)_minmax(0,48px)_minmax(0,40px)_minmax(0,48px)]"
+          class="px-4 py-3 cursor-pointer select-none grid items-center grid-cols-[24px_minmax(140px,1fr)_minmax(72px,auto)_minmax(40px,auto)_minmax(0,40px)] md:grid-cols-[24px_minmax(140px,1fr)_minmax(72px,auto)_minmax(40px,auto)_minmax(0,48px)_minmax(0,40px)_minmax(0,48px)]"
         >
           <!-- Expand Icon -->
           <div class="text-slate-500 transition-transform" :class="isExpanded(encounter.name) ? 'rotate-90' : ''">
@@ -328,6 +403,11 @@ const encounterStats = computed(() => {
           >
             {{ encounter.type }}
           </span>
+
+          <!-- Tier -->
+          <div class="text-[10px] text-slate-400 font-mono text-center w-10 mx-auto">
+             T{{ getTier(encounter) }}
+          </div>
           
           <!-- Difficulty -->
           <span 
