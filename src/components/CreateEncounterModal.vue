@@ -325,7 +325,7 @@ const handleCreate = () => {
             />
           </div>
 
-          <div>
+          <div v-if="newEncounter.type !== EncounterType.Rest">
              <!-- XP Budget is loose on the type, explicitly casting for simplicity in this general form -->
             <label class="block text-[10px] text-slate-500 uppercase tracking-wider mb-1">XP Budget</label>
             <input
@@ -365,9 +365,130 @@ const handleCreate = () => {
            <p class="text-[10px] text-slate-500 mt-1">Each line will be treated as a bullet point.</p>
         </div>
 
-        <!-- Monsters (Combat/Boss only) -->
-        <div v-if="newEncounter.type === EncounterType.Combat || newEncounter.type === EncounterType.Boss" class="space-y-2 pt-2 border-t border-slate-800">
-           <label class="block text-[10px] text-slate-500 uppercase tracking-wider">Monsters</label>
+        <!-- Social Encounter Fields -->
+        <div v-if="newEncounter.type === EncounterType.Social" class="grid grid-cols-2 gap-4 pt-2 border-t border-slate-800">
+           <div class="col-span-2">
+              <label class="block text-[10px] text-slate-500 uppercase tracking-wider mb-1">NPC Personality</label>
+              <input
+                 v-model="(newEncounter as any).personality"
+                 type="text"
+                 placeholder="e.g. Grumpy, Helpful, Cowardly..."
+                 class="w-full bg-slate-950/50 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-200 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500/50"
+              />
+           </div>
+           
+           <div>
+              <label class="block text-[10px] text-slate-500 uppercase tracking-wider mb-1">Attitude</label>
+              <select
+                 v-model="(newEncounter as any).attitude"
+                 class="w-full bg-slate-950/50 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-200 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500/50"
+              >
+                  <option v-for="att in Object.values(EncounterAttitude)" :key="att" :value="att">{{ att }}</option>
+              </select>
+           </div>
+           
+           <div class="col-span-2">
+              <label class="block text-[10px] text-slate-500 uppercase tracking-wider mb-1">Quest Hook / Trade Goods</label>
+              <textarea
+                 v-model="(newEncounter as any).questHook"
+                 rows="2"
+                 placeholder="Any plot hook or items available..."
+                 class="w-full bg-slate-950/50 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-200 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500/50"
+              ></textarea>
+           </div>
+        </div>
+
+        <!-- Exploration / Puzzle Fields -->
+        <div v-if="newEncounter.type === EncounterType.Exploration" class="space-y-3 pt-2 border-t border-slate-800">
+           <div class="grid grid-cols-2 gap-4">
+               <div class="col-span-2">
+                  <label class="block text-[10px] text-slate-500 uppercase tracking-wider mb-1">Puzzle / Mechanism Description</label>
+                  <textarea
+                     v-model="(newEncounter as any).puzzleDescription"
+                     rows="2"
+                     placeholder="Details of the puzzle or mechanism..."
+                     class="w-full bg-slate-950/50 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-200 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500/50"
+                  ></textarea>
+               </div>
+               
+               <div>
+                  <label class="block text-[10px] text-slate-500 uppercase tracking-wider mb-1">Check DC</label>
+                  <div class="flex items-center gap-2">
+                    <span class="text-xs text-slate-400 font-bold">DC</span>
+                    <input
+                        v-model.number="(newEncounter as any).dc"
+                        type="number"
+                        class="w-20 bg-slate-950/50 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-200 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500/50"
+                    />
+                  </div>
+               </div>
+               
+               <div>
+                   <label class="block text-[10px] text-slate-500 uppercase tracking-wider mb-1">Secret?</label>
+                   <div class="flex items-center gap-2 mt-2">
+                       <input type="checkbox" v-model="(newEncounter as any).secretDoors" class="w-4 h-4 rounded border-slate-700 text-amber-600 bg-slate-900 focus:ring-amber-500/50" />
+                       <span class="text-xs text-slate-400">Hidden / Secret Door</span>
+                   </div>
+               </div>
+
+               <div class="col-span-2">
+                  <label class="block text-[10px] text-slate-500 uppercase tracking-wider mb-1">Solution</label>
+                  <input
+                     v-model="(newEncounter as any).solution"
+                     type="text"
+                     placeholder="The answer or required action..."
+                     class="w-full bg-slate-950/50 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-200 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500/50"
+                  />
+               </div>
+
+               <div class="col-span-2">
+                  <label class="block text-[10px] text-slate-500 uppercase tracking-wider mb-1">Failure Penalty</label>
+                  <input
+                     v-model="(newEncounter as any).penalty"
+                     type="text"
+                     placeholder="Consequence of failing the check..."
+                     class="w-full bg-slate-950/50 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-200 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500/50"
+                  />
+               </div>
+
+               <!-- Simple Item List Management -->
+               <div class="col-span-2">
+                  <label class="block text-[10px] text-slate-500 uppercase tracking-wider mb-1">Items / Rewards</label>
+                  <div class="flex gap-2 mb-2">
+                      <input 
+                        ref="itemInput"
+                        type="text" 
+                        placeholder="Add item..." 
+                        class="flex-1 bg-slate-950/50 border border-slate-700 rounded px-2 py-1 text-xs text-slate-200"
+                        @keydown.enter.prevent="() => {
+                           if (!(newEncounter as any).items) (newEncounter as any).items = [];
+                           const val = ($refs.itemInput as HTMLInputElement).value;
+                           if(val) { (newEncounter as any).items.push(val); ($refs.itemInput as HTMLInputElement).value = ''; }
+                        }"
+                      />
+                      <button 
+                        type="button"
+                        @click="() => {
+                           if (!(newEncounter as any).items) (newEncounter as any).items = [];
+                           const val = ($refs.itemInput as HTMLInputElement).value;
+                           if(val) { (newEncounter as any).items.push(val); ($refs.itemInput as HTMLInputElement).value = ''; }
+                        }"
+                        class="px-2 py-1 bg-slate-800 text-xs text-slate-300 rounded hover:bg-slate-700"
+                      >Add</button>
+                  </div>
+                  <div class="flex flex-wrap gap-2">
+                      <span v-for="(item, idx) in (newEncounter as any).items || []" :key="idx" class="bg-slate-800 text-xs text-amber-200 px-2 py-1 rounded flex items-center gap-1">
+                          {{ item }}
+                          <button @click="(newEncounter as any).items.splice(idx, 1)" class="text-slate-500 hover:text-red-400">×</button>
+                      </span>
+                  </div>
+               </div>
+           </div>
+        </div>
+
+        <!-- Monsters (Combat/Boss/Social only) -->
+        <div v-if="newEncounter.type === EncounterType.Combat || newEncounter.type === EncounterType.Boss || newEncounter.type === EncounterType.Social" class="space-y-2 pt-2 border-t border-slate-800">
+           <label class="block text-[10px] text-slate-500 uppercase tracking-wider">{{ newEncounter.type === EncounterType.Social ? 'NPCs' : 'Monsters' }}</label>
            
            <!-- Search -->
            <div class="relative">
@@ -400,7 +521,7 @@ const handleCreate = () => {
            <!-- Selected Monsters List -->
            <div v-if="(newEncounter as any).monsters && (newEncounter as any).monsters.length > 0" class="space-y-1.5 mt-2">
               <div 
-                 v-for="(monster, index) in (newEncounter as any).monsters" 
+                 v-for="(monster, index) in ((newEncounter as any).monsters as any[])" 
                  :key="index"
                  class="flex items-center justify-between bg-slate-950/50 border border-slate-700/50 rounded px-3 py-1.5"
               >
