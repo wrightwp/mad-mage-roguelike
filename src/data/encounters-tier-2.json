@@ -1,1 +1,1223 @@
-[]
+[
+    {
+        "name": "Bulette Ambush",
+        "level": 5,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 3000,
+        "monsters": [
+            {
+                "id": "bulette",
+                "count": 1
+            },
+            {
+                "id": "giant-hyena",
+                "count": 2
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "predatory",
+        "roomDescription": "The cavern floor is covered in loose sand and jagged rocks. Strange vibration hums through your boots. Suddenly, the ground erupts as a massive, armor-plated bulette bursts from the earth, while two giant hyenas leap from the shadows, their laughter echoing in the hollow space.",
+        "dmDescription": [
+            "The bulette uses its Standing Leap to target the squishiest backliner first.",
+            "The giant hyenas use their Rampage to get extra movement after a kill.",
+            "A {{sm-0}} check reveals the vibrations before the attack, preventing surprise."
+        ],
+        "size": 2,
+        "winConditions": [
+            {
+                "condition": "Defeat all monsters",
+                "reward": "Full XP (3000)",
+                "xpReward": 3000,
+                "goldReward": 0
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 120ft x 120ft sandy cavern. Jagged rock pillars. Scattered bones. Dim natural light. Clean lines.",
+        "lair": false,
+        "tier": 2,
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "skill",
+                "subType": "Perception (WIS)",
+                "dc": 16
+            }
+        ]
+    },
+    {
+        "name": "Medusa Courtyard",
+        "level": 5,
+        "type": "combat",
+        "difficulty": "high",
+        "xpBudget": 4400,
+        "monsters": [
+            {
+                "id": "medusa",
+                "count": 1
+            },
+            {
+                "id": "minotaur-skeleton",
+                "count": 2
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "vain",
+        "roomDescription": "Life-sized stone statues in various states of terror fill this ivy-choked courtyard. A veiled woman in fine silk stands among them. 'More admirers for my gallery?' she whispers, as she signals two massive, skeletal minotaurs to charge.",
+        "dmDescription": [
+            "Medusa uses her Petrifying Gaze—anyone within 30ft must avoid her eyes or make {{sm-0}}.",
+            "The skeletal minotaurs use their gore attack to knock players prone.",
+            "Treasure: A necklace of fireballs found around a statue's neck."
+        ],
+        "size": 3,
+        "winConditions": [
+            {
+                "condition": "Slay the medusa",
+                "reward": "Full XP (4400)",
+                "xpReward": 4400,
+                "goldReward": 500
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 150ft x 150ft courtyard filled with stone statues. Crumbling stone pillars. Moonlight. Clean lines.",
+        "lair": true,
+        "tier": 2,
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "skill",
+                "subType": "Constitution (CON) Save",
+                "dc": 14
+            }
+        ]
+    },
+    {
+        "name": "Orc Warchief Patrol",
+        "level": 5,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 3000,
+        "monsters": [
+            {
+                "id": "orc-war-chief",
+                "count": 1
+            },
+            {
+                "id": "bugbear-warrior",
+                "count": 4
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "aggressive",
+        "roomDescription": "A massive orc in spiked plate armor leads a squad of hulking bugbears. The bugbears stay low, their long arms reaching for your ankles as the war chief bellows a battle cry.",
+        "dmDescription": [
+            "War Chief uses 'Battle Cry' to grant advantage to all allies on round 1.",
+            "Bugbears use their Surprise Attack and Reach to stay safe while hitting hard.",
+            "Loot: 150 gp and a map to a treasure cache."
+        ],
+        "size": 2,
+        "winConditions": [
+            {
+                "condition": "Defeat the patrol",
+                "reward": "Full XP (3000)",
+                "xpReward": 3000,
+                "goldReward": 150
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft x 120ft rough stone corridor. Campfires. Harsh torchlight. Clean lines.",
+        "lair": false,
+        "tier": 2,
+        "scalingMechanics": []
+    },
+    {
+        "name": "Barlgura Rampage",
+        "level": 5,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 3000,
+        "monsters": [
+            {
+                "id": "barlgura",
+                "count": 1
+            },
+            {
+                "id": "vrock",
+                "count": 1
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "feral",
+        "roomDescription": "A sulfurous fog fills this chamber. An orange-furred barlgura demon smashes a table while a vulture-like vrock demon screeches from the rafters, shaking toxic spores from its wings.",
+        "dmDescription": [
+            "Barlgura uses 'Entangle', then leaps in for multiattacks.",
+            "Vrock uses Spores ({{sm-0}}) and Stunning Screech.",
+            "Loot: A ruby worth 250 gp."
+        ],
+        "size": 2,
+        "winConditions": [
+            {
+                "condition": "Exterminate the demons",
+                "reward": "Full XP (3000)",
+                "xpReward": 3000,
+                "goldReward": 250
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 120ft x 120ft ruined hall. Thick red fog. Demonic symbols. Clean lines.",
+        "lair": false,
+        "tier": 2,
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "skill",
+                "subType": "Constitution (CON) Save",
+                "dc": 14
+            }
+        ]
+    },
+    {
+        "name": "Ghostly Presence",
+        "level": 5,
+        "type": "combat",
+        "difficulty": "low",
+        "xpBudget": 2000,
+        "monsters": [
+            {
+                "id": "ghost",
+                "count": 1
+            },
+            {
+                "id": "poltergeist",
+                "count": 1
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "restless",
+        "roomDescription": "The temperature drops. A translucent figure weeps in the center of the room, while unseen hands hurl furniture and books through the air in a chaotic vortex.",
+        "dmDescription": [
+            "The Ghost will attempt to 'Possess' a character.",
+            "Poltergeist uses Telekinetic Thrust to shove players into hazards.",
+            "A {{sm-0}} check reveals the ghost's lost locket, allowing for peace."
+        ],
+        "size": 2,
+        "winConditions": [
+            {
+                "condition": "Quiet the spirits",
+                "reward": "Full XP (2000)",
+                "xpReward": 2000,
+                "goldReward": 0
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 80ft x 100ft library. Ghostly blue lighting. Floating furniture. Clean lines.",
+        "lair": false,
+        "tier": 2,
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "skill",
+                "subType": "Investigation (INT)",
+                "dc": 16
+            }
+        ]
+    },
+    {
+        "name": "Manticore Hunt",
+        "level": 5,
+        "type": "combat",
+        "difficulty": "low",
+        "xpBudget": 2000,
+        "monsters": [
+            {
+                "id": "manticore",
+                "count": 1
+            },
+            {
+                "id": "blood-hawk",
+                "count": 8
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "cruel",
+        "roomDescription": "High atop a craggy ledge, a manticore gnaws on a carcass. A flock of blood-red hawks circles over your heads, their eyes fixed on your injuries.",
+        "dmDescription": [
+            "Manticore stays at range using Tail Spikes.",
+            "Blood Hawks use Pack Tactics to swarm individual players.",
+            "Loot: 300 gp hidden in the bone piles."
+        ],
+        "size": 2,
+        "winConditions": [
+            {
+                "condition": "Clear the ledge",
+                "reward": "Full XP (2000)",
+                "xpReward": 2000,
+                "goldReward": 300
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 150ft x 100ft cliff ledge. Bone piles. Sunset lighting. Clean lines.",
+        "lair": false,
+        "tier": 2,
+        "scalingMechanics": []
+    },
+    {
+        "name": "Hobgoblin Warlord Guard",
+        "level": 5,
+        "type": "combat",
+        "difficulty": "high",
+        "xpBudget": 4400,
+        "monsters": [
+            {
+                "id": "hobgoblin-warlord",
+                "count": 1
+            },
+            {
+                "id": "knight",
+                "count": 3
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "disciplined",
+        "roomDescription": "A hobgoblin warlord in ornate plate armor stands before a tactical map. His honor guard of human knights, now bound to his service, snaps to attention.",
+        "dmDescription": [
+            "Warlord uses 'Leadership' to boost allies.",
+            "Knights use 'Parry' and 'Protect' to keep the Warlord alive.",
+            "Loot: +1 Shield and 600 gp."
+        ],
+        "size": 3,
+        "winConditions": [
+            {
+                "condition": "Defeat the command unit",
+                "reward": "Full XP (4400)",
+                "xpReward": 4400,
+                "goldReward": 600
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 130ft x 130ft command room. Red banners. Stone pillars. Torchlight. Clean lines.",
+        "lair": false,
+        "tier": 2,
+        "scalingMechanics": []
+    },
+    {
+        "name": "Hill Giant Cattle",
+        "level": 5,
+        "type": "combat",
+        "difficulty": "low",
+        "xpBudget": 2000,
+        "monsters": [
+            {
+                "id": "hill-giant",
+                "count": 1
+            },
+            {
+                "id": "mule",
+                "count": 4
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "starving",
+        "roomDescription": "A single giant is stuffing a whole goat into its mouth while herding four stubborn mules. He grunts in frustration, grabbing his club at your approach.",
+        "dmDescription": [
+            "Giant uses rocks for range.",
+            "Mules scatter, creating difficult terrain.",
+            "Loot: Sack with 200 gp."
+        ],
+        "size": 2,
+        "winConditions": [
+            {
+                "condition": "Defeat the giant",
+                "reward": "Full XP (2000)",
+                "xpReward": 2000,
+                "goldReward": 200
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft clearing. Large campfire. Sunset light. Clean lines.",
+        "lair": false,
+        "tier": 2,
+        "scalingMechanics": []
+    },
+    {
+        "name": "Lamia Feast",
+        "level": 5,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 3000,
+        "monsters": [
+            {
+                "id": "lamia",
+                "count": 1
+            },
+            {
+                "id": "jackal",
+                "count": 8
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "deceptive",
+        "roomDescription": "A lush oasis mirage reveals a woman with a lion's body reclining on silk pillows. She is surrounded by a pack of hungry jackals that snap at any crumbs she throws.",
+        "dmDescription": [
+            "Lamia starts with 'Hallucinatory Terrain'.",
+            "Jackals provide flanking for her 'Intoxicating Touch'.",
+            "Loot: Decanter of Endless Water."
+        ],
+        "size": 3,
+        "winConditions": [
+            {
+                "condition": "Expose the mirage",
+                "reward": "Full XP (3000)",
+                "xpReward": 3000,
+                "goldReward": 400
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 150ft oasis mirage. Silk curtains. Golden light. Clean lines.",
+        "lair": true,
+        "tier": 2,
+        "scalingMechanics": []
+    },
+    {
+        "name": "Night Hag Bargain",
+        "level": 5,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 3000,
+        "monsters": [
+            {
+                "id": "night-hag",
+                "count": 1
+            },
+            {
+                "id": "barbed-devil",
+                "count": 1
+            }
+        ],
+        "attitude": "indifferent",
+        "personality": "greedy",
+        "roomDescription": "A foul hut sits in the marsh. A night hag stirs a cauldron, guarded by a lanky, spine-covered devil with a cruel grin.",
+        "dmDescription": [
+            "Night Hag can slip into the Ethereal Plane.",
+            "Barbed Devil uses its hurl flame and tail attack.",
+            "Loot: A Heartstone worth 500 gp."
+        ],
+        "size": 2,
+        "winConditions": [
+            {
+                "condition": "Defeat the pair",
+                "reward": "Full XP (3000)",
+                "xpReward": 3000,
+                "goldReward": 500
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft swamp clearing. Bubbling cauldron. Purple lighting. Clean lines.",
+        "lair": false,
+        "tier": 2,
+        "scalingMechanics": []
+    },
+    {
+        "name": "Wyvern Roost",
+        "level": 5,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 3000,
+        "monsters": [
+            {
+                "id": "wyvern",
+                "count": 1
+            },
+            {
+                "id": "aarakocra-skirmisher",
+                "count": 3
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "territorial",
+        "roomDescription": "A massive winged wyvern perches on a peak. Three aarakocra warriors circle above, their spears leveled at you.",
+        "dmDescription": [
+            "Wyvern uses its poison stinger ({{sm-0}}).",
+            "Aarakocra use their flight to hit and run.",
+            "Loot: Potion of Flying."
+        ],
+        "size": 2,
+        "winConditions": [
+            {
+                "condition": "Conquer the peak",
+                "reward": "Full XP (3000)",
+                "xpReward": 3000,
+                "goldReward": 400
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft mountaintop. High winds. Blue sky. Clean lines.",
+        "lair": false,
+        "tier": 2,
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "skill",
+                "subType": "Constitution (CON) Save",
+                "dc": 15
+            }
+        ]
+    },
+    {
+        "name": "Xorn Mineral Hunger",
+        "level": 5,
+        "type": "combat",
+        "difficulty": "low",
+        "xpBudget": 2000,
+        "monsters": [
+            {
+                "id": "xorn",
+                "count": 1
+            },
+            {
+                "id": "quasit",
+                "count": 4
+            }
+        ],
+        "attitude": "indifferent",
+        "personality": "starving",
+        "roomDescription": "A three-legged xorn is eating a sapphire. It is pestered by four tiny, cackling quasits that shape-shift into centipedes and back.",
+        "dmDescription": [
+            "Xorn uses Earth Glide.",
+            "Quasits use Invisibility and Scare ({{sm-0}}).",
+            "Loot: 3 gems worth 100 gp each."
+        ],
+        "size": 2,
+        "winConditions": [
+            {
+                "condition": "Defeat the spirits",
+                "reward": "Full XP (2000)",
+                "xpReward": 2000,
+                "goldReward": 300
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft crystalline cavern. Glowing gem veins. Sparkle. Clean lines.",
+        "lair": false,
+        "tier": 2,
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "skill",
+                "subType": "Wisdom (WIS) Save",
+                "dc": 10
+            }
+        ]
+    },
+    {
+        "name": "Chimera Lair",
+        "level": 5,
+        "type": "combat",
+        "difficulty": "high",
+        "xpBudget": 4400,
+        "monsters": [
+            {
+                "id": "chimera",
+                "count": 2
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "ferocious",
+        "roomDescription": "Two multi-headed chimeras roar from a ledge. One has the head of a black dragon, the other a red dragon. They coordinate their breath weapons.",
+        "dmDescription": [
+            "Chimeras use Fire/Acid Breath ({{sm-0}}).",
+            "Loot: 1000 gp and a Ring of Fire Resistance."
+        ],
+        "size": 3,
+        "winConditions": [
+            {
+                "condition": "Slay the beasts",
+                "reward": "Full XP (4400)",
+                "xpReward": 4400,
+                "goldReward": 1000
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 150ft cavern. Scratched stone. Gold coins. Clean lines.",
+        "lair": true,
+        "tier": 2,
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "skill",
+                "subType": "Dexterity (DEX) Save",
+                "dc": 15
+            }
+        ]
+    },
+    {
+        "name": "Drider Nest",
+        "level": 5,
+        "type": "combat",
+        "difficulty": "high",
+        "xpBudget": 4400,
+        "monsters": [
+            {
+                "id": "drider",
+                "count": 2
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "spiteful",
+        "roomDescription": "Two driders, rejects of Lolth's court, hang from the webs of a massive cavern. They fire poisoned arrows from above with terrifying precision.",
+        "dmDescription": [
+            "Driders use Longbow and Faerie Fire.",
+            "Positioned on ceiling (30ft up).",
+            "Loot: +1 Longbow and 400 gp."
+        ],
+        "size": 3,
+        "winConditions": [
+            {
+                "condition": "Clear the web",
+                "reward": "Full XP (4400)",
+                "xpReward": 4400,
+                "goldReward": 400
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 160ft dark cavern. Thick webs. Purple light. Clean lines.",
+        "lair": true,
+        "tier": 2,
+        "scalingMechanics": []
+    },
+    {
+        "name": "Shambling Mound swamp",
+        "level": 5,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 3000,
+        "monsters": [
+            {
+                "id": "shambling-mound",
+                "count": 1
+            },
+            {
+                "id": "water-weird",
+                "count": 2
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "mindless",
+        "roomDescription": "The water here is stagnant. A mass of vines stands up, while two serpentine forms rise from the pool, their watery bodies shimmering.",
+        "dmDescription": [
+            "Shambling Mound heals via lightning.",
+            "Water Weirds try to drown players.",
+            "Loot: A Potion of Greater Healing."
+        ],
+        "size": 2,
+        "winConditions": [
+            {
+                "condition": "Defeat the marsh",
+                "reward": "Full XP (3000)",
+                "xpReward": 3000,
+                "goldReward": 0
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 120ft swamp. Murky water. Moonlight. Clean lines.",
+        "lair": false,
+        "tier": 2,
+        "scalingMechanics": []
+    },
+    {
+        "name": "Gorgon Labyrinth",
+        "level": 5,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 3000,
+        "monsters": [
+            {
+                "id": "gorgon",
+                "count": 1
+            },
+            {
+                "id": "warhorse-skeleton",
+                "count": 4
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "destructive",
+        "roomDescription": "A metallic bull snorts green gas. It is accompanied by four skeletal warhorses that trample the stone debris.",
+        "dmDescription": [
+            "Gorgon uses Petrifying Breath ({{sm-0}}).",
+            "Skeletons charge to knock players into the breath.",
+            "Loot: 300 gp."
+        ],
+        "size": 2,
+        "winConditions": [
+            {
+                "condition": "Conquer the maze",
+                "reward": "Full XP (3000)",
+                "xpReward": 3000,
+                "goldReward": 300
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 140ft stone labyrinth. Metallic bull. Clean lines.",
+        "lair": false,
+        "tier": 2,
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "skill",
+                "subType": "Constitution (CON) Save",
+                "dc": 13
+            }
+        ]
+    },
+    {
+        "name": "Werewolf Pack",
+        "level": 5,
+        "type": "combat",
+        "difficulty": "low",
+        "xpBudget": 2000,
+        "monsters": [
+            {
+                "id": "werewolf",
+                "count": 2
+            },
+            {
+                "id": "jackal",
+                "count": 8
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "bestial",
+        "roomDescription": "Two werewolves lead a large pack of jackals. They howl at the full moon visible through the forest canopy.",
+        "dmDescription": [
+            "Werewolves have immunity to non-magical damage.",
+            "Jackals distract casters.",
+            "Loot: Silvered dagger."
+        ],
+        "size": 2,
+        "winConditions": [
+            {
+                "condition": "Survive the pack",
+                "reward": "Full XP (2000)",
+                "xpReward": 2000,
+                "goldReward": 100
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft snowy forest. Full moon. Clean lines.",
+        "lair": false,
+        "tier": 2,
+        "scalingMechanics": []
+    },
+    {
+        "name": "Invisible Stalker Hunt",
+        "level": 5,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 3000,
+        "monsters": [
+            {
+                "id": "invisible-stalker",
+                "count": 1
+            },
+            {
+                "id": "imp",
+                "count": 2
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "relentless",
+        "roomDescription": "An invisible wind brushes past your throat. Two tiny imps giggle as they fade in and out of sight.",
+        "dmDescription": [
+            "Stalker is always invisible.",
+            "Imps use Invisibility to harass.",
+            "Loot: Ring of Invisibility (cursed)."
+        ],
+        "size": 2,
+        "winConditions": [
+            {
+                "condition": "Survive the hunt",
+                "reward": "Full XP (3000)",
+                "xpReward": 3000,
+                "goldReward": 0
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft attic. Flour barrels. Clean lines.",
+        "lair": false,
+        "tier": 2,
+        "scalingMechanics": []
+    },
+    {
+        "name": "Cyclops Hill",
+        "level": 5,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 3000,
+        "monsters": [
+            {
+                "id": "cyclops",
+                "count": 1
+            },
+            {
+                "id": "giant-goat",
+                "count": 2
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "unfocused",
+        "roomDescription": "A towering cyclops stands among several giant goats. He looks up and grabs a boulder.",
+        "dmDescription": [
+            "Cyclops has disadvantage on ranged beyond 30ft.",
+            "Goats charge to knock prone.",
+            "Loot: 400 gp."
+        ],
+        "size": 3,
+        "winConditions": [
+            {
+                "condition": "Defeat the cyclops",
+                "reward": "Full XP (3000)",
+                "xpReward": 3000,
+                "goldReward": 400
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 150ft grassy hill. Boulders. Clean lines.",
+        "lair": false,
+        "tier": 2,
+        "scalingMechanics": []
+    },
+    {
+        "name": "Mage Laboratory",
+        "level": 5,
+        "type": "combat",
+        "difficulty": "high",
+        "xpBudget": 4400,
+        "monsters": [
+            {
+                "id": "mage",
+                "count": 1
+            },
+            {
+                "id": "hell-hound",
+                "count": 4
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "paranoid",
+        "roomDescription": "A robed mage frantically throws fireballs as you enter. He is protected by four fire-breathing hell hounds.",
+        "dmDescription": [
+            "Mage uses Greater Invisibility.",
+            "Hell Hounds use Fire Breath ({{sm-0}}).",
+            "Loot: 800 gp."
+        ],
+        "size": 3,
+        "winConditions": [
+            {
+                "condition": "Defeat the mage",
+                "reward": "Full XP (4400)",
+                "xpReward": 4400,
+                "goldReward": 800
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft magic lab. Glowing runes. Clean lines.",
+        "lair": true,
+        "tier": 2,
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "skill",
+                "subType": "Dexterity (DEX) Save",
+                "dc": 12
+            }
+        ]
+    },
+    {
+        "name": "Basilisk Lair",
+        "level": 5,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 3000,
+        "monsters": [
+            {
+                "id": "basilisk",
+                "count": 2
+            },
+            {
+                "id": "homunculus",
+                "count": 4
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "slow-moving",
+        "roomDescription": "Petrified rats litter the floor. Two eight-legged basilisks raise their heads, while tiny clay homunculi scurry around them.",
+        "dmDescription": [
+            "Basilisks use Petrifying Gaze ({{sm-0}}).",
+            "Homunculi bite to distract players from looking away.",
+            "Loot: 200 gp."
+        ],
+        "size": 2,
+        "winConditions": [
+            {
+                "condition": "Clear the lair",
+                "reward": "Full XP (3000)",
+                "xpReward": 3000,
+                "goldReward": 200
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 120ft cave. Petrified statues. Clean lines.",
+        "lair": false,
+        "tier": 2,
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "skill",
+                "subType": "Constitution (CON) Save",
+                "dc": 12
+            }
+        ]
+    },
+    {
+        "name": "Revenant Vengeance",
+        "level": 5,
+        "type": "combat",
+        "difficulty": "high",
+        "xpBudget": 4400,
+        "monsters": [
+            {
+                "id": "revenant",
+                "count": 1
+            },
+            {
+                "id": "barbed-devil",
+                "count": 2
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "obsessive",
+        "roomDescription": "A gray-skinned revenant stands between two spine-covered devils. 'You will pay for your sins!' he screams.",
+        "dmDescription": [
+            "Revenant regenerates.",
+            "Devils use Hurl Flame.",
+            "Loot: +1 Longsword."
+        ],
+        "size": 3,
+        "winConditions": [
+            {
+                "condition": "Defeat the trio",
+                "reward": "Full XP (4400)",
+                "xpReward": 4400,
+                "goldReward": 500
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 140ft ruins. Twilight. Clean lines.",
+        "lair": true,
+        "tier": 2,
+        "scalingMechanics": []
+    },
+    {
+        "name": "Otyugh Trash Pile",
+        "level": 5,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 3000,
+        "monsters": [
+            {
+                "id": "otyugh",
+                "count": 1
+            },
+            {
+                "id": "merfolk-skirmisher",
+                "count": 4
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "hungry",
+        "roomDescription": "A mountain of garbage fills the sewer. A tripod-legged mouth with tentacles emerges, while several bone-tipped spears strike from the murky water.",
+        "dmDescription": [
+            "Otyugh Tentacles ({{sm-0}} for disease).",
+            "Merfolk use hitting and running.",
+            "Loot: Ring of Protection."
+        ],
+        "size": 2,
+        "winConditions": [
+            {
+                "condition": "Exterminate the beast",
+                "reward": "Full XP (3000)",
+                "xpReward": 3000,
+                "goldReward": 0
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 120ft sewer. Trash. Clean lines.",
+        "lair": false,
+        "tier": 2,
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "skill",
+                "subType": "Constitution (CON) Save",
+                "dc": 15
+            }
+        ]
+    },
+    {
+        "name": "Owlbear Nest",
+        "level": 5,
+        "type": "combat",
+        "difficulty": "low",
+        "xpBudget": 2000,
+        "monsters": [
+            {
+                "id": "owlbear",
+                "count": 2
+            },
+            {
+                "id": "blood-hawk",
+                "count": 4
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "territorial",
+        "roomDescription": "Two massive owlbears protect a nest of feathers and bone. Above them, predatory hawks circle, waiting to scavenge from the owlbears' kills.",
+        "dmDescription": [
+            "Owlbears charge the nearest player.",
+            "Hawks target blinded or prone targets.",
+            "Loot: 150 gp."
+        ],
+        "size": 2,
+        "winConditions": [
+            {
+                "condition": "Slay the owlbears",
+                "reward": "Full XP (2000)",
+                "xpReward": 2000,
+                "goldReward": 150
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft cave nest. Feathers. Bone piles. Clean lines.",
+        "lair": false,
+        "tier": 2,
+        "scalingMechanics": []
+    },
+    {
+        "name": "Displacer Beast Stalk",
+        "level": 5,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 3000,
+        "monsters": [
+            {
+                "id": "displacer-beast",
+                "count": 2
+            },
+            {
+                "id": "blink-dog",
+                "count": 4
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "predatory",
+        "roomDescription": "Two shimmering, six-legged cats with lashing tentacles stalk you. They are hounded by four blink dogs that teleport in flashes of light.",
+        "dmDescription": [
+            "Displacer Beasts use Displacement to avoid hits.",
+            "Blink Dogs teleport to flanking positions.",
+            "Loot: 250 gp."
+        ],
+        "size": 2,
+        "winConditions": [
+            {
+                "condition": "Defeat the predators",
+                "reward": "Full XP (3000)",
+                "xpReward": 3000,
+                "goldReward": 250
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 120ft forest clearing. Shimmering air. Moonlight. Clean lines.",
+        "lair": false,
+        "tier": 2,
+        "scalingMechanics": []
+    },
+    {
+        "name": "Winter Wolf Pack",
+        "level": 5,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 3000,
+        "monsters": [
+            {
+                "id": "winter-wolf",
+                "count": 2
+            },
+            {
+                "id": "giant-hyena",
+                "count": 2
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "chilling",
+        "roomDescription": "Two massive, frost-covered wolves lead two giant hyenas. The wolves speak in a chilling tongue, coordinating the pack.",
+        "dmDescription": [
+            "Wolves use Cold Breath ({{sm-0}}).",
+            "Hyenas use Rampage.",
+            "Loot: 300 gp."
+        ],
+        "size": 2,
+        "winConditions": [
+            {
+                "condition": "Survive the cold",
+                "reward": "Full XP (3000)",
+                "xpReward": 3000,
+                "goldReward": 300
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft snowy clearing. Frost. Moonlight. Clean lines.",
+        "lair": false,
+        "tier": 2,
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "skill",
+                "subType": "Dexterity (DEX) Save",
+                "dc": 12
+            }
+        ]
+    },
+    {
+        "name": "Young White Dragon Lair",
+        "level": 5,
+        "type": "combat",
+        "difficulty": "high",
+        "xpBudget": 4400,
+        "monsters": [
+            {
+                "id": "young-white-dragon",
+                "count": 1
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "bestial",
+        "roomDescription": "A young white dragon, scales like polished ice, roars from a frozen dais. The air is so cold it hurts to breathe.",
+        "dmDescription": [
+            "Dragon uses Cold Breath ({{sm-0}}).",
+            "Isolates targets in the ice.",
+            "Loot: 2000 gp and a Frost Brand sword."
+        ],
+        "size": 3,
+        "winConditions": [
+            {
+                "condition": "Slay the dragon",
+                "reward": "Full XP (4400)",
+                "xpReward": 4400,
+                "goldReward": 2000
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 160ft frozen cavern. Large ice dais. Treasure hoard. Clean lines.",
+        "lair": true,
+        "tier": 2,
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "skill",
+                "subType": "Dexterity (DEX) Save",
+                "dc": 15
+            }
+        ]
+    },
+    {
+        "name": "Hobgoblin Legion Guard",
+        "level": 5,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 3000,
+        "monsters": [
+            {
+                "id": "hobgoblin-warlord",
+                "count": 1
+            },
+            {
+                "id": "bugbear-warrior",
+                "count": 2
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "disciplined",
+        "roomDescription": "A hobgoblin warlord leads two bugbear warriors. They stand guard over a strategic choke point, their discipline evident in their stance.",
+        "dmDescription": [
+            "Warlord uses Leadership.",
+            "Bugbears use their Reach.",
+            "Loot: 300 gp."
+        ],
+        "size": 2,
+        "winConditions": [
+            {
+                "condition": "Clear the choke point",
+                "reward": "Full XP (3000)",
+                "xpReward": 3000,
+                "goldReward": 300
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 80ft narrow pass. Spiked barricades. Torchlight. Clean lines.",
+        "lair": false,
+        "tier": 2,
+        "scalingMechanics": []
+    },
+    {
+        "name": "Giant Crocodile Marsh",
+        "level": 5,
+        "type": "combat",
+        "difficulty": "moderate",
+        "xpBudget": 3000,
+        "monsters": [
+            {
+                "id": "giant-crocodile",
+                "count": 1
+            },
+            {
+                "id": "merfolk-skirmisher",
+                "count": 4
+            }
+        ],
+        "attitude": "hostile",
+        "personality": "predatory",
+        "roomDescription": "A massive giant crocodile submerged in the black water. Four merfolk swim around it, using it as cover while they throw spears.",
+        "dmDescription": [
+            "Crocodile attempts to grapple and 'Death Roll'.",
+            "Merfolk stay out of melee.",
+            "Loot: 300 gp."
+        ],
+        "size": 2,
+        "winConditions": [
+            {
+                "condition": "Survive the marsh",
+                "reward": "Full XP (3000)",
+                "xpReward": 3000,
+                "goldReward": 300
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 120ft swamp. Murky water. Giant crocodile. Clean lines.",
+        "lair": false,
+        "tier": 2,
+        "scalingMechanics": []
+    },
+    {
+        "name": "Stone Golem Guard",
+        "level": 5,
+        "type": "combat",
+        "difficulty": "high",
+        "xpBudget": 4400,
+        "monsters": [
+            {
+                "id": "stone-golem",
+                "count": 1
+            }
+        ],
+        "attitude": "indifferent",
+        "personality": "robotic",
+        "roomDescription": "A massive statue of a faceless guardian stands at the door. As you approach, its stone joints grind together and it raises two massive fists.",
+        "dmDescription": [
+            "Stone Golem uses its 'Slow' ability ({{sm-0}}).",
+            "High HP and immunity to non-magical damage.",
+            "Loot: 1000 gp worth of raw stone gems."
+        ],
+        "size": 3,
+        "winConditions": [
+            {
+                "condition": "Defeat the guardian",
+                "reward": "Full XP (4400)",
+                "xpReward": 4400,
+                "goldReward": 1000
+            }
+        ],
+        "aiRoomPrompt": "Top-down bird's eye view battle map for tabletop RPG with 5ft square grid overlay. 100ft stone vault. Massive statue. Rune carvings. Clean lines.",
+        "lair": false,
+        "tier": 2,
+        "scalingMechanics": [
+            {
+                "id": "sm-0",
+                "type": "skill",
+                "subType": "Wisdom (WIS) Save",
+                "dc": 17
+            }
+        ]
+    }
+]
