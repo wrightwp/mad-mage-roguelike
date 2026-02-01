@@ -544,7 +544,7 @@
         "cr": 0.125,
         "exp": 25,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-t#TwigBlight",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-b#TwigBlight",
         "thematicType": "Plant",
         "mmPage": "mm 43"
     },
@@ -859,7 +859,7 @@
         "cr": 0.25,
         "exp": 50,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-n#NeedleBlight",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-b#NeedleBlight",
         "thematicType": "Plant",
         "mmPage": "mm 43"
     },
@@ -1366,7 +1366,7 @@
         "cr": 0.5,
         "exp": 100,
         "pb": 2,
-        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-v#VineBlight",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-b#VineBlight",
         "thematicType": "Plant",
         "mmPage": "mm 44"
     },
@@ -3984,7 +3984,7 @@
         "cr": 7,
         "exp": 2900,
         "pb": 3,
-        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-t#TreeBlight",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-b#TreeBlight",
         "thematicType": "Plant",
         "mmPage": "mm 44"
     },
@@ -4962,7 +4962,7 @@
         "cr": 16,
         "exp": 15000,
         "pb": 5,
-        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-g#GulthiasBlight",
+        "mmLink": "https://www.dndbeyond.com/sources/dnd/mm-2024/monsters-b#GulthiasBlight",
         "thematicType": "Plant",
         "mmPage": "mm 45"
     },
