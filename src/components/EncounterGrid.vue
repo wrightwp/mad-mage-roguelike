@@ -6,11 +6,11 @@ import { EncounterType } from '../types';
 import { monsterLibrary } from '../data/monsterLibrary';
 import CreateEncounterModal from './CreateEncounterModal.vue';
 import EncounterContent from './EncounterContent.vue';
-import EncounterFeedbackPanel from './EncounterFeedbackPanel.vue';
 import { useEncounterFeedbackStore } from '../stores/useEncounterFeedbackStore';
 
 const feedbackStore = useEncounterFeedbackStore();
 const showCreateModal = ref(false);
+const editingEncounter = ref<EncounterData | null>(null);
 
 // Get all encounters from the library
 const allEncounters = ref<EncounterData[]>([]);
@@ -72,6 +72,12 @@ watch(() => feedbackStore.feedbackList, () => {
 }, { deep: true });
 
 const createNewEncounter = () => {
+  editingEncounter.value = null;
+  showCreateModal.value = true;
+};
+
+const editEncounter = (encounter: EncounterData) => {
+  editingEncounter.value = encounter;
   showCreateModal.value = true;
 };
 
@@ -269,6 +275,7 @@ const encounterStats = computed(() => {
     <teleport to="body">
       <CreateEncounterModal 
         :show="showCreateModal" 
+        :initial-data="editingEncounter"
         @close="showCreateModal = false"
         @created="handleEncounterCreated"
       />
@@ -453,16 +460,20 @@ const encounterStats = computed(() => {
           </div>
         </div>
 
-        <!-- Expanded Details -->
+      <!-- Expanded Details -->
         <div
           v-if="isExpanded(encounter.name)"
           class="px-4 pb-4 pt-2 bg-slate-900/40 border-t border-slate-800/50 space-y-3 animate-slideDown"
         >
+          <div class="flex justify-end mb-2">
+            <button 
+              @click.stop="editEncounter(encounter)"
+              class="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white text-xs font-bold uppercase tracking-wider rounded border border-slate-700 hover:border-amber-500/50 flex items-center gap-2 transition-colors"
+            >
+              <span class="text-amber-500">✎</span> Edit Encounter
+            </button>
+          </div>
           <EncounterContent :encounter="encounter" :show-room-description="true" />
-          <EncounterFeedbackPanel
-            :encounter="encounter"
-            :floor="encounter.level ?? null"
-          />
         </div>
       </div>
     </div>

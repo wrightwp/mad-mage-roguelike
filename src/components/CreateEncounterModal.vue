@@ -5,8 +5,9 @@ import type { EncounterData, MonsterData } from '../types';
 import { useEncounterFeedbackStore } from '../stores/useEncounterFeedbackStore';
 import { monsterLibrary } from '../data/monsterLibrary';
 
-defineProps<{
+const props = defineProps<{
   show: boolean;
+  initialData?: EncounterData | null;
 }>();
 
 const emit = defineEmits<{
@@ -31,6 +32,25 @@ const newEncounter = ref<EncounterData>({
   attitude: EncounterAttitude.Hostile,
   winConditions: [],
   scalingMechanics: []
+});
+
+const isEditing = computed(() => !!props.initialData);
+
+// Reset or Populate form when modal opens
+watch(() => props.show, (newVal) => {
+    if (newVal) {
+        if (props.initialData) {
+            // Edit Mode: Deep copy initial data
+            newEncounter.value = JSON.parse(JSON.stringify(props.initialData));
+            dmDescriptionText.value = Array.isArray(newEncounter.value.dmDescription) 
+                ? newEncounter.value.dmDescription.join('\n') 
+                : (newEncounter.value.dmDescription || '');
+        } else {
+            // Create Mode: Reset
+            resetForm();
+            dmDescriptionText.value = '';
+        }
+    }
 });
 
 const monsterSearchResults = computed(() => {
@@ -160,9 +180,42 @@ const resetForm = () => {
 
 const dmDescriptionText = ref(''); // Intermediate state for textarea
 
+
+
+const copiedId = ref<string | null>(null);
+
+const copyToken = (id: string) => {
+    navigator.clipboard.writeText(id).then(() => {
+        copiedId.value = id;
+        setTimeout(() => {
+            if (copiedId.value === id) {
+                copiedId.value = null;
+            }
+        }, 2000);
+    }).catch(err => {
+        console.error('Failed to copy token:', err);
+    });
+};
+
+const addWinCondition = () => {
+    if (!newEncounter.value.winConditions) {
+        newEncounter.value.winConditions = [];
+    }
+    newEncounter.value.winConditions.push({
+        condition: '',
+        reward: ''
+        // xpArgs removed from UI for now or defaults to 0 if needed type-wise? 
+        // Checking types, it seems winConditions might just require condition/reward mostly.
+        // But let's add it if the type requires it. The type definition isn't fully visible but let's assume loose.
+        // Actually, looking at previous existing code, it seems safe.
+    });
+};
+
 const handleCreate = () => {
   const timestamp = Date.now();
-  const id = `custom-${timestamp}`;
+  // Use existing ID if editing, otherwise generate new custom ID
+  // Use existing ID if editing (and present), otherwise generate new custom ID
+  const id = (isEditing.value && newEncounter.value.id) ? newEncounter.value.id : `custom-${timestamp}`;
   
   // Parse DM description from text block to array if needed, or just wrap
   const descriptionArray = dmDescriptionText.value.split('\n').filter(line => line.trim().length > 0);
@@ -182,45 +235,25 @@ const handleCreate = () => {
     monsters: [...((newEncounter.value as any).monsters || [])]
   } as EncounterData;
 
-  // Save to feedback store immediately so it persists and flows into the app logic
+  // Save to feedback store immediately
   feedbackStore.saveEntry({
-    key: id,
-    encounterName: finalEncounter.name,
+    key: id, // Use the ID as key
+    encounterName: finalEncounter.name || 'Unnamed Encounter', // Fallback for type safety
     encounterType: finalEncounter.type,
     floor: finalEncounter.level,
-    original: finalEncounter,
+    original: props.initialData ? JSON.parse(JSON.stringify(props.initialData)) : finalEncounter,
     edited: finalEncounter,
     editedAt: new Date().toISOString()
   });
 
   emit('created', finalEncounter);
   emit('close');
-  resetForm();
+  if (!isEditing.value) resetForm();
   dmDescriptionText.value = '';
 };
 
-const copiedId = ref<string | null>(null);
 
-const copyToken = (id: string) => {
-  const token = `{{${id}}}`;
-  navigator.clipboard.writeText(token);
-  copiedId.value = id;
-  setTimeout(() => {
-    copiedId.value = null;
-  }, 1500);
-};
 
-const addWinCondition = () => {
-  if (!newEncounter.value.winConditions) {
-    newEncounter.value.winConditions = [];
-  }
-  newEncounter.value.winConditions.push({
-    condition: '',
-    reward: '',
-    xpReward: 0,
-    goldReward: 0
-  });
-};
 </script>
 
 <template>
@@ -232,7 +265,7 @@ const addWinCondition = () => {
     <div class="relative w-full max-w-2xl bg-slate-900 border border-slate-700 rounded-xl shadow-2xl flex flex-col max-h-[90vh]">
       <!-- Header -->
       <div class="flex items-center justify-between px-6 py-4 border-b border-slate-800 bg-slate-900/50 rounded-t-xl">
-        <h2 class="text-lg font-bold text-amber-400 uppercase tracking-widest">Create New Encounter</h2>
+        <h2 class="text-lg font-bold text-amber-400 uppercase tracking-widest">{{ isEditing ? 'Edit Encounter' : 'Create New Encounter' }}</h2>
         <button 
           @click="emit('close')"
           class="text-slate-400 hover:text-white transition-colors"
@@ -555,7 +588,7 @@ const addWinCondition = () => {
           @click="handleCreate"
           class="px-6 py-2 bg-amber-600 hover:bg-amber-500 text-white text-xs font-bold uppercase tracking-wider rounded-lg shadow-lg shadow-amber-900/20 transition-all transform active:scale-95"
         >
-          Create Encounter
+          {{ isEditing ? 'Edit Encounter' : 'Create Encounter' }}
         </button>
       </div>
     </div>

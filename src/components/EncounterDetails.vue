@@ -3,7 +3,8 @@ import { ref } from 'vue';
 import type { DungeonNode, DungeonMapData } from '../types';
 import EncounterContent from './EncounterContent.vue';
 import EncounterCompletionControls from './EncounterCompletionControls.vue';
-import EncounterFeedbackPanel from './EncounterFeedbackPanel.vue';
+import CreateEncounterModal from './CreateEncounterModal.vue';
+import type { EncounterData } from '../types';
 
 
 interface Props {
@@ -22,6 +23,23 @@ const emit = defineEmits<Emits>();
 
 // DM info toggle state
 const showDMInfo = ref(true);
+
+const showCreateModal = ref(false);
+const editingEncounter = ref<EncounterData | null>(null);
+
+const editEncounter = () => {
+  if (props.selectedNode?.encounter) {
+    editingEncounter.value = props.selectedNode.encounter;
+    showCreateModal.value = true;
+  }
+};
+
+const handleEncounterUpdated = (updatedEncounter: EncounterData) => {
+  if (props.selectedNode) {
+    // Update the local node data to reflect changes immediately
+    props.selectedNode.encounter = updatedEncounter;
+  }
+};
 
 
 
@@ -69,30 +87,36 @@ const isReachableFromCurrent = (targetNode: DungeonNode): boolean => {
     <!-- ============ DM SECTION ============ -->
     <div class="p-6 space-y-4">
       <!-- DM Section Header with Toggle -->
+      <!-- DM Section Header with Toggle -->
       <div class="flex items-center justify-between mb-2">
         <div class="flex items-center gap-2">
           <span class="text-red-400 text-lg">🎲</span>
           <h3 class="font-bold text-red-400 text-sm uppercase tracking-wider">DM Info</h3>
         </div>
-        <button
-          @click="showDMInfo = !showDMInfo"
-          class="px-3 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-all"
-          :class="showDMInfo ? 'bg-red-600 hover:bg-red-500 text-white' : 'bg-slate-700 hover:bg-slate-600 text-slate-300'"
-        >
-          <span class="mr-1">{{ showDMInfo ? '👁️' : '🔒' }}</span>
-          {{ showDMInfo ? 'Hide' : 'Show' }}
-        </button>
+        <div class="flex items-center gap-2">
+          <button 
+             v-if="selectedNode.encounter"
+             @click="editEncounter"
+             class="px-3 py-1.5 bg-slate-800 hover:bg-slate-700 text-slate-300 hover:text-white text-xs font-bold uppercase tracking-wider rounded-lg border border-slate-700 hover:border-amber-500/50 flex items-center gap-2 transition-colors"
+           >
+             <span class="text-amber-500">✎</span> Edit
+           </button>
+          <button
+            @click="showDMInfo = !showDMInfo"
+            class="px-3 py-1.5 rounded-lg text-xs font-bold uppercase tracking-wider transition-all"
+            :class="showDMInfo ? 'bg-red-600 hover:bg-red-500 text-white' : 'bg-slate-700 hover:bg-slate-600 text-slate-300'"
+          >
+            <span class="mr-1">{{ showDMInfo ? '👁️' : '🔒' }}</span>
+            {{ showDMInfo ? 'Hide' : 'Show' }}
+          </button>
+        </div>
       </div>
 
       <!-- DM Content (Collapsible) -->
       <div v-show="showDMInfo" class="space-y-4 animate-fadeIn">
-        <EncounterContent v-if="selectedNode.encounter" :encounter="selectedNode.encounter" />
-        <EncounterFeedbackPanel
-          v-if="selectedNode.encounter"
-          :encounter="selectedNode.encounter"
-          :floor="mapData?.currentFloor ?? null"
-          :node-id="selectedNode.id"
-        />
+        <div class="flex justify-between items-start mb-2">
+           <EncounterContent v-if="selectedNode.encounter" :encounter="selectedNode.encounter" class="flex-1" />
+        </div>
 
         <!-- Connected Encounters -->
         <div v-if="selectedNode.connections.length > 0" 
@@ -153,6 +177,15 @@ const isReachableFromCurrent = (targetNode: DungeonNode): boolean => {
       {{ selectedNode ? (selectedNode.status === 'available' && !isReachableFromCurrent(selectedNode) ? 'Too Far Away' : 'Path Blocked') : 'Waiting for Input' }}
     </div>
   </div>
+  <!-- Create/Edit Encounter Modal -->
+  <teleport to="body">
+    <CreateEncounterModal 
+      :show="showCreateModal" 
+      :initial-data="editingEncounter"
+      @close="showCreateModal = false"
+      @created="handleEncounterUpdated"
+    />
+  </teleport>
 </template>
 
 <style scoped>
