@@ -5,7 +5,7 @@ import type { EncounterData, MonsterData } from '../types';
 import { useEncounterFeedbackStore } from '../stores/useEncounterFeedbackStore';
 import { monsterLibrary } from '../data/monsterLibrary';
 
-const props = defineProps<{
+defineProps<{
   show: boolean;
 }>();
 
