@@ -399,57 +399,111 @@ const handleCreate = () => {
         </div>
 
         <!-- Exploration / Puzzle Fields -->
-        <div v-if="newEncounter.type === EncounterType.Exploration" class="space-y-3 pt-2 border-t border-slate-800">
+        <div v-if="newEncounter.type === EncounterType.Exploration || newEncounter.type === EncounterType.Treasure" class="space-y-3 pt-2 border-t border-slate-800">
            <div class="grid grid-cols-2 gap-4">
-               <div class="col-span-2">
-                  <label class="block text-[10px] text-slate-500 uppercase tracking-wider mb-1">Puzzle / Mechanism Description</label>
-                  <textarea
-                     v-model="(newEncounter as any).puzzleDescription"
-                     rows="2"
-                     placeholder="Details of the puzzle or mechanism..."
-                     class="w-full bg-slate-950/50 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-200 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500/50"
-                  ></textarea>
-               </div>
-               
-               <div>
-                  <label class="block text-[10px] text-slate-500 uppercase tracking-wider mb-1">Check DC</label>
-                  <div class="flex items-center gap-2">
-                    <span class="text-xs text-slate-400 font-bold">DC</span>
-                    <input
-                        v-model.number="(newEncounter as any).dc"
-                        type="number"
-                        class="w-20 bg-slate-950/50 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-200 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500/50"
-                    />
+              <!-- Treasure Specific Fields -->
+              <template v-if="newEncounter.type === EncounterType.Treasure">
+                  <div>
+                      <label class="block text-[10px] text-slate-500 uppercase tracking-wider mb-1">Gold Value</label>
+                      <div class="flex items-center gap-1">
+                          <span class="text-xs text-amber-400 font-bold">GP</span>
+                          <input
+                              v-model.number="(newEncounter as any).goldValue"
+                              type="number"
+                              min="0"
+                              class="w-full bg-slate-950/50 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-200 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500/50"
+                          />
+                      </div>
                   </div>
-               </div>
-               
-               <div>
-                   <label class="block text-[10px] text-slate-500 uppercase tracking-wider mb-1">Secret?</label>
-                   <div class="flex items-center gap-2 mt-2">
-                       <input type="checkbox" v-model="(newEncounter as any).secretDoors" class="w-4 h-4 rounded border-slate-700 text-amber-600 bg-slate-900 focus:ring-amber-500/50" />
-                       <span class="text-xs text-slate-400">Hidden / Secret Door</span>
+
+                  <div>
+                     <label class="block text-[10px] text-slate-500 uppercase tracking-wider mb-1">Status</label>
+                     <div class="flex flex-col gap-2 mt-2">
+                         <div class="flex items-center gap-2">
+                             <input type="checkbox" v-model="(newEncounter as any).isLocked" class="w-4 h-4 rounded border-slate-700 text-amber-600 bg-slate-900 focus:ring-amber-500/50" />
+                             <span class="text-xs text-slate-400">Locked</span>
+                             <input 
+                                v-if="(newEncounter as any).isLocked" 
+                                v-model.number="(newEncounter as any).lockDC" 
+                                type="number" 
+                                placeholder="DC" 
+                                class="w-16 bg-slate-800 border-none rounded px-2 py-0.5 text-xs" 
+                             />
+                         </div>
+                         <div class="flex items-center gap-2">
+                             <input type="checkbox" v-model="(newEncounter as any).isMimic" class="w-4 h-4 rounded border-slate-700 text-purple-600 bg-slate-900 focus:ring-purple-500/50" />
+                             <span class="text-xs text-slate-400">Mimic?</span>
+                         </div>
+                     </div>
+                  </div>
+
+                  <div class="col-span-2">
+                      <div class="flex items-center gap-2 mb-1">
+                          <input type="checkbox" v-model="(newEncounter as any).hasTrap" class="w-3 h-3 rounded border-slate-700 text-red-600 bg-slate-900 focus:ring-red-500/50" />
+                          <label class="text-[10px] text-slate-500 uppercase tracking-wider">Trap</label>
+                      </div>
+                      <textarea
+                          v-if="(newEncounter as any).hasTrap"
+                          v-model="(newEncounter as any).trapDescription"
+                          rows="2"
+                          placeholder="Trap details (trigger, effect, DC)..."
+                          class="w-full bg-slate-950/50 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-200 focus:outline-none focus:border-red-500 focus:ring-1 focus:ring-red-500/50"
+                      ></textarea>
+                  </div>
+              </template>
+
+              <!-- Exploration Specifics (Puzzle/Secret) -->
+              <template v-if="newEncounter.type === EncounterType.Exploration">
+                <div class="col-span-2">
+                   <label class="block text-[10px] text-slate-500 uppercase tracking-wider mb-1">Puzzle / Mechanism Description</label>
+                   <textarea
+                      v-model="(newEncounter as any).puzzleDescription"
+                      rows="2"
+                      placeholder="Details of the puzzle or mechanism..."
+                      class="w-full bg-slate-950/50 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-200 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500/50"
+                   ></textarea>
+                </div>
+                
+                <div>
+                   <label class="block text-[10px] text-slate-500 uppercase tracking-wider mb-1">Check DC</label>
+                   <div class="flex items-center gap-2">
+                     <span class="text-xs text-slate-400 font-bold">DC</span>
+                     <input
+                         v-model.number="(newEncounter as any).dc"
+                         type="number"
+                         class="w-20 bg-slate-950/50 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-200 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500/50"
+                     />
                    </div>
-               </div>
+                </div>
+                
+                <div>
+                    <label class="block text-[10px] text-slate-500 uppercase tracking-wider mb-1">Secret?</label>
+                    <div class="flex items-center gap-2 mt-2">
+                        <input type="checkbox" v-model="(newEncounter as any).secretDoors" class="w-4 h-4 rounded border-slate-700 text-amber-600 bg-slate-900 focus:ring-amber-500/50" />
+                        <span class="text-xs text-slate-400">Hidden / Secret Door</span>
+                    </div>
+                </div>
 
-               <div class="col-span-2">
-                  <label class="block text-[10px] text-slate-500 uppercase tracking-wider mb-1">Solution</label>
-                  <input
-                     v-model="(newEncounter as any).solution"
-                     type="text"
-                     placeholder="The answer or required action..."
-                     class="w-full bg-slate-950/50 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-200 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500/50"
-                  />
-               </div>
+                <div class="col-span-2">
+                   <label class="block text-[10px] text-slate-500 uppercase tracking-wider mb-1">Solution</label>
+                   <input
+                      v-model="(newEncounter as any).solution"
+                      type="text"
+                      placeholder="The answer or required action..."
+                      class="w-full bg-slate-950/50 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-200 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500/50"
+                   />
+                </div>
 
-               <div class="col-span-2">
-                  <label class="block text-[10px] text-slate-500 uppercase tracking-wider mb-1">Failure Penalty</label>
-                  <input
-                     v-model="(newEncounter as any).penalty"
-                     type="text"
-                     placeholder="Consequence of failing the check..."
-                     class="w-full bg-slate-950/50 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-200 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500/50"
-                  />
-               </div>
+                <div class="col-span-2">
+                   <label class="block text-[10px] text-slate-500 uppercase tracking-wider mb-1">Failure Penalty</label>
+                   <input
+                      v-model="(newEncounter as any).penalty"
+                      type="text"
+                      placeholder="Consequence of failing the check..."
+                      class="w-full bg-slate-950/50 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-200 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500/50"
+                   />
+                </div>
+              </template>
 
                <!-- Simple Item List Management -->
                <div class="col-span-2">

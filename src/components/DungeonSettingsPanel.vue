@@ -126,24 +126,7 @@ const showCharacterModal = ref(false);
           </div>
         </div>
         
-        <div class="pt-1">
-          <div class="grid grid-cols-2 gap-2 w-full max-w-[420px] mx-auto">
-            <button 
-              @click="emit('regenerate')"
-              class="w-full bg-amber-600 hover:bg-amber-500 text-white font-bold py-2.5 px-4 rounded-lg transition-all transform active:scale-95 text-sm shadow-lg shadow-amber-900/20"
-            >
-              Generate Floor
-            </button>
-            
-            <button 
-              @click="emit('update:revealAll', !revealAll)"
-              :class="revealAll ? 'bg-emerald-600 hover:bg-emerald-500' : 'bg-slate-700 hover:bg-slate-600'"
-              class="w-full text-white font-bold py-2.5 px-4 rounded-lg transition-all text-sm"
-            >
-              {{ revealAll ? 'Hide All' : 'Reveal All' }}
-            </button>
-          </div>
-        </div>
+
 
         <div class="bg-slate-900/40 rounded-xl p-4 border border-slate-700">
           <div class="flex items-center justify-between">
@@ -175,6 +158,25 @@ const showCharacterModal = ref(false);
           >
             Generate Character
           </button>
+        </div>
+
+        <div class="pt-1">
+          <div class="grid grid-cols-2 gap-2 w-full max-w-[420px] mx-auto">
+            <button 
+              @click="emit('regenerate')"
+              class="w-full bg-amber-600 hover:bg-amber-500 text-white font-bold py-2.5 px-4 rounded-lg transition-all transform active:scale-95 text-sm shadow-lg shadow-amber-900/20"
+            >
+              Generate Floor
+            </button>
+            
+            <button 
+              @click="emit('update:revealAll', !revealAll)"
+              :class="revealAll ? 'bg-emerald-600 hover:bg-emerald-500' : 'bg-slate-700 hover:bg-slate-600'"
+              class="w-full text-white font-bold py-2.5 px-4 rounded-lg transition-all text-sm"
+            >
+              {{ revealAll ? 'Hide All' : 'Reveal All' }}
+            </button>
+          </div>
         </div>
       </div>
     </div>
