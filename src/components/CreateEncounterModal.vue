@@ -38,12 +38,86 @@ const monsterSearchResults = computed(() => {
   return monsterLibrary.searchMonsters(monsterSearchQuery.value).slice(0, 50); // Limit results
 });
 
+const totalMonsterXp = computed(() => {
+    if (!(newEncounter.value as any).monsters) return 0;
+    return (newEncounter.value as any).monsters.reduce((sum: number, m: MonsterData) => sum + (m.exp * (m.count || 1)), 0);
+});
+
+const remainingXp = computed(() => {
+    const budget = (newEncounter.value as any).xpBudget || 0;
+    return budget - totalMonsterXp.value;
+});
+
+// XP Thresholds per character level (DMG 2014/2024 standard)
+// XP Thresholds per character level (D&D 2024 Rules)
+const XP_THRESHOLDS: Record<number, Record<string, number>> = {
+  1: { Low: 50, Moderate: 75, High: 100 },
+  2: { Low: 100, Moderate: 150, High: 200 },
+  3: { Low: 150, Moderate: 225, High: 400 },
+  4: { Low: 250, Moderate: 375, High: 500 },
+  5: { Low: 500, Moderate: 750, High: 1100 },
+  6: { Low: 600, Moderate: 1000, High: 1400 },
+  7: { Low: 750, Moderate: 1300, High: 1700 },
+  8: { Low: 1000, Moderate: 1700, High: 2100 },
+  9: { Low: 1300, Moderate: 2000, High: 2600 },
+  10: { Low: 1600, Moderate: 2300, High: 3100 },
+  11: { Low: 1900, Moderate: 2900, High: 4100 },
+  12: { Low: 2200, Moderate: 3700, High: 4700 },
+  13: { Low: 2600, Moderate: 4200, High: 5400 },
+  14: { Low: 2900, Moderate: 4900, High: 6200 },
+  15: { Low: 3300, Moderate: 5400, High: 7800 },
+  16: { Low: 3800, Moderate: 6100, High: 9800 },
+  17: { Low: 4500, Moderate: 7200, High: 11700 },
+  18: { Low: 5000, Moderate: 8700, High: 14200 },
+  19: { Low: 5500, Moderate: 10700, High: 17200 },
+  20: { Low: 6400, Moderate: 13200, High: 22000 },
+};
+
+import { watch } from 'vue';
+
+// Auto-calculate XP budget
+watch(
+  [() => newEncounter.value.level, () => newEncounter.value.difficulty],
+  ([newLevel, newDifficulty]) => {
+    // If user hasn't heavily modified it manually? 
+    // Actually, prompt says "Automatically adjust", implies override.
+    // We assume 4 party members.
+    
+    // Level clamp
+    const level = Math.max(1, Math.min(20, newLevel || 1));
+    const thresholds = XP_THRESHOLDS[level];
+    
+    if (thresholds) {
+      let baseOneCharXP = 0;
+      
+      switch(newDifficulty) {
+          case EncounterDifficulty.Low: 
+              baseOneCharXP = thresholds.Low; 
+              break;
+          case EncounterDifficulty.Moderate: 
+              baseOneCharXP = thresholds.Moderate; 
+              break;
+          case EncounterDifficulty.High: 
+              baseOneCharXP = thresholds.High; 
+              break;
+          default:
+              baseOneCharXP = thresholds.Moderate;
+      }
+      
+      (newEncounter.value as any).xpBudget = baseOneCharXP * 4;
+    }
+  },
+  { immediate: true }
+);
+
 const addMonster = (monster: MonsterData) => {
   if (!(newEncounter.value as any).monsters) {
     (newEncounter.value as any).monsters = [];
   }
   // Clone to avoid reference issues if we modify it later (though MonsterData is mostly static)
-  (newEncounter.value as any).monsters.push(JSON.parse(JSON.stringify(monster)));
+  const monsterClone = JSON.parse(JSON.stringify(monster));
+  monsterClone.count = 1;
+  (newEncounter.value as any).monsters.push(monsterClone);
   monsterSearchQuery.value = '';
 };
 
@@ -228,6 +302,11 @@ const addWinCondition = () => {
               step="10"
               class="w-full bg-slate-950/50 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-200 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500/50"
             />
+            <div class="flex justify-end mt-1">
+                <span :class="{'text-emerald-400': remainingXp >= 0, 'text-red-400': remainingXp < 0}" class="text-[10px] font-mono">
+                    {{ remainingXp >= 0 ? 'Remaining' : 'Over' }}: {{ Math.abs(remainingXp) }} XP
+                </span>
+            </div>
           </div>
         </div>
 
@@ -253,14 +332,72 @@ const addWinCondition = () => {
            <p class="text-[10px] text-slate-500 mt-1">Each line will be treated as a bullet point.</p>
         </div>
 
-        <div>
-           <label class="block text-[10px] text-slate-500 uppercase tracking-wider mb-1">AI Room Prompt</label>
-           <textarea
-             v-model="newEncounter.aiRoomPrompt"
-             rows="2"
-             placeholder="Prompt for generating the battle map..."
-             class="w-full bg-slate-950/50 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-200 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500/50"
-           ></textarea>
+        <!-- Monsters (Combat/Boss only) -->
+        <div v-if="newEncounter.type === EncounterType.Combat || newEncounter.type === EncounterType.Boss" class="space-y-2 pt-2 border-t border-slate-800">
+           <label class="block text-[10px] text-slate-500 uppercase tracking-wider">Monsters</label>
+           
+           <!-- Search -->
+           <div class="relative">
+              <input 
+                 v-model="monsterSearchQuery"
+                 type="text"
+                 placeholder="Search monsters..."
+                 class="w-full bg-slate-950/50 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-200 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500/50"
+              />
+              <!-- Results Dropdown -->
+              <div v-if="monsterSearchQuery && monsterSearchResults.length > 0" class="absolute z-10 w-full mt-1 bg-slate-900 border border-slate-700 rounded-lg shadow-xl max-h-48 overflow-y-auto custom-scrollbar">
+                 <button
+                    v-for="monster in monsterSearchResults"
+                    :key="monster.id"
+                    @click="addMonster(monster)"
+                    class="w-full text-left px-3 py-2 text-xs text-slate-300 hover:bg-slate-800 hover:text-white flex justify-between items-center border-b border-slate-800 last:border-0"
+                 >
+                    <div class="flex flex-col">
+                        <span>{{ monster.name }}</span>
+                        <span class="text-[10px] text-slate-500" v-if="monster.thematicType">{{ monster.thematicType }}</span>
+                    </div>
+                    <div class="flex flex-col items-end">
+                       <span class="text-[10px] text-slate-500 bg-slate-950 px-1.5 py-0.5 rounded mb-0.5">CR {{ monster.cr }}</span>
+                       <span class="text-[9px] text-slate-600">{{ monster.exp }} XP</span>
+                    </div>
+                 </button>
+              </div>
+           </div>
+
+           <!-- Selected Monsters List -->
+           <div v-if="(newEncounter as any).monsters && (newEncounter as any).monsters.length > 0" class="space-y-1.5 mt-2">
+              <div 
+                 v-for="(monster, index) in (newEncounter as any).monsters" 
+                 :key="index"
+                 class="flex items-center justify-between bg-slate-950/50 border border-slate-700/50 rounded px-3 py-1.5"
+              >
+                 <div class="flex items-center gap-3 flex-1">
+                    <input 
+                        v-model.number="monster.count" 
+                        type="number" 
+                        min="1" 
+                        class="w-12 bg-slate-900 border border-slate-700 rounded px-1 py-0.5 text-xs text-center text-slate-200 focus:outline-none focus:border-amber-500"
+                    />
+                    <div class="flex flex-col">
+                        <span class="text-xs text-slate-200 font-medium">{{ monster.name }}</span>
+                        <div class="flex items-center gap-2">
+                            <span v-if="monster.thematicType" class="text-[10px] text-slate-500 italic">{{ monster.thematicType }}</span>
+                            <span class="text-[10px] text-slate-500">CR {{ monster.cr }} ({{ monster.exp * Number(monster.count || 1) }} XP)</span>
+                        </div>
+                    </div>
+                 </div>
+                 <button 
+                    @click="removeMonster(index)"
+                    class="text-slate-600 hover:text-red-400 transition-colors ml-2"
+                    title="Remove Monster"
+                 >
+                    ✕
+                 </button>
+              </div>
+           </div>
+           <div v-else class="text-xs text-slate-600 italic py-2 text-center border border-dashed border-slate-800 rounded">
+              No monsters added yet.
+           </div>
         </div>
 
         <!-- Scaling Mechanics -->
@@ -317,57 +454,6 @@ const addWinCondition = () => {
            
            <div v-else class="text-xs text-slate-600 italic py-2 text-center border border-dashed border-slate-800 rounded">
               No scaling mechanics added.
-           </div>
-        </div>
-
-        <!-- Monsters (Combat/Boss only) -->
-        <div v-if="newEncounter.type === EncounterType.Combat || newEncounter.type === EncounterType.Boss" class="space-y-2 pt-2 border-t border-slate-800">
-           <label class="block text-[10px] text-slate-500 uppercase tracking-wider">Monsters</label>
-           
-           <!-- Search -->
-           <div class="relative">
-              <input 
-                 v-model="monsterSearchQuery"
-                 type="text"
-                 placeholder="Search monsters..."
-                 class="w-full bg-slate-950/50 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-200 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500/50"
-              />
-              <!-- Results Dropdown -->
-              <div v-if="monsterSearchQuery && monsterSearchResults.length > 0" class="absolute z-10 w-full mt-1 bg-slate-900 border border-slate-700 rounded-lg shadow-xl max-h-48 overflow-y-auto custom-scrollbar">
-                 <button
-                    v-for="monster in monsterSearchResults"
-                    :key="monster.id"
-                    @click="addMonster(monster)"
-                    class="w-full text-left px-3 py-2 text-xs text-slate-300 hover:bg-slate-800 hover:text-white flex justify-between items-center border-b border-slate-800 last:border-0"
-                 >
-                    <span>{{ monster.name }}</span>
-                    <span class="text-[10px] text-slate-500 bg-slate-950 px-1.5 py-0.5 rounded">CR {{ monster.cr }}</span>
-                 </button>
-              </div>
-           </div>
-
-           <!-- Selected Monsters List -->
-           <div v-if="newEncounter.monsters && newEncounter.monsters.length > 0" class="space-y-1.5 mt-2">
-              <div 
-                 v-for="(monster, index) in newEncounter.monsters" 
-                 :key="index"
-                 class="flex items-center justify-between bg-slate-950/50 border border-slate-700/50 rounded px-3 py-1.5"
-              >
-                 <div class="flex items-center gap-2">
-                    <span class="text-xs text-slate-200 font-medium">{{ monster.name }}</span>
-                    <span class="text-[10px] text-slate-500">CR {{ monster.cr }}</span>
-                 </div>
-                 <button 
-                    @click="removeMonster(index)"
-                    class="text-slate-600 hover:text-red-400 transition-colors"
-                    title="Remove Monster"
-                 >
-                    ✕
-                 </button>
-              </div>
-           </div>
-           <div v-else class="text-xs text-slate-600 italic py-2 text-center border border-dashed border-slate-800 rounded">
-              No monsters added yet.
            </div>
         </div>
 
@@ -443,6 +529,16 @@ const addWinCondition = () => {
             <div v-else class="text-xs text-slate-600 italic py-2 text-center border border-dashed border-slate-800 rounded">
             No win conditions added yet.
             </div>
+        </div>
+
+        <div class="pt-2 border-t border-slate-800">
+           <label class="block text-[10px] text-slate-500 uppercase tracking-wider mb-1">AI Room Prompt</label>
+           <textarea
+             v-model="newEncounter.aiRoomPrompt"
+             rows="2"
+             placeholder="Prompt for generating the battle map..."
+             class="w-full bg-slate-950/50 border border-slate-700 rounded-lg px-3 py-2 text-sm text-slate-200 focus:outline-none focus:border-amber-500 focus:ring-1 focus:ring-amber-500/50"
+           ></textarea>
         </div>
 
       </div>

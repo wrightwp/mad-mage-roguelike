@@ -76,12 +76,10 @@ export function getXPBudgetPerCharacter(
 
     switch (difficulty) {
         case EncounterDifficulty.Low:
-        case EncounterDifficulty.Trivial:
             return budgets[0];
         case EncounterDifficulty.Moderate:
             return budgets[1];
         case EncounterDifficulty.High:
-        case EncounterDifficulty.Deadly:
             return budgets[2];
         default:
             return budgets[1]; // Default to moderate

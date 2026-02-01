@@ -63,7 +63,7 @@ export const generateDungeon = (
                 encounter: {
                     name: "The Yawning Portal",
                     level: 1,
-                    difficulty: EncounterDifficulty.Trivial,
+                    difficulty: EncounterDifficulty.Low,
                     type: EncounterType.Exploration,
                     roomDescription: "The bustling tavern above the dungeon.",
                     dmDescription: ["The entry point."],

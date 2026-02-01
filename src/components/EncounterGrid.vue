@@ -3,6 +3,7 @@ import { ref, computed, watch } from 'vue';
 import { encounterLibrary } from '../data/encounterLibrary';
 import type { EncounterData } from '../types';
 import { EncounterType } from '../types';
+import { monsterLibrary } from '../data/monsterLibrary';
 import CreateEncounterModal from './CreateEncounterModal.vue';
 import EncounterContent from './EncounterContent.vue';
 import EncounterFeedbackPanel from './EncounterFeedbackPanel.vue';
@@ -32,9 +33,30 @@ const loadEncounters = () => {
   );
 
   // Add custom encounters from feedback store
+  // Add custom encounters from feedback store
   const customEncounters = feedbackStore.feedbackList
     .filter(entry => entry.key.startsWith('custom-'))
-    .map(entry => entry.edited);
+    .map(entry => {
+      // Hydrate monsters if they are missing data (e.g. just id/count)
+      const enc = { ...entry.edited };
+      if ((enc as any).monsters) {
+         (enc as any).monsters = (enc as any).monsters.map((m: any) => {
+             // Already fully hydrated?
+             if (m.name && m.exp && m.mmLink) return m;
+             
+             // Try to find in library
+             if (m.id) {
+                 const libMonster = monsterLibrary.getMonsterById(m.id);
+                 if (libMonster) {
+                     return { ...libMonster, count: m.count || 1 };
+                 }
+             }
+             // Fallback
+             return m;
+         });
+      }
+      return enc;
+    });
     
   // Merge custom encounters
   // We prioritize custom encounters if there's a name collision, though there shouldn't be with unique naming
@@ -319,7 +341,7 @@ const encounterStats = computed(() => {
     </div>
 
     <!-- Column Headers -->
-    <div v-if="allEncounters.length > 0" class="px-4 py-2 bg-slate-900/50 border-b border-slate-800 text-xs font-bold uppercase tracking-wider text-slate-500 grid items-center grid-cols-[24px_minmax(140px,1fr)_minmax(72px,auto)_minmax(40px,auto)_minmax(0,40px)] md:grid-cols-[24px_minmax(140px,1fr)_minmax(72px,auto)_minmax(40px,auto)_minmax(0,48px)_minmax(0,40px)_minmax(0,48px)]">
+    <div v-if="allEncounters.length > 0" class="px-4 py-2 bg-slate-900/50 border-b border-slate-800 text-xs font-bold uppercase tracking-wider text-slate-500 grid items-center grid-cols-[24px_1fr_72px_40px_40px] md:grid-cols-[24px_1fr_80px_48px_64px_48px_64px]">
       <div class="w-6"></div> <!-- Spacer for expand icon -->
       
       <button 
@@ -382,15 +404,18 @@ const encounterStats = computed(() => {
         <!-- Table Row (Clickable) -->
         <div
           @click="toggleRow(encounter.name)"
-          class="px-4 py-3 cursor-pointer select-none grid items-center grid-cols-[24px_minmax(140px,1fr)_minmax(72px,auto)_minmax(40px,auto)_minmax(0,40px)] md:grid-cols-[24px_minmax(140px,1fr)_minmax(72px,auto)_minmax(40px,auto)_minmax(0,48px)_minmax(0,40px)_minmax(0,48px)]"
+          class="px-4 py-3 cursor-pointer select-none grid items-center grid-cols-[24px_1fr_72px_40px_40px] md:grid-cols-[24px_1fr_80px_48px_64px_48px_64px]"
         >
           <!-- Expand Icon -->
-          <div class="text-slate-500 transition-transform" :class="isExpanded(encounter.name) ? 'rotate-90' : ''">
-            ▶
+          <!-- Expand Icon -->
+          <div class="text-slate-500 transition-transform duration-200" :class="isExpanded(encounter.name) ? 'rotate-90' : ''">
+            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+            </svg>
           </div>
           
           <!-- Name -->
-          <div class="flex-1 min-w-[140px]">
+          <div class="flex-1 min-w-[140px] pl-2">
             <div class="font-semibold text-sm text-slate-200 leading-snug whitespace-normal">
               {{ encounter.name }}
             </div>
