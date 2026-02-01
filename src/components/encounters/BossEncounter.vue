@@ -10,8 +10,14 @@ const groupedMonsters = computed(() => {
   return props.encounter.monsters.map(monster => ({
     name: monster.name,
     count: monster.count || 1,
-    mmLink: monster.mmLink || 'https://www.dndbeyond.com/monsters'
+    mmLink: monster.mmLink || 'https://www.dndbeyond.com/monsters',
+    cr: monster.cr,
+    exp: monster.exp
   }));
+});
+
+const totalMonstersXP = computed(() => {
+  return props.encounter.monsters.reduce((sum, m) => sum + ((m.exp || 0) * (m.count || 1)), 0);
 });
 </script>
 
@@ -42,14 +48,18 @@ const groupedMonsters = computed(() => {
         <div class="space-y-2">
           <div v-for="(monster, index) in groupedMonsters" :key="monster.name" 
             class="flex items-center justify-between bg-slate-900/40 rounded-lg p-2 border border-slate-700/30">
-            <span class="text-sm text-slate-300">
-              <span class="text-red-300 font-bold pr-4 select-none">{{ monster.count }}</span>
-              <span :class="{'text-amber-200 font-bold': index === 0}">{{ monster.name }}</span>
-            </span>
+            <div class="flex items-center gap-2 flex-grow min-w-0">
+              <span class="text-red-300 font-bold select-none shrink-0 w-6">{{ monster.count }}</span>
+              <span :class="{'text-amber-200 font-bold': index === 0}" class="text-sm text-slate-300 truncate mr-2">{{ monster.name }}</span>
+              <div class="flex gap-1.5 shrink-0">
+                <span v-if="monster.cr !== undefined" class="text-[9px] bg-slate-800 text-slate-400 px-1.5 py-0.5 rounded border border-slate-700 font-bold select-none whitespace-nowrap uppercase">CR {{ monster.cr }}</span>
+                <span v-if="monster.exp !== undefined" class="text-[9px] bg-indigo-900/60 text-indigo-200 px-1.5 py-0.5 rounded border border-indigo-700/50 font-bold select-none whitespace-nowrap uppercase">{{ monster.exp }} XP</span>
+              </div>
+            </div>
             <a :href="monster.mmLink" 
               target="_blank" 
               rel="noopener noreferrer"
-              class="px-2 py-1 bg-amber-600 hover:bg-amber-500 text-white text-xs font-bold rounded transition-colors flex items-center gap-1">
+              class="ml-3 px-2 py-1 bg-amber-600 hover:bg-amber-500 text-white text-xs font-bold rounded transition-colors flex items-center gap-1 shrink-0">
               <span>📖</span>
             </a>
           </div>
@@ -71,8 +81,12 @@ const groupedMonsters = computed(() => {
       <!-- Footer Info -->
       <div class="grid grid-cols-2 gap-2 text-xs border-t border-red-900/30 pt-4">
         <div class="bg-slate-900/50 rounded p-2 text-center border border-slate-800">
-          <div class="text-slate-500 uppercase tracking-wider text-[10px] mb-0.5">XP Budget</div>
-          <div class="text-amber-500 font-mono">{{ encounter.xpBudget }}</div>
+          <div class="text-slate-500 uppercase tracking-tighter text-[9px] mb-0.5 font-bold">Total / Budget XP</div>
+          <div class="flex items-center justify-center gap-1.5">
+            <span :class="totalMonstersXP > encounter.xpBudget ? 'text-red-400' : 'text-emerald-400'" class="font-mono font-bold">{{ totalMonstersXP }}</span>
+            <span class="text-slate-700">/</span>
+            <span class="text-amber-500 font-mono text-[10px]">{{ encounter.xpBudget }}</span>
+          </div>
         </div>
         <div class="bg-slate-900/50 rounded p-2 text-center border border-slate-800">
           <div class="text-slate-500 uppercase tracking-wider text-[10px] mb-0.5">Attitude</div>

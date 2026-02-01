@@ -10,8 +10,14 @@ const groupedNPCs = computed(() => {
   return props.encounter.monsters.map(monster => ({
     name: monster.name,
     count: monster.count || 1,
-    mmLink: monster.mmLink || 'https://www.dndbeyond.com/monsters'
+    mmLink: monster.mmLink || 'https://www.dndbeyond.com/monsters',
+    cr: monster.cr,
+    exp: monster.exp
   }));
+});
+
+const totalMonstersXP = computed(() => {
+  return props.encounter.monsters.reduce((sum, m) => sum + ((m.exp || 0) * (m.count || 1)), 0);
 });
 </script>
 
@@ -24,19 +30,34 @@ const groupedNPCs = computed(() => {
       <div class="space-y-2">
         <div v-for="npc in groupedNPCs" :key="npc.name" 
           class="flex items-center justify-between bg-slate-900/40 rounded-lg p-2 border border-slate-700/30">
-          <span class="text-sm text-slate-300">
-            <span class="text-blue-300 font-bold pr-4 select-none">{{ npc.count }}</span><span>{{ npc.name }}</span>
-          </span>
+          <div class="flex items-center gap-2 flex-grow min-w-0">
+            <span class="text-blue-300 font-bold select-none shrink-0 w-6">{{ npc.count }}</span>
+            <span class="text-sm text-slate-300 truncate mr-2">{{ npc.name }}</span>
+            <div class="flex gap-1.5 shrink-0">
+              <span v-if="npc.cr !== undefined" class="text-[9px] bg-slate-800 text-slate-400 px-1.5 py-0.5 rounded border border-slate-700 font-bold select-none whitespace-nowrap">CR {{ npc.cr }}</span>
+              <span v-if="npc.exp !== undefined" class="text-[9px] bg-indigo-900/40 text-indigo-300 px-1.5 py-0.5 rounded border border-indigo-700/30 font-bold select-none whitespace-nowrap">{{ npc.exp }} XP</span>
+            </div>
+          </div>
           <a :href="npc.mmLink" 
             target="_blank" 
             rel="noopener noreferrer"
-            class="px-2 py-1 bg-amber-600 hover:bg-amber-500 text-white text-xs font-bold rounded transition-colors">
+            class="ml-3 px-2 py-1 bg-amber-600 hover:bg-amber-500 text-white text-xs font-bold rounded transition-colors flex items-center justify-center shrink-0">
             📖 
           </a>
         </div>
       </div>
     </div>
     
+    <div v-if="encounter.xpBudget" class="flex justify-between items-center text-[11px] text-slate-400 p-2 bg-black/20 rounded-lg border border-slate-800/50 mb-3">
+      <div class="flex items-center gap-2">
+        <span class="text-slate-500 uppercase tracking-tighter font-bold">Total XP:</span>
+        <span :class="totalMonstersXP > encounter.xpBudget ? 'text-red-400' : 'text-emerald-400'" class="font-mono font-bold">{{ totalMonstersXP }}</span>
+      </div>
+      <div class="flex items-center gap-2">
+        <span class="text-slate-500 uppercase tracking-tighter font-bold">Budget:</span>
+        <span class="text-slate-300 font-mono">{{ encounter.xpBudget }}</span>
+      </div>
+    </div>
     <div class="text-xs text-slate-400 mb-1">
       <strong>Attitude:</strong> <span class="capitalize">{{ encounter.attitude }}</span>
     </div>
